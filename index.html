@@ -100,7 +100,7 @@
             $.get('data/items.xml', function (xml) {
                 $(xml).find("weapons > item").each(function () {
                     $("#itemList").append($("<div></div>")
-                            .attr("class", $(this).attr("type"))
+                            .attr("class", "item " + $(this).attr("type"))
                             .attr("alt", $(this).attr("type"))
                             .attr("title", $(this).attr("tons"))
                             .text($(this).text()));
