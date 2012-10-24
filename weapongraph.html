@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Weapon Graphs</title>
+    <script src="http://d3js.org/d3.v2.js"></script>
+    <script src="http://code.jquery.com/jquery-1.8.2.js" type="text/javascript"></script>
+    <script src="d3.parcoords.js"></script>
+    <script src="rosegraph.js"></script>
+    <link rel="stylesheet" type="text/css" href="d3.parcoords.css">
+    <script>
+        //load weapon xml
+        d3.xml('items.xml', xmlLoaded);
+
+        function xmlLoaded(xml){
+            var data = $(xml).find("weapons > item").map(function(index, item){
+                var result = [{name:$(item).text(),
+                               heat:$(item).attr("heat"),
+                               damage:$(item).attr("damage"),
+                               cooldown:$(item).attr("cooldown"),
+                               range:$(item).attr("range"),
+                               tons:$(item).attr("tons"),
+                               type:$(item).attr("type")
+                                }];
+                return result;
+            });
+            data = data.toArray();
+
+            // linear color scale
+            var blue_to_brown = d3.scale.linear()
+                    .domain([9, 50])
+                    .range(["steelblue", "brown"])
+                    .interpolate(d3.interpolateLab);
+
+            var pc = d3.parcoords()("#chart")
+                    .data(data)
+                    .color(function(d) { return blue_to_brown(d['damage']); })
+                    .brushable()
+                    .render()
+                    .createAxes();
+/*
+ .on("highlight", function(data){
+ var a = data;
+ })
+
+
+            d3.select("#chart")
+                .data(
+                .enter()
+                .append("div")
+                .style("background-color", "#aaaaaa")
+                .style("width", function(d) {
+                        return d[0] * 10 + "px"; })
+                .text(function(d) {
+                        return d[1];
+                    });
+*/
+        }
+
+    </script>
+</head>
+<body>
+    <div id="chart" class="parcoords" style="width:500px;height:300px">
+
+    </div>
+    <div id="roseChart" style="width:450px;height:450px"></div>
+</body>
+</html>

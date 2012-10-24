@@ -1,0 +1,158 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<items>
+  <weapons>
+    <item type ="ballistic" damage="2" heat="1" cooldown=".5" range="720" maxrange="2160" slots="1" tons="6" dpsmax="4" ammoper="4" hps="2" ehs="16">AC/2</item>
+    <item type ="ballistic" damage="5" heat="1" cooldown="1.7" range="540" maxrange="1620" slots="4" tons="8" dpsmax="4" ammoper="2.94" hps="2" ehs="5">AC/5</item>
+    <item type ="ballistic" damage="10" heat="3" cooldown="3" range="450" maxrange="1350" slots="7" tons="12" dpsmax="4" ammoper="3.33" hps="2" ehs="8">AC/10</item>
+    <item type ="ballistic" damage="20" heat="7" cooldown="4" range="270" maxrange="810" slots="10" tons="14" dpsmax="4" ammoper="5" hps="2" ehs="14">AC/20</item>
+    <item type ="ballistic" damage="10" heat="2" cooldown="1.1" range="600" maxrange="1820" slots="5" tons="9" dpsmax="4" ammoper="4.54" hps="2" ehs="16">Ultra AC/5</item>
+    <item type ="ballistic" damage="10" heat="2" cooldown="2.5" range="540" maxrange="1620" slots="6" tons="11" dpsmax="4" ammoper="4" hps="2" ehs="6">LB 10-X AC</item>
+    <item type ="ballistic" damage="15" heat="1" cooldown="4" range="660" maxrange="1980" slots="7" tons="15" dpsmax="4" ammoper="3.75" hps="2" ehs="2">Gauss Rifle</item>
+    <item type ="ballistic" damage=".04" heat="0" cooldown="0" range="90" maxrange="200" slots="1" tons=".5" dpsmax="4" ammoper=".4" hps="2" ehs="1">Machine Gun</item>
+    <item type ="energy" damage="3" heat="2" cooldown="2.25" range="90" maxrange="180" slots="1" tons=".5" dpsmax="1" hps=".67" ehs="6">Small Laser</item>
+    <item type ="energy" damage="5" heat="4" cooldown="3" range="270" maxrange="540" slots="1" tons="1" dpsmax="1.25" hps="1" ehs="8">Medium Laser</item>
+    <item type ="energy" damage="9" heat="7" cooldown="3.25" range="450" maxrange="900" slots="2" tons="5" dpsmax="2.12" hps="1.65" ehs="13">Large Laser</item>
+    <item type ="energy" damage="9" heat="10" cooldown="3.25" range="675" maxrange="1350" slots="2" tons="5" dpsmax="2.12" hps="2.35" ehs="20">ER Large Laser</item>
+    <item type ="energy" damage="3" heat="3" cooldown="2.25" range="90" maxrange="180" slots="1" tons="1" dpsmax="1.09" hps="2" ehs="8">Small Pulse Laser</item>
+    <item type ="energy" damage="6" heat="5" cooldown="3" range="180" maxrange="360" slots="1" tons="2" dpsmax="1.6" hps="2" ehs="10">Medium Pulse Laser</item>
+    <item type ="energy" damage="10" heat="9" cooldown="3.25" range="300" maxrange="600" slots="2" tons="7" dpsmax="2.5" hps="2.25" ehs="19">Large Pulse Laser</item>
+    <item type ="energy" damage="10" heat="9" cooldown="3" range="540" maxrange="1080" slots="3" tons="7" dpsmax="3.33" hps="3" ehs="24">PPC</item>
+    <item type ="energy" damage="10" heat="13" cooldown="3" range="810" maxrange="1620" slots="3" tons="7" dpsmax="3.33" hps="4.33" ehs="32">ER PPC</item>
+    <item type ="energy" damage=".4" heat=".6" cooldown="0" range="64" maxrange="64" slots="1" tons="1" dpsmax=".08" hps="1.2" ehs="7">Flamer</item>
+    <item type ="missile" damage="5" heat="2" cooldown="3.5" range="" maxrange="270" slots="1" tons="1.5" dpsmax="1.43" hps=".57" ammoper="100" ehs="4">Streak SRM2</item>
+    <item type ="missile" damage="5" heat="2" cooldown="3.5" range="" maxrange="270" slots="1" tons="1" dpsmax="1.43" hps=".57" ammoper="100" ehs="4">SRM2</item>
+    <item type ="missile" damage="10" heat="3" cooldown="3.75" range="" maxrange="270" slots="1" tons="2" dpsmax="2.67" hps=".8" ammoper="100" ehs="6">SRM4</item>
+    <item type ="missile" damage="15" heat="4" cooldown="4" range="" maxrange="270" slots="2" tons="3" dpsmax="3" hps="1" ammoper="100" ehs="8">SRM6</item>
+    <item type ="missile" damage="10" heat="2" cooldown="3.25" range="180" maxrange="1000" slots="1" tons="2" dpsmax=".57" hps=".57" ammoper="180" ehs="5">LRM5</item>
+    <item type ="missile" damage="20" heat="4" cooldown="3.75" range="180" maxrange="1000" slots="2" tons="5" dpsmax="1.07" hps="1.07" ammoper ="180" ehs="8">LRM10</item>
+    <item type ="missile" damage="30" heat="5" cooldown="4.25" range="180" maxrange="1000" slots="3" tons="7" dpsmax="1.18" hps="1.18" ammoper ="180" ehs="9">LRM15</item>
+    <item type ="missile" damage="40" heat="6" cooldown="4.75" range="180" maxrange="1000" slots="5" tons="10" dpsmax="1.26" hps="1.26" ammoper ="180" ehs="10">LRM20</item>
+    <item type ="util" tons=".5" slots="1" maxrange="200" ammoper="1000">AMS</item>
+    <item type ="util" tons="3" slots="2" maxrange="270" ammoper="6">NARC</item>
+    <item type ="util" tons=".5" slots="1" maxrange="450">TAG</item>
+  </weapons>
+  <engines>
+    <plant tons="1.5" type ="std">100</plant>
+    <plant tons="2.5" type ="std">105</plant>
+    <plant tons="1.5" type ="std">110</plant>
+    <plant tons="2.5" type ="std">115</plant>
+    <plant tons="2.5" type ="std">120</plant>
+    <plant tons="2.5" type ="std">125</plant>
+    <plant tons="2.5" type ="std">130</plant>
+    <plant tons="2.5" type ="std">135</plant>
+    <plant tons="2.5" type ="std">140</plant>
+    <plant tons="2.5" type ="std">145</plant>
+    <plant tons="3.5" type ="std">150</plant>
+    <plant tons="3.5" type ="std">155</plant>
+    <plant tons="4" type ="std">160</plant>
+    <plant tons="4" type ="std">165</plant>
+    <plant tons="4" type ="std">170</plant>
+    <plant tons="6" type ="std">175</plant>
+    <plant tons="6" type ="std">180</plant>
+    <plant tons="6.5" type ="std">185</plant>
+    <plant tons="6.5" type ="std">190</plant>
+    <plant tons="7" type ="std">195</plant>
+    <plant tons="8.5" type ="std">200</plant>
+    <plant tons="9.5" type ="std">205</plant>
+    <plant tons="10" type ="std">210</plant>
+    <plant tons="10.5" type ="std">215</plant>
+    <plant tons="11" type ="std">220</plant>
+    <plant tons="12" type ="std">225</plant>
+    <plant tons="12.5" type ="std">230</plant>
+    <plant tons="13" type ="std">235</plant>
+    <plant tons="13.5" type ="std">240</plant>
+    <plant tons="14" type ="std">245</plant>
+    <plant tons="15.5" type ="std">250</plant>
+    <plant tons="16" type ="std">255</plant>
+    <plant tons="16.5" type ="std">260</plant>
+    <plant tons="17" type ="std">265</plant>
+    <plant tons="17.5" type ="std">270</plant>
+    <plant tons="18.5" type ="std">275</plant>
+    <plant tons="19" type ="std">280</plant>
+    <plant tons="19.5" type ="std">285</plant>
+    <plant tons="20.5" type ="std">290</plant>
+    <plant tons="21" type ="std">295</plant>
+    <plant tons="22" type ="std">300</plant>
+    <plant tons="23.5" type ="std">305</plant>
+    <plant tons="24.5" type ="std">310</plant>
+    <plant tons="25.5" type ="std">315</plant>
+    <plant tons="26.5" type ="std">320</plant>
+    <plant tons="27.5" type ="std">325</plant>
+    <plant tons="28.5" type ="std">330</plant>
+    <plant tons="29.5" type ="std">335</plant>
+    <plant tons="31" type ="std">340</plant>
+    <plant tons="32.5" type ="std">345</plant>
+    <plant tons="33.5" type ="std">350</plant>
+    <plant tons="35.5" type ="std">355</plant>
+    <plant tons="37" type ="std">360</plant>
+    <plant tons="38.5" type ="std">365</plant>
+    <plant tons="40.5" type ="std">370</plant>
+    <plant tons="42.5" type ="std">375</plant>
+    <plant tons="45" type ="std">380</plant>
+    <plant tons="47.5" type ="std">385</plant>
+    <plant tons="50" type ="std">390</plant>
+    <plant tons="53" type ="std">395</plant>
+    <plant tons="56.5" type ="std">400</plant>
+    <plant tons="1.5" type ="xl">100</plant>
+    <plant tons="2.5" type ="xl">105</plant>
+    <plant tons="1.5" type ="xl">110</plant>
+    <plant tons="2.5" type ="xl">115</plant>
+    <plant tons="2.5" type ="xl">120</plant>
+    <plant tons="2.5" type ="xl">125</plant>
+    <plant tons="2.5" type ="xl">130</plant>
+    <plant tons="2.5" type ="xl">135</plant>
+    <plant tons="2.5" type ="xl">140</plant>
+    <plant tons="2.5" type ="xl">145</plant>
+    <plant tons="2.5" type ="xl">150</plant>
+    <plant tons="2.5" type ="xl">155</plant>
+    <plant tons="2.5" type ="xl">160</plant>
+    <plant tons="2.5" type ="xl">165</plant>
+    <plant tons="2.5" type ="xl">170</plant>
+    <plant tons="2.5" type ="xl">175</plant>
+    <plant tons="2.5" type ="xl">180</plant>
+    <plant tons="3" type ="xl">185</plant>
+    <plant tons="3" type ="xl">190</plant>
+    <plant tons="3" type ="xl">195</plant>
+    <plant tons="4.5" type ="xl">200</plant>
+    <plant tons="4.5" type ="xl">205</plant>
+    <plant tons="5.5" type ="xl">210</plant>
+    <plant tons="5.5" type ="xl">215</plant>
+    <plant tons="6" type ="xl">220</plant>
+    <plant tons="7" type ="xl">225</plant>
+    <plant tons="7.5" type ="xl">230</plant>
+    <plant tons="7.5" type ="xl">235</plant>
+    <plant tons="8" type ="xl">240</plant>
+    <plant tons="8" type ="xl">245</plant>
+    <plant tons="9.5" type ="xl">250</plant>
+    <plant tons="9.5" type ="xl">255</plant>
+    <plant tons="10" type ="xl">260</plant>
+    <plant tons="10" type ="xl">265</plant>
+    <plant tons="10.5" type ="xl">270</plant>
+    <plant tons="11" type ="xl">275</plant>
+    <plant tons="11" type ="xl">280</plant>
+    <plant tons="11.5" type ="xl">285</plant>
+    <plant tons="12" type ="xl">290</plant>
+    <plant tons="12" type ="xl">295</plant>
+    <plant tons="12.5" type ="xl">300</plant>
+    <plant tons="14" type ="xl">305</plant>
+    <plant tons="14.5" type ="xl">310</plant>
+    <plant tons="15" type ="xl">315</plant>
+    <plant tons="15.5" type ="xl">320</plant>
+    <plant tons="16" type ="xl">325</plant>
+    <plant tons="16.5" type ="xl">330</plant>
+    <plant tons="17" type ="xl">335</plant>
+    <plant tons="17.5" type ="xl">340</plant>
+    <plant tons="18.5" type ="xl">345</plant>
+    <plant tons="19" type ="xl">350</plant>
+    <plant tons="20" type ="xl">355</plant>
+    <plant tons="20.5" type ="xl">360</plant>
+    <plant tons="21.5" type ="xl">365</plant>
+    <plant tons="22.5" type ="xl">370</plant>
+    <plant tons="23.5" type ="xl">375</plant>
+    <plant tons="24.5" type ="xl">380</plant>
+    <plant tons="26" type ="xl">385</plant>
+    <plant tons="27" type ="xl">390</plant>
+    <plant tons="28.5" type ="xl">395</plant>
+    <plant tons="30.5" type ="xl">400</plant>
+  </engines>
+</items>

@@ -1,0 +1,299 @@
+﻿body {
+    font-family:Arial;
+    z-index:1;
+    font-family: 'Aldrich', sans-serif;
+    line-height: 1em;
+    background-color: #000000;
+}
+
+select {
+    font-family: 'Aldrich', sans-serif;
+    font-size:12px;
+    padding: 2px;
+}
+
+h1,h2,h3,h4,h5,h6 {
+    font-family: 'battletech_oldstyle', Arial, sans-serif;
+}
+
+/*
+colors:
+
+light blue grey: #718BA2
+dark grey: #303C48
+medium grey: #ABACB0
+light grey: #C2C3C5
+
+*/
+
+#topbar {
+    position:relative;
+    height:50px;
+}
+
+#mechBay {
+	width: 850px;
+	height: 900px;
+	position: absolute;
+	z-index: 10;
+	top: 70px;
+}
+#mechBay div div a{
+	color: #900;
+	text-decoration: none;
+	position: absolute;
+	right: 3px;
+}
+#itemList {
+	overflow: auto;
+	width: 155px;
+	position: absolute;
+	height: 700px;
+	right: 0px;
+	top: 70px;
+	border: 1px solid #e5e5e5;
+	padding: 3px;
+	z-index: 50;
+}
+
+#itemList div {
+    display:block;
+    padding-left:10px;
+    font-size:12px;
+    z-index:99;
+    position:relative;
+    background: none repeat scroll 0 0 #ABACB0;
+    border: 1px solid #303C48;
+    margin-bottom: 3px;
+    width: 113px;
+
+}
+
+.area {
+    width: 125px;
+    height: 250px;
+    border:2px solid #303C48;
+    background: #718BA2;
+    padding: 1px;
+}
+
+.area div {
+    background-color: #ABACB0;
+    border: 1px solid #303C48;
+    display: block;
+    font-size: 11px;
+    margin-bottom: 1px;
+    padding-left: 10px;
+    position: relative;
+    width: 113px;
+    z-index: 99;
+}
+
+.descriptor {
+    font-family: 'battletech_oldstyle', Arial, sans-serif;
+    background-color: #C2C3C5 !important;
+	width: 125px;
+}
+
+.descriptor > p {
+    font-family: 'Aldrich',sans-serif;
+    text-transform: uppercase;
+    margin-top: 5px;
+}
+
+div.slider {
+	width: 92px !important;
+	margin-top: 6px;
+    margin-bottom: 8px;
+}
+
+.invalid {
+    border: 3px double #FF0000;
+}
+
+.valid {
+    border: 3px double #00FF00;
+}
+
+
+div.energy {
+    background-image: url("images/bgEnergy.png") !important;
+    background-repeat: no-repeat !important;
+    position: relative;
+}
+div.missile {
+    background-image: url("images/bgMissile.png") !important;
+    background-repeat: no-repeat !important;
+    position: relative;
+}
+div.ballistic {
+    background-image: url("images/bgBallistic.png") !important;
+    background-repeat: no-repeat !important;
+    position: relative;
+}
+
+
+#head {
+    position:absolute;
+    top:0px;
+    left:360px;
+}
+#zheadDescription {
+	position: absolute;
+	top: 0px;
+	right: 200px;
+}
+#XheadArmorSlider {
+	position: absolute;
+	top: 25px;
+	right: 200px;
+}
+#leftTorso {
+    position:absolute;
+    top:115px;
+    left:200px;
+}
+#zleftTorsoDescription {
+	position: absolute;
+	left: 50px;
+	top: 65px;
+}
+#XleftTorsoArmorSlider {
+	position: absolute;
+	left: 50px;
+	top: 90px;
+}
+#rightTorso {
+	position: absolute;
+	top: 115px;
+	right: 200px;
+}
+#zrightTorsoDescription {
+	position: absolute;
+	right: 50px;
+	top: 65px;
+}
+#XrightTorsoArmorSlider {
+	position: absolute;
+	right: 50px;
+	top: 90px;
+}
+#leftArm {
+    position:absolute;
+    top:200px;
+    left:0px;
+}
+#zleftArmDescription {
+	position: absolute;
+	left: 0px;
+	top: 460px;
+}
+#XleftArmArmorSlider {
+	position: absolute;
+	left: 0px;
+	top: 485px;
+}
+#rightArm {
+    position:absolute;
+    top:200px;
+    right:0px;
+}
+#zrightArmDescription {
+	position: absolute;
+	top: 460px;
+	right: 0px;
+}
+#XrightArmArmorSlider {
+	position: absolute;
+	top: 485px;
+	right: 0px;
+}
+#centerTorso {
+    position:absolute;
+    top:260px;
+    left:360px;
+}
+#zcenterTorsoDescription {
+	position: absolute;
+	top: 520px;
+	right: 0px;
+	left: 360px;
+}
+#XcenterTorsoArmorSlider {
+	position: absolute;
+	top: 545px;
+	right: 0px;
+	left: 360px;
+}
+#leftLeg {
+    position:absolute;
+    top:400px;
+    left:200px;
+}
+#zleftLegDescription {
+	position: absolute;
+	top: 660px;
+	right: 0px;
+	left: 200px;
+}
+#XleftLegArmorSlider {
+	position: absolute;
+	top: 685px;
+	right: 0px;
+	left: 200px;
+}
+#rightLeg {
+    position:absolute;
+    top:400px;
+    right:200px;
+}
+#zrightLegDescription {
+	position: absolute;
+	top: 660px;
+	right: 200px;
+}
+#XrightLegArmorSlider {
+	position: absolute;
+	top: 685px;
+	right: 200px;
+}
+/*
+Weight Chart CSS
+*/
+
+#weightChart {
+    height: 20px;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    width: 400px;
+}
+
+.bullet {
+    font: 10px 'Aldrich', sans-serif;
+    stroke: #ffffff;
+}
+.bullet .marker {
+    stroke: #000000;
+    stroke-width: 2px;
+}
+.bullet .tick line {
+    stroke: #666666;
+    stroke-width: 0.5px;
+}
+.bullet .range.s0 {
+    fill: #EEEEEE;
+}
+.bullet .range.s1 {
+    fill: #DDDDDD;
+}
+.bullet .measure.s0 {
+    fill: steelblue;
+}
+.bullet .title {
+    font-size: 14px;
+    font-weight: bold;
+}
+.bullet .subtitle {
+    fill: #999999;
+}
