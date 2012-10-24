@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <title>MWOOSK v.01a</title>
@@ -8,7 +8,7 @@
     <script src="http://code.jquery.com/jquery-1.8.2.js" type="text/javascript"></script>
     <script src="http://code.jquery.com/ui/1.9.0/jquery-ui.js" type="text/javascript"></script>
     <script src="http://d3js.org/d3.v2.js" type="text/javascript"></script>
-    <script src="weightchart.js" type="text/javascript"></script>
+    <script src="js/weightchart.js" type="text/javascript"></script>
 
     <link href="http://code.jquery.com/ui/1.9.0/themes/base/jquery-ui.css" rel="stylesheet" media="screen" />
     <link href="font/stylesheet.css" rel="stylesheet" media="screen" />
@@ -19,7 +19,7 @@
         $(function () {
 
             // Generate the pull downs
-            $.get('mechs.xml', function (xml) {
+            $.get('data/mechs.xml', function (xml) {
                 $(xml).find("class").each(function () {
                     $("#mechClass").append($("<option></option>").attr("value",$(this).attr("type")).text($(this).attr("type")));
                 });
@@ -57,7 +57,7 @@
                 currentVariant = {};
 				currentVariant.limbs = {};
                 currentVariant.name = selectedVariant;
-                $.get('mechs.xml', function (xml) {
+                $.get('data/mechs.xml', function (xml) {
                     $(xml).find('mech[type="' + selectedMech + '"]').each(function () {
                         currentVariant.maxWeight = Number($(this).attr("tonnage"));
                         currentVariant.currentWeight = currentVariant.chassisWeight = Number($(this).attr("chassis"));
