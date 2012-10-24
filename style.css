@@ -271,6 +271,7 @@ Weight Chart CSS
 
 .bullet {
     font: 10px 'Aldrich', sans-serif;
+    color: #ffffff;
     stroke: #ffffff;
 }
 .bullet .marker {

@@ -29,7 +29,7 @@
             $("#mechClass").on("change", function (event) {
                 var selectedClass = $("#mechClass").val();
                 $("#mechName").empty().append($("<option></option>").attr("value", "0").text("Select mech name..."));
-                $.get('mechs.xml', function (xml) {
+                $.get('data/mechs.xml', function (xml) {
                     $(xml).find('class[type="' + selectedClass + '"] > mech').each(function () {
                         $("#mechName").append($("<option></option>").attr("value", $(this).attr("type")).text($(this).attr("type")));
                     });
@@ -40,7 +40,7 @@
             $("#mechName").on("change", function (event) {
                 var selectedClass = $("#mechClass").val();
                 $("#mechVariant").empty().append($("<option></option>").attr("value", "0").text("Select mech variant..."));
-                $.get('mechs.xml', function (xml) {
+                $.get('data/mechs.xml', function (xml) {
                     $(xml).find('class[type="' + selectedClass + '"] > mech > variant').each(function () {
                         $("#mechVariant").append($("<option></option>").attr("value", $(this).attr("name")).text($(this).attr("name")));
                     });
@@ -97,7 +97,7 @@
             });
 
 	        // Generate the item list
-            $.get('items.xml', function (xml) {
+            $.get('data/items.xml', function (xml) {
                 $(xml).find("weapons > item").each(function () {
                     $("#itemList").append($("<div></div>")
                             .attr("class", $(this).attr("type"))
