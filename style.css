@@ -46,10 +46,10 @@ light grey: #C2C3C5
 }
 #itemList {
 	overflow: auto;
-	width: 155px;
+	width: 125px;
 	position: absolute;
 	height: 700px;
-	right: 0px;
+	right: 5px;
 	top: 70px;
 	border: 1px solid #e5e5e5;
 	padding: 3px;
@@ -70,7 +70,7 @@ light grey: #C2C3C5
 }
 
 .area {
-    width: 125px;
+    width: 124px;
     height: 250px;
     border:2px solid #303C48;
     background: #718BA2;
@@ -136,12 +136,7 @@ div.ballistic {
 #head {
     position:absolute;
     top:0px;
-    left:360px;
-}
-#zheadDescription {
-	position: absolute;
-	top: 0px;
-	right: 200px;
+    left:290px;
 }
 #XheadArmorSlider {
 	position: absolute;
@@ -151,12 +146,7 @@ div.ballistic {
 #leftTorso {
     position:absolute;
     top:115px;
-    left:200px;
-}
-#zleftTorsoDescription {
-	position: absolute;
-	left: 50px;
-	top: 65px;
+    left:145px;
 }
 #XleftTorsoArmorSlider {
 	position: absolute;
@@ -166,12 +156,7 @@ div.ballistic {
 #rightTorso {
 	position: absolute;
 	top: 115px;
-	right: 200px;
-}
-#zrightTorsoDescription {
-	position: absolute;
-	right: 50px;
-	top: 65px;
+	left: 435px;
 }
 #XrightTorsoArmorSlider {
 	position: absolute;
@@ -183,11 +168,6 @@ div.ballistic {
     top:200px;
     left:0px;
 }
-#zleftArmDescription {
-	position: absolute;
-	left: 0px;
-	top: 460px;
-}
 #XleftArmArmorSlider {
 	position: absolute;
 	left: 0px;
@@ -196,12 +176,7 @@ div.ballistic {
 #rightArm {
     position:absolute;
     top:200px;
-    right:0px;
-}
-#zrightArmDescription {
-	position: absolute;
-	top: 460px;
-	right: 0px;
+    left:580px;
 }
 #XrightArmArmorSlider {
 	position: absolute;
@@ -210,14 +185,8 @@ div.ballistic {
 }
 #centerTorso {
     position:absolute;
-    top:260px;
-    left:360px;
-}
-#zcenterTorsoDescription {
-	position: absolute;
-	top: 520px;
-	right: 0px;
-	left: 360px;
+    top:270px;
+    left:290px;
 }
 #XcenterTorsoArmorSlider {
 	position: absolute;
@@ -227,14 +196,8 @@ div.ballistic {
 }
 #leftLeg {
     position:absolute;
-    top:400px;
-    left:200px;
-}
-#zleftLegDescription {
-	position: absolute;
-	top: 660px;
-	right: 0px;
-	left: 200px;
+    top:385px;
+    left:145px;
 }
 #XleftLegArmorSlider {
 	position: absolute;
@@ -244,13 +207,8 @@ div.ballistic {
 }
 #rightLeg {
     position:absolute;
-    top:400px;
-    right:200px;
-}
-#zrightLegDescription {
-	position: absolute;
-	top: 660px;
-	right: 200px;
+    top:385px;
+    left:435px;
 }
 #XrightLegArmorSlider {
 	position: absolute;
@@ -271,8 +229,8 @@ Weight Chart CSS
 
 .bullet {
     font: 10px 'Aldrich', sans-serif;
-    color: #ffffff;
-    stroke: #ffffff;
+    fill: #999999;
+    stroke: #999999;
 }
 .bullet .marker {
     stroke: #000000;
@@ -282,19 +240,27 @@ Weight Chart CSS
     stroke: #666666;
     stroke-width: 0.5px;
 }
+
+/* background of graph */
 .bullet .range.s0 {
-    fill: #EEEEEE;
+    fill: #C2C3C5;
 }
+/* background of chassis weight marker */
 .bullet .range.s1 {
-    fill: #DDDDDD;
+    fill: #ABACB0;
 }
+/* background of actual weight bar */
 .bullet .measure.s0 {
-    fill: steelblue;
+    fill: #718BA2;
+    stroke: #303C48;
 }
 .bullet .title {
     font-size: 14px;
-    font-weight: bold;
+    font-weight: normal;
+    fill: #ffffff;
+    stroke: #ffffff;
 }
 .bullet .subtitle {
     fill: #999999;
+    stroke: #999999;
 }
