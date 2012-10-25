@@ -46,9 +46,9 @@ light grey: #C2C3C5
 }
 #itemList {
 	overflow: auto;
-	width: 125px;
+	width: 150px;
 	position: absolute;
-	height: 700px;
+	bottom: 230px;
 	right: 5px;
 	top: 70px;
 	border: 1px solid #e5e5e5;
@@ -262,4 +262,27 @@ Weight Chart CSS
 .bullet .subtitle {
     fill: #999999;
     stroke: #999999;
+}
+
+/*
+Rose Chart CSS
+*/
+
+#roseChart {
+    height: 220px;
+    position: absolute;
+    right: 5px;
+    bottom: 5px;
+    width: 220px;
+}
+
+.labels {
+    font: 10px 'Aldrich', sans-serif;
+    fill: #fff;
+    stroke: #fff;
+}
+.caption {
+    font: 14px 'Aldrich', sans-serif;
+    fill: #fff;
+    stroke: #fff;
 }

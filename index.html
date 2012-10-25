@@ -9,6 +9,7 @@
     <script src="http://code.jquery.com/ui/1.9.0/jquery-ui.js" type="text/javascript"></script>
     <script src="http://d3js.org/d3.v2.js" type="text/javascript"></script>
     <script src="js/weightchart.js" type="text/javascript"></script>
+    <script src="js/rosegraph.js"></script>
 
     <link href="http://code.jquery.com/ui/1.9.0/themes/base/jquery-ui.css" rel="stylesheet" media="screen" />
     <link href="font/stylesheet.css" rel="stylesheet" media="screen" />
@@ -87,6 +88,7 @@
 				$("#mechBay").fadeIn('fast', function() {
 					$("#itemList").fadeIn('fast');
                     createChart("#weightChart", currentVariant.maxWeight, currentVariant.chassisWeight, currentVariant.currentWeight);
+                    createRoseGraph("#roseChart", "-N/A-");
 					$( ".slider" ).slider({
 	            		value:1,
 		    	        min: 0,
@@ -103,6 +105,39 @@
                             .attr("class", "item " + $(this).attr("type"))
                             .attr("alt", $(this).attr("type"))
                             .attr("title", $(this).attr("tons"))
+                            // store all the weapon information in this div
+                            .data({
+                                type:$(this).attr("type"),
+                                damage:$(this).attr("damage"),
+                                heat:$(this).attr("heat"),
+                                cooldown:$(this).attr("cooldown"),
+                                range:$(this).attr("range"),
+                                maxrange:$(this).attr("maxrange"),
+                                slots:$(this).attr("slots"),
+                                tons:$(this).attr("tons"),
+                                dpsmax:$(this).attr("dpsmax"),
+                                ammoper:$(this).attr("ammoper"),
+                                hps:$(this).attr("hps"),
+                                ehs:$(this).attr("ehs"),
+                                name:$(this).text(),
+                                rosechartdata:[
+                                    { name:"Damage",   value:$(this).attr("damage")},
+                                    { name:"Heat",     value:$(this).attr("heat")},
+                                    { name:"Weight",   value:$(this).attr("tons")},
+                                    { name:"Cooldown", value:$(this).attr("cooldown")},
+                                    { name:"Slots",    value:$(this).attr("slots")},
+                                    { name:"DPS",      value:$(this).attr("dpsmax")},
+                                    //{ name:"Ammo/Ton", value:$(this).attr("ammoper")?$(this).attr("ammoper"):0},
+                                    { name:"Range",    value:$(this).attr("maxrange")}
+                                ]
+                            })
+                            .hover(
+                                function(){
+                                    updateRoseChartData($(this).data("rosechartdata"), $(this).data("name"));
+                                },
+                                function(){
+                                    resetRoseChartData("-N/A-");
+                                })
                             .text($(this).text()));
                 });
                 $("#itemList div").draggable({
@@ -231,4 +266,6 @@
     </div>
     <div id ="itemList" style="display:none">
     </div>
+    <div id="roseChart" style="width:220px;height:220px"></div>
+</body>
 </html>
