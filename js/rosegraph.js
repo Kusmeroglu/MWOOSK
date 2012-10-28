@@ -61,7 +61,7 @@ function createRoseGraph(container, captiontext) {
     var w = VISWIDTH*2,
         h = VISWIDTH*2,
         r = Math.min(w, h) / 2, // center; probably broken if not square
-        p = 20, // padding on outside of major elements
+        p = 22, // padding on outside of major elements
         ip = INNERRADIUS; // padding on inner circle
 
 
@@ -197,7 +197,13 @@ function createRoseGraph(container, captiontext) {
         .attr("dy", "-4px")
         .attr("text-anchor","middle")
         .attr("transform", function (d, i) {
-            return "translate(" + r + "," + (p - 5) + ") rotate(" + (ANGLULARWIDTHOFSECTION) * i + ",0," + (r - (p - 5)) + ")"
+            //var txstring = ""
+            //txstring += "translate(" + r + "," + (p - 7) + ") ";
+            //if ( (ANGLULARWIDTHOFSECTION) * i > 100 && (ANGLULARWIDTHOFSECTION) * i < 260 ){
+            //    txstring = " rotate(180, " + r + "," + (p - 7) + ") ";
+            //}
+            //txstring += " rotate(" + (ANGLULARWIDTHOFSECTION) * i + ",0," + (r - (p - 7)) + ")"
+            return "translate(" + r + "," + (p - 7) + ") rotate(" + (ANGLULARWIDTHOFSECTION) * i + ",0," + (r - (p - 7)) + ")";
         })
         .text(function (d) {
             return d.name;

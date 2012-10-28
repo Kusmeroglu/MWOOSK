@@ -277,12 +277,13 @@ Rose Chart CSS
 }
 
 .labels {
-    font: 10px 'Aldrich', sans-serif;
+    font: 12px 'Aldrich', sans-serif;
     fill: #ccc;
+    transform: rotate(45deg);
     stroke: #ccc;
 }
 .values {
-    font: 10px 'Aldrich', sans-serif;
+    font: 12px 'Aldrich', sans-serif;
     fill: #fff;
     stroke: #fff;
 }
