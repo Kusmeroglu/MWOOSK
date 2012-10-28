@@ -2,14 +2,17 @@
 <html>
 <head>
     <title>Weapon Graphs</title>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
     <script src="http://d3js.org/d3.v2.js"></script>
     <script src="http://code.jquery.com/jquery-1.8.2.js" type="text/javascript"></script>
-    <script src="d3.parcoords.js"></script>
-    <script src="rosegraph.js"></script>
+    <script src="js/d3.parcoords.js"></script>
+    <script src="js/rosegraph.js"></script>
     <link rel="stylesheet" type="text/css" href="d3.parcoords.css">
     <script>
         //load weapon xml
-        d3.xml('items.xml', xmlLoaded);
+        d3.xml('data/items.xml', xmlLoaded);
 
         function xmlLoaded(xml){
             var data = $(xml).find("weapons > item").map(function(index, item){
@@ -33,32 +36,36 @@
 
             var pc = d3.parcoords()("#chart")
                     .data(data)
-                    .color(function(d) { return blue_to_brown(d['damage']); })
+                    .color(function(d) {
+                        return blue_to_brown(d['damage']?d['damage']:0);
+                    })
                     .brushable()
                     .render()
                     .createAxes();
-/*
- .on("highlight", function(data){
- var a = data;
- })
 
 
-            d3.select("#chart")
-                .data(
-                .enter()
-                .append("div")
-                .style("background-color", "#aaaaaa")
-                .style("width", function(d) {
-                        return d[0] * 10 + "px"; })
-                .text(function(d) {
-                        return d[1];
-                    });
-*/
+                /*
+                 .on("highlight", function(data){
+                 var a = data;
+                 })
+
+
+                            d3.select("#chart")
+                                .data(
+                                .enter()
+                                .append("div")
+                                .style("background-color", "#aaaaaa")
+                                .style("width", function(d) {
+                                        return d[0] * 10 + "px"; })
+                                .text(function(d) {
+                                        return d[1];
+                                    });
+                */
         }
 
     </script>
 </head>
-<body>
+<body onload="createRoseGraph('#roseChart', 'Hello World');">
     <div id="chart" class="parcoords" style="width:500px;height:300px">
 
     </div>

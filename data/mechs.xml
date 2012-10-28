@@ -6,66 +6,132 @@
         <limbs>
           <limb name ="leftArm" ams="yes">
             <hardpoint type ="energy"></hardpoint>
+            <critical>8</critical>
+            <armor type ="leftArm">68</armor>
+            <armor type ="leftArmMax">68</armor>
           </limb>
           <limb name ="leftTorso" ams="no">
             <hardpoint type ="missile"></hardpoint>
             <hardpoint type ="missile"></hardpoint>
+            <critical>12</critical>
+            <armor type ="leftTorsoFront">64</armor>
+            <armor type ="leftTorsoRear">20</armor>
+            <armor type ="leftTorsoMax">84</armor>
           </limb>
           <limb name ="centerTorso" ams="no">
             <hardpoint type ="energy"></hardpoint>
             <hardpoint type ="energy"></hardpoint>
+            <critical>2</critical>
+            <armor type ="centerTorsoFront">94</armor>
+            <armor type ="centerTorsoRear">28</armor>
+            <armor type ="centerTorsoMax">124</armor>
           </limb>
           <limb name ="rightTorso" ams="no">
             <hardpoint type ="ballistic"></hardpoint>
             <hardpoint type ="ballistic"></hardpoint>
+            <critical>12</critical>
+            <armor type ="rightTorsoFront">64</armor>
+            <armor type ="rightTorsoRear">20</armor>
+            <armor type ="rightTorsoMax">84</armor>
           </limb>
           <limb name ="rightArm" ams="no">
             <hardpoint type ="energy"></hardpoint>
+            <critical>8</critical>
+            <armor type ="rightArm">68</armor>
+            <armor type ="rightArmMax">68</armor>
           </limb>
           <limb name ="head" ams="no"></limb>
+          <critical>1</critical>
+          <armor type ="head">18</armor>
+          <armor type ="headMax">18</armor>
         </limbs>
       </variant>
       <variant name ="AS7-D-DC" founders="no" jets="no">
         <limbs>
           <limb name ="leftArm" ams="yes">
             <hardpoint type ="energy"></hardpoint>
+            <critical>8</critical>
+            <armor type ="leftArm">68</armor>
+            <armor type ="leftArmMax">68</armor>
           </limb>
           <limb name ="leftTorso" ams="no">
             <hardpoint type ="missile"></hardpoint>
             <hardpoint type ="missile"></hardpoint>
             <hardpoint type ="missile"></hardpoint>
+            <critical>12</critical>
+            <armor type ="leftTorsoFront">64</armor>
+            <armor type ="leftTorsoRear">20</armor>
+            <armor type ="leftTorsoMax">84</armor>
           </limb>
-          <limb name ="centerTorso" ams="no"></limb>
+          <limb name ="centerTorso" ams="no">
+            <critical>2</critical>
+            <armor type ="centerTorsoFront">94</armor>
+            <armor type ="centerTorsoRear">28</armor>
+            <armor type ="centerTorsoMax">124</armor>
+          </limb>
           <limb name ="rightTorso" ams="no">
             <hardpoint type ="ballistic"></hardpoint>
             <hardpoint type ="ballistic"></hardpoint>
+            <critical>12</critical>
+            <armor type ="rightTorsoFront">64</armor>
+            <armor type ="rightTorsoRear">20</armor>
+            <armor type ="rightTorsoMax">84</armor>
           </limb>
           <limb name ="rightArm" ams="no">
             <hardpoint type ="energy"></hardpoint>
+            <critical>8</critical>
+            <armor type ="rightArm">68</armor>
+            <armor type ="rightArmMax">68</armor>
           </limb>
-          <limb name ="head" ams="no"></limb>
+          <limb name ="head" ams="no">
+           <critical>1</critical>
+           <armor type ="head">18</armor>
+           <armor type ="headMax">18</armor>
+          </limb>
         </limbs>
       </variant>
       <variant name ="AS7-K" founders="no" jets="no">
         <limbs>
           <limb name ="leftArm" ams="yes">
             <hardpoint type ="energy"></hardpoint>
+            <critical>8</critical>
+            <armor type ="leftArm">68</armor>
+            <armor type ="leftArmMax">68</armor>
           </limb>
           <limb name ="leftTorso" ams="no">
             <hardpoint type ="missile"></hardpoint>
+            <critical>12</critical>
+            <armor type ="leftTorsoFront">64</armor>
+            <armor type ="leftTorsoRear">20</armor>
+            <armor type ="leftTorsoMax">84</armor>
           </limb>
           <limb name ="centerTorso" ams="no">
             <hardpoint type ="energy"></hardpoint>
             <hardpoint type ="energy"></hardpoint>
+            <critical>2</critical>
+            <armor type ="centerTorsoFront">94</armor>
+            <armor type ="centerTorsoRear">28</armor>
+            <armor type ="centerTorsoMax">124</armor>
           </limb>
           <limb name ="rightTorso" ams="no">
             <hardpoint type ="ballistic"></hardpoint>
             <hardpoint type ="ballistic"></hardpoint>
+            <critical>12</critical>
+            <armor type ="rightTorsoFront">64</armor>
+            <armor type ="rightTorsoRear">20</armor>
+            <armor type ="rightTorsoMax">84</armor>
           </limb>
           <limb name ="rightArm" ams="yes">
             <hardpoint type ="energy"></hardpoint>
+            <critical>8</critical>
+            <armor type ="rightArm">68</armor>
+            <armor type ="rightArmMax">68</armor>
           </limb>
-          <limb name ="head" ams="no"></limb>
+          <limb name ="head" ams="no">
+           <critical>1</critical>
+           <armor type ="head">18</armor>
+           <armor type ="headMax">18</armor>
+          </limb>
         </limbs>
       </variant>
       <variant name ="AS7-RS" founders="no" jets="no">
@@ -73,20 +139,43 @@
           <limb name ="leftArm" ams="yes">
             <hardpoint type ="energy"></hardpoint>
             <hardpoint type ="energy"></hardpoint>
+            <critical>8</critical>
+            <armor type ="leftArm">68</armor>
+            <armor type ="leftArmMax">68</armor>
           </limb>
           <limb name ="leftTorso" ams="no">
             <hardpoint type ="missile"></hardpoint>
             <hardpoint type ="missile"></hardpoint>
+            <critical>12</critical>
+            <armor type ="leftTorsoFront">64</armor>
+            <armor type ="leftTorsoRear">20</armor>
+            <armor type ="leftTorsoMax">84</armor>
           </limb>
-          <limb name ="centerTorso" ams="no"></limb>
+          <limb name ="centerTorso" ams="no">
+            <critical>2</critical>
+            <armor type ="centerTorsoFront">94</armor>
+            <armor type ="centerTorsoRear">28</armor>
+            <armor type ="centerTorsoMax">124</armor>
+          </limb>
           <limb name ="rightTorso" ams="no">
             <hardpoint type ="ballistic"></hardpoint>
+            <critical>12</critical>
+            <armor type ="rightTorsoFront">64</armor>
+            <armor type ="rightTorsoRear">20</armor>
+            <armor type ="rightTorsoMax">84</armor>
           </limb>
           <limb name ="rightArm" ams="no">
             <hardpoint type ="energy"></hardpoint>
-            <hardpoint type ="energy"></hardpoint>            
+            <hardpoint type ="energy"></hardpoint>  
+            <critical>8</critical>
+            <armor type ="rightArm">68</armor>
+            <armor type ="rightArmMax">68</armor>          
           </limb>
-          <limb name ="head" ams="no"></limb>
+          <limb name ="head" ams="no">
+           <critical>1</critical>
+           <armor type ="head">18</armor>
+           <armor type ="headMax">18</armor>
+          </limb>
         </limbs>
       </variant>
     </mech>
@@ -98,39 +187,84 @@
           <limb name ="leftArm" ams="no">
             <hardpoint type ="energy"></hardpoint>
             <hardpoint type ="energy"></hardpoint>
+            <critical>9</critical>
+            <armor type ="leftArm">40</armor>
+            <armor type ="leftArmMax">40</armor>
           </limb>
           <limb name ="leftTorso" ams="no">
             <hardpoint type ="energy"></hardpoint>
             <hardpoint type ="energy"></hardpoint>
+            <critical>12</critical>
+            <armor type ="leftTorsoFront">36</armor>
+            <armor type ="leftTorsoRear">20</armor>
+            <armor type ="leftTorsoMax">56</armor>
           </limb>
           <limb name ="centerTorso" ams="no">
             <hardpoint type ="missile"></hardpoint>
+            <critical>2</critical>
+            <armor type ="centerTorsoFront">56</armor>
+            <armor type ="centerTorsoRear">24</armor>
+            <armor type ="centerTorsoMax">80</armor>
           </limb>
-          <limb name ="rightTorso" ams="yes"></limb>
+          <limb name ="rightTorso" ams="yes">
+           <critical>12</critical>
+           <armor type ="rightTorsoFront">36</armor>
+           <armor type ="rightTorsoRear">20</armor>
+           <armor type ="rightTorsoMax">56</armor>      
+           </limb>
           <limb name ="rightArm" ams="no">
             <hardpoint type ="ballistic"></hardpoint>
+            <critical>9</critical>
+            <armor type ="rightArm">40</armor>
+            <armor type ="rightArmMax">40</armor>
           </limb>
           <limb name ="head" ams="no"></limb>
+            <critical>1</critical>
+            <armor type ="head">18</armor>
+            <armor type ="headMax">18</armor>
         </limbs>
       </variant>
       <variant name ="DRG-1N" founders="no" jets="no">
         <limbs>
           <limb name ="leftArm" ams="no">
             <hardpoint type ="energy"></hardpoint>
+            <critical>9</critical>
+            <armor type ="leftArm">28</armor>
+            <armor type ="leftArmMax">40</armor>
           </limb>
           <limb name ="leftTorso" ams="no">
             <hardpoint type ="energy"></hardpoint>
+            <critical>12</critical>
+            <armor type ="leftTorsoFront">32</armor>
+            <armor type ="leftTorsoRear">16</armor>
+            <armor type ="leftTorsoMax">56</armor>
           </limb>
           <limb name ="centerTorso" ams="no">
             <hardpoint type ="missile"></hardpoint>
-            <hardpoint type ="missile"></hardpoint>            
+            <hardpoint type ="missile"></hardpoint>
+            <critical>2</critical>
+            <armor type ="centerTorsoFront">54</armor>
+            <armor type ="centerTorsoRear">24</armor>
+            <armor type ="centerTorsoMax">80</armor>            
           </limb>
-          <limb name ="rightTorso" ams="yes"></limb>
+          <limb name ="rightTorso" ams="yes">
+            <critical>12</critical>
+            <armor type ="rightTorsoFront">32</armor>
+            <armor type ="rightTorsoRear">16</armor>
+            <armor type ="rightTorsoMax">56</armor>
+          </limb>
           <limb name ="rightArm" ams="no">
             <hardpoint type ="ballistic"></hardpoint>
             <hardpoint type ="ballistic"></hardpoint>
+            <critical>9</critical>
+            <armor type ="rightArm">28</armor>
+            <armor type ="rightArmMax">40</armor>
           </limb>
-          <limb name ="head" ams="no"></limb>
+          <limb name ="head" ams="no">
+            <critical>1</critical>
+            <armor type ="head">18</armor>
+            <armor type ="headMax">18</armor>
+          </limb>
         </limbs>
       </variant>
       <variant name ="DRG-5N" founders="no" jets="no">
@@ -138,18 +272,42 @@
           <limb name ="leftArm" ams="no">
             <hardpoint type ="energy"></hardpoint>
             <hardpoint type ="energy"></hardpoint>
+            <critical>9</critical>
+            <armor type ="leftArm">28</armor>
+            <armor type ="leftArmMax">40</armor>
           </limb>
-          <limb name ="leftTorso" ams="no"></limb>
+          <limb name ="leftTorso" ams="no">
+            <critical>12</critical>
+            <armor type ="leftTorsoFront">32</armor>
+            <armor type ="leftTorsoRear">16</armor>
+            <armor type ="leftTorsoMax">56</armor>
+          </limb>
           <limb name ="centerTorso" ams="no">
             <hardpoint type ="missile"></hardpoint>
+            <critical>2</critical>
+            <armor type ="centerTorsoFront">54</armor>
+            <armor type ="centerTorsoRear">24</armor>
+            <armor type ="centerTorsoMax">80</armor>  
           </limb>
-          <limb name ="rightTorso" ams="yes"></limb>
+          <limb name ="rightTorso" ams="yes">
+            <critical>12</critical>
+            <armor type ="rightTorsoFront">32</armor>
+            <armor type ="rightTorsoRear">16</armor>
+            <armor type ="rightTorsoMax">56</armor>
+          </limb>
           <limb name ="rightArm" ams="no">
             <hardpoint type ="ballistic"></hardpoint>
             <hardpoint type ="ballistic"></hardpoint>
             <hardpoint type ="ballistic"></hardpoint>
+            <critical>9</critical>
+            <armor type ="rightArm">28</armor>
+            <armor type ="rightArmMax">40</armor>
           </limb>
-          <limb name ="head" ams="no"></limb>
+          <limb name ="head" ams="no">
+            <critical>1</critical>
+            <armor type ="head">18</armor>
+            <armor type ="headMax">18</armor>
+          </limb>
         </limbs>
       </variant>
     </mech>
