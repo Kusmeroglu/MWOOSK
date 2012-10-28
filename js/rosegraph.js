@@ -5,11 +5,12 @@ function createRoseGraph(container, captiontext) {
     var VISWIDTH = 100;
     var PADDING = 35;
 
-    var ANGLULARWIDTHOFSECTION = 360/7;
+    var ANGLULARWIDTHOFSECTION = 360/8;
     var INNERRADIUS = 20;
     var MAXLOOKUP = {
         "Damage":  40,
         "Heat":    13,
+        "HPS":     5,
         "Weight":  15,
         "Cooldown":5,
         "Slots":   10,
@@ -20,29 +21,27 @@ function createRoseGraph(container, captiontext) {
     var COLORLOOKUP = {
         "Damage": "#aa0000",
         "Heat":"#ff0000",
+        "HPS":"#aaaa00",
         "Weight":"#0000ff",
         "Cooldown":"#0000aa",
         "Slots":"#00ff00",
         "DPS":"#00aa00",
 //        "Ammo/Ton":"#00ff00",
-        "Range":"#aaaa00"
+        "Range":"#00aaaa"
     };
 
-    var SCALES = {
-        "Damage":   d3.scale.linear().domain([0, MAXLOOKUP["Damage"]]).range([INNERRADIUS, VISWIDTH - PADDING]).clamp(true),
-        "Heat":     d3.scale.linear().domain([0, MAXLOOKUP["Heat"]]).range([INNERRADIUS, VISWIDTH - PADDING]).clamp(true),
-        "Weight":   d3.scale.linear().domain([0, MAXLOOKUP["Weight"]]).range([INNERRADIUS, VISWIDTH - PADDING]).clamp(true),
-        "Cooldown": d3.scale.linear().domain([0, MAXLOOKUP["Cooldown"]]).range([INNERRADIUS, VISWIDTH - PADDING]).clamp(true),
-        "Slots":    d3.scale.linear().domain([0, MAXLOOKUP["Slots"]]).range([INNERRADIUS, VISWIDTH - PADDING]).clamp(true),
-        "DPS":      d3.scale.linear().domain([0, MAXLOOKUP["DPS"]]).range([INNERRADIUS, VISWIDTH - PADDING]).clamp(true),
-//        "Ammo/Ton": d3.scale.linear().domain([0, MAXLOOKUP["Ammo/Ton"]]).range([INNERRADIUS, VISWIDTH - PADDING]).clamp(true),
-        "Range":    d3.scale.linear().domain([0, MAXLOOKUP["Range"]]).range([INNERRADIUS, VISWIDTH - PADDING]).clamp(true)
+    var SCALES = {};
+    // build linear scales before graph generation (for efficiency)
+    for ( var key in MAXLOOKUP ){
+        SCALES[key] = d3.scale.linear().domain([0, MAXLOOKUP[key]]).range([INNERRADIUS, VISWIDTH - PADDING]).clamp(true);
     }
 
     weapons = [
         { name:"Damage",
             value:0},
         { name:"Heat",
+            value:0},
+        { name:"HPS",
             value:0},
         { name:"Weight",
             value:0},
