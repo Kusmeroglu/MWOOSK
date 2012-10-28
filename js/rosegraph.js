@@ -3,6 +3,7 @@
 function createRoseGraph(container, captiontext) {
     // Width of the whole visualization; used for centering
     var VISWIDTH = 100;
+    var PADDING = 35;
 
     var ANGLULARWIDTHOFSECTION = 360/7;
     var INNERRADIUS = 20;
@@ -28,14 +29,14 @@ function createRoseGraph(container, captiontext) {
     };
 
     var SCALES = {
-        "Damage":   d3.scale.linear().domain([0, MAXLOOKUP["Damage"]]).range([INNERRADIUS, VISWIDTH - 20]).clamp(true),
-        "Heat":     d3.scale.linear().domain([0, MAXLOOKUP["Heat"]]).range([INNERRADIUS, VISWIDTH - 20]).clamp(true),
-        "Weight":   d3.scale.linear().domain([0, MAXLOOKUP["Weight"]]).range([INNERRADIUS, VISWIDTH - 20]).clamp(true),
-        "Cooldown": d3.scale.linear().domain([0, MAXLOOKUP["Cooldown"]]).range([INNERRADIUS, VISWIDTH - 20]).clamp(true),
-        "Slots":    d3.scale.linear().domain([0, MAXLOOKUP["Slots"]]).range([INNERRADIUS, VISWIDTH - 20]).clamp(true),
-        "DPS":      d3.scale.linear().domain([0, MAXLOOKUP["DPS"]]).range([INNERRADIUS, VISWIDTH - 20]).clamp(true),
-//        "Ammo/Ton": d3.scale.linear().domain([0, MAXLOOKUP["Ammo/Ton"]]).range([INNERRADIUS, VISWIDTH - 20]).clamp(true),
-        "Range":    d3.scale.linear().domain([0, MAXLOOKUP["Range"]]).range([INNERRADIUS, VISWIDTH - 20]).clamp(true)
+        "Damage":   d3.scale.linear().domain([0, MAXLOOKUP["Damage"]]).range([INNERRADIUS, VISWIDTH - PADDING]).clamp(true),
+        "Heat":     d3.scale.linear().domain([0, MAXLOOKUP["Heat"]]).range([INNERRADIUS, VISWIDTH - PADDING]).clamp(true),
+        "Weight":   d3.scale.linear().domain([0, MAXLOOKUP["Weight"]]).range([INNERRADIUS, VISWIDTH - PADDING]).clamp(true),
+        "Cooldown": d3.scale.linear().domain([0, MAXLOOKUP["Cooldown"]]).range([INNERRADIUS, VISWIDTH - PADDING]).clamp(true),
+        "Slots":    d3.scale.linear().domain([0, MAXLOOKUP["Slots"]]).range([INNERRADIUS, VISWIDTH - PADDING]).clamp(true),
+        "DPS":      d3.scale.linear().domain([0, MAXLOOKUP["DPS"]]).range([INNERRADIUS, VISWIDTH - PADDING]).clamp(true),
+//        "Ammo/Ton": d3.scale.linear().domain([0, MAXLOOKUP["Ammo/Ton"]]).range([INNERRADIUS, VISWIDTH - PADDING]).clamp(true),
+        "Range":    d3.scale.linear().domain([0, MAXLOOKUP["Range"]]).range([INNERRADIUS, VISWIDTH - PADDING]).clamp(true)
     }
 
     weapons = [
@@ -61,7 +62,7 @@ function createRoseGraph(container, captiontext) {
     var w = VISWIDTH*2,
         h = VISWIDTH*2,
         r = Math.min(w, h) / 2, // center; probably broken if not square
-        p = 22, // padding on outside of major elements
+        p = PADDING, // padding on outside of major elements
         ip = INNERRADIUS; // padding on inner circle
 
 
@@ -182,7 +183,11 @@ function createRoseGraph(container, captiontext) {
         .attr("dy", "-4px")
         .attr("text-anchor","middle")
         .attr("transform", function (d, i) {
-            return "translate(" + r + "," + (p+5) + ") rotate(" + (ANGLULARWIDTHOFSECTION) * i + ",0," + (r - (p+5)) + ")"
+            var txstring = "translate(" + (r) + "," + (p) + ") rotate(" + (ANGLULARWIDTHOFSECTION) * i + ",0," + (r - (p)) + ")";
+            if ( (ANGLULARWIDTHOFSECTION) * i > 100 && (ANGLULARWIDTHOFSECTION) * i < 260 ){
+                txstring += " rotate(180, 0, -9)";
+            }
+            return txstring;
         })
         .text(function (d) {
             return d.value;
@@ -197,13 +202,11 @@ function createRoseGraph(container, captiontext) {
         .attr("dy", "-4px")
         .attr("text-anchor","middle")
         .attr("transform", function (d, i) {
-            //var txstring = ""
-            //txstring += "translate(" + r + "," + (p - 7) + ") ";
-            //if ( (ANGLULARWIDTHOFSECTION) * i > 100 && (ANGLULARWIDTHOFSECTION) * i < 260 ){
-            //    txstring = " rotate(180, " + r + "," + (p - 7) + ") ";
-            //}
-            //txstring += " rotate(" + (ANGLULARWIDTHOFSECTION) * i + ",0," + (r - (p - 7)) + ")"
-            return "translate(" + r + "," + (p - 7) + ") rotate(" + (ANGLULARWIDTHOFSECTION) * i + ",0," + (r - (p - 7)) + ")";
+            var txstring = "translate(" + (r) + "," + (p - 13) + ") rotate(" + (ANGLULARWIDTHOFSECTION) * i + ",0," + (r - (p - 13)) + ")";
+            if ( (ANGLULARWIDTHOFSECTION) * i > 100 && (ANGLULARWIDTHOFSECTION) * i < 260 ){
+                txstring += " rotate(180, 0, -9)";
+            }
+            return txstring;
         })
         .text(function (d) {
             return d.name;
