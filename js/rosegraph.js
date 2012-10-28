@@ -140,18 +140,18 @@ function createRoseGraph(container, captiontext) {
         // Update the arcs' title tooltip
         parent.select("g.arcs").selectAll("path").select("title")
             .text(function (d) {
-                return d.name + ": " + (d.value ? d.value:"");
+                return (d.value ? d.value:"");
             });
 
         parent.selectAll(".caption")
              .text(captiontext);
 
         // Labels: degree markers
-        parent.select(".labels")
+        parent.select(".values")
             .selectAll("text")
             .data(plotData)
             .text(function (d) {
-                return d.name + ": " + (d.value ? d.value:"");
+                return (d.value ? d.value:"");
             });
     }
 
@@ -173,7 +173,22 @@ function createRoseGraph(container, captiontext) {
      return "translate(" + r + "," + y + ") " })
      */
 
-    // Labels: degree markers
+    // Labels: values
+    vis.append("svg:g")
+        .attr("class", "values")
+        .selectAll("text")
+        .data(weapons)
+        .enter().append("svg:text")
+        .attr("dy", "-4px")
+        .attr("text-anchor","middle")
+        .attr("transform", function (d, i) {
+            return "translate(" + r + "," + (p+5) + ") rotate(" + (ANGLULARWIDTHOFSECTION) * i + ",0," + (r - (p+5)) + ")"
+        })
+        .text(function (d) {
+            return d.value;
+        });
+
+    // Labels: labels
     vis.append("svg:g")
         .attr("class", "labels")
         .selectAll("text")
@@ -182,11 +197,12 @@ function createRoseGraph(container, captiontext) {
         .attr("dy", "-4px")
         .attr("text-anchor","middle")
         .attr("transform", function (d, i) {
-            return "translate(" + r + "," + p + ") rotate(" + (ANGLULARWIDTHOFSECTION) * i + ",0," + (r - p) + ")"
+            return "translate(" + r + "," + (p - 5) + ") rotate(" + (ANGLULARWIDTHOFSECTION) * i + ",0," + (r - (p - 5)) + ")"
         })
         .text(function (d) {
-            return d.name + ": " + d.value;
+            return d.name;
         });
+
 
     drawComplexArcs(vis, weapons);
 

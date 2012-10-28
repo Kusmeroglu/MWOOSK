@@ -278,9 +278,15 @@ Rose Chart CSS
 
 .labels {
     font: 10px 'Aldrich', sans-serif;
+    fill: #ccc;
+    stroke: #ccc;
+}
+.values {
+    font: 10px 'Aldrich', sans-serif;
     fill: #fff;
     stroke: #fff;
 }
+
 .caption {
     font: 14px 'Aldrich', sans-serif;
     fill: #fff;
