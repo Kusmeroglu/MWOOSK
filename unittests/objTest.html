@@ -1,0 +1,94 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Class Unit Tests</title>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.8.2.js"></script>
+    <script type="text/javascript" src="../js/class.mech.js"></script>
+    <script type="text/javascript" src="../js/class.limb.js"></script>
+    <script type="text/javascript" src="../js/class.hardpoint.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            var mechObj;
+
+            $.get('../data/mechs.xml', function (xml) {
+                $(xml).find("class").each(function () {
+                    $("#mechClass").append($("<option></option>").attr("value", $(this).attr("type")).text($(this).attr("type")));
+                });
+            });
+
+            // make the secondary pull down go
+            $("#mechClass").on("change", function (event) {
+                var selectedClass = $("#mechClass").val();
+                $("#mechName").empty().append($("<option></option>").attr("value", "0").text("Select mech name..."));
+                $.get('../data/mechs.xml', function (xml) {
+                    $(xml).find('class[type="' + selectedClass + '"] > mech').each(function () {
+                        $("#mechName").append($("<option></option>").attr("value", $(this).attr("type")).text($(this).attr("type")));
+                    });
+                });
+            });
+
+            // make the tertiary pull down go
+            $("#mechName").on("change", function (event) {
+                var selectedClass = $("#mechClass").val();
+                $("#mechVariant").empty().append($("<option></option>").attr("value", "0").text("Select mech variant..."));
+                $.get('../data/mechs.xml', function (xml) {
+                    $(xml).find('class[type="' + selectedClass + '"] > mech > variant').each(function () {
+                        $("#mechVariant").append($("<option></option>").attr("value", $(this).attr("name")).text($(this).attr("name")));
+                    });
+                });
+            });
+
+            $("#mechVariant").on("change", function (event) {
+                mechObj = new mech();
+                mechObj.mechName = $("#mechName").val();
+                mechObj.variant = $("#mechVariant").val();
+
+                $.get('../data/mechs.xml', function (xml) {
+                    $(xml).find('mech[type="' + mechObj.mechName + '"]').each(function () {
+                        mechObj.maxTons = Number($(this).attr("tonnage"));
+                        mechObj.currentTons = mechObj.chassisWeight = parseInt(($(this).attr("chassis")));
+                    });
+
+                    $(xml).find('mech[type="' + mechObj.mechName + '"] variant[name="' + mechObj.variant + '"] > limbs > limb').each(function () {
+                        var limbObj = new limb($(this).attr("name"), $(this).attr("crits"), $(this).attr("armorFront"), $(this).attr("armorRear"), $(this).attr("maxArmor"));
+                        $(this).find('hardpoint').each(function () {
+                            var hpObj = new hardPoint($(this).attr('type'));
+                            limbObj.addHardPoint(hpObj);
+                        });
+                        mechObj.addLimb($(this).attr("name"), limbObj);
+                    });
+                });
+
+
+            });
+
+            //= new mech("testMech", "x1", 20);
+            //var testLimb = new limb("centerTorso", 12, 50, 2);
+            //var testHP1 = new hardPoint("energy");
+            //var testHP2 = new hardPoint("missile");
+            //testLimb.addHardPoint(testHP1);
+            //testLimb.addHardPoint(testHP2);
+            //var totalHardPointsInLimbObject = testLimb.getCountHardPoints();
+            //alert("Total Hard Points in limb: " + totalHardPointsInLimbObject);
+            //for (var x = 1; x <= totalHardPointsInLimbObject; x++) {
+            //    alert(testLimb.getHardPointType(x));
+            //}
+            //mechObj.addLimb("centerTorso", testLimb);
+            //alert(mechObj.limbs["centerTorso"].hardPoints[1].pointType);
+        });
+    </script>
+</head>
+<body>
+    <div id ="topbar">
+        <select id ="mechClass">
+            <option value="0">Select mech class...</option>
+        </select>
+        <select id ="mechName">
+            <option value="0">Select mech name...</option>
+        </select>
+        <select id ="mechVariant">
+            <option value="0">Select mech varient...</option>
+        </select>
+    </div>
+</body>
+</html>

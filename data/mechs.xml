@@ -4,46 +4,25 @@
     <mech type = "atlas" tonnage="100" chassis="15">
       <variant name ="AS7-D" founders="yes" jets="no">
         <limbs>
-          <limb name ="leftArm" ams="yes">
+          <limb name ="leftArm" ams="yes" crits ="8" armorFront ="68" armorRear = "-1" maxArmor = "68">
             <hardpoint type ="energy"></hardpoint>
-            <critical>8</critical>
-            <armor type ="leftArm">68</armor>
-            <armor type ="leftArmMax">68</armor>
           </limb>
-          <limb name ="leftTorso" ams="no">
+          <limb name ="leftTorso" ams="no" crits ="12" armorFront ="64" armorRear = "20" maxArmor = "84">
             <hardpoint type ="missile"></hardpoint>
             <hardpoint type ="missile"></hardpoint>
-            <critical>12</critical>
-            <armor type ="leftTorsoFront">64</armor>
-            <armor type ="leftTorsoRear">20</armor>
-            <armor type ="leftTorsoMax">84</armor>
           </limb>
-          <limb name ="centerTorso" ams="no">
+          <limb name ="centerTorso" ams="no" crits ="2" armorFront ="94" armorRear = "28" maxArmor = "124">
             <hardpoint type ="energy"></hardpoint>
             <hardpoint type ="energy"></hardpoint>
-            <critical>2</critical>
-            <armor type ="centerTorsoFront">94</armor>
-            <armor type ="centerTorsoRear">28</armor>
-            <armor type ="centerTorsoMax">124</armor>
           </limb>
-          <limb name ="rightTorso" ams="no">
+          <limb name ="rightTorso" ams="no" crits ="12" armorFront ="64" armorRear = "20" maxArmor = "84">
             <hardpoint type ="ballistic"></hardpoint>
             <hardpoint type ="ballistic"></hardpoint>
-            <critical>12</critical>
-            <armor type ="rightTorsoFront">64</armor>
-            <armor type ="rightTorsoRear">20</armor>
-            <armor type ="rightTorsoMax">84</armor>
           </limb>
-          <limb name ="rightArm" ams="no">
+          <limb name ="rightArm" ams="no" crits ="8" armorFront ="68" armroRear = "-1" maxArmor = "68">
             <hardpoint type ="energy"></hardpoint>
-            <critical>8</critical>
-            <armor type ="rightArm">68</armor>
-            <armor type ="rightArmMax">68</armor>
           </limb>
-          <limb name ="head" ams="no"></limb>
-          <critical>1</critical>
-          <armor type ="head">18</armor>
-          <armor type ="headMax">18</armor>
+          <limb name ="head" ams="no" crits ="1" armorFront ="18" armroRear = "-1" maxArmor = "18"></limb>
         </limbs>
       </variant>
       <variant name ="AS7-D-DC" founders="no" jets="no">
