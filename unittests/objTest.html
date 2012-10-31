@@ -6,6 +6,7 @@
     <script type="text/javascript" src="../js/class.mech.js"></script>
     <script type="text/javascript" src="../js/class.limb.js"></script>
     <script type="text/javascript" src="../js/class.hardpoint.js"></script>
+    <script type="text/javascript" src="../js/class.item.js"></script>
     <script type="text/javascript">
         $(function () {
             var mechObj;
@@ -57,6 +58,11 @@
                         });
                         mechObj.addLimb($(this).attr("name"), limbObj);
                     });
+                    var itemObj = new item("testItem", 1, 1);
+                    //mechObj.limbs.limbName["centerTorso"].addItem(itemObj);
+
+                    alert(mechObj.limbs["centerTorso"].length);
+
                 });
 
 
