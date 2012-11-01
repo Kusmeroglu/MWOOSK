@@ -5,6 +5,7 @@
     this.dhs = false;
     this.endo = false;
     this.ferro = false;
+    this.chassisTons = 0;
     this.currentTons = 0;
     this.limbs = new Array();
 

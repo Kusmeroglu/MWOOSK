@@ -22,9 +22,9 @@
           <limb name ="rightArm" ams ="no" crits ="8" armorFront ="68" armorRear ="-1" maxArmor ="68">
             <hardpoint type ="energy"></hardpoint>
           </limb>
-          <limb name =”leftLeg” ams =”no” crits =”2” armorFront=”82” armorRear =”-1” maxArmor =”84”>
+          <limb name ="leftLeg" ams ="no" crits ="2" armorFront="82" armorRear ="-1" maxArmor ="84">
           </limb>
-          <limb name =”rightLeg” ams =”no” crits =”2” armorFront=”82” armorRear =”-1” maxArmor =”84”>
+          <limb name ="rightLeg" ams ="no" crits ="2" armorFront="82" armorRear ="-1" maxArmor ="84">
           </limb>
           <limb name ="head" ams ="no" crits ="1" armorFront ="18" armorRear ="-1" maxArmor ="18">
           </limb>
@@ -49,9 +49,9 @@
           <limb name ="rightArm" ams ="no" crits ="8" armorFront ="68" armorRear ="-1" maxArmor ="68">
             <hardpoint type ="energy"></hardpoint>
           </limb>
-          <limb name =”leftLeg” ams =”no” crits =”2” armorFront =”82” armorRear =”-1” maxArmor =”84”>
+          <limb name ="leftLeg" ams ="no" crits ="2" armorFront ="82" armorRear ="-1" maxArmor ="84">
           </limb>
-          <limb name =”rightLeg” ams =”no” crits =”2” armorFront =”82” armorRear =”-1” maxArmor =”84”>
+          <limb name ="rightLeg" ams ="no" crits ="2" armorFront ="82" armorRear ="-1" maxArmor ="84">
           </limb>
           <limb name ="head" ams ="no" crits ="1" armorFront ="18" armorRear ="-1" maxArmor ="18">
           </limb>
@@ -76,9 +76,9 @@
           <limb name ="rightArm" ams= "yes" crits ="8" armorFront ="68" armorRear ="-1" maxArmor ="68">
             <hardpoint type ="energy"></hardpoint>
           </limb>
-          <limb name =”leftLeg” ams=”no” crits =”2” armorFront =”82” armorRear =”-1” maxArmor =”84”>
+          <limb name ="leftLeg" ams="no" crits ="2" armorFront ="82" armorRear ="-1" maxArmor ="84">
           </limb>
-          <limb name =”rightLeg” ams=”no” crits =”2” armorFront=”82” armorRear =”-1” maxArmor =”84”>
+          <limb name ="rightLeg" ams="no" crits ="2" armorFront="82" armorRear ="-1" maxArmor ="84">
           </limb>
           <limb name ="head" ams="no" crits ="1" armorFront ="18" armorRear = "-1" maxArmor ="18">
           </limb>
@@ -103,9 +103,9 @@
             <hardpoint type ="energy"></hardpoint>
             <hardpoint type ="energy"></hardpoint>
           </limb>
-          <limb name =”leftLeg” ams=”no” crits =”2” armorFront=”82” armorRear =”-1” maxArmor =”84”>
+          <limb name ="leftLeg" ams="no" crits ="2" armorFront="82" armorRear ="-1" maxArmor ="84">
           </limb>
-          <limb name =”rightLeg” ams=”no” crits =”2” armorFront=”82” armorRear =”-1” maxArmor =”84”>
+          <limb name ="rightLeg" ams="no" crits ="2" armorFront="82" armorRear ="-1" maxArmor ="84">
           </limb>
           <limb name ="head" ams="no" crits ="1" armorFront ="18" armorRear ="-1" maxArmor ="18">
           </limb>
@@ -133,9 +133,9 @@
           <limb name ="rightArm" ams ="no" crits ="9" armorFront ="40" armorRear ="-1" maxArmor ="40">
             <hardpoint type ="ballistic"></hardpoint>
           </limb>
-          <limb name =”leftLeg” ams =”no” crits =”2” armorFront =”56” armorRear =”-1” maxArmor =”56”>
+          <limb name ="leftLeg" ams ="no" crits ="2" armorFront ="56" armorRear ="-1" maxArmor ="56">
           </limb>
-          <limb name =”rightLeg” ams =”no” crits =”2” armorFront =”56” armorRear =”-1” maxArmor =”56”>
+          <limb name ="rightLeg" ams ="no" crits ="2" armorFront ="56" armorRear ="-1" maxArmor ="56">
           </limb>
           <limb name ="head" ams ="no" crits ="1" armorFront ="18" armorRear ="-1" maxArmor ="18">
           </limb>
@@ -159,9 +159,9 @@
             <hardpoint type ="ballistic"></hardpoint>
             <hardpoint type ="ballistic"></hardpoint>
           </limb>
-          <limb name =”leftLeg” ams =”no” crits =”2” armorFront=”36” armorRear =”-1” maxArmor =”56”>
+          <limb name ="leftLeg" ams ="no" crits ="2" armorFront="36" armorRear ="-1" maxArmor ="56">
           </limb>
-          <limb name =”rightLeg” ams =”no” crits =”2” armorFront=”36” armorRear =”-1” maxArmor =”56”>
+          <limb name ="rightLeg" ams ="no" crits ="2" armorFront="36" armorRear ="-1" maxArmor ="56">
           </limb>
           <limb name ="head" ams ="no" crits ="1" armorFront ="18" armorRear ="-1" maxArmor ="18">
           </limb>
@@ -185,9 +185,9 @@
             <hardpoint type ="ballistic"></hardpoint>
             <hardpoint type ="ballistic"></hardpoint>
           </limb>
-          <limb name =”leftLeg” ams =”no” crits =”2” armorFront=”36” armorRear =”-1” maxArmor =”56”>
+          <limb name ="leftLeg" ams ="no" crits ="2" armorFront="36" armorRear ="-1" maxArmor ="56">
           </limb>
-          <limb name =”rightLeg” ams =”no” crits =”2” armorFront=”36” armorRear =”-1” maxArmor =”56”>
+          <limb name ="rightLeg" ams ="no" crits ="2" armorFront="36" armorRear ="-1" maxArmor ="56">
           </limb>
           <limb name ="head" ams ="no" crits ="1" armorFront ="18" armorRear ="-1" maxArmor ="18">
           </limb>

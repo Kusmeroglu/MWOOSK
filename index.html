@@ -11,6 +11,12 @@
     <script src="js/weightchart.js" type="text/javascript"></script>
     <script src="js/rosegraph.js"></script>
 	<script src="js/jquery.corner.js"></script>
+    <script type="text/javascript" src="js/class.mech.js"></script>
+    <script type="text/javascript" src="js/class.limb.js"></script>
+    <script type="text/javascript" src="js/class.hardpoint.js"></script>
+    <script type="text/javascript" src="js/class.item.js"></script>
+
+
 
     <link href="http://code.jquery.com/ui/1.9.0/themes/base/jquery-ui.css" rel="stylesheet" media="screen" />
     <link href="font/stylesheet.css" rel="stylesheet" media="screen" />
@@ -18,7 +24,10 @@
     <link href="style.css" rel="stylesheet" media="screen" />
 
     <script type="text/javascript">
+        var mechObj;
+        var itemObj;
         $(function () {
+
 
             // Generate the pull downs
             $.get('data/mechs.xml', function (xml) {
@@ -53,42 +62,25 @@
             // save variant info off
             var currentVariant = {};
 
-            $("#mechVariant").on("change", function (event){
-                var selectedVariant = $("#mechVariant").val();
-                var selectedMech = $("#mechName").val();
-                currentVariant = {};
-				currentVariant.limbs = {};
-                currentVariant.name = selectedVariant;
+            $("#mechVariant").on("change", function (event) {
                 $.get('data/mechs.xml', function (xml) {
-                    $(xml).find('mech[type="' + selectedMech + '"]').each(function () {
-                        currentVariant.maxWeight = Number($(this).attr("tonnage"));
-                        currentVariant.currentWeight = currentVariant.chassisWeight = Number($(this).attr("chassis"));
+                    $(xml).find('mech[type="' + $("#mechName").val() + '"]').each(function () {
+                        mechObj = new mech($("#mechName").val(), $("#mechVariant").val(), parseFloat($(this).attr("tonnage")));
+                        mechObj.currentTons = mechObj.chassisTons = parseFloat($(this).attr("chassis"));
                     });
-                    $(xml).find('variant[name="' + selectedVariant + '"] > limbs > limb').each(function () {
-                        var limbname = $(this).attr("name");
-                        currentVariant.limbs[limbname] = {};
+                    $(xml).find('mech[type="' + mechObj.mechName + '"] variant[name="' + mechObj.variant + '"] > limbs > limb').each(function () {
+                        var limbObj = new limb($(this).attr("name"), $(this).attr("crits"), $(this).attr("armorFront"), $(this).attr("armorRear"), $(this).attr("maxArmor"));
                         $(this).find('hardpoint').each(function(){
-                            var type = $(this).attr('type');
-                            if ( currentVariant.limbs[limbname][type] ){
-                                currentVariant.limbs[limbname][type] += 1;
-                            } else {
-                                currentVariant.limbs[limbname][type] = 1;
-                            }
+                            var hardPointObj = new hardPoint($(this).attr('type'));
+                            limbObj.addHardPoint(hardPointObj);
                         });
+                        mechObj.addLimb($(this).attr("name"), limbObj);
                     });
-					$.each(currentVariant.limbs, function(index, value) { 
-						var currentPiece = index;
-						var hardpoints = value;
-						$.each(hardpoints, function(i2, v2) {
-							$("#" + currentPiece + "Description").append("<p>" + i2 + ": " + v2 + "</p>");
-						});
-						$("#" + currentPiece + "Description").append('<div class = "slider" id = "' + currentPiece + 'ArmorSlider"></div>');
-					});
-	
+                    //To-do: loop through each limb, count hard points by type, add to description
                 });
 				$("#mechBay").fadeIn('fast', function() {
 					$("#itemList").fadeIn('fast');
-                    createChart("#weightChart", currentVariant.maxWeight, currentVariant.chassisWeight, currentVariant.currentWeight);
+					createChart("#weightChart", mechObj.maxTons, mechObj.chassisTons, mechObj.currentTons);
                     createRoseGraph("#roseChart", "-N/A-");
 					$( ".slider" ).slider({
 	            		value:1,
@@ -97,6 +89,7 @@
             			step: 1
 					});
 				});
+                // Make the sections droppable
             });
 
 	        // Generate the item list
@@ -106,6 +99,8 @@
                             .attr("class", "item " + $(this).attr("type"))
                             .attr("alt", $(this).attr("type"))
                             .attr("title", $(this).attr("tons"))
+                            .attr("name", $(this).attr("slots"))
+                            .attr("id", $(this).text())
                             // store all the weapon information in this div
                             .data({
                                 type:$(this).attr("type"),
@@ -148,73 +143,42 @@
                     appendTo: 'body'});
             });
 
-            // Make the sections droppable
             $(".area").droppable({
                 // use the same check for the accept attribute so we can show valid targets
-                accept:function (ui) {
-                    if (checkLimb(this, ui.attr("alt")) && checkWeight(Number(ui.attr("title")))) {
-                        return true;
-                    }
-                    return false;
+                accept: function (ui) {
+                    itemObj = new item(ui.attr("id"), ui.attr("name"), ui.attr("title"), ui.data("type"));
+                    return mechObj.limbs[this.id].testIfValid(itemObj);
                 },
-                activeClass:"valid",
-                drop:function (event, ui) {
-                    if (checkLimb(this, $(ui.helper).attr("alt")) && checkWeight(Number($(ui.helper).attr("title")))) {
-                        addItem($(ui.draggable).clone(), this);
-                        addWeight(Number($(ui.helper).attr("title")));
-                    }
+                activeClass: "valid",
+                drop: function (event, ui) {
+                    mechObj.limbs[this.id].addItem(itemObj)
+                    addItem($(ui.draggable).clone(), this);
+                    addWeight(Number($(ui.helper).attr("title")));
                 }
-
             });
-			
+
+
 			$("#mechBay div div a").live("click", function () {
 				$(this).parent().remove();
                 addWeight(0 - Number($(this).parent().attr("title")));
 			})
-			
-	
-            function addItem( $item, $target ) {
-                $item.fadeOut(function() {
+
+            function addWeight(weight){
+                if (mechObj.variant && mechObj.currentTons != undefined ){
+                    mechObj.currentTons += weight;
+                    updateChart(mechObj.maxTons, mechObj.chassisTons, mechObj.currentTons);
+                }
+            }
+
+            function addItem($item, $target) {
+                $item.fadeOut(function () {
                     $item
                         .clone()
 						.append('<a href = "#">X</a>')
-                        .appendTo( $target )
+                        .appendTo($target)
                         .fadeIn();
                 });
             }
-
-            function checkLimb(limb, typeAdded)
-			{
-				var valid = false;
-                var limbname = limb.id;
-                //bail if no variant selected -- should we force people to pick one first?
-                if (! currentVariant.limbs.hasOwnProperty(limbname) ){
-                    return valid;
-                }
-
-				var max = currentVariant.limbs[limbname][typeAdded] ? currentVariant.limbs[limbname][typeAdded] : 0;
-				if (max == 0) return valid;
-				if ( $(limb).find("."+typeAdded).length < max )
-				{
-					valid = true;
-				}
-				return valid;
-			}
-
-            function checkWeight(weight){
-                if ( currentVariant && weight ){
-                    return (currentVariant.currentWeight + weight) <= currentVariant.maxWeight;
-                }
-                return false;
-            }
-
-            function addWeight(weight){
-                if ( currentVariant && weight != undefined ){
-                    currentVariant.currentWeight += weight;
-                    updateChart(currentVariant.maxWeight, currentVariant.chassisWeight, currentVariant.currentWeight);
-                }
-            }
-
 		});
     </script>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
