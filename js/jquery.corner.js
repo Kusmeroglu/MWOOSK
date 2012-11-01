@@ -245,5 +245,17 @@ $.fn.corner.defaults = {
     useNative: true, // true if plugin should attempt to use native browser support for border radius rounding
     metaAttr:  'data-corner' // name of meta attribute to use for options
 };
-    
+
+$('#chasisBar').corner("bevel tl 10px");
+$('#userInfo').corner("bevel tr 10px");
+$('#mechContainer').corner("bevel bl 19px");
+$('#mechContainerWrap').corner("bevel bl 14px");
+$('.tabWrapper').corner("bevel br 7px");
+$('.tab').corner("bevel br 5px");
+$('#detailContainer').corner("bevel br 26px");
+$('#detailContainerWrap').corner("bevel br 22px");
+$('#tonnageWrap').corner("bevel bl 10px");
+$('#tonnage').corner("bevel bl 8px");
+$('#commentsWrap').corner("bevel br 7px");
+$('#comments').corner("bevel br 11px");
 })(jQuery);
