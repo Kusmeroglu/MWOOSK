@@ -36,7 +36,7 @@
 					$($(this).parent()).find("select").change();
 					$(this).parent().removeClass("active");
 					$(this).siblings(".selectItem").hide();
-					$(this).hide();
+					$(this).siblings("#classBlank").hide();
 				});
 				
             });
@@ -64,7 +64,7 @@
 					$("#mechChassis").change();
 					$(this).parent().removeClass("active");
 					$(this).siblings(".selectItem").hide();
-					$(this).hide();
+					$(this).siblings("#chassisBlank").hide();
 				});
 				
 			});
@@ -90,7 +90,7 @@
 					$($(this).parent()).find("select").change();
 					$(this).parent().removeClass("active");
 					$(this).siblings(".selectItem").hide();
-					$(this).hide();
+					$(this).siblings("#variantBlank").hide();
 				});
 				
 			});
