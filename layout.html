@@ -26,6 +26,11 @@
                     $("#mechClass").append($("<option></option>").attr("value",$(this).attr("type")).text($(this).attr("type")));
 					$("#mechClassDiv").append($("<div class='selectItem' id='"+$(this).attr("type")+"'>"+$(this).attr("type")+"</div>"));
                 });
+			$(".selectItem").click(function() {
+				var selectItem = $(this).id;
+				$(this).parent().child("select").attr("value", selectitem);
+				$('#userInfo').html("test");
+			});
             });
 
             // make the secondary pull down go
@@ -69,11 +74,7 @@
 						container.children(".selectItem").hide();
 					}
 			});
-			$(".selectItem").click(function() {
-				var selectItem = $(this).id;
-				$(this).parent().child("select").attr("value", selectitem);
-				$('#userInfo').html("test");
-			});
+			
 			
             // save variant info off
             var currentVariant = {};
