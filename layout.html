@@ -38,13 +38,7 @@
 					$(this).siblings(".selectItem").hide();
 					$(this).hide();
 				});
-				$(document).mouseup(function (e){
-				var container = $(".selectBox");
-				if (container.has(e.target).length === 0)
-					{
-						container.children(".selectItem").hide();
-					}
-			});
+				
             });
 
             // make the secondary pull down go
@@ -72,13 +66,7 @@
 					$(this).siblings(".selectItem").hide();
 					$(this).hide();
 				});
-				$(document).mouseup(function (e){
-				var container = $(".selectBox");
-				if (container.has(e.target).length === 0)
-					{
-						container.children(".selectItem").hide();
-					}
-			});
+				
 			});
 
             // make the tertiary pull down go
@@ -104,17 +92,18 @@
 					$(this).siblings(".selectItem").hide();
 					$(this).hide();
 				});
-				$(document).mouseup(function (e){
-				var container = $(".selectBox");
-				if (container.has(e.target).length === 0)
-					{
-						container.children(".selectItem").hide();
-					}
-			});
+				
 			});
 			
 			// making the fake select boxes work
-						
+				
+				$(document).mouseup(function (e){
+					var container = $(".selectBox");
+					if (container.has(e.target).length === 0)
+					{
+						container.children(".selectItem").hide();
+					}
+				});				
 			
 					
             // save variant info off
@@ -122,7 +111,7 @@
 
             $("#mechVariant").on("change", function (event){
                 var selectedVariant = $("#mechVariant").val();
-                var selectedMech = $("#mechName").val();
+                var selectedMech = $("#mechChassis").val();
                 currentVariant = {};
 				currentVariant.limbs = {};
                 currentVariant.name = selectedVariant;
