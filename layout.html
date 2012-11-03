@@ -26,9 +26,10 @@
                     $("#mechClass").append($("<option></option>").attr("value",$(this).attr("type")).text($(this).attr("type")));
 					$("#mechClassDiv").append($("<div class='selectItem' id='"+$(this).attr("type")+"'>"+$(this).attr("type")+"</div>"));
                 });
-				$("#classBlank").click(function() {
-					$(this).siblings('.selectItem').show();
-					$(this).parent().addClass('active');
+				$("#mechClassDiv").click(function() {
+					$(this).children('.selectItem').show();
+					$(this).children('#classBlank').show();
+					$(this).addClass('active');
 				});
 				$("#mechClassDiv").children(".selectItem").click(function() {
 					var selectItem = $(this).attr('id');
@@ -54,8 +55,9 @@
 						$("#mechChassisDiv").append($("<div class='selectItem' id='"+$(this).attr("type")+"'>"+$(this).attr("type")+"</div>"));
                     });
                 });
-				$("#chassisBlank").click(function() {
-					$(this).siblings('.selectItem').show();
+				$("#mechChassisDiv").click(function() {
+					$(this).children('.selectItem').show();
+					$(this).children('#chassisBlank').show();
 					$(this).parent().addClass('active');
 				});
 				$("#mechChassisDiv").children(".selectItem").click(function() {
@@ -81,7 +83,8 @@
                     });
                 });
 				$("#variantBlank").click(function() {
-					$(this).siblings('.selectItem').show();
+					$(this).children('.selectItem').show();
+					$(this).children('#classBlank').show();
 					$(this).parent().addClass('active');
 				});
 				$("#mechVariantDiv").children(".selectItem").click(function() {
