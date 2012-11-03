@@ -30,7 +30,7 @@
 					$(this).siblings('.selectItem').show();
 					$(this).parent().addClass('active');
 				});
-				$("#mechClassDiv").child(".selectItem").click(function() {
+				$("#mechClassDiv").children(".selectItem").click(function() {
 					var selectItem = $(this).attr('id');
 					$($(this).parent()).find("select").attr("value", selectItem);
 					$($(this).parent()).find("select").change();
@@ -64,7 +64,7 @@
 					$(this).siblings('.selectItem').show();
 					$(this).parent().addClass('active');
 				});
-				$("#mechChassisDiv").child(".selectItem").click(function() {
+				$("#mechChassisDiv").children(".selectItem").click(function() {
 					var selectItem = $(this).attr('id');
 					$("#mechChassis").attr("value", selectItem);
 					$("#mechChassis").change();
@@ -96,7 +96,7 @@
 					$(this).siblings('.selectItem').show();
 					$(this).parent().addClass('active');
 				});
-				$("#mechVariantDiv").child(".selectItem").click(function() {
+				$("#mechVariantDiv").children(".selectItem").click(function() {
 					var selectItem = $(this).attr('id');
 					$($(this).parent()).find("select").attr("value", selectItem);
 					$($(this).parent()).find("select").change();
