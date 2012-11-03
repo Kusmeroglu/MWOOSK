@@ -34,10 +34,18 @@ display:none;
    color:#fff;
    background-image: url(images/sprite.png);
    background-repeat:no-repeat;
-   background-position:-330px -10px;
+   background-position:-230px -5px;
    border: 1px solid #718ba2;
    float:left;
    margin:5px 10px;
+}
+
+.selectItem{
+display:none;
+}
+
+.selectBox .selectItem:first-child {
+ display:block;
 }
 
 select {
