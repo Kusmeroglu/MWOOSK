@@ -1,6 +1,7 @@
 body{
 background-color:#10171b;
-background-size:20px 20px;
+background-image:url(images/background.png);
+background-position:-50px -840px;
 }
 
 .jquery-corner { 
