@@ -139,7 +139,10 @@
                 });
                 $("#itemList div").draggable({
                     revert: "invalid",
-                    helper: 'clone',
+                    helper: function(){
+                        var x = $(this).clone(true, true);
+                        return x;
+                    },
                     appendTo: 'body'});
             });
 
@@ -152,7 +155,7 @@
                 activeClass: "valid",
                 drop: function (event, ui) {
                     mechObj.limbs[this.id].addItem(itemObj)
-                    addItem($(ui.draggable).clone(), this);
+                    addItem($(ui.draggable).clone(true, true), this);
                     addWeight(Number($(ui.helper).attr("title")));
                 }
             });
@@ -172,11 +175,12 @@
 
             function addItem($item, $target) {
                 $item.fadeOut(function () {
-                    $item
-                        .clone()
+                    var x = $item
+                        .clone(true, true)// .clone(true, true) does NOT work. I have no fucking clue why??
 						.append('<a href = "#">X</a>')
                         .appendTo($target)
                         .fadeIn();
+                    1+1;
                 });
             }
 		});

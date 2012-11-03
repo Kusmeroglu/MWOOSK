@@ -125,6 +125,9 @@ function createRoseGraph(container, captiontext) {
 
     // Update drawn arcs, etc to the newly selected months
     function updateComplexArcs(parent, plotData, captiontext) {
+        if ( !plotData ){
+            return;
+        }
         var complexArcOptions = {
             width:ANGLULARWIDTHOFSECTION,
             from:INNERRADIUS,
