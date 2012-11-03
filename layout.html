@@ -32,11 +32,12 @@
             $("#mechClass").on("change", function (event) {
                 var selectedClass = $("#mechClass").val();
                 $("#mechName").empty().append($("<option></option>").attr("value", "0").text("Select Mech Chasis..."));
+				$("#mechNameDiv").empty().append($("<div id='Name 0'>Select mech Chasis...</div>"));
 				$("#mechVariant").empty().append($("<option></option>").attr("value", "0").text("Select Mech Variant..."));
                 $.get('data/mechs.xml', function (xml) {
                     $(xml).find('class[type="' + selectedClass + '"] > mech').each(function () {
                         $("#mechName").append($("<option></option>").attr("value", $(this).attr("type")).text($(this).attr("type")));
-						$("#mechNameDiv").html($("<div>"+$(this).attr("type")+"</div>"));
+						$("#mechNameDiv").append($("<div>"+$(this).attr("type")+"</div>"));
                     });
                 });
             });
@@ -232,9 +233,10 @@
 			</div>
 			<div id="selectBox">
 				<select id="mechName">
-					<option value="0">Select mech name...</option>
+					<option value="0">Select mech Chasis...</option>
 				</select>
 				<div id="mechNameDiv">
+					<div id="Name 0">Select mech Chasis...</div>
 				</div>
 			</div>
 			<div id="selectBox">
