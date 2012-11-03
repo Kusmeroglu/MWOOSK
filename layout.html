@@ -70,7 +70,8 @@
 					}
 			});
 			$(".selectItem").click(function() {
-				var selectitem = $(this).attr('id');
+				var selectItem = $(this).id;
+				$(this).parent().child("select").attr("value", selectitem);
 				$('#userInfo').html("test");
 			});
 			
