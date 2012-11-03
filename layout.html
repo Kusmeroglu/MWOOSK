@@ -69,6 +69,10 @@
 						container.children(".selectItem").hide();
 					}
 			});
+			$(".selectItem").click(function() {
+				var x = $(this).id;
+				$(this).parent().child("select").attr("value", x);
+			});
 			
             // save variant info off
             var currentVariant = {};
