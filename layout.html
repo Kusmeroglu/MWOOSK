@@ -57,16 +57,7 @@
 					$(this).siblings('.selectItem').show();
 					$(this).parent().addClass('active');
 				});
-				$(".selectItem").click(function() {
-					var selectItem = $(this).attr('id');
-					$($(this).parent()).find("select").attr("value", selectItem);
-					$($(this).parent()).find("select").change();
-					$(this).parent().removeClass("active");
-					$(this).siblings(".selectItem").hide();
-					$(this).hide();
-				});
-				
-            });
+			});
 
             // make the tertiary pull down go
             $("#mechChassis").on("change", function (event) {
@@ -83,15 +74,7 @@
 					$(this).siblings('.selectItem').show();
 					$(this).parent().addClass('active');
 				});
-				$(".selectItem").click(function() {
-					var selectItem = $(this).attr('id');
-					$($(this).parent()).find("select").attr("value", selectItem);
-					$($(this).parent()).find("select").change();
-					$(this).parent().removeClass("active");
-					$(this).siblings(".selectItem").hide();
-					$(this).hide();
-				});
-            });
+			});
 			
 			// making the fake select boxes work
 			
