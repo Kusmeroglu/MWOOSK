@@ -1,3 +1,12 @@
+/*CSS
+Color Palette:
+Background:  #10171b  -- Dark Blue Green
+Border-Trim: #718ba2  -- Light Blue
+Text: #
+Accent: F
+Box Background:  #000000 -- Black
+*/
+
 body{
 background-color:#10171b;
 background-image:url(images/background.png);
@@ -13,6 +22,27 @@ background-position:-50px -840px;
 
 .clear{
 clear:both;
+}
+
+#selectBox {
+   width: 200px;
+   overflow: hidden;
+   background:#000;
+   background-image: url(images/sprite.png);
+   background-repeat:no-repeat;
+   background-position:-230px -10px;
+   border: 1px solid #718ba2;
+   float:left;
+   margin:5px 10px;
+}
+
+select {
+	background:#000;
+   -webkit-appearence: none;
+   width: 200px;
+   font-size: 12px;
+   color:#fff;
+   border: 0px solid #718ba2;
 }
 
 #pageWrap{

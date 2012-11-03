@@ -16,12 +16,230 @@
     <link href="font/stylesheet.css" rel="stylesheet" media="screen" />
     <link href='http://fonts.googleapis.com/css?family=Aldrich' rel='stylesheet' type='text/css'>
 	<link href="style2.css" rel="stylesheet" media="screen" />
+	
+	
+	<script type="text/javascript">
+        $(function () {
+
+            // Generate the pull downs
+            $.get('data/mechs.xml', function (xml) {
+                $(xml).find("class").each(function () {
+                    $("#mechClass").append($("<option></option>").attr("value",$(this).attr("type")).text($(this).attr("type")));
+                });
+            });
+
+            // make the secondary pull down go
+            $("#mechClass").on("change", function (event) {
+                var selectedClass = $("#mechClass").val();
+                $("#mechName").empty().append($("<option></option>").attr("value", "0").text("Select mech name..."));
+                $.get('data/mechs.xml', function (xml) {
+                    $(xml).find('class[type="' + selectedClass + '"] > mech').each(function () {
+                        $("#mechName").append($("<option></option>").attr("value", $(this).attr("type")).text($(this).attr("type")));
+                    });
+                });
+            });
+
+            // make the tertiary pull down go
+            $("#mechName").on("change", function (event) {
+                var selectedClass = $("#mechClass").val();
+                $("#mechVariant").empty().append($("<option></option>").attr("value", "0").text("Select mech variant..."));
+                $.get('data/mechs.xml', function (xml) {
+                    $(xml).find('class[type="' + selectedClass + '"] > mech > variant').each(function () {
+                        $("#mechVariant").append($("<option></option>").attr("value", $(this).attr("name")).text($(this).attr("name")));
+                    });
+                });
+            });
+
+
+            // save variant info off
+            var currentVariant = {};
+
+            $("#mechVariant").on("change", function (event){
+                var selectedVariant = $("#mechVariant").val();
+                var selectedMech = $("#mechName").val();
+                currentVariant = {};
+				currentVariant.limbs = {};
+                currentVariant.name = selectedVariant;
+                $.get('data/mechs.xml', function (xml) {
+                    $(xml).find('mech[type="' + selectedMech + '"]').each(function () {
+                        currentVariant.maxWeight = Number($(this).attr("tonnage"));
+                        currentVariant.currentWeight = currentVariant.chassisWeight = Number($(this).attr("chassis"));
+                    });
+                    $(xml).find('variant[name="' + selectedVariant + '"] > limbs > limb').each(function () {
+                        var limbname = $(this).attr("name");
+                        currentVariant.limbs[limbname] = {};
+                        $(this).find('hardpoint').each(function(){
+                            var type = $(this).attr('type');
+                            if ( currentVariant.limbs[limbname][type] ){
+                                currentVariant.limbs[limbname][type] += 1;
+                            } else {
+                                currentVariant.limbs[limbname][type] = 1;
+                            }
+                        });
+                    });
+					$.each(currentVariant.limbs, function(index, value) { 
+						var currentPiece = index;
+						var hardpoints = value;
+						$.each(hardpoints, function(i2, v2) {
+							$("#" + currentPiece + "Description").append("<p>" + i2 + ": " + v2 + "</p>");
+						});
+						$("#" + currentPiece + "Description").append('<div class = "slider" id = "' + currentPiece + 'ArmorSlider"></div>');
+					});
+	
+                });
+				$("#mechBay").fadeIn('fast', function() {
+					$("#itemList").fadeIn('fast');
+                    createChart("#weightChart", currentVariant.maxWeight, currentVariant.chassisWeight, currentVariant.currentWeight);
+                    createRoseGraph("#roseChart", "-N/A-");
+					$( ".slider" ).slider({
+	            		value:1,
+		    	        min: 0,
+        			    max: 45,
+            			step: 1
+					});
+				});
+            });
+
+	        // Generate the item list
+            $.get('data/items.xml', function (xml) {
+                $(xml).find("weapons > item").each(function () {
+                    $("#itemList").append($("<div></div>")
+                            .attr("class", "item " + $(this).attr("type"))
+                            .attr("alt", $(this).attr("type"))
+                            .attr("title", $(this).attr("tons"))
+                            // store all the weapon information in this div
+                            .data({
+                                type:$(this).attr("type"),
+                                damage:$(this).attr("damage"),
+                                heat:$(this).attr("heat"),
+                                cooldown:$(this).attr("cooldown"),
+                                range:$(this).attr("range"),
+                                maxrange:$(this).attr("maxrange"),
+                                slots:$(this).attr("slots"),
+                                tons:$(this).attr("tons"),
+                                dpsmax:$(this).attr("dpsmax"),
+                                ammoper:$(this).attr("ammoper"),
+                                hps:$(this).attr("hps"),
+                                ehs:$(this).attr("ehs"),
+                                name:$(this).text(),
+                                rosechartdata:[
+                                    { name:"Damage",   value:$(this).attr("damage")},
+                                    { name:"Heat",     value:$(this).attr("heat")},
+                                    { name:"HPS",      value:(Number($(this).attr("heat")) == 0)?"0":(Number($(this).attr("damage"))/Number($(this).attr("heat"))).toFixed(2)},
+                                    { name:"Weight",   value:$(this).attr("tons")},
+                                    { name:"Slots",    value:$(this).attr("slots")},
+                                    { name:"Cooldown", value:$(this).attr("cooldown")},
+                                    { name:"DPS",      value:$(this).attr("dpsmax")},
+                                    //{ name:"Ammo/Ton", value:$(this).attr("ammoper")?$(this).attr("ammoper"):0},
+                                    { name:"Range",    value:$(this).attr("maxrange")}
+                                ]
+                            })
+                            .hover(
+                                function(){
+                                    updateRoseChartData($(this).data("rosechartdata"), $(this).data("name"));
+                                },
+                                function(){
+                                    resetRoseChartData("-N/A-");
+                                })
+                            .text($(this).text()));
+                });
+                $("#itemList div").draggable({
+                    revert: "invalid",
+                    helper: 'clone',
+                    appendTo: 'body'});
+            });
+
+            // Make the sections droppable
+            $(".area").droppable({
+                // use the same check for the accept attribute so we can show valid targets
+                accept:function (ui) {
+                    if (checkLimb(this, ui.attr("alt")) && checkWeight(Number(ui.attr("title")))) {
+                        return true;
+                    }
+                    return false;
+                },
+                activeClass:"valid",
+                drop:function (event, ui) {
+                    if (checkLimb(this, $(ui.helper).attr("alt")) && checkWeight(Number($(ui.helper).attr("title")))) {
+                        addItem($(ui.draggable).clone(), this);
+                        addWeight(Number($(ui.helper).attr("title")));
+                    }
+                }
+
+            });
+			
+			$("#mechBay div div a").live("click", function () {
+				$(this).parent().remove();
+                addWeight(0 - Number($(this).parent().attr("title")));
+			})
+			
+	
+            function addItem( $item, $target ) {
+                $item.fadeOut(function() {
+                    $item
+                        .clone()
+						.append('<a href = "#">X</a>')
+                        .appendTo( $target )
+                        .fadeIn();
+                });
+            }
+
+            function checkLimb(limb, typeAdded)
+			{
+				var valid = false;
+                var limbname = limb.id;
+                //bail if no variant selected -- should we force people to pick one first?
+                if (! currentVariant.limbs.hasOwnProperty(limbname) ){
+                    return valid;
+                }
+
+				var max = currentVariant.limbs[limbname][typeAdded] ? currentVariant.limbs[limbname][typeAdded] : 0;
+				if (max == 0) return valid;
+				if ( $(limb).find("."+typeAdded).length < max )
+				{
+					valid = true;
+				}
+				return valid;
+			}
+
+            function checkWeight(weight){
+                if ( currentVariant && weight ){
+                    return (currentVariant.currentWeight + weight) <= currentVariant.maxWeight;
+                }
+                return false;
+            }
+
+            function addWeight(weight){
+                if ( currentVariant && weight != undefined ){
+                    currentVariant.currentWeight += weight;
+                    updateChart(currentVariant.maxWeight, currentVariant.chassisWeight, currentVariant.currentWeight);
+                }
+            }
+
+		});
+    </script>
 </head>
 <body>
 <div id="pageWrap">
 	<header>
-		<div id="chasisBar">Test Text</div>
-		<div id="userInfo">More Test Text</div>
+		<div id="chasisBar">
+			<div id="selectBox">
+				<select id="mechClass">
+					<option value="0">Select mech class...</option>
+				</select>
+			</div>
+			<div id="selectBox">
+				<select id="mechName">
+					<option value="0">Select mech name...</option>
+				</select>
+			</div>
+			<div id="selectBox">
+				<select id="mechVariant">
+					<option value="0">Select mech name...</option>
+				</select>
+			</div>
+		</div>
+		<div id="userInfo"></div>
 		<div class="clear"></div>
 	</header>
 	<div id="mechBay">
