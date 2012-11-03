@@ -51,6 +51,10 @@ padding-left:5px;
  display:block;
 }
 
+.selectBox .selectItem:last-child {
+ margin-bottom:5px;
+}
+
 select {
 	background:#000;
    -webkit-appearence: none;
