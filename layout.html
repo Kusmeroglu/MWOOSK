@@ -60,7 +60,7 @@
 				$(this).parent().addClass('active');
 			});
 			$(document).mouseup(function (e){
-				var container = $("#mechClassDiv");
+				var container = $(".selectBox");
 				if (container.has(e.target).length === 0)
 					{
 						container.children(".selectItem").hide();
