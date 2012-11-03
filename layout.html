@@ -28,7 +28,7 @@
                 });
 				$(".selectItem").click(function() {
 					var selectItem = $(this).attr('id');
-					$(this).siblings("select").attr("value", selectItem);
+					$($(this).parent()).find("select").attr("value", selectItem);
 					$('#userInfo').html("test");
 				});
             });
