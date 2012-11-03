@@ -31,24 +31,27 @@
             // make the secondary pull down go
             $("#mechClass").on("change", function (event) {
                 var selectedClass = $("#mechClass").val();
-                $("#mechName").empty().append($("<option></option>").attr("value", "0").text("Select Mech Chasis..."));
-				$("#mechNameDiv").empty().append($("<div class='selectBlank'>Select mech Chasis...</div>"));
+                $("#mechChassis").empty().append($("<option></option>").attr("value", "0").text("Select Mech Chasis..."));
+				$("#mechChassisDiv").empty().append($("<div class='selectBlank'>Select mech Chasis...</div>"));
 				$("#mechVariant").empty().append($("<option></option>").attr("value", "0").text("Select Mech Variant..."));
+				$("#mechVariantDiv").empty().append($("<div class='selectBlank'>Select mech Variant...</div>"));
                 $.get('data/mechs.xml', function (xml) {
                     $(xml).find('class[type="' + selectedClass + '"] > mech').each(function () {
-                        $("#mechName").append($("<option></option>").attr("value", $(this).attr("type")).text($(this).attr("type")));
-						$("#mechNameDiv").append($("<div class='selectItem' id='variant_"+$(this).attr("type")+"'>"+$(this).attr("type")+"</div>"));
+                        $("#mechChassis").append($("<option></option>").attr("value", $(this).attr("type")).text($(this).attr("type")));
+						$("#mechChassisDiv").append($("<div class='selectItem' id='"+$(this).attr("type")+"'>"+$(this).attr("type")+"</div>"));
                     });
                 });
             });
 
             // make the tertiary pull down go
-            $("#mechName").on("change", function (event) {
+            $("#mechChassis").on("change", function (event) {
                 var selectedClass = $("#mechClass").val();
                 $("#mechVariant").empty().append($("<option></option>").attr("value", "0").text("Select Mech Variant..."));
+				$("#mechVariantDiv").empty().append($("<div class='selectBlank'>Select mech Variant...</div>"));
                 $.get('data/mechs.xml', function (xml) {
                     $(xml).find('class[type="' + selectedClass + '"] > mech > variant').each(function () {
                         $("#mechVariant").append($("<option></option>").attr("value", $(this).attr("name")).text($(this).attr("name")));
+						$("#mechVariantDiv").append($("<div class='selectItem' id='"+$(this).attr("type")+"'>"+$(this).attr("type")+"</div>"));
                     });
                 });
             });
@@ -245,15 +248,15 @@
 						<option value="0">Select mech Class...</option>
 					</select>
 				</div>
-				<div class="selectItem" id="classBlank">Select mech Class...</div>
+				<div class="selectBox" id="classBlank">Select mech Class...</div>
 			</div>
 			<div class="hide">
-				<select id="mechName">
+				<select id="mechChassis">
 					<option value="0">Select mech Chasis...</option>
 				</select>
 			</div>
-			<div class="selectBox" id="mechNameDiv">
-					<div class="selectItem" id="nameBlank">Select mech Chasis...</div>
+			<div class="selectBox" id="mechChassisDiv">
+					<div class="selectItem" id="nameBlank">Select mech Chassis...</div>
 			</div>
 			<div class="hide">
 				<select id="mechVariant">
