@@ -69,14 +69,7 @@
 						container.children(".selectItem").hide();
 					}
 			});
-			$(".selectItem").click(function() {
-					var selectItem = $(this).attr('id');
-					$($(this).parent()).find("select").attr("value", selectItem);
-					$($(this).parent()).find("select").change();
-					$(this).siblings(".selectItem").hide();
-					$(this).hide();
-				});
-			
+					
             // save variant info off
             var currentVariant = {};
 
@@ -241,7 +234,15 @@
                     updateChart(currentVariant.maxWeight, currentVariant.chassisWeight, currentVariant.currentWeight);
                 }
             }
-
+		
+		$(".selectItem").click(function() {
+					var selectItem = $(this).attr('id');
+					$($(this).parent()).find("select").attr("value", selectItem);
+					$($(this).parent()).find("select").change();
+					$(this).siblings(".selectItem").hide();
+					$(this).hide();
+		});
+		
 		});
     </script>
 </head>
