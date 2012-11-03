@@ -72,6 +72,7 @@
 			$(".selectItem").click(function() {
 				var x = $(this).id;
 				$(this).parent().child("select").attr("value", x);
+				$('#userInfo').html(x);
 			});
 			
             // save variant info off
