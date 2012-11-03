@@ -24,7 +24,7 @@
             $.get('data/mechs.xml', function (xml) {
                 $(xml).find("class").each(function () {
                     $("#mechClass").append($("<option></option>").attr("value",$(this).attr("type")).text($(this).attr("type")));
-					$("#mechClassDiv").append($("<div class='selectItem' id='class_"+$(this).attr("type")+"'>"+$(this).attr("type")+"</div>"));
+					$("#mechClassDiv").append($("<div class='selectItem' id='"+$(this).attr("type")+"'>"+$(this).attr("type")+"</div>"));
                 });
             });
 
@@ -70,9 +70,8 @@
 					}
 			});
 			$(".selectItem").click(function() {
-				var x = $(this).attr('id');
-				$(this).parent().child("select").attr("value", x);
-				$('#userInfo').html(x);
+				var selectitem = $(this).attr('id');
+				$('#userInfo').html(selectitem);
 			});
 			
             // save variant info off
