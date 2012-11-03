@@ -158,17 +158,18 @@ position:relative;
 }
 
 #detailContainerWrap{
-background:#718ba2;
 position:absolute;
 z-index:2;
 float:right;
-padding:4px 2px 5px 9px;
 }
 
 #detailContainer{
-background:#000;
+background-color:transparent;
+background-image:url(images/sprite.png);
+background-repeat: no-repeat;
+background-position:-950px -50px;
 width:320px;
-height:660px;
+height:780px;
 position:relative;
 }
 
