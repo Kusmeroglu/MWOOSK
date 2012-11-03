@@ -38,13 +38,13 @@ display:none;
    border: 1px solid #718ba2;
    float:left;
    margin:5px 10px;
+   position:relative;
+   z-index:4;
 }
 
 .selectItem{
 display:none;
 padding-left:5px;
-position:relative;
-z-index:4;
 }
 
 .selectBox .selectItem:first-child {
