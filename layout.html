@@ -30,6 +30,7 @@
 					var selectItem = $(this).attr('id');
 					$($(this).parent()).find("select").attr("value", selectItem);
 					$($(this).parent()).find("select").change();
+					$(this).parent().removeClass("active");
 					$(this).siblings(".selectItem").hide();
 					$(this).hide();
 		});
