@@ -40,9 +40,9 @@
             $("#mechClass").on("change", function (event) {
                 var selectedClass = $("#mechClass").val();
                 $("#mechChassis").empty().append($("<option></option>").attr("value", "0").text("Select Mech Chassis..."));
-				$("#mechChassisDiv").empty().append($("<div class='selectBlank' id='chassisBlank'>Select mech Chassis...</div>"));
+				$("#mechChassisDiv").empty().append($("<div class='hide'><select id='mechChassis'><option value='0'>Select mech Chasis...</option></select></div><div class='selectBlank' id='chassisBlank'>Select mech Chassis...</div>"));
 				$("#mechVariant").empty().append($("<option></option>").attr("value", "0").text("Select Mech Variant..."));
-				$("#mechVariantDiv").empty().append($("<div class='selectBlank' id='variantBlank'>Select mech Variant...</div>"));
+				$("#mechVariantDiv").empty().append($("<div class='hide'><select id='mechVariant'><option value='0'>Select mech Variant...</option></select></div><div class='selectBlank' id='variantBlank'>Select mech Variant...</div>"));
                 $.get('data/mechs.xml', function (xml) {
                     $(xml).find('class[type="' + selectedClass + '"] > mech').each(function () {
                         $("#mechChassis").append($("<option></option>").attr("value", $(this).attr("type")).text($(this).attr("type")));
