@@ -36,6 +36,7 @@
                 $.get('data/mechs.xml', function (xml) {
                     $(xml).find('class[type="' + selectedClass + '"] > mech').each(function () {
                         $("#mechName").append($("<option></option>").attr("value", $(this).attr("type")).text($(this).attr("type")));
+						$("#mechNameDiv").html($("<div>"+$(this).attr("type")+"</div>"));
                     });
                 });
             });
