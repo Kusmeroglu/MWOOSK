@@ -29,15 +29,15 @@
 				$(".selectItem").click(function() {
 					var selectItem = $(this).attr('id');
 					$($(this).parent()).find("select").attr("value", selectItem);
-					$('#userInfo').html("test");
+					$($(this).parent()).find("select").change();
 				});
             });
 
             // make the secondary pull down go
             $("#mechClass").on("change", function (event) {
                 var selectedClass = $("#mechClass").val();
-                $("#mechChassis").empty().append($("<option></option>").attr("value", "0").text("Select Mech Chasis..."));
-				$("#mechChassisDiv").empty().append($("<div class='selectBlank'>Select mech Chasis...</div>"));
+                $("#mechChassis").empty().append($("<option></option>").attr("value", "0").text("Select Mech Chassis..."));
+				$("#mechChassisDiv").empty().append($("<div class='selectBlank'>Select mech Chassis...</div>"));
 				$("#mechVariant").empty().append($("<option></option>").attr("value", "0").text("Select Mech Variant..."));
 				$("#mechVariantDiv").empty().append($("<div class='selectBlank'>Select mech Variant...</div>"));
                 $.get('data/mechs.xml', function (xml) {
