@@ -26,6 +26,10 @@
                     $("#mechClass").append($("<option></option>").attr("value",$(this).attr("type")).text($(this).attr("type")));
 					$("#mechClassDiv").append($("<div class='selectItem' id='"+$(this).attr("type")+"'>"+$(this).attr("type")+"</div>"));
                 });
+				$("#classBlank").click(function() {
+					$(this).siblings('.selectItem').show();
+					$(this).parent().addClass('active');
+				});
 				$(".selectItem").click(function() {
 					var selectItem = $(this).attr('id');
 					$($(this).parent()).find("select").attr("value", selectItem);
@@ -33,7 +37,7 @@
 					$(this).parent().removeClass("active");
 					$(this).siblings(".selectItem").hide();
 					$(this).hide();
-		});
+				});
             });
 
             // make the secondary pull down go
@@ -49,6 +53,19 @@
 						$("#mechChassisDiv").append($("<div class='selectItem' id='"+$(this).attr("type")+"'>"+$(this).attr("type")+"</div>"));
                     });
                 });
+				$("#chassisBlank").click(function() {
+					$(this).siblings('.selectItem').show();
+					$(this).parent().addClass('active');
+				});
+				$(".selectItem").click(function() {
+					var selectItem = $(this).attr('id');
+					$($(this).parent()).find("select").attr("value", selectItem);
+					$($(this).parent()).find("select").change();
+					$(this).parent().removeClass("active");
+					$(this).siblings(".selectItem").hide();
+					$(this).hide();
+				});
+				
             });
 
             // make the tertiary pull down go
@@ -62,22 +79,25 @@
 						$("#mechVariantDiv").append($("<div class='selectItem' id='"+$(this).attr("type")+"'>"+$(this).attr("type")+"</div>"));
                     });
                 });
+				$("#variantBlank").click(function() {
+					$(this).siblings('.selectItem').show();
+					$(this).parent().addClass('active');
+				});
+				$(".selectItem").click(function() {
+					var selectItem = $(this).attr('id');
+					$($(this).parent()).find("select").attr("value", selectItem);
+					$($(this).parent()).find("select").change();
+					$(this).parent().removeClass("active");
+					$(this).siblings(".selectItem").hide();
+					$(this).hide();
+				});
             });
 			
 			// making the fake select boxes work
 			
-			$("#classBlank").click(function() {
-				$(this).siblings('.selectItem').show();
-				$(this).parent().addClass('active');
-			});
-			$("#chassisBlank").click(function() {
-				$(this).siblings('.selectItem').show();
-				$(this).parent().addClass('active');
-			});
-			$("#variantBlank").click(function() {
-				$(this).siblings('.selectItem').show();
-				$(this).parent().addClass('active');
-			});
+			
+			
+			
 			$(document).mouseup(function (e){
 				var container = $(".selectBox");
 				if (container.has(e.target).length === 0)
