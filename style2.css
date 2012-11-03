@@ -52,8 +52,8 @@ padding-left:5px;
 }
 
 .active {
--webkit-box-shadow:  3px 4px 5px 2px #000;
-box-shadow:  3px 4px 5px 2px #000;
+-webkit-box-shadow:  2px 2px 5px 0px #000;
+box-shadow:  2px 2px 5px 0px #000;
 }
 
 select {

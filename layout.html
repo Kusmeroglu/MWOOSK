@@ -59,6 +59,21 @@
 				$(this).siblings('.selectItem').show();
 				$(this).parent().addClass('active');
 			});
+			$(document).mouseup(function (e){
+				var container = $("#classBlank");
+				if (container.has(e.target).length === 0)
+					{
+						container.hide();
+					}
+			});
+			$("#chasisBlank").click(function() {
+				$(this).siblings('.selectItem').show();
+				$(this).parent().addClass('active');
+			});
+			$("#variantBlank").click(function() {
+				$(this).siblings('.selectItem').show();
+				$(this).parent().addClass('active');
+			});
 
 
             // save variant info off
