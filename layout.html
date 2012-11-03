@@ -70,7 +70,7 @@
 					}
 			});
 			$(".selectItem").click(function() {
-				var x = $(this).id;
+				var x = $(this).attr('id');
 				$(this).parent().child("select").attr("value", x);
 				$('#userInfo').html(x);
 			});
