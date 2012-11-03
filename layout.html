@@ -31,7 +31,8 @@
             // make the secondary pull down go
             $("#mechClass").on("change", function (event) {
                 var selectedClass = $("#mechClass").val();
-                $("#mechName").empty().append($("<option></option>").attr("value", "0").text("Select mech name..."));
+                $("#mechName").empty().append($("<option></option>").attr("value", "0").text("Select Mech Chasis..."));
+				$("#mechVariant").empty().append($("<option></option>").attr("value", "0").text("Select Mech Variant..."));
                 $.get('data/mechs.xml', function (xml) {
                     $(xml).find('class[type="' + selectedClass + '"] > mech').each(function () {
                         $("#mechName").append($("<option></option>").attr("value", $(this).attr("type")).text($(this).attr("type")));
@@ -42,7 +43,7 @@
             // make the tertiary pull down go
             $("#mechName").on("change", function (event) {
                 var selectedClass = $("#mechClass").val();
-                $("#mechVariant").empty().append($("<option></option>").attr("value", "0").text("Select mech variant..."));
+                $("#mechVariant").empty().append($("<option></option>").attr("value", "0").text("Select Mech Variant..."));
                 $.get('data/mechs.xml', function (xml) {
                     $(xml).find('class[type="' + selectedClass + '"] > mech > variant').each(function () {
                         $("#mechVariant").append($("<option></option>").attr("value", $(this).attr("name")).text($(this).attr("name")));
