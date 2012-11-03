@@ -47,18 +47,14 @@ display:none;
 padding-left:5px;
 }
 
+.selectBlank {
+cursor:pointer;
+padding-left:5px;
+}
+
 .selectItem:hover{
 cursor:pointer;
 background:#718ba2;
-}
-
-.selectItem:first-child:hover{
-cursor:pointer;
-background:#000000;
-}
-
-.selectBox .selectItem:first-child {
- display:block;
 }
 
 .active {

@@ -32,7 +32,7 @@
             $("#mechClass").on("change", function (event) {
                 var selectedClass = $("#mechClass").val();
                 $("#mechName").empty().append($("<option></option>").attr("value", "0").text("Select Mech Chasis..."));
-				$("#mechNameDiv").empty().append($("<div class='selectItem' id='Name 0'>Select mech Chasis...</div>"));
+				$("#mechNameDiv").empty().append($("<div class='selectBlank'>Select mech Chasis...</div>"));
 				$("#mechVariant").empty().append($("<option></option>").attr("value", "0").text("Select Mech Variant..."));
                 $.get('data/mechs.xml', function (xml) {
                     $(xml).find('class[type="' + selectedClass + '"] > mech').each(function () {
@@ -55,7 +55,7 @@
 			
 			// making the fake select boxes work
 			
-			$("#classBlank").click(function() {
+			$(".selectBlank").click(function() {
 				$(this).siblings('.selectItem').show();
 				$(this).parent().addClass('active');
 			});
@@ -64,19 +64,9 @@
 				if (container.has(e.target).length === 0)
 					{
 						container.children(".selectItem").hide();
-						container.children(".selectItem:first-Child").show();
 					}
 			});
-			$("#chasisBlank").click(function() {
-				$(this).siblings('.selectItem').show();
-				$(this).parent().addClass('active');
-			});
-			$("#variantBlank").click(function() {
-				$(this).siblings('.selectItem').show();
-				$(this).parent().addClass('active');
-			});
-
-
+			
             // save variant info off
             var currentVariant = {};
 
@@ -249,12 +239,12 @@
 <div id="pageWrap">
 	<header>
 		<div id="chasisBar">
-			<div class="hide">
-				<select id="mechClass">
-					<option value="0">Select mech Class...</option>
-				</select>
-			</div>
 			<div class="selectBox" id="mechClassDiv">
+				<div class="hide">
+					<select id="mechClass">
+						<option value="0">Select mech Class...</option>
+					</select>
+				</div>
 				<div class="selectItem" id="classBlank">Select mech Class...</div>
 			</div>
 			<div class="hide">
