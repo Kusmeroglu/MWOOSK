@@ -11,6 +11,7 @@
     this.addHardPoint = addHardPoint;
     this.getHardPointType = getHardPointType;
     this.addItem = addItem;
+    this.removeItem = removeItem;
     this.testIfValid = testIfValid;
     this.getFreeCritSlots = getFreeCritSlots;
 
@@ -24,9 +25,27 @@
         return this.hardPoints[indexNumber].pointType;
     }
 
+    this.resetURLParam = resetURLParam;
+    function resetURLParam(){
+        var s = "";
+        $.each(this.items, function(i, itemObj){
+            s += itemObj.id.toString();
+        });
+        setURLParameter(this.limbName, s);
+    }
+
     function addItem(itemObj)
     {
         this.items.push(itemObj);
+        this.resetURLParam();
+        return true;
+    }
+
+    function removeItem(itemObj)
+    {
+        // only remove the first one. This could be a bug in the future with multiple copies of an item
+        this.items.pop(this.items.indexOf(itemObj));
+        this.resetURLParam();
         return true;
     }
 

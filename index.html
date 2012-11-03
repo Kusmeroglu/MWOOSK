@@ -15,6 +15,7 @@
     <script type="text/javascript" src="js/class.limb.js"></script>
     <script type="text/javascript" src="js/class.hardpoint.js"></script>
     <script type="text/javascript" src="js/class.item.js"></script>
+    <script type="text/javascript" src="js/urlhandling.js"></script>
 
 
 
@@ -25,10 +26,7 @@
 
     <script type="text/javascript">
         var mechObj;
-        var itemObj;
         $(function () {
-
-
             // Generate the pull downs
             $.get('data/mechs.xml', function (xml) {
                 $(xml).find("class").each(function () {
@@ -58,17 +56,13 @@
                 });
             });
 
-
-            // save variant info off
-            var currentVariant = {};
-
             $("#mechVariant").on("change", function (event) {
                 $.get('data/mechs.xml', function (xml) {
                     $(xml).find('mech[type="' + $("#mechName").val() + '"]').each(function () {
                         mechObj = new mech($("#mechName").val(), $("#mechVariant").val(), parseFloat($(this).attr("tonnage")));
                         mechObj.currentTons = mechObj.chassisTons = parseFloat($(this).attr("chassis"));
                     });
-                    $(xml).find('mech[type="' + mechObj.mechName + '"] variant[name="' + mechObj.variant + '"] > limbs > limb').each(function () {
+                    $(xml).find('mech[type="' + mechObj.chassis + '"] variant[name="' + mechObj.variant + '"] > limbs > limb').each(function () {
                         var limbObj = new limb($(this).attr("name"), $(this).attr("crits"), $(this).attr("armorFront"), $(this).attr("armorRear"), $(this).attr("maxArmor"));
                         $(this).find('hardpoint').each(function(){
                             var hardPointObj = new hardPoint($(this).attr('type'));
@@ -89,7 +83,6 @@
             			step: 1
 					});
 				});
-                // Make the sections droppable
             });
 
 	        // Generate the item list
@@ -103,6 +96,7 @@
                             .attr("id", $(this).text())
                             // store all the weapon information in this div
                             .data({
+                                id:$(this).attr("id"),
                                 type:$(this).attr("type"),
                                 damage:$(this).attr("damage"),
                                 heat:$(this).attr("heat"),
@@ -116,6 +110,7 @@
                                 hps:$(this).attr("hps"),
                                 ehs:$(this).attr("ehs"),
                                 name:$(this).text(),
+                                itemObj: new item($(this).attr("id"), $(this).text(), $(this).attr("slots"), $(this).attr("tons"), $(this).attr("type")),
                                 rosechartdata:[
                                     { name:"Damage",   value:$(this).attr("damage")},
                                     { name:"Heat",     value:$(this).attr("heat")},
@@ -149,40 +144,49 @@
             $(".area").droppable({
                 // use the same check for the accept attribute so we can show valid targets
                 accept: function (ui) {
-                    itemObj = new item(ui.attr("id"), ui.attr("name"), ui.attr("title"), ui.data("type"));
+                    var itemObj = ui.data('itemObj');
                     return mechObj.limbs[this.id].testIfValid(itemObj);
                 },
                 activeClass: "valid",
                 drop: function (event, ui) {
-                    mechObj.limbs[this.id].addItem(itemObj)
+                    var itemObj = $(ui.draggable).data('itemObj');
+                    mechObj.addItemToLimb(this.id, itemObj);
                     addItem($(ui.draggable).clone(true, true), this);
-                    addWeight(Number($(ui.helper).attr("title")));
                 }
             });
 
 
-			$("#mechBay div div a").live("click", function () {
-				$(this).parent().remove();
-                addWeight(0 - Number($(this).parent().attr("title")));
-			})
-
-            function addWeight(weight){
-                if (mechObj.variant && mechObj.currentTons != undefined ){
-                    mechObj.currentTons += weight;
-                    updateChart(mechObj.maxTons, mechObj.chassisTons, mechObj.currentTons);
-                }
-            }
+			$("#mechBay div div .close").live("click", function () {
+                var itemObj = $(this).parent().data('itemObj');
+                mechObj.removeItemFromLimb($(this).parents('.area')[0].id, itemObj);
+                $(this).parent().remove();
+			});
 
             function addItem($item, $target) {
                 $item.fadeOut(function () {
-                    var x = $item
+                    $item
                         .clone(true, true)// .clone(true, true) does NOT work. I have no fucking clue why??
-						.append('<a href = "#">X</a>')
+						.append('<div class="close">X</div>')
                         .appendTo($target)
                         .fadeIn();
-                    1+1;
                 });
             }
+
+            //check for info in URLs
+            var urldata = getURLParamObject();
+            if (urldata.hasOwnProperty('variant')){
+                // we have data to load
+                $.get('data/mechs.xml', function (xml) {
+                    $(xml).find('mech variant[name="' + urldata['variant'] + '"]').each(function () {
+                        var mechClass = $(this).parents('class').attr('type').toString();
+                        var mechChassis = $(this).parents('mech').attr('type')
+                    });
+                    //To-do: loop through each limb, count hard points by type, add to description
+                });
+
+                $("#mechVariant").attr("value", urldata['variant']);
+            }
+
 		});
     </script>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />

@@ -41,16 +41,16 @@
 
             $("#mechVariant").on("change", function (event) {
                 mechObj = new mech();
-                mechObj.mechName = $("#mechName").val();
+                mechObj.chassis = $("#mechName").val();
                 mechObj.variant = $("#mechVariant").val();
 
                 $.get('../data/mechs.xml', function (xml) {
-                    $(xml).find('mech[type="' + mechObj.mechName + '"]').each(function () {
+                    $(xml).find('mech[type="' + mechObj.chassis + '"]').each(function () {
                         mechObj.maxTons = Number($(this).attr("tonnage"));
                         mechObj.currentTons = mechObj.chassisWeight = parseInt(($(this).attr("chassis")));
                     });
 
-                    $(xml).find('mech[type="' + mechObj.mechName + '"] variant[name="' + mechObj.variant + '"] > limbs > limb').each(function () {
+                    $(xml).find('mech[type="' + mechObj.chassis + '"] variant[name="' + mechObj.variant + '"] > limbs > limb').each(function () {
                         var limbObj = new limb($(this).attr("name"), $(this).attr("crits"), $(this).attr("armorFront"), $(this).attr("armorRear"), $(this).attr("maxArmor"));
                         $(this).find('hardpoint').each(function () {
                             var hpObj = new hardPoint($(this).attr('type'));

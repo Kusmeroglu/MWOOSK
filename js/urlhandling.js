@@ -36,3 +36,16 @@ function getURLParameter(param){
     }
     return "";
 }
+
+function getURLParamObject(){
+    var o = {};
+    var tempArray = window.location.href.split("?");
+    var additionalURL = tempArray[1];
+    if (additionalURL) {
+        tempArray = additionalURL.split("&");
+        for (i=0; i<tempArray.length; i++){
+            o[tempArray[i].split('=')[0]] = tempArray[i].split('=')[1];
+        }
+    }
+    return o;
+}
