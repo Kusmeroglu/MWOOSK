@@ -26,11 +26,6 @@
                     $("#mechClass").append($("<option></option>").attr("value",$(this).attr("type")).text($(this).attr("type")));
 					$("#mechClassDiv").append($("<div class='selectItem' id='"+$(this).attr("type")+"'>"+$(this).attr("type")+"</div>"));
                 });
-				$("#mechClassDiv").click(function() {
-					$(this).children('.selectItem').show();
-					$(this).children('#classBlank').show();
-					$(this).addClass('active');
-				});
 				$("#mechClassDiv").children(".selectItem").click(function() {
 					var selectItem = $(this).attr('id');
 					$($(this).parent()).find("select").attr("value", selectItem);
@@ -55,11 +50,7 @@
 						$("#mechChassisDiv").append($("<div class='selectItem' id='"+$(this).attr("type")+"'>"+$(this).attr("type")+"</div>"));
                     });
                 });
-				$("#mechChassisDiv").click(function() {
-					$(this).children('.selectItem').show();
-					$(this).children('#chassisBlank').show();
-					$(this).parent().addClass('active');
-				});
+				
 				$("#mechChassisDiv").children(".selectItem").click(function() {
 					var selectItem = $(this).attr('id');
 					$("#mechChassis").attr("value", selectItem);
@@ -82,11 +73,7 @@
 						$("#mechVariantDiv").append($("<div class='selectItem' id='"+$(this).attr("type")+"'>"+$(this).attr("type")+"</div>"));
                     });
                 });
-				$("#variantBlank").click(function() {
-					$(this).children('.selectItem').show();
-					$(this).children('#classBlank').show();
-					$(this).parent().addClass('active');
-				});
+				
 				$("#mechVariantDiv").children(".selectItem").click(function() {
 					var selectItem = $(this).attr('id');
 					$($(this).parent()).find("select").attr("value", selectItem);
@@ -99,8 +86,23 @@
 			});
 			
 			// making the fake select boxes work
-				
-				$(document).mouseup(function (e){
+			$("#mechClassDiv").click(function() {
+					$(this).children('.selectItem').show();
+					$(this).children('#classBlank').show();
+					$(this).addClass('active');
+			});	
+			$("#mechChassisDiv").click(function() {
+					$(this).children('.selectItem').show();
+					$(this).children('#chassisBlank').show();
+					$(this).parent().addClass('active');
+				});
+			$("#mechVariantDiv").click(function() {
+					$(this).children('.selectItem').show();
+					$(this).children('#variantBlank').show();
+					$(this).parent().addClass('active');
+			});
+			
+			$(document).mouseup(function (e){
 					var container = $(".selectBox");
 					if (container.has(e.target).length === 0)
 					{
