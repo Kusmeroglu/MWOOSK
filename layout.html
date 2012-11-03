@@ -25,7 +25,7 @@
             $.get('data/mechs.xml', function (xml) {
                 $(xml).find("class").each(function () {
                     $("#mechClass").append($("<option></option>").attr("value",$(this).attr("type")).text($(this).attr("type")));
-					$("#mechClassDiv").append($("<div class='selectItem' id='class_"+$(this).attr("type")+">"+$(this).attr("type")+"</div>"));
+					$("#mechClassDiv").append($("<div class='selectItem' id='class_"+$(this).attr("type")+"'>"+$(this).attr("type")+"</div>"));
                 });
             });
 
@@ -38,7 +38,7 @@
                 $.get('data/mechs.xml', function (xml) {
                     $(xml).find('class[type="' + selectedClass + '"] > mech').each(function () {
                         $("#mechName").append($("<option></option>").attr("value", $(this).attr("type")).text($(this).attr("type")));
-						$("#mechNameDiv").append($("<div class='selectItem' id='variant_"+$(this).attr("type")+">"+$(this).attr("type")+"</div>"));
+						$("#mechNameDiv").append($("<div class='selectItem' id='variant_"+$(this).attr("type")+"'>"+$(this).attr("type")+"</div>"));
                     });
                 });
             });
