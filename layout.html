@@ -27,9 +27,7 @@
 					$("#mechClassDiv").append($("<div class='selectItem' id='"+$(this).attr("type")+"'>"+$(this).attr("type")+"</div>"));
                 });
 				$(".selectItem").click(function() {
-				var selectItem = $(this).attr('id');
-				$(this).sibling("select").attr("value", selectItem);
-				$('#userInfo').html("test");
+					$('#userInfo').html("test");
 				});
             });
 
