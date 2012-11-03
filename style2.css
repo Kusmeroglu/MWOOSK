@@ -43,6 +43,8 @@ display:none;
 .selectItem{
 display:none;
 padding-left:5px;
+position:relative;
+z-index:4;
 }
 
 .selectBox .selectItem:first-child {
