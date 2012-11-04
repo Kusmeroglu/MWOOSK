@@ -174,7 +174,7 @@ left:-65px;
 }
 
 #tabWrap .tab{
-width:55px;
+width:57px;
 height:130px;
 margin-bottom:10px;
 }
@@ -186,7 +186,7 @@ margin-bottom:0px;
 #armamentTab{
 background:transparent;
 background-image:url(images/sprite.png);
-background-position:-100px -995px;
+background-position:-98px -995px;
 position:relative;
 z-index:3;
 }
@@ -194,28 +194,28 @@ z-index:3;
 #utilityTab{
 background:transparent;
 background-image:url(images/sprite.png);
-background-position:-100px -1165px;
+background-position:-98px -1165px;
 position:relative;
 }
 
 #upgradeTab{
 background:transparent;
 background-image:url(images/sprite.png);
-background-position:-100px -1325px;
+background-position:-98px -1325px;
 position:relative;
 }
 
 #statisticsTab{
 background:transparent;
 background-image:url(images/sprite.png);
-background-position:-100px -1485px;
+background-position:-98px -1485px;
 position:relative;
 }
 
 #commentsTab{
 background:transparent;
 background-image:url(images/sprite.png);
-background-position:-100px -1645px;
+background-position:-98px -1645px;
 position:relative;
 }
 
