@@ -74,12 +74,12 @@
                                 ]
                             })
                             .hover(
-                            function(){
-                                updateRoseChartData($(this).data("rosechartdata"), $(this).data("name"));
-                            },
-                            function(){
-                                resetRoseChartData("-N/A-");
-                            })
+                                function(){
+                                    updateRoseChartData($(this).data("rosechartdata"), $(this).data("name"));
+                                },
+                                function(){
+                                    resetRoseChartData("-N/A-");
+                                })
                             .text($(this).text()));
                 });
                 $("#itemList div").draggable(draggableOptions);
@@ -116,28 +116,32 @@
                 mechXML.find("class").each(function () {
                     $("#mechClass").append($("<option></option>").attr("value",$(this).attr("type")).text($(this).attr("type")));
                     $("#mechClassDiv").append($("<div class='selectItem' id='"+$(this).attr("type")+"'>"+$(this).attr("type")+"</div>"));
-                    $("#mechClassDiv").children(".selectItem").click(function() {
-                        var selectItem = $(this).attr('id');
-                        $($(this).parent()).find("select").attr("value", selectItem);
-                        $($(this).parent()).find("select").change();
-                        $(this).parent().removeClass("active");
-                        $(this).siblings(".selectItem").hide();
-                        $(this).siblings("#classBlank").hide();
-                    });
+                });
+                $("#mechClassDiv").children(".selectItem").click(function(event) {
+                    event.stopPropagation();
+                    var selectItem = $(this).attr('id');
+                    $($(this).parent()).find("select").attr("value", selectItem);
+                    $($(this).parent()).find("select").change();
+                    $(this).parent().removeClass("active");
+                    $(this).siblings(".selectItem").hide();
+                    $(this).siblings("#classBlank").hide();
                 });
 
                 // make the secondary pull down go
                 $("#mechClass").on("change", function (event) {
                     var selectedClass = $("#mechClass").val();
-                    $("#mechChassis").empty().append($("<option></option>").attr("value", "0").text("Select mech name..."));
-                    $("#mechChassisDiv").empty().append($("<div class='hide'><select id='mechChassis'><option value='0'>Select mech Chasis...</option></select></div><div class='selectBlank' id='chassisBlank'>Select mech Chassis...</div>"));
-                    $("#mechVariant").empty().append($("<option></option>").attr("value", "0").text("Select Mech Variant..."));
-                    $("#mechVariantDiv").empty().append($("<div class='hide'><select id='mechVariant'><option value='0'>Select mech Variant...</option></select></div><div class='selectBlank' id='variantBlank'>Select mech Variant...</div>"));
+                    $("#mechChassis").empty().append($("<option></option>").attr("value", "0").attr('id','chassisBlank').text("Select mech name..."));
+                    $("#mechChassisDiv .selectBlank, #mechChassisDiv .selectItem").remove();
+                    $("#mechChassisDiv").append($("<div class='selectBlank' id='chassisBlank'>Select mech Chassis...</div>"));
+                    $("#mechVariant").empty().append($("<option></option>").attr("value", "0").attr('id','variantBlank').text("Select Mech Variant..."));
+                    $("#mechVariantDiv .selectBlank, #mechVariantDiv .selectItem").remove();
+                    $("#mechVariantDiv").append($("<div class='selectBlank' id='variantBlank'>Select mech Variant...</div>"));
                     mechXML.find('class[type="' + selectedClass + '"] > mech').each(function () {
                         $("#mechChassis").append($("<option></option>").attr("value", $(this).attr("type")).text($(this).attr("type")));
                         $("#mechChassisDiv").append($("<div class='selectItem' id='"+$(this).attr("type")+"'>"+$(this).attr("type")+"</div>"));
                     });
-                    $("#mechChassisDiv").children(".selectItem").click(function() {
+                    $("#mechChassisDiv").children(".selectItem").click(function(event) {
+                        event.stopPropagation();
                         var selectItem = $(this).attr('id');
                         $("#mechChassis").attr("value", selectItem);
                         $("#mechChassis").change();
@@ -150,16 +154,18 @@
                 // make the tertiary pull down go
                 $("#mechChassis").on("change", function (event) {
                     var selectedChassis = $("#mechChassis").val();
-                    $("#mechVariant").empty().append($("<option></option>").attr("value", "0").text("Select mech variant..."));
-                    $("#mechVariantDiv").empty().append($("<div class='selectBlank' id='variantBlank'>Select mech Variant...</div>"));
+                    $("#mechVariant").empty().append($("<option></option>").attr("value", "0").attr('id','variantBlank').text("Select mech variant..."));
+                    $("#mechVariantDiv .selectBlank, #mechVariantDiv .selectItem").remove();
+                    $("#mechVariantDiv").append($("<div class='selectBlank' id='variantBlank'>Select mech Variant...</div>"));
                     mechXML.find('class > mech[type="' + selectedChassis + '"] > variant').each(function () {
                         $("#mechVariant").append($("<option></option>").attr("value", $(this).attr("name")).text($(this).attr("name")));
-                        $("#mechVariantDiv").append($("<div class='selectItem' id='"+$(this).attr("type")+"'>"+$(this).attr("type")+"</div>"));
+                        $("#mechVariantDiv").append($("<div class='selectItem' id='"+$(this).attr("name")+"'>"+$(this).attr("name")+"</div>"));
                     });
-                    $("#mechVariantDiv").children(".selectItem").click(function() {
+                    $("#mechVariantDiv").children(".selectItem").click(function(event) {
+                        event.stopPropagation();
                         var selectItem = $(this).attr('id');
-                        $($(this).parent()).find("select").attr("value", selectItem);
-                        $($(this).parent()).find("select").change();
+                        $("#mechVariant").attr("value", selectItem);
+                        $("#mechVariant").change();
                         $(this).parent().removeClass("active");
                         $(this).siblings(".selectItem").hide();
                         $(this).siblings("#variantBlank").hide();
@@ -167,6 +173,9 @@
                 });
 
                 $("#mechVariant").on("change", function (event) {
+                    if ($("#mechVariant").val() == "0"){
+                        return;
+                    }
                     mechXML.find('mech[type="' + $("#mechChassis").val() + '"]').each(function () {
                         mechObj = new mech($("#mechChassis").val(), $("#mechVariant").val(), parseFloat($(this).attr("tonnage")));
                         mechObj.currentTons = mechObj.chassisTons = parseFloat($(this).attr("chassis"));
@@ -266,7 +275,6 @@
                         .fadeIn();
                 });
             }
-
 
 		});
     </script>
