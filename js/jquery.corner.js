@@ -248,12 +248,16 @@ $.fn.corner.defaults = {
 
 $('#chasisBar').corner("bevel tl 10px");
 $('#userInfo').corner("bevel tr 10px");
-$('#mechContainer').corner("bevel bl 19px");
-$('#mechContainerWrap').corner("bevel bl 14px");
+//$('#mechContainer').corner("bevel 10px");
+//$('#mechContainerWrap').corner("bevel 10px");
+//$('#mechContainer').corner("bevel tl 30px");
+//$('#mechContainerWrap').corner("bevel tl 30px");
+//$('#mechContainer').corner("bevel bl 20px");
+//$('#mechContainerWrap').corner("bevel bl 20px");
 $('.tabWrapper').corner("bevel br 7px");
 $('.tab').corner("bevel br 5px");
-$('#detailContainer').corner("bevel br 26px");
-$('#detailContainerWrap').corner("bevel br 22px");
+//$('#detailContainer').corner("bevel br 26px");
+//$('#detailContainerWrap').corner("bevel br 22px");
 $('#tonnageWrap').corner("bevel bl 10px");
 $('#tonnage').corner("bevel bl 8px");
 $('#commentsWrap').corner("bevel br 7px");

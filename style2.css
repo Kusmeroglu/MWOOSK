@@ -1,6 +1,16 @@
+/*CSS
+Color Palette:
+Background:  #10171b  -- Dark Blue Green
+Border-Trim: #718ba2  -- Light Blue
+Text: #
+Accent: F
+Box Background:  #000000 -- Black
+*/
+
 body{
 background-color:#10171b;
-background-size:20px 20px;
+background-image:url(images/background.png);
+background-position:-50px -840px;
 }
 
 .jquery-corner { 
@@ -14,13 +24,62 @@ background-size:20px 20px;
 clear:both;
 }
 
+.hide {
+display:none;
+}
+
+.selectBox {
+   width: 200px;
+   background:#000;
+   color:#fff;
+   background-image: url(images/sprite.png);
+   background-repeat:no-repeat;
+   background-position:-225px -895px;
+   border: 1px solid #718ba2;
+   float:left;
+   margin:5px 10px;
+   position:relative;
+   z-index:4;
+}
+
+.selectItem{
+display:none;
+padding-left:5px;
+position:relative;
+z-index:5;
+}
+
+.selectBlank {
+cursor:pointer;
+padding-left:5px;
+}
+
+.selectItem:hover{
+cursor:pointer;
+background:#718ba2;
+}
+
+.active {
+-webkit-box-shadow:  2px 2px 5px 0px #000;
+box-shadow:  2px 2px 5px 0px #000;
+}
+
+select {
+	background:#000;
+   -webkit-appearence: none;
+   width: 200px;
+   font-size: 12px;
+   color:#fff;
+   border: 0px solid #718ba2;
+}
+
 #pageWrap{
  width:1280px;
  margin:10px auto;
  padding:0px 20px;
  }
 
-#chasisBar{
+#chassisBar{
 background:#000;
 padding:5px 0px;
 width:810px;
@@ -42,49 +101,53 @@ float:left;
 float:left;
 }
 
+/*
 #mechContainerWrap{
 background:#718ba2;
-padding:7px 4px 4px 11px;
--webkit-filter: drop-shadow(rgba(0,0,0,0.5) 0 5px 5px);
--moz-filter: drop-shadow(rgba(0,0,0,0.5) 0 5px 5px);
+padding:5px 10px 10px 10px;
 }
+*/
 
 #mechContainer{
-background:#000;
-width:830px;
-height:660px;
+background-color:transparent;
+background-image:url(images/sprite.png);
+background-repeat: no-repeat;
+background-position:-50px -50px;
+width:840px;
+height:780px;
+margin-top:10px;
 }
 
 #head{
-background:#000#000;
+background:#000;
 }
 
 #rightArm{
-background:#000#000;
+background:#000;
 }
 
 #rightTorso{
-background:#000#000;
+background:#000;
 }
 
 #centerTorso{
-background:#000#000;
+background:#000;
 }
 
 #leftTorso{
-background:#000#000;
+background:#000;
 }
 
 #leftArm{
-background:#000#000;
+background:#000;
 }
 
 #rightLeg{
-background:#000#000;
+background:#000;
 }
 
 #leftLeg{
-background:#000#000;
+background:#000;
 }
 
 #componentWrap{
@@ -107,19 +170,65 @@ height:660px;
 float:right;
 position:relative;
 margin-top:20px;
+left:-65px;
 }
 
 #tabWrap .tab{
-background:#000;
-width:110px;
-height:50px;
-
+width:57px;
+height:130px;
+margin-bottom:10px;
 }
 
 .tabWrapper{
-background:#718ba2;
-padding:2px 3px 2px 2px;
-margin-bottom:4px;
+margin-bottom:0px;
+}
+
+#armamentTab{
+background:transparent;
+background-image:url(images/sprite.png);
+background-position:-98px -995px;
+position:relative;
+}
+
+#armamentTab:hover{
+background:transparent;
+background-image:url(images/sprite.png);
+background-position:-202px -995px;
+cursor:pointer;
+}
+
+#utilityTab{
+background:transparent;
+background-image:url(images/sprite.png);
+background-position:-98px -1165px;
+position:relative;
+}
+
+#pilotingTab{
+background:transparent;
+background-image:url(images/sprite.png);
+background-position:-98px -1325px;
+position:relative;
+}
+
+#pilotingTab:hover{
+background:transparent;
+background-image:url(images/sprite.png);
+background-position:-201px -1325px;
+cursor:pointer;
+}
+
+#statisticsTab{
+background:transparent;
+background-image:url(images/sprite.png);
+background-position:-98px -1485px;
+position:relative;
+}
+
+#commentsTab{
+background:transparent;
+background-image:url(images/sprite.png);
+background-position:-98px -1645px;
 position:relative;
 }
 
@@ -154,17 +263,18 @@ position:relative;
 }
 
 #detailContainerWrap{
-background:#718ba2;
 position:absolute;
 z-index:2;
 float:right;
-padding:4px 2px 5px 9px;
 }
 
 #detailContainer{
-background:#000;
+background-color:transparent;
+background-image:url(images/sprite.png);
+background-repeat: no-repeat;
+background-position:-950px -50px;
 width:320px;
-height:660px;
+height:780px;
 position:relative;
 }
 
