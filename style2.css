@@ -225,6 +225,13 @@ background-position:-98px -1485px;
 position:relative;
 }
 
+#statisticsTab:hover{
+background:transparent;
+background-image:url(images/sprite.png);
+background-position:-201px -1485px;
+cursor:pointer;
+}
+
 #commentsTab{
 background:transparent;
 background-image:url(images/sprite.png);
