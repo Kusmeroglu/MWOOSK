@@ -217,6 +217,7 @@ background:transparent;
 background-image:url(images/sprite.png);
 background-position:-201px -1325px;
 cursor:pointer;
+z-index:3;
 }
 
 #statisticsTab{
@@ -231,6 +232,7 @@ background:transparent;
 background-image:url(images/sprite.png);
 background-position:-201px -1485px;
 cursor:pointer;
+z-index:3;
 }
 
 #commentsTab{
