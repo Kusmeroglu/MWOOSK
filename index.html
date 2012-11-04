@@ -27,16 +27,25 @@
     <script type="text/javascript">
         var mechObj;
         var mechXML;
+        var draggableOptions = {
+            revert: "invalid",
+                    helper: function(){
+                        var x = $(this).clone(true, true);
+                        return x;
+                    },
+            appendTo: 'body'
+        };
+
         $(function () {
             // Generate the item list
             $.get('data/items.xml', function (xml) {
                 $(xml).find("weapons > item").each(function () {
                     $("#itemList").append($("<div></div>")
-                            .attr("class", "item " + $(this).attr("type"))
+                            .attr("class", "item " + $(this).attr("type") + " " + $(this).attr("id"))
                             .attr("alt", $(this).attr("type"))
                             .attr("title", $(this).attr("tons"))
                             .attr("name", $(this).attr("slots"))
-                            .attr("id", $(this).attr("id"))
+                        //    .attr("id", $(this).attr("id"))
                         // store all the weapon information in this div
                             .data({
                                 id:$(this).attr("id"),
@@ -75,13 +84,7 @@
                             })
                             .text($(this).text()));
                 });
-                $("#itemList div").draggable({
-                    revert: "invalid",
-                    helper: function(){
-                        var x = $(this).clone(true, true);
-                        return x;
-                    },
-                    appendTo: 'body'});
+                $("#itemList div").draggable(draggableOptions);
             });
 
             // load XML just the once.
@@ -116,6 +119,7 @@
                     });
                     mechXML.find('mech[type="' + mechObj.chassis + '"] variant[name="' + mechObj.variant + '"] > limbs > limb').each(function () {
                         var limbObj = new limb($(this).attr("name"), $(this).attr("crits"), $(this).attr("armorFront"), $(this).attr("armorRear"), $(this).attr("maxArmor"));
+                        setURLParameter(limbObj.limbName, "");
                         $(this).find('hardpoint').each(function(){
                             var hardPointObj = new hardPoint($(this).attr('type'));
                             limbObj.addHardPoint(hardPointObj);
@@ -146,11 +150,12 @@
                                     while(i < rawitems.length)
                                     {
                                         var thisitemid = rawitems.substr(i, 2);
-                                        var thisitemelem = $('#'+thisitemid);
+                                        var thisitemelem = $('#itemList .'+thisitemid);
                                         var itemObj = thisitemelem.data('itemObj');
                                         mechObj.addItemToLimb(limb, itemObj);
                                         thisitemelem
                                                 .clone(true, true)
+                                                .draggable( "destroy" )
                                                 .append('<div class="close">X</div>')
                                                 .appendTo(limbelem)
                                                 .fadeIn();
@@ -189,6 +194,8 @@
                     var itemObj = $(ui.draggable).data('itemObj');
                     mechObj.addItemToLimb(this.id, itemObj);
                     addItem($(ui.draggable).clone(true, true), this);
+                    $(ui.draggable).draggable(draggableOptions);
+
                 }
             });
 
