@@ -17,8 +17,6 @@
     <script type="text/javascript" src="js/class.item.js"></script>
     <script type="text/javascript" src="js/urlhandling.js"></script>
 
-
-
     <link href="http://code.jquery.com/ui/1.9.0/themes/base/jquery-ui.css" rel="stylesheet" media="screen" />
     <link href="font/stylesheet.css" rel="stylesheet" media="screen" />
     <link href='http://fonts.googleapis.com/css?family=Aldrich' rel='stylesheet' type='text/css'>
@@ -44,7 +42,6 @@
                     $("#itemList").append($("<div></div>")
                             .attr("class", "item " + $(this).attr("type") + " " + $(this).attr("id"))
                             .attr("alt", $(this).attr("type"))
-                            .attr("title", $(this).attr("tons"))
                             .attr("name", $(this).attr("slots"))
                         //    .attr("id", $(this).attr("id"))
                         // store all the weapon information in this div
@@ -364,41 +361,40 @@
     <div id="itemWrap">
         <div id="detailContainerWrap">
             <div id="detailContainer">
-                <div id="armament">
-                    <div id ="itemList" style="display:none">
-                        <div id="roseChart" style="width:220px;height:220px"></div>
-
-                    </div>
-                    <div id="energy"></div>
-                    <div id="missles"></div>
-                    <div id="utilities"></div>
-                    <div id="engines"></div>
-                    <div id="upgrades"></div>
-                    <div id="modules"></div>
-                    <div id="stats"></div>
-                    <div id="weaponGroups"></div>
-                    <div id="pilotSkills"></div>
+                <div id="ballistics">
+                    <div id="itemList" style="display:none"></div>
+                    <div id="roseChart" style="width:220px;height:220px"></div>
                 </div>
+                <div id="energy"></div>
+                <div id="missles"></div>
+                <div id="utilities"></div>
+                <div id="engines"></div>
+                <div id="upgrades"></div>
+                <div id="modules"></div>
+                <div id="stats"></div>
+                <div id="weaponGroups"></div>
+                <div id="pilotSkills"></div>
             </div>
+        </div>
 
+    </div>
+    <div class="clear"></div>
+
+    <footer>
+        <div id="tonnageWrap">
+            <div id="tonnage">
+                <div id="weightChart"></div>
+            </div>
+        </div>
+        <div id="speedWrap">
+            <div id="speed"></div>
+        </div>
+        <div id="commentsWrap">
+            <div id="comments"></div>
         </div>
         <div class="clear"></div>
-
-        <footer>
-            <div id="tonnageWrap">
-                <div id="tonnage">
-                    <div id ="weightChart" ></div>
-                </div>
-            </div>
-            <div id="speedWrap">
-                <div id="speed"></div>
-            </div>
-            <div id="commentsWrap">
-                <div id="comments"></div>
-            </div>
-            <div class="clear"></div>
-        </footer>
-    </div>
+    </footer>
+</div>
 
 </body>
 </html>
