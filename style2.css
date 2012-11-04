@@ -285,44 +285,54 @@ height:780px;
 position:relative;
 }
 
+#itemList {
+padding:10px;
+}
+
 #ballistics{
-background:#000;
 }
 
 #energy{
-background:#000;
 }
 
 #missiles{
-background:#000;
 }
 
 #utilities{
-background:#000;
 }
 
 #engines{
-background:#000;
 }
 
 #upgrades{
-background:#000;
 }
 
 #modules{
-background:#000;
 }
 
 #stats{
-background:#000;
 }
 
 #weaponGroups{
-background:#000;
 }
 
 #pilotSkills{
-background:#000;
+}
+
+div.energy {
+    background-image: url("images/bgEnergy.png") !important;
+    background-repeat: no-repeat !important;
+    position: relative;
+}
+div.missile {
+    background-image: url("images/bgMissile.png") !important;
+    background-repeat: no-repeat !important;
+    position: relative;
+}
+div.ballistic {
+    background-image: url("images/bgBallistic.png") !important;
+    background-repeat: no-repeat !important;
+    position: relative;
 }
 
 #tonnageWrap{
