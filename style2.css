@@ -189,18 +189,17 @@ background-image:url(images/sprite.png);
 background-position:-98px -995px;
 position:relative;
 z-index:3;
+-webkit-transition: opacity .6s ease-in-out, background 0s 2012s; 
+    -moz-transition: opacity .6s ease-in-out, background 0s 2012s; 
+    -o-transition: opacity .6s ease-in-out, background 0s 2012s; 
+    transition: opacity .6s ease-in-out, background 0s 2012s;
 }
 
 #armamentTab:hover{
 background:transparent;
 background-image:url(images/armamentactive.png);
 background-position:-20px -6px;
-cursor:pointer;
--webkit-transition: 1s ease-out;
--moz-transition: 1s ease-out;
--o-transition: 1s ease-out;
--ms-transition: 1s ease-out;
-transition: 1s ease-out;
+cursor:pointer; 
 }
 
 #utilityTab{
