@@ -385,14 +385,6 @@ width:300px;
 Weight Chart CSS (SVG)
 */
 
-#weightChart {
-    height: 20px;
-    position: absolute;
-    right: 10px;
-    top: 10px;
-    width: 400px;
-}
-
 .bullet {
     font: 10px 'Aldrich', sans-serif;
     fill: #999999;

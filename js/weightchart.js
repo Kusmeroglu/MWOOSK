@@ -1,8 +1,8 @@
 function createChart(id, max, chassis, current){
     $(id).empty();
-    var width = $(id).width();
-    var height = 40;
-    var margin = {top: 5, right: 10, bottom: 15, left: 80};
+    var width = $($(id).parent()).width();
+    var height = 30;
+    var margin = {top: 5, right: 10, bottom: 15, left: 65};
 
 /*    var x = d3.scale.linear()
         .domain([0, max])
@@ -45,7 +45,7 @@ function createChart(id, max, chassis, current){
 
     var title = vis.append("g")
         .attr("text-anchor", "end")
-        .attr("transform", "translate(-6," + (height - margin.top - margin.bottom) / 2 + ")");
+        .attr("transform", "translate(-8,10)");
 
     title.append("text")
         .attr("class", "title")
