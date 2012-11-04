@@ -193,9 +193,10 @@ z-index:3;
 
 #armamentTab:hover{
 background:transparent;
-background-image:url(images/sprite.png);
-background-position:-202px -995px;
+background-image:url(images/armamentactive.png);
+background-position:-20px -6px;
 cursor:pointer;
+-webkit-transition:.5s linear;
 }
 
 #utilityTab{
