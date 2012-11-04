@@ -31,6 +31,7 @@
             revert: "invalid",
                     helper: function(){
                         var x = $(this).clone(true, true);
+                        $(this).draggable(draggableOptions); //reset draggable?
                         return x;
                     },
             appendTo: 'body'
@@ -194,8 +195,6 @@
                     var itemObj = $(ui.draggable).data('itemObj');
                     mechObj.addItemToLimb(this.id, itemObj);
                     addItem($(ui.draggable).clone(true, true), this);
-                    $(ui.draggable).draggable(draggableOptions);
-
                 }
             });
 
