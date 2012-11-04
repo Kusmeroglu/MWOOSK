@@ -194,10 +194,7 @@ position:relative;
 background:transparent;
 background-image:url(images/sprite.png);
 background-position:-202px -995px;
--webkit-transition: background 0.5s linear;
--moz-transition: background 0.5s linear;
--o-transition: background 0.5s linear;
-transition: background 0.5s linear;
+cursor:pointer;
 }
 
 #utilityTab{
@@ -207,11 +204,18 @@ background-position:-98px -1165px;
 position:relative;
 }
 
-#upgradeTab{
+#pilotingTab{
 background:transparent;
 background-image:url(images/sprite.png);
 background-position:-98px -1325px;
 position:relative;
+}
+
+#pilotingTab:hover{
+background:transparent;
+background-image:url(images/sprite.png);
+background-position:-201px -1325px;
+cursor:pointer;
 }
 
 #statisticsTab{
