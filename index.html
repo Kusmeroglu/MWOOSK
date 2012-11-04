@@ -22,7 +22,7 @@
     <link href="http://code.jquery.com/ui/1.9.0/themes/base/jquery-ui.css" rel="stylesheet" media="screen" />
     <link href="font/stylesheet.css" rel="stylesheet" media="screen" />
     <link href='http://fonts.googleapis.com/css?family=Aldrich' rel='stylesheet' type='text/css'>
-    <link href="style.css" rel="stylesheet" media="screen" />
+    <link href="style2.css" rel="stylesheet" media="screen" />
 
     <script type="text/javascript">
         var mechObj;
@@ -88,34 +88,90 @@
                 $("#itemList div").draggable(draggableOptions);
             });
 
+            // making the fake select boxes work
+            $("#mechClassDiv").click(function() {
+                $(this).children('.selectItem').show();
+                $(this).children('#classBlank').show();
+                $(this).addClass('active');
+            });
+            $("#mechChassisDiv").click(function() {
+                $(this).children('.selectItem').show();
+                $(this).children('#chassisBlank').show();
+                $(this).parent().addClass('active');
+            });
+            $("#mechVariantDiv").click(function() {
+                $(this).children('.selectItem').show();
+                $(this).children('#variantBlank').show();
+                $(this).parent().addClass('active');
+            });
+
+            $(document).mouseup(function (e){
+                var container = $(".selectBox");
+                if (container.has(e.target).length === 0)
+                {
+                    container.children(".selectItem").hide();
+                }
+            });
+
             // load XML just the once.
             $.get('data/mechs.xml', function (xml){
                 mechXML = $(xml);
                 mechXML.find("class").each(function () {
                     $("#mechClass").append($("<option></option>").attr("value",$(this).attr("type")).text($(this).attr("type")));
+                    $("#mechClassDiv").append($("<div class='selectItem' id='"+$(this).attr("type")+"'>"+$(this).attr("type")+"</div>"));
+                    $("#mechClassDiv").children(".selectItem").click(function() {
+                        var selectItem = $(this).attr('id');
+                        $($(this).parent()).find("select").attr("value", selectItem);
+                        $($(this).parent()).find("select").change();
+                        $(this).parent().removeClass("active");
+                        $(this).siblings(".selectItem").hide();
+                        $(this).siblings("#classBlank").hide();
+                    });
                 });
 
                 // make the secondary pull down go
                 $("#mechClass").on("change", function (event) {
                     var selectedClass = $("#mechClass").val();
-                    $("#chassisName").empty().append($("<option></option>").attr("value", "0").text("Select mech name..."));
+                    $("#mechChassis").empty().append($("<option></option>").attr("value", "0").text("Select mech name..."));
+                    $("#mechChassisDiv").empty().append($("<div class='hide'><select id='mechChassis'><option value='0'>Select mech Chasis...</option></select></div><div class='selectBlank' id='chassisBlank'>Select mech Chassis...</div>"));
+                    $("#mechVariant").empty().append($("<option></option>").attr("value", "0").text("Select Mech Variant..."));
+                    $("#mechVariantDiv").empty().append($("<div class='hide'><select id='mechVariant'><option value='0'>Select mech Variant...</option></select></div><div class='selectBlank' id='variantBlank'>Select mech Variant...</div>"));
                     mechXML.find('class[type="' + selectedClass + '"] > mech').each(function () {
-                        $("#chassisName").append($("<option></option>").attr("value", $(this).attr("type")).text($(this).attr("type")));
+                        $("#mechChassis").append($("<option></option>").attr("value", $(this).attr("type")).text($(this).attr("type")));
+                        $("#mechChassisDiv").append($("<div class='selectItem' id='"+$(this).attr("type")+"'>"+$(this).attr("type")+"</div>"));
+                    });
+                    $("#mechChassisDiv").children(".selectItem").click(function() {
+                        var selectItem = $(this).attr('id');
+                        $("#mechChassis").attr("value", selectItem);
+                        $("#mechChassis").change();
+                        $(this).parent().removeClass("active");
+                        $(this).siblings(".selectItem").hide();
+                        $(this).siblings("#chassisBlank").hide();
                     });
                 });
 
                 // make the tertiary pull down go
-                $("#chassisName").on("change", function (event) {
-                    var selectedChassis = $("#chassisName").val();
+                $("#mechChassis").on("change", function (event) {
+                    var selectedChassis = $("#mechChassis").val();
                     $("#mechVariant").empty().append($("<option></option>").attr("value", "0").text("Select mech variant..."));
+                    $("#mechVariantDiv").empty().append($("<div class='selectBlank' id='variantBlank'>Select mech Variant...</div>"));
                     mechXML.find('class > mech[type="' + selectedChassis + '"] > variant').each(function () {
                         $("#mechVariant").append($("<option></option>").attr("value", $(this).attr("name")).text($(this).attr("name")));
+                        $("#mechVariantDiv").append($("<div class='selectItem' id='"+$(this).attr("type")+"'>"+$(this).attr("type")+"</div>"));
+                    });
+                    $("#mechVariantDiv").children(".selectItem").click(function() {
+                        var selectItem = $(this).attr('id');
+                        $($(this).parent()).find("select").attr("value", selectItem);
+                        $($(this).parent()).find("select").change();
+                        $(this).parent().removeClass("active");
+                        $(this).siblings(".selectItem").hide();
+                        $(this).siblings("#variantBlank").hide();
                     });
                 });
 
                 $("#mechVariant").on("change", function (event) {
-                    mechXML.find('mech[type="' + $("#chassisName").val() + '"]').each(function () {
-                        mechObj = new mech($("#chassisName").val(), $("#mechVariant").val(), parseFloat($(this).attr("tonnage")));
+                    mechXML.find('mech[type="' + $("#mechChassis").val() + '"]').each(function () {
+                        mechObj = new mech($("#mechChassis").val(), $("#mechVariant").val(), parseFloat($(this).attr("tonnage")));
                         mechObj.currentTons = mechObj.chassisTons = parseFloat($(this).attr("chassis"));
                     });
                     mechXML.find('mech[type="' + mechObj.chassis + '"] variant[name="' + mechObj.variant + '"] > limbs > limb').each(function () {
@@ -178,7 +234,7 @@
                         var mechClass = $(this).parents('class').attr('type').toString();
                         $("#mechClass").val(mechClass).change();
                         var mechChassis = $(this).parents('mech').attr('type').toString();
-                        $("#chassisName").val(mechChassis).change();
+                        $("#mechChassis").val(mechChassis).change();
                     });
                     $("#mechVariant").val(mechVariant).change();
                 }
@@ -220,54 +276,129 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 </head>
 <body>
-    <div id ="topbar">
-        <select id ="mechClass">
-            <option value="0">Select mech class...</option>
-        </select>
-        <select id ="chassisName">
-            <option value="0">Select mech name...</option>
-        </select>
-        <select id ="mechVariant">
-            <option value="0">Select mech varient...</option>
-        </select>
+<div id="pageWrap">
+    <header>
+        <div id="chassisBar">
+            <div class="selectBox" id="mechClassDiv">
+                <div class="hide">
+                    <select id="mechClass">
+                        <option value="0">Select mech Class...</option>
+                    </select>
+                </div>
+                <div class="selectBlank" id="classBlank">Select mech Class...</div>
+            </div>
+            <div class="selectBox" id="mechChassisDiv">
+                <div class="hide">
+                    <select id="mechChassis">
+                        <option value="0">Select mech Chasis...</option>
+                    </select>
+                </div>
+                <div class="selectBlank" id="chassisBlank">Select mech Chassis...</div>
+            </div>
+            <div class="selectBox" id="mechVariantDiv">
+                <div class="hide">
+                    <select id="mechVariant">
+                        <option value="0">Select mech Variant...</option>
+                    </select>
+                </div>
+                <div class="selectBlank" id="variantBlank">Select mech Variant...</div>
+            </div>
+            <div class="clear"></div>
+        </div>
+        <div id="userInfo"></div>
+        <div class="clear"></div>
+    </header>
+    <div id="mechBay">
+        <div id="mechContainerWrap">
+            <div id="mechContainer">
+                <div id="head"></div>
+                <div id="rightArm"></div>
+                <div id="rightTorso"></div>
+                <div id="centerTorso"></div>
+                <div id="leftTorso"></div>
+                <div id="leftArm"></div>
+                <div id="rightLeg"></div>
+                <div id="leftLeg"></div>
+            </div>
+            <div id="componentWrap">
+                <div id="focusLine"></div>
+                <div id="componentDetail"></div>
+            </div>
+        </div>
     </div>
-    <div id ="weightChart" ></div>
-    <div id ="mechBay" style="display:none">
-        <div class="area" id="head">
-            <div class="descriptor" id="headDescription">Head
-            </div>
+    <div id="tabWrap">
+        <div class="tabWrapper">
+            <div class="tab" id="armamentTab"></div>
         </div>
-        <div class="area" id="leftTorso">
-            <div class="descriptor" id="leftTorsoDescription">Left Torso
-            </div>
+        <div class="tabWrapper">
+            <div class="tab" id="utilityTab"></div>
         </div>
-        <div class="area" id="rightTorso">
-            <div class="descriptor" id="rightTorsoDescription">Right Torso
-            </div>
+        <div class="tabWrapper">
+            <div class="tab" id="pilotingTab"></div>
         </div>
-        <div class="area" id="leftArm">
-            <div class="descriptor" id="leftArmDescription">Left Arm
-            </div>
+        <div class="tabWrapper">
+            <div class="tab" id="statisticsTab"></div>
         </div>
-        <div class="area" id="rightArm">
-            <div class="descriptor" id="rightArmDescription">Right Arm
-            </div>
+        <div class="tabWrapper">
+            <div class="tab" id="commentsTab"></div>
         </div>
-        <div class="area" id="centerTorso">
-            <div class="descriptor" id="centerTorsoDescription">Center Torso
-            </div>
+        <!-- <div class="tabWrapper">
+            <div class="tab" id="upgradesTab"></div>
         </div>
-        <div class="area" id="leftLeg">
-            <div class="descriptor" id="leftLegDescription">Left Leg
-            </div>
+        <div class="tabWrapper">
+            <div class="tab" id="modulesTab"></div>
         </div>
-        <div class="area" id="rightLeg">
-            <div class="descriptor" id="rightLegDescription">Right Leg
-            </div>
+        <div class="tabWrapper">
+            <div class="tab" id="statsTab"></div>
         </div>
+        <div class="tabWrapper">
+            <div class="tab" id="weaponGroupTab"></div>
+        </div><div class="tabWrapper">
+            <div class="tab" id="pilotSkillsTab"></div>
+        </div>
+        <div class="tabWrapper">
+            <div class="tab" id="commentsTab"></div>
+        </div> -->
+        <div class="clear"></div>
     </div>
-    <div id ="itemList" style="display:none">
+    <div id="itemWrap">
+        <div id="detailContainerWrap">
+            <div id="detailContainer">
+                <div id="armament">
+                    <div id ="itemList" style="display:none">
+                        <div id="roseChart" style="width:220px;height:220px"></div>
+
+                    </div>
+                    <div id="energy"></div>
+                    <div id="missles"></div>
+                    <div id="utilities"></div>
+                    <div id="engines"></div>
+                    <div id="upgrades"></div>
+                    <div id="modules"></div>
+                    <div id="stats"></div>
+                    <div id="weaponGroups"></div>
+                    <div id="pilotSkills"></div>
+                </div>
+            </div>
+
+        </div>
+        <div class="clear"></div>
+
+        <footer>
+            <div id="tonnageWrap">
+                <div id="tonnage">
+                    <div id ="weightChart" ></div>
+                </div>
+            </div>
+            <div id="speedWrap">
+                <div id="speed"></div>
+            </div>
+            <div id="commentsWrap">
+                <div id="comments"></div>
+            </div>
+            <div class="clear"></div>
+        </footer>
     </div>
-    <div id="roseChart" style="width:220px;height:220px"></div>
+
 </body>
 </html>
