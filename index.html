@@ -26,66 +26,9 @@
 
     <script type="text/javascript">
         var mechObj;
+        var mechXML;
         $(function () {
-            // Generate the pull downs
-            $.get('data/mechs.xml', function (xml) {
-                $(xml).find("class").each(function () {
-                    $("#mechClass").append($("<option></option>").attr("value",$(this).attr("type")).text($(this).attr("type")));
-                });
-            });
-
-            // make the secondary pull down go
-            $("#mechClass").on("change", function (event) {
-                var selectedClass = $("#mechClass").val();
-                $("#mechName").empty().append($("<option></option>").attr("value", "0").text("Select mech name..."));
-                $.get('data/mechs.xml', function (xml) {
-                    $(xml).find('class[type="' + selectedClass + '"] > mech').each(function () {
-                        $("#mechName").append($("<option></option>").attr("value", $(this).attr("type")).text($(this).attr("type")));
-                    });
-                });
-            });
-
-            // make the tertiary pull down go
-            $("#mechName").on("change", function (event) {
-                var selectedClass = $("#mechClass").val();
-                $("#mechVariant").empty().append($("<option></option>").attr("value", "0").text("Select mech variant..."));
-                $.get('data/mechs.xml', function (xml) {
-                    $(xml).find('class[type="' + selectedClass + '"] > mech > variant').each(function () {
-                        $("#mechVariant").append($("<option></option>").attr("value", $(this).attr("name")).text($(this).attr("name")));
-                    });
-                });
-            });
-
-            $("#mechVariant").on("change", function (event) {
-                $.get('data/mechs.xml', function (xml) {
-                    $(xml).find('mech[type="' + $("#mechName").val() + '"]').each(function () {
-                        mechObj = new mech($("#mechName").val(), $("#mechVariant").val(), parseFloat($(this).attr("tonnage")));
-                        mechObj.currentTons = mechObj.chassisTons = parseFloat($(this).attr("chassis"));
-                    });
-                    $(xml).find('mech[type="' + mechObj.chassis + '"] variant[name="' + mechObj.variant + '"] > limbs > limb').each(function () {
-                        var limbObj = new limb($(this).attr("name"), $(this).attr("crits"), $(this).attr("armorFront"), $(this).attr("armorRear"), $(this).attr("maxArmor"));
-                        $(this).find('hardpoint').each(function(){
-                            var hardPointObj = new hardPoint($(this).attr('type'));
-                            limbObj.addHardPoint(hardPointObj);
-                        });
-                        mechObj.addLimb($(this).attr("name"), limbObj);
-                    });
-                    //To-do: loop through each limb, count hard points by type, add to description
-                });
-				$("#mechBay").fadeIn('fast', function() {
-					$("#itemList").fadeIn('fast');
-					createChart("#weightChart", mechObj.maxTons, mechObj.chassisTons, mechObj.currentTons);
-                    createRoseGraph("#roseChart", "-N/A-");
-					$( ".slider" ).slider({
-	            		value:1,
-		    	        min: 0,
-        			    max: 45,
-            			step: 1
-					});
-				});
-            });
-
-	        // Generate the item list
+            // Generate the item list
             $.get('data/items.xml', function (xml) {
                 $(xml).find("weapons > item").each(function () {
                     $("#itemList").append($("<div></div>")
@@ -93,8 +36,8 @@
                             .attr("alt", $(this).attr("type"))
                             .attr("title", $(this).attr("tons"))
                             .attr("name", $(this).attr("slots"))
-                            .attr("id", $(this).text())
-                            // store all the weapon information in this div
+                            .attr("id", $(this).attr("id"))
+                        // store all the weapon information in this div
                             .data({
                                 id:$(this).attr("id"),
                                 type:$(this).attr("type"),
@@ -124,12 +67,12 @@
                                 ]
                             })
                             .hover(
-                                function(){
-                                    updateRoseChartData($(this).data("rosechartdata"), $(this).data("name"));
-                                },
-                                function(){
-                                    resetRoseChartData("-N/A-");
-                                })
+                            function(){
+                                updateRoseChartData($(this).data("rosechartdata"), $(this).data("name"));
+                            },
+                            function(){
+                                resetRoseChartData("-N/A-");
+                            })
                             .text($(this).text()));
                 });
                 $("#itemList div").draggable({
@@ -139,6 +82,100 @@
                         return x;
                     },
                     appendTo: 'body'});
+            });
+
+            // load XML just the once.
+            $.get('data/mechs.xml', function (xml){
+                mechXML = $(xml);
+                mechXML.find("class").each(function () {
+                    $("#mechClass").append($("<option></option>").attr("value",$(this).attr("type")).text($(this).attr("type")));
+                });
+
+                // make the secondary pull down go
+                $("#mechClass").on("change", function (event) {
+                    var selectedClass = $("#mechClass").val();
+                    $("#chassisName").empty().append($("<option></option>").attr("value", "0").text("Select mech name..."));
+                    mechXML.find('class[type="' + selectedClass + '"] > mech').each(function () {
+                        $("#chassisName").append($("<option></option>").attr("value", $(this).attr("type")).text($(this).attr("type")));
+                    });
+                });
+
+                // make the tertiary pull down go
+                $("#chassisName").on("change", function (event) {
+                    var selectedChassis = $("#chassisName").val();
+                    $("#mechVariant").empty().append($("<option></option>").attr("value", "0").text("Select mech variant..."));
+                    mechXML.find('class > mech[type="' + selectedChassis + '"] > variant').each(function () {
+                        $("#mechVariant").append($("<option></option>").attr("value", $(this).attr("name")).text($(this).attr("name")));
+                    });
+                });
+
+                $("#mechVariant").on("change", function (event) {
+                    mechXML.find('mech[type="' + $("#chassisName").val() + '"]').each(function () {
+                        mechObj = new mech($("#chassisName").val(), $("#mechVariant").val(), parseFloat($(this).attr("tonnage")));
+                        mechObj.currentTons = mechObj.chassisTons = parseFloat($(this).attr("chassis"));
+                    });
+                    mechXML.find('mech[type="' + mechObj.chassis + '"] variant[name="' + mechObj.variant + '"] > limbs > limb').each(function () {
+                        var limbObj = new limb($(this).attr("name"), $(this).attr("crits"), $(this).attr("armorFront"), $(this).attr("armorRear"), $(this).attr("maxArmor"));
+                        $(this).find('hardpoint').each(function(){
+                            var hardPointObj = new hardPoint($(this).attr('type'));
+                            limbObj.addHardPoint(hardPointObj);
+                        });
+                        mechObj.addLimb($(this).attr("name"), limbObj);
+                    });
+                    //To-do: loop through each limb, count hard points by type, add to description
+                    $("#mechBay").fadeIn('fast', function() {
+                        $("#itemList").fadeIn('fast');
+                        createChart("#weightChart", mechObj.maxTons, mechObj.chassisTons, mechObj.currentTons);
+                        createRoseGraph("#roseChart", "-N/A-");
+                        $( ".slider" ).slider({
+                            value:1,
+                            min: 0,
+                            max: 45,
+                            step: 1
+                        });
+                        //check for info in URLs
+                        // have to wait until we have graphs created.
+                        var urldata = getURLParamObject();
+                        if (urldata.hasOwnProperty('variant')){
+                            //To-do: loop through each limb, count hard points by type, add to description
+                            ['leftArm', 'leftTorso','centerTorso','rightTorso','rightArm','leftLeg','rightLeg','head'].forEach(function(limb){
+                                if (urldata.hasOwnProperty(limb)){
+                                    var rawitems = urldata[limb];
+                                    var limbelem = $('#'+limb);
+                                    var i = 0;
+                                    while(i < rawitems.length)
+                                    {
+                                        var thisitemid = rawitems.substr(i, 2);
+                                        var thisitemelem = $('#'+thisitemid);
+                                        var itemObj = thisitemelem.data('itemObj');
+                                        mechObj.addItemToLimb(limb, itemObj);
+                                        thisitemelem
+                                                .clone(true, true)
+                                                .append('<div class="close">X</div>')
+                                                .appendTo(limbelem)
+                                                .fadeIn();
+                                        i += 2;
+                                    }
+                                }
+                            })
+                        }
+
+                    });
+                });
+
+                //check for info in URLs
+                var urldata = getURLParamObject();
+                if (urldata.hasOwnProperty('variant')){
+                    var mechVariant = urldata['variant'];
+                    // we have data to load
+                    mechXML.find('mech variant[name="' + mechVariant + '"]').each(function () {
+                        var mechClass = $(this).parents('class').attr('type').toString();
+                        $("#mechClass").val(mechClass).change();
+                        var mechChassis = $(this).parents('mech').attr('type').toString();
+                        $("#chassisName").val(mechChassis).change();
+                    });
+                    $("#mechVariant").val(mechVariant).change();
+                }
             });
 
             $(".area").droppable({
@@ -155,7 +192,6 @@
                 }
             });
 
-
 			$("#mechBay div div .close").live("click", function () {
                 var itemObj = $(this).parent().data('itemObj');
                 mechObj.removeItemFromLimb($(this).parents('.area')[0].id, itemObj);
@@ -165,27 +201,13 @@
             function addItem($item, $target) {
                 $item.fadeOut(function () {
                     $item
-                        .clone(true, true)// .clone(true, true) does NOT work. I have no fucking clue why??
+                        .clone(true, true)
 						.append('<div class="close">X</div>')
                         .appendTo($target)
                         .fadeIn();
                 });
             }
 
-            //check for info in URLs
-            var urldata = getURLParamObject();
-            if (urldata.hasOwnProperty('variant')){
-                // we have data to load
-                $.get('data/mechs.xml', function (xml) {
-                    $(xml).find('mech variant[name="' + urldata['variant'] + '"]').each(function () {
-                        var mechClass = $(this).parents('class').attr('type').toString();
-                        var mechChassis = $(this).parents('mech').attr('type')
-                    });
-                    //To-do: loop through each limb, count hard points by type, add to description
-                });
-
-                $("#mechVariant").attr("value", urldata['variant']);
-            }
 
 		});
     </script>
@@ -196,7 +218,7 @@
         <select id ="mechClass">
             <option value="0">Select mech class...</option>
         </select>
-        <select id ="mechName">
+        <select id ="chassisName">
             <option value="0">Select mech name...</option>
         </select>
         <select id ="mechVariant">
