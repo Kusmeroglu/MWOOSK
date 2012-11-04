@@ -196,7 +196,11 @@ background:transparent;
 background-image:url(images/armamentactive.png);
 background-position:-20px -6px;
 cursor:pointer;
--webkit-transition:.5s linear;
+-webkit-transition: 1s ease-out;
+-moz-transition: 1s ease-out;
+-o-transition: 1s ease-out;
+-ms-transition: 1s ease-out;
+transition: 1s ease-out;
 }
 
 #utilityTab{
