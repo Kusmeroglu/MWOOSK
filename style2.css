@@ -381,3 +381,82 @@ height:30px;
 width:300px;
 }
 
+/*
+Weight Chart CSS (SVG)
+*/
+
+#weightChart {
+    height: 20px;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    width: 400px;
+}
+
+.bullet {
+    font: 10px 'Aldrich', sans-serif;
+    fill: #999999;
+    stroke: #999999;
+}
+.bullet .marker {
+    stroke: #000000;
+    stroke-width: 2px;
+}
+.bullet .tick line {
+    stroke: #666666;
+    stroke-width: 0.5px;
+}
+
+/* background of graph */
+.bullet .range.s0 {
+    fill: #C2C3C5;
+}
+/* background of chassis weight marker */
+.bullet .range.s1 {
+    fill: #ABACB0;
+}
+/* background of actual weight bar */
+.bullet .measure.s0 {
+    fill: #718BA2;
+    stroke: #303C48;
+}
+.bullet .title {
+    font-size: 14px;
+    font-weight: normal;
+    fill: #ffffff;
+    stroke: #ffffff;
+}
+.bullet .subtitle {
+    fill: #999999;
+    stroke: #999999;
+}
+
+/*
+Rose Chart CSS (SVG)
+*/
+
+#roseChart {
+    height: 220px;
+    position: absolute;
+    right: 5px;
+    bottom: 5px;
+    width: 220px;
+}
+
+.labels {
+    font: 12px 'Aldrich', sans-serif;
+    fill: #ccc;
+    transform: rotate(45deg);
+    stroke: #ccc;
+}
+.values {
+    font: 12px 'Aldrich', sans-serif;
+    fill: #fff;
+    stroke: #fff;
+}
+
+.caption {
+    font: 14px 'Aldrich', sans-serif;
+    fill: #fff;
+    stroke: #fff;
+}
