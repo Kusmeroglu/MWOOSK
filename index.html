@@ -250,6 +250,9 @@
                 // use the same check for the accept attribute so we can show valid targets
                 accept: function (ui) {
                     var itemObj = ui.data('itemObj');
+                    if (! mechObj.limbs[this.id] ){
+                        return; //bail - sometimes of the xml is missing limbs, otherwise this shouldn't happen.
+                    }
                     return mechObj.limbs[this.id].testIfValid(itemObj);
                 },
                 activeClass: "valid",

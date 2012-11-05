@@ -155,7 +155,9 @@
           </limb>
           <limb name ="rightTorso" ams ="yes" crits ="12" armorFront ="32" armorRear ="16" maxArmor ="56">
           </limb>
-          <limb name ="leftArm" ams ="no" crits ="9" armorFront ="28" armorRear ="-1" maxArmor ="40">
+            <limb name="rightArm" ams="no" crits="9" armorFront="28" armorRear="-1" maxArmor="68">
+            </limb>
+            <limb name ="leftArm" ams ="no" crits ="9" armorFront ="28" armorRear ="-1" maxArmor ="40">
             <hardpoint type ="ballistic"></hardpoint>
             <hardpoint type ="ballistic"></hardpoint>
           </limb>

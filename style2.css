@@ -131,7 +131,7 @@ margin-top:10px;
 }
 
 .valid {
-    border: 3px double #00FF00;
+    border: 3px double #00FF00 !important;
 }
 
 
