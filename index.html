@@ -27,11 +27,11 @@
         var mechXML;
         var draggableOptions = {
             revert: "invalid",
-                    helper: function(){
-                        var x = $(this).clone(true, true);
-                        $(this).draggable(draggableOptions); //reset draggable?
-                        return x;
-                    },
+            helper: function(){
+                var x = $(this).clone(true, true);
+                $(this).draggable(draggableOptions); //reset draggable?
+                return x;
+            },
             appendTo: 'body'
         };
 
@@ -316,14 +316,14 @@
     <div id="mechBay">
         <div id="mechContainerWrap">
             <div id="mechContainer">
-                <div id="head"></div>
-                <div id="rightArm"></div>
-                <div id="rightTorso"></div>
-                <div id="centerTorso"></div>
-                <div id="leftTorso"></div>
-                <div id="leftArm"></div>
-                <div id="rightLeg"></div>
-                <div id="leftLeg"></div>
+                <div id="head" class="area">Head</div>
+                <div id="rightArm" class="area">RArm</div>
+                <div id="rightTorso" class="area">RTorso</div>
+                <div id="centerTorso" class="area">CTorso</div>
+                <div id="leftTorso" class="area">LTorso</div>
+                <div id="leftArm" class="area">LArm</div>
+                <div id="rightLeg" class="area">RLeg</div>
+                <div id="leftLeg" class="area">LLeg</div>
             </div>
             <div id="componentWrap">
                 <div id="focusLine"></div>

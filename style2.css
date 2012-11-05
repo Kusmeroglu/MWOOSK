@@ -116,7 +116,67 @@ background-position:-50px -50px;
 width:840px;
 height:780px;
 margin-top:10px;
+    position: relative;
 }
+
+#mechContainer div {
+    width:115px;
+    height: 200px;
+    border: 1px solid #666666;
+    color: white;
+}
+
+.invalid {
+    border: 3px double #FF0000;
+}
+
+.valid {
+    border: 3px double #00FF00;
+}
+
+
+#head {
+    position:absolute;
+    top:10px;
+    left:290px;
+}
+#leftTorso {
+    position:absolute;
+    top:115px;
+    left:145px;
+}
+#rightTorso {
+    position: absolute;
+    top: 115px;
+    left: 435px;
+}
+#leftArm {
+    position:absolute;
+    top:200px;
+    left:10px;
+}
+#rightArm {
+    position:absolute;
+    top:200px;
+    left:580px;
+}
+#centerTorso {
+    position:absolute;
+    top:270px;
+    left:290px;
+}
+#leftLeg {
+    position:absolute;
+    top:385px;
+    left:145px;
+}
+#rightLeg {
+    position:absolute;
+    top:385px;
+    left:435px;
+}
+
+
 
 #head{
 background:#000;
@@ -326,6 +386,18 @@ padding:10px;
 #pilotSkills{
 }
 
+.item {
+    display:block;
+    padding-left:10px;
+    font-size:12px;
+    z-index:99;
+    position:relative;
+    background: none repeat scroll 0 0 #ABACB0;
+    border: 1px solid #303C48;
+    margin-bottom: 3px;
+    width: 113px;
+}
+
 div.energy {
     background-image: url("images/bgEnergy.png") !important;
     background-repeat: no-repeat !important;
@@ -380,6 +452,9 @@ background:#000;
 height:30px;
 width:300px;
 }
+
+
+
 
 /*
 Weight Chart CSS (SVG)
