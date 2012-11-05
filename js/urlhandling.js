@@ -20,6 +20,8 @@ function setURLParameter(param, paramVal){
     }
 
     var rows_txt = temp + "" + param + "=" + paramVal;
+//    console.log("Setting URL " + param + " = " + paramVal);
+//    console.log("URL: " + baseURL + "?" + newAdditionalURL + rows_txt);
     window.history.replaceState({}, "Title doesn't do anything", baseURL + "?" + newAdditionalURL + rows_txt)
     //return baseURL + "?" + newAdditionalURL + rows_txt;
 }

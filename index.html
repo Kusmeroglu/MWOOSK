@@ -25,6 +25,8 @@
     <script type="text/javascript">
         var mechObj;
         var mechXML;
+        var urldata = getURLParamObject();
+
         var draggableOptions = {
             revert: "invalid",
             helper: function(){
@@ -94,19 +96,20 @@
             $("#mechChassisDiv").click(function() {
                 $(this).children('.selectItem').show();
                 $(this).children('#chassisBlank').show();
-                $(this).parent().addClass('active');
+                $(this).addClass('active');
             });
             $("#mechVariantDiv").click(function() {
                 $(this).children('.selectItem').show();
                 $(this).children('#variantBlank').show();
-                $(this).parent().addClass('active');
+                $(this).addClass('active');
             });
 
+            // This allows you to click outside of the fake-div-dropbox to close it
             $(document).mouseup(function (e){
                 var container = $(".selectBox");
                 if (container.has(e.target).length === 0)
                 {
-                    container.children(".selectItem").hide();
+                    container.children(".selectItem").not('.selected').hide();
                 }
             });
 
@@ -118,13 +121,20 @@
                     $("#mechClassDiv").append($("<div class='selectItem' id='"+$(this).attr("type")+"'>"+$(this).attr("type")+"</div>"));
                 });
                 $("#mechClassDiv").children(".selectItem").click(function(event) {
-                    event.stopPropagation();
-                    var selectItem = $(this).attr('id');
-                    $($(this).parent()).find("select").attr("value", selectItem);
-                    $($(this).parent()).find("select").change();
-                    $(this).parent().removeClass("active");
-                    $(this).siblings(".selectItem").hide();
-                    $(this).siblings("#classBlank").hide();
+                    if ($($(this).parent()).hasClass('active')){
+                        event.stopPropagation();
+                        var selectItem = $(this).attr('id');
+                        $($(this).parent()).find("select").attr("value", selectItem);
+                        $($(this).parent()).find("select").change();
+                        $(this).parent().removeClass("active");
+                        $(this).show(); // force a show, incase this was triggered programmatically
+                        $(this).siblings(".selectItem").hide();
+                        $(this).siblings("#classBlank").hide();
+                        $(this).siblings(".selectItem, #variantBlank").removeClass('selected');
+                        $(this).addClass('selected');
+                    } else { // falls to this case if the pulldown is set to a value and clicked on again.
+                        $(this).removeClass('selected');
+                    }
                 });
 
                 // make the secondary pull down go
@@ -132,22 +142,29 @@
                     var selectedClass = $("#mechClass").val();
                     $("#mechChassis").empty().append($("<option></option>").attr("value", "0").attr('id','chassisBlank').text("Select mech name..."));
                     $("#mechChassisDiv .selectBlank, #mechChassisDiv .selectItem").remove();
-                    $("#mechChassisDiv").append($("<div class='selectBlank' id='chassisBlank'>Select mech Chassis...</div>"));
+                    $("#mechChassisDiv").append($("<div class='selectBlank selected' id='chassisBlank'>Select mech Chassis...</div>"));
                     $("#mechVariant").empty().append($("<option></option>").attr("value", "0").attr('id','variantBlank').text("Select Mech Variant..."));
                     $("#mechVariantDiv .selectBlank, #mechVariantDiv .selectItem").remove();
-                    $("#mechVariantDiv").append($("<div class='selectBlank' id='variantBlank'>Select mech Variant...</div>"));
+                    $("#mechVariantDiv").append($("<div class='selectBlank selected' id='variantBlank'>Select mech Variant...</div>"));
                     mechXML.find('class[type="' + selectedClass + '"] > mech').each(function () {
                         $("#mechChassis").append($("<option></option>").attr("value", $(this).attr("type")).text($(this).attr("type")));
                         $("#mechChassisDiv").append($("<div class='selectItem' id='"+$(this).attr("type")+"'>"+$(this).attr("type")+"</div>"));
                     });
                     $("#mechChassisDiv").children(".selectItem").click(function(event) {
-                        event.stopPropagation();
-                        var selectItem = $(this).attr('id');
-                        $("#mechChassis").attr("value", selectItem);
-                        $("#mechChassis").change();
-                        $(this).parent().removeClass("active");
-                        $(this).siblings(".selectItem").hide();
-                        $(this).siblings("#chassisBlank").hide();
+                        if ($(this).parent().hasClass('active')){
+                            event.stopPropagation();
+                            var selectItem = $(this).attr('id');
+                            $("#mechChassis").attr("value", selectItem);
+                            $("#mechChassis").change();
+                            $(this).parent().removeClass("active");
+                            $(this).show(); // force a show, incase this was triggered programmatically
+                            $(this).siblings(".selectItem").hide();
+                            $(this).siblings("#chassisBlank").hide();
+                            $(this).siblings(".selectItem, #variantBlank").removeClass('selected');
+                            $(this).addClass('selected');
+                        } else { // falls to this case if the pulldown is set to a value and clicked on again.
+                            $(this).removeClass('selected');
+                        }
                     });
                 });
 
@@ -156,19 +173,26 @@
                     var selectedChassis = $("#mechChassis").val();
                     $("#mechVariant").empty().append($("<option></option>").attr("value", "0").attr('id','variantBlank').text("Select mech variant..."));
                     $("#mechVariantDiv .selectBlank, #mechVariantDiv .selectItem").remove();
-                    $("#mechVariantDiv").append($("<div class='selectBlank' id='variantBlank'>Select mech Variant...</div>"));
+                    $("#mechVariantDiv").append($("<div class='selectBlank selected' id='variantBlank'>Select mech Variant...</div>"));
                     mechXML.find('class > mech[type="' + selectedChassis + '"] > variant').each(function () {
                         $("#mechVariant").append($("<option></option>").attr("value", $(this).attr("name")).text($(this).attr("name")));
                         $("#mechVariantDiv").append($("<div class='selectItem' id='"+$(this).attr("name")+"'>"+$(this).attr("name")+"</div>"));
                     });
                     $("#mechVariantDiv").children(".selectItem").click(function(event) {
-                        event.stopPropagation();
-                        var selectItem = $(this).attr('id');
-                        $("#mechVariant").attr("value", selectItem);
-                        $("#mechVariant").change();
-                        $(this).parent().removeClass("active");
-                        $(this).siblings(".selectItem").hide();
-                        $(this).siblings("#variantBlank").hide();
+                        if ($(this).parent().hasClass('active')){
+                            event.stopPropagation();
+                            var selectItem = $(this).attr('id');
+                            $("#mechVariant").attr("value", selectItem);
+                            $("#mechVariant").change();
+                            $(this).parent().removeClass("active");
+                            $(this).show(); // force a show, incase this was triggered programmatically
+                            $(this).siblings(".selectItem").hide();
+                            $(this).siblings("#variantBlank").hide();
+                            $(this).siblings(".selectItem, #variantBlank").removeClass('selected');
+                            $(this).addClass('selected');
+                        } else { // falls to this case if the pulldown is set to a value and clicked on again.
+                            $(this).removeClass('selected');
+                        }
                     });
                 });
 
@@ -202,7 +226,6 @@
                         });
                         //check for info in URLs
                         // have to wait until we have graphs created.
-                        var urldata = getURLParamObject();
                         if (urldata.hasOwnProperty('variant')){
                             //To-do: loop through each limb, count hard points by type, add to description
                             ['leftArm', 'leftTorso','centerTorso','rightTorso','rightArm','leftLeg','rightLeg','head'].forEach(function(limb){
@@ -232,17 +255,20 @@
                 });
 
                 //check for info in URLs
-                var urldata = getURLParamObject();
                 if (urldata.hasOwnProperty('variant')){
                     var mechVariant = urldata['variant'];
                     // we have data to load
                     mechXML.find('mech variant[name="' + mechVariant + '"]').each(function () {
                         var mechClass = $(this).parents('class').attr('type').toString();
-                        $("#mechClass").val(mechClass).change();
+                        //select the fake select to trigger real select and set the visuals up correctly
+                        $("#mechClassDiv #"+mechClass).parent().addClass('active');
+                        $("#mechClassDiv #"+mechClass).click();
                         var mechChassis = $(this).parents('mech').attr('type').toString();
-                        $("#mechChassis").val(mechChassis).change();
+                        $("#mechChassisDiv #"+mechChassis).parent().addClass('active');
+                        $("#mechChassisDiv #"+mechChassis).click();
                     });
-                    $("#mechVariant").val(mechVariant).change();
+                    $("#mechVariantDiv #"+mechVariant).parent().addClass('active');
+                    $("#mechVariantDiv #"+mechVariant).click();
                 }
             });
 
@@ -293,7 +319,7 @@
                         <option value="0">Select mech Class...</option>
                     </select>
                 </div>
-                <div class="selectBlank" id="classBlank">Select mech Class...</div>
+                <div class="selectBlank selected" id="classBlank">Select mech Class...</div>
             </div>
             <div class="selectBox" id="mechChassisDiv">
                 <div class="hide">

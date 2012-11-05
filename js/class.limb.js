@@ -37,6 +37,7 @@
     function addItem(itemObj)
     {
         this.items.push(itemObj);
+        console.log('adding ' + itemObj.itemName + ' to ' + limbName);
         this.resetURLParam();
         return true;
     }
@@ -45,6 +46,7 @@
     {
         // only remove the first one. This could be a bug in the future with multiple copies of an item
         this.items.pop(this.items.indexOf(itemObj));
+        console.log('removing ' + itemObj.itemName + ' from ' + limbName);
         this.resetURLParam();
         return true;
     }
