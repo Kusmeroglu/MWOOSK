@@ -119,7 +119,7 @@ margin-top:10px;
     position: relative;
 }
 
-#mechContainer div {
+#mechContainer > div {
     width:115px;
     height: 200px;
     border: 1px solid #666666;
