@@ -42,6 +42,10 @@ display:none;
    z-index:4;
 }
 
+.inactive {
+   background-image: none !important;
+}
+
 .selectItem{
 display:none;
 padding-left:5px;
@@ -86,6 +90,12 @@ width:810px;
 height:30px;
 margin:0px 5px 0px 20px;
 float:left;
+}
+
+#reset{
+    color: red;
+    font-weight: bold;
+    float:left;
 }
 
 #userInfo{

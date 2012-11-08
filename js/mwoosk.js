@@ -142,6 +142,16 @@ $(function () {
                 } else { // falls to this case if the pulldown is set to a value and clicked on again.
                     $(this).removeClass('selected');
                 }
+                // lock selects
+                $("#mechClassDiv").unbind('click');
+                $("#mechClassDiv").addClass('inactive');
+                $("#mechClassDiv").children(".selectItem").unbind('click');
+                $("#mechChassisDiv").unbind('click');
+                $("#mechChassisDiv").addClass('inactive');
+                $("#mechChassisDiv").children(".selectItem").unbind('click');
+                $("#mechVariantDiv").addClass('inactive');
+                $("#mechVariantDiv").unbind('click');
+                $("#mechVariantDiv").children(".selectItem").unbind('click');
             });
         });
 
