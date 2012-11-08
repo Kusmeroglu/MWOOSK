@@ -111,21 +111,19 @@ float:left;
 float:left;
 }
 
-/*
 #mechContainerWrap{
-background:#718ba2;
-padding:5px 10px 10px 10px;
+    padding:5px 10px 10px 10px;
+    background-color:transparent;
+    background-image:url(images/sprite.png);
+    background-repeat: no-repeat;
+    background-position:-50px -50px;
+    width:840px;
+    height:780px;
+    margin-top:10px;
 }
-*/
+
 
 #mechContainer{
-background-color:transparent;
-background-image:url(images/sprite.png);
-background-repeat: no-repeat;
-background-position:-50px -50px;
-width:840px;
-height:780px;
-margin-top:10px;
     position: relative;
 }
 

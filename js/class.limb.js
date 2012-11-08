@@ -25,8 +25,14 @@
         return this.hardPoints[indexNumber].pointType;
     }
 
-    this.resetURLParam = resetURLParam;
-    function resetURLParam(){
+
+    this.getTotalHardpointsForType = function(hardPointType){
+        return this.hardPoints.filter(function(hardpoint){
+            return hardpoint.pointType == hardPointType;
+        }).length;
+    }
+
+    this.resetURLParam = function(){
         var s = "";
         $.each(this.items, function(i, itemObj){
             s += itemObj.id.toString();

@@ -170,23 +170,30 @@ $(function () {
                     var hardPointObj = new hardPoint($(this).attr('type'));
                     limbObj.addHardPoint(hardPointObj);
                 });
+                ['ballistic', 'energy', 'missile', 'ams'].forEach(function(hardpointtype){
+                    var max = limbObj.getTotalHardpointsForType(hardpointtype)
+                    if ( max > 0 ){
+                        $('#'+limbObj.limbName+' .hardpoints').append($("<div></div>").addClass('hardpoint').text("("+hardpointtype[0]+") " + max));
+                    }
+                })
+                var slider = $('<div class="slider" id="' + limbObj.limbName + 'ArmorSlider"></div>')
+                $('#'+limbObj.limbName+' .armor').append(slider);
+                slider.slider({
+                    value:limbObj.frontArmor,
+                    min: 0,
+                    max: limbObj.maxArmor,
+                    step: 1
+                })
                 mechObj.addLimb($(this).attr("name"), limbObj);
             });
-            //To-do: loop through each limb, count hard points by type, add to description
-            $("#mechBay").fadeIn('fast', function() {
+
+            $("#mechContainer").fadeIn('fast', function() {
                 $("#itemList").fadeIn('fast');
                 createChart("#weightChart", mechObj.maxTons, mechObj.chassisTons, mechObj.currentTons);
                 createRoseGraph("#roseChart", "-N/A-");
-                $( ".slider" ).slider({
-                    value:1,
-                    min: 0,
-                    max: 45,
-                    step: 1
-                });
                 //check for info in URLs
-                // have to wait until we have graphs created.
+                // (have to wait until we have graphs created.)
                 if (urldata.hasOwnProperty('variant')){
-                    //To-do: loop through each limb, count hard points by type, add to description
                     ['leftArm', 'leftTorso','centerTorso','rightTorso','rightArm','leftLeg','rightLeg','head'].forEach(function(limb){
                         if (urldata.hasOwnProperty(limb)){
                             var rawitems = urldata[limb];
@@ -218,8 +225,8 @@ $(function () {
             var mechVariant = urldata['variant'];
             // we have data to load
             mechXML.find('mech variant[name="' + mechVariant + '"]').each(function () {
+                //select the fake selects to trigger real select and set the visuals up correctly
                 var mechClass = $(this).parents('class').attr('type').toString();
-                //select the fake select to trigger real select and set the visuals up correctly
                 $("#mechClassDiv #"+mechClass).parent().addClass('active');
                 $("#mechClassDiv #"+mechClass).click();
                 var mechChassis = $(this).parents('mech').attr('type').toString();
@@ -231,6 +238,19 @@ $(function () {
         }
     }
 
+    function addItem($item, $target) {
+        $item.fadeOut(function () {
+            $item
+                .clone(true, true)
+                .append('<div class="close">X</div>')
+                .appendTo($target)
+                .fadeIn();
+        });
+    }
+
+    /*
+     SET UP event handlers on all the basic elements
+     */
     // making the fake select boxes work
     $("#mechClassDiv").click(function() {
         $(this).children('.selectItem').show();
@@ -257,18 +277,6 @@ $(function () {
         }
     });
 
-    // load the item list
-    $.get('data/items.xml', function (xml) {
-        itemXML = xml;
-        parseItemXML(xml);
-
-        // now load XML just the once.
-        $.get('data/mechs.xml', function (xml){
-            mechXML = $(xml);
-            parseMechXML(xml);
-        });
-    });
-
     $(".area").droppable({
         // use the same check for the accept attribute so we can show valid targets
         accept: function (ui) {
@@ -292,14 +300,21 @@ $(function () {
         $(this).parent().remove();
     });
 
-    function addItem($item, $target) {
-        $item.fadeOut(function () {
-            $item
-                .clone(true, true)
-                .append('<div class="close">X</div>')
-                .appendTo($target)
-                .fadeIn();
+
+    /*
+     START UP - on initial loadup, get the xml, populate the screen
+     */
+
+    // load the item list
+    $.get('data/items.xml', function (xml) {
+        itemXML = xml;
+        parseItemXML(xml);
+
+        // now load XML just the once.
+        $.get('data/mechs.xml', function (xml){
+            mechXML = $(xml);
+            parseMechXML(xml);
         });
-    }
+    });
 
 });
