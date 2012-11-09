@@ -8,11 +8,7 @@ $(function () {
 
     var draggableOptions = {
         revert: "invalid",
-        helper: function(){
-            var x = $(this).clone(true, true);
-            $(this).draggable(draggableOptions); //reset draggable?
-            return x;
-        },
+        helper: "clone",
         appendTo: 'body'
     };
 
@@ -61,7 +57,7 @@ $(function () {
                 })
                 .text($(this).text()));
         });
-        $("#itemList div").draggable(draggableOptions);
+        $("#itemList div").draggable(draggableOptions).disableSelection();
     }
 
     function parseMechXML(xml){
@@ -206,8 +202,8 @@ $(function () {
                                 var itemObj = thisitemelem.data('itemObj');
                                 mechObj.addItemToLimb(limb, itemObj);
                                 thisitemelem
-                                    .clone(true, true)
-                                    .draggable( "destroy" )
+                                    .clone()
+                                    .data(itemObj)
                                     .append('<div class="close">X</div>')
                                     .appendTo(limbelem)
                                     .fadeIn();
@@ -241,7 +237,7 @@ $(function () {
     function addItem($item, $target) {
         $item.fadeOut(function () {
             $item
-                .clone(true, true)
+                //.clone(true, true)
                 .append('<div class="close">X</div>')
                 .appendTo($target)
                 .fadeIn();
@@ -288,11 +284,12 @@ $(function () {
         },
         activeClass: "valid",
         drop: function (event, ui) {
+            //get from original item - ignore cloned item which was not a deep clone and doesn't have the data.
             var itemObj = $(ui.draggable).data('itemObj');
             mechObj.addItemToLimb(this.id, itemObj);
-            addItem($(ui.draggable).clone(true, true), this);
+            addItem($(ui.draggable).clone(true,true), this);
         }
-    });
+    }).disableSelection();
 
     $("#mechBay div div .close").live("click", function () {
         var itemObj = $(this).parent().data('itemObj');
