@@ -6,58 +6,58 @@ var urldata = getURLParamObject();
 
 $(function () {
 
-    var draggableOptions = {
-        revert: "invalid",
-        helper: "clone",
-        appendTo: 'body'
-    };
+    function createItemDivFromData(data){
+        return $("<div></div>")
+            .attr("class", "item " + data["type"] + " " + data["id"])
+            // store all the weapon information in this div
+            .data(data)
+            .hover(
+            function(){
+                updateRoseChartData($(this).data("rosechartdata"), $(this).data("name"));
+            },
+            function(){
+                resetRoseChartData("-N/A-");
+            })
+            .text(data['name']);
+    }
 
     function parseItemXML(xml){
         $(xml).find("weapons > item").each(function () {
-            $("#itemList").append($("<div></div>")
-                .attr("class", "item " + $(this).attr("type") + " " + $(this).attr("id"))
-                .attr("alt", $(this).attr("type"))
-                .attr("name", $(this).attr("slots"))
-                //    .attr("id", $(this).attr("id"))
-                // store all the weapon information in this div
-                .data({
-                    id:$(this).attr("id"),
-                    type:$(this).attr("type"),
-                    damage:$(this).attr("damage"),
-                    heat:$(this).attr("heat"),
-                    cooldown:$(this).attr("cooldown"),
-                    range:$(this).attr("range"),
-                    maxrange:$(this).attr("maxrange"),
-                    slots:$(this).attr("slots"),
-                    tons:$(this).attr("tons"),
-                    dpsmax:$(this).attr("dpsmax"),
-                    ammoper:$(this).attr("ammoper"),
-                    hps:$(this).attr("hps"),
-                    ehs:$(this).attr("ehs"),
-                    name:$(this).text(),
-                    itemObj: new item($(this).attr("id"), $(this).text(), $(this).attr("slots"), $(this).attr("tons"), $(this).attr("type")),
-                    rosechartdata:[
-                        { name:"Damage",   value:$(this).attr("damage")},
-                        { name:"Heat",     value:$(this).attr("heat")},
-                        { name:"HPS",      value:(Number($(this).attr("heat")) == 0)?"0":(Number($(this).attr("damage"))/Number($(this).attr("heat"))).toFixed(2)},
-                        { name:"Weight",   value:$(this).attr("tons")},
-                        { name:"Slots",    value:$(this).attr("slots")},
-                        { name:"Cooldown", value:$(this).attr("cooldown")},
-                        { name:"DPS",      value:$(this).attr("dpsmax")},
-                        //{ name:"Ammo/Ton", value:$(this).attr("ammoper")?$(this).attr("ammoper"):0},
-                        { name:"Range",    value:$(this).attr("maxrange")}
-                    ]
-                })
-                .hover(
-                function(){
-                    updateRoseChartData($(this).data("rosechartdata"), $(this).data("name"));
-                },
-                function(){
-                    resetRoseChartData("-N/A-");
-                })
-                .text($(this).text()));
+            var itemdata = {
+                id:$(this).attr("id"),
+                type:$(this).attr("type"),
+                damage:$(this).attr("damage"),
+                heat:$(this).attr("heat"),
+                cooldown:$(this).attr("cooldown"),
+                range:$(this).attr("range"),
+                maxrange:$(this).attr("maxrange"),
+                slots:$(this).attr("slots"),
+                tons:$(this).attr("tons"),
+                dpsmax:$(this).attr("dpsmax"),
+                ammoper:$(this).attr("ammoper"),
+                hps:$(this).attr("hps"),
+                ehs:$(this).attr("ehs"),
+                name:$(this).text(),
+                itemObj: new item($(this).attr("id"), $(this).text(), $(this).attr("slots"), $(this).attr("tons"), $(this).attr("type")),
+                rosechartdata:[
+                    { name:"Damage",   value:$(this).attr("damage")},
+                    { name:"Heat",     value:$(this).attr("heat")},
+                    { name:"HPS",      value:(Number($(this).attr("heat")) == 0)?"0":(Number($(this).attr("damage"))/Number($(this).attr("heat"))).toFixed(2)},
+                    { name:"Weight",   value:$(this).attr("tons")},
+                    { name:"Slots",    value:$(this).attr("slots")},
+                    { name:"Cooldown", value:$(this).attr("cooldown")},
+                    { name:"DPS",      value:$(this).attr("dpsmax")},
+                    //{ name:"Ammo/Ton", value:$(this).attr("ammoper")?$(this).attr("ammoper"):0},
+                    { name:"Range",    value:$(this).attr("maxrange")}
+                ]
+            };
+            $("#itemList").append(createItemDivFromData(itemdata));
         });
-        $("#itemList div").draggable(draggableOptions).disableSelection();
+        $("#itemList div").draggable({
+            revert: "invalid",
+            helper: "clone",
+            appendTo: 'body'
+        }).disableSelection();
     }
 
     function parseMechXML(xml){
@@ -201,12 +201,7 @@ $(function () {
                                 var thisitemelem = $('#itemList .'+thisitemid);
                                 var thisdata = jQuery.extend(true, {}, thisitemelem.data());// get copy of old data
                                 mechObj.addItemToLimb(limb, thisdata.itemObj);
-                                thisitemelem
-                                    .clone()
-                                    .data(thisdata)
-                                    .append('<div class="close">X</div>')
-                                    .appendTo(limbelem)
-                                    .fadeIn();
+                                addItem(createItemDivFromData(thisdata), limbelem);
                                 i += 2;
                             }
                         }
@@ -235,13 +230,10 @@ $(function () {
     }
 
     function addItem($item, $target) {
-        $item.fadeOut(function () {
-            $item
-                //.clone(true, true)
-                .append('<div class="close">X</div>')
-                .appendTo($target)
-                .fadeIn();
-        });
+        $item
+            .append('<div class="close">X</div>')
+            .appendTo($target)
+            .fadeIn();
     }
 
     /*
@@ -285,9 +277,9 @@ $(function () {
         activeClass: "valid",
         drop: function (event, ui) {
             //get from original item - ignore cloned item which was not a deep clone and doesn't have the data.
-            var itemObj = $(ui.draggable).data('itemObj');
-            mechObj.addItemToLimb(this.id, itemObj);
-            addItem($(ui.draggable).clone(true,true), this);
+            var data = $(ui.draggable).data();
+            mechObj.addItemToLimb(this.id, data['itemObj']);
+            addItem(createItemDivFromData(data), this);
         }
     }).disableSelection();
 
