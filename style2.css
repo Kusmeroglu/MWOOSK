@@ -184,7 +184,10 @@ float:left;
     left:435px;
 }
 
-
+.armorspinner {
+    width: 30px;
+    color: white;
+}
 
 #head{
 background:#000;

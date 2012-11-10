@@ -18,6 +18,7 @@ $(function () {
             function(){
                 resetRoseChartData("-N/A-");
             })
+            .disableSelection()
             .text(data['name']);
     }
 
@@ -56,8 +57,10 @@ $(function () {
         $("#itemList div").draggable({
             revert: "invalid",
             helper: "clone",
-            appendTo: 'body'
-        }).disableSelection();
+            appendTo: 'body',
+            snap: ".area",
+            snapMode: "inner"
+        });
     }
 
     function parseMechXML(xml){
@@ -159,9 +162,17 @@ $(function () {
                 mechObj = new mech($("#mechChassis").val(), $("#mechVariant").val(), parseFloat($(this).attr("tonnage")));
                 mechObj.currentTons = mechObj.chassisTons = parseFloat($(this).attr("chassis"));
             });
+            // weights are added to chart when limbs created.
+            createChart("#weightChart", mechObj.maxTons, mechObj.chassisTons, mechObj.currentTons);
+            // add all the limbs.
             mechXML.find('mech[type="' + mechObj.chassis + '"] variant[name="' + mechObj.variant + '"] > limbs > limb').each(function () {
-                var limbObj = new limb($(this).attr("name"), $(this).attr("crits"), $(this).attr("armorFront"), $(this).attr("armorRear"), $(this).attr("maxArmor"));
+                var limbObj = new limb($(this).attr("name"), $(this).attr("crits"), parseInt($(this).attr("maxArmor")));
+                mechObj.addLimb(limbObj.limbName, limbObj);
+                // set initial armor for mech
+                mechObj.setArmorForLimb(limbObj.limbName, parseInt($(this).attr("armorFront")), parseInt($(this).attr("armorRear")));
+                // set url parameter
                 setURLParameter(limbObj.limbName, "");
+                // find and display the hardpoints
                 $(this).find('hardpoint').each(function(){
                     var hardPointObj = new hardPoint($(this).attr('type'));
                     limbObj.addHardPoint(hardPointObj);
@@ -172,20 +183,42 @@ $(function () {
                         $('#'+limbObj.limbName+' .hardpoints').append($("<div></div>").addClass('hardpoint').text("("+hardpointtype[0]+") " + max));
                     }
                 })
-                var slider = $('<div class="slider" id="' + limbObj.limbName + 'ArmorSlider"></div>')
-                $('#'+limbObj.limbName+' .armor').append(slider);
-                slider.slider({
-                    value:limbObj.frontArmor,
+                // Build Armor Spinners
+                var onSpinnerChange = function(e, ui){
+                    var frontspinner = $('#'+limbObj.limbName+' .armorspinner.front');
+                    var rearspinner = $('#'+limbObj.limbName+' .armorspinner.rear');
+                    var frontvalue = frontspinner.spinner("value");
+                    var rearvalue = 0;
+                    if ( rearspinner.length ){ // logic for the shared armor pool
+                        rearvalue = rearspinner.spinner("value");
+                        frontspinner.spinner("option","max",limbObj.maxArmor - rearvalue);
+                        rearspinner.spinner("option", "max",limbObj.maxArmor - frontvalue);
+                    }
+                    mechObj.setArmorForLimb(limbObj.limbName, frontvalue, rearvalue);
+                };
+                var checkMaxArmor = function(e, ui){
+                    var frontvalue = $('#'+limbObj.limbName+' .armorspinner.front').spinner("value");
+                    var rearspinner = $('#'+limbObj.limbName+' .armorspinner.rear');
+                    var rearvalue = 0;
+                    if ( rearspinner.length ){ // logic for the shared armor pool
+                        rearvalue = rearspinner.spinner("value");
+                    }
+                    return (e.target.value > ui.value) || ((frontvalue + rearvalue) < limbObj.maxArmor) && ((mechObj.currentTons + mechObj.armorWeight) < mechObj.maxTons);
+                }
+                $('#'+limbObj.limbName+' .armorspinner.front').attr('value', limbObj.frontArmor);
+                $('#'+limbObj.limbName+' .armorspinner.rear').attr('value', limbObj.rearArmor);
+                $('#'+limbObj.limbName+' .maxarmor').text("/" + limbObj.maxArmor);
+                var spinner = $('#'+limbObj.limbName+' .armorspinner').spinner({
                     min: 0,
                     max: limbObj.maxArmor,
-                    step: 1
-                })
-                mechObj.addLimb($(this).attr("name"), limbObj);
+                    change: onSpinnerChange,
+                    stop: onSpinnerChange,
+                    spin: checkMaxArmor
+                });
             });
 
             $("#mechContainer").fadeIn('fast', function() {
                 $("#itemList").fadeIn('fast');
-                createChart("#weightChart", mechObj.maxTons, mechObj.chassisTons, mechObj.currentTons);
                 createRoseGraph("#roseChart", "-N/A-");
                 //check for info in URLs
                 // (have to wait until we have graphs created.)
@@ -234,6 +267,15 @@ $(function () {
             .append('<div class="close">X</div>')
             .appendTo($target)
             .fadeIn();
+        // This does not work. I have no idea why not..
+        /*
+         $($item).draggable({
+         revert: false,
+         appendTo: 'body',
+         snap: ".area",
+         snapMode: "inner"
+         });
+         */
     }
 
     /*
@@ -270,7 +312,7 @@ $(function () {
         accept: function (ui) {
             var itemObj = ui.data('itemObj');
             if (! mechObj.limbs[this.id] ){
-                return; //bail - sometimes of the xml is missing limbs, otherwise this shouldn't happen.
+                return; //bail - sometimes the xml is missing limbs, otherwise this shouldn't happen.
             }
             return mechObj.limbs[this.id].testIfValid(itemObj);
         },

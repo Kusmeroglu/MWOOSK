@@ -1,9 +1,9 @@
-﻿function limb(limbName, critSlots, frontArmor, rearArmor, maxArmor) {
+﻿function limb(limbName, critSlots, maxArmor) {
     this.limbName = limbName;
     this.critSlots = critSlots;
-    this.frontArmor = frontArmor;
-    this.rearArmor = rearArmor;
-    this.totalArmor = this.frontArmor + this.rearArmor;
+    this.frontArmor = 0;
+    this.rearArmor = 0;
+    this.totalArmor = 0;
     this.maxArmor = maxArmor;
     this.hardPoints = new Array();
     this.items = new Array();
@@ -25,12 +25,17 @@
         return this.hardPoints[indexNumber].pointType;
     }
 
+    this.setArmor = function(front, rear){
+        this.frontArmor = front;
+        this.rearArmor = rear;
+        this.totalArmor = front + rear;
+    }
 
     this.getTotalHardpointsForType = function(hardPointType){
         return this.hardPoints.filter(function(hardpoint){
             return hardpoint.pointType == hardPointType;
         }).length;
-    }
+    };
 
     this.resetURLParam = function(){
         var s = "";
