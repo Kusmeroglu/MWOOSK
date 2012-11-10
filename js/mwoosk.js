@@ -199,11 +199,11 @@ $(function () {
                             {
                                 var thisitemid = rawitems.substr(i, 2);
                                 var thisitemelem = $('#itemList .'+thisitemid);
-                                var itemObj = thisitemelem.data('itemObj');
-                                mechObj.addItemToLimb(limb, itemObj);
+                                var thisdata = jQuery.extend(true, {}, thisitemelem.data());// get copy of old data
+                                mechObj.addItemToLimb(limb, thisdata.itemObj);
                                 thisitemelem
                                     .clone()
-                                    .data(itemObj)
+                                    .data(thisdata)
                                     .append('<div class="close">X</div>')
                                     .appendTo(limbelem)
                                     .fadeIn();
