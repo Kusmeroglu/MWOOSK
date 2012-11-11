@@ -195,7 +195,7 @@ margin:1px;
 }
 
 .critWrap{
-margin:10px 0px;
+margin-top:10px;
 background:#333;
 }
 
@@ -212,7 +212,7 @@ height:132px;
 #rightArm{
 background:#000;
 position:relative;
-margin-top:80px;
+margin-top:170px;
 }
 
 #rightArm .critWrap{
@@ -252,7 +252,7 @@ height:264px;
 #leftArm{
 background:#000;
 position:relative;
-margin-top:80px;
+margin-top:170px;
 }
 
 #leftArm .critWrap{
