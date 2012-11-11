@@ -1,0 +1,240 @@
+<Hardpoints SearchTable="Objects/mechs/hardpointsearchcriteria.xml">
+
+	<!--CTF-3D-->
+	<Hardpoint id="0">
+		<!--Right Torso, Ballistic-->
+		<WeaponSlot>
+			<Attachment search="LBXAutoCannon" AName="ctf_right_torso_3d_lbx"/>
+			<Attachment search="Default" AName="ctf_right_torso_3d_lbx"/>
+		</WeaponSlot>
+	</Hardpoint>
+	<Hardpoint id="1">
+		<!--Right Torso, Energy-->
+		<WeaponSlot>
+			<Attachment search="MediumLaser" AName="ctf_right_torso_1x_laser"/>
+			<Attachment search="Default" AName="ctf_right_torso_1x_laser"/>
+		</WeaponSlot>
+	</Hardpoint>
+	<Hardpoint id="2">
+		<!--Left Torso, Energy-->
+		<WeaponSlot>
+			<Attachment search="MediumLaser" AName="ctf_left_torso_1x_laser"/>
+			<Attachment search="Default" AName="ctf_left_torso_1x_laser"/>
+		</WeaponSlot>
+	</Hardpoint>
+	<Hardpoint id="3">
+		<!--Right Arm, Energy-->
+		<WeaponSlot>
+			<Attachment search="MediumLaser" AName="ctf_right_arm_forearm_1x_laser"/>
+			<Attachment search="Default" AName="ctf_right_arm_forearm_1x_laser"/>
+		</WeaponSlot>
+	</Hardpoint>
+	<Hardpoint id="4">
+		<!--Right Arm, Ballistic-->
+		<WeaponSlot>
+			<Attachment search="UltraAutoCannon" AName="ctf_right_arm_forearm_3d_ultra_ac5"/>
+			<Attachment search="Default" AName="ctf_right_arm_forearm_3d_ultra_ac5"/>
+		</WeaponSlot>
+	</Hardpoint>
+	<Hardpoint id="5">
+		<!--Left Arm, Energy-->
+		<WeaponSlot>
+			<Attachment search="MediumLaser" AName="ctf_left_arm_forearm_3d_laser"/>
+			<Attachment search="Default" AName="ctf_left_arm_forearm_3d_laser"/>
+		</WeaponSlot>
+	</Hardpoint>
+	<Hardpoint id="7">
+		<!--Left Torso, AMS-->
+		<WeaponSlot>
+			<Attachment search="AntiMissileSystem" AName="ctf_left_torso_ams"/>
+		</WeaponSlot>
+	</Hardpoint>
+
+	
+	<!--CTF-1X-->
+	<Hardpoint id="10">
+		<!--Right Torso, Ballistic-->
+		<WeaponSlot>
+			<Attachment search="AutoCannon10" AName="ctf_right_torso_1x_ac10"/>
+			<Attachment search="Default" AName="ctf_right_torso_1x_ac10"/>
+		</WeaponSlot>
+	</Hardpoint>
+	<Hardpoint id="11">
+		<!--Right Torso, Energy-->
+		<WeaponSlot>
+			<Attachment search="MediumLaser" AName="ctf_right_torso_1x_laser"/>
+			<Attachment search="Default" AName="ctf_right_torso_1x_laser"/>
+		</WeaponSlot>
+	</Hardpoint>
+	<Hardpoint id="12">
+		<!--Left Torso, Energy-->
+		<WeaponSlot>
+			<Attachment search="MediumLaser" AName="ctf_left_torso_1x_laser"/>
+			<Attachment search="Default" AName="ctf_left_torso_1x_laser"/>
+		</WeaponSlot>
+	</Hardpoint>
+	<Hardpoint id="13">
+		<!--Right Arm, Energy-->
+		<WeaponSlot>
+			<Attachment search="MediumLaser" AName="ctf_right_arm_forearm_1x_laser"/>
+			<Attachment search="Default" AName="ctf_right_arm_forearm_1x_laser"/>
+		</WeaponSlot>
+		<WeaponSlot>
+			<Attachment search="PPC" AName="ctf_right_arm_forearm_1x_ppc"/>
+			<Attachment search="Default" AName="ctf_right_arm_forearm_1x_ppc"/>
+		</WeaponSlot>
+	</Hardpoint>
+	<Hardpoint id="15">
+		<!--Left Arm, Energy-->
+		<WeaponSlot>
+			<Attachment search="MediumLaser" AName="ctf_left_arm_forearm_1x_laser"/>
+			<Attachment search="Default" AName="ctf_left_arm_forearm_hand"/>
+		</WeaponSlot>
+	</Hardpoint>
+	<Hardpoint id="17">
+		<!--Left Torso, AMS-->
+		<WeaponSlot>
+			<Attachment search="AntiMissileSystem" AName="ctf_left_torso_ams"/>
+		</WeaponSlot>
+	</Hardpoint>
+
+	<!--CTF-2X-->
+	<Hardpoint id="20">
+		<!--Right Torso, Ballistic-->
+		<WeaponSlot>
+			<Attachment search="AutoCannon10" AName="ctf_right_torso_2x_ac10"/>
+			<Attachment search="Default" AName="ctf_right_torso_2x_ac10"/>
+		</WeaponSlot>
+	</Hardpoint>
+	<Hardpoint id="21">
+		<!--Right Torso, Energy-->
+		<WeaponSlot>
+			<Attachment search="MediumLaser" AName="ctf_right_torso_1x_laser"/>
+			<Attachment search="Default" AName="ctf_right_torso_1x_laser"/>
+		</WeaponSlot>
+	</Hardpoint>
+	<Hardpoint id="22">
+		<!--Left Torso, Energy-->
+		<WeaponSlot>
+			<Attachment search="MediumLaser" AName="ctf_left_torso_1x_laser"/>
+			<Attachment search="Default" AName="ctf_left_torso_1x_laser"/>
+		</WeaponSlot>
+	</Hardpoint>
+	<Hardpoint id="23">
+		<!--Right Arm, Energy-->
+		<WeaponSlot>
+			<Attachment search="LargeLaser" AName="ctf_right_arm_forearm_2x_laser"/>
+			<Attachment search="Default" AName="ctf_right_arm_forearm_2x_laser"/>
+		</WeaponSlot>
+	</Hardpoint>
+	<Hardpoint id="25">
+		<!--Left Arm, Missile-->
+		<WeaponSlot>
+			<Attachment search="SRM" AName="ctf_left_arm_forearm_2x_srm"/>
+			<Attachment search="Default" AName="ctf_left_arm_forearm_2x_srm"/>
+		</WeaponSlot>
+		<WeaponSlot>
+			<Attachment search="SRM" AName="ctf_left_arm_forearm_2x_srm"/>
+			<Attachment search="Default" AName="ctf_left_arm_forearm_2x_srm"/>
+		</WeaponSlot>
+	</Hardpoint>
+	<Hardpoint id="27">
+		<!--Left Torso, AMS-->
+		<WeaponSlot>
+			<Attachment search="AntiMissileSystem" AName="ctf_left_torso_ams"/>
+		</WeaponSlot>
+	</Hardpoint>
+
+	<!--CTF-4X-->
+	<Hardpoint id="30">
+		<!--Head, Missile-->
+		<WeaponSlot>
+			<Attachment search="SRM" AName="ctf_centre_torso_4x_srm"/>
+			<Attachment search="Default" AName="ctf_centre_torso_4x_srm"/>
+		</WeaponSlot>
+	</Hardpoint>	
+	<Hardpoint id="33">
+		<!--Right Arm, Ballistic-->
+		<WeaponSlot>
+			<Attachment search="AutoCannon" AName="ctf_right_arm_forearm_4x_ac5"/>
+			<Attachment search="Default" AName="ctf_right_arm_forearm_4x_ac5"/>
+		</WeaponSlot>
+		<WeaponSlot>
+			<Attachment search="AutoCannon" AName="ctf_right_arm_forearm_4x_ac5"/>
+			<Attachment search="Default" AName="ctf_right_arm_forearm_4x_ac5"/>
+		</WeaponSlot>
+	</Hardpoint>
+	<Hardpoint id="35">
+		<!--Left Arm, Ballistic-->
+		<WeaponSlot>
+			<Attachment search="AutoCannon" AName="ctf_left_arm_forearm_4x_ac5"/>
+			<Attachment search="Default" AName="ctf_left_arm_forearm_4x_ac5"/>
+		</WeaponSlot>
+		<WeaponSlot>
+			<Attachment search="AutoCannon" AName="ctf_left_arm_forearm_4x_ac5"/>
+			<Attachment search="Default" AName="ctf_left_arm_forearm_4x_ac5"/>
+		</WeaponSlot>
+	</Hardpoint>	
+	<Hardpoint id="36">
+		<!--Centre Torso, Energy-->
+		<WeaponSlot>
+			<Attachment search="LargeLaser" AName="ctf_centre_torso_4x_laser"/>
+			<Attachment search="Default" AName="ctf_centre_torso_4x_laser"/>
+		</WeaponSlot>
+	</Hardpoint>
+	<Hardpoint id="37">
+		<!--Left Torso, AMS-->
+		<WeaponSlot>
+			<Attachment search="AntiMissileSystem" AName="ctf_left_torso_ams"/>
+		</WeaponSlot>
+	</Hardpoint>
+
+	<!--CTF-3L-->
+	<Hardpoint id="40">
+		<!--Right Torso, Ballistic-->
+		<WeaponSlot>
+			<Attachment search="LBXAutoCannon" AName="ctf_right_torso_1x_ac10"/>
+			<Attachment search="Default" AName="ctf_right_torso_1x_ac10"/>
+		</WeaponSlot>
+	</Hardpoint>
+	<Hardpoint id="41">
+		<!--Right Torso, Energy-->
+		<WeaponSlot>
+			<Attachment search="MediumLaser" AName="ctf_right_torso_1x_laser"/>
+			<Attachment search="Default" AName="ctf_right_torso_1x_laser"/>
+		</WeaponSlot>
+	</Hardpoint>
+	<Hardpoint id="42">
+		<!--Left Torso, Energy-->
+		<WeaponSlot>
+			<Attachment search="MediumLaser" AName="ctf_left_torso_1x_laser"/>
+			<Attachment search="Default" AName="ctf_left_torso_1x_laser"/>
+		</WeaponSlot>
+	</Hardpoint>
+	<Hardpoint id="43">
+		<!--Right Arm, Energy-->
+		<WeaponSlot>
+			<Attachment search="MediumLaser" AName="ctf_right_arm_forearm_1x_laser"/>
+			<Attachment search="Default" AName="ctf_right_arm_forearm_1x_laser"/>
+		</WeaponSlot>
+		<WeaponSlot>
+			<Attachment search="PPC" AName="ctf_right_arm_forearm_3l_erppc"/>
+			<Attachment search="Default" AName="ctf_right_arm_forearm_3l_erppc"/>
+		</WeaponSlot>
+	</Hardpoint>
+	<Hardpoint id="45">
+		<!--Left Arm, Energy-->
+		<WeaponSlot>
+			<Attachment search="Energy" AName="ctf_left_arm_forearm_3l_pulse"/>
+			<Attachment search="Default" AName="ctf_left_arm_forearm_3l_pulse"/>
+		</WeaponSlot>
+	</Hardpoint>
+	<Hardpoint id="47">
+		<!--Left Torso, AMS-->
+		<WeaponSlot>
+			<Attachment search="AntiMissileSystem" AName="ctf_left_torso_ams"/>
+		</WeaponSlot>
+	</Hardpoint>
+
+	
+</Hardpoints>

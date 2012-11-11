@@ -1,0 +1,105 @@
+<!--
+Attributes as defined by enum_MechAugmentableAttributes.h:
+-	MechSpeed			=	1
+-	TorsoSpeed			=	2
+-	TorsoAngle			=	4
+-	HeatCooldown		=	8
+-	MaxHeat				=	16
+-	WeaponCooldown		= 	32
+-	Acceleration		=	64
+-	Deceleration		=	128
+-	GyroPerformance		=	256
+-	JumpJetThrust		=	512
+-	JumpJetTime			=	1024
+-	JumpJetHeat			=	2048
+-	SystemSpeed			=	4096
+-	TargetDecay			=	8192
+-	WeaponConvergence	=	16384
+-	ModuleSlots			=	32768
+-->
+
+<!-- Database mappings <<NOTE>> enumerations reflected in PilotLabMgr.h
+| NodeID | NodeDesc         | RequiredLevel | UnlockCost |
+|      1 | Cool Run         |             1 |        750 |
+|      2 | Kinetic Burst    |             1 |       1000 |
+|      3 | Twist X          |             1 |       2500 |
+|      4 | Heat Containment |             1 |       1000 |
+|      5 | Hard Brake       |             1 |       1500 |
+|      6 | Twist Speed      |             1 |       2500 |
+|      7 | Arm Reflex       |             1 |       1500 |
+|      8 | Anchor Turn      |             1 |       3500 |
+|    100 | Quick Ingition   |             2 |       4000 |
+|    101 | Fast Fire        |             2 |       6000 |
+|    102 | Pinpoint         |             2 |       3000 |
+|    103 | Speed Tweak      |             2 |       8500 |
+|    200 | Module Slot      |             3 |      21500 |
+-->
+
+<MechEfficiencies>
+	<Talent id="1" name="eMTBasic_CoolRun" ranks="1" xpcost="750" EliteBonus="2.0" MasterBonus="2.0">
+		<Rank id="1">	<!--  -->
+			<Bonus attribute="HeatDissipation" value="0.075"/>
+		</Rank>
+	</Talent>
+	<Talent id="2" name="eMTBasic_KineticBurst" ranks="1" xpcost="1000" EliteBonus="2.0" MasterBonus="2.0">
+		<Rank id="1">	<!--  -->
+			<Bonus attribute="Acceleration" value="0.225"/>
+		</Rank>
+	</Talent>
+	<Talent id="3" name="eMTBasic_TwistX" ranks="1" xpcost="2500" EliteBonus="2.0" MasterBonus="2.0">
+		<Rank id="1">	<!--  -->
+			<Bonus attribute="TorsoRotationAngle" value="0.1"/>
+		</Rank>
+	</Talent>
+	<Talent id="4" name="eMTBasic_HeatContainment" ranks="1" xpcost="1000" EliteBonus="2.0" MasterBonus="2.0">
+		<Rank id="1">	<!--  -->
+			<Bonus attribute="MaxHeatThreshold" value="0.1"/>
+		</Rank>
+	</Talent>
+	<Talent id="5" name="eMTBasic_HardBrake" ranks="1" xpcost="1500" EliteBonus="2.0" MasterBonus="2.0">
+		<Rank id="1">	<!--  -->
+			<Bonus attribute="Deceleration" value="0.25"/>
+		</Rank>
+	</Talent>
+	<Talent id="6" name="eMTBasic_TwistSpeed" ranks="1" xpcost="2500" EliteBonus="2.0" MasterBonus="2.0">
+		<Rank id="1">	<!--  -->
+			<Bonus attribute="TorsoRotationSpeed" value="0.20"/>
+		</Rank>
+	</Talent>
+	<Talent id="7" name="eMTBasic_ArmReflex" ranks="1" xpcost="1500" EliteBonus="2.0" MasterBonus="2.0">
+		<Rank id="1">	<!--  -->
+			<Bonus attribute="MechArmSpeed" value="0.15"/>
+		</Rank>
+	</Talent>
+	<Talent id="8" name="eMTBasic_AnchorTurn" ranks="1" xpcost="3500" EliteBonus="2.0" MasterBonus="2.0">
+		<Rank id="1">	<!--  -->
+			<Bonus attribute="TorsoRotationSpeed" value="0.1"/>
+		</Rank>
+	</Talent>
+	<Talent id="100" name="eMTElite_QuickIgnition" ranks="1" xpcost="4000" MasterBonus="2.0">
+		<Rank id="1">	<!--  -->
+			<Bonus attribute="SystemSpeed" value="0.33"/>
+		</Rank>
+	</Talent>
+	<Talent id="101" name="eMTElite_FastFire" ranks="1" xpcost="6000" MasterBonus="2.0">
+		<Rank id="1">	<!--  -->
+			<Bonus attribute="WeaponCooldown" value="0.05"/>
+		</Rank>
+	</Talent>
+	<Talent id="102" name="eMTElite_PinPoint" ranks="1" xpcost="3000" MasterBonus="2.0">
+		<Rank id="1">	<!--  -->
+			<Bonus attribute="WeaponConvergence" value="0.15"/>
+		</Rank>
+	</Talent>
+	<Talent id="103" name="eMTElite_SpeedTweak" ranks="1" xpcost="8500" MasterBonus="2.0">
+		<Rank id="1">	<!--  -->
+			<Bonus attribute="MechTopSpeed" value="0.075"/>
+		</Rank>
+	</Talent>
+	<Talent id="200" name="eMTMaster_ModuleSlot" ranks="1" xpcost="21500">
+		<Rank id="1">	<!--  -->
+			<Bonus attribute="ModuleSlots" value="1.0"/>
+		</Rank>
+	</Talent>
+</MechEfficiencies>
+

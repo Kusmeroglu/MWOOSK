@@ -1,0 +1,160 @@
+<Hardpoints SearchTable="Objects/mechs/hardpointsearchcriteria.xml">
+
+	<!--CDA-3M-->
+	<Hardpoint id="0">
+		<!--Center Torso, Energy-->
+		<WeaponSlot>
+			<Attachment search="SmallLaser" AName="cda_head_cockpit_3m_laser"/>
+			<Attachment search="Default" AName="cda_head_cockpit_3m_laser"/>
+		</WeaponSlot>
+		<WeaponSlot>
+			<Attachment search="SmallLaser" AName="cda_head_cockpit_3m_laser"/>
+			<Attachment search="Default" AName="cda_head_cockpit_3m_laser"/>
+		</WeaponSlot>
+	</Hardpoint>
+	<Hardpoint id="1">
+		<!--Left Torso, Energy-->
+		<WeaponSlot>
+			<Attachment search="MediumLaser" AName="cda_left_torso_laser"/>
+			<Attachment search="Default" AName="cda_left_torso_laser"/>
+		</WeaponSlot>
+	</Hardpoint>
+	<Hardpoint id="2">
+		<!--Left Torso, Ballistic-->
+		<WeaponSlot>
+			<Attachment search="UltraAutoCannon" AName="cda_left_torso_3m_ultra_ac5"/>
+			<Attachment search="Default" AName="cda_left_torso_3m_ultra_ac5"/>
+		</WeaponSlot>
+	</Hardpoint>
+	<Hardpoint id="3">
+		<!--Right Torso, Energy-->
+		<WeaponSlot>
+			<Attachment search="MediumLaser" AName="cda_right_torso_laser"/>
+			<Attachment search="Default" AName="cda_right_torso_laser"/>
+		</WeaponSlot>
+	</Hardpoint>
+	<Hardpoint id="5">
+		<!--Right Torso, AMS-->
+		<WeaponSlot>
+			<Attachment search="AntiMissileSystem" AName="cda_right_torso_ams"/>
+		</WeaponSlot>
+	</Hardpoint>
+
+	
+	<!--CDA-2A-->
+	<Hardpoint id="10">
+		<!--Center Torso, Energy-->
+		<WeaponSlot>
+			<Attachment search="SmallLaser" AName="cda_head_cockpit_2a_laser"/>
+			<Attachment search="Default" AName="cda_head_cockpit_2a_laser"/>
+		</WeaponSlot>
+		<WeaponSlot>
+			<Attachment search="SmallLaser" AName="cda_head_cockpit_2a_laser"/>
+			<Attachment search="Default" AName="cda_head_cockpit_2a_laser"/>
+		</WeaponSlot>
+	</Hardpoint>
+	<Hardpoint id="11">
+		<!--Left Torso, Energy-->
+		<WeaponSlot>
+			<Attachment search="MediumLaser" AName="cda_left_torso_laser"/>
+			<Attachment search="Default" AName="cda_left_torso_laser"/>
+		</WeaponSlot>
+		<WeaponSlot>
+			<Attachment search="MediumLaser" AName="cda_left_torso_laser"/>
+			<Attachment search="Default" AName="cda_left_torso_laser"/>
+		</WeaponSlot>
+	</Hardpoint>
+	<Hardpoint id="13">
+		<!--Right Torso, Energy-->
+		<WeaponSlot>
+			<Attachment search="MediumLaser" AName="cda_right_torso_laser"/>
+			<Attachment search="Default" AName="cda_right_torso_laser"/>
+		</WeaponSlot>
+		<WeaponSlot>
+			<Attachment search="MediumLaser" AName="cda_right_torso_laser"/>
+			<Attachment search="Default" AName="cda_right_torso_laser"/>
+		</WeaponSlot>
+	</Hardpoint>
+	<Hardpoint id="15">
+		<!--Right Torso, AMS-->
+		<WeaponSlot>
+			<Attachment search="AntiMissileSystem" AName="cda_right_torso_ams"/>
+		</WeaponSlot>
+	</Hardpoint>
+
+	
+	<!--CDA-2B-->
+	<Hardpoint id="20">
+		<!--Center Torso, Energy-->
+		<WeaponSlot>
+			<Attachment search="Flamer" AName="cda_head_cockpit_2b_flamer"/>
+			<Attachment search="Default" AName="cda_head_cockpit_2b_flamer"/>
+		</WeaponSlot>
+	</Hardpoint>
+	<Hardpoint id="21">
+		<!--Left Arm, Energy-->
+		<WeaponSlot>
+			<Attachment search="MediumLaser" AName="cda_left_arm_forearm_2b_laser"/>
+			<Attachment search="Default" AName="cda_left_arm_forearm_2b_laser"/>
+		</WeaponSlot>
+		<WeaponSlot>
+			<Attachment search="MediumLaser" AName="cda_left_arm_forearm_2b_laser"/>
+			<Attachment search="Default" AName="cda_left_arm_forearm_2b_laser"/>
+		</WeaponSlot>
+	</Hardpoint>
+	<Hardpoint id="23">
+		<!--Right Arm, Energy-->
+		<WeaponSlot>
+			<Attachment search="MediumLaser" AName="cda_right_arm_forearm_2b_laser"/>
+			<Attachment search="Default" AName="cda_right_arm_forearm_2b_laser"/>
+		</WeaponSlot>
+		<WeaponSlot>
+			<Attachment search="MediumLaser" AName="cda_right_arm_forearm_2b_laser"/>
+			<Attachment search="Default" AName="cda_right_arm_forearm_2b_laser"/>
+		</WeaponSlot>
+	</Hardpoint>
+	<Hardpoint id="25">
+		<!--Right Torso, AMS-->
+		<WeaponSlot>
+			<Attachment search="AntiMissileSystem" AName="cda_right_torso_ams"/>
+		</WeaponSlot>
+	</Hardpoint>
+	
+	<!--CDA-3C-->
+	<Hardpoint id="32">
+		<!--Left Torso, Ballistic-->
+		<WeaponSlot>
+			<Attachment search="MachineGun" AName="cda_left_torso_3c_machinegun"/>
+			<Attachment search="Default" AName="cda_left_torso_3c_machinegun"/>
+		</WeaponSlot>
+		<WeaponSlot>
+			<Attachment search="MachineGun" AName="cda_left_torso_3c_machinegun"/>
+			<Attachment search="Default" AName="cda_left_torso_3c_machinegun"/>
+		</WeaponSlot>
+	</Hardpoint>
+	<Hardpoint id="33">
+		<!--Right Torso, Energy-->
+		<WeaponSlot>
+			<Attachment search="PPC" AName="cda_right_torso_3c_ppc"/>
+			<Attachment search="Default" AName="cda_right_torso_3c_ppc"/>
+		</WeaponSlot>
+	</Hardpoint>
+	<Hardpoint id="34">
+		<!--Right Torso, Ballistic-->
+		<WeaponSlot>
+			<Attachment search="MachineGun" AName="cda_right_torso_3c_machinegun"/>
+			<Attachment search="Default" AName="cda_right_torso_3c_machinegun"/>
+		</WeaponSlot>
+		<WeaponSlot>
+			<Attachment search="MachineGun" AName="cda_right_torso_3c_machinegun"/>
+			<Attachment search="Default" AName="cda_right_torso_3c_machinegun"/>
+		</WeaponSlot>
+	</Hardpoint>
+	<Hardpoint id="35">
+		<!--Right Torso, AMS-->
+		<WeaponSlot>
+			<Attachment search="AntiMissileSystem" AName="cda_right_torso_ams"/>
+		</WeaponSlot>
+	</Hardpoint>
+	
+</Hardpoints>
