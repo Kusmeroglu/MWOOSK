@@ -152,7 +152,7 @@ text-transform: capitalize;
 }
 
 .critslot {
-height:18px;
+height:20px;
 margin:1px;
 }
 
@@ -194,9 +194,73 @@ margin:1px;
     color: white;
 }
 
+.critLabel{
+padding-left:20px;
+font-size:.9em;
+padding-top:3px;
+}
+
+.critOne {
+background-image:url(images/sprite.png);
+background-position:-690px -898px;
+height:22px;
+cursor:pointer;
+}
+
+.critTwo {
+background-image:url(images/sprite.png);
+background-position:-690px -930px;
+height:44px;
+cursor:pointer;
+}
+
+.critThree {
+background-image:url(images/sprite.png);
+background-position:-690px -980px;
+height:66px;
+cursor:pointer;
+}
+
+.critFour {
+background-image:url(images/sprite.png);
+background-position:-690px -1050px;
+height:88px;
+cursor:pointer;
+}
+
+.critFive {
+background-image:url(images/sprite.png);
+background-position:-850px -898px;
+height:110px;
+cursor:pointer;
+}
+
+.critSix {
+background-image:url(images/sprite.png);
+background-position:-850px -1020px;
+height:132px;
+cursor:pointer;
+}
+
+.critSeven {
+background-image:url(images/sprite.png);
+background-position:-690px -1150px;
+height:154px;
+cursor:pointer;
+}
+
+.critTen {
+background-image:url(images/sprite.png);
+background-position:-850px -1160px;
+height:220px;
+cursor:pointer;
+}
+
+
 .critWrap{
 margin-top:10px;
-background:#333;
+background-image:url(images/sprite.png);
+background-position:-500px -898px;
 }
 
 #head{
