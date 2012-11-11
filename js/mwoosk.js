@@ -1,3 +1,4 @@
+var CRITSLOTHEIGHT = 15; // in pixels
 var mechObj;
 var mechXML;
 var itemXML;
@@ -271,10 +272,13 @@ $(function () {
     }
 
     function addItem($item, $target) {
+        // add to the limb
         $item
             .append('<div class="close">X</div>')
             .appendTo($target)
             .fadeIn();
+        // set height
+        $item.css('height', CRITSLOTHEIGHT * parseInt($item.data('slots')) );
         // This does not work. I have no idea why not..
         /*
          $($item).draggable({
