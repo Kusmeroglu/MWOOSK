@@ -112,7 +112,7 @@ float:left;
 }
 
 #mechContainerWrap{
-    padding:5px 10px 10px 10px;
+    padding:10px 5px 5px 5px;
     background-color:transparent;
     background-image:url(images/sprite.png);
     background-repeat: no-repeat;
@@ -124,14 +124,30 @@ float:left;
 
 
 #mechContainer{
-    position: relative;
+    float:left;
+	margin:10px 5px;
+}
+
+#mechContainer:first-child{
+	margin-left:10px;
+}
+
+#mechContainer:last-child{
+	margin-right:10px;
 }
 
 #mechContainer > div {
-    width:115px;
-    height: 200px;
-    border: 1px solid #666666;
+    width:148px;
+    height:;
+    border: 2px solid #666666;
     color: white;
+}
+
+.information{
+}
+
+.hardpoint{
+text-transform: capitalize;
 }
 
 .invalid {
@@ -144,44 +160,28 @@ float:left;
 
 
 #head {
-    position:absolute;
-    top:10px;
-    left:290px;
+
 }
 #leftTorso {
-    position:absolute;
-    top:115px;
-    left:145px;
+
 }
 #rightTorso {
-    position: absolute;
-    top: 115px;
-    left: 435px;
+
 }
 #leftArm {
-    position:absolute;
-    top:200px;
-    left:10px;
+
 }
 #rightArm {
-    position:absolute;
-    top:200px;
-    left:580px;
+
 }
 #centerTorso {
-    position:absolute;
-    top:270px;
-    left:290px;
+
 }
 #leftLeg {
-    position:absolute;
-    top:385px;
-    left:145px;
+
 }
 #rightLeg {
-    position:absolute;
-    top:385px;
-    left:435px;
+
 }
 
 .armorspinner {
@@ -413,16 +413,19 @@ div.energy {
     background-image: url("images/bgEnergy.png") !important;
     background-repeat: no-repeat !important;
     position: relative;
+	padding-left:6px;
 }
 div.missile {
     background-image: url("images/bgMissile.png") !important;
     background-repeat: no-repeat !important;
     position: relative;
+	padding-left:6px;
 }
 div.ballistic {
     background-image: url("images/bgBallistic.png") !important;
     background-repeat: no-repeat !important;
     position: relative;
+	padding-left:6px;
 }
 
 #tonnageWrap{
@@ -459,9 +462,6 @@ padding:3px 4px 4px 8px;
 }
 
 #comments{
-background:#000;
-height:30px;
-width:300px;
 }
 
 

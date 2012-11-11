@@ -69,9 +69,9 @@ light grey: #C2C3C5
 }
 
 .area {
-    width: 124px;
+    width: 150px;
     height: 250px;
-    border:2px solid #303C48;
+    border:3px solid #303C48;
     background: #718BA2;
     padding: 1px;
 }

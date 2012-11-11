@@ -35,7 +35,6 @@
 <div id="pageWrap">
     <header>
         <div id="chassisBar">
-            <a href="index.html" id="reset">Reset</a>
             <div class="selectBox" id="mechClassDiv">
                 <div class="hide">
                     <select id="mechClass">
@@ -60,6 +59,7 @@
                 </div>
                 <div class="selectBlank" id="variantBlank">Select mech Variant...</div>
             </div>
+			<a href="index.html" id="reset">Reset</a>
             <div class="clear"></div>
         </div>
         <div id="userInfo"></div>
@@ -67,35 +67,53 @@
     </header>
     <div id="mechBay">
         <div id="mechContainerWrap">
-            <div id="mechContainer" style="display: none">
-                <div id="head" class="area">
-                    <div class="information">
-                        <div class="name">Head</div>
-                        <div class="hardpoints"></div>
-                        <div class="armor">
-                            <input id="headFrontArmor" class="armorspinner front"/>
-                            <div class="maxarmor"></div>
-                        </div>
-                    </div>
-                </div>
+            <div id="mechContainer">
                 <div id="rightArm" class="area">
                     <div class="information">
                         <div class="name">Right Arm</div>
                         <div class="hardpoints"></div>
                         <div class="armor">
+							Armor<br />
                             <input id="rightArmFrontArmor" class="armorspinner front"/>
-                            <div class="maxarmor"></div>
+                            <div class="maxarmor">Max: </div>
                         </div>
                     </div>
                 </div>
+			</div>
+			<div id="mechContainer">
                 <div id="rightTorso" class="area">
                     <div class="information">
                         <div class="name">Right Torso</div>
                         <div class="hardpoints"></div>
                         <div class="armor">
+							Armor<br />
                             <input id="rightTorsoFrontArmor" class="armorspinner front"/>
                             <input id="rightTorsoRearArmor" class="armorspinner rear"/>
-                            <div class="maxarmor"></div>
+                            <div class="maxarmor">Max: </div>
+                        </div>
+                    </div>
+                </div>
+				<div id="rightLeg" class="area">
+                    <div class="information">
+                        <div class="name">Right Leg</div>
+                        <div class="hardpoints"></div>
+                        <div class="armor">
+							Armor<br />
+                            <input id="rightLegFrontArmor" class="armorspinner front"/>
+                            <div class="maxarmor">Max: </div>
+                        </div>
+                    </div>
+                </div>
+			</div>
+			<div id="mechContainer">
+				<div id="head" class="area">
+                    <div class="information">
+                        <div class="name">Head</div>
+                        <div class="hardpoints"></div>
+                        <div class="armor">
+							Armor<br />
+                            <input id="headFrontArmor" class="armorspinner front"/>
+                            <div class="maxarmor">Max: </div>
                         </div>
                     </div>
                 </div>
@@ -104,53 +122,52 @@
                         <div class="name">Center Torso</div>
                         <div class="hardpoints"></div>
                         <div class="armor">
+							Armor<br />
                             <input id="centerTorsoFrontArmor" class="armorspinner front"/>
                             <input id="centerTorsoRearArmor" class="armorspinner rear"/>
-                            <div class="maxarmor"></div>
+                            <div class="maxarmor">Max: </div>
                         </div>
                     </div>
                 </div>
+			</div>
+			<div id="mechContainer">
                 <div id="leftTorso" class="area">
                     <div class="information">
                         <div class="name">Left Torso</div>
                         <div class="hardpoints"></div>
                         <div class="armor">
+							Armor<br />
                             <input id="leftTorsoFrontArmor" class="armorspinner front"/>
                             <input id="leftTorsoRearArmor" class="armorspinner rear"/>
-                            <div class="maxarmor"></div>
+                            <div class="maxarmor">Max: </div>
                         </div>
                     </div>
                 </div>
+				<div id="leftLeg" class="area">
+                    <div class="information">
+                        <div class="name">Left Leg</div>
+                        <div class="hardpoints"></div>
+                        <div class="armor">
+							Armor<br />
+                            <input id="leftLegFrontArmor" class="armorspinner front"/>
+                            <div class="maxarmor">Max: </div>
+                        </div>
+                    </div>
+                </div>
+			</div>
+			<div id="mechContainer">
                 <div id="leftArm" class="area">
                     <div class="information">
                         <div class="name">Left Arm</div>
                         <div class="hardpoints"></div>
                         <div class="armor">
+							Armor<br />
                             <input id="leftArmFrontArmor" class="armorspinner front"/>
-                            <div class="maxarmor"></div>
+                            <div class="maxarmor">Max: </div>
                         </div>
                     </div>
                 </div>
-                <div id="rightLeg" class="area">
-                    <div class="information">
-                        <div class="name">Right Leg</div>
-                        <div class="hardpoints"></div>
-                        <div class="armor">
-                            <input id="rightLegFrontArmor" class="armorspinner front"/>
-                            <div class="maxarmor"></div>
-                        </div>
-                    </div>
-                </div>
-                <div id="leftLeg" class="area">
-                    <div class="information">
-                        <div class="name">Left Leg</div>
-                        <div class="hardpoints"></div>
-                        <div class="armor">
-                            <input id="leftLegFrontArmor" class="armorspinner front"/>
-                            <div class="maxarmor"></div>
-                        </div>
-                    </div>
-                </div>
+                
             </div>
             <div id="componentWrap">
                 <div id="focusLine"></div>

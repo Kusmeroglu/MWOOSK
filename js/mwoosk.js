@@ -182,7 +182,7 @@ $(function () {
                 ['ballistic', 'energy', 'missile', 'ams'].forEach(function(hardpointtype){
                     var max = limbObj.getTotalHardpointsForType(hardpointtype)
                     if ( max > 0 ){
-                        $('#'+limbObj.limbName+' .hardpoints').append($("<div></div>").addClass('hardpoint').text("("+hardpointtype[0]+") " + max));
+                        $('#'+limbObj.limbName+' .hardpoints').append($("<div></div>").addClass('hardpoint').addClass(''+hardpointtype).text(""+hardpointtype+": "+max));
                     }
                 })
                 // Build Armor Spinners
@@ -207,9 +207,9 @@ $(function () {
                     }
                     return (e.target.value > ui.value) || ((frontvalue + rearvalue) < limbObj.maxArmor) && ((mechObj.currentTons + mechObj.armorWeight) < mechObj.maxTons);
                 }
-                $('#'+limbObj.limbName+' .armorspinner.front').attr('value', limbObj.frontArmor);
+				$('#'+limbObj.limbName+' .armorspinner.front').attr('value', limbObj.frontArmor);
                 $('#'+limbObj.limbName+' .armorspinner.rear').attr('value', limbObj.rearArmor);
-                $('#'+limbObj.limbName+' .maxarmor').text("/" + limbObj.maxArmor);
+                $('#'+limbObj.limbName+' .maxarmor').text("Max: " + limbObj.maxArmor);
                 var spinner = $('#'+limbObj.limbName+' .armorspinner').spinner({
                     min: 0,
                     max: limbObj.maxArmor,
