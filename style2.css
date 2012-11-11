@@ -198,6 +198,15 @@ margin:1px;
 padding-left:20px;
 font-size:.9em;
 padding-top:3px;
+opacity:1 !important;
+}
+
+.critItem{
+}
+
+.critItem:hover{
+background-image:url(images/sprite.png);
+background-position:-500px -1199px;
 }
 
 .critOne {
