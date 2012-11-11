@@ -112,7 +112,7 @@ float:left;
 }
 
 #mechContainerWrap{
-    padding:5px 10px 10px 10px;
+    padding:10px 5px 5px 5px;
     background-color:transparent;
     background-image:url(images/sprite.png);
     background-repeat: no-repeat;
@@ -124,14 +124,36 @@ float:left;
 
 
 #mechContainer{
-    position: relative;
+    float:left;
+	margin:10px 5px;
+}
+
+#mechContainer:first-child{
+	margin-left:10px;
+}
+
+#mechContainer:last-child{
+	margin-right:10px;
 }
 
 #mechContainer > div {
-    width:115px;
-    height: 200px;
-    border: 1px solid #666666;
+    width:140px;
+    height:;
+	border:#fff 1px solid;
     color: white;
+	padding:5px;
+}
+
+.information{
+}
+
+.hardpoint{
+text-transform: capitalize;
+}
+
+.critslot {
+height:20px;
+margin:1px;
 }
 
 .invalid {
@@ -142,46 +164,29 @@ float:left;
     border: 3px double #00FF00 !important;
 }
 
-
 #head {
-    position:absolute;
-    top:10px;
-    left:290px;
+
 }
 #leftTorso {
-    position:absolute;
-    top:115px;
-    left:145px;
+
 }
 #rightTorso {
-    position: absolute;
-    top: 115px;
-    left: 435px;
+
 }
 #leftArm {
-    position:absolute;
-    top:200px;
-    left:10px;
+
 }
 #rightArm {
-    position:absolute;
-    top:200px;
-    left:580px;
+
 }
 #centerTorso {
-    position:absolute;
-    top:270px;
-    left:290px;
+
 }
 #leftLeg {
-    position:absolute;
-    top:385px;
-    left:145px;
+
 }
 #rightLeg {
-    position:absolute;
-    top:385px;
-    left:435px;
+
 }
 
 .armorspinner {
@@ -189,36 +194,162 @@ float:left;
     color: white;
 }
 
+.critLabel{
+padding-left:20px;
+font-size:.9em;
+padding-top:3px;
+opacity:1 !important;
+}
+
+.critItem{
+}
+
+.critItem:hover{
+background-image:url(images/sprite.png);
+background-position:-500px -1199px;
+}
+
+.critOne {
+background-image:url(images/sprite.png);
+background-position:-690px -898px;
+height:22px;
+cursor:pointer;
+}
+
+.critTwo {
+background-image:url(images/sprite.png);
+background-position:-690px -930px;
+height:44px;
+cursor:pointer;
+}
+
+.critThree {
+background-image:url(images/sprite.png);
+background-position:-690px -980px;
+height:66px;
+cursor:pointer;
+}
+
+.critFour {
+background-image:url(images/sprite.png);
+background-position:-690px -1050px;
+height:88px;
+cursor:pointer;
+}
+
+.critFive {
+background-image:url(images/sprite.png);
+background-position:-850px -898px;
+height:110px;
+cursor:pointer;
+}
+
+.critSix {
+background-image:url(images/sprite.png);
+background-position:-850px -1020px;
+height:132px;
+cursor:pointer;
+}
+
+.critSeven {
+background-image:url(images/sprite.png);
+background-position:-690px -1150px;
+height:154px;
+cursor:pointer;
+}
+
+.critTen {
+background-image:url(images/sprite.png);
+background-position:-850px -1160px;
+height:220px;
+cursor:pointer;
+}
+
+
+.critWrap{
+margin-top:10px;
+background-image:url(images/sprite.png);
+background-position:-500px -898px;
+}
+
 #head{
 background:#000;
+position:relative;
+margin-top:00px;
+}
+
+#head .critWrap{
+height:132px;
 }
 
 #rightArm{
 background:#000;
+position:relative;
+margin-top:170px;
+}
+
+#rightArm .critWrap{
+height:264px;
 }
 
 #rightTorso{
 background:#000;
+position:relative;
+margin-top:40px;
+}
+
+#rightTorso .critWrap{
+height:264px;
 }
 
 #centerTorso{
 background:#000;
+position:relative;
+margin-top:20px;
+}
+
+#centerTorso .critWrap{
+height:264px;
 }
 
 #leftTorso{
 background:#000;
+position:relative;
+margin-top:40px;
+}
+
+#leftTorso .critWrap{
+height:264px;
 }
 
 #leftArm{
 background:#000;
+position:relative;
+margin-top:170px;
+}
+
+#leftArm .critWrap{
+height:264px;
 }
 
 #rightLeg{
 background:#000;
+position:relative;
+margin-top:20px;
+}
+
+#rightLeg .critWrap{
+height:132px;
 }
 
 #leftLeg{
 background:#000;
+position:relative;
+margin-top:20px;
+}
+
+#leftLeg .critWrap{
+height:132px;
 }
 
 #componentWrap{
@@ -241,7 +372,7 @@ height:660px;
 float:right;
 position:relative;
 margin-top:20px;
-left:-65px;
+left:-55px;
 }
 
 #tabWrap .tab{
@@ -260,16 +391,12 @@ background-image:url(images/sprite.png);
 background-position:-98px -995px;
 position:relative;
 z-index:3;
--webkit-transition: opacity .6s ease-in-out, background 0s 2012s; 
-    -moz-transition: opacity .6s ease-in-out, background 0s 2012s; 
-    -o-transition: opacity .6s ease-in-out, background 0s 2012s; 
-    transition: opacity .6s ease-in-out, background 0s 2012s;
 }
 
 #armamentTab:hover{
 background:transparent;
-background-image:url(images/armamentactive.png);
-background-position:-20px -6px;
+background-image:url(images/sprite.png);
+background-position:-202px -995px;
 cursor:pointer; 
 }
 
@@ -292,7 +419,6 @@ background:transparent;
 background-image:url(images/sprite.png);
 background-position:-201px -1325px;
 cursor:pointer;
-z-index:3;
 }
 
 #statisticsTab{
@@ -307,7 +433,6 @@ background:transparent;
 background-image:url(images/sprite.png);
 background-position:-201px -1485px;
 cursor:pointer;
-z-index:3;
 }
 
 #commentsTab{
@@ -407,22 +532,26 @@ padding:10px;
     border: 1px solid #303C48;
     margin-bottom: 3px;
     width: 113px;
+	cursor:pointer;
 }
 
 div.energy {
     background-image: url("images/bgEnergy.png") !important;
     background-repeat: no-repeat !important;
     position: relative;
+	padding-left:6px;
 }
 div.missile {
     background-image: url("images/bgMissile.png") !important;
     background-repeat: no-repeat !important;
     position: relative;
+	padding-left:6px;
 }
 div.ballistic {
     background-image: url("images/bgBallistic.png") !important;
     background-repeat: no-repeat !important;
     position: relative;
+	padding-left:6px;
 }
 
 #tonnageWrap{
@@ -459,9 +588,6 @@ padding:3px 4px 4px 8px;
 }
 
 #comments{
-background:#000;
-height:30px;
-width:300px;
 }
 
 
