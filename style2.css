@@ -137,10 +137,11 @@ float:left;
 }
 
 #mechContainer > div {
-    width:148px;
+    width:140px;
     height:;
-    border: 2px solid #666666;
+	border:#fff 1px solid;
     color: white;
+	padding:5px;
 }
 
 .information{
@@ -150,6 +151,11 @@ float:left;
 text-transform: capitalize;
 }
 
+.critslot {
+height:18px;
+margin:1px;
+}
+
 .invalid {
     border: 3px double #FF0000;
 }
@@ -157,7 +163,6 @@ text-transform: capitalize;
 .valid {
     border: 3px double #00FF00 !important;
 }
-
 
 #head {
 
@@ -189,36 +194,89 @@ text-transform: capitalize;
     color: white;
 }
 
+.critWrap{
+margin:10px 0px;
+background:#333;
+}
+
 #head{
 background:#000;
+position:relative;
+margin-top:00px;
+}
+
+#head .critWrap{
+height:132px;
 }
 
 #rightArm{
 background:#000;
+position:relative;
+margin-top:80px;
+}
+
+#rightArm .critWrap{
+height:264px;
 }
 
 #rightTorso{
 background:#000;
+position:relative;
+margin-top:40px;
+}
+
+#rightTorso .critWrap{
+height:264px;
 }
 
 #centerTorso{
 background:#000;
+position:relative;
+margin-top:20px;
+}
+
+#centerTorso .critWrap{
+height:264px;
 }
 
 #leftTorso{
 background:#000;
+position:relative;
+margin-top:40px;
+}
+
+#leftTorso .critWrap{
+height:264px;
 }
 
 #leftArm{
 background:#000;
+position:relative;
+margin-top:80px;
+}
+
+#leftArm .critWrap{
+height:264px;
 }
 
 #rightLeg{
 background:#000;
+position:relative;
+margin-top:20px;
+}
+
+#rightLeg .critWrap{
+height:132px;
 }
 
 #leftLeg{
 background:#000;
+position:relative;
+margin-top:20px;
+}
+
+#leftLeg .critWrap{
+height:132px;
 }
 
 #componentWrap{
@@ -241,7 +299,7 @@ height:660px;
 float:right;
 position:relative;
 margin-top:20px;
-left:-65px;
+left:-55px;
 }
 
 #tabWrap .tab{
@@ -260,16 +318,12 @@ background-image:url(images/sprite.png);
 background-position:-98px -995px;
 position:relative;
 z-index:3;
--webkit-transition: opacity .6s ease-in-out, background 0s 2012s; 
-    -moz-transition: opacity .6s ease-in-out, background 0s 2012s; 
-    -o-transition: opacity .6s ease-in-out, background 0s 2012s; 
-    transition: opacity .6s ease-in-out, background 0s 2012s;
 }
 
 #armamentTab:hover{
 background:transparent;
-background-image:url(images/armamentactive.png);
-background-position:-20px -6px;
+background-image:url(images/sprite.png);
+background-position:-202px -995px;
 cursor:pointer; 
 }
 
@@ -292,7 +346,6 @@ background:transparent;
 background-image:url(images/sprite.png);
 background-position:-201px -1325px;
 cursor:pointer;
-z-index:3;
 }
 
 #statisticsTab{
@@ -307,7 +360,6 @@ background:transparent;
 background-image:url(images/sprite.png);
 background-position:-201px -1485px;
 cursor:pointer;
-z-index:3;
 }
 
 #commentsTab{
@@ -407,6 +459,7 @@ padding:10px;
     border: 1px solid #303C48;
     margin-bottom: 3px;
     width: 113px;
+	cursor:pointer;
 }
 
 div.energy {
