@@ -2,6 +2,7 @@ var mechObj;
 var mechXML;
 var itemXML;
 var urldata = getURLParamObject();
+var limbList = ['leftArm', 'leftTorso','centerTorso','rightTorso','rightArm','leftLeg','rightLeg','head'];
 
 
 $(function () {
@@ -221,9 +222,9 @@ $(function () {
                 $("#itemList").fadeIn('fast');
                 createRoseGraph("#roseChart", "-N/A-");
                 //check for info in URLs
-                // (have to wait until we have graphs created.)
+                // (have to wait until we have graphs and items created.)
                 if (urldata.hasOwnProperty('variant')){
-                    ['leftArm', 'leftTorso','centerTorso','rightTorso','rightArm','leftLeg','rightLeg','head'].forEach(function(limb){
+                    limbList.forEach(function(limb){
                         if (urldata.hasOwnProperty(limb)){
                             var rawitems = urldata[limb];
                             var limbelem = $('#'+limb);
@@ -239,8 +240,15 @@ $(function () {
                             }
                         }
                     })
+                    if (urldata.hasOwnProperty('armor')){
+                        var armorvalues = urldata['armor'];
+                        armorvalues.split(',').forEach( function(bothvalues, i){
+                            var limbName = limbList[i];
+                            $('#'+limbName+' .armorspinner.front').attr('value', parseInt(bothvalues.split("-")[0]));
+                            $('#'+limbName+' .armorspinner.rear').spinner('value', parseInt(bothvalues.split("-")[1]));
+                        }, this);
+                    }
                 }
-
             });
         });
 

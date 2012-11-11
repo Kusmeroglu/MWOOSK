@@ -35,6 +35,20 @@
         // add (subtract) the difference to the current weight
         this.addWeight( (frontArmor + rearArmor - this.limbs[limbName].totalArmor) * this.armorWeight );
         this.limbs[limbName].setArmor(frontArmor, rearArmor);
+        this.resetArmorURLParam();
+    }
+
+    this.resetArmorURLParam = resetArmorURLParam;
+    function resetArmorURLParam(){
+        var s = "";
+        limbList.forEach(function(limbName){
+            if ( this.limbs.hasOwnProperty(limbName)){ // not all the limbs have been loaded yet..
+                s += this.limbs[limbName].frontArmor.toString() + "-" + this.limbs[limbName].rearArmor.toString() + ",";
+            } else {
+                s +="0-0,";
+            }
+        }, this);
+        setURLParameter("armor", s);
     }
 
     this.addWeight = addWeight;
