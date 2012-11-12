@@ -20,14 +20,14 @@
 
     this.addItemToLimb = addItemToLimb;
     function addItemToLimb(limbName, itemObj){
-        this.limbs[limbName].addItem(itemObj);
         this.addWeight(parseFloat(itemObj.weight));
+        return this.limbs[limbName].addItem(itemObj);
     }
 
     this.removeItemFromLimb = removeItemFromLimb;
     function removeItemFromLimb(limbName, itemObj){
-        this.limbs[limbName].removeItem(itemObj);
         this.addWeight(0 - parseFloat(itemObj.weight));
+        return this.limbs[limbName].removeItem(itemObj);
     }
 
     this.setArmorForLimb = setArmorForLimb;

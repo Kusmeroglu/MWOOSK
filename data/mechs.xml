@@ -53,6 +53,10 @@
             <variant name="AS7-D-DC" founders="no" jets="no">
                 <limbs>
                     <limb name="leftArm" ams="yes" crits="8" armorFront="68" armorRear="0" maxArmor="68">
+                        <internal slots="1">Shoulder</internal>
+                        <internal slots="1">Upper Arm Actuator</internal>
+                        <internal slots="1">Lower Arm Actuator</internal>
+                        <internal slots="1">Hand Actuator</internal>
                         <hardpoint type="energy"></hardpoint>
                     </limb>
                     <limb name="leftTorso" ams="no" crits="12" armorFront="64" armorRear="20" maxArmor="84">
@@ -61,19 +65,35 @@
                         <hardpoint type="missile"></hardpoint>
                     </limb>
                     <limb name="centerTorso" ams="no" crits="2" armorFront="94" armorRear="28" maxArmor="124">
+                        <internal slots="4">Gyro</internal>
                     </limb>
                     <limb name="rightTorso" ams="no" crits="12" armorFront="64" armorRear="20" maxArmor="84">
                         <hardpoint type="ballistic"></hardpoint>
                         <hardpoint type="ballistic"></hardpoint>
                     </limb>
                     <limb name="rightArm" ams="no" crits="8" armorFront="68" armorRear="0" maxArmor="68">
+                        <internal slots="1">Shoulder</internal>
+                        <internal slots="1">Upper Arm Actuator</internal>
+                        <internal slots="1">Lower Arm Actuator</internal>
+                        <internal slots="1">Hand Actuator</internal>
                         <hardpoint type="energy"></hardpoint>
                     </limb>
                     <limb name="leftLeg" ams="no" crits="2" armorFront="82" armorRear="0" maxArmor="84">
+                        <internal slots="1">Hip</internal>
+                        <internal slots="1">Upper Leg Actuator</internal>
+                        <internal slots="1">Lower Leg Actuator</internal>
+                        <internal slots="1">Foot Actuator</internal>
                     </limb>
                     <limb name="rightLeg" ams="no" crits="2" armorFront="82" armorRear="0" maxArmor="84">
+                        <internal slots="1">Hip</internal>
+                        <internal slots="1">Upper Leg Actuator</internal>
+                        <internal slots="1">Lower Leg Actuator</internal>
+                        <internal slots="1">Foot Actuator</internal>
                     </limb>
                     <limb name="head" ams="no" crits="1" armorFront="18" armorRear="0" maxArmor="18">
+                        <internal slots="2">Life Support</internal>
+                        <internal slots="2">Sensors</internal>
+                        <internal slots="1">Cockpit</internal>
                     </limb>
                 </limbs>
             </variant>

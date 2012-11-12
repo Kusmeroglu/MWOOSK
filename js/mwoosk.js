@@ -4,7 +4,18 @@ var mechXML;
 var itemXML;
 var urldata = getURLParamObject();
 var limbList = ['leftArm', 'leftTorso','centerTorso','rightTorso','rightArm','leftLeg','rightLeg','head'];
-
+var classLookup = {
+    1:'critOne',
+    2:'critTwo',
+    3:'critThree',
+    4:'critFour',
+    5:'critFive',
+    6:'critSix',
+    7:'critSeven',
+    8:'critEight',
+    9:'critNine',
+    10:'critTen'
+}
 
 $(function () {
 
@@ -172,8 +183,9 @@ $(function () {
                 mechObj.addLimb(limbObj.limbName, limbObj);
                 // set initial armor for mech
                 mechObj.setArmorForLimb(limbObj.limbName, parseInt($(this).attr("armorFront")), parseInt($(this).attr("armorRear")));
-                // set url parameter
+                // reset url parameter
                 setURLParameter(limbObj.limbName, "");
+                $('#'+limbObj.limbName+' .critWrap').empty();
                 // find and display the hardpoints
                 $(this).find('hardpoint').each(function(){
                     var hardPointObj = new hardPoint($(this).attr('type'));
@@ -186,6 +198,7 @@ $(function () {
                     }
                 })
                 // Build Armor Spinners
+                // handles saving the values once they are changed
                 var onSpinnerChange = function(e, ui){
                     var frontspinner = $('#'+limbObj.limbName+' .armorspinner.front');
                     var rearspinner = $('#'+limbObj.limbName+' .armorspinner.rear');
@@ -198,6 +211,7 @@ $(function () {
                     }
                     mechObj.setArmorForLimb(limbObj.limbName, frontvalue, rearvalue);
                 };
+                // handles keeping user from going over the max armor or weight limit.
                 var checkMaxArmor = function(e, ui){
                     var frontvalue = $('#'+limbObj.limbName+' .armorspinner.front').spinner("value");
                     var rearspinner = $('#'+limbObj.limbName+' .armorspinner.rear');
@@ -217,6 +231,29 @@ $(function () {
                     stop: onSpinnerChange,
                     spin: checkMaxArmor
                 });
+
+                // handle the internals
+                $(this).find('internal').each(function(){
+                    $('<div></div>')
+                        .addClass('critItem')
+                        .addClass('internal')
+                        .append($('<div/>')
+                            .addClass(classLookup[$(this).attr('slots')])
+                            .append('<div class="critLabel">'+$(this).text()+'</div>'))
+                        .appendTo($('#'+limbObj.limbName+' .critWrap'))
+                });
+
+                // mech xml specifies open crit slots
+                for ( var i=0; i < limbObj.critSlots; i++){
+                    $('<div></div>')
+                        .addClass('critItem')
+                        .addClass('empty')
+                        .append($('<div/>')
+                            .addClass(classLookup[1])
+                            .append('<div class="critLabel">[empty]</div>'))
+                        .appendTo($('#'+limbObj.limbName+' .critWrap'))
+                }
+
             });
 
             $("#mechContainer").fadeIn('fast', function() {
@@ -235,7 +272,6 @@ $(function () {
                                 var thisitemid = rawitems.substr(i, 2);
                                 var thisitemelem = $('#itemList .'+thisitemid);
                                 var thisdata = jQuery.extend(true, {}, thisitemelem.data());// get copy of old data
-                                mechObj.addItemToLimb(limb, thisdata.itemObj);
                                 addItem(createItemDivFromData(thisdata), limbelem);
                                 i += 2;
                             }
@@ -253,7 +289,7 @@ $(function () {
             });
         });
 
-        //check for info in URLs
+        //check for info in URLs - simulate selecting the variant
         if (urldata.hasOwnProperty('variant')){
             var mechVariant = urldata['variant'];
             // we have data to load
@@ -271,23 +307,37 @@ $(function () {
         }
     }
 
-    function addItem($item, $target) {
-        // add to the limb
-        $item
-            .append('<div class="close">X</div>')
-            .appendTo($target)
-            .fadeIn();
-        // set height
-        $item.css('height', CRITSLOTHEIGHT * parseInt($item.data('slots')) );
-        // This does not work. I have no idea why not..
-        /*
-         $($item).draggable({
-         revert: false,
-         appendTo: 'body',
-         snap: ".area",
-         snapMode: "inner"
-         });
-         */
+    /*
+    Used whenever an item is added to a limb
+     */
+    function addItem($item, target) {
+        // handle logic
+        if (mechObj.addItemToLimb($(target).attr('id'), $item.data('itemObj'))){
+            // clear out the critslots needed
+            $(target).find('.critWrap .empty').slice(0, parseInt($item.data('slots'))).remove();
+
+            // add to the limb
+            $item
+                .empty()
+                .addClass('critItem')
+                .removeClass('item')
+                .append($('<div/>')
+                .addClass(classLookup[parseInt($item.data('slots'))])
+                .append('<div class="critLabel">'+$item.data('name')+'</div>')
+                .append('<div class="close">X</div>'))
+                .appendTo($(target).children('.critWrap'))
+                .fadeIn();
+            // This does not work. I have no idea why not..
+            /*
+             $($item).draggable({
+             revert: false,
+             appendTo: 'body',
+             snap: ".area",
+             snapMode: "inner"
+             });
+             */
+
+        }
     }
 
     /*
@@ -332,7 +382,6 @@ $(function () {
         drop: function (event, ui) {
             //get from original item - ignore cloned item which was not a deep clone and doesn't have the data.
             var data = $(ui.draggable).data();
-            mechObj.addItemToLimb(this.id, data['itemObj']);
             addItem(createItemDivFromData(data), this);
         }
     }).disableSelection();
