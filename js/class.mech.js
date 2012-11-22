@@ -13,33 +13,32 @@
 
     this.armorWeight = 1/32;
 
-    this.addLimb = addLimb;
-    function addLimb(limbName, limbObj) {
-        this.limbs[limbName] = limbObj;
-    }
+    this.init = function init(){
 
-    this.addItemToLimb = addItemToLimb;
-    function addItemToLimb(limbName, itemObj){
+    };
+
+    this.addLimb = function addLimb(limbName, limbObj) {
+        this.limbs[limbName] = limbObj;
+    };
+
+    this.addItemToLimb = function addItemToLimb(limbName, itemObj){
         this.addWeight(parseFloat(itemObj.weight));
         return this.limbs[limbName].addItem(itemObj);
     }
 
-    this.removeItemFromLimb = removeItemFromLimb;
-    function removeItemFromLimb(limbName, itemObj){
+    this.removeItemFromLimb = function removeItemFromLimb(limbName, itemObj){
         this.addWeight(0 - parseFloat(itemObj.weight));
         return this.limbs[limbName].removeItem(itemObj);
     }
 
-    this.setArmorForLimb = setArmorForLimb;
-    function setArmorForLimb(limbName, frontArmor, rearArmor){
+    this.setArmorForLimb = function setArmorForLimb(limbName, frontArmor, rearArmor){
         // add (subtract) the difference to the current weight
         this.addWeight( (frontArmor + rearArmor - this.limbs[limbName].totalArmor) * this.armorWeight );
         this.limbs[limbName].setArmor(frontArmor, rearArmor);
         this.resetArmorURLParam();
     }
 
-    this.resetArmorURLParam = resetArmorURLParam;
-    function resetArmorURLParam(){
+    this.resetArmorURLParam = function resetArmorURLParam(){
         var s = "";
         limbList.forEach(function(limbName){
             if ( this.limbs.hasOwnProperty(limbName)){ // not all the limbs have been loaded yet..
@@ -51,14 +50,12 @@
         setURLParameter("armor", s);
     }
 
-    this.addWeight = addWeight;
-    function addWeight(weight){
+    this.addWeight = function addWeight(weight){
         this.currentTons += weight;
         updateChart(this.maxTons, this.chassisTons, this.currentTons);
     }
 
-    this.countLimbs = countLimbs;
-    function countLimbs() {
+    this.countLimbs = function countLimbs() {
         var limbs, countLimbs = 0;
         for (limb in this.limbs) {
             countLimbs++;
@@ -66,5 +63,5 @@
         return countLimbs;
     }
 
-
+    this.init();
 }

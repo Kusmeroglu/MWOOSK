@@ -3,5 +3,5 @@
     this.itemName = itemName;
     this.weaponType = weaponType;
     this.weight = weight;
-    this.critSlots = critSlots;
+    this.critSlots = parseInt(critSlots);
 }

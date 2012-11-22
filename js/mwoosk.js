@@ -1,4 +1,3 @@
-var CRITSLOTHEIGHT = 15; // in pixels
 var mechObj;
 var mechXML;
 var itemXML;
@@ -15,7 +14,7 @@ var classLookup = {
     8:'critEight',
     9:'critNine',
     10:'critTen'
-}
+};
 
 $(function () {
 
@@ -183,77 +182,17 @@ $(function () {
                 mechObj.addLimb(limbObj.limbName, limbObj);
                 // set initial armor for mech
                 mechObj.setArmorForLimb(limbObj.limbName, parseInt($(this).attr("armorFront")), parseInt($(this).attr("armorRear")));
-                // reset url parameter
-                setURLParameter(limbObj.limbName, "");
-                $('#'+limbObj.limbName+' .critWrap').empty();
-                // find and display the hardpoints
+                // find the hardpoints
                 $(this).find('hardpoint').each(function(){
                     var hardPointObj = new hardPoint($(this).attr('type'));
                     limbObj.addHardPoint(hardPointObj);
                 });
-                ['ballistic', 'energy', 'missile', 'ams'].forEach(function(hardpointtype){
-                    var max = limbObj.getTotalHardpointsForType(hardpointtype)
-                    if ( max > 0 ){
-                        $('#'+limbObj.limbName+' .hardpoints').append($("<div></div>").addClass('hardpoint').addClass(''+hardpointtype).text(""+hardpointtype+": "+max));
-                    }
-                })
-                // Build Armor Spinners
-                // handles saving the values once they are changed
-                var onSpinnerChange = function(e, ui){
-                    var frontspinner = $('#'+limbObj.limbName+' .armorspinner.front');
-                    var rearspinner = $('#'+limbObj.limbName+' .armorspinner.rear');
-                    var frontvalue = frontspinner.spinner("value");
-                    var rearvalue = 0;
-                    if ( rearspinner.length ){ // logic for the shared armor pool
-                        rearvalue = rearspinner.spinner("value");
-                        frontspinner.spinner("option","max",limbObj.maxArmor - rearvalue);
-                        rearspinner.spinner("option", "max",limbObj.maxArmor - frontvalue);
-                    }
-                    mechObj.setArmorForLimb(limbObj.limbName, frontvalue, rearvalue);
-                };
-                // handles keeping user from going over the max armor or weight limit.
-                var checkMaxArmor = function(e, ui){
-                    var frontvalue = $('#'+limbObj.limbName+' .armorspinner.front').spinner("value");
-                    var rearspinner = $('#'+limbObj.limbName+' .armorspinner.rear');
-                    var rearvalue = 0;
-                    if ( rearspinner.length ){ // logic for the shared armor pool
-                        rearvalue = rearspinner.spinner("value");
-                    }
-                    return (e.target.value > ui.value) || ((frontvalue + rearvalue) < limbObj.maxArmor) && ((mechObj.currentTons + mechObj.armorWeight) < mechObj.maxTons);
-                }
-				$('#'+limbObj.limbName+' .armorspinner.front').attr('value', limbObj.frontArmor);
-                $('#'+limbObj.limbName+' .armorspinner.rear').attr('value', limbObj.rearArmor);
-                $('#'+limbObj.limbName+' .maxarmor').text("Max: " + limbObj.maxArmor);
-                var spinner = $('#'+limbObj.limbName+' .armorspinner').spinner({
-                    min: 0,
-                    max: limbObj.maxArmor,
-                    change: onSpinnerChange,
-                    stop: onSpinnerChange,
-                    spin: checkMaxArmor
-                });
-
                 // handle the internals
                 $(this).find('internal').each(function(){
-                    $('<div></div>')
-                        .addClass('critItem')
-                        .addClass('internal')
-                        .append($('<div/>')
-                            .addClass(classLookup[$(this).attr('slots')])
-                            .append('<div class="critLabel">'+$(this).text()+'</div>'))
-                        .appendTo($('#'+limbObj.limbName+' .critWrap'))
+                    limbObj.addInternal(new item('', $(this).text(), $(this).attr('slots'), 0, 'internal'));
                 });
-
-                // mech xml specifies open crit slots
-                for ( var i=0; i < limbObj.critSlots; i++){
-                    $('<div></div>')
-                        .addClass('critItem')
-                        .addClass('empty')
-                        .append($('<div/>')
-                            .addClass(classLookup[1])
-                            .append('<div class="critLabel">[empty]</div>'))
-                        .appendTo($('#'+limbObj.limbName+' .critWrap'))
-                }
-
+                // init everything else.
+                limbObj.initVisuals();
             });
 
             $("#mechContainer").fadeIn('fast', function() {
@@ -327,16 +266,6 @@ $(function () {
                 .append('<div class="close">X</div>'))
                 .appendTo($(target).children('.critWrap'))
                 .fadeIn();
-            // This does not work. I have no idea why not..
-            /*
-             $($item).draggable({
-             revert: false,
-             appendTo: 'body',
-             snap: ".area",
-             snapMode: "inner"
-             });
-             */
-
         }
     }
 
