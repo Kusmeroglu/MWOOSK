@@ -27,6 +27,10 @@
     }
 
     this.removeItemFromLimb = function removeItemFromLimb(limbName, itemObj){
+        if ( ! itemObj ){
+            console.log('Removing null item!');
+            return;
+        }
         this.addWeight(0 - parseFloat(itemObj.weight));
         return this.limbs[limbName].removeItem(itemObj);
     }

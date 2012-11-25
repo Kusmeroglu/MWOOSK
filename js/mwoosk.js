@@ -19,52 +19,45 @@ var classLookup = {
 $(function () {
 
     function createItemDivFromData(data){
+        var itemObj = data["itemObj"];
         return $("<div></div>")
-            .attr("class", "item " + data["type"] + " " + data["id"])
+            .attr("class", "item " + itemObj.weaponType + " " + itemObj.id)
             // store all the weapon information in this div
-            .data(data)
+            .data({'itemObj':itemObj, rosechartdata:itemObj.rosechartdata})
             .hover(
             function(){
-                updateRoseChartData($(this).data("rosechartdata"), $(this).data("name"));
+                updateRoseChartData($(this).data("itemObj")["rosechartdata"], $(this).data("itemObj")['itemName']);
             },
             function(){
                 resetRoseChartData("-N/A-");
             })
             .disableSelection()
-            .text(data['name']);
+            .text(itemObj.itemName);
     }
 
     function parseItemXML(xml){
         $(xml).find("weapons > item").each(function () {
-            var itemdata = {
-                id:$(this).attr("id"),
-                type:$(this).attr("type"),
-                damage:$(this).attr("damage"),
-                heat:$(this).attr("heat"),
-                cooldown:$(this).attr("cooldown"),
-                range:$(this).attr("range"),
-                maxrange:$(this).attr("maxrange"),
-                slots:$(this).attr("slots"),
-                tons:$(this).attr("tons"),
-                dpsmax:$(this).attr("dpsmax"),
-                ammoper:$(this).attr("ammoper"),
-                hps:$(this).attr("hps"),
-                ehs:$(this).attr("ehs"),
-                name:$(this).text(),
-                itemObj: new item($(this).attr("id"), $(this).text(), $(this).attr("slots"), $(this).attr("tons"), $(this).attr("type")),
-                rosechartdata:[
-                    { name:"Damage",   value:$(this).attr("damage")},
-                    { name:"Heat",     value:$(this).attr("heat")},
-                    { name:"HPS",      value:(Number($(this).attr("heat")) == 0)?"0":(Number($(this).attr("damage"))/Number($(this).attr("heat"))).toFixed(2)},
-                    { name:"Weight",   value:$(this).attr("tons")},
-                    { name:"Slots",    value:$(this).attr("slots")},
-                    { name:"Cooldown", value:$(this).attr("cooldown")},
-                    { name:"DPS",      value:$(this).attr("dpsmax")},
-                    //{ name:"Ammo/Ton", value:$(this).attr("ammoper")?$(this).attr("ammoper"):0},
-                    { name:"Range",    value:$(this).attr("maxrange")}
-                ]
-            };
-            $("#itemList").append(createItemDivFromData(itemdata));
+            var itemObj = new item($(this).attr("id"), $(this).text(), $(this).attr("slots"), $(this).attr("tons"), $(this).attr("type"));
+            itemObj.damage = parseFloat($(this).attr("damage"));
+            itemObj.heat = parseFloat($(this).attr("heat"));
+            itemObj.cooldown = parseFloat($(this).attr("cooldown"));
+            itemObj.maxRange = parseFloat($(this).attr("maxrange"));
+            itemObj.dpsmax = parseFloat($(this).attr("dpsmax"));
+            itemObj.hps = parseFloat($(this).attr("hps"));
+            itemObj.ammoper = parseFloat($(this).attr("ammoper"));
+            itemObj.ehs = parseFloat($(this).attr("ehs"));
+            itemObj.rosechartdata = [
+                { name:"Damage",   value:$(this).attr("damage")},
+                { name:"Heat",     value:$(this).attr("heat")},
+                { name:"HPS",      value:(Number($(this).attr("heat")) == 0)?"0":(Number($(this).attr("damage"))/Number($(this).attr("heat"))).toFixed(2)},
+                { name:"Weight",   value:$(this).attr("tons")},
+                { name:"Slots",    value:$(this).attr("slots")},
+                { name:"Cooldown", value:$(this).attr("cooldown")},
+                { name:"DPS",      value:$(this).attr("dpsmax")},
+                //{ name:"Ammo/Ton", value:$(this).attr("ammoper")?$(this).attr("ammoper"):0},
+                { name:"Range",    value:$(this).attr("maxrange")}
+            ];
+            $("#itemList").append(createItemDivFromData({itemObj: itemObj}));
         });
         $("#itemList div").draggable({
             revert: "invalid",
@@ -210,8 +203,9 @@ $(function () {
                             {
                                 var thisitemid = rawitems.substr(i, 2);
                                 var thisitemelem = $('#itemList .'+thisitemid);
-                                var thisdata = jQuery.extend(true, {}, thisitemelem.data());// get copy of old data
-                                addItem(createItemDivFromData(thisdata), limbelem);
+                                var thisitemObj = jQuery.extend(true, {}, thisitemelem.data('itemObj'));// get copy of old data
+                                mechObj.addItemToLimb($(limbelem).attr('id'), thisitemObj);
+
                                 i += 2;
                             }
                         }
@@ -247,29 +241,6 @@ $(function () {
     }
 
     /*
-    Used whenever an item is added to a limb
-     */
-    function addItem($item, target) {
-        // handle logic
-        if (mechObj.addItemToLimb($(target).attr('id'), $item.data('itemObj'))){
-            // clear out the critslots needed
-            $(target).find('.critWrap .empty').slice(0, parseInt($item.data('slots'))).remove();
-
-            // add to the limb
-            $item
-                .empty()
-                .addClass('critItem')
-                .removeClass('item')
-                .append($('<div/>')
-                .addClass(classLookup[parseInt($item.data('slots'))])
-                .append('<div class="critLabel">'+$item.data('name')+'</div>')
-                .append('<div class="close">X</div>'))
-                .appendTo($(target).children('.critWrap'))
-                .fadeIn();
-        }
-    }
-
-    /*
      SET UP event handlers on all the basic elements
      */
     // making the fake select boxes work
@@ -298,12 +269,35 @@ $(function () {
         }
     });
 
+    // set the background to be droppable too, so we can 'drag off' to delete
+    $("#pageWrap").droppable({
+        drop: function(event, ui) {
+            // phantom dropped elements sometimes appear here, even though
+            var data = $(ui.draggable).data();
+            if ( ! data['itemObj']){
+                return false;
+            }
+            mechObj.removeItemFromLimb($(ui.draggable).parents(".area").attr('id'), data['itemObj']);
+            $(ui.draggable).remove(); // sometimes limb.removeItem doesn't appear to work..?
+        },
+        accept: '.critItem'
+    })
+
+    // set the limb areas to be droppables
     $(".area").droppable({
+        greedy: true,
         // use the same check for the accept attribute so we can show valid targets
         accept: function (ui) {
             var itemObj = ui.data('itemObj');
+            if (! itemObj ){
+                return false;
+            }
             if (! mechObj.limbs[this.id] ){
-                return; //bail - sometimes the xml is missing limbs, otherwise this shouldn't happen.
+                return false; //bail - sometimes the xml is missing limbs, otherwise this shouldn't happen.
+            }
+            // don't allow dragging to same limb item is already on
+            if ( ui.parents(".area").attr('id') == $(this).attr('id') ){
+                return false;
             }
             return mechObj.limbs[this.id].testIfValid(itemObj);
         },
@@ -311,15 +305,15 @@ $(function () {
         drop: function (event, ui) {
             //get from original item - ignore cloned item which was not a deep clone and doesn't have the data.
             var data = $(ui.draggable).data();
-            addItem(createItemDivFromData(data), this);
+            // check if dragged from another limb
+            if ($(ui.draggable).parents(".area").length > 0){
+                mechObj.removeItemFromLimb($(ui.draggable).parents(".area").attr('id'), data['itemObj']);
+                $(ui.draggable).remove(); // sometimes limb.removeItem doesn't appear to work..?
+            }
+            mechObj.addItemToLimb($(this).attr('id'), jQuery.extend(true, {}, data['itemObj']));
+            return false;
         }
     }).disableSelection();
-
-    $("#mechBay div div .close").live("click", function () {
-        var itemObj = $(this).parent().data('itemObj');
-        mechObj.removeItemFromLimb($(this).parents('.area')[0].id, itemObj);
-        $(this).parent().remove();
-    });
 
 
     /*

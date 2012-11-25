@@ -1,6 +1,6 @@
 ﻿function limb(limbName, critSlots, maxArmor) {
     this.limbName = limbName;
-    this.critSlots = critSlots;
+    this.critSlots = parseInt(critSlots);
     this.frontArmor = 0;
     this.rearArmor = 0;
     this.totalArmor = 0;
@@ -25,15 +25,8 @@
             }
         }.bind(this));
         // mech xml specifies open crit slots
-        for ( var i=0; i < this.critSlots; i++){
-            $('<div></div>')
-                .addClass('critItem')
-                .addClass('empty')
-                .append($('<div/>')
-                .addClass(classLookup[1])
-                .append('<div class="critLabel">[empty]</div>'))
-                .appendTo($('#'+this.limbName+' .critWrap'))
-        }
+        this.addEmptyCritSlots( this.critSlots );
+
         // Build Armor Spinners
         // handles saving the values once they are changed
         var onSpinnerChange = function(e, ui){
@@ -72,6 +65,19 @@
         });
     }
 
+    this.addEmptyCritSlots = function addEmptyCritSlots(count){
+        // mech xml specifies open crit slots
+        for ( var i=0; i < count; i++){
+            $('<div></div>')
+                .addClass('critItem')
+                .addClass('empty')
+                .append($('<div/>')
+                .addClass(classLookup[1])
+                .append('<div class="critLabel">[empty]</div>'))
+                .appendTo($('#'+this.limbName+' .critWrap'))
+        }
+    }
+
     this.addHardPoint = function addHardPoint(hardPointObj)
     {
         this.hardPoints.push(hardPointObj);
@@ -100,21 +106,84 @@
             s += itemObj.id.toString();
         });
         setURLParameter(this.limbName, s);
+    };
+
+    this.sortItems = function sortItems(){
+        var sorteditems = [];
+        var sortOrder = ['internal','energy','ballistic','missile','empty'];
+        $.each(sortOrder, function(i, className){
+            sorteditems = sorteditems.concat($('#'+this.limbName+' .critWrap').children('.'+className).get());
+        }.bind(this))
+        $('#'+this.limbName+' .critWrap').append(sorteditems);
     }
 
     this.addItem = function addItem(itemObj)
     {
+        if ( ! itemObj ){
+            console.log("Empty itemObj in add");
+            return false;
+        }
+
+        //itemObj = $.extend({}, itemObj); // clone for less shenanigans
+
+        // clear out the critslots needed
+        $('#'+this.limbName).find('.critWrap .empty').slice(0, itemObj.critSlots).remove();
+
+        // add to the limb
+        var div = $("<div></div>")
+            .addClass('critItem')
+            .addClass(itemObj.weaponType)
+            // store all the weapon information in this div
+            .data({'itemObj':itemObj, rosechartdata:itemObj.rosechartdata})
+            .hover(
+                function(){
+                    updateRoseChartData($(this).data("itemObj")["rosechartdata"], $(this).data("itemObj")['itemName']);
+                },
+                function(){
+                    resetRoseChartData("-N/A-");
+                })
+            .disableSelection()
+            .draggable({
+                appendTo: 'body',
+                snap: ".area",
+                snapMode: "inner"
+            })
+            .append($('<div/>')
+                .addClass(classLookup[itemObj.critSlots])
+                .append('<div class="critLabel">'+itemObj.itemName+'</div>')
+                )
+            .appendTo($('#'+this.limbName+' .critWrap'))
+            .fadeIn();
+
+        // save obj in item data?
+        itemObj.element = div;
         this.items.push(itemObj);
         this.resetURLParam();
+        this.sortItems();
         return true;
-    }
+    }.bind(this);
 
     this.removeItem = function removeItem(itemObj)
     {
-        // only remove the first one. This could be a bug in the future with multiple copies of an item
+        if ( ! itemObj ){
+            console.log("Empty itemObj in remove");
+            return false;
+        }
+
         this.items.pop(this.items.indexOf(itemObj));
+
         //console.log('removing ' + itemObj.itemName + ' from ' + limbName);
         this.resetURLParam();
+
+        if ( itemObj.element ){
+            itemObj.element.remove();
+        } else {
+            console.log("no element!");
+        }
+
+        // reinstate empty crit slots
+        this.addEmptyCritSlots(itemObj.critSlots);
+        this.sortItems();
         return true;
     }
 
@@ -134,6 +203,10 @@
 
     this.testIfValid = function testIfValid(itemObj)
     {
+        if ( ! itemObj ){
+            console.log("Empty itemObj in test");
+            return false;
+        }
         //First: is there available space?
         if (itemObj.critSlots > this.getFreeCritSlots()) {
             return false;
