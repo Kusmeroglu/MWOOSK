@@ -54,6 +54,10 @@
         setURLParameter("armor", s);
     }
 
+    this.resetLimbCritSlots = function resetLimbCritSlots(limbName){
+        this.limbs[limbName].addEmptyCritSlots();
+    }
+
     this.addWeight = function addWeight(weight){
         this.currentTons += weight;
         updateChart(this.maxTons, this.chassisTons, this.currentTons);

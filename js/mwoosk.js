@@ -20,24 +20,27 @@ $(function () {
 
     function createItemDivFromData(data){
         var itemObj = data["itemObj"];
-        return $("<div></div>")
-            .attr("class", "item " + itemObj.weaponType + " " + itemObj.id)
+        var div = $("<div></div>")
+            .attr("class", "item " + itemObj.hardpointType + " " + itemObj.id)
             // store all the weapon information in this div
             .data({'itemObj':itemObj, rosechartdata:itemObj.rosechartdata})
-            .hover(
-            function(){
-                updateRoseChartData($(this).data("itemObj")["rosechartdata"], $(this).data("itemObj")['itemName']);
-            },
-            function(){
-                resetRoseChartData("-N/A-");
-            })
             .disableSelection()
             .text(itemObj.itemName);
+        if( itemObj.rosechartdata & itemObj.rosechartdata.length ){
+            div.hover(
+                function(){
+                    updateRoseChartData($(this).data("itemObj")["rosechartdata"], $(this).data("itemObj")['itemName']);
+                },
+                function(){
+                    resetRoseChartData("-N/A-");
+                })
+        }
+        return div;
     }
 
     function parseItemXML(xml){
         $(xml).find("weapons > item").each(function () {
-            var itemObj = new item($(this).attr("id"), $(this).text(), $(this).attr("slots"), $(this).attr("tons"), $(this).attr("type"));
+            var itemObj = new item($(this).attr("id"), $(this).text(), $(this).attr("slots"), $(this).attr("tons"), "weapon", $(this).attr("type"));
             itemObj.damage = parseFloat($(this).attr("damage"));
             itemObj.heat = parseFloat($(this).attr("heat"));
             itemObj.cooldown = parseFloat($(this).attr("cooldown"));
@@ -59,6 +62,13 @@ $(function () {
             ];
             $("#itemList").append(createItemDivFromData({itemObj: itemObj}));
         });
+
+        $(xml).find("engines > plant").each(function () {
+            var itemObj = new item($(this).attr("id"), $(this).text(), $(this).attr("slots"), $(this).attr("tons"), $(this).attr("type"), "engine");
+            itemObj.rosechartdata = [];
+            $("#itemList").append(createItemDivFromData({itemObj: itemObj}));
+        });
+
         $("#itemList div").draggable({
             revert: "invalid",
             helper: "clone",
@@ -182,7 +192,7 @@ $(function () {
                 });
                 // handle the internals
                 $(this).find('internal').each(function(){
-                    limbObj.addInternal(new item('', $(this).text(), $(this).attr('slots'), 0, 'internal'));
+                    limbObj.addItem(new item('', $(this).text(), $(this).attr('slots'), 0, 'internal', ''));
                 });
                 // init everything else.
                 limbObj.initVisuals();
@@ -201,12 +211,12 @@ $(function () {
                             var i = 0;
                             while(i < rawitems.length)
                             {
-                                var thisitemid = rawitems.substr(i, 2);
+                                var thisitemid = rawitems.substr(i, 3);
                                 var thisitemelem = $('#itemList .'+thisitemid);
                                 var thisitemObj = jQuery.extend(true, {}, thisitemelem.data('itemObj'));// get copy of old data
                                 mechObj.addItemToLimb($(limbelem).attr('id'), thisitemObj);
 
-                                i += 2;
+                                i += 3;
                             }
                         }
                     })

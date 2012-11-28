@@ -7,7 +7,6 @@
     this.maxArmor = maxArmor;
     this.hardPoints = new Array();
     this.items = new Array();
-    this.internals = new Array();
 
     this.init = function init(){
         // reset url parameter
@@ -17,7 +16,7 @@
     }
 
     this.initVisuals = function initVisuals(){
-        // display hardpoints
+        // display hardpoints (not engine)
         ['ballistic', 'energy', 'missile', 'ams'].forEach(function(hardpointtype){
             var max = this.getTotalHardpointsForType(hardpointtype)
             if ( max > 0 ){
@@ -76,6 +75,7 @@
                 .append('<div class="critLabel">[empty]</div>'))
                 .appendTo($('#'+this.limbName+' .critWrap'))
         }
+        this.sortItems();
     }
 
     this.addHardPoint = function addHardPoint(hardPointObj)
@@ -110,11 +110,11 @@
 
     this.sortItems = function sortItems(){
         var sorteditems = [];
-        var sortOrder = ['internal','energy','ballistic','missile','empty'];
+        var sortOrder = ['internal','engine', 'energy','ballistic','missile','empty'];
         $.each(sortOrder, function(i, className){
             sorteditems = sorteditems.concat($('#'+this.limbName+' .critWrap').children('.'+className).get());
-        }.bind(this))
-        $('#'+this.limbName+' .critWrap').append(sorteditems);
+        }.bind(this));
+        $('#'+this.limbName+' .critWrap').append(sorteditems); // actually moves them in place. jQuery ninja voodoo
     }
 
     this.addItem = function addItem(itemObj)
@@ -124,43 +124,57 @@
             return false;
         }
 
-        //itemObj = $.extend({}, itemObj); // clone for less shenanigans
-
         // clear out the critslots needed
-        $('#'+this.limbName).find('.critWrap .empty').slice(0, itemObj.critSlots).remove();
+        if ( itemObj.type != "internal"){
+            $('#'+this.limbName).find('.critWrap .empty').slice(0, itemObj.critSlots).remove();
+        }
 
         // add to the limb
         var div = $("<div></div>")
             .addClass('critItem')
-            .addClass(itemObj.weaponType)
+            .addClass(itemObj.hardpointType)
             // store all the weapon information in this div
             .data({'itemObj':itemObj, rosechartdata:itemObj.rosechartdata})
-            .hover(
-                function(){
-                    updateRoseChartData($(this).data("itemObj")["rosechartdata"], $(this).data("itemObj")['itemName']);
-                },
-                function(){
-                    resetRoseChartData("-N/A-");
-                })
             .disableSelection()
-            .draggable({
-                appendTo: 'body',
-                snap: ".area",
-                snapMode: "inner"
-            })
             .append($('<div/>')
                 .addClass(classLookup[itemObj.critSlots])
                 .append('<div class="critLabel">'+itemObj.itemName+'</div>')
                 )
             .appendTo($('#'+this.limbName+' .critWrap'))
             .fadeIn();
-
+        // if this is a top level item (with an id), make it draggable
+        if (itemObj.id){
+            div.draggable({
+                    appendTo: 'body',
+                    snap: ".area",
+                    snapMode: "inner"
+            });
+        }
+        // if this is a weapon
+        if( itemObj.type == "weapon" ){
+            div.hover(
+                function(){
+                    updateRoseChartData($(this).data("itemObj")["rosechartdata"], $(this).data("itemObj")['itemName']);
+                },
+                function(){
+                    resetRoseChartData("-N/A-");
+                })
+        }
         // save obj in item data?
-        itemObj.element = div;
+        itemObj.elements = [div];
+        // hack for XL engines
+        if ( this.limbName == "centerTorso" && itemObj.type == "xl"){
+            var rightxlwing = new item("", itemObj.itemName, 3, 0, "xl", "");
+            var leftxlwing = new item("", itemObj.itemName, 3, 0, "xl", "");
+            mechObj.addItemToLimb('rightTorso', rightxlwing);
+            mechObj.addItemToLimb('leftTorso', leftxlwing);
+            itemObj.relatedItems['rightTorso'] = rightxlwing;
+            itemObj.relatedItems['leftTorso'] = leftxlwing;
+        }
         this.items.push(itemObj);
         this.resetURLParam();
         this.sortItems();
-        return true;
+        return div;
     }.bind(this);
 
     this.removeItem = function removeItem(itemObj)
@@ -175,31 +189,22 @@
         //console.log('removing ' + itemObj.itemName + ' from ' + limbName);
         this.resetURLParam();
 
-        if ( itemObj.element ){
-            itemObj.element.remove();
+        if ( itemObj.elements){
+            itemObj.elements.forEach(function(elem){$(elem).remove();});
         } else {
             console.log("no element!");
         }
 
+        for ( var limb in itemObj.relatedItems ){
+            if (itemObj.relatedItems.hasOwnProperty(limb)){
+                mechObj.removeItemFromLimb(limb, itemObj.relatedItems[limb]);
+            }
+        }
+
         // reinstate empty crit slots
         this.addEmptyCritSlots(itemObj.critSlots);
-        this.sortItems();
         return true;
     }
-
-    this.addInternal = function addInternal(itemObj)
-    {
-        this.internals.push(itemObj);
-        $('<div></div>')
-            .addClass('critItem')
-            .addClass('internal')
-            .append($('<div/>')
-            .addClass(classLookup[itemObj.critSlots])
-            .append('<div class="critLabel">'+itemObj.itemName+'</div>'))
-            .appendTo($('#'+this.limbName+' .critWrap'))
-        return true;
-    }
-
 
     this.testIfValid = function testIfValid(itemObj)
     {
@@ -214,7 +219,7 @@
         //Applicable free hard point?
         var typePoints = 0;
         for (var x = 0; x < this.hardPoints.length; x++) {
-            if (this.hardPoints[x].pointType == itemObj.weaponType) typePoints++;
+            if (this.hardPoints[x].pointType == itemObj.hardpointType) typePoints++;
         }
         if (typePoints == 0) {
             return false;
@@ -222,7 +227,7 @@
         //Okay, so this has a valid hard point for the item type. But does it have a FREE hard point?
         var occupiedHardPointsOfSameType = 0;
         for (var x = 0; x < this.items.length; x++) {
-            if (this.items[x].weaponType == itemObj.weaponType) occupiedHardPointsOfSameType++;
+            if (this.items[x].hardpointType == itemObj.hardpointType) occupiedHardPointsOfSameType++;
         }
         if (occupiedHardPointsOfSameType == typePoints) {
             return false;
@@ -234,7 +239,9 @@
     {
         var usedSlots = 0;
         for (var x = 0; x < this.items.length; x++) {
-            usedSlots = usedSlots + this.items[x].critSlots;
+            if (this.items[x].type != "internal"){
+                usedSlots = usedSlots + this.items[x].critSlots;
+            }
         }
         return this.critSlots - usedSlots;
     }
