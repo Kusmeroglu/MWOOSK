@@ -228,6 +228,17 @@ $(function () {
                             $('#'+limbName+' .armorspinner.rear').spinner('value', parseInt(bothvalues.split("-")[1]));
                         }, this);
                     }
+                    if (urldata.hasOwnProperty('endo') && urldata['endo'] == "true"){
+                        if (mechObj.addEndoSteel() ){
+                            $("#endoCheckbox").prop("checked", true);
+                        }
+                    }
+                    if (urldata.hasOwnProperty('ferro') && urldata['ferro'] == "true"){
+                        if (mechObj.addFerroFibrous()){
+                            $("#ferroCheckbox").prop("checked", true);
+                        }
+                    }
+
                 }
             });
         });
@@ -280,7 +291,7 @@ $(function () {
     });
 
     // set the background to be droppable too, so we can 'drag off' to delete
-    $("#pageWrap").droppable({
+    $("body").droppable({
         drop: function(event, ui) {
             // phantom dropped elements sometimes appear here, even though
             var data = $(ui.draggable).data();
@@ -325,6 +336,33 @@ $(function () {
         }
     }).disableSelection();
 
+    $("#endoCheckbox").change( function(){
+        if ($('#endoCheckbox').is(':checked') ){
+            if (! mechObj.addEndoSteel()){
+                $("#endoCheckbox").prop("checked", false);
+                alert("Not enough free critical slots to add Endo Steel.");
+            }
+        } else {
+            if (! mechObj.removeEndoSteel()){
+                $("#endoCheckbox").prop("checked", true);
+                alert("Not enough free weight to remove Endo Steel.");
+            }
+        }
+    });
+
+    $("#ferroCheckbox").change( function(){
+        if ($('#ferroCheckbox').is(':checked') ){
+            if ( ! mechObj.addFerroFibrous()){
+                $("#ferroCheckbox").prop("checked", false);
+                alert("Not enough free critical slots to add Ferro Fibrous.");
+            }
+        } else {
+            if ( ! mechObj.removeFerroFibrous()){
+                $("#ferroCheckbox").prop("checked", true);
+                alert("Not enough free weight to remove Ferro Fibrous.");
+            }
+        }
+    });
 
     $('#tinyurllink').on('click', function(e){
         e.preventDefault();

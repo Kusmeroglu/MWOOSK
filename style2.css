@@ -157,6 +157,10 @@ height:20px;
 margin:1px;
 }
 
+.structure {
+    background-color: #8b0000;
+}
+
 .invalid {
     border: 3px double #FF0000;
 }
@@ -453,6 +457,10 @@ position:relative;
 }
 
 #utilitiesTab{
+}
+
+#utilities {
+    color: white;
 }
 
 #engineTab{
