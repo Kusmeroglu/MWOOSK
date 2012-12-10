@@ -309,7 +309,7 @@ $(function () {
             if ( ui.parents(".area").attr('id') == $(this).attr('id') ){
                 return false;
             }
-            return mechObj.limbs[this.id].testIfValid(itemObj);
+            return mechObj.testIfValid(this.id, itemObj);
         },
         activeClass: "valid",
         drop: function (event, ui) {
@@ -324,6 +324,40 @@ $(function () {
             return false;
         }
     }).disableSelection();
+
+
+    $('#tinyurllink').on('click', function(e){
+        e.preventDefault();
+        makeTinyUrl(window.location.href);
+        return false;
+    });
+
+    function makeTinyUrl(url)
+    {
+        //var apiKey = "AIzaSyBwChgwfU1FgX9dXWr7UJL7cpClk53T8mI";
+        //gapi.client.setApiKey(apiKey);
+
+        gapi.client.load('urlshortener', 'v1', function() {
+            var request = gapi.client.urlshortener.url.insert({
+                'resource': {
+                    'longUrl': url
+                }
+            });
+            var resp = request.execute(function(resp) {
+                if (resp.error) {
+                    console.log("error: " + resp.error.message);
+                    var tinyurl = data.id;
+                    $('#tinyurllink').hide();
+                    $('#tinyurllink').insertAfter($("<div id='tinyurlresult'>"+resp.error.message+"</div>"));
+                } else {
+                    console.log("tiny: " + tinyurl);
+                    var tinyurl = data.id;
+                    $('#tinyurllink').hide();
+                    $('#tinyurllink').insertAfter($("<a id='tinyurlresult' href='"+tinyurl+"'>"+tinyurl+"</a>"));
+                }
+            });
+        });
+    }
 
 
     /*

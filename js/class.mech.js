@@ -9,6 +9,7 @@
     this.ferro = false;
     this.chassisTons = 0;
     this.currentTons = 0;
+    this.currentFreeCritSlots = 0;
     this.limbs = {};
 
     this.armorWeight = 1/32;
@@ -17,14 +18,37 @@
 
     };
 
+    this.countFreeCritSlots = function countFreeCritSlots(){
+        this.currentFreeCritSlots = 0;
+        for (var limbName in this.limbs) {
+            this.currentFreeCritSlots = this.limbs[limbName].getFreeCritSlots();
+        }
+        return this.currentFreeCritSlots;
+    }
+
     this.addLimb = function addLimb(limbName, limbObj) {
         this.limbs[limbName] = limbObj;
+        this.countFreeCritSlots();
+    };
+
+    this.testIfValid = function testIfValid(limbName, itemObj){
+        // is there weight on the mech?
+        if (this.maxTons < (this.currentTons + itemObj.weight)){
+            return false;
+        }
+        // are there crit slots (on the whole mech, endo and ferro, I'm looking at you)
+        if (this.currentFreeCritSlots < itemObj.critSlots){
+            return false;
+        }
+        // is the item valid for this limb?
+        return this.limbs[limbName].testIfValid(itemObj);
     };
 
     this.addItemToLimb = function addItemToLimb(limbName, itemObj){
         this.addWeight(parseFloat(itemObj.weight));
+        this.countFreeCritSlots();
         return this.limbs[limbName].addItem(itemObj);
-    }
+    };
 
     this.removeItemFromLimb = function removeItemFromLimb(limbName, itemObj){
         if ( ! itemObj ){
@@ -32,7 +56,9 @@
             return;
         }
         this.addWeight(0 - parseFloat(itemObj.weight));
-        return this.limbs[limbName].removeItem(itemObj);
+        var success = this.limbs[limbName].removeItem(itemObj);
+        this.countFreeCritSlots();
+        return success;
     }
 
     this.setArmorForLimb = function setArmorForLimb(limbName, frontArmor, rearArmor){
@@ -64,7 +90,7 @@
     }
 
     this.countLimbs = function countLimbs() {
-        var limbs, countLimbs = 0;
+        var limb, countLimbs = 0;
         for (limb in this.limbs) {
             countLimbs++;
         }

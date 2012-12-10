@@ -24,7 +24,12 @@ function setURLParameter(param, paramVal){
 //    console.log("URL: " + baseURL + "?" + newAdditionalURL + rows_txt);
     window.history.replaceState({}, "Title doesn't do anything", baseURL + "?" + newAdditionalURL + rows_txt)
     //return baseURL + "?" + newAdditionalURL + rows_txt;
+
+    //reset the tiny rul thing
+    $('#tinyurlresult').remove();
+    $('#tinyurllink').show();
 }
+
 function getURLParameter(param){
     var tempArray = window.location.href.split("?");
     var additionalURL = tempArray[1];
