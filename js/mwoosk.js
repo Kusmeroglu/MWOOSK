@@ -388,8 +388,8 @@ $(function () {
                     $('#tinyurllink').hide();
                     $('#tinyurllink').insertAfter($("<div id='tinyurlresult'>"+resp.error.message+"</div>"));
                 } else {
+                    var tinyurl = resp.id;
                     console.log("tiny: " + tinyurl);
-                    var tinyurl = data.id;
                     $('#tinyurllink').hide();
                     $('#tinyurllink').insertAfter($("<a id='tinyurlresult' href='"+tinyurl+"'>"+tinyurl+"</a>"));
                 }
