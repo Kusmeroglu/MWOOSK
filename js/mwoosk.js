@@ -391,7 +391,7 @@ $(function () {
                     var tinyurl = resp.id;
                     console.log("tiny: " + tinyurl);
                     $('#tinyurllink').hide();
-                    $('#tinyurllink').insertAfter($("<a id='tinyurlresult' href='"+tinyurl+"'>"+tinyurl+"</a>"));
+                    $('#tinyurllink').after($("<a id='tinyurlresult' href='"+tinyurl+"'>"+tinyurl+"</a>"));
                 }
             });
         });
