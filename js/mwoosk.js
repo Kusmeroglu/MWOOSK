@@ -26,7 +26,7 @@ $(function () {
             .data({'itemObj':itemObj, rosechartdata:itemObj.rosechartdata})
             .disableSelection()
             .text(itemObj.itemName);
-        if( itemObj.rosechartdata & itemObj.rosechartdata.length ){
+        if( itemObj.rosechartdata && itemObj.rosechartdata.length ){
             div.hover(
                 function(){
                     updateRoseChartData($(this).data("itemObj")["rosechartdata"], $(this).data("itemObj")['itemName']);
@@ -204,6 +204,26 @@ $(function () {
                 //check for info in URLs
                 // (have to wait until we have graphs and items created.)
                 if (urldata.hasOwnProperty('variant')){
+                    if (urldata.hasOwnProperty('endo') && urldata['endo'] == "true"){
+                        if (mechObj.addEndoSteel() ){
+                            $("#endoCheckbox").prop("checked", true);
+                        }
+                    }
+                    if (urldata.hasOwnProperty('ferro') && urldata['ferro'] == "true"){
+                        if (mechObj.addFerroFibrous()){
+                            $("#ferroCheckbox").prop("checked", true);
+                        }
+                    }
+                    if (urldata.hasOwnProperty('dhs') && urldata['dhs'] == "true"){
+                        if (mechObj.addDualHeatSinks()){
+                            $("#dhsCheckbox").prop("checked", true);
+                        }
+                    }
+                    if (urldata.hasOwnProperty('artemis') && urldata['artemis'] == "true"){
+                        if (mechObj.addArtemis()){
+                            $("#artemisCheckbox").prop("checked", true);
+                        }
+                    }
                     limbList.forEach(function(limb){
                         if (urldata.hasOwnProperty(limb)){
                             var rawitems = urldata[limb];
@@ -228,17 +248,6 @@ $(function () {
                             $('#'+limbName+' .armorspinner.rear').spinner('value', parseInt(bothvalues.split("-")[1]));
                         }, this);
                     }
-                    if (urldata.hasOwnProperty('endo') && urldata['endo'] == "true"){
-                        if (mechObj.addEndoSteel() ){
-                            $("#endoCheckbox").prop("checked", true);
-                        }
-                    }
-                    if (urldata.hasOwnProperty('ferro') && urldata['ferro'] == "true"){
-                        if (mechObj.addFerroFibrous()){
-                            $("#ferroCheckbox").prop("checked", true);
-                        }
-                    }
-
                 }
             });
         });
@@ -363,6 +372,35 @@ $(function () {
             }
         }
     });
+
+    $("#dhsCheckbox").change( function(){
+        if ($('#dhsCheckbox').is(':checked') ){
+            if ( ! mechObj.addDualHeatSinks()){
+                $("#dhsCheckbox").prop("checked", false);
+                alert("Could not add DHS.");
+            }
+        } else {
+            if ( ! mechObj.removeFerroFibrous()){
+                $("#dhsCheckbox").prop("checked", true);
+                alert("Could not remove DHS.");
+            }
+        }
+    });
+
+    $("#artemisCheckbox").change( function(){
+        if ($('#artemisCheckbox').is(':checked') ){
+            if ( ! mechObj.addArtemis()){
+                $("#artemisCheckbox").prop("checked", false);
+                alert("Could not add Artemis.");
+            }
+        } else {
+            if ( ! mechObj.removeArtemis()){
+                $("#artemisCheckbox").prop("checked", true);
+                alert("Could not remove Artemis.");
+            }
+        }
+    });
+
 
     $('#tinyurllink').on('click', function(e){
         e.preventDefault();

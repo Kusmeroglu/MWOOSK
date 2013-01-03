@@ -650,9 +650,9 @@ Rose Chart CSS (SVG)
 
 #roseChart {
     height: 220px;
-    position: absolute;
-    right: 5px;
-    bottom: 5px;
+//    position: absolute;
+//    right: -110px;
+ //   bottom: 5px;
     width: 220px;
 }
 

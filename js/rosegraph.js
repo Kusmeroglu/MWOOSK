@@ -5,6 +5,7 @@ function createRoseGraph(container, captiontext) {
     var VISWIDTH = 100;
     var PADDING = 35;
 
+    console.log("creating rose chart");
     var ANGLULARWIDTHOFSECTION = 360/8;
     var INNERRADIUS = 20;
     var MAXLOOKUP = {
@@ -123,7 +124,6 @@ function createRoseGraph(container, captiontext) {
     }
 
 
-    // Update drawn arcs, etc to the newly selected months
     function updateComplexArcs(parent, plotData, captiontext) {
         if ( !plotData ){
             return;

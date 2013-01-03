@@ -6,6 +6,8 @@
 
     this.dhs = false;
     this.ferro = false;
+    this.dhs = false;
+    this.artemis = true;
     this.chassisTons = 0;
     this.currentTons = 0;
     this.currentFreeCritSlots = 0;
@@ -72,6 +74,19 @@
         this.countFreeCritSlots();
         this.showStructureSlots();
         return success;
+    }
+
+    this.removeAllItemsByID = function removeAllItemsByID(itemID){
+        limbList.forEach(function(limbName){
+            if ( this.limbs.hasOwnProperty(limbName)){ // not all the limbs have been loaded yet..
+                var limbitems = this.limbs[limbName].items.slice();
+                for (var x = 0; x < limbitems.length; x++) {
+                    if (limbitems[x].id = itemID){
+                        this.removeItemFromLimb(limbName, limbitems[x]);
+                    }
+                }
+            }
+        }, this);
     }
 
     this.setArmorForLimb = function setArmorForLimb(limbName, frontArmor, rearArmor){
@@ -167,7 +182,80 @@
         setURLParameter('ferro', 'false');
         this.showStructureSlots();
         return true;
+    };
+
+    this.singleHeatSinkIDs = ["ISH"];
+    this.dualHeatSinkIDs = ["ISD"];
+    this.addDualHeatSinks = function addDualHeatSinks() {
+        // remove all the current single heat sinks on the mech
+        this.singleHeatSinkIDs.forEach(this.removeAllItemsByID, this);
+
+        // hide the single heat sinks and show the double heat sinks in the item list.
+        this.singleHeatSinkIDs.forEach(function (id) {
+            $("#itemList ." + id).hide();
+        });
+        this.dualHeatSinkIDs.forEach(function (id) {
+            $("#itemList ." + id).show();
+        });
+
+        this.dhs = true;
+        setURLParameter('dhs', 'true');
+        return true;
+    };
+
+    this.removeDualHeatSinks = function removeDualHeatSinks(){
+        // remove all the current heat sinks on the mech
+        this.dualHeatSinkIDs.forEach(this.removeAllItemsByID, this);
+
+        // hide the single heat sinks and show the double heat sinks.
+        this.singleHeatSinkIDs.forEach(function(id){
+            $("#itemList ."+id).show();
+        });
+        this.dualHeatSinkIDs.forEach(function(id){
+            $("#itemList ."+id).hide();
+        });
+
+        this.dhs = false;
+        setURLParameter('dhs', 'false');
+        return true;
+    };
+
+    this.artemisMissileIDs = ["WMI","WMJ","WMK","WML","WMM","WMN","WMO"];
+    this.nonArtemisMissileIDs = ["WMB","WMC","WMD","WME","WMF","WMG","WMH"];
+    this.addArtemis = function addArtemis(){
+        // remove all the current non artemis missiles
+        this.nonArtemisMissileIDs.forEach(this.removeAllItemsByID, this);
+
+        // hide the non-artemis missiles and show the artemis missiles in the item list.
+        this.nonArtemisMissileIDs.forEach(function (id) {
+            $("#itemList ." + id).hide();
+        });
+        this.artemisMissileIDs.forEach(function (id) {
+            $("#itemList ." + id).show();
+        });
+
+        this.artemis = false;
+        setURLParameter('artemis', 'true');
+        return true;
     }
+
+    this.removeArtemis = function removeArtemis(){
+        // remove all the current non artemis missiles
+        this.artemisMissileIDs.forEach(this.removeAllItemsByID, this);
+
+        // hide the non-artemis missiles and show the artemis missiles in the item list.
+        this.nonArtemisMissileIDs.forEach(function (id) {
+            $("#itemList ." + id).show();
+        });
+        this.artemisMissileIDs.forEach(function (id) {
+            $("#itemList ." + id).hide();
+        });
+
+        this.artemis = false;
+        setURLParameter('artemis', 'false');
+        return true;
+    };
+
 
     this.showStructureSlots = function showStructureSlots(){
         //clear old shown slots
