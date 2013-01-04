@@ -209,6 +209,9 @@ $(function () {
             $("#mechContainer").fadeIn('fast', function() {
                 $("#itemList").fadeIn('fast');
                 createRoseGraph("#roseChart", "-N/A-");
+                mechObj.removeDualHeatSinks();
+                mechObj.removeArtemis();
+
                 //check for info in URLs
                 // (have to wait until we have graphs and items created.)
                 if (urldata.hasOwnProperty('variant')){
@@ -226,15 +229,11 @@ $(function () {
                         if (mechObj.addDualHeatSinks()){
                             $("#dhsCheckbox").prop("checked", true);
                         }
-                    } else {
-                        mechObj.removeDualHeatSinks();
                     }
                     if (urldata.hasOwnProperty('artemis') && urldata['artemis'] == "true"){
                         if (mechObj.addArtemis()){
                             $("#artemisCheckbox").prop("checked", true);
                         }
-                    } else {
-                        mechObj.removeArtemis();
                     }
                     limbList.forEach(function(limb){
                         if (urldata.hasOwnProperty(limb)){
