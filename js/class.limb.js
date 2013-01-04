@@ -110,12 +110,12 @@
 
     this.sortItems = function sortItems(){
         var sorteditems = [];
-        var sortOrder = ['internal','engine', 'energy','ballistic','missile','empty'];
+        var sortOrder = ['internal','engine', 'energy','ballistic','missile', 'empty'];
         $.each(sortOrder, function(i, className){
             sorteditems = sorteditems.concat($('#'+this.limbName+' .critWrap').children('.'+className).get());
         }.bind(this));
         $('#'+this.limbName+' .critWrap').append(sorteditems); // actually moves them in place. jQuery ninja voodoo
-    }
+    };
 
     this.addItem = function addItem(itemObj)
     {
@@ -184,13 +184,16 @@
             return false;
         }
 
-        this.items.pop(this.items.indexOf(itemObj));
+        this.items.splice(this.items.indexOf(itemObj), 1);
 
         //console.log('removing ' + itemObj.itemName + ' from ' + limbName);
         this.resetURLParam();
 
         if ( itemObj.elements){
-            itemObj.elements.forEach(function(elem){$(elem).remove();});
+            itemObj.elements.forEach(function(elem){
+                   $(elem).remove();
+                }
+            );
         } else {
             console.log("no element!");
         }
@@ -204,7 +207,7 @@
         // reinstate empty crit slots
         this.addEmptyCritSlots(itemObj.critSlots);
         return true;
-    }
+    };
 
     this.testIfValid = function testIfValid(itemObj)
     {
@@ -217,23 +220,25 @@
             return false;
         }
         //Applicable free hard point?
-        var typePoints = 0;
-        for (var x = 0; x < this.hardPoints.length; x++) {
-            if (this.hardPoints[x].pointType == itemObj.hardpointType) typePoints++;
-        }
-        if (typePoints == 0) {
-            return false;
-        }
-        //Okay, so this has a valid hard point for the item type. But does it have a FREE hard point?
-        var occupiedHardPointsOfSameType = 0;
-        for (var x = 0; x < this.items.length; x++) {
-            if (this.items[x].hardpointType == itemObj.hardpointType) occupiedHardPointsOfSameType++;
-        }
-        if (occupiedHardPointsOfSameType == typePoints) {
-            return false;
+        if (itemObj.hardpointType){
+            var typePoints = 0;
+            for (var x = 0; x < this.hardPoints.length; x++) {
+                if (this.hardPoints[x].pointType == itemObj.hardpointType) typePoints++;
+            }
+            if (typePoints == 0) {
+                return false;
+            }
+            //Okay, so this has a valid hard point for the item type. But does it have a FREE hard point?
+            var occupiedHardPointsOfSameType = 0;
+            for (var x = 0; x < this.items.length; x++) {
+                if (this.items[x].hardpointType == itemObj.hardpointType) occupiedHardPointsOfSameType++;
+            }
+            if (occupiedHardPointsOfSameType == typePoints) {
+                return false;
+            }
         }
         return true;
-    }
+    };
 
     this.getFreeCritSlots = function getFreeCritSlots()
     {
@@ -244,7 +249,7 @@
             }
         }
         return this.critSlots - usedSlots;
-    }
+    };
 
     this.init();
 }

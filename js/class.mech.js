@@ -76,13 +76,17 @@
         return success;
     }
 
-    this.removeAllItemsByID = function removeAllItemsByID(itemID){
+    this.removeAllItemsByIDs = function removeAllItemsByIDs(itemIDList){
         limbList.forEach(function(limbName){
             if ( this.limbs.hasOwnProperty(limbName)){ // not all the limbs have been loaded yet..
-                var limbitems = this.limbs[limbName].items.slice();
-                for (var x = 0; x < limbitems.length; x++) {
-                    if (limbitems[x].id = itemID){
-                        this.removeItemFromLimb(limbName, limbitems[x]);
+                var found = true;
+                while (found){
+                    found = false;
+                    for (var x=0; x < this.limbs[limbName].items.length; x++) {
+                        if ( itemIDList.indexOf( this.limbs[limbName].items[x].id ) > -1 ){
+                            this.removeItemFromLimb(limbName, this.limbs[limbName].items[x]);
+                            found = true;
+                        }
                     }
                 }
             }
@@ -184,11 +188,11 @@
         return true;
     };
 
-    this.singleHeatSinkIDs = ["ISH"];
-    this.dualHeatSinkIDs = ["ISD"];
+    this.singleHeatSinkIDs = ["IHS"];
+    this.dualHeatSinkIDs = ["IHD"];
     this.addDualHeatSinks = function addDualHeatSinks() {
         // remove all the current single heat sinks on the mech
-        this.singleHeatSinkIDs.forEach(this.removeAllItemsByID, this);
+        this.removeAllItemsByIDs(this.singleHeatSinkIDs);
 
         // hide the single heat sinks and show the double heat sinks in the item list.
         this.singleHeatSinkIDs.forEach(function (id) {
@@ -205,7 +209,7 @@
 
     this.removeDualHeatSinks = function removeDualHeatSinks(){
         // remove all the current heat sinks on the mech
-        this.dualHeatSinkIDs.forEach(this.removeAllItemsByID, this);
+        this.removeAllItemsByIDs(this.dualHeatSinkIDs);
 
         // hide the single heat sinks and show the double heat sinks.
         this.singleHeatSinkIDs.forEach(function(id){
@@ -224,7 +228,7 @@
     this.nonArtemisMissileIDs = ["WMB","WMC","WMD","WME","WMF","WMG","WMH"];
     this.addArtemis = function addArtemis(){
         // remove all the current non artemis missiles
-        this.nonArtemisMissileIDs.forEach(this.removeAllItemsByID, this);
+        this.removeAllItemsByIDs(this.nonArtemisMissileIDs);
 
         // hide the non-artemis missiles and show the artemis missiles in the item list.
         this.nonArtemisMissileIDs.forEach(function (id) {
@@ -237,11 +241,11 @@
         this.artemis = false;
         setURLParameter('artemis', 'true');
         return true;
-    }
+    };
 
     this.removeArtemis = function removeArtemis(){
         // remove all the current non artemis missiles
-        this.artemisMissileIDs.forEach(this.removeAllItemsByID, this);
+        this.removeAllItemsByIDs(this.artemisMissileIDs);
 
         // hide the non-artemis missiles and show the artemis missiles in the item list.
         this.nonArtemisMissileIDs.forEach(function (id) {
@@ -263,7 +267,7 @@
 
         var structureSlots = (this.endo ? this.endoCritSlots : 0) + (this.ferro ? this.ferroCritSlots : 0);
         $("#mechContainer .empty").slice(0, structureSlots).addClass('structure');
-    }
+    };
 
     this.countLimbs = function countLimbs() {
         var limb, countLimbs = 0;

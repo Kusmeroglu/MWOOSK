@@ -62,6 +62,14 @@ $(function () {
             ];
             $("#itemList").append(createItemDivFromData({itemObj: itemObj}));
         });
+        $(xml).find("ammos > item").each(function () {
+            var itemObj = new item($(this).attr("id"), $(this).text(), $(this).attr("slots"), $(this).attr("tons"), $(this).attr("type"), "");
+            $("#itemList").append(createItemDivFromData({itemObj: itemObj}));
+        });
+        $(xml).find("internals > item").each(function () {
+            var itemObj = new item($(this).attr("id"), $(this).text(), $(this).attr("slots"), $(this).attr("tons"), $(this).attr("type"), "");
+            $("#itemList").append(createItemDivFromData({itemObj: itemObj}));
+        });
 
         $(xml).find("engines > plant").each(function () {
             var itemObj = new item($(this).attr("id"), $(this).text(), $(this).attr("slots"), $(this).attr("tons"), $(this).attr("type"), "engine");
@@ -218,11 +226,15 @@ $(function () {
                         if (mechObj.addDualHeatSinks()){
                             $("#dhsCheckbox").prop("checked", true);
                         }
+                    } else {
+                        mechObj.removeDualHeatSinks();
                     }
                     if (urldata.hasOwnProperty('artemis') && urldata['artemis'] == "true"){
                         if (mechObj.addArtemis()){
                             $("#artemisCheckbox").prop("checked", true);
                         }
+                    } else {
+                        mechObj.removeArtemis();
                     }
                     limbList.forEach(function(limb){
                         if (urldata.hasOwnProperty(limb)){
@@ -380,7 +392,7 @@ $(function () {
                 alert("Could not add DHS.");
             }
         } else {
-            if ( ! mechObj.removeFerroFibrous()){
+            if ( ! mechObj.removeDualHeatSinks()){
                 $("#dhsCheckbox").prop("checked", true);
                 alert("Could not remove DHS.");
             }
