@@ -19,6 +19,8 @@
     this.jumpjetcount = 0;
     this.jumpjetmax = 5;
 
+    this.maxEngineSize = 0;
+
     this.armorWeight = 1/32;
 
     // Endo Steel info

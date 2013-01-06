@@ -62,10 +62,10 @@
 
   </internals>
   <engines>
-    <plant id="PAA" slots="6" tons="1.5" type ="std" heatsinkslots="0">Standard 100</plant>
-    <plant id="PAB" slots="6" tons="2.5" type ="std" heatsinkslots="0">Standard 105</plant>
-    <plant id="PAC" slots="6" tons="1.5" type ="std" heatsinkslots="0">Standard 110</plant>
-    <plant id="PAD" slots="6" tons="2.5" type ="std" heatsinkslots="0">Standard 115</plant>
+    <plant id="PAA" slots="6" tons="1.5" type ="std" heatsinkslots="0" size="100">Standard 100</plant>
+    <plant id="PAB" slots="6" tons="2.5" type ="std" heatsinkslots="0" size="105">Standard 105</plant>
+    <plant id="PAC" slots="6" tons="1.5" type ="std" heatsinkslots="0" size="110">Standard 110</plant>
+    <plant id="PAD" slots="6" tons="2.5" type ="std" heatsinkslots="0" size="115">Standard 115</plant>
     <plant id="PAE" slots="6" tons="2.5" type ="std" heatsinkslots="0">Standard 120</plant>
     <plant id="PAF" slots="6" tons="2.5" type ="std" heatsinkslots="0">Standard 125</plant>
     <plant id="PAG" slots="6" tons="2.5" type ="std" heatsinkslots="0">Standard 130</plant>

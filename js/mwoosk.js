@@ -189,6 +189,7 @@ $(function () {
             mechXML.find('mech[type="' + mechObj.chassis + '"] variant[name="' + mechObj.variant + '"]').each(function () {
                 mechObj.ecm = Boolean($(this).attr("ecm") == "yes");
                 mechObj.jumpjets = Boolean($(this).attr("jets") == "yes");
+                mechObj.maxEngineSize = parseInt($(this).attr("maxengine"));
             });
 
             // weights are added to chart when limbs created.
