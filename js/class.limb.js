@@ -186,7 +186,7 @@
             this.engineHeatSinks = itemObj.heatsinkslots;
             this.engineHeatSinksItems = []
             for(var i = 0; i < itemObj.heatsinkslots; i++){
-                var heatsinkitem = new item("", "Engine Heat Sink", 1, 0, "engineheatsink", "");
+                var heatsinkitem = new item("", "[Engine Heat Sink]", 1, 0, "engineheatsink", "");
                 mechObj.addItemToLimb('centerTorso', heatsinkitem);
                 itemObj.relatedItems['centerTorso'].push( heatsinkitem );
             }
