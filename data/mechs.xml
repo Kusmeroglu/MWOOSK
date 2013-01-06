@@ -52,7 +52,7 @@
                     </limb>
                 </limbs>
             </variant>
-            <variant name="AS7-D-DC" founders="no" jets="no">
+            <variant name="AS7-D-DC" ecm="yes" founders="no" jets="no">
                 <limbs>
                     <limb name="leftArm" crits="8" armorFront="68" armorRear="0" maxArmor="68">
                         <internal slots="1">Shoulder</internal>

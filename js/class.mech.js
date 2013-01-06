@@ -12,6 +12,12 @@
     this.currentTons = 0;
     this.currentFreeCritSlots = 0;
     this.limbs = {};
+    this.ecm = false;
+    this.ecmcount = 0;
+    this.ecmmax = 1;
+    this.jumpjets = false;
+    this.jumpjetcount = 0;
+    this.jumpjetmax = 5;
 
     this.armorWeight = 1/32;
 
@@ -52,6 +58,15 @@
         if ((this.currentFreeCritSlots - structureSlots) < itemObj.critSlots){
             return false;
         }
+        // ecm check
+        if ( itemObj.id == "IGE" && (this.ecm == false || this.ecmcount >= this.ecmmax) ){
+            return false;
+        }
+        // jumpjet check
+        if ( itemObj.id == "IJJ" && (this.jumpjets == false || this.jumpjetcount >= this.jumpjetmax) ){
+            return false;
+        }
+
         // is the item valid for this limb?
         return this.limbs[limbName].testIfValid(itemObj);
     };
@@ -60,6 +75,14 @@
         this.addWeight(parseFloat(itemObj.weight));
         this.countFreeCritSlots();
         var success = this.limbs[limbName].addItem(itemObj);
+        // ecm check
+        if ( itemObj.id == "IGE" ){
+            this.ecmcount += 1;
+        }
+        // jumpjet check
+        if ( itemObj.id == "IJJ" ){
+            this.jumpjetcount += 1;
+        }
         this.showStructureSlots();
         return success;
     };
@@ -72,6 +95,14 @@
         this.addWeight(0 - parseFloat(itemObj.weight));
         var success = this.limbs[limbName].removeItem(itemObj);
         this.countFreeCritSlots();
+        // ecm check
+        if ( itemObj.id == "IGE" ){
+            this.ecmcount -= 1;
+        }
+        // jumpjet check
+        if ( itemObj.id == "IJJ" ){
+            this.jumpjetcount -= 1;
+        }
         this.showStructureSlots();
         return success;
     }

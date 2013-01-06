@@ -35,8 +35,8 @@
     <item id="WMN" type ="missile" damage="30" heat="5" cooldown="4.25" range="180" maxrange="1000" slots="4" tons="7" dpsmax="1.18" hps="1.18" ammoper ="180" ehs="9">LRM15 + Artemis</item>
     <item id="WMO" type ="missile" damage="40" heat="6" cooldown="4.75" range="180" maxrange="1000" slots="6" tons="10" dpsmax="1.26" hps="1.26" ammoper ="180" ehs="10">LRM20 + Artemis</item>
     <item id="WUA" type ="ams" tons=".5" slots="1" maxrange="200" ammoper="1000">AMS</item>
-    <item id="WUB" type ="util" tons="3" slots="2" maxrange="270" ammoper="6">NARC</item>
-    <item id="WUC" type ="util" tons=".5" slots="1" maxrange="450">TAG</item>
+    <item id="WUB" type ="missile" tons="3" slots="2" maxrange="270" ammoper="6">NARC</item>
+    <item id="WUC" type ="energy" tons=".5" slots="1" maxrange="450">TAG</item>
   </weapons>
   <ammos>
     <item id="AMA" type ="ammo" tons="1" slots="1">SRM ammo</item>
@@ -49,11 +49,17 @@
     <item id="ABD" type ="ammo" tons="1" slots="1">AC/2 ammo</item>
     <item id="ABE" type ="ammo" tons="1" slots="1">Ultra AC/5 ammo</item>
     <item id="ABF" type ="ammo" tons="1" slots="1">LB 10-X ammo</item>
+    <item id="ABJ" type ="ammo" tons="1" slots="1">Guass ammo</item>
+    <item id="ABH" type ="ammo" tons="1" slots="1">AMS ammo</item>
   </ammos>
   <internals>
     <item id="IHS" type="heatsink" tons="1" slots="1">Single Heat Sink</item>
     <item id="IHD" type="heatsink" tons="1" slots="3">Dual Heat Sink</item>
     <item id="IBA" type="module" tons="1" slots="1">Beagle Active Probe</item>
+    <item id="ICA" type ="util" tons=".5" slots="1" maxrange="0">C.A.S.E.</item>
+    <item id="IGE" type ="util" tons="1.5" slots="2" maxrange="250" ammoper="0">Guardian ECM</item>
+    <item id="IJJ" type ="jumpjet" tons=".5" slots="1" maxrange="0" ammoper="0">Jump Jets - Class V</item>
+
   </internals>
   <engines>
     <plant id="PAA" slots="6" tons="1.5" type ="std" heatsinkslots="0">Standard 100</plant>

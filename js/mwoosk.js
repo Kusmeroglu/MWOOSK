@@ -186,6 +186,11 @@ $(function () {
                 mechObj = new mech($("#mechChassis").val(), $("#mechVariant").val(), parseFloat($(this).attr("tonnage")));
                 mechObj.currentTons = mechObj.chassisTons = parseFloat($(this).attr("chassis"));
             });
+            mechXML.find('mech[type="' + mechObj.chassis + '"] variant[name="' + mechObj.variant + '"]').each(function () {
+                mechObj.ecm = Boolean($(this).attr("ecm") == "yes");
+                mechObj.jumpjets = Boolean($(this).attr("jets") == "yes");
+            });
+
             // weights are added to chart when limbs created.
             createChart("#weightChart", mechObj.maxTons, mechObj.chassisTons, mechObj.currentTons);
             // add all the limbs.
@@ -355,6 +360,8 @@ $(function () {
                 $(ui.draggable).remove(); // sometimes limb.removeItem doesn't appear to work..?
             }
             mechObj.addItemToLimb($(this).attr('id'), jQuery.extend(true, {}, data['itemObj']));
+            // hack for the activeClass on the limbs not clearing itself in this case:
+            $('.valid').removeClass('valid');
             return false;
         }
     }).disableSelection();
