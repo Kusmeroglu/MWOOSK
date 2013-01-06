@@ -2,9 +2,10 @@
     this.id = id;
     this.itemName = itemName;
     this.type = type;
-    this.hardpointType = hardpointtype;
+    this.hardpointType = hardpointtype; // this is added to the physical item as a class
     this.weight = weight;
     this.critSlots = parseInt(critSlots);
+    this.heatsinkslots = 0;
     this.damage = 0;
     this.heat = 0;
     this.cooldown = 0;

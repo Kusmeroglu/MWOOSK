@@ -72,7 +72,8 @@ $(function () {
         });
 
         $(xml).find("engines > plant").each(function () {
-            var itemObj = new item($(this).attr("id"), $(this).text(), $(this).attr("slots"), $(this).attr("tons"), $(this).attr("type"), "engine");
+            var itemObj = new item($(this).attr("id"), $(this).text(), parseInt($(this).attr("slots")) - parseInt($(this).attr("heatsinkslots")), $(this).attr("tons"), $(this).attr("type"), "engine");
+            itemObj.heatsinkslots = parseInt($(this).attr("heatsinkslots"));
             itemObj.rosechartdata = [];
             $("#itemList").append(createItemDivFromData({itemObj: itemObj}));
         });
@@ -320,6 +321,8 @@ $(function () {
             }
             mechObj.removeItemFromLimb($(ui.draggable).parents(".area").attr('id'), data['itemObj']);
             $(ui.draggable).remove(); // sometimes limb.removeItem doesn't appear to work..?
+            // hack for the activeClass on the limbs not clearing itself in this case:
+            $('.valid').removeClass('valid');
         },
         accept: '.critItem'
     })
