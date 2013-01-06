@@ -662,7 +662,6 @@ Rose Chart CSS (SVG)
 .labels {
     font: 12px 'Aldrich', sans-serif;
     fill: #ccc;
-    transform: rotate(45deg);
     stroke: #ccc;
 }
 .values {
