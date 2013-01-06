@@ -112,7 +112,7 @@
 
     this.sortItems = function sortItems(){
         var sorteditems = [];
-        var sortOrder = ['internal','engine','xl','engineheatsink','module','ams','ecm','util','energy','ballistic','missile','ammo','heatsink','empty'];
+        var sortOrder = ['internal','engine','xl','engineheatsink','jumpjet','module','ams','ecm','util','energy','ballistic','missile','ammo','heatsink','empty'];
         $.each(sortOrder, function(i, className){
             sorteditems = sorteditems.concat($('#'+this.limbName+' .critWrap').children('.'+className).get());
         }.bind(this));
