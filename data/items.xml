@@ -34,7 +34,7 @@
     <item id="WMM" type ="missile" damage="20" heat="4" cooldown="3.75" range="180" maxrange="1000" slots="3" tons="5" dpsmax="1.07" hps="1.07" ammoper ="180" ehs="8">LRM10 + Artemis</item>
     <item id="WMN" type ="missile" damage="30" heat="5" cooldown="4.25" range="180" maxrange="1000" slots="4" tons="7" dpsmax="1.18" hps="1.18" ammoper ="180" ehs="9">LRM15 + Artemis</item>
     <item id="WMO" type ="missile" damage="40" heat="6" cooldown="4.75" range="180" maxrange="1000" slots="6" tons="10" dpsmax="1.26" hps="1.26" ammoper ="180" ehs="10">LRM20 + Artemis</item>
-    <item id="WUA" type ="util" tons=".5" slots="1" maxrange="200" ammoper="1000">AMS</item>
+    <item id="WUA" type ="ams" tons=".5" slots="1" maxrange="200" ammoper="1000">AMS</item>
     <item id="WUB" type ="util" tons="3" slots="2" maxrange="270" ammoper="6">NARC</item>
     <item id="WUC" type ="util" tons=".5" slots="1" maxrange="450">TAG</item>
   </weapons>
