@@ -498,7 +498,10 @@ position:relative;
 }
 
 #itemList {
-padding:10px;
+    padding:10px;
+    overflow: auto;
+    width: 250px;
+    height: 625px;
 }
 
 #ballistics{
