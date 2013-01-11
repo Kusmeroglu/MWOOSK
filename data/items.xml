@@ -62,36 +62,36 @@
 
   </internals>
   <engines>
-    <plant id="PAA" slots="6" tons="1.5" type ="std" heatsinkslots="0" size="100">Standard 100</plant>
-    <plant id="PAB" slots="6" tons="2.5" type ="std" heatsinkslots="0" size="105">Standard 105</plant>
-    <plant id="PAC" slots="6" tons="1.5" type ="std" heatsinkslots="0" size="110">Standard 110</plant>
-    <plant id="PAD" slots="6" tons="2.5" type ="std" heatsinkslots="0" size="115">Standard 115</plant>
-    <plant id="PAE" slots="6" tons="2.5" type ="std" heatsinkslots="0">Standard 120</plant>
-    <plant id="PAF" slots="6" tons="2.5" type ="std" heatsinkslots="0">Standard 125</plant>
-    <plant id="PAG" slots="6" tons="2.5" type ="std" heatsinkslots="0">Standard 130</plant>
-    <plant id="PAH" slots="6" tons="2.5" type ="std" heatsinkslots="0">Standard 135</plant>
-    <plant id="PAI" slots="6" tons="2.5" type ="std" heatsinkslots="0">Standard 140</plant>
-    <plant id="PAJ" slots="6" tons="2.5" type ="std" heatsinkslots="0">Standard 145</plant>
-    <plant id="PAK" slots="6" tons="3.5" type ="std" heatsinkslots="0">Standard 150</plant>
-    <plant id="PAL" slots="6" tons="3.5" type ="std" heatsinkslots="0">Standard 155</plant>
-    <plant id="PAM" slots="6" tons="4" type ="std" heatsinkslots="0">Standard 160</plant>
-    <plant id="PAN" slots="6" tons="4" type ="std" heatsinkslots="0">Standard 165</plant>
-    <plant id="PAO" slots="6" tons="4" type ="std" heatsinkslots="0">Standard 170</plant>
-    <plant id="PAP" slots="6" tons="6" type ="std" heatsinkslots="0">Standard 175</plant>
-    <plant id="PAQ" slots="6" tons="6" type ="std" heatsinkslots="0">Standard 180</plant>
-    <plant id="PAR" slots="6" tons="6.5" type ="std" heatsinkslots="0">Standard 185</plant>
-    <plant id="PAS" slots="6" tons="6.5" type ="std" heatsinkslots="0">Standard 190</plant>
-    <plant id="PAT" slots="6" tons="7" type ="std" heatsinkslots="0">Standard 195</plant>
-    <plant id="PAU" slots="6" tons="8.5" type ="std" heatsinkslots="0">Standard 200</plant>
-    <plant id="PAV" slots="6" tons="9.5" type ="std" heatsinkslots="0">Standard 205</plant>
-    <plant id="PAW" slots="6" tons="10" type ="std" heatsinkslots="0">Standard 210</plant>
-    <plant id="PAX" slots="6" tons="10.5" type ="std" heatsinkslots="0">Standard 215</plant>
-    <plant id="PAY" slots="6" tons="11" type ="std" heatsinkslots="0">Standard 220</plant>
-    <plant id="PAZ" slots="6" tons="12" type ="std" heatsinkslots="0">Standard 225</plant>
-    <plant id="PBA" slots="6" tons="12.5" type ="std" heatsinkslots="0">Standard 230</plant>
-    <plant id="PBB" slots="6" tons="13" type ="std" heatsinkslots="0">Standard 235</plant>
-    <plant id="PBC" slots="6" tons="13.5" type ="std" heatsinkslots="0">Standard 240</plant>
-    <plant id="PBD" slots="6" tons="14" type ="std" heatsinkslots="0">Standard 245</plant>
+    <plant id="PAA" slots="6" tons="1.5" type ="std" heatsinkslots="-6" size="100">Standard 100</plant>
+    <plant id="PAB" slots="6" tons="2.5" type ="std" heatsinkslots="-6" size="105">Standard 105</plant>
+    <plant id="PAC" slots="6" tons="1.5" type ="std" heatsinkslots="-6" size="110">Standard 110</plant>
+    <plant id="PAD" slots="6" tons="2.5" type ="std" heatsinkslots="-6" size="115">Standard 115</plant>
+    <plant id="PAE" slots="6" tons="2.5" type ="std" heatsinkslots="-6" size="120">Standard 120</plant>
+    <plant id="PAF" slots="6" tons="2.5" type ="std" heatsinkslots="-5">Standard 125</plant>
+    <plant id="PAG" slots="6" tons="2.5" type ="std" heatsinkslots="-5">Standard 130</plant>
+    <plant id="PAH" slots="6" tons="2.5" type ="std" heatsinkslots="-5">Standard 135</plant>
+    <plant id="PAI" slots="6" tons="2.5" type ="std" heatsinkslots="-5">Standard 140</plant>
+    <plant id="PAJ" slots="6" tons="2.5" type ="std" heatsinkslots="-5">Standard 145</plant>
+    <plant id="PAK" slots="6" tons="3.5" type ="std" heatsinkslots="-4">Standard 150</plant>
+    <plant id="PAL" slots="6" tons="3.5" type ="std" heatsinkslots="-4">Standard 155</plant>
+    <plant id="PAM" slots="6" tons="4" type ="std" heatsinkslots="-4">Standard 160</plant>
+    <plant id="PAN" slots="6" tons="4" type ="std" heatsinkslots="-4">Standard 165</plant>
+    <plant id="PAO" slots="6" tons="4" type ="std" heatsinkslots="-4">Standard 170</plant>
+    <plant id="PAP" slots="6" tons="6" type ="std" heatsinkslots="-3">Standard 175</plant>
+    <plant id="PAQ" slots="6" tons="6" type ="std" heatsinkslots="-3">Standard 180</plant>
+    <plant id="PAR" slots="6" tons="6.5" type ="std" heatsinkslots="-3">Standard 185</plant>
+    <plant id="PAS" slots="6" tons="6.5" type ="std" heatsinkslots="-3">Standard 190</plant>
+    <plant id="PAT" slots="6" tons="7" type ="std" heatsinkslots="-3">Standard 195</plant>
+    <plant id="PAU" slots="6" tons="8.5" type ="std" heatsinkslots="-2">Standard 200</plant>
+    <plant id="PAV" slots="6" tons="9.5" type ="std" heatsinkslots="-2">Standard 205</plant>
+    <plant id="PAW" slots="6" tons="10" type ="std" heatsinkslots="-2">Standard 210</plant>
+    <plant id="PAX" slots="6" tons="10.5" type ="std" heatsinkslots="-2">Standard 215</plant>
+    <plant id="PAY" slots="6" tons="11" type ="std" heatsinkslots="-2">Standard 220</plant>
+    <plant id="PAZ" slots="6" tons="12" type ="std" heatsinkslots="-1">Standard 225</plant>
+    <plant id="PBA" slots="6" tons="12.5" type ="std" heatsinkslots="-1">Standard 230</plant>
+    <plant id="PBB" slots="6" tons="13" type ="std" heatsinkslots="-1">Standard 235</plant>
+    <plant id="PBC" slots="6" tons="13.5" type ="std" heatsinkslots="-1">Standard 240</plant>
+    <plant id="PBD" slots="6" tons="14" type ="std" heatsinkslots="-1">Standard 245</plant>
     <plant id="PBE" slots="6" tons="15.5" type ="std" heatsinkslots="0">Standard 250</plant>
     <plant id="PBF" slots="6" tons="16" type ="std" heatsinkslots="0">Standard 255</plant>
     <plant id="PBG" slots="6" tons="16.5" type ="std" heatsinkslots="0">Standard 260</plant>
