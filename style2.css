@@ -7,10 +7,37 @@ Accent: F
 Box Background:  #000000 -- Black
 */
 
+@font-face {
+    font-family: 'eurostileregular';
+    src: url('font/eurosti-webfont.eot');
+    src: url('font/eurosti-webfont.eot?#iefix') format('embedded-opentype'),
+         url('font/eurosti-webfont.woff') format('woff'),
+         url('font/eurosti-webfont.ttf') format('truetype'),
+         url('font/eurosti-webfont.svg#eurostileregular') format('svg');
+    font-weight: normal;
+    font-style: normal;}
+
+@font-face {
+	font-family: 'battletech_oldstyle';
+    src: url('font/btlogo_old-webfont.eot');
+    src: url('font/btlogo_old-webfont.eot?#iefix') format('embedded-opentype'),
+         url('font/btlogo_old-webfont.woff') format('woff'),
+         url('font/btlogo_old-webfont.ttf') format('truetype'),
+         url('font/btlogo_old-webfont.svg#battletech_oldstyleoldstyle') format('svg');
+    font-weight: normal;
+    font-style: normal;}
+
+@font-face {
+	font-family: 'btlogo_old';
+    src:  url('font/btlogo_old.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
 body{
 background-color:#10171b;
-background-image:url(images/background.png);
-background-position:-50px -840px;
+background-image:url(images/bg.jpg);
+font-family: 'eurostileregular';
 }
 
 .jquery-corner { 
@@ -40,6 +67,12 @@ display:none;
    margin:5px 10px;
    position:relative;
    z-index:4;
+}
+
+.area {
+ border-radius:2px;
+ -moz-border-radius:2px;
+ -webkit-border-radius:2px;
 }
 
 .inactive {
@@ -82,6 +115,14 @@ select {
  margin:10px auto;
  padding:0px 20px;
  }
+ 
+ #reset{
+ font-family: 'btlogo_old';
+ color:#fff;
+ float:left;
+ margin-top:7px;
+ text-decoration:none;
+ }
 
 #chassisBar{
 background:#000;
@@ -90,12 +131,6 @@ width:810px;
 height:30px;
 margin:0px 5px 0px 20px;
 float:left;
-}
-
-#reset{
-    color: red;
-    font-weight: bold;
-    float:left;
 }
 
 #userInfo{
@@ -114,12 +149,11 @@ float:left;
 
 #mechContainerWrap{
     padding:10px 5px 5px 5px;
-    background-color:transparent;
-    background-image:url(images/sprite.png);
+    background-color:#000;
+    /*background-image:url(images/sprite.png);
     background-repeat: no-repeat;
-    background-position:-50px -50px;
-    width:840px;
-    height:780px;
+    background-position:-50px -50px;*/
+    width:900px;
     margin-top:10px;
 }
 
@@ -138,14 +172,27 @@ float:left;
 }
 
 #mechContainer > div {
-    width:140px;
+    width:165px;
     height:;
-	border:#fff 1px solid;
+	border:#3d4337 1px solid;
     color: white;
-	padding:5px;
+}
+
+.name {
+font-family: 'btlogo_old';
+padding:5px;
+background:#3d4337;
+color:#fff;
+}
+
+.bottomBorder{
+background:#3d4337;
+padding:1px;
+margin-top:3px;
 }
 
 .information{
+padding:5px;
 }
 
 .hardpoint{
@@ -154,7 +201,7 @@ text-transform: capitalize;
 
 .critslot {
 height:20px;
-margin:1px;
+border:1px solid #fff;
 }
 
 .structure {
@@ -165,126 +212,122 @@ margin:1px;
     border: 3px double #FF0000;
 }
 
-.valid {
+/*.valid {
     border: 3px double #00FF00 !important;
-}
-
-#head {
-
-}
-#leftTorso {
-
-}
-#rightTorso {
-
-}
-#leftArm {
-
-}
-#rightArm {
-
-}
-#centerTorso {
-
-}
-#leftLeg {
-
-}
-#rightLeg {
-
-}
+}*/
 
 .armorspinner {
-    width: 30px;
+    width: 35px;
     color: white;
+	padding:-2px;
 }
 
 .critLabel{
-padding-left:20px;
+padding-left:5px;
 font-size:.9em;
 padding-top:3px;
 opacity:1 !important;
 }
 
 .critItem{
+border-left-width:2px;
+border-right-width:2px;
+border-top-width:1px;
+border-bottom-width:1px;
+border-style:solid;
+margin-bottom:1px;
+border-color:#3d4337;
+background:#000;
+}
+
+.empty{
+background:none !important;
+}
+
+.internal{
+border-color:#393e44;
+color:#393e44;
 }
 
 .critItem:hover{
-background-image:url(images/sprite.png);
-background-position:-500px -1199px;
+/*background-image:url(images/sprite.png);
+background-position:-500px -1199px;*/
 }
 
 .critOne {
-background-image:url(images/sprite.png);
-background-position:-690px -898px;
+/*background-image:url(images/sprite.png);
+background-position:-690px -898px;*/
 height:22px;
 cursor:pointer;
+opacity:1;
 }
 
 .critTwo {
-background-image:url(images/sprite.png);
-background-position:-690px -930px;
-height:44px;
+/*background-image:url(images/sprite.png);
+background-position:-690px -930px;*/
+height:47px;
 cursor:pointer;
 }
 
 .critThree {
-background-image:url(images/sprite.png);
-background-position:-690px -980px;
-height:66px;
+/*background-image:url(images/sprite.png);
+background-position:-690px -980px;*/
+height:72px;
 cursor:pointer;
 }
 
 .critFour {
-background-image:url(images/sprite.png);
-background-position:-690px -1050px;
-height:88px;
+/*background-image:url(images/sprite.png);
+background-position:-690px -1050px;*/
+height:97px;
 cursor:pointer;
 }
 
 .critFive {
-background-image:url(images/sprite.png);
-background-position:-850px -898px;
-height:110px;
+/*background-image:url(images/sprite.png);
+background-position:-850px -898px;*/
+height:122px;
 cursor:pointer;
 }
 
 .critSix {
-background-image:url(images/sprite.png);
-background-position:-850px -1020px;
-height:132px;
+/*background-image:url(images/sprite.png);
+background-position:-850px -1020px;*/
+height:147px;
 cursor:pointer;
 }
 
 .critSeven {
-background-image:url(images/sprite.png);
-background-position:-690px -1150px;
-height:154px;
+/*background-image:url(images/sprite.png);
+background-position:-690px -1150px;*/
+height:172px;
 cursor:pointer;
 }
 
 .critTen {
-background-image:url(images/sprite.png);
-background-position:-850px -1160px;
-height:220px;
+/*background-image:url(images/sprite.png);
+background-position:-850px -1160px;*/
+height:247px;
 cursor:pointer;
 }
 
 
 .critWrap{
-margin-top:10px;
-background-image:url(images/sprite.png);
-background-position:-500px -898px;
+margin:10px 3px 0px 3px;
+/*background-image:url(images/sprite.png);
+background-position:-500px -898px;*/
 }
+
+.valid .critWrap{
+ background: rgb(87, 185, 71); /* fallback */
+ background: rgba(87, 185, 71, 0.15); /* 50% transparent */
+}
+
 
 #head{
 background:#000;
 position:relative;
 margin-top:00px;
-}
-
-#head .critWrap{
-height:132px;
 }
 
 #rightArm{
@@ -293,18 +336,10 @@ position:relative;
 margin-top:170px;
 }
 
-#rightArm .critWrap{
-height:264px;
-}
-
 #rightTorso{
 background:#000;
 position:relative;
 margin-top:40px;
-}
-
-#rightTorso .critWrap{
-height:264px;
 }
 
 #centerTorso{
@@ -313,18 +348,10 @@ position:relative;
 margin-top:20px;
 }
 
-#centerTorso .critWrap{
-height:264px;
-}
-
 #leftTorso{
 background:#000;
 position:relative;
 margin-top:40px;
-}
-
-#leftTorso .critWrap{
-height:264px;
 }
 
 #leftArm{
@@ -333,28 +360,16 @@ position:relative;
 margin-top:170px;
 }
 
-#leftArm .critWrap{
-height:264px;
-}
-
 #rightLeg{
 background:#000;
 position:relative;
 margin-top:20px;
 }
 
-#rightLeg .critWrap{
-height:132px;
-}
-
 #leftLeg{
 background:#000;
 position:relative;
 margin-top:20px;
-}
-
-#leftLeg .critWrap{
-height:132px;
 }
 
 #componentWrap{
@@ -536,34 +551,38 @@ position:relative;
 
 .item {
     display:block;
-    padding-left:10px;
-    font-size:12px;
+    padding:2px 5px 0px 2px;
     z-index:99;
+	font-size:.85em;
     position:relative;
-    background: none repeat scroll 0 0 #ABACB0;
-    border: 1px solid #303C48;
-    margin-bottom: 3px;
-    width: 113px;
-	cursor:pointer;
+    border: 2px solid #3d4337;
+    width: 143px;
+	cursor:move;
+	margin-bottom:1px;
+	color:#fff;
 }
 
-div.energy {
-    background-image: url("images/bgEnergy.png") !important;
-    background-repeat: no-repeat !important;
+.energy {
+    /*background-image: url("images/bgEnergy.png") !important;
+    background-repeat: no-repeat !important;*/
     position: relative;
-	padding-left:6px;
+	border-color:#00a2e8;
+	color:#fff;
 }
-div.missile {
-    background-image: url("images/bgMissile.png") !important;
-    background-repeat: no-repeat !important;
+.missile {
+    /*background-image: url("images/bgMissile.png") !important;
+    background-repeat: no-repeat !important;*/
     position: relative;
-	padding-left:6px;
+	border-color:#22b14c;
+	color:#fff;
 }
-div.ballistic {
-    background-image: url("images/bgBallistic.png") !important;
-    background-repeat: no-repeat !important;
+.ballistic {
+    /*background-image: url("images/bgBallistic.png") !important;
+    background-repeat: no-repeat !important;*/
     position: relative;
-	padding-left:6px;
+	border-color:#ffc90e;
+	color:#fff;
+	font-family: 'eurostileregular';
 }
 
 #tonnageWrap{

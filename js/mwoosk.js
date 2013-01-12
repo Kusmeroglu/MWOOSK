@@ -21,7 +21,7 @@ $(function () {
     function createItemDivFromData(data){
         var itemObj = data["itemObj"];
         var div = $("<div></div>")
-            .attr("class", "item " + itemObj.hardpointType + " " + itemObj.id)
+            .attr("class", "item critThree " + itemObj.hardpointType + " " + itemObj.id)
             // store all the weapon information in this div
             .data({'itemObj':itemObj, rosechartdata:itemObj.rosechartdata})
             .disableSelection()
@@ -41,6 +41,7 @@ $(function () {
     function parseItemXML(xml){
         $(xml).find("weapons > item").each(function () {
             var itemObj = new item($(this).attr("id"), $(this).text(), $(this).attr("slots"), $(this).attr("tons"), "weapon", $(this).attr("type"));
+			var itemType = $(this).attr("type");
             itemObj.damage = parseFloat($(this).attr("damage"));
             itemObj.heat = parseFloat($(this).attr("heat"));
             itemObj.cooldown = parseFloat($(this).attr("cooldown"));
@@ -60,25 +61,25 @@ $(function () {
                 //{ name:"Ammo/Ton", value:$(this).attr("ammoper")?$(this).attr("ammoper"):0},
                 { name:"Range",    value:$(this).attr("maxrange")}
             ];
-            $("#itemList").append(createItemDivFromData({itemObj: itemObj}));
+            $("#"+itemType+"List").append(createItemDivFromData({itemObj: itemObj}));
         });
         $(xml).find("ammos > item").each(function () {
             var itemObj = new item($(this).attr("id"), $(this).text(), $(this).attr("slots"), $(this).attr("tons"), $(this).attr("type"), "");
-            $("#itemList").append(createItemDivFromData({itemObj: itemObj}));
+            $("#armament").append(createItemDivFromData({itemObj: itemObj}));
         });
         $(xml).find("internals > item").each(function () {
             var itemObj = new item($(this).attr("id"), $(this).text(), $(this).attr("slots"), $(this).attr("tons"), $(this).attr("type"), "");
-            $("#itemList").append(createItemDivFromData({itemObj: itemObj}));
+            $("#utilities").append(createItemDivFromData({itemObj: itemObj}));
         });
 
         $(xml).find("engines > plant").each(function () {
             var itemObj = new item($(this).attr("id"), $(this).text(), parseInt($(this).attr("slots")) - parseInt($(this).attr("heatsinkslots")), $(this).attr("tons"), $(this).attr("type"), "engine");
             itemObj.heatsinkslots = parseInt($(this).attr("heatsinkslots"));
             itemObj.rosechartdata = [];
-            $("#itemList").append(createItemDivFromData({itemObj: itemObj}));
+            $("#utilities").append(createItemDivFromData({itemObj: itemObj}));
         });
 
-        $("#itemList div").draggable({
+        $("#detailContainer div").find('.item').draggable({
             revert: "invalid",
             helper: "clone",
             appendTo: 'body',

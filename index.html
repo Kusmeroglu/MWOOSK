@@ -73,8 +73,8 @@
         <div id="mechContainerWrap">
             <div id="mechContainer">
                 <div id="rightArm" class="area">
-                    <div class="information">
-                        <div class="name">Right Arm</div>
+                    <div class="name">Right Arm</div>
+					<div class="information">
                         <div class="hardpoints"></div>
                         <div class="armor">
 							Armor<br />
@@ -82,34 +82,15 @@
                             <div class="maxarmor">Max: </div>
                         </div>
                     </div>
-					<div class="critWrap">
-						<div class="critItem">
-							<div class="critOne">
-								<div class="critLabel">One</div>
-							</div>
-						</div>
-						<div class="critItem">
-							<div class="critTwo">
-								<div class="critLabel">Two</div>
-							</div>
-						</div>
-						<div class="critItem">
-							<div class="critThree">
-								<div class="critLabel">Three</div>
-							</div>
-						</div>
-						<div class="critItem">
-							<div class="critFour">
-								<div class="critLabel">Four</div>
-							</div>
-						</div>						
+					<div class="critWrap">						
 					</div>
+					<div class="bottomBorder"></div>
                 </div>
 			</div>
 			<div id="mechContainer">
                 <div id="rightTorso" class="area">
-                    <div class="information">
-                        <div class="name">Right Torso</div>
+                    <div class="name">Right Torso</div>
+					<div class="information">
                         <div class="hardpoints"></div>
                         <div class="armor">
 							Armor<br />
@@ -119,22 +100,13 @@
                         </div>
                     </div>
 					<div class="critWrap">
-						<div class="critItem">
-							<div class="critFive">
-								<div class="critLabel">Five</div>
-							</div>
-						</div>
-						<div class="critItem">
-							<div class="critSix">
-								<div class="critLabel">Six</div>
-							</div>
-						</div>
 					</div>
+					<div class="bottomBorder"></div>
                 </div>
 				<div id="rightLeg" class="area">
-                    <div class="information">
-                        <div class="name">Right Leg</div>
-                        <div class="hardpoints"></div>
+                    <div class="name">Right Leg</div>
+					<div class="information">
+						<div class="hardpoints"></div>
                         <div class="armor">
 							Armor<br />
                             <input id="rightLegFrontArmor" class="armorspinner front"/>
@@ -143,12 +115,13 @@
                     </div>
 					<div class="critWrap">
 					</div>
+					<div class="bottomBorder"></div>
                 </div>
 			</div>
 			<div id="mechContainer">
 				<div id="head" class="area">
-                    <div class="information">
-                        <div class="name">Head</div>
+                    <div class="name">Head</div>
+					<div class="information">
                         <div class="hardpoints"></div>
                         <div class="armor">
 							Armor<br />
@@ -158,10 +131,11 @@
                     </div>
 					<div class="critWrap">
 					</div>
+					<div class="bottomBorder"></div>
                 </div>
                 <div id="centerTorso" class="area">
+					<div class="name">Center Torso</div>
                     <div class="information">
-                        <div class="name">Center Torso</div>
                         <div class="hardpoints"></div>
                         <div class="armor">
 							Armor<br />
@@ -171,18 +145,14 @@
                         </div>
                     </div>
 					<div class="critWrap">
-						<div class="critItem">
-							<div class="critSeven">
-								<div class="critLabel">Seven</div>
-							</div>
-						</div>
 					</div>
+					<div class="bottomBorder"></div>
                 </div>
 			</div>
 			<div id="mechContainer">
                 <div id="leftTorso" class="area">
+					<div class="name">Left Torso</div>
                     <div class="information">
-                        <div class="name">Left Torso</div>
                         <div class="hardpoints"></div>
                         <div class="armor">
 							Armor<br />
@@ -192,16 +162,12 @@
                         </div>
                     </div>
 					<div class="critWrap">
-						<div class="critItem">
-							<div class="critTen">
-								<div class="critLabel">Ten</div>
-							</div>
-						</div>
 					</div>
+					<div class="bottomBorder"></div>
                 </div>
 				<div id="leftLeg" class="area">
-                    <div class="information">
-                        <div class="name">Left Leg</div>
+                    <div class="name">Left Leg</div>
+					<div class="information">
                         <div class="hardpoints"></div>
                         <div class="armor">
 							Armor<br />
@@ -211,12 +177,13 @@
                     </div>
 					<div class="critWrap">
 					</div>
+					<div class="bottomBorder"></div>
                 </div>
 			</div>
 			<div id="mechContainer">
                 <div id="leftArm" class="area">
-                    <div class="information">
-                        <div class="name">Left Arm</div>
+                    <div class="name">Left Arm</div>
+					<div class="information">
                         <div class="hardpoints"></div>
                         <div class="armor">
 							Armor<br />
@@ -226,6 +193,7 @@
                     </div>
 					<div class="critWrap">
 					</div>
+					<div class="bottomBorder"></div>
                 </div>
                 
             </div>
@@ -233,6 +201,7 @@
                 <div id="focusLine"></div>
                 <div id="componentDetail"></div>
             </div>
+			<div class='clear'></div>
         </div>
     </div>
     <div id="tabWrap">
@@ -260,15 +229,15 @@
 					<div id="ballisticList"></div>
 					<div id="energyList"></div>
 					<div id="missileList"></div>
-                    <div id="itemList" style="display:none"></div>
-                    <ul style="color:white">
+                </div>
+                <div id="utilities">
+				
+					<ul style="color:white">
                         <li><input id="endoCheckbox" type="checkbox"/> Endo Steel </li>
                         <li><input id="ferroCheckbox" type="checkbox"/> Ferro Fibrous </li>
                         <li><input id="artemisCheckbox" type="checkbox"/> Artemis </li>
                         <li><input id="dhsCheckbox" type="checkbox"/> Dual Heat Sinks </li>
                     </ul>
-                </div>
-                <div id="utilities">
                 </div>
                 <div id="piloting"></div>
                 <div id="statistics"></div>
