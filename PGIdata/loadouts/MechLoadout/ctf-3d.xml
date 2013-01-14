@@ -1,0 +1,51 @@
+<Loadout MechID="40" Public="1" Name="CATAPHRACT CTF-3D">
+	<Upgrades>
+		<Armor ItemID="2800"/>
+		<Structure ItemID="3100"/>
+		<HeatSinks Type="Single"/>
+		<Artemis Equipped="0"/>
+	</Upgrades>
+  <ComponentList>
+    <component Name="head" Armor="18">
+		<Module ItemID="3000"/>
+	</component>
+    <component Name="left_torso" Armor="32">
+		<Weapon HardpointID="2" ItemID="1001"/>
+		<Module ItemID="3000"/>
+		<Module ItemID="3000"/>
+		<Ammo ItemID="2010"/>
+		<Ammo ItemID="2010"/>
+		<Module ItemID="9003"/>
+	</component>
+    <component Name="centre_torso" Armor="52">
+		<Module ItemID="3354"/>
+		<Module ItemID="3000"/>
+		<Module ItemID="3000"/>
+		<Module ItemID="3000"/>
+    </component>
+    <component Name="right_torso" Armor="32">
+		<Weapon HardpointID="0" ItemID="1023"/>
+		<Weapon HardpointID="1" ItemID="1001"/>
+		<Ammo ItemID="2012"/>
+		<Module ItemID="9003"/>
+    </component>
+    <component Name="left_leg" Armor="38">
+		<Module ItemID="1502"/>
+		<Module ItemID="1502"/>		
+	</component>
+    <component Name="right_leg" Armor="38">
+		<Module ItemID="1502"/>
+		<Module ItemID="1502"/>		
+	</component>
+    <component Name="right_arm" Armor="44">
+		<Weapon HardpointID="3" ItemID="1001"/>
+		<Weapon HardpointID="4" ItemID="1025"/>
+    </component>
+    <component Name="left_arm" Armor="44">
+		<Weapon HardpointID="5" ItemID="1001"/>
+	</component>
+    <component Name="left_torso_rear" Armor="18"/>
+    <component Name="centre_torso_rear" Armor="18"/>
+    <component Name="right_torso_rear" Armor="18"/>
+  </ComponentList>
+</Loadout>

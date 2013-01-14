@@ -1,0 +1,35 @@
+<Loadout MechID="23" Public="1" Name="DRAGON DRG-5N">
+	<Upgrades>
+		<Armor ItemID="2800"/>
+		<Structure ItemID="3100"/>
+		<HeatSinks Type="Single"/>
+		<Artemis Equipped="0"/>
+	</Upgrades>
+	<ComponentList>
+		<component Name="head" Armor="18"/>
+		<component Name="left_torso" Armor="32">
+			<Ammo ItemID="2027"/>
+			<Ammo ItemID="2027"/>
+			<Module ItemID="9003"/>
+		</component>
+		<component Name="centre_torso" Armor="54">
+			<Module ItemID="3258"/>
+			<Weapon HardpointID="20" ItemID="1027"/>
+		</component>
+		<component Name="right_torso" Armor="32">
+			<Ammo ItemID="2012"/>
+			<Module ItemID="9003"/>
+		</component>
+		<component Name="left_leg" Armor="36"/>
+		<component Name="right_leg" Armor="36"/>
+		<component Name="right_arm" Armor="28">
+			<Weapon HardpointID="21" ItemID="1025"/>
+		</component>
+		<component Name="left_arm" Armor="28">
+			<Weapon HardpointID="22" ItemID="1001"/>
+		</component>
+		<component Name="left_torso_rear" Armor="16"/>
+		<component Name="centre_torso_rear" Armor="24"/>
+		<component Name="right_torso_rear" Armor="16"/>
+	</ComponentList>
+</Loadout>

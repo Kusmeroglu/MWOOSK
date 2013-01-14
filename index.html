@@ -17,11 +17,15 @@
     <script type="text/javascript" src="js/class.hardpoint.js"></script>
     <script type="text/javascript" src="js/class.item.js"></script>
     <script type="text/javascript" src="js/urlhandling.js"></script>
-
+	<script src="js/history.js/scripts/bundled/html4+html5/jquery.history.js"></script>
+	<script type="text/javascript" src="js/jquery.mousewheel.js"></script>
+	<script type="text/javascript" src="js/mwheelIntent.js"></script>
+	<script type="text/javascript" src="js/jquery.jscrollpane.min.js"></script>
+	<link type="text/css" href="css/jquery.jscrollpane.css" rel="stylesheet" media="all" />
     <link href="http://code.jquery.com/ui/1.9.0/themes/base/jquery-ui.css" rel="stylesheet" media="screen"/>
     <link href="font/stylesheet.css" rel="stylesheet" media="screen"/>
     <link href='http://fonts.googleapis.com/css?family=Aldrich' rel='stylesheet' type='text/css'>
-    <link href="style2.css" rel="stylesheet" media="screen"/>
+    <link href="css/style.css" rel="stylesheet" media="screen"/>
 
     <script type="text/javascript" src="js/mwoosk.js"/>
 
@@ -59,12 +63,12 @@
                 </div>
                 <div class="selectBlank" id="variantBlank">Select mech Variant...</div>
             </div>
-			<a href="index.html" id="reset">Reset</a>
+			<div id="reset">Reset</div>
             <div class="clear"></div>
         </div>
         <div id="userInfo">
             <div class="tinyurl">
-                <a id="tinyurllink">Get Tiny URL</a>
+                <div id="tinyurlLink">Get Tiny URL</div>
             </div>
         </div>
         <div class="clear"></div>
@@ -83,8 +87,7 @@
                         </div>
                     </div>
 					<div class="critWrap">						
-					</div>
-					<div class="bottomBorder"></div>
+					</div>				
                 </div>
 			</div>
 			<div id="mechContainer">
@@ -100,8 +103,7 @@
                         </div>
                     </div>
 					<div class="critWrap">
-					</div>
-					<div class="bottomBorder"></div>
+					</div>					
                 </div>
 				<div id="rightLeg" class="area">
                     <div class="name">Right Leg</div>
@@ -114,8 +116,7 @@
                         </div>
                     </div>
 					<div class="critWrap">
-					</div>
-					<div class="bottomBorder"></div>
+					</div>					
                 </div>
 			</div>
 			<div id="mechContainer">
@@ -130,11 +131,10 @@
                         </div>
                     </div>
 					<div class="critWrap">
-					</div>
-					<div class="bottomBorder"></div>
+					</div>					
                 </div>
                 <div id="centerTorso" class="area">
-					<div class="name">Center Torso</div>
+					<div class="name">Cent. Torso</div>
                     <div class="information">
                         <div class="hardpoints"></div>
                         <div class="armor">
@@ -145,8 +145,7 @@
                         </div>
                     </div>
 					<div class="critWrap">
-					</div>
-					<div class="bottomBorder"></div>
+					</div>					
                 </div>
 			</div>
 			<div id="mechContainer">
@@ -162,8 +161,7 @@
                         </div>
                     </div>
 					<div class="critWrap">
-					</div>
-					<div class="bottomBorder"></div>
+					</div>				
                 </div>
 				<div id="leftLeg" class="area">
                     <div class="name">Left Leg</div>
@@ -177,7 +175,6 @@
                     </div>
 					<div class="critWrap">
 					</div>
-					<div class="bottomBorder"></div>
                 </div>
 			</div>
 			<div id="mechContainer">
@@ -192,76 +189,114 @@
                         </div>
                     </div>
 					<div class="critWrap">
-					</div>
-					<div class="bottomBorder"></div>
+					</div>					
                 </div>
                 
             </div>
-            <div id="componentWrap">
-                <div id="focusLine"></div>
-                <div id="componentDetail"></div>
-            </div>
-			<div class='clear'></div>
+            <div class='clear'></div>
         </div>
-    </div>
-    <div id="tabWrap">
-        <div class="tabWrapper">
-            <div class="tab" id="armamentTab"></div>
-        </div>
-        <div class="tabWrapper">
-            <div class="tab" id="utilityTab"></div>
-        </div>
-        <div class="tabWrapper">
-            <div class="tab" id="pilotingTab"></div>
-        </div>
-        <div class="tabWrapper">
-            <div class="tab" id="statisticsTab"></div>
-        </div>
-        <div class="tabWrapper">
-            <div class="tab" id="commentsTab"></div>
-        </div>
-        <div class="clear"></div>
-    </div>
-    <div id="itemWrap">
-        <div id="detailContainerWrap">
-            <div id="detailContainer">
-                <div id="armament">
-					<div id="ballisticList"></div>
-					<div id="energyList"></div>
-					<div id="missileList"></div>
-                </div>
-                <div id="utilities">
-				
-					<ul style="color:white">
-                        <li><input id="endoCheckbox" type="checkbox"/> Endo Steel </li>
-                        <li><input id="ferroCheckbox" type="checkbox"/> Ferro Fibrous </li>
-                        <li><input id="artemisCheckbox" type="checkbox"/> Artemis </li>
-                        <li><input id="dhsCheckbox" type="checkbox"/> Dual Heat Sinks </li>
-                    </ul>
-                </div>
-                <div id="piloting"></div>
-                <div id="statistics"></div>
-                <div id="comments"></div>
-            </div>
-        </div>
-    </div>
-    <div class="clear"></div>
-    <footer>
-        <div id="tonnageWrap">
+        <div id="itemWrap">
+			<div id="detailContainerWrap">
+				<div id="detailContainer">
+					<div class="name">Components</div>
+					<div id="armament">
+						<div class="buttonWrapper">
+							<div id="ballisticButton" class="toggleButton activeButton">Ballistic</div>
+							<div id="energyButton" class="toggleButton">Energy</div>
+							<div id="missileButton" class="toggleButton">Missile</div>
+							<div class="clear"></div>
+						</div>
+						<div id="ballisticList">
+							<div class="buttonWrapper">
+								<div id="ballisticWButton" class="toggleButton activeButton">Weapons</div>
+								<div id="ballisticAButton" class="toggleButton">Ammo</div>
+								<div class="clear"></div>
+							</div>
+							<div id="ballisticWeapon"></div>
+							<div id="ballisticAmmo"></div>
+						</div>
+						<div id="energyList">
+							<div id="energyWeapon"></div>
+						</div>
+						<div id="missileList">
+							<div class="buttonWrapper">
+								<div id="missileWButton" class="toggleButton activeButton">Weapons</div>
+								<div id="missileAButton" class="toggleButton">Ammo</div>
+								<div class="clear"></div>
+							</div>
+							<div id="missileWeapon"></div>
+							<div id="missileAmmo"></div>					
+						</div>
+					</div>
+					<div id="utilities">
+						<div class="buttonWrapper">
+							<div id="internalsButton" class="toggleButton activeButton">Utility</div>
+							<div id="enginesButton" class="toggleButton">Engines</div>
+							<div id="upgradesButton" class="toggleButton">Upgrade</div>
+							<div class="clear"></div>
+						</div>
+						<div id="internals"></div>
+						<div id="engines">
+							<div class="buttonWrapper">
+								<div id="stdEngineButton" class="toggleButton activeButton">Standard</div>
+								<div id="xlEngineButton" class="toggleButton">eXtra Light</div>
+								<div class="clear"></div>
+							</div>
+							<div id="stdEngine"></div>
+							<div id="xlEngine"></div>
+						</div>
+						<div id="upgrades">
+							<ul style="color:white">
+								<li><input id="endoCheckbox" type="checkbox"/> Endo Steel </li>
+								<li><input id="ferroCheckbox" type="checkbox"/> Ferro Fibrous </li>
+								<li><input id="artemisCheckbox" type="checkbox"/> Artemis </li>
+								<li><input id="dhsCheckbox" type="checkbox"/> Dual Heat Sinks </li>
+							</ul>
+						</div>
+					</div>
+					<div id="piloting"></div>
+					<div id="statistics"></div>
+					<div id="comments"></div>				
+				</div>
+			</div>
+		</div>
+		<div id="tabWrap">
+			<div class="tabWrapper">
+				<div class="tab" id="armamentTab">Weapons</div>
+			</div>
+			<div class="tabWrapper">
+				<div class="tab" id="utilityTab">Utility</div>
+			</div>
+			<div class="tabWrapper">
+				<div class="tab" id="pilotingTab">Piloting</div>
+			</div>
+			<div class="tabWrapper">
+				<div class="tab" id="statisticsTab">Statistics</div>
+			</div>
+			<div class="tabWrapper">
+				<div class="tab" id="commentsTab">Comments</div>
+			</div>
+			<div class="clear"></div>
+		</div>
+		<div class="clear"></div>
+		<div id="tonnageWrap">
             <div id="tonnage">
                 <div id="weightChart"></div>
             </div>
         </div>
+		<div id="heatWrap">
+            <div id="heat"></div>
+        </div>
         <div id="speedWrap">
             <div id="speed"></div>
         </div>
-        <div id="commentsWrap">
-            <div id="comments"></div>
-        </div>
         <div class="clear"></div>
+	</div>
+    <footer>
+        
     </footer>
 </div>
-<div id="roseChart" style="width:220px;height:220px"></div>
+<!-- <div id="roseChart" style="width:220px;height:220px"></div> -->
 
 </body>
 </html>

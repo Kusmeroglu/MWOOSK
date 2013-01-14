@@ -18,10 +18,14 @@ var classLookup = {
 
 $(function () {
 
+	$('#reset').click(function(){
+		window.location.href = "index.html";
+	});
+
     function createItemDivFromData(data){
         var itemObj = data["itemObj"];
         var div = $("<div></div>")
-            .attr("class", "item critThree " + itemObj.hardpointType + " " + itemObj.id)
+            .attr("class", "item critThree " + itemObj.type + " " + itemObj.id)
             // store all the weapon information in this div
             .data({'itemObj':itemObj, rosechartdata:itemObj.rosechartdata})
             .disableSelection()
@@ -41,7 +45,6 @@ $(function () {
     function parseItemXML(xml){
         $(xml).find("weapons > item").each(function () {
             var itemObj = new item($(this).attr("id"), $(this).text(), $(this).attr("slots"), $(this).attr("tons"), "weapon", $(this).attr("type"));
-			var itemType = $(this).attr("type");
             itemObj.damage = parseFloat($(this).attr("damage"));
             itemObj.heat = parseFloat($(this).attr("heat"));
             itemObj.cooldown = parseFloat($(this).attr("cooldown"));
@@ -61,22 +64,26 @@ $(function () {
                 //{ name:"Ammo/Ton", value:$(this).attr("ammoper")?$(this).attr("ammoper"):0},
                 { name:"Range",    value:$(this).attr("maxrange")}
             ];
-            $("#"+itemType+"List").append(createItemDivFromData({itemObj: itemObj}));
+			itemObj.type = $(this).attr("type");
+            $("#"+itemObj.type+"Weapon").append(createItemDivFromData({itemObj: itemObj}));
         });
         $(xml).find("ammos > item").each(function () {
-            var itemObj = new item($(this).attr("id"), $(this).text(), $(this).attr("slots"), $(this).attr("tons"), $(this).attr("type"), "");
-            $("#armament").append(createItemDivFromData({itemObj: itemObj}));
+            var itemObj = new item($(this).attr("id"), $(this).text(), $(this).attr("slots"), $(this).attr("tons"), $(this).attr("type"));
+            //$("#ballisticAmmo").append(createItemDivFromData({itemObj: itemObj}));
+			itemObj.type = $(this).attr("type");
+            $("#"+itemObj.type+"Ammo").append(createItemDivFromData({itemObj: itemObj}));
         });
         $(xml).find("internals > item").each(function () {
             var itemObj = new item($(this).attr("id"), $(this).text(), $(this).attr("slots"), $(this).attr("tons"), $(this).attr("type"), "");
-            $("#utilities").append(createItemDivFromData({itemObj: itemObj}));
+            $("#internals").append(createItemDivFromData({itemObj: itemObj}));
         });
 
         $(xml).find("engines > plant").each(function () {
             var itemObj = new item($(this).attr("id"), $(this).text(), parseInt($(this).attr("slots")) - parseInt($(this).attr("heatsinkslots")), $(this).attr("tons"), $(this).attr("type"), "engine");
             itemObj.heatsinkslots = parseInt($(this).attr("heatsinkslots"));
             itemObj.rosechartdata = [];
-            $("#utilities").append(createItemDivFromData({itemObj: itemObj}));
+			itemObj.type = $(this).attr("type");
+            $("#"+itemObj.type+"Engine").append(createItemDivFromData({itemObj: itemObj}));
         });
 
         $("#detailContainer div").find('.item').draggable({
@@ -214,8 +221,7 @@ $(function () {
                 limbObj.initVisuals();
             });
 
-            $("#mechContainer").fadeIn('fast', function() {
-                $("#itemList").fadeIn('fast');
+            $("#mechBay").fadeIn('fast', function() {
                 createRoseGraph("#roseChart", "-N/A-");
                 mechObj.removeDualHeatSinks();
                 mechObj.removeArtemis();
@@ -425,7 +431,7 @@ $(function () {
     });
 
 
-    $('#tinyurllink').on('click', function(e){
+    $('#tinyurlLink').on('click', function(e){
         e.preventDefault();
         makeTinyUrl(window.location.href);
         return false;
@@ -446,17 +452,149 @@ $(function () {
                 if (resp.error) {
                     console.log("error: " + resp.error.message);
                     var tinyurl = data.id;
-                    $('#tinyurllink').hide();
-                    $('#tinyurllink').insertAfter($("<div id='tinyurlresult'>"+resp.error.message+"</div>"));
+                    $('#tinyurlLink').hide();
+                    $('#tinyurlLink').insertAfter($("<div id='tinyurlResult'>"+resp.error.message+"</div>"));
                 } else {
                     var tinyurl = resp.id;
                     console.log("tiny: " + tinyurl);
-                    $('#tinyurllink').hide();
-                    $('#tinyurllink').after($("<a id='tinyurlresult' href='"+tinyurl+"'>"+tinyurl+"</a>"));
+                    $('#tinyurlLink').hide();
+                    $('#tinyurlLink').after($("<div id='tinyurlResult'>"+tinyurl+"</a>"));
                 }
             });
         });
     }
+	/*
+	----     All the Crazy Menu Visibility Toggling     ----
+	*/
+	
+	// Initiallizing the Scroll Bars to show up dynamically
+	$(function(){
+		var settings = {
+			showArrows: true,
+			autoReinitialise: true,
+			autoReinitializeDelay: 500}
+	
+	// Generic button style toggling.  Purely Cosmetic.
+	$('.toggleButton').click(function(){
+		$(this).siblings('.toggleButton').removeClass('activeButton');
+		$(this).addClass('activeButton');
+	});
+	
+	// Show Ballistic List
+	$('#ballisticButton').click(function(){
+		$('#ballisticList').show();
+		$('#energyList').hide();
+		$('#missileList').hide();
+	});
+	
+	// Show Energy List
+	$('#energyButton').click(function(){
+		$('#ballisticList').hide();
+		$('#energyList').show();
+		$('#missileList').hide();
+		$('#energyWeapon').jScrollPane(settings);
+	});
+	
+	// Show Missile List
+	$('#missileButton').click(function(){
+		$('#ballisticList').hide();
+		$('#energyList').hide();
+		$('#missileList').show();
+		$('#missileWeapon').jScrollPane(settings);
+		$('#missileAmmo').jScrollPane(settings);
+	});
+	
+	// Ballistic Sublist Toggles
+	$('#ballisticAButton').click(function(){
+		$('#ballisticWeapon').hide();
+		$('#ballisticAmmo').show().jScrollPane(settings);
+	});
+	$('#ballisticWButton').click(function(){
+		$('#ballisticWeapon').show().jScrollPane(settings);
+		$('#ballisticAmmo').hide();
+	});
+	
+	// Missile Sublist Toggles
+	$('#missileAButton').click(function(){
+		$('#missileWeapon').hide();
+		$('#missileAmmo').show();
+	});
+	$('#missileWButton').click(function(){
+		$('#missileWeapon').show();
+		$('#missileAmmo').hide();
+	});
+	
+	// Show Utility List
+	$('#internalsButton').click(function(){
+		$('#internals').show();
+		$('#engines').hide();
+		$('#upgrades').hide();
+	});
+	// Show Engine List
+	$('#enginesButton').click(function(){
+		$('#internals').hide();
+		$('#engines').show();
+		$('#upgrades').hide();
+		$('#stdEngine').jScrollPane(settings);
+		$('#xlEngine').jScrollPane(settings);
+	});
+	// Show Upgrade List
+	$('#upgradesButton').click(function(){
+		$('#internals').hide();
+		$('#engines').hide();
+		$('#upgrades').show();
+	});
+	// Engine Sublist Toggles
+	$('#stdEngineButton').click(function(){
+		$('#stdEngine').show();
+		$('#xlEngine').hide();
+	});
+	$('#xlEngineButton').click(function(){
+		$('#stdEngine').hide();
+		$('#xlEngine').show();
+	});
+	// Activate Armament Tab
+	$('#armamentTab').parent('.tabWrapper').click(function(){
+		$('#armament').show();
+		$('#utilities').hide();
+		$('#piloting').hide();
+		$('statistics').hide();
+		$('#comments').hide();
+		$('#internals');
+		$('#upgrades');
+	});
+	// Activate Utility Tab
+	$('#utilityTab').parent('.tabWrapper').click(function(){
+		$('#armament').hide();
+		$('#utilities').show();
+		$('#piloting').hide();
+		$('statistics').hide();
+		$('#comments').hide();
+	});
+	// Activate Pilot Tab
+	$('#pilotingTab').parent('.tabWrapper').click(function(){
+		$('#armament').hide();
+		$('#utilities').hide();
+		$('#piloting').show();
+		$('statistics').hide();
+		$('#comments').hide();
+	});
+	// Activate Stats Tab
+	$('#statisticsTab').parent('.tabWrapper').click(function(){
+		$('#armament').hide();
+		$('#utilities').hide();
+		$('#piloting').hide();
+		$('statistics').show();
+		$('#comments').hide();
+	});
+	$('#commentsTab').parent('.tabWrapper').click(function(){
+		$('#armament').hide();
+		$('#utilities').hide();
+		$('#piloting').hide();
+		$('statistics').hide();
+		$('#comments').show();
+	});
+	});
 
 
     /*

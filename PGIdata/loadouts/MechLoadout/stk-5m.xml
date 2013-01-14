@@ -1,0 +1,53 @@
+<Loadout MechID="46" Public="1" Name="STALKER STK-5M">
+	<Upgrades>
+		<Armor ItemID="2800"/>
+		<Structure ItemID="3100"/>
+		<HeatSinks Type="Double" IsDoubleHeatSinks="1"/>
+		<Artemis Equipped="0"/>
+	</Upgrades>
+	<ComponentList>
+		<component Name="head" Armor="18"/>
+		<component Name="left_torso" Armor="54">
+			<Weapon HardpointID="2" ItemID="1031"/>
+			<Weapon HardpointID="2" ItemID="1029"/>
+			<Module ItemID="3001"/>
+			<Module ItemID="3001"/>
+			<Ammo ItemID="2028"/>
+		</component>
+		<component Name="centre_torso" Armor="72">
+			<Module ItemID="3249"/>
+			<Weapon HardpointID="0" ItemID="1005"/>
+		</component>
+		<component Name="right_torso" Armor="54">
+			<Weapon HardpointID="1" ItemID="1031"/>
+			<Module ItemID="3001"/>
+			<Module ItemID="3001"/>
+			<Module ItemID="3001"/>
+			<Ammo ItemID="2028"/>
+		</component>
+		<component Name="left_leg" Armor="54">
+			<Ammo ItemID="2017"/>
+			<Ammo ItemID="2017"/>
+		</component>
+		<component Name="right_leg" Armor="54"/>
+		<component Name="right_arm" Armor="50">
+			<Weapon HardpointID="3" ItemID="1027"/>
+			<Weapon HardpointID="4" ItemID="1001"/>
+			<Weapon HardpointID="4" ItemID="1001"/>
+			<Module ItemID="3001"/>
+			<Ammo ItemID="2027"/>
+			<Ammo ItemID="2027"/>
+		</component>
+		<component Name="left_arm" Armor="50">
+			<Weapon HardpointID="5" ItemID="1027"/>
+			<Weapon HardpointID="6" ItemID="1001"/>
+			<Weapon HardpointID="6" ItemID="1001"/>
+			<Module ItemID="3001"/>
+			<Ammo ItemID="2027"/>
+			<Ammo ItemID="2027"/>
+		</component>
+		<component Name="left_torso_rear" Armor="18"/>
+		<component Name="centre_torso_rear" Armor="22"/>
+		<component Name="right_torso_rear" Armor="18"/>
+	</ComponentList>
+</Loadout>

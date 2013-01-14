@@ -62,7 +62,8 @@ function createChart(id, max, chassis, current){
             d.ranges = [chassis, max] ;
             d.measures = [current];
             d.markers = [current];
-            subtitle[0][0].textContent = current + "/" + max;
+			rounded = current.toFixed(2);
+            subtitle[0][0].textContent = rounded + "/" + max;
             return d;
         }
         vis.datum(randomize).call(chart);

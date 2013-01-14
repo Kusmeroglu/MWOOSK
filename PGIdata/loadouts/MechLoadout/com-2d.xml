@@ -1,0 +1,38 @@
+<Loadout MechID="5" Public="1" Name="COMMANDO COM-2D">
+	<Upgrades>
+		<Armor ItemID="2800"/>
+		<Structure ItemID="3100"/>
+		<HeatSinks Type="Single"/>
+		<Artemis Equipped="0"/>
+	</Upgrades>
+  <ComponentList>
+    <component Name="head" Armor="12"/>
+    <component Name="left_torso" Armor="12">
+		<Ammo ItemID="2028"/>
+		<Module ItemID="3000"/>
+		<Module ItemID="3000"/>
+	</component>
+    <component Name="centre_torso" Armor="16">
+		<Module ItemID="3228"/>
+		<Weapon HardpointID="0" ItemID="1031"/>
+    </component>
+    <component Name="right_torso" Armor="12">
+		<Ammo ItemID="2028"/>
+		<Module ItemID="3000"/>
+		<Module ItemID="3000"/>
+    </component>
+    <component Name="left_leg" Armor="16">
+	</component>
+    <component Name="right_leg" Armor="16">
+	</component>
+    <component Name="right_arm" Armor="12">
+		<Weapon HardpointID="1" ItemID="1004"/>
+    </component>
+    <component Name="left_arm" Armor="12">
+		<Weapon HardpointID="2" ItemID="1001"/>
+    </component>
+    <component Name="left_torso_rear" Armor="6"/>
+    <component Name="centre_torso_rear" Armor="8"/>
+    <component Name="right_torso_rear" Armor="6"/>
+  </ComponentList>
+</Loadout>

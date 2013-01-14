@@ -1,0 +1,44 @@
+<Loadout MechID="33" Public="1" Name="RAVEN RVN-3L">
+	<Upgrades>
+		<Armor ItemID="2801"/>
+		<Structure ItemID="3100"/>
+		<HeatSinks Type="Single"/>
+		<Artemis Equipped="0"/>
+	</Upgrades>
+	<ComponentList>
+		<component Name="head" Armor="13">
+			<Module ItemID="3000"/>
+		</component>
+		<component Name="left_torso" Armor="22">
+			<Ammo ItemID="2017"/>
+			<Ammo ItemID="2017"/>
+			<Ammo ItemID="2028"/>
+			<Module ItemID="9003"/>
+			<Module ItemID="9006"/>
+		</component>
+		<component Name="centre_torso" Armor="22">
+			<Module ItemID="3340"/>
+			<Module ItemID="9002"/>
+		</component>
+		<component Name="right_torso" Armor="22">
+			<Weapon HardpointID="0" ItemID="1031"/>
+			<Weapon HardpointID="1" ItemID="1037"/>
+		</component>
+		<component Name="left_leg" Armor="16">
+			<Module ItemID="3000"/>
+		</component>
+		<component Name="right_leg" Armor="16">
+			<Module ItemID="3000"/>
+		</component>
+		<component Name="right_arm" Armor="16">
+			<Weapon HardpointID="2" ItemID="1001"/>
+			<Weapon HardpointID="2" ItemID="1001"/>
+		</component>
+		<component Name="left_arm" Armor="16">
+			<Weapon HardpointID="3" ItemID="1029"/>
+			</component>
+		<component Name="left_torso_rear" Armor="6"/>
+		<component Name="centre_torso_rear" Armor="6"/>
+		<component Name="right_torso_rear" Armor="6"/>
+	</ComponentList>
+</Loadout>

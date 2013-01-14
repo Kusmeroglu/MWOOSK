@@ -1,0 +1,36 @@
+<Loadout MechID="8" Public="1" Name="CENTURION CN9-AH">
+	<Upgrades>
+		<Armor ItemID="2800"/>
+		<Structure ItemID="3100"/>
+		<HeatSinks Type="Single"/>
+		<Artemis Equipped="0"/>
+	</Upgrades>
+  <ComponentList>
+    <component Name="head" Armor="18"/>
+    <component Name="left_torso" Armor="26">
+		<Weapon HardpointID="11" ItemID="1027"/>
+		<Ammo ItemID="2027"/>
+		<Ammo ItemID="2027"/>
+	</component>
+    <component Name="centre_torso" Armor="36">
+		<Module ItemID="3238"/>
+    </component>
+    <component Name="right_torso" Armor="26">
+		<Ammo ItemID="2000"/>
+		<Ammo ItemID="2000"/>
+    </component>
+    <component Name="left_leg" Armor="32">
+		<Module ItemID="3000"/>
+	</component>
+    <component Name="right_leg" Armor="32">
+		<Module ItemID="3000"/>
+	</component>
+    <component Name="right_arm" Armor="32">
+		<Weapon HardpointID="12" ItemID="1000"/>
+    </component>
+    <component Name="left_arm" Armor="32"/>
+    <component Name="left_torso_rear" Armor="12"/>
+    <component Name="centre_torso_rear" Armor="14"/>
+    <component Name="right_torso_rear" Armor="12"/>
+  </ComponentList>
+</Loadout>

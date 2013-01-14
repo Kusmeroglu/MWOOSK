@@ -1,0 +1,31 @@
+<Loadout MechID="36" Public="1" Name="CICADA CDA-3M">
+	<Upgrades>
+		<Armor ItemID="2800"/>
+		<Structure ItemID="3100"/>
+		<HeatSinks Type="Double" IsDoubleHeatSinks="1"/>
+		<Artemis Equipped="0"/>
+	</Upgrades>
+	<ComponentList>
+		<component Name="head" Armor="18"/>
+		<component Name="left_torso" Armor="12">
+			<Weapon HardpointID="2" ItemID="1025"/>
+			<Weapon HardpointID="1" ItemID="1001"/>
+		</component>
+		<component Name="centre_torso" Armor="22">
+			<Module ItemID="3362"/>
+			<Weapon HardpointID="0" ItemID="1012"/>
+		</component>
+		<component Name="right_torso" Armor="12">
+			<Weapon HardpointID="3" ItemID="1001"/>
+			<Module ItemID="9003"/>
+			<Ammo ItemID="2012" />
+		</component>
+		<component Name="left_leg" Armor="12"/>
+		<component Name="right_leg" Armor="12"/>
+		<component Name="right_arm" Armor="8"/>
+		<component Name="left_arm" Armor="8"/>
+		<component Name="left_torso_rear" Armor="6"/>
+		<component Name="centre_torso_rear" Armor="12"/>
+		<component Name="right_torso_rear" Armor="6"/>
+	</ComponentList>
+</Loadout>

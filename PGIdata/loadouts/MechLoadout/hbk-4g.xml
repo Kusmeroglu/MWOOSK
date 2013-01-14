@@ -1,0 +1,41 @@
+﻿<Loadout MechID="1" Public="1" Name="HUNCHBACK HBK-4G">
+	<Upgrades>
+		<Armor ItemID="2800"/>
+		<Structure ItemID="3100"/>
+		<HeatSinks Type="Single"/>
+		<Artemis Equipped="0"/>
+	</Upgrades>
+  <ComponentList>
+    <component Name="head" Armor="18">
+	  <Weapon HardpointID="0" ItemID="1003"/>
+	</component>
+    <component Name="left_torso" Armor="40">
+      <Ammo ItemID="2000"/>
+      <Ammo ItemID="2000"/>
+    </component>
+    <component Name="centre_torso" Armor="52">
+      <Module ItemID="3238"/>
+	  <Module ItemID="3000"/>
+    </component>
+    <component Name="right_torso" Armor="40">
+      <Weapon HardpointID="1" ItemID="1000"/>
+    </component>
+    <component Name="left_leg" Armor="40">
+	  <Module ItemID="3000"/>
+	  <Module ItemID="3000"/>
+    </component>
+    <component Name="right_leg" Armor="40">
+	  <Module ItemID="3000"/>
+	  <Module ItemID="3000"/>
+    </component>
+    <component Name="right_arm" Armor="32">
+      <Weapon HardpointID="2" ItemID="1001"/>
+    </component>
+    <component Name="left_arm" Armor="32">
+      <Weapon HardpointID="3" ItemID="1001"/>
+    </component>
+    <component Name="left_torso_rear" Armor="8"/>
+    <component Name="centre_torso_rear" Armor="10"/>
+    <component Name="right_torso_rear" Armor="8"/>
+  </ComponentList>
+</Loadout>

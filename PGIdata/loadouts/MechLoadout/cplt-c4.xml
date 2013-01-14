@@ -1,0 +1,39 @@
+<Loadout MechID="24" Public="1" Name="CATAPULT CPLT-C4">
+	<Upgrades>
+		<Armor ItemID="2800"/>
+		<Structure ItemID="3100"/>
+		<HeatSinks Type="Single"/>
+		<Artemis Equipped="0"/>
+	</Upgrades>
+	<ComponentList>
+		<component Name="head" Armor="18"/>
+		<component Name="left_torso" Armor="34">
+			<Module ItemID="1502"/>
+			<Module ItemID="1502"/>
+			<Ammo ItemID="2027"/>
+			<Ammo ItemID="2027"/>
+		</component>
+		<component Name="centre_torso" Armor="44">
+			<Module ItemID="3250"/>
+			<Weapon HardpointID="20" ItemID="1003"/>
+			<Weapon HardpointID="20" ItemID="1003"/>
+		</component>
+		<component Name="right_torso" Armor="34">
+			<Module ItemID="1502"/>
+			<Module ItemID="1502"/>
+			<Ammo ItemID="2027"/>
+			<Ammo ItemID="2027"/>
+		</component>
+		<component Name="left_leg" Armor="46"/>
+		<component Name="right_leg" Armor="46"/>
+		<component Name="right_arm" Armor="30">
+			<Weapon HardpointID="21" ItemID="1002"/>
+		</component>
+		<component Name="left_arm" Armor="30">
+			<Weapon HardpointID="22" ItemID="1002"/>
+		</component>
+		<component Name="left_torso_rear" Armor="12"/>
+		<component Name="centre_torso_rear" Armor="14"/>
+		<component Name="right_torso_rear" Armor="12"/>
+	</ComponentList>
+</Loadout>
