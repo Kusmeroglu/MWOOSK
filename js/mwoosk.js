@@ -257,7 +257,7 @@ $(function () {
                             while(i < rawitems.length)
                             {
                                 var thisitemid = rawitems.substr(i, 3);
-                                var thisitemelem = $('#itemList .'+thisitemid);
+                                var thisitemelem = $('#detailContainer .'+thisitemid);
                                 var thisitemObj = jQuery.extend(true, {}, thisitemelem.data('itemObj'));// get copy of old data
                                 mechObj.addItemToLimb($(limbelem).attr('id'), thisitemObj);
 
