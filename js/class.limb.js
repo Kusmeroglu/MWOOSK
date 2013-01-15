@@ -147,8 +147,11 @@
                 .addClass(classLookup[ ehsflag ? 1 : itemObj.critSlots])
                 .append('<div class="critLabel">'+itemObj.itemName+'</div>')
                 )
-            .appendTo($('#'+this.limbName+' .critWrap'))
+			.appendTo($('#'+this.limbName+' .critWrap'))
             .fadeIn();
+			for(var emptyCrit = 1; emptyCrit < itemObj.critSlots; emptyCrit++){
+				div.children("div").append('<div class="emptyCrit">- - - - - - - - - - - - - - - -</div>')
+				}
         // if this is a top level item (with an id), make it draggable
         if (itemObj.id){
             div.draggable({

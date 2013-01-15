@@ -1,0 +1,39 @@
+<Loadout MechID="34" Public="1" Name="RAVEN RVN-2X">
+	<Upgrades>
+		<Armor ItemID="2800"/>
+		<Structure ItemID="3100"/>
+		<HeatSinks Type="Single"/>
+		<Artemis Equipped="0"/>
+	</Upgrades>
+	<ComponentList>
+		<component Name="head" Armor="18">
+			<Module ItemID="3000"/>
+		</component>
+		<component Name="left_torso" Armor="20">
+			<Weapon HardpointID="12" ItemID="1008"/>
+			<Ammo ItemID="2028"/>
+		</component>
+		<component Name="centre_torso" Armor="28">
+			<Module ItemID="3233"/>
+		</component>
+		<component Name="right_torso" Armor="20">
+			<Weapon HardpointID="10" ItemID="1031"/>
+		</component>
+		<component Name="left_leg" Armor="28">
+			<Module ItemID="3000"/>
+			<Module ItemID="3000"/>
+		</component>
+		<component Name="right_leg" Armor="28">
+			<Module ItemID="3000"/>
+			<Module ItemID="3000"/>
+		</component>
+		<component Name="right_arm" Armor="20">
+			<Weapon HardpointID="11" ItemID="1001"/>
+			<Weapon HardpointID="11" ItemID="1001"/>
+		</component>
+		<component Name="left_arm" Armor="20"/>
+		<component Name="left_torso_rear" Armor="8"/>
+		<component Name="centre_torso_rear" Armor="10"/>
+		<component Name="right_torso_rear" Armor="8"/>
+	</ComponentList>
+</Loadout>

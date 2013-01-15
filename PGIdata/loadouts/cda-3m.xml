@@ -2,7 +2,7 @@
 	<Upgrades>
 		<Armor ItemID="2800"/>
 		<Structure ItemID="3100"/>
-		<HeatSinks Type="Double" IsDoubleHeatSinks="true"/>
+		<HeatSinks Type="Double" IsDoubleHeatSinks="1"/>
 		<Artemis Equipped="0"/>
 	</Upgrades>
 	<ComponentList>

@@ -1,0 +1,226 @@
+<Hardpoints SearchTable="Objects/mechs/hardpointsearchcriteria.xml">
+	<!--AWS-8Q-->
+	<Hardpoint id="0">
+		<!-- Head, Energy -->
+		<WeaponSlot>
+			<Attachment search="Default" AName="aws_head_cockpit_8q_laser"/>
+		</WeaponSlot>
+	</Hardpoint>
+	<Hardpoint id="1">
+		<!-- Left Torso, Energy -->
+		<WeaponSlot>
+			<Attachment search="Default" AName="aws_left_torso_8q_ppc"/>
+		</WeaponSlot>
+		<WeaponSlot>
+			<Attachment search="Default" AName="aws_left_torso_8q_ppc"/>
+		</WeaponSlot>
+	</Hardpoint>
+	<Hardpoint id="2">
+		<!-- Right Torso, Energy -->
+		<WeaponSlot>
+			<Attachment search="Default" AName="aws_right_torso_8q_ppc"/>
+		</WeaponSlot>
+		<WeaponSlot>
+			<Attachment search="Default" AName="aws_right_torso_8q_ppc"/>
+		</WeaponSlot>
+	</Hardpoint>
+	<Hardpoint id="3">
+		<!-- Right Arm, Energy-->
+		<WeaponSlot>
+			<Attachment search="Default" AName="aws_right_arm_forearm_8q_ppc"/>
+		</WeaponSlot>
+		<WeaponSlot>
+			<Attachment search="Default" AName="aws_right_arm_forearm_8q_ppc"/>
+		</WeaponSlot>
+	</Hardpoint>
+	<Hardpoint id="7">
+		<!--Right Torso, AMS-->
+		<WeaponSlot>
+			<Attachment search="AntiMissileSystem" AName="aws_right_torso_8q_ams"/>
+		</WeaponSlot>
+	</Hardpoint>
+	
+	<!--AWS-8R-->
+	<Hardpoint id="10">
+		<!-- Head, Energy -->
+		<WeaponSlot>
+			<Attachment search="Default" AName="aws_head_cockpit_8q_laser"/>
+		</WeaponSlot>
+	</Hardpoint>
+	<Hardpoint id="11">
+		<!-- Left Torso, Missile -->
+		<WeaponSlot>
+			<Attachment search="Default" AName="aws_left_torso_8r_lrm"/>
+		</WeaponSlot>
+		<WeaponSlot>
+			<Attachment search="Default" AName="aws_left_torso_8r_lrm"/>
+		</WeaponSlot>
+	</Hardpoint>
+	<Hardpoint id="12">
+		<!-- Right Torso, Missile -->
+		<WeaponSlot>
+			<Attachment search="Default" AName="aws_right_torso_8r_lrm"/>
+		</WeaponSlot>
+		<WeaponSlot>
+			<Attachment search="Default" AName="aws_right_torso_8r_lrm"/>
+		</WeaponSlot>
+	</Hardpoint>
+	<Hardpoint id="13">
+		<!-- Right Arm, Energy-->
+		<WeaponSlot>
+			<Attachment search="Default" AName="aws_right_arm_forearm_8r_laser"/>
+		</WeaponSlot>
+		<WeaponSlot>
+			<Attachment search="Default" AName="aws_right_arm_forearm_8r_laser"/>
+		</WeaponSlot>
+	</Hardpoint>
+	<Hardpoint id="17">
+		<!--Right Torso, AMS-->
+		<WeaponSlot>
+			<Attachment search="AntiMissileSystem" AName="aws_right_torso_8q_ams"/>
+		</WeaponSlot>
+	</Hardpoint>
+	
+	<!--AWS-8T-->
+	<Hardpoint id="20">
+		<!-- Head, Energy -->
+		<WeaponSlot>
+			<Attachment search="Default" AName="aws_head_cockpit_8q_laser"/>
+		</WeaponSlot>
+	</Hardpoint>
+	<Hardpoint id="21">
+		<!-- Left Torso, Missile -->
+		<WeaponSlot>
+			<Attachment search="Default" AName="aws_left_torso_8r_lrm"/>
+		</WeaponSlot>
+	</Hardpoint>
+	<Hardpoint id="22">
+		<!-- Right Torso, Missile -->
+		<WeaponSlot>
+			<Attachment search="Default" AName="aws_right_torso_8r_lrm"/>
+		</WeaponSlot>
+	</Hardpoint>
+	<Hardpoint id="23">
+		<!-- Right Arm, Energy-->
+		<WeaponSlot>
+			<Attachment search="Default" AName="aws_right_arm_forearm_8r_laser"/>
+		</WeaponSlot>
+		<WeaponSlot>
+			<Attachment search="Default" AName="aws_right_arm_forearm_8r_laser"/>
+		</WeaponSlot>
+	</Hardpoint>
+	<Hardpoint id="24">
+		<!-- Left Arm, Energy-->
+		<WeaponSlot>
+			<Attachment search="Default" AName="aws_left_arm_forearm_8t_laser"/>
+		</WeaponSlot>
+		<WeaponSlot>
+			<Attachment search="Default" AName="aws_left_arm_forearm_8t_laser"/>
+		</WeaponSlot>
+	</Hardpoint>
+	<Hardpoint id="27">
+		<!--Right Torso, AMS-->
+		<WeaponSlot>
+			<Attachment search="AntiMissileSystem" AName="aws_right_torso_8q_ams"/>
+		</WeaponSlot>
+	</Hardpoint>
+	
+	<!--AWS-8V-->
+	<Hardpoint id="30">
+		<!-- Head, Energy -->
+		<WeaponSlot>
+			<Attachment search="Default" AName="aws_head_cockpit_8q_laser"/>
+		</WeaponSlot>
+	</Hardpoint>
+	<Hardpoint id="31">
+		<!-- Left Torso, Energy -->
+		<WeaponSlot>
+			<Attachment search="Default" AName="aws_left_torso_8v_ppc"/>
+		</WeaponSlot>
+		<WeaponSlot>
+			<Attachment search="Default" AName="aws_left_torso_8v_ppc"/>
+		</WeaponSlot>
+	</Hardpoint>
+	<Hardpoint id="32">
+		<!-- Right Torso, Missile -->
+		<WeaponSlot>
+			<Attachment search="Default" AName="aws_right_torso_8r_lrm"/>
+		</WeaponSlot>
+		<WeaponSlot>
+			<Attachment search="Default" AName="aws_right_torso_8r_lrm"/>
+		</WeaponSlot>
+		<WeaponSlot>
+			<Attachment search="Default" AName="aws_right_torso_8r_lrm"/>
+		</WeaponSlot>
+	</Hardpoint>
+	<Hardpoint id="33">
+		<!-- Right Arm, Energy-->
+		<WeaponSlot>
+			<Attachment search="Default" AName="aws_right_arm_forearm_8q_ppc"/>
+		</WeaponSlot>
+	</Hardpoint>
+	<Hardpoint id="37">
+		<!--Right Torso, AMS-->
+		<WeaponSlot>
+			<Attachment search="AntiMissileSystem" AName="aws_right_torso_8q_ams"/>
+		</WeaponSlot>
+	</Hardpoint>
+	
+	<!--AWS-9M-->
+	<Hardpoint id="40">
+		<!-- Head, Energy -->
+		<WeaponSlot>
+			<Attachment search="Default" AName="aws_head_cockpit_8q_laser"/>
+		</WeaponSlot>
+	</Hardpoint>
+	<Hardpoint id="41">
+		<!-- Left Torso, Energy -->
+		<WeaponSlot>
+			<Attachment search="Default" AName="aws_left_torso_9m_eppc"/>
+		</WeaponSlot>
+	</Hardpoint>
+	<Hardpoint id="42">
+		<!-- Right Torso, Energy -->
+		<WeaponSlot>
+			<Attachment search="Default" AName="aws_right_torso_9m_eppc"/>
+		</WeaponSlot>
+	</Hardpoint>
+	<Hardpoint id="43">
+		<!-- Right Arm, Energy-->
+		<WeaponSlot>
+			<Attachment search="Default" AName="aws_right_arm_forearm_9m_eppc"/>
+		</WeaponSlot>
+	</Hardpoint>
+	<Hardpoint id="44">
+		<!-- Left Arm, Missile-->
+		<WeaponSlot>
+			<Attachment search="Default" AName="aws_left_arm_forearm_9m_srm"/>
+		</WeaponSlot>
+	</Hardpoint>
+	<Hardpoint id="45">
+		<!-- Center Torso, Energy-->
+		<WeaponSlot>
+			<Attachment search="Default" AName="aws_centre_torso_9m_laser"/>
+		</WeaponSlot>
+		<WeaponSlot>
+			<Attachment search="Default" AName="aws_centre_torso_9m_laser"/>
+		</WeaponSlot>
+	</Hardpoint>
+	<Hardpoint id="46">
+		<!-- Center Torso, Missile-->
+		<WeaponSlot>
+			<Attachment search="Default" AName="aws_centre_torso_9m_srm2"/>
+		</WeaponSlot>
+		<WeaponSlot>
+			<Attachment search="Default" AName="aws_centre_torso_9m_srm2"/>
+		</WeaponSlot>
+	</Hardpoint>
+	<Hardpoint id="47">
+		<!--Right Torso, AMS-->
+		<WeaponSlot>
+			<Attachment search="AntiMissileSystem" AName="aws_right_torso_8q_ams"/>
+		</WeaponSlot>
+	</Hardpoint>
+
+  
+</Hardpoints>

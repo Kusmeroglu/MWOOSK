@@ -1,0 +1,38 @@
+<Loadout MechID="6" Public="1" Name="COMMANDO COM-3A">
+	<Upgrades>
+		<Armor ItemID="2800"/>
+		<Structure ItemID="3100"/>
+		<HeatSinks Type="Single"/>
+		<Artemis Equipped="0"/>
+	</Upgrades>
+  <ComponentList>
+    <component Name="head" Armor="8"/>
+    <component Name="left_torso" Armor="8">
+	</component>
+    <component Name="centre_torso" Armor="12">
+		<Module ItemID="3228"/>
+		<Weapon HardpointID="30" ItemID="1031"/>
+    </component>
+    <component Name="right_torso" Armor="8">
+		<Ammo ItemID="2028"/>
+    </component>
+    <component Name="left_leg" Armor="12">
+		<Module ItemID="3000"/>
+		<Module ItemID="3000"/>
+	</component>
+    <component Name="right_leg" Armor="12">
+		<Module ItemID="3000"/>
+		<Module ItemID="3000"/>
+	</component>
+    <component Name="right_arm" Armor="8">
+		<Weapon HardpointID="31" ItemID="1031"/>
+		<Weapon HardpointID="32" ItemID="1007"/>
+    </component>
+    <component Name="left_arm" Armor="8">
+		<Weapon HardpointID="33" ItemID="1001"/>
+    </component>
+    <component Name="left_torso_rear" Armor="6"/>
+    <component Name="centre_torso_rear" Armor="8"/>
+    <component Name="right_torso_rear" Armor="6"/>
+  </ComponentList>
+</Loadout>

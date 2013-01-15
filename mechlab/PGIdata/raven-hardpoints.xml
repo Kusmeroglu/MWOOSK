@@ -1,0 +1,119 @@
+<Hardpoints SearchTable="Objects/mechs/hardpointsearchcriteria.xml">
+  
+	<!--RVN-3L-->
+	<Hardpoint id="0">
+		<!--Right Torso, Missile-->
+		<WeaponSlot>
+			<Attachment search="SRM" AName="rvn_right_torso_3l_lrm6"/>
+			<Attachment search="Default" AName="rvn_right_torso_3l_lrm6"/>
+		</WeaponSlot>
+	</Hardpoint>
+	<Hardpoint id="1">
+		<!--Right Torso, Energy (TAG)-->
+		<WeaponSlot>
+			<Attachment search="Laser" AName="rvn_right_torso_3l_tag"/>
+			<Attachment search="Default" AName="rvn_right_torso_3l_tag"/>
+		</WeaponSlot>
+	</Hardpoint>
+	<Hardpoint id="2">
+		<!--Right Arm, Energy-->
+		<WeaponSlot>
+			<Attachment search="Laser" AName="rvn_right_arm_forearm_3l_laser1"/>
+			<Attachment search="Default" AName="rvn_right_arm_forearm_3l_laser1"/>
+		</WeaponSlot>
+		<WeaponSlot>
+			<Attachment search="Laser" AName="rvn_right_arm_forearm_3l_laser2"/>
+			<Attachment search="Default" AName="rvn_right_arm_forearm_3l_laser2"/>
+		</WeaponSlot>
+	</Hardpoint>
+	<Hardpoint id="3">
+		<!--Left Arm, Missile (Narc)-->
+		<WeaponSlot>
+			<Attachment search="SRM" AName="rvn_left_arm_forearm_3l_narc"/>
+			<Attachment search="Default" AName="rvn_left_arm_forearm_3l_narc"/>
+		</WeaponSlot>
+	</Hardpoint>
+	<Hardpoint id="4">
+		<!--Left Torso, AMS-->
+		<WeaponSlot>
+			<Attachment search="AntiMissileSystem" AName="rvn_left_torso_ams"/>
+		</WeaponSlot>
+	</Hardpoint>
+
+  
+	<!--RVN-2X-->
+	<Hardpoint id="10">
+		<!--Right Torso, Missile-->
+		<WeaponSlot>
+			<Attachment search="SRM" AName="rvn_right_torso_3l_lrm6"/>
+			<Attachment search="Default" AName="rvn_right_torso_3l_lrm6"/>
+		</WeaponSlot>
+	</Hardpoint>
+	<Hardpoint id="11">
+		<!--Right Arm, Energy-->
+		<WeaponSlot>
+			<Attachment search="Laser" AName="rvn_right_arm_forearm_3l_laser1"/>
+			<Attachment search="Default" AName="rvn_right_arm_forearm_3l_laser1"/>
+		</WeaponSlot>
+		<WeaponSlot>
+			<Attachment search="Laser" AName="rvn_right_arm_forearm_3l_laser2"/>
+			<Attachment search="Default" AName="rvn_right_arm_forearm_3l_laser2"/>
+		</WeaponSlot>
+	</Hardpoint>
+	<Hardpoint id="12">
+		<!--Left Torso, Energy-->
+		<WeaponSlot>
+			<Attachment search="Laser" AName="rvn_left_torso_2x_laser"/>
+			<Attachment search="Default" AName="rvn_left_torso_2x_laser"/>
+		</WeaponSlot>
+		<WeaponSlot>
+			<Attachment search="Laser" AName="rvn_left_torso_2x_laser"/>
+			<Attachment search="Default" AName="rvn_left_torso_2x_laser"/>
+		</WeaponSlot>
+	</Hardpoint>
+	<Hardpoint id="14">
+		<!--Left Torso, AMS-->
+		<WeaponSlot>
+			<Attachment search="AntiMissileSystem" AName="rvn_left_torso_ams"/>
+		</WeaponSlot>
+	</Hardpoint>
+
+	<!--RVN-4X-->
+	<Hardpoint id="20">
+		<!--Right Torso, Missile-->
+		<WeaponSlot>
+			<Attachment search="SRM" AName="rvn_right_torso_3l_lrm6"/>
+			<Attachment search="Default" AName="rvn_right_torso_3l_lrm6"/>
+		</WeaponSlot>
+	</Hardpoint>
+	<Hardpoint id="21">
+		<!--Right Arm, Energy-->
+		<WeaponSlot>
+			<Attachment search="Laser" AName="rvn_right_arm_forearm_3l_laser1"/>
+			<Attachment search="Default" AName="rvn_right_arm_forearm_3l_laser1"/>
+		</WeaponSlot>
+		<WeaponSlot>
+			<Attachment search="Laser" AName="rvn_right_arm_forearm_3l_laser2"/>
+			<Attachment search="Default" AName="rvn_right_arm_forearm_3l_laser2"/>
+		</WeaponSlot>
+	</Hardpoint>
+	<Hardpoint id="22">
+		<!--Left Arm, Ballistic-->
+		<WeaponSlot>
+			<Attachment search="MachineGun" AName="rvn_left_arm_forearm_4x_machinegun1"/>
+			<Attachment search="Default" AName="rvn_left_arm_forearm_4x_machinegun1"/>
+		</WeaponSlot>
+		<WeaponSlot>
+			<Attachment search="MachineGun" AName="rvn_left_arm_forearm_4x_machinegun2"/>
+			<Attachment search="Default" AName="rvn_left_arm_forearm_4x_machinegun2"/>
+		</WeaponSlot>
+	</Hardpoint>
+	<Hardpoint id="24">
+		<!--Left Torso, AMS-->
+		<WeaponSlot>
+			<Attachment search="AntiMissileSystem" AName="rvn_left_torso_ams"/>
+		</WeaponSlot>
+	</Hardpoint>
+
+  
+</Hardpoints>

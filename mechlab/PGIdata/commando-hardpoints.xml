@@ -1,0 +1,129 @@
+<Hardpoints SearchTable="Objects/mechs/hardpointsearchcriteria.xml">
+	<!--COM-2D-->
+	<Hardpoint id="0">
+		<!--Center Torso, Missile-->
+		<WeaponSlot>
+			<Attachment search="Default" AName="torso_2d_srm6"/>
+		</WeaponSlot>
+	</Hardpoint>
+	<Hardpoint id="1">
+		<!--Right Arm, Missile-->
+		<WeaponSlot>
+			<Attachment search="Default" AName="forearm_right_2d_srm4"/>
+		</WeaponSlot>
+		<WeaponSlot>
+			<Attachment search="Default" AName="forearm_right_2d_srm4"/>
+		</WeaponSlot>
+	</Hardpoint>
+	<Hardpoint id="2">
+		<!--Left Arm, Energy-->
+		<WeaponSlot>
+			<Attachment search="Default" AName="forearm_left_2d_laser"/>
+		</WeaponSlot>
+	</Hardpoint>
+	<Hardpoint id="4">
+		<!--Right Torso, AMS-->
+		<WeaponSlot>
+			<Attachment search="AntiMissileSystem" AName="torso_right_ams"/>
+		</WeaponSlot>
+	</Hardpoint>
+
+	<!--COM-1B-->
+	<Hardpoint id="10">
+		<!--Center Torso, Missile-->
+		<WeaponSlot>
+			<Attachment search="SRM" AName="torso_1b_srm2"/>
+			<Attachment search="Default" AName="torso_1b_srm2"/>
+		</WeaponSlot>
+	</Hardpoint>
+	<Hardpoint id="11">
+		<!--Right Arm, Energy-->
+		<WeaponSlot>
+			<Attachment search="LargeLaser" AName="forearm_right_1b_laser"/>
+			<Attachment search="Default" AName="forearm_right_1b_laser"/>
+		</WeaponSlot>
+		<WeaponSlot>
+			<Attachment search="Default" AName="forearm_right_1b_laser"/>
+		</WeaponSlot>
+	</Hardpoint>
+	<Hardpoint id="12">
+		<!--Left Arm, Energy-->
+		<WeaponSlot>
+			<Attachment search="MediumLaser" AName="forearm_left_2d_laser"/>
+			<Attachment search="Default" AName="forearm_left_2d_laser"/>
+		</WeaponSlot>
+	</Hardpoint>
+	<Hardpoint id="14">
+		<!--Right Torso, AMS-->
+		<WeaponSlot>
+			<Attachment search="AntiMissileSystem" AName="torso_right_ams"/>
+		</WeaponSlot>
+	</Hardpoint>
+
+	<!--COM-1D-->
+	<Hardpoint id="20">
+		<!--Center Torso, Missile-->
+		<WeaponSlot>
+			<Attachment search="SRM" AName="torso_2d_srm6"/>
+			<Attachment search="Default" AName="torso_2d_srm6"/>
+		</WeaponSlot>
+		<WeaponSlot>
+			<Attachment search="SRM" AName="torso_2d_srm6"/>
+			<Attachment search="Default" AName="torso_2d_srm6"/>
+		</WeaponSlot>
+	</Hardpoint>
+	<Hardpoint id="21">
+		<!--Right Arm, Laser-->
+		<WeaponSlot>
+			<Attachment search="LargeLaser" AName="forearm_right_1d_laser"/>
+			<Attachment search="Default" AName="forearm_right_1d_laser"/>
+		</WeaponSlot>
+		<WeaponSlot>
+			<Attachment search="Default" AName="forearm_right_1d_laser"/>
+		</WeaponSlot>
+	</Hardpoint>
+	<Hardpoint id="24">
+		<!--Right Torso, AMS-->
+		<WeaponSlot>
+			<Attachment search="AntiMissileSystem" AName="torso_right_ams"/>
+		</WeaponSlot>
+	</Hardpoint>
+	
+	<!--COM-3A-->
+	<Hardpoint id="30">
+		<!--Center Torso, Missile-->
+		<WeaponSlot>
+			<Attachment search="SRM" AName="torso_2d_srm6"/>
+			<Attachment search="Default" AName="torso_2d_srm6"/>
+		</WeaponSlot>
+	</Hardpoint>
+	<Hardpoint id="31">
+		<!--Right Arm, Missile-->
+		<WeaponSlot>
+			<Attachment search="SRM" AName="forearm_right_3a_srm6"/>
+			<Attachment search="Default" AName="forearm_right_3a_srm6"/>
+		</WeaponSlot>
+	</Hardpoint>
+	<Hardpoint id="32">
+		<!--Right Arm, Energy-->
+		<WeaponSlot>
+			<Attachment search="Flamer" AName="forearm_right_3a_flamer"/>
+			<Attachment search="Default" AName="forearm_right_3a_flamer"/>
+		</WeaponSlot>
+	</Hardpoint>
+	<Hardpoint id="33">
+		<!-- Left Arm, Laser-->
+		<WeaponSlot>
+			<Attachment search="MediumLaser" AName="forearm_left_2d_laser"/>
+			<Attachment search="Default" AName="forearm_left_2d_laser"/>
+		</WeaponSlot>
+	</Hardpoint>
+	<Hardpoint id="34">
+		<!--Right Torso, AMS-->
+		<WeaponSlot>
+			<Attachment search="AntiMissileSystem" AName="torso_right_ams"/>
+		</WeaponSlot>
+	</Hardpoint>
+
+  
+</Hardpoints>
