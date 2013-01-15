@@ -448,11 +448,9 @@
         <mech type="Stalker" tonnage="85" chassis="15">
             <variant name="STK-3F" premium="no" founders="no" jets="no" ecm="no" maxengine="310">
                 <limbs>
-                    <limb name="leftArm"  crits="8" armorFront="56" armorRear="0" maxArmor="56">
+                    <limb name="leftArm"  crits="10" armorFront="56" armorRear="0" maxArmor="56">
                         <internal slots="1">Shoulder</internal>
                         <internal slots="1">Upper Arm Actuator</internal>
-                        <internal slots="1">Lower Arm Actuator</internal>
-                        <internal slots="1">Hand Actuator</internal>
                         <hardpoint type="energy"></hardpoint>
                         <hardpoint type="energy"></hardpoint>
                         <hardpoint type="missile"></hardpoint>
@@ -470,11 +468,9 @@
                         <hardpoint type="missile"></hardpoint>
                         <hardpoint type="ams"></hardpoint>
                     </limb>
-                    <limb name="rightArm"  crits="8" armorFront="56" armorRear="0" maxArmor="56">
+                    <limb name="rightArm"  crits="10" armorFront="56" armorRear="0" maxArmor="56">
                         <internal slots="1">Shoulder</internal>
                         <internal slots="1">Upper Arm Actuator</internal>
-                        <internal slots="1">Lower Arm Actuator</internal>
-                        <internal slots="1">Hand Actuator</internal>
                         <hardpoint type="energy"></hardpoint>
                         <hardpoint type="energy"></hardpoint>
                         <hardpoint type="missile"></hardpoint>
@@ -500,11 +496,9 @@
             </variant>
             <variant name="STK-3H" premium="no" founders="no" jets="no" ecm="no" maxengine="310">
                 <limbs>
-                    <limb name="leftArm"  crits="8" armorFront="56" armorRear="0" maxArmor="56">
+                    <limb name="leftArm"  crits="10" armorFront="56" armorRear="0" maxArmor="56">
                         <internal slots="1">Shoulder</internal>
                         <internal slots="1">Upper Arm Actuator</internal>
-                        <internal slots="1">Lower Arm Actuator</internal>
-                        <internal slots="1">Hand Actuator</internal>
                         <hardpoint type="energy"></hardpoint>
                         <hardpoint type="energy"></hardpoint>
                         <hardpoint type="missile"></hardpoint>
@@ -522,11 +516,9 @@
                         <hardpoint type="missile"></hardpoint>
                         <hardpoint type="ams"></hardpoint>
                     </limb>
-                    <limb name="rightArm"  crits="8" armorFront="56" armorRear="0" maxArmor="56">
+                    <limb name="rightArm"  crits="10" armorFront="56" armorRear="0" maxArmor="56">
                         <internal slots="1">Shoulder</internal>
                         <internal slots="1">Upper Arm Actuator</internal>
-                        <internal slots="1">Lower Arm Actuator</internal>
-                        <internal slots="1">Hand Actuator</internal>
                         <hardpoint type="energy"></hardpoint>
                         <hardpoint type="energy"></hardpoint>
                         <hardpoint type="missile"></hardpoint>
@@ -552,11 +544,9 @@
             </variant>
             <variant name="STK-4N" premium="no" founders="no" jets="no" ecm="no" maxengine="310">
                 <limbs>
-                    <limb name="leftArm"  crits="8" armorFront="56" armorRear="0" maxArmor="56">
+                    <limb name="leftArm"  crits="10" armorFront="56" armorRear="0" maxArmor="56">
                         <internal slots="1">Shoulder</internal>
                         <internal slots="1">Upper Arm Actuator</internal>
-                        <internal slots="1">Lower Arm Actuator</internal>
-                        <internal slots="1">Hand Actuator</internal>
                         <hardpoint type="energy"></hardpoint>
                         <hardpoint type="energy"></hardpoint>
                     </limb>
@@ -573,11 +563,9 @@
                         <hardpoint type="missile"></hardpoint>
                         <hardpoint type="ams"></hardpoint>
                     </limb>
-                    <limb name="rightArm"  crits="8" armorFront="56" armorRear="0" maxArmor="56">
+                    <limb name="rightArm"  crits="10" armorFront="56" armorRear="0" maxArmor="56">
                         <internal slots="1">Shoulder</internal>
                         <internal slots="1">Upper Arm Actuator</internal>
-                        <internal slots="1">Lower Arm Actuator</internal>
-                        <internal slots="1">Hand Actuator</internal>
                         <hardpoint type="energy"></hardpoint>
                         <hardpoint type="energy"></hardpoint>
                         <hardpoint type="missile"></hardpoint>
@@ -603,11 +591,9 @@
             </variant>
             <variant name="STK-5M" premium="no" founders="no" jets="no" ecm="no" maxengine="310">
                 <limbs>
-                    <limb name="leftArm"  crits="8" armorFront="56" armorRear="0" maxArmor="56">
+                    <limb name="leftArm"  crits="10" armorFront="56" armorRear="0" maxArmor="56">
                         <internal slots="1">Shoulder</internal>
                         <internal slots="1">Upper Arm Actuator</internal>
-                        <internal slots="1">Lower Arm Actuator</internal>
-                        <internal slots="1">Hand Actuator</internal>
                         <hardpoint type="energy"></hardpoint>
                         <hardpoint type="energy"></hardpoint>
                         <hardpoint type="missile"></hardpoint>
@@ -625,11 +611,9 @@
                         <hardpoint type="missile"></hardpoint>
                         <hardpoint type="ams"></hardpoint>
                     </limb>
-                    <limb name="rightArm"  crits="8" armorFront="56" armorRear="0" maxArmor="56">
+                    <limb name="rightArm"  crits="10" armorFront="56" armorRear="0" maxArmor="56">
                         <internal slots="1">Shoulder</internal>
                         <internal slots="1">Upper Arm Actuator</internal>
-                        <internal slots="1">Lower Arm Actuator</internal>
-                        <internal slots="1">Hand Actuator</internal>
                         <hardpoint type="energy"></hardpoint>
                         <hardpoint type="energy"></hardpoint>
                         <hardpoint type="missile"></hardpoint>
@@ -655,11 +639,9 @@
             </variant>
             <variant name="STK-5S" premium="no" founders="no" jets="no" ecm="no" maxengine="310">
                 <limbs>
-                    <limb name="leftArm"  crits="8" armorFront="56" armorRear="0" maxArmor="56">
+                    <limb name="leftArm"  crits="10" armorFront="56" armorRear="0" maxArmor="56">
                         <internal slots="1">Shoulder</internal>
                         <internal slots="1">Upper Arm Actuator</internal>
-                        <internal slots="1">Lower Arm Actuator</internal>
-                        <internal slots="1">Hand Actuator</internal>
                         <hardpoint type="energy"></hardpoint>
                         <hardpoint type="energy"></hardpoint>
                         <hardpoint type="missile"></hardpoint>
@@ -678,11 +660,9 @@
                         <hardpoint type="missile"></hardpoint>
                         <hardpoint type="ams"></hardpoint>
                     </limb>
-                    <limb name="rightArm"  crits="8" armorFront="56" armorRear="0" maxArmor="56">
+                    <limb name="rightArm"  crits="10" armorFront="56" armorRear="0" maxArmor="56">
                         <internal slots="1">Shoulder</internal>
                         <internal slots="1">Upper Arm Actuator</internal>
-                        <internal slots="1">Lower Arm Actuator</internal>
-                        <internal slots="1">Hand Actuator</internal>
                         <hardpoint type="energy"></hardpoint>
                         <hardpoint type="energy"></hardpoint>
                         <hardpoint type="missile"></hardpoint>
@@ -708,6 +688,7 @@
             </variant>
         </mech>
     </class>
+	
     <class type="Heavy">
         <mech type="Cataphract" tonnage="70" chassis="11">
             <variant name="CTF-1X" premium="no" founders="no" ecm="no" jets="no" maxengine="340">
@@ -1088,7 +1069,7 @@
                     </limb>
                 </limbs>
             </variant>
-            <variant name="CPLT-K2" founders="no" jets="yes" ecm="no" maxengine="315" modules="1">
+            <variant name="CPLT-K2" founders="no" jets="no" ecm="no" maxengine="315" modules="1">
                 <limbs>
                     <limb name="leftArm"  crits="10" armorFront="40" armorRear="0" maxArmor="40">
                         <internal slots="1">Shoulder</internal>
@@ -1270,9 +1251,9 @@
                     </limb>
                 </limbs>
             </variant>
-        </mech>
-		
+        </mech>	
 	</class>
+	
 	<class type="Medium">
 		<mech type="Centurion" tonnage="50" chassis="7">
             <variant name="CN9-A" premium="no" founders="no" jets="no" ecm="no" maxengine="260" modules="2">
@@ -1499,144 +1480,9 @@
                     </limb>
                 </limbs>
             </variant>
-            <variant name="CN9-AL" premium="no" founders="no" jets="no" ecm="no" maxengine="260" modules="2">
-                <limbs>
-                    <limb name="leftArm"  crits="8" armorFront="32" armorRear="0" maxArmor="32">
-                        <internal slots="1">Shoulder</internal>
-                        <internal slots="1">Upper Arm Actuator</internal>
-						<internal slots="1">Lower Arm Actuator</internal>
-                        <internal slots="1">Hand Actuator</internal>
-                    </limb>
-                    <limb name="leftTorso"  crits="12" armorFront="26" armorRear="12" maxArmor="48">
-						<hardpoint type="missile"></hardpoint>
-                        <hardpoint type="missile"></hardpoint>
-                    </limb>
-                    <limb name="centerTorso"  crits="8" armorFront="36" armorRear="14" maxArmor="64">
-                        <internal slots="4">Gyro</internal>
-                        <hardpoint type="engine"></hardpoint>
-						<hardpoint type="energy"></hardpoint>
-                        <hardpoint type="energy"></hardpoint>
-                    </limb>
-                    <limb name="rightTorso"  crits="12" armorFront="26" armorRear="12" maxArmor="48">
-                        <hardpoint type="ams"></hardpoint>
-                    </limb>
-                    <limb name="rightArm"  crits="8" armorFront="32" armorRear="0" maxArmor="32">
-                        <internal slots="1">Shoulder</internal>
-                        <internal slots="1">Upper Arm Actuator</internal>
-						<internal slots="1">Lower Arm Actuator</internal>
-                        <internal slots="1">Hand Actuator</internal>
-						<hardpoint type="energy"></hardpoint>
-                        <hardpoint type="energy"></hardpoint>                        
-                    </limb>
-                    <limb name="leftLeg"  crits="2" armorFront="32" armorRear="0" maxArmor="48">
-                        <internal slots="1">Upper Leg Actuator</internal>
-                        <internal slots="1">Lower Leg Actuator</internal>
-                        <internal slots="1">Foot Actuator</internal>
-                    </limb>
-                    <limb name="rightLeg"  crits="2" armorFront="32" armorRear="0" maxArmor="48">
-                        <internal slots="1">Upper Leg Actuator</internal>
-                        <internal slots="1">Lower Leg Actuator</internal>
-                        <internal slots="1">Foot Actuator</internal>
-                    </limb>
-                    <limb name="head"  crits="1" armorFront="18" armorRear="0" maxArmor="18">
-                        <internal slots="2">Life Support</internal>
-                        <internal slots="2">Sensors</internal>
-                        <internal slots="1">Cockpit</internal>
-                    </limb>
-                </limbs>
-            </variant>
-			<variant name="CN9-D" premium="no" founders="no" jets="no" ecm="no" maxengine="390" modules="2">
-                <limbs>
-                    <limb name="leftArm"  crits="8" armorFront="32" armorRear="0" maxArmor="32">
-                        <internal slots="1">Shoulder</internal>
-                        <internal slots="1">Upper Arm Actuator</internal>
-						<internal slots="1">Lower Arm Actuator</internal>
-                        <internal slots="1">Hand Actuator</internal>
-                    </limb>
-                    <limb name="leftTorso"  crits="12" armorFront="26" armorRear="12" maxArmor="48">
-						<hardpoint type="missile"></hardpoint>
-                        <hardpoint type="missile"></hardpoint>
-                    </limb>
-                    <limb name="centerTorso"  crits="8" armorFront="36" armorRear="14" maxArmor="64">
-                        <internal slots="4">Gyro</internal>
-                        <hardpoint type="engine"></hardpoint>
-						<hardpoint type="energy"></hardpoint>
-                        <hardpoint type="energy"></hardpoint>
-                    </limb>
-                    <limb name="rightTorso"  crits="12" armorFront="26" armorRear="12" maxArmor="48">
-                        <hardpoint type="ams"></hardpoint>
-                    </limb>
-                    <limb name="rightArm"  crits="8" armorFront="32" armorRear="0" maxArmor="32">
-                        <internal slots="1">Shoulder</internal>
-                        <internal slots="1">Upper Arm Actuator</internal>
-						<internal slots="1">Lower Arm Actuator</internal>
-                        <internal slots="1">Hand Actuator</internal>
-						<hardpoint type="ballistic"></hardpoint>
-                        <hardpoint type="ballistic"></hardpoint>                        
-                    </limb>
-                    <limb name="leftLeg"  crits="2" armorFront="32" armorRear="0" maxArmor="48">
-                        <internal slots="1">Upper Leg Actuator</internal>
-                        <internal slots="1">Lower Leg Actuator</internal>
-                        <internal slots="1">Foot Actuator</internal>
-                    </limb>
-                    <limb name="rightLeg"  crits="2" armorFront="32" armorRear="0" maxArmor="48">
-                        <internal slots="1">Upper Leg Actuator</internal>
-                        <internal slots="1">Lower Leg Actuator</internal>
-                        <internal slots="1">Foot Actuator</internal>
-                    </limb>
-                    <limb name="head"  crits="1" armorFront="18" armorRear="0" maxArmor="18">
-                        <internal slots="2">Life Support</internal>
-                        <internal slots="2">Sensors</internal>
-                        <internal slots="1">Cockpit</internal>
-                    </limb>
-                </limbs>
-            </variant>
-			<variant name="YEN-LO-WANG" premium="yes" founders="no" jets="no" ecm="no" maxengine="280" modules="3">
-                <limbs>
-                    <limb name="leftArm"  crits="8" armorFront="32" armorRear="0" maxArmor="32">
-                        <internal slots="1">Shoulder</internal>
-                        <internal slots="1">Upper Arm Actuator</internal>
-						<internal slots="1">Lower Arm Actuator</internal>
-                        <internal slots="1">Hand Actuator</internal>
-                    </limb>
-                    <limb name="leftTorso"  crits="12" armorFront="26" armorRear="12" maxArmor="48">
-                    </limb>
-                    <limb name="centerTorso"  crits="8" armorFront="36" armorRear="14" maxArmor="64">
-                        <internal slots="4">Gyro</internal>
-                        <hardpoint type="engine"></hardpoint>
-						<hardpoint type="energy"></hardpoint>
-                        <hardpoint type="energy"></hardpoint>
-                    </limb>
-                    <limb name="rightTorso"  crits="12" armorFront="26" armorRear="12" maxArmor="48">
-                        <hardpoint type="ams"></hardpoint>
-                    </limb>
-                    <limb name="rightArm"  crits="8" armorFront="32" armorRear="0" maxArmor="32">
-                        <internal slots="1">Shoulder</internal>
-                        <internal slots="1">Upper Arm Actuator</internal>
-						<internal slots="1">Lower Arm Actuator</internal>
-                        <internal slots="1">Hand Actuator</internal>
-						<hardpoint type="ballistic"></hardpoint>
-                        <hardpoint type="ballistic"></hardpoint>                        
-                    </limb>
-                    <limb name="leftLeg"  crits="2" armorFront="32" armorRear="0" maxArmor="48">
-                        <internal slots="1">Upper Leg Actuator</internal>
-                        <internal slots="1">Lower Leg Actuator</internal>
-                        <internal slots="1">Foot Actuator</internal>
-                    </limb>
-                    <limb name="rightLeg"  crits="2" armorFront="32" armorRear="0" maxArmor="48">
-                        <internal slots="1">Upper Leg Actuator</internal>
-                        <internal slots="1">Lower Leg Actuator</internal>
-                        <internal slots="1">Foot Actuator</internal>
-                    </limb>
-                    <limb name="head"  crits="1" armorFront="18" armorRear="0" maxArmor="18">
-                        <internal slots="2">Life Support</internal>
-                        <internal slots="2">Sensors</internal>
-                        <internal slots="1">Cockpit</internal>
-                    </limb>
-                </limbs>
-            </variant>
         </mech>
 	</class>
+	
 	<class type="Light">
 	</class>
 </mechs>
