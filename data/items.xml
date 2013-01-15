@@ -53,16 +53,16 @@
   <internals>
     <item id="IHS" type="heatsink" tons="1" slots="1">Single Heat Sink</item>
     <item id="IHD" type="heatsink" tons="1" slots="3">Dual Heat Sink</item>
-	<item id="WUA" type ="ams" tons=".5" slots="1" maxrange="200" ammoper="1000">AMS</item>
+	<item id="WUA" type ="ams" hardpoint="ams" tons=".5" slots="1" maxrange="200" ammoper="1000">AMS</item>
 	<item id="ABH" type ="ams" tons="1" slots="1">AMS ammo</item>
     <item id="IBA" type="util" tons="1" slots="1">Beagle Active Probe</item>
     <item id="ICA" type ="util" tons=".5" slots="1" maxrange="0">C.A.S.E.</item>
     <item id="IGE" type ="util" tons="1.5" slots="2" maxrange="250" ammoper="0">Guardian ECM</item>
-    <item id="IJJ" type ="jumpjet" tons="2" slots="1" maxrange="0" ammoper="0">Jump Jets - Class I</item>
-	<item id="IJK" type ="jumpjet" tons="1" slots="1" maxrange="0" ammoper="0">Jump Jets - Class II</item>
-	<item id="IJL" type ="jumpjet" tons="1" slots="1" maxrange="0" ammoper="0">Jump Jets - Class III</item>
-	<item id="IJM" type ="jumpjet" tons=".5" slots="1" maxrange="0" ammoper="0">Jump Jets - Class IV</item>
-	<item id="IJN" type ="jumpjet" tons=".5" slots="1" maxrange="0" ammoper="0">Jump Jets - Class V</item>
+    <item id="IJJ" type ="jumpjet" hardpoint="jumpjet" tons="2" slots="1" maxrange="0" ammoper="0" class="assault">Jump Jets - Class I</item>
+	<item id="IJK" type ="jumpjet" hardpoint="jumpjet" tons="1" slots="1" maxrange="0" ammoper="0" class="assault">Jump Jets - Class II</item>
+	<item id="IJL" type ="jumpjet" hardpoint="jumpjet" tons="1" slots="1" maxrange="0" ammoper="0" class="heavy">Jump Jets - Class III</item>
+	<item id="IJM" type ="jumpjet" hardpoint="jumpjet" tons=".5" slots="1" maxrange="0" ammoper="0" class="light">Jump Jets - Class IV</item>
+	<item id="IJN" type ="jumpjet" hardpoint="jumpjet" tons=".5" slots="1" maxrange="0" ammoper="0" class="light">Jump Jets - Class V</item>
   </internals>
   <engines>
     <plant id="PAA" slots="6" tons="1.5" type ="std" heatsinkslots="-6" size="100">Standard 100</plant>
