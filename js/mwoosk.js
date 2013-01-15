@@ -74,7 +74,7 @@ $(function () {
             $("#"+itemObj.type+"Ammo").append(createItemDivFromData({itemObj: itemObj}));
         });
         $(xml).find("internals > item").each(function () {
-            var itemObj = new item($(this).attr("id"), $(this).text(), $(this).attr("slots"), $(this).attr("tons"), $(this).attr("type"), "");
+            var itemObj = new item($(this).attr("id"), $(this).text(), $(this).attr("slots"), $(this).attr("tons"), $(this).attr("type"), $(this).attr("hardpoint"));
             $("#internals").append(createItemDivFromData({itemObj: itemObj}));
         });
 

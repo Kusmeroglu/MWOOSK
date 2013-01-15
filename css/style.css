@@ -296,7 +296,7 @@ background:#000;
 }
 
 .empty{
-background:none !important;
+background:none; /*!important;*/
 }
 
 .internal{

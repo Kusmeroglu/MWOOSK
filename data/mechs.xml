@@ -957,13 +957,16 @@
 						<hardpoint type="missile"></hardpoint>
                     </limb>
                     <limb name="leftTorso"  crits="12" armorFront="40" armorRear="20" maxArmor="60">
+                        <hardpoint type="jumpjet"></hardpoint>
                     </limb>
                     <limb name="centerTorso"  crits="8" armorFront="56" armorRear="28" maxArmor="84">
                         <internal slots="4">Gyro</internal>
                         <hardpoint type="engine"></hardpoint>
+                        <hardpoint type="jumpjet"></hardpoint>
                     </limb>
                     <limb name="rightTorso"  crits="12" armorFront="40" armorRear="20" maxArmor="60">
                         <hardpoint type="ams"></hardpoint>
+                        <hardpoint type="jumpjet"></hardpoint>
                     </limb>
                     <limb name="rightArm"  crits="10" armorFront="40" armorRear="0" maxArmor="40">
                         <internal slots="1">Shoulder</internal>
@@ -976,11 +979,13 @@
                         <internal slots="1">Upper Leg Actuator</internal>
                         <internal slots="1">Lower Leg Actuator</internal>
                         <internal slots="1">Foot Actuator</internal>
+                        <hardpoint type="jumpjet"></hardpoint>
                     </limb>
                     <limb name="rightLeg"  crits="2" armorFront="60" armorRear="0" maxArmor="60">
                         <internal slots="1">Upper Leg Actuator</internal>
                         <internal slots="1">Lower Leg Actuator</internal>
                         <internal slots="1">Foot Actuator</internal>
+                        <hardpoint type="jumpjet"></hardpoint>
                     </limb>
                     <limb name="head"  crits="1" armorFront="18" armorRear="0" maxArmor="18">
                         <internal slots="2">Life Support</internal>
@@ -998,16 +1003,19 @@
                     </limb>
                     <limb name="leftTorso"  crits="12" armorFront="40" armorRear="20" maxArmor="60">
 						<hardpoint type="energy"></hardpoint>
+                        <hardpoint type="jumpjet"></hardpoint>
                     </limb>
                     <limb name="centerTorso"  crits="8" armorFront="56" armorRear="28" maxArmor="84">
                         <internal slots="4">Gyro</internal>
                         <hardpoint type="engine"></hardpoint>
 						<hardpoint type="energy"></hardpoint>
 						<hardpoint type="energy"></hardpoint>
+                        <hardpoint type="jumpjet"></hardpoint>
                     </limb>
                     <limb name="rightTorso"  crits="12" armorFront="40" armorRear="20" maxArmor="60">
                         <hardpoint type="ams"></hardpoint>
 						<hardpoint type="energy"></hardpoint>
+                        <hardpoint type="jumpjet"></hardpoint>
                     </limb>
                     <limb name="rightArm"  crits="10" armorFront="40" armorRear="0" maxArmor="40">
                         <internal slots="1">Shoulder</internal>
@@ -1018,11 +1026,13 @@
                         <internal slots="1">Upper Leg Actuator</internal>
                         <internal slots="1">Lower Leg Actuator</internal>
                         <internal slots="1">Foot Actuator</internal>
+                        <hardpoint type="jumpjet"></hardpoint>
                     </limb>
                     <limb name="rightLeg"  crits="2" armorFront="60" armorRear="0" maxArmor="60">
                         <internal slots="1">Upper Leg Actuator</internal>
                         <internal slots="1">Lower Leg Actuator</internal>
                         <internal slots="1">Foot Actuator</internal>
+                        <hardpoint type="jumpjet"></hardpoint>
                     </limb>
                     <limb name="head"  crits="1" armorFront="18" armorRear="0" maxArmor="18">
                         <internal slots="2">Life Support</internal>
@@ -1040,15 +1050,18 @@
 						<hardpoint type="missile"></hardpoint>
                     </limb>
                     <limb name="leftTorso"  crits="12" armorFront="40" armorRear="20" maxArmor="60">
+                        <hardpoint type="jumpjet"></hardpoint>
                     </limb>
                     <limb name="centerTorso"  crits="8" armorFront="56" armorRear="28" maxArmor="84">
                         <internal slots="4">Gyro</internal>
                         <hardpoint type="engine"></hardpoint>
 						<hardpoint type="energy"></hardpoint>
 						<hardpoint type="energy"></hardpoint>
+                        <hardpoint type="jumpjet"></hardpoint>
                     </limb>
                     <limb name="rightTorso"  crits="12" armorFront="40" armorRear="20" maxArmor="60">
                         <hardpoint type="ams"></hardpoint>
+                        <hardpoint type="jumpjet"></hardpoint>
                     </limb>
                     <limb name="rightArm"  crits="10" armorFront="40" armorRear="0" maxArmor="40">
                         <internal slots="1">Shoulder</internal>
@@ -1060,11 +1073,13 @@
                         <internal slots="1">Upper Leg Actuator</internal>
                         <internal slots="1">Lower Leg Actuator</internal>
                         <internal slots="1">Foot Actuator</internal>
+                        <hardpoint type="jumpjet"></hardpoint>
                     </limb>
                     <limb name="rightLeg"  crits="2" armorFront="60" armorRear="0" maxArmor="60">
                         <internal slots="1">Upper Leg Actuator</internal>
                         <internal slots="1">Lower Leg Actuator</internal>
                         <internal slots="1">Foot Actuator</internal>
+                        <hardpoint type="jumpjet"></hardpoint>
                     </limb>
                     <limb name="head"  crits="1" armorFront="18" armorRear="0" maxArmor="18">
                         <internal slots="2">Life Support</internal>
