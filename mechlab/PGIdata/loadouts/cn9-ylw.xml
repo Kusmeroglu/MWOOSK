@@ -1,0 +1,32 @@
+<Loadout MechID="45" Public="1" Name="CENTURION CN9-YLW">
+  <ArmorDist ItemID="2800"/>
+  <ComponentList>
+    <component Name="head" Armor="18"/>
+    <component Name="left_torso" Armor="36">
+		<Module ItemID="3000"/>
+	</component>
+    <component Name="centre_torso" Armor="48">
+		<Module ItemID="3241"/>
+		<Weapon HardpointID="0" ItemID="1001"/>
+		<Weapon HardpointID="0" ItemID="1001"/>
+    </component>
+    <component Name="right_torso" Armor="36">
+		<Ammo ItemID="2000"/>
+		<Ammo ItemID="2000"/>
+		<Ammo ItemID="2000"/>
+		<Module ItemID="3000"/>
+    </component>
+    <component Name="left_leg" Armor="48">
+	</component>
+    <component Name="right_leg" Armor="48">
+	</component>
+    <component Name="right_arm" Armor="32">
+		<Weapon HardpointID="2" ItemID="1000"/>
+    </component>
+    <component Name="left_arm" Armor="32"/>
+    <component Name="left_torso_rear" Armor="12"/>
+    <component Name="centre_torso_rear" Armor="14"/>
+    <component Name="right_torso_rear" Armor="12"/>
+  </ComponentList>
+  <PaintCustomization ItemID="5000" pr="233" pg="233" pb="233" sr="135" sg="22" sb="22" tr="0" tg="0" tb="0" />
+</Loadout>

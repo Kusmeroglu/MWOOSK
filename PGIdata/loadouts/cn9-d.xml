@@ -5,6 +5,9 @@
 		<HeatSinks Type="Single"/>
 		<Artemis Equipped="1"/>
 	</Upgrades>
+	<Cockpit>
+		<Module ItemID="9001"/>
+	</Cockpit>
 	<ComponentList>
 		<component Name="head" Armor="18"/>
 		<component Name="left_torso" Armor="26">

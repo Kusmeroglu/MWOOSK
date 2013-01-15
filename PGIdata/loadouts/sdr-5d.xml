@@ -1,0 +1,38 @@
+<Loadout MechID="52" Public="1" Name="SPIDER SDR-5D">
+	<Upgrades>
+		<Armor ItemID="2800"/>
+		<Structure ItemID="3100"/>
+		<HeatSinks Type="Single"/>
+		<Artemis Equipped="0"/>
+	</Upgrades>
+	<ComponentList>
+		<component Name="head" Armor="12">
+			<Module ItemID="3000"/>
+		</component>
+		<component Name="left_torso" Armor="12">
+			<Module ItemID="1504"/>
+			<Module ItemID="1504"/>
+			<Module ItemID="1504"/>
+			<Module ItemID="1504"/>
+		</component>
+		<component Name="centre_torso" Armor="16">
+			<Module ItemID="3246"/>
+			<Weapon HardpointID="10" ItemID="1001"/>
+		</component>
+		<component Name="right_torso" Armor="12">
+			<Module ItemID="1504"/>
+			<Module ItemID="1504"/>
+			<Module ItemID="1504"/>
+			<Module ItemID="1504"/>
+		</component>
+		<component Name="left_leg" Armor="12"/>
+		<component Name="right_leg" Armor="12"/>
+		<component Name="right_arm" Armor="10">
+			<Weapon HardpointID="11" ItemID="1007"/>
+		</component>
+		<component Name="left_arm" Armor="10"/>
+		<component Name="left_torso_rear" Armor="4"/>
+		<component Name="centre_torso_rear" Armor="8"/>
+		<component Name="right_torso_rear" Armor="4"/>
+	</ComponentList>
+</Loadout>

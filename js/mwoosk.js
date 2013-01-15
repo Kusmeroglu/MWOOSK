@@ -560,8 +560,6 @@ $(function () {
 		$('#piloting').hide();
 		$('statistics').hide();
 		$('#comments').hide();
-		$('#internals');
-		$('#upgrades');
 	});
 	// Activate Utility Tab
 	$('#utilityTab').parent('.tabWrapper').click(function(){
@@ -570,6 +568,7 @@ $(function () {
 		$('#piloting').hide();
 		$('statistics').hide();
 		$('#comments').hide();
+		$('#internals').jScrollPane(settings);
 	});
 	// Activate Pilot Tab
 	$('#pilotingTab').parent('.tabWrapper').click(function(){

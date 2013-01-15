@@ -1,0 +1,945 @@
+/*CSS
+Color Palette:
+Background:  #10171b  -- Dark Blue Green
+Border-Trim: #718ba2  -- Light Blue
+Text: #
+Accent: F
+Box Background:  #000000 -- Black
+*/
+
+@font-face {
+    font-family: 'eurostileregular';
+    src: url('../font/eurosti-webfont.eot');
+    src: url('../font/eurosti-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../font/eurosti-webfont.woff') format('woff'),
+         url('../font/eurosti-webfont.ttf') format('truetype'),
+         url('../font/eurosti-webfont.svg#eurostileregular') format('svg');
+    font-weight: normal;
+    font-style: normal;}
+
+@font-face {
+	font-family: 'battletech_oldstyle';
+    src: url('../font/btlogo_old-webfont.eot');
+    src: url('../font/btlogo_old-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../font/btlogo_old-webfont.woff') format('woff'),
+         url('../font/btlogo_old-webfont.ttf') format('truetype'),
+         url('../font/btlogo_old-webfont.svg#battletech_oldstyleoldstyle') format('svg');
+    font-weight: normal;
+    font-style: normal;}
+
+@font-face {
+	font-family: 'btlogo_old';
+    src:  url('../font/btlogo_old.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body{
+background-color:#000;
+background-image:url(../images/background.png);
+font-family: 'eurostileregular';
+}
+
+.jquery-corner { 
+        -moz-user-select: none; 
+        -khtml-user-select: none; 
+        -webkit-user-select: none; 
+        -o-user-select: none; 
+}
+
+.clear{
+clear:both;
+}
+
+.hide {
+display:none;
+}
+
+.selectBox {
+   width: 200px;
+   background:#000;
+   color:#fff;
+   background-image: url(../images/arrow.png);
+   background-repeat:no-repeat;
+   background-position:170px -2px;
+   border-style:solid;
+   border-color:#AE9B4C;
+   border-top-width:1px;
+   border-left-width:4px;
+   border-right-width:2px;
+   border-bottom-width:1px;
+   float:left;
+   margin:5px 10px;
+   position:relative;
+   z-index:4;
+   border-radius:2px;
+   -moz-border-radius:2px;
+   -webkit-border-radius:2px;
+}
+
+.area {
+ border-radius:2px;
+ -moz-border-radius:2px;
+ -webkit-border-radius:2px;
+ -webkit-box-shadow: 1px 1px 5px 0px rgba(0, 0, 0, .35);
+ box-shadow: 1px 1px 5px 0px rgba(0, 0, 0, .35);
+}
+
+.inactive {
+   background-image: none !important;
+}
+
+.selectItem{
+display:none;
+padding:1px 0px 1px 5px;
+position:relative;
+z-index:5;
+}
+
+.selectBlank {
+cursor:pointer;
+padding:1px 0px 1px 5px;
+}
+
+.selectItem:hover{
+cursor:pointer;
+background:#AE9B4C;
+}
+
+.active {
+-webkit-box-shadow:  2px 2px 5px 0px #000;
+box-shadow:  2px 2px 5px 0px #000;
+}
+
+select {
+	background:#000;
+   -webkit-appearence: none;
+   width: 200px;
+   font-size: 12px;
+   color:#fff;
+   border: 0px solid #718ba2;
+}
+
+#pageWrap{
+ width:1280px;
+ margin:10px auto;
+ padding:20px 20px;
+ background-image:url(../images/bg2.jpg);
+ border-color:#3D4337;
+ border-style:solid;
+ border-left-width:2px;
+ border-top-width:8px;
+ border-bottom-width:8px;
+ border-right-width:2px;
+ border-radius:2px;
+ -moz-border-radius:4px;
+ -webkit-border-radius:4px;
+ min-height:790px;
+ }
+ 
+ #reset{
+font-family: 'btlogo_old';
+text-decoration:none;
+background:#000;
+float:left;
+margin:5px 5px 0px 20px;
+border-color:#AE9B4C;
+border-style:solid;
+border-left-width:2px;
+border-top-width:1px;
+border-bottom-width:1px;
+border-right-width:6px;
+padding:2px 5px 0px 5px;
+border-radius:2px;
+-moz-border-radius:2px;
+-webkit-border-radius:2px;
+color:#fff;
+cursor:pointer;
+}
+
+#reset:hover{
+background-color:#AE9B4C;
+}
+
+#chassisBar{
+background:#000;
+padding:5px 0px;
+width:810px;
+height:30px;
+margin:0px 5px 0px 20px;
+float:left;
+}
+
+#userInfo{
+background:#000;
+float:left;
+margin:5px 5px 0px 62px;
+border-color:#3D4337;
+border-style:solid;
+border-left-width:2px;
+border-top-width:1px;
+border-bottom-width:1px;
+border-right-width:6px;
+padding:5px;
+border-radius:2px;
+-moz-border-radius:2px;
+-webkit-border-radius:2px;
+}
+
+#userInfo {
+height:20px;
+width:315px;
+}
+
+#tinyurlLink{
+ color:#fff;
+ cursor:pointer;
+}
+
+#tinyurlResult{
+color:#fff;
+}
+
+#mechBay{
+display:none;
+}
+
+#mechContainerWrap{
+    padding:10px 5px 5px 5px;
+    /*background-image:url(../images/sprite.png);
+    background-repeat: no-repeat;
+    background-position:-50px -50px;*/
+    margin-top:10px;
+	float:left;
+}
+
+
+#mechContainer{
+    float:left;
+	margin:10px 5px;
+}
+
+#mechContainer:first-child{
+	margin-left:10px;
+}
+
+#mechContainer:last-child{
+	margin-right:10px;
+}
+
+#mechContainer > div {
+    width:165px;
+	border-color:#3d4337;
+	border-bottom-width:4px;
+	border-left-width:1px;
+	border-right-width:1px;
+	border-style:solid;
+	color: white;
+	padding-bottom:2px;
+}
+
+.name {
+font-family: 'btlogo_old';
+padding:5px;
+background:#3d4337;
+color:#fff;
+font-size:.95em;
+}
+
+.information{
+padding:5px;
+}
+
+.hardpoint{
+text-transform: capitalize;
+}
+
+.critslot {
+height:20px;
+border:1px solid #fff;
+}
+
+.structure {
+    background-color: #8b0000;
+}
+
+.invalid {
+    border: 3px double #FF0000;
+}
+
+/*.valid {
+    border: 3px double #00FF00 !important;
+}*/
+
+.armorspinner {
+    width: 35px;
+    color: white;
+	padding:-2px;
+}
+
+.critLabel{
+padding-left:5px;
+font-size:.9em;
+padding-top:3px;
+opacity:1 !important;
+}
+
+.critItem{
+border-left-width:6px;
+border-right-width:2px;
+border-top-width:1px;
+border-bottom-width:1px;
+border-style:solid;
+margin-bottom:1px;
+border-color:#3d4337;
+background:#000;
+}
+
+.empty{
+background:none !important;
+}
+
+.internal{
+border-color:#393e44;
+color:#393e44;
+}
+
+.critItem:hover{
+/*background-image:url(../images/sprite.png);
+background-position:-500px -1199px;*/
+}
+
+.critOne {
+/*background-image:url(../images/sprite.png);
+background-position:-690px -898px;*/
+height:22px;
+cursor:pointer;
+opacity:1;
+}
+
+.critTwo {
+/*background-image:url(../images/sprite.png);
+background-position:-690px -930px;*/
+height:47px;
+cursor:pointer;
+}
+
+.critThree {
+/*background-image:url(../images/sprite.png);
+background-position:-690px -980px;*/
+height:72px;
+cursor:pointer;
+}
+
+.critFour {
+/*background-image:url(../images/sprite.png);
+background-position:-690px -1050px;*/
+height:97px;
+cursor:pointer;
+}
+
+.critFive {
+/*background-image:url(../images/sprite.png);
+background-position:-850px -898px;*/
+height:122px;
+cursor:pointer;
+}
+
+.critSix {
+/*background-image:url(../images/sprite.png);
+background-position:-850px -1020px;*/
+height:147px;
+cursor:pointer;
+}
+
+.critSeven {
+/*background-image:url(../images/sprite.png);
+background-position:-690px -1150px;*/
+height:172px;
+cursor:pointer;
+}
+
+.critTen {
+/*background-image:url(../images/sprite.png);
+background-position:-850px -1160px;*/
+height:247px;
+cursor:pointer;
+}
+
+
+.critWrap{
+margin:10px 3px 0px 3px;
+/*background-image:url(../images/sprite.png);
+background-position:-500px -898px;*/
+}
+
+.valid .critWrap{
+ background: rgb(87, 185, 71); /* fallback */
+ background: rgba(87, 185, 71, 0.15); /* 50% transparent */
+}
+
+
+#head{
+background:#000;
+position:relative;
+margin-top:00px;
+}
+
+#rightArm{
+background:#000;
+position:relative;
+margin-top:170px;
+}
+
+#rightTorso{
+background:#000;
+position:relative;
+margin-top:40px;
+}
+
+#centerTorso{
+background:#000;
+position:relative;
+margin-top:20px;
+}
+
+#leftTorso{
+background:#000;
+position:relative;
+margin-top:40px;
+}
+
+#leftArm{
+background:#000;
+position:relative;
+margin-top:170px;
+}
+
+#rightLeg{
+background:#000;
+position:relative;
+margin-top:20px;
+}
+
+#leftLeg{
+background:#000;
+position:relative;
+margin-top:20px;
+}
+
+#componentWrap{
+}
+
+#focusLine{
+}
+
+#componentDetail{
+background:#000;
+}
+
+#itemWrap{
+margin:10px 0px 10px 0px;
+float:left;
+}
+
+#tabWrap{
+float:left;
+position:relative;
+margin-top:70px;
+}
+
+.tabWrapper{
+width:42px;
+height:130px;
+margin-bottom:10px;
+border-color:#3D4337;
+border-style:solid;
+border-top-width:3px;
+border-bottom-width:1px;
+border-right-width:6px;
+border-left-width:0px;
+border-radius:0px 2px 1px 0px;
+-webkit-border-radius:0px 2px 1px 0px;
+-moz-border-radius:0px 2px 1px 0px;
+background:#000;
+color:#fff;
+font-family: 'btlogo_old';
+font-size:.9em;
+}
+
+.tabWrapper:hover{
+color:#AE9B4C;
+cursor:pointer;
+}
+
+#armamentTab{
+/*background:transparent;
+background-image:url(../images/sprite.png);
+background-position:-98px -995px;*/
+position:relative;
+margin-top:25px;
+/* Safari */
+-webkit-transform: rotate(90deg);
+/* Firefox */
+-moz-transform: rotate(90deg);
+/* IE */
+-ms-transform: rotate(90deg);
+/* Opera */
+-o-transform: rotate(90deg);
+/* Internet Explorer */
+filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=4);
+}
+
+#armamentTab:hover{
+/*background:transparent;
+background-image:url(../images/sprite.png);
+background-position:-202px -995px;*/
+}
+
+#utilityTab{
+/*background:transparent;
+background-image:url(../images/sprite.png);
+background-position:-98px -1165px;*/
+position:relative;
+margin-top:40px;
+/* Safari */
+-webkit-transform: rotate(90deg);
+/* Firefox */
+-moz-transform: rotate(90deg);
+/* IE */
+-ms-transform: rotate(90deg);
+/* Opera */
+-o-transform: rotate(90deg);
+/* Internet Explorer */
+filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=4);
+}
+
+#utilityTab:hover{
+/*background:transparent;
+background-image:url(../images/sprite.png);
+background-position:-98px -1165px;*/
+position:relative;
+}
+
+#pilotingTab{
+/*background:transparent;
+background-image:url(../images/sprite.png);
+background-position:-98px -1325px;*/
+position:relative;
+margin-top:35px;
+/* Safari */
+-webkit-transform: rotate(90deg);
+/* Firefox */
+-moz-transform: rotate(90deg);
+/* IE */
+-ms-transform: rotate(90deg);
+/* Opera */
+-o-transform: rotate(90deg);
+/* Internet Explorer */
+filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=4);
+}
+
+#pilotingTab:hover{
+/*background:transparent;
+background-image:url(../images/sprite.png);
+background-position:-201px -1325px;*/
+}
+
+#statisticsTab{
+/*background:transparent;
+background-image:url(../images/sprite.png);
+background-position:-98px -1485px;*/
+position:relative;
+margin-top:21px;
+/* Safari */
+-webkit-transform: rotate(90deg);
+/* Firefox */
+-moz-transform: rotate(90deg);
+/* IE */
+-ms-transform: rotate(90deg);
+/* Opera */
+-o-transform: rotate(90deg);
+/* Internet Explorer */
+filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=4);
+}
+
+#statisticsTab:hover{
+/*background:transparent;
+background-image:url(../images/sprite.png);
+background-position:-201px -1485px;*/
+}
+
+#commentsTab{
+/*background:transparent;
+background-image:url(../images/sprite.png);
+background-position:-98px -1645px;*/
+position:relative;
+margin-top:21px;
+/* Safari */
+-webkit-transform: rotate(90deg);
+/* Firefox */
+-moz-transform: rotate(90deg);
+/* IE */
+-ms-transform: rotate(90deg);
+/* Opera */
+-o-transform: rotate(90deg);
+/* Internet Explorer */
+filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=4);
+}
+
+#commentsTab:hover{
+/*background:transparent;
+background-image:url(../images/sprite.png);
+background-position:-98px -1645px;*/
+position:relative;
+}
+
+#ballisticsTab{
+}
+
+#energyTab{
+}
+
+#missileTab{
+}
+
+#utilitiesTab{
+}
+
+#utilities {
+    color: white;
+}
+
+#engineTab{
+}
+
+#upgradesTab{
+}
+
+#modulesTab{
+}
+
+#statsTab{
+}
+
+#weaponGroupTab{
+}
+
+#pilotSkillsTab{
+}
+
+#detailContainerWrap{
+float:left;
+}
+
+#detailContainer{
+background-color:#000;
+position:relative;
+border-color:#3D4337;
+border-style:solid;
+border-top-width:0px;
+border-left-width:1px;
+border-right-width:1px;
+border-bottom-width:6px;
+border-radius:2px;
+-webkit-border-radius:2px;
+-moz-border-radius:2px;
+height:790px;
+width:330px;
+margin-top:20px;
+}
+
+#itemList {
+    padding:10px;
+    overflow: auto;
+    width: 250px;
+    height: 625px;
+}
+
+.item {
+    display:block;
+    padding:2px 2px 0px 5px;
+    z-index:99;
+	font-size:.85em;
+    position:relative;
+    border-style:solid;
+	border-left-width:6px;
+	border-top-width:1px;
+	border-bottom-width:1px;
+	border-right-width:2px;
+	cursor:move;
+	margin:0px 5px 2px 5px;
+	color:#fff;
+	background:#000;
+}
+
+.energy {
+    /*background-image: url("../images/bgEnergy.png") !important;
+    background-repeat: no-repeat !important;*/
+    position: relative;
+	border-color:#00a2e8;
+	color:#fff;
+}
+.missile {
+    /*background-image: url("../images/bgMissile.png") !important;
+    background-repeat: no-repeat !important;*/
+    position: relative;
+	border-color:#22b14c;
+	color:#fff;
+}
+.ballistic {
+    /*background-image: url("../images/bgBallistic.png") !important;
+    background-repeat: no-repeat !important;*/
+    position: relative;
+	border-color:#ffc90e;
+	color:#fff;
+	font-family: 'eurostileregular';
+}
+
+#tonnageWrap{
+background:#000;
+float:left;
+margin:5px 5px 0px 20px;
+border-color:#3D4337;
+border-style:solid;
+border-left-width:6px;
+border-top-width:1px;
+border-bottom-width:1px;
+border-right-width:2px;
+padding:5px;
+border-radius:2px;
+-moz-border-radius:2px;
+-webkit-border-radius:2px;
+}
+
+#tonnage{
+height:30px;
+width:475px;
+}
+
+#heatWrap{
+background:#000;
+float:left;
+margin:5px 5px 0px 20px;
+border-color:#3D4337;
+border-style:solid;
+border-left-width:6px;
+border-top-width:1px;
+border-bottom-width:1px;
+border-right-width:2px;
+padding:5px;
+border-radius:2px;
+-moz-border-radius:2px;
+-webkit-border-radius:2px;
+}
+
+#heat {
+height:30px;
+width:320px;
+}
+
+#speedWrap{
+background:#000;
+float:left;
+margin:5px 5px 0px 18px;
+border-color:#3D4337;
+border-style:solid;
+border-left-width:2px;
+border-top-width:1px;
+border-bottom-width:1px;
+border-right-width:6px;
+padding:5px;
+border-radius:2px;
+-moz-border-radius:2px;
+-webkit-border-radius:2px;
+}
+
+#speed {
+height:30px;
+width:315px;
+}
+
+#commentsWrap{
+background:#718ba2;
+float:left;
+margin:5px 5px 0px 6px;
+padding:3px 4px 4px 8px;
+}
+
+#comments{
+}
+
+/* ----  All Component Button Stylings ---- */
+
+.buttonWrapper {
+ text-align:center;
+ margin:10px 0px;
+}
+
+.toggleButton {
+ padding:3px;
+ border-color:#393E44;
+ border-style:solid;
+ border-top-width:1px;
+ border-bottom-width:1px;
+ border-left-width:4px;
+ border-right-width:2px;
+ display:inline-block;
+ text-align:left;
+ margin:0px 5px;
+ min-width:75px;
+ color:#fff;
+ border-radius:2px;
+ -webkit-border-radius:2px;
+ -moz-border-radius:2px;
+}
+
+.toggleButton:hover{
+ background:#AE9B4C;
+ border-color:#AE9B4C;
+ cursor:pointer;
+}
+
+.activeButton {
+border-color:#AE9B4C;
+}
+
+
+/* ---- Weapon Component Menu Stylings ----- */
+
+#armament {
+display:block;
+}
+
+#ballisticList{
+display:block;
+}
+
+#ballisticWeapon {
+ display:block;
+ height:675px;
+}
+
+#ballisticAmmo{
+ display:none;
+ height:675px;
+ }
+ 
+ #energyList{
+display:none;
+}
+
+#energyWeapon {
+ display:block;
+ height:705px;
+}
+
+#missileList{
+display:none;
+}
+
+#missileWeapon {
+ display:block;
+ height:675px;
+}
+
+#missileAmmo{
+ display:none;
+ height:675px;
+ }
+ 
+ #utilities{
+ display:none;
+ }
+
+ #internals{
+height:705px;
+display:block;
+}
+
+ #engines{
+display:none;
+}
+ 
+#xlEngine{
+height:675px;
+display:none;
+}
+
+#stdEngine{
+height:675px;
+display:block;
+}
+
+#upgrades{
+ display:none;
+ height:715px;
+ }
+
+
+/*
+Weight Chart CSS (SVG)
+*/
+
+.bullet {
+    font: 10px 'Aldrich', sans-serif;
+    fill: #999999;
+    stroke: #999999;
+}
+.bullet .marker {
+    stroke: #000000;
+    stroke-width: 2px;
+}
+.bullet .tick line {
+    stroke: #666666;
+    stroke-width: 0.5px;
+}
+
+/* background of graph */
+.bullet .range.s0 {
+    fill: #C2C3C5;
+}
+/* background of chassis weight marker */
+.bullet .range.s1 {
+    fill: #ABACB0;
+}
+/* background of actual weight bar */
+.bullet .measure.s0 {
+    fill: #3D4337;
+    stroke: #303C48;
+}
+.bullet .title {
+    font-size: 14px;
+    font-weight: normal;
+    fill: #ffffff;
+}
+.bullet .subtitle {
+    fill: #999999;
+    stroke: #999999;
+}
+
+/*
+Rose Chart CSS (SVG)
+*/
+
+#roseChart {
+    height: 220px;
+//    position: absolute;
+//    right: -110px;
+ //   bottom: 5px;
+    width: 220px;
+}
+
+.labels {
+    font: 12px 'Aldrich', sans-serif;
+    fill: #ccc;
+}
+.values {
+    font: 12px 'Aldrich', sans-serif;
+    fill: #fff;
+}
+
+.caption {
+    font: 14px 'Aldrich', sans-serif;
+    fill: #fff;
+}

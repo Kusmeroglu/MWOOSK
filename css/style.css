@@ -309,6 +309,13 @@ color:#393e44;
 background-position:-500px -1199px;*/
 }
 
+.emptyCrit{
+ height:25px;
+ margin:0px 5px;
+ text-align:center;
+ color:#333;
+}
+
 .critOne {
 /*background-image:url(../images/sprite.png);
 background-position:-690px -898px;*/
@@ -696,56 +703,6 @@ margin-top:20px;
 	font-family: 'eurostileregular';
 }
 
-/*
-------- ITEM LIST TAB STYLING ---------
-*/
-
-
-#armament {
-display:block;
-}
-
-#ballisticList{
-display:block;
-}
-
-#energyList{
-display:none;
-}
-
-#missileList{
-display:none;
-}
-
-#utilities{
-display:none;
-}
-
-#internals{
-display:block;
-width:100%;
-height:100%;
-}
-
-#engines{
-display:none;
-}
-
-#stdEngine{
-display:block;
-width:100%;
-height:100%;
-}
-
-#xlEngine{
-display:none;
-width:100%;
-height:100%;
-}
-
-
-
-
 #tonnageWrap{
 background:#000;
 float:left;
@@ -857,6 +814,14 @@ border-color:#AE9B4C;
 
 /* ---- Weapon Component Menu Stylings ----- */
 
+#armament {
+display:block;
+}
+
+#ballisticList{
+display:block;
+}
+
 #ballisticWeapon {
  display:block;
  height:675px;
@@ -866,10 +831,18 @@ border-color:#AE9B4C;
  display:none;
  height:675px;
  }
+ 
+ #energyList{
+display:none;
+}
 
 #energyWeapon {
  display:block;
  height:705px;
+}
+
+#missileList{
+display:none;
 }
 
 #missileWeapon {
@@ -881,12 +854,20 @@ border-color:#AE9B4C;
  display:none;
  height:675px;
  }
-
- #upgrades{
+ 
+ #utilities{
  display:none;
- height:715px;
  }
 
+ #internals{
+height:705px;
+display:block;
+}
+
+ #engines{
+display:none;
+}
+ 
 #xlEngine{
 height:675px;
 display:none;
@@ -897,7 +878,10 @@ height:675px;
 display:block;
 }
 
-
+#upgrades{
+ display:none;
+ height:715px;
+ }
 
 
 /*
@@ -965,4 +949,12 @@ Rose Chart CSS (SVG)
 .caption {
     font: 14px 'Aldrich', sans-serif;
     fill: #fff;
+}
+
+/*
+----- Dragging Style ------
+*/
+
+.ui-draggable{
+min-width:151px;
 }

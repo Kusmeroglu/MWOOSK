@@ -1,0 +1,43 @@
+<Loadout MechID="28" Public="1" Name="CENTURION CN9-AL">
+	<Upgrades>
+		<Armor ItemID="2800"/>
+		<Structure ItemID="3100"/>
+		<HeatSinks Type="Single"/>
+		<Artemis Equipped="0"/>
+	</Upgrades>
+  <ComponentList>
+    <component Name="head" Armor="18"/>
+    <component Name="left_torso" Armor="34">
+		<Weapon HardpointID="21" ItemID="1027"/>
+		<Ammo ItemID="2027"/>
+		<Ammo ItemID="2027"/>
+	</component>
+    <component Name="centre_torso" Armor="46">
+		<Module ItemID="3238"/>
+		<Weapon HardpointID="20" ItemID="1001"/>
+		<Weapon HardpointID="20" ItemID="1001"/>
+    </component>
+    <component Name="right_torso" Armor="34">
+		<Module ItemID="3000"/>
+		<Module ItemID="3000"/>
+		<Module ItemID="3000"/>
+		<Module ItemID="3000"/>
+    </component>
+    <component Name="left_leg" Armor="48">
+		<Module ItemID="3000"/>
+		<Module ItemID="3000"/>
+	</component>
+    <component Name="right_leg" Armor="48">
+		<Module ItemID="3000"/>
+		<Module ItemID="3000"/>
+	</component>
+    <component Name="right_arm" Armor="32">
+		<Weapon HardpointID="22" ItemID="1008"/>
+		<Weapon HardpointID="22" ItemID="1003"/>
+    </component>
+    <component Name="left_arm" Armor="32"/>
+    <component Name="left_torso_rear" Armor="14"/>
+    <component Name="centre_torso_rear" Armor="18"/>
+    <component Name="right_torso_rear" Armor="14"/>
+  </ComponentList>
+</Loadout>

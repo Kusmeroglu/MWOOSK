@@ -1,0 +1,1543 @@
+﻿<!--
+TEMP ID LIST
+Autocannon 20 = 1000
+MediumLaser = 1001
+LRM (Missile) = 1002
+SmallLaser = 1003
+AC20Ammo = 2000
+Heatsink = 3000
+InfoTech = 4000
+
+type
+0 = BALLISTIC
+1 = BEAM
+2 = MISSILE
+4 = AMS
+
+-->
+<ItemStats>
+	<MechList>
+		<!-- All mech chassis need a mech tag. Case matters !-->
+		<!-- id = must be unique for all items(not just mechs)-->
+		<Mech id="1" name="hbk-4g" mdf="\hunchback\hbk-4g.mdf">
+			<!-- Localization information, take correct tag from loc file and add a @ sign !-->
+			<Loc nameTag="@hbk-4g" descTag="@hbk-4g_desc" iconTag="12"/>
+		</Mech>
+		<Mech id="2" name="hbk-4p" mdf="\hunchback\hbk-4p.mdf">
+			<Loc nameTag="@hbk-4p" descTag="@hbk-4p_desc" iconTag="13"/>
+		</Mech>
+		<Mech id="3" name="jr7-d" mdf="\jenner\jr7-d.mdf">
+			<Loc nameTag="@jr7-d" descTag="@jr7-d_desc" iconTag="14"/>
+		</Mech>
+		<Mech id="4" name="jr7-f" mdf="\jenner\jr7-f.mdf">
+			<Loc nameTag="@JR7-F" descTag="@jr7-f_desc" iconTag="15"/>
+		</Mech>  
+		<Mech id="5" name="com-2d" mdf="\commando\com-2d.mdf">
+		  <Loc nameTag="@com-2d" descTag="@com-2d_desc" iconTag="19"/>
+		</Mech>
+		<Mech id="6" name="com-3a" mdf="\commando\com-3a.mdf">
+		  <Loc nameTag="@com-3a" descTag="@com-3a_desc" iconTag="20"/>
+		</Mech>
+		<Mech id="7" name="cn9-a" mdf="\centurion\cn9-a.mdf">
+		  <Loc nameTag="@cn9-a" descTag="@cn9-a_desc" iconTag="24"/>
+		</Mech>
+		<Mech id="9" name="hbk-4h" mdf="\hunchback\hbk-4h.mdf">
+			<Loc nameTag="@hbk-4h" descTag="@hbk-4h_desc" iconTag="21"/>
+		</Mech>
+		<Mech id="10" name="drg-1n" mdf="\dragon\drg-1n.mdf">
+			<Loc nameTag="@drg-1n" descTag="@drg-1n_desc" iconTag="10"/>
+		</Mech>
+		<Mech id="11" name="drg-1c" mdf="\dragon\drg-1c.mdf">
+			<Loc nameTag="@drg-1c" descTag="@drg-1c_desc" iconTag="9"/>
+		</Mech>
+		<Mech id="12" name="cplt-c1" mdf="\catapult\cplt-c1.mdf">
+			<Loc nameTag="@cplt-c1" descTag="@cplt-c1_desc" iconTag="6"/>
+		</Mech>
+		<Mech id="13" name="cplt-a1" mdf="\catapult\cplt-a1.mdf">
+			<Loc nameTag="@cplt-a1" descTag="@cplt-a1_desc" iconTag="5"/>
+		</Mech>
+		<Mech id="14" name="aws-8q" mdf="\awesome\aws-8q.mdf">
+			<Loc nameTag="@aws-8q" descTag="@aws-8q_desc" iconTag="28"/>
+		</Mech>
+		<Mech id="15" name="aws-8r" mdf="\awesome\aws-8r.mdf">
+			<Loc nameTag="@aws-8r" descTag="@aws-8r_desc" iconTag="29"/>
+		</Mech>	
+		<Mech id="16" name="as7-d" mdf="\atlas\as7-d.mdf">
+			<Loc nameTag="@as7-d" descTag="@as7-d_desc" iconTag="2"/>
+			<MechStats tonnage="100" speed="54.0" armor="304" armortype="2800" heatsinks="20" jumpjets="0"/>
+		</Mech>
+		<Mech id="17" name="as7-d-dc" mdf="\atlas\as7-d-dc.mdf">
+			<Loc nameTag="@as7-d-dc" descTag="@as7-d-dc_desc" iconTag="3"/>
+		</Mech>
+		<Mech id="18" name="as7-rs" mdf="\atlas\as7-rs.mdf">
+			<Loc nameTag="@as7-rs" descTag="@as7-rs_desc" iconTag="4"/>
+		</Mech>
+		<Mech id="19" name="cplt-k2" mdf="\catapult\cplt-k2.mdf">
+			<Loc nameTag="@cplt-k2" descTag="@cplt-k2_desc" iconTag="8"/>
+		</Mech>
+		<Mech id="20" name="jr7-k" mdf="\jenner\jr7-k.mdf">
+			<Loc nameTag="@jr7-k" descTag="@jr7-k_desc" iconTag="16"/>
+		</Mech>
+		<Mech id="21" name="hbk-4j" mdf="\hunchback\hbk-4j.mdf">
+			<Loc nameTag="@hbk-4j" descTag="@hbk-4j_desc" iconTag="22"/>
+		</Mech>
+		<Mech id="22" name="hbk-4sp" mdf="\hunchback\hbk-4sp.mdf">
+			<Loc nameTag="@hbk-4sp" descTag="@hbk-4sp_desc" iconTag="23"/>
+		</Mech>
+		<Mech id="23" name="drg-5n" mdf="\dragon\drg-5n.mdf">
+			<Loc nameTag="@drg-5n" descTag="@drg-5n_desc" iconTag="11"/>
+		</Mech>
+		<Mech id="24" name="cplt-c4" mdf="\catapult\cplt-c4.mdf">
+			<Loc nameTag="@cplt-c4" descTag="@cplt-c4_desc" iconTag="7"/>
+		</Mech>
+		<Mech id="25" name="as7-k" mdf="\atlas\as7-k.mdf">
+			<Loc nameTag="@as7-k" descTag="@as7-k_desc" iconTag="4"/>
+		</Mech>
+		<Mech id="26" name="com-1b" mdf="\commando\com-1b.mdf">
+		  <Loc nameTag="@com-1b" descTag="@com-1b_desc" iconTag="17"/>
+		</Mech>
+		<Mech id="27" name="com-1d" mdf="\commando\com-1d.mdf">
+		  <Loc nameTag="@com-1d" descTag="@com-1d_desc" iconTag="18"/>
+		</Mech>
+		<Mech id="28" name="cn9-al" mdf="\centurion\cn9-al.mdf">
+		  <Loc nameTag="@cn9-al" descTag="@cn9-al_desc" iconTag="26"/>
+		</Mech>
+		<Mech id="29" name="cn9-d" mdf="\centurion\cn9-d.mdf">
+			<Loc nameTag="@cn9-d" descTag="@cn9-d_desc" iconTag="26"/>
+		</Mech>
+		<Mech id="30" name="aws-8t" mdf="\awesome\aws-8t.mdf">
+			<Loc nameTag="@aws-8t" descTag="@aws-8t_desc" iconTag="32"/>
+		</Mech>
+		<Mech id="31" name="aws-8v" mdf="\awesome\aws-8v.mdf">
+			<Loc nameTag="@aws-8v" descTag="@aws-8v_desc" iconTag="30"/>
+		</Mech>
+		<Mech id="32" name="aws-9m" mdf="\awesome\aws-9m.mdf">
+			<Loc nameTag="@aws-9m" descTag="@aws-9m_desc" iconTag="31"/>
+		</Mech>
+		<Mech id="33" name="rvn-3l" mdf="\raven\rvn-3l.mdf">
+			<Loc nameTag="@rvn-3l" descTag="@rvn-3l_desc" iconTag="34"/>
+		</Mech>
+		<Mech id="34" name="rvn-2x" mdf="\raven\rvn-2x.mdf">
+			<Loc nameTag="@rvn-2x" descTag="@rvn-2x_desc" iconTag="33"/>
+		</Mech>
+		<Mech id="35" name="rvn-4x" mdf="\raven\rvn-4x.mdf">
+			<Loc nameTag="@rvn-4x" descTag="@rvn-4x_desc" iconTag="35"/>
+		</Mech>
+		<Mech id="36" name="cda-3m" mdf="\cicada\cda-3m.mdf">
+			<Loc nameTag="@cda-3m" descTag="@cda-3m_desc" iconTag="39"/>
+		</Mech>
+		<Mech id="37" name="cda-2a" mdf="\cicada\cda-2a.mdf">
+			<Loc nameTag="@cda-2a" descTag="@cda-2a_desc" iconTag="36"/>
+		</Mech>
+		<Mech id="38" name="cda-2b" mdf="\cicada\cda-2b.mdf">
+			<Loc nameTag="@cda-2b" descTag="@cda-2b_desc" iconTag="37"/>
+		</Mech>
+		<Mech id="39" name="cda-3c" mdf="\cicada\cda-3c.mdf">
+			<Loc nameTag="@cda-3c" descTag="@cda-3c_desc" iconTag="38"/>
+		</Mech>
+		<Mech id="45" name="cn9-ylw" mdf="\centurion\cn9-ylw.mdf">
+			<Loc nameTag="@cn9-ylw" descTag="@cn9-ylw_desc" iconTag="40"/>
+		</Mech>
+		
+		<Mech id="996" name="jr7-d-founder" mdf="\jenner\jr7-d-founder.mdf">
+			<Loc nameTag="@jr7-d-founder" descTag="@jr7-d-founder_desc" iconTag="14"/>
+		</Mech>
+		<Mech id="997" name="cplt-c1-founder" mdf="\catapult\cplt-c1-founder.mdf">
+			<Loc nameTag="@cplt-c1-founder" descTag="@cplt-c1-founder_desc" iconTag="6"/>
+		</Mech>
+		<Mech id="998" name="hbk-4g-founder" mdf="\hunchback\hbk-4g-founder.mdf">
+			<Loc nameTag="@hbk-4g-founder" descTag="@hbk-4g-founder_desc" iconTag="12"/>
+		</Mech>
+		<Mech id="999" name="as7-d-founder" mdf="\atlas\as7-d-founder.mdf">
+			<Loc nameTag="@as7-d-founder" descTag="@as7-d-founder_desc" iconTag="2"/>
+			<MechStats tonnage="100" speed="54.0" armor="304" armortype="2800" heatsinks="20" jumpjets="0"/>
+		</Mech>
+	</MechList>
+	<WeaponList>
+		<!-- All weapons need a weapon tag. Case matters !-->
+		<!-- id = must be unique for all items(not just weapons)
+			 name = give it a readable name !-->
+		<Weapon id="1000" name="AutoCannon20">
+			<!-- Localization information, take correct tag from loc file and add a @ sign !-->
+			<Loc nameTag="@AC20" descTag="@AC20_desc" iconTag="10"/>
+			<!-- Weapon specific information 
+	     Health = Integer value expressing the percentage health of a weapon (integer because backend stores integer values)
+	  	 type = String Id of the weapon type "Ballistic / Beam / Missile" (used with ammoType)
+	  	 damage = integer value of damage
+       heatdamage = amount of heat generated on target
+	  	 heat = real number value of heat generated on fire 
+	  	 cooldown = time in seconds to be able to fire 0 = instant fire
+	  	 ammoType = String name of ammoType that is used ( taken from AmmoTypeList ) 
+	  	 ammoPerShot = ammo fired per shot (per interval)  (-1 no ammo used)
+	  	 minRange = integer value of minimun range in meters
+	  	 longRange = distance at which some weapon damage falloff starts
+       maxRange = integer value of maximun range in meters (-1 = infinity) 
+	  	 tons = integer value of weapon weight
+       radius = used for explosion radius
+       duration = 0 single shot, -1.0 player controlled duration (button held down), > 0 set duration 
+	  	 slots = integer value of equipment slots weapon uses !-->
+			<WeaponStats Health="10" slots="10" type="0" projectileclass="bullet" numFiring="1" damage="20" heatdamage="0" impulse="1.0" heat="6.0" cooldown="4.0" ammoType="AC20Ammo" ammoPerShot="1" minRange="0" longRange="270" maxRange="810" tons="14" duration="0.0" lifetime="10.0" speed="750" volleydelay="0" gravity="0,0,-9.8" maxDepth="10.0"/>
+			<!-- Effects used by the weapon!-->
+			<EffectList>
+				<Effect name="Projectile" asset="objects/weapons/autocannon_shell.cgf" scale="1.0" mass="10"/>
+				<Effect name="ProjectileMaterial" asset="mat_ac20"/>
+				<Effect name="Trail" asset="mech_weapons.autocannon_20.trail" scale="1.0"/>
+				<Effect name="Muzzle" asset="mech_weapons.autocannon_20.muzzle_flash"/>
+				<Effect name="MuzzleFP" asset="mech_weapons.autocannon_20.muzzle_flash_fp"/>
+				<Effect name="Sound:Fire" asset="sounds/weapons:cannon:cannon_fire" float="0.0"/>
+				<Effect name="Sound:PostFire" asset="sounds/weapons:cannon:cannon_reload" float="1.5"/>
+				<Effect name="DamageBrush" asset="Textures\\decals\\damage_brushes\\ac_20.tif"/>
+				<Effect name="DamageBrushType" asset="direct" float="64" float2="64"/>
+			</EffectList>
+			<Audio OnDestroyedDialogue="BB_AutoCannon_Destroyed"/>
+		</Weapon>
+		<Weapon id="1001" name="MediumLaser">
+			<Loc nameTag="@ML" descTag="@ML_desc" iconTag="16"/>
+			<WeaponStats Health="10" slots="1" type="1" projectileclass="" numFiring="1" damage="5" heatdamage="0" impulse="0.1" heat="4.0" cooldown="3.0" ammoType="" ammoPerShot="0" minRange="0" longRange="270" maxRange="540" visRange="1500" tons="1" duration="1.0" lifetime="0" speed="0" volleydelay="0.0" maxDepth="10.0"/>
+			<EffectList>
+				<Effect name="Beam" asset="Objects/weapons/laser_beam_medium.cgf"/>
+				<Effect name="BeamCap" asset="Objects/weapons/laser_impact_medium.cgf"/>
+				<!--time : time it takes for the beam to scale to 100% for x,z scale     distance :  how much the beam grows in one sec-->
+				<Effect name="ParticleBeam" asset=""/>
+				<Effect name="TraceEffects" asset="laser_medium"/>
+				<Effect name="Sound:Fire" asset="sounds/weapons:lasers:lasers_medium_fire1" float="0.0"/>
+				<Effect name="Sound:PostFire" asset="sounds/weapons:ppc:ppc_power" float="0.5"/>
+				<Effect name="DamageBrush" asset="Textures\\decals\\damage_brushes\\laser_med.tif"/>
+				<Effect name="DamageBrushType" asset="laser" float="16" float2="16"/>
+				<Effect name="Projector:icecave" asset="textures/defaults/sparks_test.dds" vector="0.26,0.925,0.275" float="0.5" float2="1.5" float3="12" float4="160" float5="80" float6="6.5" num="9"/>
+			</EffectList>
+			<Audio OnDestroyedDialogue="BB_MediumLaser_Destroyed"/>
+		</Weapon>
+		<Weapon id="1002" name="LRM20">
+			<Loc nameTag="@LRM20" descTag="@LRM20_desc" iconTag="3"/>
+			<WeaponStats Health="10" slots="5" type="2" projectileclass="javelin" numFiring="20" damage="1.7" heatdamage="0" impulse="0.8" heat="6.0" cooldown="4.75" ammoType="LRMAmmo" ammoPerShot="20" minRange="180" longRange="1000.0" maxRange="1000.0" tons="10" duration="0.0" lifetime="15.0" speed="100" volleydelay="0.5" peakdist="0.6" peaktime="-0.333" minheight="20" maxheight="150" uselock="1" trackingstrength="2.0" radius="4.0" hitpoints="1.0" UseTAG="1"  formation_speed="2.5"  formation_size="0.1"  formation_size_per_index="0.005" artemisAmmoType="LRMAmmoArtemis"/>
+			<EffectList>
+				<Effect name="Projectile" asset="objects/weapons/lrm_missile.cgf" mass="1.0"/>
+				<Effect name="ProjectileMaterial" asset="mat_rocket"/>
+				<Effect name="Trail" asset="mech_weapons.missiles.lrm_missile_exhaust" scale="1.0"/>
+				<Effect name="NumStageEffects" asset="" num="3"/>
+				<Effect name="StageEffect" asset="mech_weapons.missiles.launch" num="1"/>
+				<Effect name="StageEffect2" asset="mech_weapons.missiles.engage" num="2"/>
+				<Effect name="StageEffect3" asset="mech_weapons.missiles.engage" num="3"/>
+				<Effect name="Sound:Fire" asset="sounds/weapons:missiles:lrm_fire" float="0.0"/>
+				<Effect name="Sound:PostFire" asset="sounds/weapons:missiles:missile_reload" float="2.0"/>
+				<Effect name="Sound:Trail" asset="sounds/weapons:missiles:missile_trail" float="2.0"/>
+				<Effect name="DamageBrush" asset="Textures\\decals\\damage_brushes\\lrm_20.tif"/>
+				<Effect name="DamageBrushType" asset="explosion" float="64" float2="64"/>
+			</EffectList>
+			<Audio OnDestroyedDialogue="BB_LRM_Destroyed"/>
+		</Weapon>
+		<Weapon id="1003" name="SmallLaser">
+			<Loc nameTag="@SL" descTag="@SL_desc" iconTag="11"/>
+			<WeaponStats Health="10" slots="1" type="1" projectileclass="" numFiring="1" damage="3" heatdamage="0" impulse="0.1" heat="2.0" cooldown="2.25" ammoType="" ammoPerShot="0" minRange="0" longRange="90" maxRange="180" visRange="1500" tons="0.5" duration="0.75" lifetime="0" speed="0" volleydelay="0.0" maxDepth="10.0"/>
+			<EffectList>
+				<Effect name="Beam" asset="Objects/weapons/laser_beam_small.cgf"/>
+				<Effect name="BeamCap" asset="Objects/weapons/laser_impact_small.cgf"/>
+				<Effect name="ParticleBeam" asset=""/>
+				<Effect name="TraceEffects" asset="laser_small"/>
+				<Effect name="Sound:Fire" asset="sounds/weapons:lasers:laser_small_fire" float="0.0"/>
+				<Effect name="DamageBrush" asset="Textures\\decals\\damage_brushes\\laser_small.tif"/>
+				<Effect name="DamageBrushType" asset="laser" float="16" float2="16"/>
+				<Effect name="Projector:icecave" asset="textures/defaults/sparks_test.dds" vector="1.0,0.259,0.259" float="0.5" float2="1.5" float3="12" float4="160" float5="80" float6="6.5" num="9"/>
+			</EffectList>
+			<Audio OnDestroyedDialogue="BB_SmallLaser_Destroyed"/>
+		</Weapon>
+		<Weapon id="1004" name="SRM4">
+			<Loc nameTag="@SRM4" descTag="@SRM4_desc" iconTag="12"/>
+			<WeaponStats Health="10" slots="1" type="2" projectileclass="waypointrocket" numFiring="4" damage="2.5" heatdamage="0" impulse="1.0" heat="3" cooldown="3.75" ammoType="SRMAmmo" ammoPerShot="4" minRange="0" longRange="270.0" maxRange="270.0" tons="2" duration="0.0" lifetime="15.0" speed="300" volleydelay="0.25" maxheight="0" radius="3.5"  artemisAmmoType="SRMAmmoArtemis" formation_size="0.01"  formation_size_per_index="0.025"/>
+			<EffectList>
+				<Effect name="Projectile" asset="objects/weapons/lrm_missile.cgf" mass="1.0"/>
+				<Effect name="ProjectileMaterial" asset="mat_rocket"/>
+				<Effect name="ProjectileAnchor" asset="objects/weapons/matchstick_cube.cgf"/>
+				<Effect name="Trail" asset="mech_weapons.missiles.srm_missile_exhaust" scale="1.0"/>
+				<Effect name="Sound:Fire" asset="sounds/weapons:missiles:srm_fire" float="0.0"/>
+				<Effect name="Sound:PostFire" asset="sounds/weapons:missiles:missile_reload" float="1.5"/>
+				<Effect name="Sound:Trail" asset="sounds/weapons:missiles:srm_trail" float="2.0"/>
+				<Effect name="DamageBrush" asset="Textures\\decals\\damage_brushes\\lrm_20.tif"/>
+				<Effect name="DamageBrushType" asset="explosion" float="64" float2="64"/>
+			</EffectList>
+			<Audio OnDestroyedDialogue="BB_SRM_Destroyed"/>
+		</Weapon>
+		<Weapon id="1005" name="ERLargeLaser">
+			<Loc nameTag="@ERLL" descTag="@ERLL_desc" iconTag="13"/>
+			<WeaponStats Health="10" slots="2" type="1" projectileclass="" numFiring="1" damage="9" heatdamage="0" impulse="0.1" heat="10.0" cooldown="3.25" ammoType="" ammoPerShot="0" minRange="0" longRange="675" maxRange="1350" visRange="1500" tons="5" duration="1.0" lifetime="0" speed="0" volleydelay="0.0" maxDepth="10.0"/>
+			<EffectList>
+				<Effect name="Beam" asset="Objects/weapons/laser_beam_large.cgf"/>
+        <Effect name="BeamCap" asset="Objects/weapons/laser_impact_large.cgf"/>
+				<!--time : time it takes for the beam to scale to 100% for x,z scale     distance :  how much the beam grows in one sec-->
+				<Effect name="ParticleBeam" asset=""/>
+				<Effect name="TraceEffects" asset="laser_large"/>
+				<Effect name="Sound:Fire" asset="sounds/weapons:lasers:laser_large_fire" float="0.0"/>
+				<Effect name="DamageBrush" asset="Textures\\decals\\damage_brushes\\laser_large.tif"/>
+				<Effect name="DamageBrushType" asset="laser" float="32" float2="32"/>
+        <Effect name="Projector:icecave" asset="textures/defaults/sparks_test.dds" vector="0.243,0.411,1.0" float="0.5" float2="1.5" float3="12" float4="160" float5="80" float6="6.5" num="9"/>
+			</EffectList>
+			<Audio OnDestroyedDialogue="BB_ERLargeLaser_Destroyed"/>
+		</Weapon>
+		<Weapon id="1006" name="ERPPC">
+			<Loc nameTag="@ERPPC" descTag="@ERPPC_desc" iconTag="14"/>
+			<WeaponStats Health="10" slots="3" type="1" projectileclass="bullet" numFiring="1" damage="10" heatdamage="0" impulse="1.0" heat="13.0" cooldown="3" ammoType="" ammoPerShot="0" minRange="0" longRange="810" maxRange="1620" tons="7" duration="0" lifetime="10" speed="1200" volleydelay="0" maxDepth="10.0"/>
+			<EffectList>
+				<Effect name="Projectile" asset="objects/weapons/ppc_projectile.cgf" mass="1.0"/>
+				<Effect name="ProjectileMaterial" asset="mat_ppc" />
+				<Effect name="Trail" asset="mech_weapons.ppc.beam_trail"/>
+				<Effect name="TrailFP" asset="mech_weapons.ppc.beam_trail_fp"/>
+				<Effect name="Muzzle" asset="mech_weapons.ppc.muzzle_flash"/>
+				<Effect name="MuzzleFP" asset="mech_weapons.ppc.muzzle_flash_fp"/>
+				<Effect name="Sound:Fire" asset="sounds/weapons:erppc:erppc_fire" float="0.0"/>
+				<Effect name="DamageBrush" asset="Textures\\decals\\damage_brushes\\ac_20.tif"/>
+				<Effect name="DamageBrushType" asset="laser" float="64" float2="64"/>
+			</EffectList>
+			<Audio OnDestroyedDialogue="BB_ERPPC_Destroyed"/>
+		</Weapon>
+		<Weapon id="1007" name="Flamer">
+			<Loc nameTag="@Flamer" descTag="@Flamer_desc" iconTag="15"/>
+			<WeaponStats Health="10" slots="1" type="1" projectileclass="" numFiring="1" damage="0.4" heatdamage="0.2" impulse="0.1" heat="0.6" cooldown="0.0" ammoType="" ammoPerShot="0" minRange="0" longRange="64.0" maxRange="64.0" tons="1" duration="-1.0" lifetime="1.0" speed="100" volleydelay="0.25" maxheight="0" coneoffire="10" heatinctime="5.0" maxDepth="10.0"/>
+			<EffectList>
+				<Effect name="Beam" asset=""/>
+				<Effect name="ParticleBeam" asset="mech_weapons.flamer.flame_jet"/>
+				<Effect name="ParticleBeamFP" asset="mech_weapons.flamer.flame_jet_fp"/>
+				<Effect name="TraceEffects" asset="flamer"/>
+				<Effect name="Sound:FireLoop" asset="sounds/weapons:flamer:flamer" float="0.0"/>
+				<Effect name="Sound:PostFireLoop" asset="sounds/weapons:flamer:flamer_tail" float="0.0"/>
+				<Effect name="DamageBrush" asset="Textures\\decals\\damage_brushes\\lrm_20.tif"/>
+				<Effect name="DamageBrushType" asset="laser" float="64" float2="64"/>
+			</EffectList>
+			<Audio OnDestroyedDialogue="BB_Flamer_Destroyed"/>
+		</Weapon>
+		<Weapon id="1008" name="LargeLaser">
+			<Loc nameTag="@LL" descTag="@LL_desc" iconTag="16"/>
+			<WeaponStats Health="10" slots="2" type="1" projectileclass="" numFiring="1" damage="9" heatdamage="0" impulse="0.1" heat="7.0" cooldown="3.25" ammoType="" ammoPerShot="0" minRange="0" longRange="450" maxRange="900" visRange="1500" tons="5" duration="1.0" lifetime="0" speed="0" volleydelay="0.0" maxDepth="10.0"/>
+			<EffectList>
+				<Effect name="Beam" asset="Objects/weapons/laser_beam_large.cgf"/>
+        <Effect name="BeamCap" asset="Objects/weapons/laser_impact_large.cgf"/>
+				<!--time : time it takes for the beam to scale to 100% for x,z scale     distance :  how much the beam grows in one sec-->
+				<Effect name="ParticleBeam" asset=""/>
+				<Effect name="TraceEffects" asset="laser_large"/>
+				<Effect name="Sound:Fire" asset="sounds/weapons:lasers:laser_large_fire" float="0.0"/>
+				<Effect name="DamageBrush" asset="Textures\\decals\\damage_brushes\\laser_large.tif"/>
+				<Effect name="DamageBrushType" asset="laser" float="32" float2="32"/>
+        <Effect name="Projector:icecave" asset="textures/defaults/sparks_test.dds" vector="0.243,0.411,1.0" float="0.5" float2="1.5" float3="12" float4="160" float5="80" float6="6.5" num="9"/>
+			</EffectList>
+			<Audio OnDestroyedDialogue="BB_LargeLaser_Destroyed"/>
+		</Weapon>
+		<Weapon id="1009" name="PPC">
+			<Loc nameTag="@PPC" descTag="@PPC_desc" iconTag="17"/>
+			<WeaponStats Health="10" slots="3" type="1" projectileclass="bullet" numFiring="1" damage="10" heatdamage="0" impulse="1.0" heat="9.0" cooldown="3" ammoType="" ammoPerShot="0" minRange="90" longRange="540" maxRange="1080" tons="7" duration="0" lifetime="10" speed="1200" volleydelay="0" maxDepth="10.0"/>
+			<EffectList>
+				<Effect name="Projectile" asset="objects/weapons/ppc_projectile.cgf" mass="1.0"/>
+				<Effect name="ProjectileMaterial" asset="mat_ppc"/>
+				<Effect name="Trail" asset="mech_weapons.ppc.beam_trail"/>
+				<Effect name="TrailFP" asset="mech_weapons.ppc.beam_trail_fp"/>
+				<Effect name="Muzzle" asset="mech_weapons.ppc.muzzle_flash"/>
+				<Effect name="MuzzleFP" asset="mech_weapons.ppc.muzzle_flash_fp"/>
+				<Effect name="Sound:Fire" asset="sounds/weapons:ppc:ppc_fire" float="0.0"/>
+				<Effect name="Sound:PostFire" asset="sounds/weapons:ppc:ppc_power" float="0.5"/>
+				<Effect name="DamageBrush" asset="Textures\\decals\\damage_brushes\\ac_20.tif"/>
+				<Effect name="DamageBrushType" asset="laser" float="64" float2="64"/>
+			</EffectList>
+			<Audio OnDestroyedDialogue="BB_PPC_Destroyed"/>
+		</Weapon>
+		<Weapon id="1010" name="LargePulseLaser">
+			<Loc nameTag="@LPL" descTag="@LPL_desc" iconTag="18"/>
+			<WeaponStats Health="10" slots="2" type="1" projectileclass="" numFiring="1" damage="10" heatdamage="0" impulse="0.1" heat="9.0" cooldown="3.25" ammoType="" ammoPerShot="0" minRange="0" longRange="300" maxRange="600" visRange="1500" tons="7" duration="0.75" lifetime="0" speed="0" volleydelay="0.0" maxDepth="10.0"/>
+			<EffectList>
+				<Effect name="Beam" asset="Objects/weapons/laser_beam_pulse_large.cgf"/>
+        <Effect name="BeamCap" asset="Objects/weapons/laser_impact_large.cgf"/>
+				<Effect name="ParticleBeam" asset=""/>
+				<Effect name="TraceEffects" asset="laser_large"/>
+				<Effect name="Sound:Fire" asset="sounds/weapons:pulselasers:pulse_laser_large_fire" float="0.0"/>
+				<Effect name="DamageBrush" asset="Textures\\decals\\damage_brushes\\ac_20.tif"/>
+				<Effect name="DamageBrushType" asset="laser" float="32" float2="32"/>
+        <Effect name="Projector:icecave" asset="textures/defaults/sparks_test.dds" vector="0.243,0.411,1.0" float="0.5" float2="1.5" float3="12" float4="160" float5="80" float6="6.5" num="9"/>
+			</EffectList>
+			<Audio OnDestroyedDialogue="BB_LargePulseLaser_Destroyed"/>
+		</Weapon>
+		<Weapon id="1011" name="MediumPulseLaser">
+			<Loc nameTag="@MPL" descTag="@MPL_desc" iconTag="19"/>
+			<WeaponStats Health="10" slots="1" type="1" projectileclass="" numFiring="1" damage="6" heatdamage="0" impulse="0.1" heat="5.0" cooldown="3.0" ammoType="" ammoPerShot="0" minRange="0" longRange="180" maxRange="360" visRange="1500" tons="2" duration="0.75" lifetime="0" speed="0" volleydelay="0.0" maxDepth="10.0"/>
+			<EffectList>
+				<Effect name="Beam" asset="Objects/weapons/laser_beam_pulse_medium.cgf"/>
+        <Effect name="BeamCap" asset="Objects/weapons/laser_impact_medium.cgf"/>
+				<Effect name="ParticleBeam" asset=""/>
+				<Effect name="TraceEffects" asset="laser_medium"/>
+				<Effect name="Sound:Fire" asset="sounds/weapons:pulselasers:pulse_laser_medium_fire" float="0.0"/>
+				<Effect name="Sound:PostFire" asset="sounds/weapons:pulselasers:pulse_power" float="1.0"/>
+				<Effect name="DamageBrush" asset="Textures\\decals\\damage_brushes\\ac_20.tif"/>
+				<Effect name="DamageBrushType" asset="laser" float="16" float2="16"/>
+        <Effect name="Projector:icecave" asset="textures/defaults/sparks_test.dds" vector="0.26,0.925,0.275" float="0.5" float2="1.5" float3="12" float4="160" float5="80" float6="6.5" num="9"/>
+			</EffectList>
+			<Audio OnDestroyedDialogue="BB_MediumPulseLaser_Destroyed"/>
+		</Weapon>
+		<Weapon id="1012" name="SmallPulseLaser">
+			<Loc nameTag="@SPL" descTag="@SPL_desc" iconTag="20"/>
+			<WeaponStats Health="10" slots="1" type="1" projectileclass="" numFiring="1" damage="3" heatdamage="0" impulse="0.1" heat="3.0" cooldown="2.25" ammoType="" ammoPerShot="0" minRange="0" longRange="90" maxRange="180" visRange="1500" tons="1" duration="0.5" lifetime="0" speed="0" volleydelay="0.0" maxDepth="10.0"/>
+			<EffectList>
+				<Effect name="Beam" asset="Objects/weapons/laser_beam_pulse_small.cgf"/>
+        <Effect name="BeamCap" asset="Objects/weapons/laser_impact_small.cgf"/>
+				<Effect name="ParticleBeam" asset=""/>
+				<Effect name="TraceEffects" asset="laser_small"/>
+				<Effect name="Sound:Fire" asset="sounds/weapons:pulselasers:pulse_laser_small_fire" float="0.0"/>
+				<Effect name="DamageBrush" asset="Textures\\decals\\damage_brushes\\ac_20.tif"/>
+				<Effect name="DamageBrushType" asset="laser" float="16" float2="16"/>
+        <Effect name="Projector:icecave" asset="textures/defaults/sparks_test.dds" vector="1.0,0.259,0.259" float="0.5" float2="1.5" float3="12" float4="160" float5="80" float6="6.5" num="9"/>
+			</EffectList>
+			<Audio OnDestroyedDialogue="BB_SmallPulseLaser_Destroyed"/>
+		</Weapon>
+		<!-- <Weapon id="1013" name="Binary Laser (Blazer) Cannon"> -->
+		<Weapon id="1014" name="Anti_Missile_System">
+			<Loc nameTag="@AMS" descTag="@AMS_desc"/>
+			<WeaponStats Health="10" slots="1" type="4" projectileclass="" numFiring="1" damage="2.0" heatdamage="0" impulse="0.001" heat="0.0" cooldown="0.0" ammoType="AMSAmmo" ammoPerShot="1" minRange="0" longRange="90.0" maxRange="200.0" tons="0.5" duration="-1.0" lifetime="1.0" speed="100" volleydelay="0" maxheight="0" rof="30.0" spread="0.0"/>
+			<EffectList>
+				<Effect name="Beam" asset=""/>
+				<Effect name="ParticleBeam" asset="mech_weapons.machine_gun.tracers"/>
+        <Effect name="ParticleBeamFP" asset="mech_weapons.ams.tracers_fp"/>
+				<Effect name="TraceEffects" asset="machinegun"/>
+				<Effect name="Sound:FireLoop" asset="sounds/weapons:ams:ams_fire" float="0.0"/>
+				<Effect name="Sound:PostFireLoop" asset="sounds/weapons:machinegun:machinegun_tail" float="0.0"/>
+				<Effect name="DamageBrush" asset="Textures\\decals\\damage_brushes\\ac_20.tif"/>
+				<Effect name="DamageBrushType" asset="direct" float="8" float2="8"/>
+			</EffectList>
+		</Weapon>
+		<!-- <Weapon id="1015" name="Long Tom Cannon"> -->
+		<!-- <Weapon id="1016" name="Sniper Cannon"> -->
+		<!-- <Weapon id="1017" name="Thumper Cannon"> -->
+		<Weapon id="1018" name="AutoCannon2">
+			<Loc nameTag="@AC2" descTag="@AC2_desc" iconTag="7"/>
+			<WeaponStats Health="10" slots="1" type="0" projectileclass="bullet" numFiring="1" damage="2" heatdamage="0" impulse="1.0" heat="1.0" cooldown="0.5" ammoType="AC2Ammo" ammoPerShot="1" minRange="0" longRange="720" maxRange="2160" tons="6" duration="0.0" lifetime="10.0" speed="2000" volleydelay="0" gravity="0,0,-9.8" maxDepth="10.0"/>
+			<EffectList>
+				<Effect name="Projectile" asset="objects/weapons/autocannon_shell.cgf" scale="1.0" mass="10"/>
+				<Effect name="ProjectileMaterial" asset="mat_ac2"/>
+				<Effect name="Trail" asset="mech_weapons.autocannon_2.trail" scale="1.0"/>
+				<Effect name="Muzzle" asset="mech_weapons.autocannon_2.muzzle_flash"/>
+				<Effect name="MuzzleFP" asset="mech_weapons.autocannon_2.muzzle_flash_fp"/>
+				<Effect name="Sound:Fire" asset="sounds/weapons:cannon:cannon_fire" float="0.0"/>
+				<Effect name="Sound:PostFire" asset="sounds/weapons:cannon:cannon_reload" float="1.5"/>
+				<Effect name="DamageBrush" asset="Textures\\decals\\damage_brushes\\ac_20.tif"/>
+				<Effect name="DamageBrushType" asset="direct" float="16" float2="16"/>
+			</EffectList>
+			<Audio OnDestroyedDialogue="BB_AutoCannon_Destroyed"/>
+		</Weapon>
+		<Weapon id="1019" name="AutoCannon5">
+			<Loc nameTag="@AC5" descTag="@AC5_desc" iconTag="25"/>
+			<WeaponStats Health="10" slots="4" type="0" projectileclass="bullet" numFiring="1" damage="5" heatdamage="0" impulse="1.0" heat="1.0" cooldown="1.7" ammoType="AC5Ammo" ammoPerShot="1" minRange="0" longRange="540" maxRange="1620" tons="8" duration="0.0" lifetime="10.0" speed="900" volleydelay="0" gravity="0,0,-9.8" maxDepth="10.0"/>
+			<EffectList>
+				<Effect name="Projectile" asset="objects/weapons/autocannon_shell.cgf" scale="1.0" mass="10"/>
+				<Effect name="ProjectileMaterial" asset="mat_ac5"/>
+				<Effect name="Trail" asset="mech_weapons.autocannon_5.trail" scale="1.0"/>
+				<Effect name="Muzzle" asset="mech_weapons.autocannon_5.muzzle_flash"/>
+				<Effect name="MuzzleFP" asset="mech_weapons.autocannon_5.muzzle_flash_fp"/>
+				<Effect name="Sound:Fire" asset="sounds/weapons:cannon:ac5_fire" float="0.0"/>
+				<Effect name="Sound:PostFire" asset="sounds/weapons:cannon:ac5_reload" float="0.5"/>
+				<Effect name="DamageBrush" asset="Textures\\decals\\damage_brushes\\ac_20.tif"/>
+				<Effect name="DamageBrushType" asset="direct" float="32" float2="32"/>
+			</EffectList>
+			<Audio OnDestroyedDialogue="BB_AutoCannon_Destroyed"/>
+		</Weapon>
+		<Weapon id="1020" name="AutoCannon10">
+			<Loc nameTag="@AC10" descTag="@AC10_desc" iconTag="9"/>
+			<WeaponStats Health="10" slots="7" type="0" projectileclass="bullet" numFiring="1" damage="10" heatdamage="0" impulse="1.0" heat="3.0" cooldown="2.5" ammoType="AC10Ammo" ammoPerShot="1" minRange="0" longRange="450" maxRange="1350" tons="12" duration="0.0" lifetime="10.0" speed="850" volleydelay="0" gravity="0,0,-9.8" maxDepth="10.0"/>
+			<EffectList>
+				<Effect name="Projectile" asset="objects/weapons/autocannon_shell.cgf" scale="1.0" mass="10"/>
+				<Effect name="ProjectileMaterial" asset="mat_ac10"/>
+				<Effect name="Trail" asset="mech_weapons.autocannon_10.trail" scale="1.0"/>
+				<Effect name="Muzzle" asset="mech_weapons.autocannon_10.muzzle_flash"/>
+				<Effect name="MuzzleFP" asset="mech_weapons.autocannon_10.muzzle_flash_fp"/>
+				<Effect name="Sound:Fire" asset="sounds/weapons:cannon:ac10_fire" float="0.0"/>
+				<Effect name="Sound:PostFire" asset="sounds/weapons:cannon:ac10_reload" float="0.5"/>
+				<Effect name="DamageBrush" asset="Textures\\decals\\damage_brushes\\ac_20.tif"/>
+				<Effect name="DamageBrushType" asset="direct" float="32" float2="32"/>
+			</EffectList>
+			<Audio OnDestroyedDialogue="BB_AutoCannon_Destroyed"/>
+		</Weapon>
+		<Weapon id="1021" name="GaussRifle">
+			<Loc nameTag="@GaussRifle" descTag="@GaussRifle_desc" iconTag="21"/>
+			<WeaponStats Health="10" slots="7" type="0" projectileclass="bullet" numFiring="1" damage="15" heatdamage="0" impulse="1.0" heat="1.0" cooldown="4" ammoType="GaussAmmo" ammoPerShot="1" minRange="0" longRange="660" maxRange="1980" tons="15" duration="0.0" lifetime="10" speed="1200" volleydelay="0" groupedlocally="1" ExplodeChance="0.6" InternalExplosionDmg="20" maxDepth="10.0"/>
+			<EffectList>
+				<Effect name="Projectile" asset="objects/weapons/gauss_round.cgf" scale="1.0" mass="1.0"/>
+				<Effect name="ProjectileMaterial" asset="mat_gauss"/>
+				<Effect name="Trail" asset="mech_weapons.gauss.trail"/>
+				<Effect name="TrailFP" asset="mech_weapons.gauss.trail_fp"/>
+				<Effect name="Muzzle" asset="mech_weapons.gauss.muzzle_flash"/>
+				<Effect name="MuzzleFP" asset="mech_weapons.gauss.muzzle_flash_fp"/>
+				<Effect name="Sound:Fire" asset="sounds/weapons:gauss:gauss_fire" float="0.0"/>
+				<Effect name="DamageBrush" asset="Textures\\decals\\damage_brushes\\ac_20.tif"/>
+				<Effect name="DamageBrushType" asset="direct" float="64" float2="64"/>
+        <Effect name="WeaponExplodeEffect" asset="mech_effects.damage.ammo_gauss_explosion"/>
+			</EffectList>
+			<Audio OnDestroyedDialogue="BB_GaussRifle_Destroyed"/>
+		</Weapon>
+		<!-- <Weapon id="1022" name="Grenade Launcher"> -->
+		<Weapon id="1023" name="LB10XAutoCannon">
+			<Loc nameTag="@LB10-XAC" descTag="@LB10-XAC_desc" iconTag="27"/> 
+			<WeaponStats Health="10" slots="6" type="0" projectileclass="bullet" numFiring="1" numPerShot="10" damage="1" heatdamage="0" impulse="1.0" heat="2.0" cooldown="2.5" ammoType="LB10-XACAmmo" ammoPerShot="1" minRange="0" longRange="540" maxRange="1620" tons="11" duration="0.0" lifetime="10.0" speed="850" volleydelay="0" spread="3" gravity="0,0,-9.8" maxDepth="10.0"/>
+			<EffectList>
+				<Effect name="Projectile" asset="objects/weapons/autocannon_shell.cgf" scale="1.0" mass="10"/>
+				<Effect name="ProjectileMaterial" asset="mat_ac2"/>
+				<Effect name="Trail" asset="mech_weapons.autocannon_2.trail" scale="1.0"/>
+				<Effect name="Muzzle" asset="mech_weapons.autocannon_2.muzzle_flash"/>
+				<Effect name="MuzzleFP" asset="mech_weapons.autocannon_2.muzzle_flash_fp"/>
+				<Effect name="Sound:Fire" asset="sounds/weapons:cannon:cannon_fire" float="0.0"/>
+				<Effect name="Sound:PostFire" asset="sounds/weapons:cannon:cannon_reload" float="1.5"/>
+				<Effect name="DamageBrush" asset="Textures\\decals\\damage_brushes\\ac_20.tif"/>
+				<Effect name="DamageBrushType" asset="direct" float="64" float2="64"/>
+			</EffectList>
+			<Audio OnDestroyedDialogue="BB_LB10_Destroyed"/>
+		</Weapon>
+		<Weapon id="1024" name="MachineGun">
+			<Loc nameTag="@MachineGun" descTag="@MachineGun_desc" iconTag="24"/>
+			<WeaponStats Health="10" slots="1" type="0" projectileclass="" numFiring="1" damage="0.04" heatdamage="0" impulse="0.001" heat="0.0" cooldown="0.0" ammoType="MachineGunAmmo" ammoPerShot="1" minRange="0" longRange="90.0" maxRange="200.0" tons="0.5" duration="-1.0" lifetime="1.0" speed="100" volleydelay="0" maxheight="0" rof="10.0" spread="1.5" maxDepth="10.0"/>
+			<EffectList>
+				<Effect name="Beam" asset=""/>
+				<Effect name="ParticleBeam" asset="mech_weapons.machine_gun.tracers"/>
+				<Effect name="TraceEffects" asset="machinegun"/>
+				<Effect name="Sound:FireLoop" asset="sounds/weapons:machinegun:machinegun_fire" float="0.0"/>
+				<Effect name="Sound:PostFireLoop" asset="sounds/weapons:machinegun:machinegun_tail" float="0.0"/>
+				<Effect name="DamageBrush" asset="Textures\\decals\\damage_brushes\\ac_20.tif"/>
+				<Effect name="DamageBrushType" asset="direct" float="4" float2="4"/>
+			</EffectList>
+			<Audio OnDestroyedDialogue="BB_MachineGun_Destroyed"/>
+		</Weapon>
+		<Weapon id="1025" name="UltraAutoCannon5">
+			<Loc nameTag="@UAC5" descTag="@UAC5_desc" iconTag="28"/>
+			<WeaponStats Health="10" slots="5" type="0" projectileclass="bullet" numFiring="1" damage="5" heatdamage="0" impulse="1.0" heat="1.0" cooldown="1.1" ammoType="UltraAC5Ammo" ammoPerShot="1" minRange="0" longRange="600" maxRange="1800" tons="9" duration="0.0" lifetime="10.0" speed="900" volleydelay="0.5" ShotsDuringCooldown="1" JammingChance="0.1" gravity="0,0,-9.8" maxDepth="10.0"/>
+			<EffectList>
+				<Effect name="Projectile" asset="objects/weapons/autocannon_shell.cgf" scale="1.0" mass="10"/>
+				<Effect name="ProjectileMaterial" asset="mat_ac5"/>
+				<Effect name="Trail" asset="mech_weapons.autocannon_5.trail" scale="1.0"/>
+				<Effect name="Muzzle" asset="mech_weapons.autocannon_5.muzzle_flash"/>
+				<Effect name="MuzzleFP" asset="mech_weapons.autocannon_5.muzzle_flash_fp"/>
+				<Effect name="Sound:Fire" asset="sounds/weapons:cannon:ultracannon_fire" float="0.0"/>
+				<Effect name="Sound:PostFire" asset="sounds/weapons:cannon:cannon_reload" float="1.5"/>
+				<Effect name="DamageBrush" asset="Textures\\decals\\damage_brushes\\ac_20.tif"/>
+				<Effect name="DamageBrushType" asset="direct" float="32" float2="32"/>
+			</EffectList>
+			<Audio OnDestroyedDialogue="BB_UltraAutoCannon_Destroyed"/>
+		</Weapon>
+		<Weapon id="1026" name="LRM5">
+			<Loc nameTag="@LRM5" descTag="@LRM5_desc" iconTag="4"/>
+			<WeaponStats Health="10" slots="1" type="2" projectileclass="javelin" numFiring="5" damage="1.7" heatdamage="0" impulse="0.8" heat="2.0" cooldown="3.25" ammoType="LRMAmmo" ammoPerShot="5" minRange="180" longRange="1000.0" maxRange="1000.0" tons="2" duration="0.0" lifetime="15.0" speed="100" volleydelay="0.5" peakdist="0.6" peaktime="-0.333" minheight="20" maxheight="150" uselock="1" trackingstrength="2.0" radius="4.0" UseTAG="1"  formation_speed="2.5"  formation_size="0.1"  formation_size_per_index="0.01" artemisAmmoType="LRMAmmoArtemis"/>
+			<EffectList>
+				<Effect name="Projectile" asset="objects/weapons/lrm_missile.cgf" mass="1.0"/>
+				<Effect name="ProjectileMaterial" asset="mat_rocket"/>
+				<Effect name="Trail" asset="mech_weapons.missiles.lrm_missile_exhaust" scale="1.0"/>
+				<Effect name="NumStageEffects" asset="" num="3"/>
+				<Effect name="StageEffect" asset="mech_weapons.missiles.launch" num="1"/>
+				<Effect name="StageEffect2" asset="mech_weapons.missiles.engage" num="2"/>
+				<Effect name="StageEffect3" asset="mech_weapons.missiles.engage" num="3"/>
+				<Effect name="Sound:Fire" asset="sounds/weapons:missiles:lrm_fire" float="0.0"/>
+				<Effect name="Sound:PostFire" asset="sounds/weapons:missiles:missile_reload" float="1.5"/>
+				<Effect name="Sound:Trail" asset="sounds/weapons:missiles:missile_trail" float="2.0"/>
+				<Effect name="DamageBrush" asset="Textures\\decals\\damage_brushes\\lrm_20.tif"/>
+				<Effect name="DamageBrushType" asset="explosion" float="64" float2="64"/>
+			</EffectList>
+			<Audio OnDestroyedDialogue="BB_LRM_Destroyed"/>
+		</Weapon>
+		<Weapon id="1027" name="LRM10">
+			<Loc nameTag="@LRM10" descTag="@LRM10_desc" iconTag="5"/>
+			<WeaponStats Health="10" slots="2" type="2" projectileclass="javelin" numFiring="10" damage="1.7" heatdamage="0" impulse="0.8" heat="4.0" cooldown="3.75" ammoType="LRMAmmo" ammoPerShot="10" minRange="180" longRange="1000.0" maxRange="1000.0" tons="5" duration="0.0" lifetime="15.0" speed="100" volleydelay="0.5" peakdist="0.6" peaktime="-0.333" minheight="20" maxheight="150" uselock="1" trackingstrength="2.0" radius="4.0" UseTAG="1"  formation_speed="2.5"  formation_size="0.1"  formation_size_per_index="0.01" artemisAmmoType="LRMAmmoArtemis"/>
+			<EffectList>
+				<Effect name="Projectile" asset="objects/weapons/lrm_missile.cgf" mass="1.0"/>
+				<Effect name="ProjectileMaterial" asset="mat_rocket"/>
+				<Effect name="Trail" asset="mech_weapons.missiles.lrm_missile_exhaust" scale="1.0"/>
+				<Effect name="NumStageEffects" asset="" num="3"/>
+				<Effect name="StageEffect" asset="mech_weapons.missiles.launch" num="1"/>
+				<Effect name="StageEffect2" asset="mech_weapons.missiles.engage" num="2"/>
+				<Effect name="StageEffect3" asset="mech_weapons.missiles.engage" num="3"/>
+				<Effect name="Sound:Fire" asset="sounds/weapons:missiles:lrm15_fire" float="0.0"/>
+				<Effect name="Sound:PostFire" asset="sounds/weapons:missiles:missile_reload" float="1.5"/>
+				<Effect name="Sound:Trail" asset="sounds/weapons:missiles:missile_trail" float="2.0"/>
+				<Effect name="DamageBrush" asset="Textures\\decals\\damage_brushes\\lrm_20.tif"/>
+				<Effect name="DamageBrushType" asset="explosion" float="64" float2="64"/>
+			</EffectList>
+			<Audio OnDestroyedDialogue="BB_LRM_Destroyed"/>
+		</Weapon>
+		<Weapon id="1028" name="LRM15">
+			<Loc nameTag="@LRM15" descTag="@LRM15_desc" iconTag="6"/>
+			<WeaponStats Health="10" slots="3" type="2" projectileclass="javelin" numFiring="15" damage="1.7" heatdamage="0" impulse="0.8" heat="5.0" cooldown="4.25" ammoType="LRMAmmo" ammoPerShot="15" minRange="180" longRange="1000.0" maxRange="1000.0" tons="7" duration="0.0" lifetime="15.0" speed="100" volleydelay="0.5" peakdist="0.6" peaktime="-0.333" minheight="20" maxheight="150" uselock="1" trackingstrength="2.0" radius="4.0" UseTAG="1"  formation_speed="2.5"  formation_size="0.1"  formation_size_per_index="0.006" artemisAmmoType="LRMAmmoArtemis"/>
+			<EffectList>
+				<Effect name="Projectile" asset="objects/weapons/lrm_missile.cgf" mass="1.0"/>
+				<Effect name="ProjectileMaterial" asset="mat_rocket"/>
+				<Effect name="Trail" asset="mech_weapons.missiles.lrm_missile_exhaust" scale="1.0"/>
+				<Effect name="NumStageEffects" asset="" num="3"/>
+				<Effect name="StageEffect" asset="mech_weapons.missiles.launch" num="1"/>
+				<Effect name="StageEffect2" asset="mech_weapons.missiles.engage" num="2"/>
+				<Effect name="StageEffect3" asset="mech_weapons.missiles.engage" num="3"/>
+				<Effect name="Sound:Fire" asset="sounds/weapons:missiles:lrm15_fire" float="0.0"/>
+				<Effect name="Sound:PostFire" asset="sounds/weapons:missiles:missile_reload" float="1.5"/>
+				<Effect name="Sound:Trail" asset="sounds/weapons:missiles:missile_trail" float="2.0"/>
+				<Effect name="DamageBrush" asset="Textures\\decals\\damage_brushes\\lrm_20.tif"/>
+				<Effect name="DamageBrushType" asset="explosion" float="64" float2="64"/>
+			</EffectList>
+			<Audio OnDestroyedDialogue="BB_LRM_Destroyed"/>
+		</Weapon>
+		<Weapon id="1029" name="NarcBeacon">
+			<Loc nameTag="@NARC" descTag="@NARC_desc" iconTag="32"/>
+			<WeaponStats Health="10" slots="2" type="2" projectileclass="narc" numFiring="1" damage="0.0" heatdamage="0" impulse="0.0" heat="0" cooldown="3.5" ammoType="NARCAmmo" ammoPerShot="1" minRange="0" longRange="270.0" maxRange="270.0" tons="3" duration="0.0" lifetime="15.0" speed="250" volleydelay="0.25" maxheight="0" radius="3.5" TAG="1.5" TAGDecay="0.25" TAGTracking="1.5" TAGDuration="15.0" hitpoints="2.0"/>
+			<EffectList>
+				<Effect name="Projectile" asset="objects/weapons/lrm_missile.cgf" mass="1.0"/>
+				<Effect name="ProjectileMaterial" asset="mat_rocket"/>
+				<Effect name="ProjectileAnchor" asset="objects/weapons/matchstick_cube.cgf"/>
+				<Effect name="Trail" asset="mech_weapons.missiles.srm_missile_exhaust" scale="1.0"/>
+				<Effect name="Sound:Fire" asset="sounds/weapons:missiles:srm_fire" float="0.0"/>
+			</EffectList>
+		</Weapon>
+		<Weapon id="1030" name="SRM2">
+			<Loc nameTag="@SRM2" descTag="@SRM2_desc" iconTag="26"/>
+			<WeaponStats Health="10" slots="1" type="2" projectileclass="waypointrocket" numFiring="2" damage="2.5" heatdamage="0" impulse="1.0" heat="2" cooldown="3.5" ammoType="SRMAmmo" ammoPerShot="2" minRange="0" longRange="270.0" maxRange="270.0" tons="1" duration="0.0" lifetime="15.0" speed="300" volleydelay="0.25" maxheight="0" radius="3.5"  artemisAmmoType="SRMAmmoArtemis" formation_size="0.01"  formation_size_per_index="0.025"/>
+			<EffectList>
+				<Effect name="Projectile" asset="objects/weapons/lrm_missile.cgf" mass="1.0"/>
+				<Effect name="ProjectileMaterial" asset="mat_rocket"/>
+				<Effect name="ProjectileAnchor" asset="objects/weapons/matchstick_cube.cgf"/>
+				<Effect name="Trail" asset="mech_weapons.missiles.srm_missile_exhaust" scale="1.0"/>
+				<Effect name="Sound:Fire" asset="sounds/weapons:missiles:srm_fire" float="0.0"/>
+				<Effect name="Sound:Trail" asset="sounds/weapons:missiles:srm_trail" float="2.0"/>
+				<Effect name="DamageBrush" asset="Textures\\decals\\damage_brushes\\lrm_20.tif"/>
+				<Effect name="DamageBrushType" asset="explosion" float="32" float2="32"/>
+			</EffectList>
+			<Audio OnDestroyedDialogue="BB_SRM_Destroyed"/>
+		</Weapon>
+		<Weapon id="1031" name="SRM6">
+			<Loc nameTag="@SRM6" descTag="@SRM6_desc" iconTag="29"/>
+			<WeaponStats Health="10" slots="2" type="2" projectileclass="waypointrocket" numFiring="6" damage="2.5" heatdamage="0" impulse="1.0" heat="4.0" cooldown="4.0" ammoType="SRMAmmo" ammoPerShot="6" minRange="0" longRange="270.0" maxRange="270.0" tons="3" duration="0.0" lifetime="15.0" speed="300" volleydelay="0.25" radius="3.5"  artemisAmmoType="SRMAmmoArtemis" formation_size="0.01"  formation_size_per_index="0.025"/>
+			<EffectList>
+				<Effect name="Projectile" asset="objects/weapons/lrm_missile.cgf" mass="1.0"/>
+				<Effect name="ProjectileMaterial" asset="mat_rocket"/>
+				<Effect name="ProjectileAnchor" asset="objects/weapons/matchstick_cube.cgf"/>
+				<Effect name="Trail" asset="mech_weapons.missiles.srm_missile_exhaust" scale="1.0"/>
+				<Effect name="TrailFP" asset="mech_weapons.missiles.srm_missile_exhaust" scale="1.0"/>
+				<Effect name="Sound:Fire" asset="sounds/weapons:missiles:srm_fire" float="0.0"/>
+				<Effect name="Sound:PostFire" asset="sounds/weapons:missiles:missile_reload" float="1.5"/>
+				<Effect name="Sound:Trail" asset="sounds/weapons:missiles:srm_trail" float="2.0"/>
+				<Effect name="DamageBrush" asset="Textures\\decals\\damage_brushes\\lrm_20.tif"/>
+				<Effect name="DamageBrushType" asset="explosion" float="32" float2="32"/>
+			</EffectList>
+			<Audio OnDestroyedDialogue="BB_SRM_Destroyed"/>
+		</Weapon>
+		<Weapon id="1032" name="StreakSRM2">
+	  <Loc nameTag="@StreakSRM2" descTag="@StreakSRM2_desc" iconTag="30"/>
+	    <WeaponStats Health="10" slots="1" type="2" projectileclass="homingrocket" numFiring="2" damage="2.5" heatdamage="0" impulse="1.0" heat="2" cooldown="3.5" ammoType="StreakSRMAmmo" ammoPerShot="2" minRange="0" longRange="270.0" maxRange="270.0" tons="1.5" duration="0.0" lifetime="15.0" speed="200" volleydelay="0.25" uselock="1" needlock="1"   maxheight ="0" radius="3.5" trackingstrength="10.0" />
+	    <EffectList>
+        <Effect name="Projectile" asset="objects/weapons/lrm_missile.cgf" mass="1.0"/>
+        <Effect name="ProjectileMaterial" asset="mat_rocket"/>
+        <Effect name="ProjectileAnchor" asset="objects/weapons/matchstick_cube.cgf"/>
+        <Effect name="Trail" asset="mech_weapons.missiles.lrm_missile_exhaust" scale="1.0"/>
+        <Effect name="TrailFP" asset="mech_weapons.missiles.lrm_missile_exhaust" scale="1.0"/>
+        <Effect name="Sound:Fire" asset="sounds/weapons:missiles:srm_fire" float="0.0"/>
+        <Effect name="Sound:PostFire" asset="sounds/weapons:missiles:missile_reload" float="1.5"/>
+		<Effect name="Sound:Trail" asset="sounds/weapons:missiles:srm_trail" float="2.0"/>
+        <Effect name="Sound:NoLock" asset="sounds/cockpit:computer:missile_nolock" float="0.0"/>
+        <Effect name="DamageBrush" asset="Textures\\decals\\damage_brushes\\lrm_20.tif"/>
+        <Effect name="DamageBrushType" asset="explosion" float="32" float2="32"/>
+	    </EffectList>
+		<Audio OnDestroyedDialogue="BB_SRM_Destroyed"/>
+	</Weapon>
+		<!-- <Weapon id="1033" name="Mech Mortar/1"> -->
+		<!-- <Weapon id="1034" name="Mech Mortar/2"> -->
+		<!-- <Weapon id="1035" name="Mech Mortar/4"> -->
+		<!-- <Weapon id="1036" name="Mech Mortar/8"> -->
+		<Weapon id="1037" name="TAG">
+			<Loc nameTag="@TAG" descTag="@TAG_desc" iconTag="32"/>
+			<WeaponStats Health="10" slots="1" type="1" projectileclass="" numFiring="1" damage="0" heatdamage="0" impulse="0.0" heat="0.0" cooldown="0.0" ammoType="" ammoPerShot="0" minRange="0" longRange="450" maxRange="450" visRange="1500" tons="1.0" duration="-1.0" lifetime="0" speed="0" volleydelay="0.0" TAG="1.5" TAGDecay="0.25" TAGTracking="1.5" TAGDuration="1.0" maxDepth="0.0"/>
+			<EffectList>
+				<Effect name="Beam" asset="Objects/weapons/laser_beam_tag.cgf"/>
+				<Effect name="BeamCap" asset="Objects/weapons/laser_impact_tag.cgf"/>
+				<Effect name="TraceEffects" asset=""/>
+				<Effect name="Sound:Fire" asset="sounds/weapons:lasers:laser_small_fire" float="0.0"/>
+			</EffectList>
+		</Weapon>
+	</WeaponList>
+	<AmmoTypeList>
+		<!-- All ammo Types need a AmmoType tag. Case matters !-->
+		<!-- id = must be unique for all items(not just AmmoTypes)
+		 name = give it a readable name !-->
+		<AmmoType id="2000" name="AC20Ammo">
+			<Loc nameTag="@AC20Ammo" descTag="@AC20Ammo_desc" iconTag="2"/>
+			<!-- Ammo Type specific information 
+			 ** values are per round **
+			 type = String Id of the weapon type "Ballistic / Beam / Missile" (used with Weapon) 
+			 internalDamage = integer value of damage recieved when ammo is destroy from within the Mech
+			 tons = wieght of the ammo!-->
+			<AmmoTypeStats type="AC20Ammo" internalDamage="20" shotsPerTon="7" health="10"/>
+			<EffectList>
+				<Effect name="AmmoExplosionEffect" asset="fx" asset2="mech_effects.damage.ammo_warhead_explosion" time="2.5" num="3" min="0.1" max="20" strength="1.0" float="10.0"/>
+				<!--
+				time = fuse time
+				num = num micor explosions
+				min = min damage per micro explosion
+				max = max damage per micro explosion
+				strength = total % damage over time
+				float = explosion impulse
+				-->
+				<Effect name="CASEEffect" asset="case" asset2="mech_effects.damage.ammo_case_explosion"/>
+        <Effect name="FinalEffect" asset="fx" asset2="mech_effects.damage.ammo_warhead_explosion_end"/>        
+			</EffectList>
+			<Audio OnAmmoLowDialogue="BB_AutoCannon_Ammo_Low" OnAmmoEmptyDialogue="BB_AutoCannon_Ammo_Empty" OnDestroyedDialogue="BB_AutoCannon_Ammo_Destroyed" />
+		</AmmoType>
+		<AmmoType id="2001" name="AMSAmmo">
+			<Loc nameTag="@AMSAmmo" descTag="@AMSAmmo_desc" iconTag="3"/>
+			<AmmoTypeStats type="AMSAmmo" internalDamage="0.024" shotsPerTon="1000" health="10"/>
+			<EffectList>
+				<Effect name="AmmoExplosionEffect" asset="fx" asset2="mech_effects.damage.ammo_bullet_explosion" time="5.0" num="500" min="0.024" max="0.024" strength="1.0" float="10.0"/>
+				<Effect name="CASEEffect" asset="case" asset2="mech_effects.damage.ammo_case_explosion"/>
+        <Effect name="FinalEffect" asset="fx" asset2="mech_effects.damage.ammo_bullet_explosion_end"/>
+			</EffectList>
+		</AmmoType>
+		<AmmoType id="2005" name="AC2Ammo">
+			<Loc nameTag="@AC2Ammo" descTag="@AC2Ammo_desc" iconTag="4"/>
+			<AmmoTypeStats type="AC2Ammo" internalDamage="2" shotsPerTon="75" health="10"/>
+			<EffectList>
+				<Effect name="AmmoExplosionEffect" asset="fx" asset2="mech_effects.damage.ammo_warhead_explosion" time="6.0" num="20" min="0.1" max="2" strength="1.0" float="10.0"/>
+				<Effect name="CASEEffect" asset="case" asset2="mech_effects.damage.ammo_case_explosion"/>
+        <Effect name="FinalEffect" asset="fx" asset2="mech_effects.damage.ammo_warhead_explosion_end"/>
+      </EffectList>
+			<Audio OnAmmoLowDialogue="BB_AutoCannon_Ammo_Low" OnAmmoEmptyDialogue="BB_AutoCannon_Ammo_Empty" OnDestroyedDialogue="BB_AutoCannon_Ammo_Destroyed" />
+		</AmmoType>
+		<AmmoType id="2006" name="AC5Ammo">
+			<Loc nameTag="@AC5Ammo" descTag="@AC5Ammo_desc" iconTag="5"/>
+			<AmmoTypeStats type="AC5Ammo" internalDamage="5" shotsPerTon="30" health="10"/>
+				<Effect name="AmmoExplosionEffect" asset="fx" asset2="mech_effects.damage.ammo_warhead_explosion" time="5.0" num="12" min="0.1" max="5" strength="1.0" float="10.0"/>
+				<Effect name="CASEEffect" asset="case" asset2="mech_effects.damage.ammo_case_explosion"/>
+        <Effect name="FinalEffect" asset="fx" asset2="mech_effects.damage.ammo_warhead_explosion_end"/>
+      <Audio OnAmmoLowDialogue="BB_AutoCannon_Ammo_Low" OnAmmoEmptyDialogue="BB_AutoCannon_Ammo_Empty" OnDestroyedDialogue="BB_AutoCannon_Ammo_Destroyed" />
+		</AmmoType>
+		<AmmoType id="2007" name="AC10Ammo">
+			<Loc nameTag="@AC10Ammo" descTag="@AC10Ammo_desc" iconTag="6"/>
+			<AmmoTypeStats type="AC10Ammo" internalDamage="10" shotsPerTon="15" health="10"/>
+			<EffectList>
+				<Effect name="AmmoExplosionEffect" asset="fx" asset2="mech_effects.damage.ammo_warhead_explosion" time="5.0" num="6" min="0.1" max="10" strength="1.0" float="10.0"/>
+				<Effect name="CASEEffect" asset="case" asset2="mech_effects.damage.ammo_case_explosion"/>
+        <Effect name="FinalEffect" asset="fx" asset2="mech_effects.damage.ammo_warhead_explosion_end"/>
+      </EffectList>
+			<Audio OnAmmoLowDialogue="BB_AutoCannon_Ammo_Low" OnAmmoEmptyDialogue="BB_AutoCannon_Ammo_Empty" OnDestroyedDialogue="BB_AutoCannon_Ammo_Destroyed" />
+		</AmmoType>
+		<AmmoType id="2010" name="LB10-XACAmmo">
+			<Loc nameTag="@LB10-XACAmmo" descTag="@LB10-XACAmmo_desc" iconTag="7"/>
+			<AmmoTypeStats type="LB10-XACAmmo" internalDamage="10" shotsPerTon="15" health="10"/>
+			<EffectList>
+				<Effect name="AmmoExplosionEffect" asset="fx" asset2="mech_effects.damage.ammo_warhead_explosion" time="5.0" num="6" min="0.1" max="10" strength="1.0" float="10.0"/>
+				<Effect name="CASEEffect" asset="case" asset2="mech_effects.damage.ammo_case_explosion"/>
+        <Effect name="FinalEffect" asset="fx" asset2="mech_effects.damage.ammo_warhead_explosion_end"/>
+      </EffectList>
+			<Audio OnAmmoLowDialogue="BB_LB10_Ammo_Low" OnAmmoEmptyDialogue="BB_LB10_Ammo_Empty" OnDestroyedDialogue="BB_LB10_Ammo_Destroyed" />
+		</AmmoType>
+		<AmmoType id="2011" name="MachineGunAmmo">
+			<Loc nameTag="@MachineGunAmmo" descTag="@MachineGunAmmo_desc" iconTag="8"/>
+			<AmmoTypeStats type="MachineGunAmmo" internalDamage="0.08" shotsPerTon="2000" health="10"/>
+			<EffectList>
+				<Effect name="AmmoExplosionEffect" asset="fx" asset2="mech_effects.damage.ammo_bullet_explosion" time="5.0" num="500" min="0.08" max="0.08" strength="1.0" float="10.0"/>
+				<Effect name="CASEEffect" asset="case" asset2="mech_effects.damage.ammo_case_explosion"/>
+        <Effect name="FinalEffect" asset="fx" asset2="mech_effects.damage.ammo_bullet_explosion_end"/>
+			</EffectList>
+			<Audio OnAmmoLowDialogue="BB_MachineGun_Ammo_Low" OnAmmoEmptyDialogue="BB_MachineGun_Ammo_Empty" OnDestroyedDialogue="BB_MachineGun_Ammo_Destroyed" />
+		</AmmoType>
+		<AmmoType id="2008" name="GaussAmmo">
+			<Loc nameTag="@GaussAmmo" descTag="@GaussAmmo_desc" iconTag="9"/>
+			<AmmoTypeStats type="GaussAmmo" internalDamage="0" shotsPerTon="10" health="10"/>
+      <EffectList>
+      </EffectList>
+		</AmmoType>
+		<AmmoType id="2012" name="UltraAC5Ammo">
+			<Loc nameTag="@UltraAC5Ammo" descTag="@UltraAC5Ammo_desc" iconTag="10"/>
+			<AmmoTypeStats type="UltraAC5Ammo" internalDamage="5" shotsPerTon="25" health="10"/>
+			<EffectList>
+				<Effect name="AmmoExplosionEffect" asset="fx" asset2="mech_effects.damage.ammo_warhead_explosion" time="5.0" num="12" min="0.1" max="5" strength="1.0" float="10.0"/>
+				<Effect name="CASEEffect" asset="case" asset2="mech_effects.damage.ammo_case_explosion"/>
+        <Effect name="FinalEffect" asset="fx" asset2="mech_effects.damage.ammo_warhead_explosion_end"/>
+			</EffectList>
+			<Audio OnAmmoLowDialogue="BB_UltraAutoCannon_Ammo_Low" OnAmmoEmptyDialogue="BB_UltraAutoCannon_Ammo_Empty" OnDestroyedDialogue="BB_UltraAutoCannon_Ammo_Destroyed" />
+		</AmmoType>
+		<AmmoType id="2017" name="NARCAmmo">
+			<Loc nameTag="@NARCAmmo" descTag="@NARCAmmo_desc" iconTag="11"/>
+			<AmmoTypeStats type="NARCAmmo" internalDamage="2" shotsPerTon="6" health="10"/>
+			<EffectList>
+				<Effect name="AmmoExplosionEffect" asset="fx" asset2="mech_effects.damage.ammo_warhead_explosion" time="2.5" num="3" min="0.1" max="2" strength="1.0" float="10.0"/>
+				<Effect name="CASEEffect" asset="case" asset2="mech_effects.damage.ammo_case_explosion"/>
+        <Effect name="FinalEffect" asset="fx" asset2="mech_effects.damage.ammo_warhead_explosion_end"/>
+			</EffectList>
+		</AmmoType>
+		<!-- AmmoType id="2022" name="PPCAmmo">
+			<Loc nameTag="@PPCAmmo" descTag="@PPCAmmo_desc" iconTag="31"/>
+			<AmmoTypeStats type="PPCAmmo" internalDamage="0" shotsPerTon="6"/>
+		</AmmoType-->
+		<AmmoType id="2027" name="LRMAmmo">
+			<Loc nameTag="@LRMAmmo" descTag="@LRMAmmo_desc" iconTag="12"/>
+			<AmmoTypeStats type="LRMAmmo" internalDamage="1.6" shotsPerTon="180" health="10"/>
+			<EffectList>
+				<Effect name="AmmoExplosionEffect" asset="fx" asset2="mech_effects.damage.ammo_warhead_explosion" time="5.0" num="40" min="0.1" max="1.6" strength="1.0" float="10.0"/>
+				<Effect name="CASEEffect" asset="case" asset2="mech_effects.damage.ammo_case_explosion"/>
+        <Effect name="FinalEffect" asset="fx" asset2="mech_effects.damage.ammo_warhead_explosion_end"/>
+			</EffectList>
+			<Audio OnAmmoLowDialogue="BB_LRM_Ammo_Low" OnAmmoEmptyDialogue="BB_LRM_Ammo_Empty" OnDestroyedDialogue="BB_LRM_Ammo_Destroyed" />
+		</AmmoType>
+		<AmmoType id="2028" name="SRMAmmo">
+			<Loc nameTag="@SRMAmmo" descTag="@SRMAmmo_desc" iconTag="13"/>
+			<AmmoTypeStats type="SRMAmmo" internalDamage="2.5" shotsPerTon="100" health="10"/>
+			<EffectList>
+				<Effect name="AmmoExplosionEffect" asset="fx" asset2="mech_effects.damage.ammo_warhead_explosion" time="5.0" num="40" min="0.1" max="2.5" strength="1.0" float="10.0"/>
+				<Effect name="CASEEffect" asset="case" asset2="mech_effects.damage.ammo_case_explosion"/>
+        <Effect name="FinalEffect" asset="fx" asset2="mech_effects.damage.ammo_warhead_explosion_end"/>
+			</EffectList>
+			<Audio OnAmmoLowDialogue="BB_SRM_Ammo_Low" OnAmmoEmptyDialogue="BB_SRM_Ammo_Empty" OnDestroyedDialogue="BB_SRM_Ammo_Destroyed" />
+		</AmmoType>
+		<AmmoType id="2029" name="StreakSRMAmmo">
+			<Loc nameTag="@StreakSRMAmmo" descTag="@StreakSRMAmmo_desc" iconTag="14" />
+			<AmmoTypeStats type="StreakSRMAmmo" internalDamage="2.5" shotsPerTon="100" health="10"/>
+			<EffectList>
+				<Effect name="AmmoExplosionEffect" asset="fx" asset2="mech_effects.damage.ammo_warhead_explosion" time="5.0" num="40" min="0.1" max="2.5" strength="1.0" float="10.0"/>
+				<Effect name="CASEEffect" asset="case" asset2="mech_effects.damage.ammo_case_explosion"/>
+        <Effect name="FinalEffect" asset="fx" asset2="mech_effects.damage.ammo_warhead_explosion_end"/>
+			</EffectList>
+		</AmmoType>
+    <AmmoType id="2030" name="LRMAmmoArtemis">
+      <Loc nameTag="@LRMAmmoArtemis" descTag="@LRMAmmoArtemis_desc" iconTag="12"/>
+      <AmmoTypeStats type="LRMAmmoArtemis" internalDamage="1.6" shotsPerTon="180" health="10"/>
+      <EffectList>
+        <Effect name="AmmoExplosionEffect" asset="fx" asset2="mech_effects.damage.ammo_warhead_explosion" time="5.0" num="40" min="0.1" max="1.6" strength="1.0" float="10.0"/>
+        <Effect name="CASEEffect" asset="case" asset2="mech_effects.damage.ammo_case_explosion"/>
+        <Effect name="FinalEffect" asset="fx" asset2="mech_effects.damage.ammo_warhead_explosion_end"/>
+      </EffectList>
+      <Audio OnAmmoLowDialogue="BB_LRM_Ammo_Low" OnAmmoEmptyDialogue="BB_LRM_Ammo_Empty" OnDestroyedDialogue="BB_LRM_Ammo_Destroyed" />
+    </AmmoType>
+    <AmmoType id="2031" name="SRMAmmoArtemis">
+      <Loc nameTag="@SRMAmmoArtemis" descTag="@SRMAmmoArtemis_desc" iconTag="13"/>
+      <AmmoTypeStats type="SRMAmmoArtemis" internalDamage="2.5" shotsPerTon="100" health="10"/>
+      <EffectList>
+        <Effect name="AmmoExplosionEffect" asset="fx" asset2="mech_effects.damage.ammo_warhead_explosion" time="5.0" num="40" min="0.1" max="2.5" strength="1.0" float="10.0"/>
+        <Effect name="CASEEffect" asset="case" asset2="mech_effects.damage.ammo_case_explosion"/>
+        <Effect name="FinalEffect" asset="fx" asset2="mech_effects.damage.ammo_warhead_explosion_end"/>
+      </EffectList>
+      <Audio OnAmmoLowDialogue="BB_SRM_Ammo_Low" OnAmmoEmptyDialogue="BB_SRM_Ammo_Empty" OnDestroyedDialogue="BB_SRM_Ammo_Destroyed" />
+    </AmmoType>
+	</AmmoTypeList>
+	<ArmorTypeList>
+		<ArmorType id="2800" name="Standard">
+			<Loc nameTag="@StandardArmor" descTag="@StandardArmor_desc" shortNameTag="@Standard" iconTag="15"/>
+			<!--Armor other than standard take up critical slots on components-->
+			<!--The pointMultiplier represents the number of points there are per ton of armor compared to standard-->
+			<!--Standard armor has 16 points per ton, so an armor with a 1.2 multiplier will be 19.2 points per ton-->
+			<ArmorTypeStats slots="0" pointMultiplier="2"/>
+		</ArmorType>
+		<ArmorType id="2801" name="FerroFibrous">
+			<Loc nameTag="@FerroFibrous" descTag="@FerroFibrous_desc" shortNameTag="@FerroFibrous_short" iconTag="16"/>
+			<ArmorTypeStats slots="14" pointMultiplier="2.24"/>
+		</ArmorType>
+	</ArmorTypeList>
+  <UpgradeTypeList>
+    <UpgradeType id="2810" name="StandardArmorType">
+      <Loc nameTag="@StandardArmorType" descTag="@StandardArmorType_desc" shortNameTag="@Standard" iconTag="21"/>
+      <UpgradeTypeStats type="0" slots="0" pointMultiplier="2" associatedItem="2800"/>
+    </UpgradeType>
+    <UpgradeType id="2811" name="FerroFibrousArmorType">
+      <Loc nameTag="@FerroFibrousType" descTag="@FerroFibrousType_desc" shortNameTag="@FerroFibrous_short" iconTag="16"/>
+      <UpgradeTypeStats type="0" slots="14" pointMultiplier="2.24" associatedItem="2801"/>
+    </UpgradeType>
+    <UpgradeType id="3100" name="StandardStructureType">
+      <Loc nameTag="@StandardStructureType" descTag="@StandardStructureType_desc" shortNameTag="@Standard" iconTag="18"/>
+      <UpgradeTypeStats type="1" slots="0" pointMultiplier="0.1" associatedItem="0"/>
+    </UpgradeType>
+    <UpgradeType id="3101" name="EndoSteelType">
+      <Loc nameTag="@EndoSteelType" descTag="@EndoSteelType_desc" shortNameTag="@EndoSteel_short" iconTag="17"/>
+      <UpgradeTypeStats type="1" slots="14" pointMultiplier="0.05" associatedItem="0"/>
+    </UpgradeType>
+    <UpgradeType id="3003" name="StandardHeatSinkType">
+      <Loc nameTag="@StandardHeatSinkType" descTag="@StandardHeatSinkType_desc" iconTag="20"/>
+      <UpgradeTypeStats type="2" slots="0" pointMultiplier="1.0" associatedItem="3000"/>
+    </UpgradeType>
+    <UpgradeType id="3002" name="DoubleHeatSinkType">
+      <Loc nameTag="@DoubleHeatSinkType" descTag="@DoubleHeatSinkType_desc" iconTag="19"/>
+      <UpgradeTypeStats type="2" slots="0" pointMultiplier="2.0" associatedItem="3001"/>
+    </UpgradeType>
+    <UpgradeType id="3051" name="NoArtemisType">
+      <Loc nameTag="@NoArtemisType" descTag="@NoArtemisType_desc" iconTag="19"/>
+      <UpgradeTypeStats type="3" slots="0" pointMultiplier="0.0" associatedItem="0"/>
+    </UpgradeType>
+    <UpgradeType id="3050" name="ArtemisType">
+      <Loc nameTag="@ArtemisType" descTag="@ArtemisType_desc" iconTag="19"/>
+      <UpgradeTypeStats type="3" slots="1" pointMultiplier="1.0" associatedItem="9001"/>
+    </UpgradeType>
+  </UpgradeTypeList>
+	<CamoList>
+		<!-- All camos needs a Camo tag. Case matters !-->
+		<!-- id = must be unique for all items(not just Camos)
+		 name = give it a readable name !-->
+		<Camo id="6000" name="Forest">
+			<!-- Localization information, take correct tag from loc file and add a @ sign !-->
+			<Loc nameTag="@Forest" descTag="@Forest_desc" iconTag="2"/>
+		</Camo>
+	</CamoList>
+	<DecalList>
+		<!-- All decals needs a Decal tag. Case matters !-->
+		<!-- id = must be unique for all items(not just Decals)
+		 name = give it a readable name !-->
+		<Decal id="7000" name="HappyFace">
+			<!-- Localization information, take correct tag from loc file and add a @ sign !-->
+			<Loc nameTag="@HappyFace" descTag="@HappyFace_desc" iconTag="2"/>
+		</Decal>
+	</DecalList>
+	<ModuleList>
+		<Module id="1500" name="JumpJets_ClassI" CType="CJumpJetStats">
+			<ModuleStats slots="1" tons="2" health="10"/>
+			<Loc nameTag="@JumpJets_ClassI" descTag="@JumpJets_ClassI_desc" iconTag="2"/>
+			<JumpJetStats cooldown="1.0" duration="5.0" boost_fwd="0.1" boost_z="300.0" heat="0.1" minTons="90" maxTons="200"/>
+			<EffectList><!--name = bonename, asset = on effect, asset2 = off effect, asset3 = damaged effect    :    The order in this list determines the order in which the effects get set to damaged for each missing jump jet module-->
+				<Effect name="jet1_x" asset="mech_effects.jumpjets.jet_x" asset2="mech_effects.jumpjets.jet_oof_x" asset3=""/>
+				<Effect name="jet2_x" asset="mech_effects.jumpjets.jet_x" asset2="mech_effects.jumpjets.jet_oof_x" asset3=""/>      
+				<Effect name="jet1_s" asset="mech_effects.jumpjets.jet_s" asset2="mech_effects.jumpjets.jet_oof_s" asset3=""/>
+				<Effect name="jet2_s" asset="mech_effects.jumpjets.jet_s" asset2="mech_effects.jumpjets.jet_oof_s" asset3=""/>
+				<Effect name="jet3_s" asset="mech_effects.jumpjets.jet_s" asset2="mech_effects.jumpjets.jet_oof_s" asset3=""/>
+				<Effect name="jet4_s" asset="mech_effects.jumpjets.jet_s" asset2="mech_effects.jumpjets.jet_oof_s" asset3=""/>
+				<Effect name="jet1_l" asset="mech_effects.jumpjets.jet_l" asset2="mech_effects.jumpjets.jet_oof_l" asset3=""/>
+				<Effect name="jet2_l" asset="mech_effects.jumpjets.jet_l" asset2="mech_effects.jumpjets.jet_oof_l" asset3=""/>
+			</EffectList>
+		</Module>
+		<Module id="1501" name="JumpJets_ClassII" CType="CJumpJetStats">
+			<ModuleStats slots="1" tons="1" health="10"/>
+			<Loc nameTag="@JumpJets_ClassII" descTag="@JumpJets_ClassII_desc" iconTag="2"/>
+			<JumpJetStats cooldown="1.0" duration="5.0" boost_fwd="0.1" boost_z="300.0" heat="0.1" minTons="80" maxTons="90"/>
+			<EffectList>
+				<Effect name="jet1_x" asset="mech_effects.jumpjets.jet_x" asset2="mech_effects.jumpjets.jet_oof_x" asset3=""/>
+				<Effect name="jet2_x" asset="mech_effects.jumpjets.jet_x" asset2="mech_effects.jumpjets.jet_oof_x" asset3=""/>
+				<Effect name="jet1_s" asset="mech_effects.jumpjets.jet_s" asset2="mech_effects.jumpjets.jet_oof_s" asset3=""/>
+				<Effect name="jet2_s" asset="mech_effects.jumpjets.jet_s" asset2="mech_effects.jumpjets.jet_oof_s" asset3=""/>
+				<Effect name="jet3_s" asset="mech_effects.jumpjets.jet_s" asset2="mech_effects.jumpjets.jet_oof_s" asset3=""/>
+				<Effect name="jet4_s" asset="mech_effects.jumpjets.jet_s" asset2="mech_effects.jumpjets.jet_oof_s" asset3=""/>
+				<Effect name="jet1_l" asset="mech_effects.jumpjets.jet_l" asset2="mech_effects.jumpjets.jet_oof_l" asset3=""/>
+				<Effect name="jet2_l" asset="mech_effects.jumpjets.jet_l" asset2="mech_effects.jumpjets.jet_oof_l" asset3=""/>
+			</EffectList>
+		</Module>
+		<Module id="1502" name="JumpJets_ClassIII" CType="CJumpJetStats">
+			<ModuleStats slots="1" tons="1" health="10"/>		
+			<Loc nameTag="@JumpJets_ClassIII" descTag="@JumpJets_ClassIII_desc" iconTag="2"/>
+			<JumpJetStats cooldown="1.0" duration="5.0" boost_fwd="0.1" boost_z="300.0" heat="0.1" minTons="60" maxTons="80"/>
+			<EffectList>
+				<Effect name="jet1_x" asset="mech_effects.jumpjets.jet_x" asset2="mech_effects.jumpjets.jet_oof_x" asset3=""/>
+				<Effect name="jet2_x" asset="mech_effects.jumpjets.jet_x" asset2="mech_effects.jumpjets.jet_oof_x" asset3=""/>
+				<Effect name="jet1_s" asset="mech_effects.jumpjets.jet_s" asset2="mech_effects.jumpjets.jet_oof_s" asset3=""/>
+				<Effect name="jet2_s" asset="mech_effects.jumpjets.jet_s" asset2="mech_effects.jumpjets.jet_oof_s" asset3=""/>
+				<Effect name="jet3_s" asset="mech_effects.jumpjets.jet_s" asset2="mech_effects.jumpjets.jet_oof_s" asset3=""/>
+				<Effect name="jet4_s" asset="mech_effects.jumpjets.jet_s" asset2="mech_effects.jumpjets.jet_oof_s" asset3=""/>
+				<Effect name="jet1_l" asset="mech_effects.jumpjets.jet_l" asset2="mech_effects.jumpjets.jet_oof_l" asset3=""/>
+				<Effect name="jet2_l" asset="mech_effects.jumpjets.jet_l" asset2="mech_effects.jumpjets.jet_oof_l" asset3=""/>
+			</EffectList>
+		</Module>
+		<Module id="1503" name="JumpJets_ClassIV" CType="CJumpJetStats">
+			<ModuleStats slots="1" tons="0.5" health="10"/>
+			<Loc nameTag="@JumpJets_ClassIV" descTag="@JumpJets_ClassIV_desc" iconTag="2"/>
+			<JumpJetStats cooldown="1.0" duration="5.0" boost_fwd="0.1" boost_z="300.0" heat="0.1" minTons="40" maxTons="60"/>
+			<EffectList>
+				<Effect name="jet1_x" asset="mech_effects.jumpjets.jet_x" asset2="mech_effects.jumpjets.jet_oof_x" asset3=""/>
+				<Effect name="jet2_x" asset="mech_effects.jumpjets.jet_x" asset2="mech_effects.jumpjets.jet_oof_x" asset3=""/>
+				<Effect name="jet1_s" asset="mech_effects.jumpjets.jet_s" asset2="mech_effects.jumpjets.jet_oof_s" asset3=""/>
+				<Effect name="jet2_s" asset="mech_effects.jumpjets.jet_s" asset2="mech_effects.jumpjets.jet_oof_s" asset3=""/>
+				<Effect name="jet3_s" asset="mech_effects.jumpjets.jet_s" asset2="mech_effects.jumpjets.jet_oof_s" asset3=""/>
+				<Effect name="jet4_s" asset="mech_effects.jumpjets.jet_s" asset2="mech_effects.jumpjets.jet_oof_s" asset3=""/>
+				<Effect name="jet1_l" asset="mech_effects.jumpjets.jet_l" asset2="mech_effects.jumpjets.jet_oof_l" asset3=""/>
+				<Effect name="jet2_l" asset="mech_effects.jumpjets.jet_l" asset2="mech_effects.jumpjets.jet_oof_l" asset3=""/>
+			</EffectList>
+		</Module>
+		<Module id="1504" name="JumpJets_ClassV" CType="CJumpJetStats">
+			<ModuleStats slots="1" tons="0.5" health="10"/>
+			<Loc nameTag="@JumpJets_ClassV" descTag="@JumpJets_ClassV_desc" iconTag="2"/>
+			<JumpJetStats cooldown="1.0" duration="5.0" boost_fwd="0.1" boost_z="300.0" heat="0.1" minTons="20" maxTons="40"/>
+			<EffectList>
+				<Effect name="jet1_x" asset="mech_effects.jumpjets.jet_x" asset2="mech_effects.jumpjets.jet_oof_x" asset3=""/>
+				<Effect name="jet2_x" asset="mech_effects.jumpjets.jet_x" asset2="mech_effects.jumpjets.jet_oof_x" asset3=""/>
+				<Effect name="jet1_s" asset="mech_effects.jumpjets.jet_s" asset2="mech_effects.jumpjets.jet_oof_s" asset3=""/>
+				<Effect name="jet2_s" asset="mech_effects.jumpjets.jet_s" asset2="mech_effects.jumpjets.jet_oof_s" asset3=""/>
+				<Effect name="jet3_s" asset="mech_effects.jumpjets.jet_s" asset2="mech_effects.jumpjets.jet_oof_s" asset3=""/>
+				<Effect name="jet4_s" asset="mech_effects.jumpjets.jet_s" asset2="mech_effects.jumpjets.jet_oof_s" asset3=""/>
+				<Effect name="jet1_l" asset="mech_effects.jumpjets.jet_l" asset2="mech_effects.jumpjets.jet_oof_l" asset3=""/>
+				<Effect name="jet2_l" asset="mech_effects.jumpjets.jet_l" asset2="mech_effects.jumpjets.jet_oof_l" asset3=""/>
+			</EffectList>
+		</Module>
+		<Module id="3000" name="HeatSink_MkI" CType="CHeatSinkStats">
+			<ModuleStats slots="1" tons="1" health="10"/>
+			<Loc nameTag="@HeatSink_MkI" descTag="@HeatSink_MkI_desc" iconTag="3"/>
+			<HeatSinkStats cooling="0.1" heatbase="-1.0"/>
+			<EffectList>
+				<Effect name="SteamEffect" asset="mech_effects.heatsinks.steam_a"/>
+			</EffectList>
+			<Audio OnDestroyedDialogue="BB_Mech_HeatSink_Destroyed"/>
+		</Module>
+		<Module id="3001" name="DoubleHeatSink_MkI" CType="CHeatSinkStats" DestroyedDialogue="BB_Mech_HeatSink_Destroyed">
+			<ModuleStats slots="3" tons="1" health="10"/>
+			<Loc nameTag="@DoubleHeatSink_MkI" descTag="@DoubleHeatSink_MkI_desc" iconTag="2"/>
+			<HeatSinkStats cooling="0.14" heatbase="-1.4"/>
+			<EffectList>
+				<Effect name="SteamEffect" asset="mech_effects.heatsinks.steam_a"/>
+			</EffectList>
+			<Audio OnDestroyedDialogue="BB_Mech_HeatSink_Destroyed"/>
+		</Module>
+		<Module id="3218" name="Engine_Std_100" CType="CEngineStats">
+			<Loc nameTag="@Engine_Standard_Fusion_100" descTag="@Engine_Standard_Fusion_100_desc" iconTag="4"/>
+			<EngineStats slots="6" rating="100" weight="1.0" type="0" heatsinks="4" health="15"/>
+		</Module>
+		<Module id="3219" name="Engine_Std_105" CType="CEngineStats">
+			<Loc nameTag="@Engine_Standard_Fusion_105" descTag="@Engine_Standard_Fusion_105_desc" iconTag="5"/>
+			<EngineStats slots="6" rating="105" weight="2.5" type="0" heatsinks="4" health="15"/>
+		</Module>
+		<Module id="3220" name="Engine_Std_110" CType="CEngineStats">
+			<Loc nameTag="@Engine_Standard_Fusion_110" descTag="@Engine_Standard_Fusion_110_desc" iconTag="6"/>
+			<EngineStats slots="6" rating="110" weight="2.5" type="0" heatsinks="4" health="15"/>
+		</Module>
+		<Module id="3221" name="Engine_Std_115" CType="CEngineStats">
+			<Loc nameTag="@Engine_Standard_Fusion_115" descTag="@Engine_Standard_Fusion_115_desc" iconTag="7"/>
+			<EngineStats slots="6" rating="115" weight="3.0" type="0" heatsinks="4" health="15"/>
+		</Module>
+		<Module id="3222" name="Engine_Std_120" CType="CEngineStats">
+			<Loc nameTag="@Engine_Standard_Fusion_120" descTag="@Engine_Standard_Fusion_120_desc" iconTag="8"/>
+			<EngineStats slots="6" rating="120" weight="3.0" type="0" heatsinks="4" health="15"/>
+		</Module>
+		<Module id="3223" name="Engine_Std_125" CType="CEngineStats">
+			<Loc nameTag="@Engine_Standard_Fusion_125" descTag="@Engine_Standard_Fusion_125_desc" iconTag="9"/>
+			<EngineStats slots="6" rating="125" weight="4.0" type="0" heatsinks="5" health="15"/>
+		</Module>
+		<Module id="3224" name="Engine_Std_130" CType="CEngineStats">
+			<Loc nameTag="@Engine_Standard_Fusion_130" descTag="@Engine_Standard_Fusion_130_desc" iconTag="10"/>
+			<EngineStats slots="6" rating="130" weight="4.5" type="0" heatsinks="5" health="15"/>
+		</Module>
+		<Module id="3225" name="Engine_Std_135" CType="CEngineStats">
+			<Loc nameTag="@Engine_Standard_Fusion_135" descTag="@Engine_Standard_Fusion_135_desc" iconTag="11"/>
+			<EngineStats slots="6" rating="135" weight="4.5" type="0" heatsinks="5" health="15"/>
+		</Module>
+		<Module id="3226" name="Engine_Std_140" CType="CEngineStats">
+			<Loc nameTag="@Engine_Standard_Fusion_140" descTag="@Engine_Standard_Fusion_140_desc" iconTag="12"/>
+			<EngineStats slots="6" rating="140" weight="5.0" type="0" heatsinks="5" health="15"/>
+		</Module>
+		<Module id="3227" name="Engine_Std_145" CType="CEngineStats">
+			<Loc nameTag="@Engine_Standard_Fusion_145" descTag="@Engine_Standard_Fusion_145_desc" iconTag="13"/>
+			<EngineStats slots="6" rating="145" weight="5.0" type="0" heatsinks="5" health="15"/>
+		</Module>
+		<Module id="3228" name="Engine_Std_150" CType="CEngineStats">
+			<Loc nameTag="@Engine_Standard_Fusion_150" descTag="@Engine_Standard_Fusion_150_desc" iconTag="14"/>
+			<EngineStats slots="6" rating="150" weight="6.5" type="0" heatsinks="6" health="15"/>
+		</Module>
+		<Module id="3229" name="Engine_Std_155" CType="CEngineStats">
+			<Loc nameTag="@Engine_Standard_Fusion_155" descTag="@Engine_Standard_Fusion_155_desc" iconTag="15"/>
+			<EngineStats slots="6" rating="155" weight="6.5" type="0" heatsinks="6" health="15"/>
+		</Module>
+		<Module id="3230" name="Engine_Std_160" CType="CEngineStats">
+			<Loc nameTag="@Engine_Standard_Fusion_160" descTag="@Engine_Standard_Fusion_160_desc" iconTag="16"/>
+			<EngineStats slots="6" rating="160" weight="7" type="0" heatsinks="6" health="15"/>
+		</Module>
+		<Module id="3231" name="Engine_Std_165" CType="CEngineStats">
+			<Loc nameTag="@Engine_Standard_Fusion_165" descTag="@Engine_Standard_Fusion_165_desc" iconTag="17"/>
+			<EngineStats slots="6" rating="165" weight="7" type="0" heatsinks="6" health="15"/>
+		</Module>
+		<Module id="3232" name="Engine_Std_170" CType="CEngineStats">
+			<Loc nameTag="@Engine_Standard_Fusion_170" descTag="@Engine_Standard_Fusion_170_desc" iconTag="18"/>
+			<EngineStats slots="6" rating="170" weight="7" type="0" heatsinks="6" health="15"/>
+		</Module>
+		<Module id="3233" name="Engine_Std_175" CType="CEngineStats">
+			<Loc nameTag="@Engine_Standard_Fusion_175" descTag="@Engine_Standard_Fusion_175_desc" iconTag="19"/>
+			<EngineStats slots="6" rating="175" weight="9" type="0" heatsinks="7" health="15"/>
+		</Module>
+		<Module id="3234" name="Engine_Std_180" CType="CEngineStats">
+			<Loc nameTag="@Engine_Standard_Fusion_180" descTag="@Engine_Standard_Fusion_180_desc" iconTag="20"/>
+			<EngineStats slots="6" rating="180" weight="9" type="0" heatsinks="7" health="15"/>
+		</Module>
+		<Module id="3235" name="Engine_Std_185" CType="CEngineStats">
+			<Loc nameTag="@Engine_Standard_Fusion_185" descTag="@Engine_Standard_Fusion_185_desc" iconTag="21"/>
+			<EngineStats slots="6" rating="185" weight="9.5" type="0" heatsinks="7" health="15"/>
+		</Module>
+		<Module id="3236" name="Engine_Std_190" CType="CEngineStats">
+			<Loc nameTag="@Engine_Standard_Fusion_190" descTag="@Engine_Standard_Fusion_190_desc" iconTag="22"/>
+			<EngineStats slots="6" rating="190" weight="9.5" type="0" heatsinks="7" health="15"/>
+		</Module>
+		<Module id="3237" name="Engine_Std_195" CType="CEngineStats">
+			<Loc nameTag="@Engine_Standard_Fusion_195" descTag="@Engine_Standard_Fusion_195_desc" iconTag="23"/>
+			<EngineStats slots="6" rating="195" weight="10" type="0" heatsinks="7" health="15"/>
+		</Module>
+		<Module id="3238" name="Engine_Std_200" CType="CEngineStats">
+			<Loc nameTag="@Engine_Standard_Fusion_200" descTag="@Engine_Standard_Fusion_200_desc" iconTag="24"/>
+			<EngineStats slots="6" rating="200" weight="11.5" type="0" heatsinks="8" health="15"/>
+		</Module>
+		<Module id="3239" name="Engine_Std_205" CType="CEngineStats">
+			<Loc nameTag="@Engine_Standard_Fusion_205" descTag="@Engine_Standard_Fusion_205_desc" iconTag="25"/>
+			<EngineStats slots="6" rating="205" weight="12.5" type="0" heatsinks="8" health="15"/>
+		</Module>
+		<Module id="3240" name="Engine_Std_210" CType="CEngineStats">
+			<Loc nameTag="@Engine_Standard_Fusion_210" descTag="@Engine_Standard_Fusion_210_desc" iconTag="26"/>
+			<EngineStats slots="6" rating="210" weight="13" type="0" heatsinks="8" health="15"/>
+		</Module>
+		<Module id="3241" name="Engine_Std_215" CType="CEngineStats">
+			<Loc nameTag="@Engine_Standard_Fusion_215" descTag="@Engine_Standard_Fusion_215_desc" iconTag="27"/>
+			<EngineStats slots="6" rating="215" weight="13.5" type="0" heatsinks="8" health="15"/>
+		</Module>
+		<Module id="3242" name="Engine_Std_220" CType="CEngineStats">
+			<Loc nameTag="@Engine_Standard_Fusion_220" descTag="@Engine_Standard_Fusion_220_desc" iconTag="28"/>
+			<EngineStats slots="6" rating="220" weight="14" type="0" heatsinks="8" health="15"/>
+		</Module>
+		<Module id="3243" name="Engine_Std_225" CType="CEngineStats">
+			<Loc nameTag="@Engine_Standard_Fusion_225" descTag="@Engine_Standard_Fusion_225_desc" iconTag="29"/>
+			<EngineStats slots="6" rating="225" weight="15" type="0" heatsinks="9" health="15"/>
+		</Module>
+		<Module id="3244" name="Engine_Std_230" CType="CEngineStats">
+			<Loc nameTag="@Engine_Standard_Fusion_230" descTag="@Engine_Standard_Fusion_230_desc" iconTag="30"/>
+			<EngineStats slots="6" rating="230" weight="15.5" type="0" heatsinks="9" health="15"/>
+		</Module>
+		<Module id="3245" name="Engine_Std_235" CType="CEngineStats">
+			<Loc nameTag="@Engine_Standard_Fusion_235" descTag="@Engine_Standard_Fusion_235_desc" iconTag="31"/>
+			<EngineStats slots="6" rating="235" weight="16" type="0" heatsinks="9" health="15"/>
+		</Module>
+		<Module id="3246" name="Engine_Std_240" CType="CEngineStats">
+			<Loc nameTag="@Engine_Standard_Fusion_240" descTag="@Engine_Standard_Fusion_240_desc" iconTag="32"/>
+			<EngineStats slots="6" rating="240" weight="16.5" type="0" heatsinks="9" health="15"/>
+		</Module>
+		<Module id="3247" name="Engine_Std_245" CType="CEngineStats">
+			<Loc nameTag="@Engine_Standard_Fusion_245" descTag="@Engine_Standard_Fusion_245_desc" iconTag="33"/>
+			<EngineStats slots="6" rating="245" weight="17" type="0" heatsinks="9" health="15"/>
+		</Module>
+		<Module id="3248" name="Engine_Std_250" CType="CEngineStats">
+			<Loc nameTag="@Engine_Standard_Fusion_250" descTag="@Engine_Standard_Fusion_250_desc" iconTag="34"/>
+			<EngineStats slots="6" rating="250" weight="18.5" type="0" heatsinks="10" health="15"/>
+		</Module>
+		<Module id="3249" name="Engine_Std_255" CType="CEngineStats">
+			<Loc nameTag="@Engine_Standard_Fusion_255" descTag="@Engine_Standard_Fusion_255_desc" iconTag="35"/>
+			<EngineStats slots="6" rating="255" weight="19" type="0" heatsinks="10" health="15"/>
+		</Module>
+		<Module id="3250" name="Engine_Std_260" CType="CEngineStats">
+			<Loc nameTag="@Engine_Standard_Fusion_260" descTag="@Engine_Standard_Fusion_260_desc" iconTag="36"/>
+			<EngineStats slots="6" rating="260" weight="19.5" type="0" heatsinks="10" health="15"/>
+		</Module>
+		<Module id="3251" name="Engine_Std_265" CType="CEngineStats">
+			<Loc nameTag="@Engine_Standard_Fusion_265" descTag="@Engine_Standard_Fusion_265_desc" iconTag="37"/>
+			<EngineStats slots="6" rating="265" weight="20" type="0" heatsinks="10" health="15"/>
+		</Module>
+		<Module id="3252" name="Engine_Std_270" CType="CEngineStats">
+			<Loc nameTag="@Engine_Standard_Fusion_270" descTag="@Engine_Standard_Fusion_270_desc" iconTag="38"/>
+			<EngineStats slots="6" rating="270" weight="20.5" type="0" heatsinks="10" health="15"/>
+		</Module>
+		<Module id="3253" name="Engine_Std_275" CType="CEngineStats">
+			<Loc nameTag="@Engine_Standard_Fusion_275" descTag="@Engine_Standard_Fusion_275_desc" iconTag="39"/>
+			<EngineStats slots="6" rating="275" weight="21.5" type="0" heatsinks="11" health="15"/>
+		</Module>
+		<Module id="3254" name="Engine_Std_280" CType="CEngineStats">
+			<Loc nameTag="@Engine_Standard_Fusion_280" descTag="@Engine_Standard_Fusion_280_desc" iconTag="40"/>
+			<EngineStats slots="6" rating="280" weight="22" type="0" heatsinks="11" health="15"/>
+		</Module>
+		<Module id="3255" name="Engine_Std_285" CType="CEngineStats">
+			<Loc nameTag="@Engine_Standard_Fusion_285" descTag="@Engine_Standard_Fusion_285_desc" iconTag="41"/>
+			<EngineStats slots="6" rating="285" weight="22.5" type="0" heatsinks="11" health="15"/>
+		</Module>
+		<Module id="3256" name="Engine_Std_290" CType="CEngineStats">
+			<Loc nameTag="@Engine_Standard_Fusion_290" descTag="@Engine_Standard_Fusion_290_desc" iconTag="42"/>
+			<EngineStats slots="6" rating="290" weight="23.5" type="0" heatsinks="11" health="15"/>
+		</Module>
+		<Module id="3257" name="Engine_Std_295" CType="CEngineStats">
+			<Loc nameTag="@Engine_Standard_Fusion_295" descTag="@Engine_Standard_Fusion_295_desc" iconTag="43"/>
+			<EngineStats slots="6" rating="295" weight="24" type="0" heatsinks="11" health="15"/>
+		</Module>
+		<Module id="3258" name="Engine_Std_300" CType="CEngineStats">
+			<Loc nameTag="@Engine_Standard_Fusion_300" descTag="@Engine_Standard_Fusion_300_desc" iconTag="44"/>
+			<EngineStats slots="6" rating="300" weight="25.0" type="0" heatsinks="12" health="15"/>
+		</Module>
+		<Module id="3259" name="Engine_Std_305" CType="CEngineStats">
+			<Loc nameTag="@Engine_Standard_Fusion_305" descTag="@Engine_Standard_Fusion_305_desc" iconTag="45"/>
+			<EngineStats slots="6" rating="305" weight="26.5" type="0" heatsinks="12" health="15"/>
+		</Module>
+		<Module id="3260" name="Engine_Std_310" CType="CEngineStats">
+			<Loc nameTag="@Engine_Standard_Fusion_310" descTag="@Engine_Standard_Fusion_310_desc" iconTag="46"/>
+			<EngineStats slots="6" rating="310" weight="27.5" type="0" heatsinks="12" health="15"/>
+		</Module>
+		<Module id="3261" name="Engine_Std_315" CType="CEngineStats">
+			<Loc nameTag="@Engine_Standard_Fusion_315" descTag="@Engine_Standard_Fusion_315_desc" iconTag="47"/>
+			<EngineStats slots="6" rating="315" weight="28.5" type="0" heatsinks="12" health="15"/>
+		</Module>
+		<Module id="3262" name="Engine_Std_320" CType="CEngineStats">
+			<Loc nameTag="@Engine_Standard_Fusion_320" descTag="@Engine_Standard_Fusion_320_desc" iconTag="48"/>
+			<EngineStats slots="6" rating="320" weight="29.5" type="0" heatsinks="12" health="15"/>
+		</Module>
+		<Module id="3263" name="Engine_Std_325" CType="CEngineStats">
+			<Loc nameTag="@Engine_Standard_Fusion_325" descTag="@Engine_Standard_Fusion_325_desc" iconTag="49"/>
+			<EngineStats slots="6" rating="325" weight="30.5" type="0" heatsinks="13" health="15"/>
+		</Module>
+		<Module id="3264" name="Engine_Std_330" CType="CEngineStats">
+			<Loc nameTag="@Engine_Standard_Fusion_330" descTag="@Engine_Standard_Fusion_330_desc" iconTag="50"/>
+			<EngineStats slots="6" rating="330" weight="31.5" type="0" heatsinks="13" health="15"/>
+		</Module>
+		<Module id="3265" name="Engine_Std_335" CType="CEngineStats">
+			<Loc nameTag="@Engine_Standard_Fusion_335" descTag="@Engine_Standard_Fusion_335_desc" iconTag="51"/>
+			<EngineStats slots="6" rating="335" weight="32.5" type="0" heatsinks="13" health="15"/>
+		</Module>
+		<Module id="3266" name="Engine_Std_340" CType="CEngineStats">
+			<Loc nameTag="@Engine_Standard_Fusion_340" descTag="@Engine_Standard_Fusion_340_desc" iconTag="52"/>
+			<EngineStats slots="6" rating="340" weight="34" type="0" heatsinks="13" health="15"/>
+		</Module>
+		<Module id="3267" name="Engine_Std_345" CType="CEngineStats">
+			<Loc nameTag="@Engine_Standard_Fusion_345" descTag="@Engine_Standard_Fusion_345_desc" iconTag="53"/>
+			<EngineStats slots="6" rating="345" weight="35.5" type="0" heatsinks="13" health="15"/>
+		</Module>
+		<Module id="3268" name="Engine_Std_350" CType="CEngineStats">
+			<Loc nameTag="@Engine_Standard_Fusion_350" descTag="@Engine_Standard_Fusion_350_desc" iconTag="54"/>
+			<EngineStats slots="6" rating="350" weight="36.5" type="0" heatsinks="14" health="15"/>
+		</Module>
+		<Module id="3269" name="Engine_Std_355" CType="CEngineStats">
+			<Loc nameTag="@Engine_Standard_Fusion_355" descTag="@Engine_Standard_Fusion_355_desc" iconTag="55"/>
+			<EngineStats slots="6" rating="355" weight="38.5" type="0" heatsinks="14" health="15"/>
+		</Module>
+		<Module id="3270" name="Engine_Std_360" CType="CEngineStats">
+			<Loc nameTag="@Engine_Standard_Fusion_360" descTag="@Engine_Standard_Fusion_360_desc" iconTag="56"/>
+			<EngineStats slots="6" rating="360" weight="40" type="0" heatsinks="14" health="15"/>
+		</Module>
+		<Module id="3271" name="Engine_Std_365" CType="CEngineStats">
+			<Loc nameTag="@Engine_Standard_Fusion_365" descTag="@Engine_Standard_Fusion_365_desc" iconTag="57"/>
+			<EngineStats slots="6" rating="365" weight="41.5" type="0" heatsinks="14" health="15"/>
+		</Module>
+		<Module id="3272" name="Engine_Std_370" CType="CEngineStats">
+			<Loc nameTag="@Engine_Standard_Fusion_370" descTag="@Engine_Standard_Fusion_370_desc" iconTag="58"/>
+			<EngineStats slots="6" rating="370" weight="43.5" type="0" heatsinks="14" health="15"/>
+		</Module>
+		<Module id="3273" name="Engine_Std_375" CType="CEngineStats">
+			<Loc nameTag="@Engine_Standard_Fusion_375" descTag="@Engine_Standard_Fusion_375_desc" iconTag="59"/>
+			<EngineStats slots="6" rating="375" weight="45.5" type="0" heatsinks="15" health="15"/>
+		</Module>
+		<Module id="3274" name="Engine_Std_380" CType="CEngineStats">
+			<Loc nameTag="@Engine_Standard_Fusion_380" descTag="@Engine_Standard_Fusion_380_desc" iconTag="60"/>
+			<EngineStats slots="6" rating="380" weight="48" type="0" heatsinks="15" health="15"/>
+		</Module>
+		<Module id="3275" name="Engine_Std_385" CType="CEngineStats">
+			<Loc nameTag="@Engine_Standard_Fusion_385" descTag="@Engine_Standard_Fusion_385_desc" iconTag="61"/>
+			<EngineStats slots="6" rating="385" weight="50.5" type="0" heatsinks="15" health="15"/>
+		</Module>
+		<Module id="3276" name="Engine_Std_390" CType="CEngineStats">
+			<Loc nameTag="@Engine_Standard_Fusion_390" descTag="@Engine_Standard_Fusion_390_desc" iconTag="62"/>
+			<EngineStats slots="6" rating="390" weight="53" type="0" heatsinks="15" health="15"/>
+		</Module>
+		<Module id="3277" name="Engine_Std_395" CType="CEngineStats">
+			<Loc nameTag="@Engine_Standard_Fusion_395" descTag="@Engine_Standard_Fusion_395_desc" iconTag="63"/>
+			<EngineStats slots="6" rating="395" weight="56" type="0" heatsinks="15" health="15"/>
+		</Module>
+		<Module id="3278" name="Engine_Std_400" CType="CEngineStats">
+			<Loc nameTag="@Engine_Standard_Fusion_400" descTag="@Engine_Standard_Fusion_400_desc" iconTag="64"/>
+			<EngineStats slots="6" rating="400" weight="59.5" type="0" heatsinks="16" health="15"/>
+		</Module>
+		<Module id="3318" name="Engine_XL_100" CType="CEngineStats">
+			<Loc nameTag="@Engine_XL_Fusion_100" descTag="@Engine_XL_Fusion_100_desc" iconTag="2"/>
+			<EngineStats slots="12" rating="100" weight="0.5" type="0" heatsinks="4" health="15"/>
+		</Module>
+		<Module id="3319" name="Engine_XL_105" CType="CEngineStats">
+			<Loc nameTag="@Engine_XL_Fusion_105" descTag="@Engine_XL_Fusion_105_desc" iconTag="2"/>
+			<EngineStats slots="12" rating="105" weight="1.0" type="0" heatsinks="4" health="15"/>
+		</Module>
+		<Module id="3320" name="Engine_XL_110" CType="CEngineStats">
+			<Loc nameTag="@Engine_XL_Fusion_110" descTag="@Engine_XL_Fusion_110_desc" iconTag="2"/>
+			<EngineStats slots="12" rating="110" weight="1.0" type="0" heatsinks="4" health="15"/>
+		</Module>
+		<Module id="3321" name="Engine_XL_115" CType="CEngineStats">
+			<Loc nameTag="@Engine_XL_Fusion_115" descTag="@Engine_XL_Fusion_115_desc" iconTag="2"/>
+			<EngineStats slots="12" rating="115" weight="1.0" type="0" heatsinks="4" health="15"/>
+		</Module>
+		<Module id="3322" name="Engine_XL_120" CType="CEngineStats">
+			<Loc nameTag="@Engine_XL_Fusion_120" descTag="@Engine_XL_Fusion_120_desc" iconTag="2"/>
+			<EngineStats slots="12" rating="120" weight="1.0" type="0" heatsinks="4" health="15"/>
+		</Module>
+		<Module id="3323" name="Engine_XL_125" CType="CEngineStats">
+			<Loc nameTag="@Engine_XL_Fusion_125" descTag="@Engine_XL_Fusion_125_desc" iconTag="2"/>
+			<EngineStats slots="12" rating="125" weight="2.0" type="0" heatsinks="5" health="15"/>
+		</Module>
+		<Module id="3324" name="Engine_XL_130" CType="CEngineStats">
+			<Loc nameTag="@Engine_XL_Fusion_130" descTag="@Engine_XL_Fusion_130_desc" iconTag="2"/>
+			<EngineStats slots="12" rating="130" weight="2.5" type="0" heatsinks="5" health="15"/>
+		</Module>
+		<Module id="3325" name="Engine_XL_135" CType="CEngineStats">
+			<Loc nameTag="@Engine_XL_Fusion_135" descTag="@Engine_XL_Fusion_135_desc" iconTag="2"/>
+			<EngineStats slots="12" rating="135" weight="2.5" type="0" heatsinks="5" health="15"/>
+		</Module>
+		<Module id="3326" name="Engine_XL_140" CType="CEngineStats">
+			<Loc nameTag="@Engine_XL_Fusion_140" descTag="@Engine_XL_Fusion_140_desc" iconTag="2"/>
+			<EngineStats slots="12" rating="140" weight="2.5" type="0" heatsinks="5" health="15"/>
+		</Module>
+		<Module id="3327" name="Engine_XL_145" CType="CEngineStats">
+			<Loc nameTag="@Engine_XL_Fusion_145" descTag="@Engine_XL_Fusion_145_desc" iconTag="2"/>
+			<EngineStats slots="12" rating="145" weight="2.5" type="0" heatsinks="5" health="15"/>
+		</Module>
+		<Module id="3328" name="Engine_XL_150" CType="CEngineStats">
+			<Loc nameTag="@Engine_XL_Fusion_150" descTag="@Engine_XL_Fusion_150_desc" iconTag="2"/>
+			<EngineStats slots="12" rating="150" weight="4.0" type="0" heatsinks="6" health="15"/>
+		</Module>
+		<Module id="3329" name="Engine_XL_155" CType="CEngineStats">
+			<Loc nameTag="@Engine_XL_Fusion_155" descTag="@Engine_XL_Fusion_155_desc" iconTag="2"/>
+			<EngineStats slots="12" rating="155" weight="4.0" type="0" heatsinks="6" health="15"/>
+		</Module>
+		<Module id="3330" name="Engine_XL_160" CType="CEngineStats">
+			<Loc nameTag="@Engine_XL_Fusion_160" descTag="@Engine_XL_Fusion_160_desc" iconTag="66"/>
+			<EngineStats slots="12" rating="160" weight="4.0." type="0" heatsinks="6" health="15"/>
+		</Module>
+		<Module id="3331" name="Engine_XL_165" CType="CEngineStats">
+			<Loc nameTag="@Engine_XL_Fusion_165" descTag="@Engine_XL_Fusion_165_desc" iconTag="67"/>
+			<EngineStats slots="12" rating="165" weight="4.0" type="0" heatsinks="6" health="15"/>
+		</Module>
+		<Module id="3332" name="Engine_XL_170" CType="CEngineStats">
+			<Loc nameTag="@Engine_XL_Fusion_170" descTag="@Engine_XL_Fusion_170_desc" iconTag="68"/>
+			<EngineStats slots="12" rating="170" weight="4.0" type="0" heatsinks="6" health="15"/>
+		</Module>
+		<Module id="3333" name="Engine_XL_175" CType="CEngineStats">
+			<Loc nameTag="@Engine_XL_Fusion_175" descTag="@Engine_XL_Fusion_175_desc" iconTag="69"/>
+			<EngineStats slots="12" rating="175" weight="5.5" type="0" heatsinks="7" health="15"/>
+		</Module>
+		<Module id="3334" name="Engine_XL_180" CType="CEngineStats">
+			<Loc nameTag="@Engine_XL_Fusion_180" descTag="@Engine_XL_Fusion_180_desc" iconTag="70"/>
+			<EngineStats slots="12" rating="180" weight="5.5" type="0" heatsinks="7" health="15"/>
+		</Module>
+		<Module id="3335" name="Engine_XL_185" CType="CEngineStats">
+			<Loc nameTag="@Engine_XL_Fusion_185" descTag="@Engine_XL_Fusion_185_desc" iconTag="71"/>
+			<EngineStats slots="12" rating="185" weight="6" type="0" heatsinks="7" health="15"/>
+		</Module>
+		<Module id="3336" name="Engine_XL_190" CType="CEngineStats">
+			<Loc nameTag="@Engine_XL_Fusion_190" descTag="@Engine_XL_Fusion_190_desc" iconTag="72"/>
+			<EngineStats slots="12" rating="190" weight="6" type="0" heatsinks="7" health="15"/>
+		</Module>
+		<Module id="3337" name="Engine_XL_195" CType="CEngineStats">
+			<Loc nameTag="@Engine_XL_Fusion_195" descTag="@Engine_XL_Fusion_195_desc" iconTag="73"/>
+			<EngineStats slots="12" rating="195" weight="6" type="0" heatsinks="7" health="15"/>
+		</Module>
+		<Module id="3338" name="Engine_XL_200" CType="CEngineStats">
+			<Loc nameTag="@Engine_XL_Fusion_200" descTag="@Engine_XL_Fusion_200_desc" iconTag="74"/>
+			<EngineStats slots="12" rating="200" weight="7.5" type="0" heatsinks="8" health="15"/>
+		</Module>
+		<Module id="3339" name="Engine_XL_205" CType="CEngineStats">
+			<Loc nameTag="@Engine_XL_Fusion_205" descTag="@Engine_XL_Fusion_205_desc" iconTag="75"/>
+			<EngineStats slots="12" rating="205" weight="8.5" type="0" heatsinks="8" health="15"/>
+		</Module>
+		<Module id="3340" name="Engine_XL_210" CType="CEngineStats">
+			<Loc nameTag="@Engine_XL_Fusion_210" descTag="@Engine_XL_Fusion_210_desc" iconTag="76"/>
+			<EngineStats slots="12" rating="210" weight="8.5" type="0" heatsinks="8" health="15"/>
+		</Module>
+		<Module id="3341" name="Engine_XL_215" CType="CEngineStats">
+			<Loc nameTag="@Engine_XL_Fusion_215" descTag="@Engine_XL_Fusion_215_desc" iconTag="77"/>
+			<EngineStats slots="12" rating="215" weight="9" type="0" heatsinks="8" health="15"/>
+		</Module>
+		<Module id="3342" name="Engine_XL_220" CType="CEngineStats">
+			<Loc nameTag="@Engine_XL_Fusion_220" descTag="@Engine_XL_Fusion_220_desc" iconTag="78"/>
+			<EngineStats slots="12" rating="220" weight="9" type="0" heatsinks="8" health="15"/>
+		</Module>
+		<Module id="3343" name="Engine_XL_225" CType="CEngineStats">
+			<Loc nameTag="@Engine_XL_Fusion_225" descTag="@Engine_XL_Fusion_225_desc" iconTag="79"/>
+			<EngineStats slots="12" rating="225" weight="10" type="0" heatsinks="9" health="15"/>
+		</Module>
+		<Module id="3344" name="Engine_XL_230" CType="CEngineStats">
+			<Loc nameTag="@Engine_XL_Fusion_230" descTag="@Engine_XL_Fusion_230_desc" iconTag="80"/>
+			<EngineStats slots="12" rating="230" weight="10.5" type="0" heatsinks="9" health="15"/>
+		</Module>
+		<Module id="3345" name="Engine_XL_235" CType="CEngineStats">
+			<Loc nameTag="@Engine_XL_Fusion_235" descTag="@Engine_XL_Fusion_235_desc" iconTag="81"/>
+			<EngineStats slots="12" rating="235" weight="10.5" type="0" heatsinks="9" health="15"/>
+		</Module>
+		<Module id="3346" name="Engine_XL_240" CType="CEngineStats">
+			<Loc nameTag="@Engine_XL_Fusion_240" descTag="@Engine_XL_Fusion_240_desc" iconTag="82"/>
+			<EngineStats slots="12" rating="240" weight="11" type="0" heatsinks="9" health="15"/>
+		</Module>
+		<Module id="3347" name="Engine_XL_245" CType="CEngineStats">
+			<Loc nameTag="@Engine_XL_Fusion_245" descTag="@Engine_XL_Fusion_245_desc" iconTag="83"/>
+			<EngineStats slots="12" rating="245" weight="11" type="0" heatsinks="9" health="15"/>
+		</Module>
+		<Module id="3348" name="Engine_XL_250" CType="CEngineStats">
+			<Loc nameTag="@Engine_XL_Fusion_250" descTag="@Engine_XL_Fusion_250_desc" iconTag="84"/>
+			<EngineStats slots="12" rating="250" weight="12.5" type="0" heatsinks="10" health="15"/>
+		</Module>
+		<Module id="3349" name="Engine_XL_255" CType="CEngineStats">
+			<Loc nameTag="@Engine_XL_Fusion_255" descTag="@Engine_XL_Fusion_255_desc" iconTag="85"/>
+			<EngineStats slots="12" rating="255" weight="12.5" type="0" heatsinks="10" health="15"/>
+		</Module>
+		<Module id="3350" name="Engine_XL_260" CType="CEngineStats">
+			<Loc nameTag="@Engine_XL_Fusion_260" descTag="@Engine_XL_Fusion_260_desc" iconTag="86"/>
+			<EngineStats slots="12" rating="260" weight="13" type="0" heatsinks="10" health="15"/>
+		</Module>
+		<Module id="3351" name="Engine_XL_265" CType="CEngineStats">
+			<Loc nameTag="@Engine_XL_Fusion_265" descTag="@Engine_XL_Fusion_265_desc" iconTag="87"/>
+			<EngineStats slots="12" rating="265" weight="13" type="0" heatsinks="10" health="15"/>
+		</Module>
+		<Module id="3352" name="Engine_XL_270" CType="CEngineStats">
+			<Loc nameTag="@Engine_XL_Fusion_270" descTag="@Engine_XL_Fusion_270_desc" iconTag="88"/>
+			<EngineStats slots="12" rating="270" weight="13.5" type="0" heatsinks="10" health="15"/>
+		</Module>
+		<Module id="3353" name="Engine_XL_275" CType="CEngineStats">
+			<Loc nameTag="@Engine_XL_Fusion_275" descTag="@Engine_XL_Fusion_275_desc" iconTag="89"/>
+			<EngineStats slots="12" rating="275" weight="14" type="0" heatsinks="11" health="15"/>
+		</Module>
+		<Module id="3354" name="Engine_XL_280" CType="CEngineStats">
+			<Loc nameTag="@Engine_XL_Fusion_280" descTag="@Engine_XL_Fusion_280_desc" iconTag="90"/>
+			<EngineStats slots="12" rating="280" weight="14" type="0" heatsinks="11" health="15"/>
+		</Module>
+		<Module id="3355" name="Engine_XL_285" CType="CEngineStats">
+			<Loc nameTag="@Engine_XL_Fusion_285" descTag="@Engine_XL_Fusion_285_desc" iconTag="91"/>
+			<EngineStats slots="12" rating="285" weight="14.5" type="0" heatsinks="11" health="15"/>
+		</Module>
+		<Module id="3356" name="Engine_XL_290" CType="CEngineStats">
+			<Loc nameTag="@Engine_XL_Fusion_290" descTag="@Engine_XL_Fusion_290_desc" iconTag="92"/>
+			<EngineStats slots="12" rating="290" weight="15" type="0" heatsinks="11" health="15"/>
+		</Module>
+		<Module id="3357" name="Engine_XL_295" CType="CEngineStats">
+			<Loc nameTag="@Engine_XL_Fusion_295" descTag="@Engine_XL_Fusion_295_desc" iconTag="93"/>
+			<EngineStats slots="12" rating="295" weight="15" type="0" heatsinks="11" health="15"/>
+		</Module>
+		<Module id="3358" name="Engine_XL_300" CType="CEngineStats">
+			<Loc nameTag="@Engine_XL_Fusion_300" descTag="@Engine_XL_Fusion_300_desc" iconTag="94"/>
+			<EngineStats slots="12" rating="300" weight="15.5" type="0" heatsinks="12" health="15"/>
+		</Module>
+		<Module id="3359" name="Engine_XL_305" CType="CEngineStats">
+			<Loc nameTag="@Engine_XL_Fusion_305" descTag="@Engine_XL_Fusion_305_desc" iconTag="95"/>
+			<EngineStats slots="12" rating="305" weight="17" type="0" heatsinks="12" health="15"/>
+		</Module>
+		<Module id="3360" name="Engine_XL_310" CType="CEngineStats">
+			<Loc nameTag="@Engine_XL_Fusion_310" descTag="@Engine_XL_Fusion_310_desc" iconTag="96"/>
+			<EngineStats slots="12" rating="310" weight="17.5" type="0" heatsinks="12" health="15"/>
+		</Module>
+		<Module id="3361" name="Engine_XL_315" CType="CEngineStats">
+			<Loc nameTag="@Engine_XL_Fusion_315" descTag="@Engine_XL_Fusion_315_desc" iconTag="97"/>
+			<EngineStats slots="12" rating="315" weight="18" type="0" heatsinks="12" health="15"/>
+		</Module>
+		<Module id="3362" name="Engine_XL_320" CType="CEngineStats">
+			<Loc nameTag="@Engine_XL_Fusion_320" descTag="@Engine_XL_Fusion_320_desc" iconTag="98"/>
+			<EngineStats slots="12" rating="320" weight="18.5" type="0" heatsinks="12" health="15"/>
+		</Module>
+		<Module id="3363" name="Engine_XL_325" CType="CEngineStats">
+			<Loc nameTag="@Engine_XL_Fusion_325" descTag="@Engine_XL_Fusion_325_desc" iconTag="99"/>
+			<EngineStats slots="12" rating="325" weight="19" type="0" heatsinks="13" health="15"/>
+		</Module>
+		<Module id="3364" name="Engine_XL_330" CType="CEngineStats">
+			<Loc nameTag="@Engine_XL_Fusion_330" descTag="@Engine_XL_Fusion_330_desc" iconTag="100"/>
+			<EngineStats slots="12" rating="330" weight="19.5" type="0" heatsinks="13" health="15"/>
+		</Module>
+		<Module id="3365" name="Engine_XL_335" CType="CEngineStats">
+			<Loc nameTag="@Engine_XL_Fusion_335" descTag="@Engine_XL_Fusion_335_desc" iconTag="101"/>
+			<EngineStats slots="12" rating="335" weight="20" type="0" heatsinks="13" health="15"/>
+		</Module>
+		<Module id="3366" name="Engine_XL_340" CType="CEngineStats">
+			<Loc nameTag="@Engine_XL_Fusion_340" descTag="@Engine_XL_Fusion_340_desc" iconTag="102"/>
+			<EngineStats slots="12" rating="340" weight="20.5" type="0" heatsinks="13" health="15"/>
+		</Module>
+		<Module id="3367" name="Engine_XL_345" CType="CEngineStats">
+			<Loc nameTag="@Engine_XL_Fusion_345" descTag="@Engine_XL_Fusion_345_desc" iconTag="103"/>
+			<EngineStats slots="12" rating="345" weight="21.5" type="0" heatsinks="13" health="15"/>
+		</Module>
+		<Module id="3368" name="Engine_XL_350" CType="CEngineStats">
+			<Loc nameTag="@Engine_XL_Fusion_350" descTag="@Engine_XL_Fusion_350_desc" iconTag="104"/>
+			<EngineStats slots="12" rating="350" weight="22" type="0" heatsinks="14" health="15"/>
+		</Module>
+		<Module id="3369" name="Engine_XL_355" CType="CEngineStats">
+			<Loc nameTag="@Engine_XL_Fusion_355" descTag="@Engine_XL_Fusion_355_desc" iconTag="105"/>
+			<EngineStats slots="12" rating="355" weight="23" type="0" heatsinks="14" health="15"/>
+		</Module>
+		<Module id="3370" name="Engine_XL_360" CType="CEngineStats">
+			<Loc nameTag="@Engine_XL_Fusion_360" descTag="@Engine_XL_Fusion_360_desc" iconTag="106"/>
+			<EngineStats slots="12" rating="360" weight="23.5" type="0" heatsinks="14" health="15"/>
+		</Module>
+		<Module id="3371" name="Engine_XL_365" CType="CEngineStats">
+			<Loc nameTag="@Engine_XL_Fusion_365" descTag="@Engine_XL_Fusion_365_desc" iconTag="107"/>
+			<EngineStats slots="12" rating="365" weight="24.5" type="0" heatsinks="14" health="15"/>
+		</Module>
+		<Module id="3372" name="Engine_XL_370" CType="CEngineStats">
+			<Loc nameTag="@Engine_XL_Fusion_370" descTag="@Engine_XL_Fusion_370_desc" iconTag="108"/>
+			<EngineStats slots="12" rating="370" weight="25.5" type="0" heatsinks="14" health="15"/>
+		</Module>
+		<Module id="3373" name="Engine_XL_375" CType="CEngineStats">
+			<Loc nameTag="@Engine_XL_Fusion_375" descTag="@Engine_XL_Fusion_375_desc" iconTag="109"/>
+			<EngineStats slots="12" rating="375" weight="27.5" type="0" heatsinks="15" health="15"/>
+		</Module>
+		<Module id="3374" name="Engine_XL_380" CType="CEngineStats">
+			<Loc nameTag="@Engine_XL_Fusion_380" descTag="@Engine_XL_Fusion_380_desc" iconTag="110"/>
+			<EngineStats slots="12" rating="380" weight="27.5" type="0" heatsinks="15" health="15"/>
+		</Module>
+		<Module id="3375" name="Engine_XL_385" CType="CEngineStats">
+			<Loc nameTag="@Engine_XL_Fusion_385" descTag="@Engine_XL_Fusion_385_desc" iconTag="111"/>
+			<EngineStats slots="12" rating="385" weight="29" type="0" heatsinks="15" health="15"/>
+		</Module>
+		<Module id="3376" name="Engine_XL_390" CType="CEngineStats">
+			<Loc nameTag="@Engine_XL_Fusion_390" descTag="@Engine_XL_Fusion_390_desc" iconTag="112"/>
+			<EngineStats slots="12" rating="390" weight="30" type="0" heatsinks="15" health="15"/>
+		</Module>
+		<Module id="3377" name="Engine_XL_395" CType="CEngineStats">
+			<Loc nameTag="@Engine_XL_Fusion_395" descTag="@Engine_XL_Fusion_395_desc" iconTag="113"/>
+			<EngineStats slots="12" rating="395" weight="31.5" type="0" heatsinks="15" health="15"/>
+		</Module>
+		<Module id="3378" name="Engine_XL_400" CType="CEngineStats">
+			<Loc nameTag="@Engine_XL_Fusion_400" descTag="@Engine_XL_Fusion_400_desc" iconTag="114"/>
+			<EngineStats slots="12" rating="400" weight="33.5" type="0" heatsinks="16" health="15"/>
+		</Module>
+
+    <!-- Pilot Modules -->
+    <!-- Loc information is stored in PilotTalents.xml -->
+    <Module id="4002" name="Capture_Accelerator_Module" CType="CPilotModule">
+      <PilotModuleStats talentid="ePTCaptureAccelerator" />
+    </Module>
+    <Module id="4005" name="Advanced_Zoom_Module" CType="CPilotModule">
+      <PilotModuleStats talentid="ePTAdvanceZoom" />
+    </Module>
+    <Module id="4018" name="Target_Info_Gather_Module" CType="CPilotModule">
+      <PilotModuleStats talentid="ePTTargetInfoGathering" />
+    </Module>
+
+    <Module id="9001" name="ArtemisIV" CType="CArtemisIVStats">
+      <Loc nameTag="@ArtemisIV" descTag="@ArtemisIV_desc" iconTag="4"/>
+      <ArtemisStats lockTime="0.5" trackingStrength="1.5" missileSpread="0.8"/>
+      <ModuleStats slots="1" tons="1.0" health="0"/>
+    </Module>
+    <Module id="9002" name="BeagleProbe" CType="CDummyStats">
+      <Loc nameTag="@BeagleProbe" descTag="@BeagleProbe_desc" iconTag="4"/>
+      <ModuleStats slots="2" tons="1.5" health="0"/>
+    </Module>
+		<Module id="9003" name="CASE" CType="CCASEStats">
+		  <Loc nameTag="@CASE" descTag="@CASE_desc" iconTag="4"/>
+      <ModuleStats slots="1" tons="0.5" health="0"/>
+    </Module>
+    <Module id="9006" name="GuardianECM" CType="CDummyStats">
+      <Loc nameTag="@GuardianECM" descTag="@GuardianECM_desc" iconTag="4"/>
+      <ModuleStats slots="2" tons="1.5" health="0"/>
+    </Module>
+    <Module id="9012" name="CCC" CType="CDummyHeadStats">
+      <Loc nameTag="@CCC" descTag="@CCC_desc" iconTag="4"/>
+      <ModuleStats slots="1" tons="3.0" health="0"/>
+    </Module>
+    <!-- Cockpit items -->
+    <Module id="5500" name="Coconut_Monkey" CType="CCockpitItemStats">
+      <Loc nameTag="@coconutmonkey" descTag="@coconutmonkey_desc" iconTag="3"/>
+      <CockpitItemStats slot="item_01" model="objects/purchasable/cockpit_standing/coconutmonkey/coconutmonkey.cga" material="objects/purchasable/cockpit_standing/coconutmonkey/coconutmonkey"/>
+      <BobbleStats joint="CoconutMonkey_Head" mode="xy" force="0.75"/>
+    </Module>
+    <Module id="5501" name="Nvidia_Dawn" CType="CCockpitItemStats">
+      <Loc nameTag="@nvidiadawn" descTag="@nvidiadawn_desc" iconTag="5"/>
+      <CockpitItemStats slot="item_01" model="objects/purchasable/cockpit_standing/dawn/dawn.cga" material="objects/purchasable/cockpit_standing/dawn/dawn_body"/>
+      <BobbleStats joint="dawn_wings" mode="y" force="0.5"/>
+    </Module>
+  </ModuleList>
+	
+	<BoosterList>
+		<Booster id="8000" name="Premium_360Day" CType="CBoosterStats">
+			<Loc nameTag="@ui_Booster_360Day" descTag="@ui_Premium_360Day_desc" iconTag="-1"/>
+			<BoosterStats boostertype="3" multiplier="1.5" cost="24000" duration="360" />
+		</Booster>
+		<Booster id="8001" name="Premium_180Day" CType="CBoosterStats">
+			<Loc nameTag="@ui_Booster_180Day" descTag="@ui_Premium_180Day_desc" iconTag="-1"/>
+			<BoosterStats boostertype="3" multiplier="1.5" cost="13500" duration="180" />
+		</Booster>
+		<Booster id="8002" name="Premium_30Day" CType="CBoosterStats">
+			<Loc nameTag="@ui_Booster_30Day" descTag="@ui_Premium_30Day_desc" iconTag="-1"/>
+			<BoosterStats boostertype="3" multiplier="1.5" cost="2500" duration="30" />
+		</Booster>
+		<Booster id="8003" name="Premium_7Day" CType="CBoosterStats">
+			<Loc nameTag="@ui_Booster_7Day" descTag="@ui_Premium_7Day_desc" iconTag="-1"/>
+			<BoosterStats boostertype="3" multiplier="1.5" cost="1250" duration="7" />
+		</Booster>
+		<Booster id="8004" name="Premium_3Day" CType="CBoosterStats">
+			<Loc nameTag="@ui_Booster_3Day" descTag="@ui_Premium_3Day_desc" iconTag="-1"/>
+			<BoosterStats boostertype="3" multiplier="1.5" cost="650" duration="3" />
+		</Booster>
+		<Booster id="8005" name="Premium_1Day" CType="CBoosterStats">
+			<Loc nameTag="@ui_Booster_1Day" descTag="@ui_Premium_1Day_desc" iconTag="-1"/>
+			<BoosterStats boostertype="3" multiplier="1.5" cost="250" duration="1" />
+		</Booster>
+		<!--
+		<Booster id="8020" name="CBBooster_360Day" CType="CBoosterStats">
+			<Loc nameTag="@ui_CBBooster_360Day" descTag="@ui_CBBooster_360Day_desc" iconTag="-1"/>
+			<BoosterStats boostertype="2" multiplier="1.5" cost="1250" duration="360" />
+		</Booster>
+		<Booster id="8040" name="XPBooster_360Day" CType="CBoosterStats">
+			<Loc nameTag="@ui_XPBooster_360Day" descTag="@ui_XPBooster_360Day_desc" iconTag="-1"/>
+			<BoosterStats boostertype="2" EBmultiplier="1.5" cost="1250" duration="360" />
+		</Booster>
+		-->
+	</BoosterList>
+</ItemStats>

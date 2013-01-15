@@ -1,0 +1,97 @@
+<!--Terms are case sensitive-->
+
+<SearchTerm>
+  <search term="Default" itemID="-1"/>
+  
+  <!-- Ballistic -->
+  
+  <search term="AutoCannon20" itemID="1000"/>
+  <search term="AutoCannon10" itemID="1020"/>
+ 
+  <search term="AutoCannon" itemID="1000"/>
+  <search term="AutoCannon" itemID="1018"/>
+  <search term="AutoCannon" itemID="1019"/>
+  <search term="AutoCannon" itemID="1020"/>
+  <search term="AutoCannon" itemID="1023"/>
+  <search term="AutoCannon" itemID="1025"/>
+
+  <search term="LBXAutoCannon" itemID="1023"/>
+  
+  <search term="UltraAutoCannon" itemID="1025"/>
+  
+  <search term="GaussRifle" itemID="1021"/>
+
+  <search term="MachineGun" itemID="1024"/>
+  
+  <search term="Ballistic" itemID="1000"/>
+  <search term="Ballistic" itemID="1018"/>
+  <search term="Ballistic" itemID="1019"/>
+  <search term="Ballistic" itemID="1020"/>
+  <search term="Ballistic" itemID="1023"/>
+  <search term="Ballistic" itemID="1025"/>
+  <search term="Ballistic" itemID="1021"/>
+  <search term="Ballistic" itemID="1024"/>
+  
+  <!-- Energy -->
+  
+  <search term="LargeLaser" itemID="1008"/>
+  <search term="LargeLaser" itemID="1005"/>
+  <search term="LargeLaser" itemID="1010"/>
+  
+  <search term="MediumLaser" itemID="1001"/>
+  <search term="MediumLaser" itemID="1011"/>
+  
+  <search term="SmallLaser" itemID="1003"/>
+  <search term="SmallLaser" itemID="1012"/>
+    
+  <search term="Laser" itemID="1001"/>
+  <search term="Laser" itemID="1003"/>
+  <search term="Laser" itemID="1008"/>
+  <search term="Laser" itemID="1005"/>
+  <search term="Laser" itemID="1010"/>
+  <search term="Laser" itemID="1011"/>
+  <search term="Laser" itemID="1012"/>
+  
+  <search term="PPC" itemID="1006"/>
+  <search term="PPC" itemID="1009"/>
+  
+  <search term="Flamer" itemID="1007"/>
+  
+  <search term="Energy" itemID="1001"/>
+  <search term="Energy" itemID="1003"/>
+  <search term="Energy" itemID="1005"/>
+  <search term="Energy" itemID="1006"/>
+  <search term="Energy" itemID="1007"/>
+  <search term="Energy" itemID="1008"/>
+  <search term="Energy" itemID="1009"/>
+  <search term="Energy" itemID="1010"/>
+  <search term="Energy" itemID="1011"/>
+  <search term="Energy" itemID="1012"/>
+  
+  <!-- Missile -->
+
+  <search term="LRM" itemID="1002"/>
+  <search term="LRM" itemID="1026"/>
+  <search term="LRM" itemID="1027"/>
+  <search term="LRM" itemID="1028"/>
+   
+  <search term="SRM" itemID="1004"/>
+  <search term="SRM" itemID="1030"/>
+  <search term="SRM" itemID="1031"/>
+  <search term="SRM" itemID="1032"/>
+  
+  <search term="StreakSRM" itemID="1032"/>
+  
+  <search term="Missile" itemID="1002"/>
+  <search term="Missile" itemID="1026"/>
+  <search term="Missile" itemID="1027"/>
+  <search term="Missile" itemID="1028"/>
+  <search term="Missile" itemID="1004"/>
+  <search term="Missile" itemID="1030"/>
+  <search term="Missile" itemID="1031"/>
+  <search term="Missile" itemID="1032"/>
+  
+  <!-- Misc -->
+  <search term="AntiMissileSystem" itemID="1014"/>
+  <search term="NarcBeacon" itemID="1029"/>
+</SearchTerm>

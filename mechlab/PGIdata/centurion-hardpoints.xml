@@ -1,0 +1,208 @@
+<Hardpoints SearchTable="Objects/mechs/hardpointsearchcriteria.xml">
+	<!--CN9-A-->
+	<Hardpoint id="0">
+		<!--Center Torso, Energy-->
+		<WeaponSlot>
+			<Attachment search="Energy" AName="cn9_centre_torso_a_laser_firebone1"/>
+			<Attachment search="Default" AName="cn9_centre_torso_ah_lasercap1"/>
+			<Attachment search="Default" AName="cn9_centre_torso_ah_lasercap2"/>
+		</WeaponSlot>
+		<WeaponSlot>
+			<Attachment search="Energy" AName="cn9_centre_torso_a_laser_firebone2"/>
+			<!--<Attachment search="Default" AName="cn9_centre_torso_ah_lasercap2"/>-->
+		</WeaponSlot>
+	</Hardpoint>
+	<Hardpoint id="1">
+		<!--Left Torso, Missile-->
+		<WeaponSlot>
+			<Attachment search="LRM" AName="cn9_left_torso_a_lrm10"/>
+			<Attachment search="Default" AName="cn9_left_torso_a_lrm10"/>
+		</WeaponSlot>
+		<WeaponSlot>
+			<Attachment search="Default" AName="cn9_left_torso_a_lrm10"/>
+		</WeaponSlot>
+		<WeaponSlot>
+			<Attachment search="Default" AName="cn9_left_torso_a_lrm10"/>
+		</WeaponSlot>
+	</Hardpoint>
+	<Hardpoint id="2">
+		<!--Right Arm, Ballistic-->
+		<WeaponSlot>
+			<Attachment search="AutoCannon20" AName="cn9_right_arm_forearm_ah_ac20"/>
+			<Attachment search="LBXAutoCannon" AName="cn9_right_arm_forearm_d_lbx10"/>
+			<Attachment search="AutoCannon" AName="cn9_right_arm_forearm_a_ac10"/>
+			<Attachment search="Default" AName="cn9_right_arm_forearm_a_ac10"/>
+		</WeaponSlot>
+	</Hardpoint>
+	<Hardpoint id="3">
+		<!--Right Torso, AMS-->
+		<WeaponSlot>
+			<Attachment search="AntiMissileSystem" AName="cn9_right_torso_rear_a_ams"/>
+		</WeaponSlot>
+	</Hardpoint>
+	
+	<!--CN9-AH-->
+	<Hardpoint id="11">
+		<!--Left Torso, Missile-->
+		<WeaponSlot>
+			<Attachment search="LRM" AName="cn9_left_torso_a_lrm10"/>
+			<Attachment search="Default" AName="cn9_left_torso_a_lrm10"/>
+		</WeaponSlot>
+		<WeaponSlot>
+			<Attachment search="Default" AName="cn9_left_torso_a_lrm10"/>
+		</WeaponSlot>
+	</Hardpoint>
+	<Hardpoint id="12">
+		<!--Right Arm, Ballistic-->
+		<WeaponSlot>
+			<Attachment search="AutoCannon20" AName="cn9_right_arm_forearm_ah_ac20"/>
+			<Attachment search="LBXAutoCannon" AName="cn9_right_arm_forearm_d_lbx10"/>
+			<Attachment search="AutoCannon" AName="cn9_right_arm_forearm_a_ac10"/>
+			<Attachment search="Default" AName="cn9_right_arm_forearm_ah_ac20"/>
+		</WeaponSlot>
+		<WeaponSlot>
+			<Attachment search="AutoCannon20" AName="cn9_right_arm_forearm_ah_ac20"/>
+			<Attachment search="LBXAutoCannon" AName="cn9_right_arm_forearm_d_lbx10"/>
+			<Attachment search="AutoCannon" AName="cn9_right_arm_forearm_a_ac10"/>
+			<Attachment search="Default" AName="cn9_right_arm_forearm_ah_ac20"/>
+		</WeaponSlot>
+		<WeaponSlot>
+			<Attachment search="AutoCannon20" AName="cn9_right_arm_forearm_ah_ac20"/>
+			<Attachment search="LBXAutoCannon" AName="cn9_right_arm_forearm_d_lbx10"/>
+			<Attachment search="AutoCannon" AName="cn9_right_arm_forearm_a_ac10"/>
+			<Attachment search="Default" AName="cn9_right_arm_forearm_ah_ac20"/>
+		</WeaponSlot>
+	</Hardpoint>
+	<Hardpoint id="13">
+		<!--Right Torso, AMS-->
+		<WeaponSlot>
+			<Attachment search="AntiMissileSystem" AName="cn9_right_torso_rear_a_ams"/>
+		</WeaponSlot>
+	</Hardpoint>
+	
+	
+	<!--CN9-AL-->
+	<Hardpoint id="20">
+		<!--Center Torso, Energy-->
+		<WeaponSlot>
+			<Attachment search="Energy" AName="cn9_centre_torso_a_laser_firebone1"/>
+			<Attachment search="Default" AName="cn9_centre_torso_ah_lasercap1"/>
+			<Attachment search="Default" AName="cn9_centre_torso_ah_lasercap2"/>
+		</WeaponSlot>
+		<WeaponSlot>
+			<Attachment search="Energy" AName="cn9_centre_torso_a_laser_firebone2"/>
+			<!--<Attachment search="Default" AName="cn9_centre_torso_ah_lasercap2"/>-->
+		</WeaponSlot>
+	</Hardpoint>
+	<Hardpoint id="21">
+		<!--Left Torso, Missile-->
+		<WeaponSlot>
+			<Attachment search="LRM" AName="cn9_left_torso_a_lrm10"/>
+			<Attachment search="Default" AName="cn9_left_torso_a_lrm10"/>
+		</WeaponSlot>
+		<WeaponSlot>
+			<Attachment search="Default" AName="cn9_left_torso_a_lrm10"/>
+		</WeaponSlot>
+	</Hardpoint>
+	<Hardpoint id="22">
+		<!--Right Arm, Energy-->
+		<WeaponSlot>
+			<Attachment search="LargeLaser" AName="cn9_right_arm_forearm_al_laser"/>
+			<Attachment search="MediumLaser" AName="cn9_right_arm_forearm_al_laser"/>
+			<Attachment search="Default" AName="cn9_right_arm_forearm_al_laser"/>
+		</WeaponSlot>
+		<WeaponSlot>
+			<Attachment search="Default" AName="cn9_right_arm_forearm_al_laser_firebone2"/>
+		</WeaponSlot>	
+	</Hardpoint>
+	<Hardpoint id="23">
+		<!--Right Torso, AMS-->
+		<WeaponSlot>
+			<Attachment search="AntiMissileSystem" AName="cn9_right_torso_rear_a_ams"/>
+		</WeaponSlot>
+	</Hardpoint>
+
+	
+	<!--CN9-D-->
+	<Hardpoint id="30">
+		<!--Center Torso, Energy-->
+		<WeaponSlot>
+			<Attachment search="Energy" AName="cn9_centre_torso_a_laser_firebone1"/>
+			<Attachment search="Default" AName="cn9_centre_torso_ah_lasercap1"/>
+			<Attachment search="Default" AName="cn9_centre_torso_ah_lasercap2"/>
+		</WeaponSlot>
+		<WeaponSlot>
+			<Attachment search="Energy" AName="cn9_centre_torso_a_laser_firebone2"/>
+			<!--<Attachment search="Default" AName="cn9_centre_torso_ah_lasercap2"/>-->
+		</WeaponSlot>
+	</Hardpoint>
+	<Hardpoint id="31">
+		<!--Left Torso, Missile-->
+		<WeaponSlot>
+			<Attachment search="LRM" AName="cn9_left_torso_a_lrm10"/>
+			<Attachment search="Default" AName="cn9_left_torso_a_lrm10"/>
+		</WeaponSlot>
+		<WeaponSlot>
+			<Attachment search="Default" AName="cn9_left_torso_a_lrm10"/>
+		</WeaponSlot>
+	</Hardpoint>
+	<Hardpoint id="32">
+		<!--Right Arm, Ballistic-->
+		<WeaponSlot>
+			<Attachment search="AutoCannon20" AName="cn9_right_arm_forearm_ah_ac20"/>
+			<Attachment search="LBXAutoCannon" AName="cn9_right_arm_forearm_d_lbx10"/>
+			<Attachment search="AutoCannon" AName="cn9_right_arm_forearm_a_ac10"/>
+			<Attachment search="Default" AName="cn9_right_arm_forearm_d_lbx10"/>
+		</WeaponSlot>
+		<WeaponSlot>
+			<Attachment search="AutoCannon20" AName="cn9_right_arm_forearm_ah_ac20"/>
+			<Attachment search="LBXAutoCannon" AName="cn9_right_arm_forearm_d_lbx10"/>
+			<Attachment search="AutoCannon" AName="cn9_right_arm_forearm_a_ac10"/>
+			<Attachment search="Default" AName="cn9_right_arm_forearm_d_lbx10"/>
+		</WeaponSlot>
+	</Hardpoint>
+	<Hardpoint id="33">
+		<!--Right Torso, AMS-->
+		<WeaponSlot>
+			<Attachment search="AntiMissileSystem" AName="cn9_right_torso_rear_a_ams"/>
+		</WeaponSlot>
+	</Hardpoint>
+	
+	
+	<!--CN9-YLW-->
+	<Hardpoint id="40">
+		<!--Center Torso, Energy-->
+		<WeaponSlot>
+			<Attachment search="Energy" AName="cn9_centre_torso_a_laser_firebone1"/>
+			<Attachment search="Default" AName="cn9_centre_torso_ah_lasercap1"/>
+			<Attachment search="Default" AName="cn9_centre_torso_ah_lasercap2"/>
+		</WeaponSlot>
+		<WeaponSlot>
+			<Attachment search="Energy" AName="cn9_centre_torso_a_laser_firebone2"/>
+			<!--<Attachment search="Default" AName="cn9_centre_torso_ah_lasercap2"/>-->
+		</WeaponSlot>
+	</Hardpoint>
+	<Hardpoint id="42">
+		<!--Right Arm, Ballistic-->
+		<WeaponSlot>
+			<Attachment search="AutoCannon20" AName="cn9_right_arm_forearm_ah_ac20"/>
+			<Attachment search="LBXAutoCannon" AName="cn9_right_arm_forearm_d_lbx10"/>
+			<Attachment search="AutoCannon" AName="cn9_right_arm_forearm_a_ac10"/>
+			<Attachment search="Default" AName="cn9_right_arm_forearm_a_ac10"/>
+		</WeaponSlot>
+		<WeaponSlot>
+			<Attachment search="AutoCannon20" AName="cn9_right_arm_forearm_ah_ac20"/>
+			<Attachment search="LBXAutoCannon" AName="cn9_right_arm_forearm_d_lbx10"/>
+			<Attachment search="AutoCannon" AName="cn9_right_arm_forearm_a_ac10"/>
+			<Attachment search="Default" AName="cn9_right_arm_forearm_a_ac10"/>
+		</WeaponSlot>
+	</Hardpoint>
+	<Hardpoint id="43">
+		<!--Right Torso, AMS-->
+		<WeaponSlot>
+			<Attachment search="AntiMissileSystem" AName="cn9_right_torso_rear_a_ams"/>
+		</WeaponSlot>
+	</Hardpoint>
+
+	
+</Hardpoints>

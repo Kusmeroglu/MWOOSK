@@ -1,0 +1,302 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>MWOOSK v.01a</title>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+
+    <script src="http://code.jquery.com/jquery-1.8.2.js" type="text/javascript"></script>
+    <script src="http://code.jquery.com/ui/1.9.0/jquery-ui.js" type="text/javascript"></script>
+    <script src="http://d3js.org/d3.v2.js" type="text/javascript"></script>
+    <script type="text/javascript" src="https://apis.google.com/js/client.js"></script>
+    <script src="js/weightchart.js" type="text/javascript"></script>
+    <script type="text/javascript" src="js/rosegraph.js"></script>
+    <script type="text/javascript" src="js/class.mech.js"></script>
+    <script type="text/javascript" src="js/class.limb.js"></script>
+    <script type="text/javascript" src="js/class.hardpoint.js"></script>
+    <script type="text/javascript" src="js/class.item.js"></script>
+    <script type="text/javascript" src="js/urlhandling.js"></script>
+	<script src="js/history.js/scripts/bundled/html4+html5/jquery.history.js"></script>
+	<script type="text/javascript" src="js/jquery.mousewheel.js"></script>
+	<script type="text/javascript" src="js/mwheelIntent.js"></script>
+	<script type="text/javascript" src="js/jquery.jscrollpane.min.js"></script>
+	<link type="text/css" href="css/jquery.jscrollpane.css" rel="stylesheet" media="all" />
+    <link href="http://code.jquery.com/ui/1.9.0/themes/base/jquery-ui.css" rel="stylesheet" media="screen"/>
+    <link href="font/stylesheet.css" rel="stylesheet" media="screen"/>
+    <link href='http://fonts.googleapis.com/css?family=Aldrich' rel='stylesheet' type='text/css'>
+    <link href="css/style.css" rel="stylesheet" media="screen"/>
+
+    <script type="text/javascript" src="js/mwoosk.js"/>
+
+    <script type="text/javascript">
+
+    </script>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+</head>
+<body>
+<div id="pageWrap">
+    <header>
+        <div id="chassisBar">
+            <div class="selectBox" id="mechClassDiv">
+                <div class="hide">
+                    <select id="mechClass">
+                        <option value="0">Select mech Class...</option>
+                    </select>
+                </div>
+                <div class="selectBlank selected" id="classBlank">Select mech Class...</div>
+            </div>
+            <div class="selectBox" id="mechChassisDiv">
+                <div class="hide">
+                    <select id="mechChassis">
+                        <option value="0">Select mech Chasis...</option>
+                    </select>
+                </div>
+                <div class="selectBlank" id="chassisBlank">Select mech Chassis...</div>
+            </div>
+            <div class="selectBox" id="mechVariantDiv">
+                <div class="hide">
+                    <select id="mechVariant">
+                        <option value="0">Select mech Variant...</option>
+                    </select>
+                </div>
+                <div class="selectBlank" id="variantBlank">Select mech Variant...</div>
+            </div>
+			<div id="reset">Reset</div>
+            <div class="clear"></div>
+        </div>
+        <div id="userInfo">
+            <div class="tinyurl">
+                <div id="tinyurlLink">Get Tiny URL</div>
+            </div>
+        </div>
+        <div class="clear"></div>
+    </header>
+    <div id="mechBay">
+        <div id="mechContainerWrap">
+            <div id="mechContainer">
+                <div id="rightArm" class="area">
+                    <div class="name">Right Arm</div>
+					<div class="information">
+                        <div class="hardpoints"></div>
+                        <div class="armor">
+							Armor<br />
+                            <input id="rightArmFrontArmor" class="armorspinner front"/>
+                            <div class="maxarmor">Max: </div>
+                        </div>
+                    </div>
+					<div class="critWrap">						
+					</div>				
+                </div>
+			</div>
+			<div id="mechContainer">
+                <div id="rightTorso" class="area">
+                    <div class="name">Right Torso</div>
+					<div class="information">
+                        <div class="hardpoints"></div>
+                        <div class="armor">
+							Armor<br />
+                            <input id="rightTorsoFrontArmor" class="armorspinner front"/>
+                            <input id="rightTorsoRearArmor" class="armorspinner rear"/>
+                            <div class="maxarmor">Max: </div>
+                        </div>
+                    </div>
+					<div class="critWrap">
+					</div>					
+                </div>
+				<div id="rightLeg" class="area">
+                    <div class="name">Right Leg</div>
+					<div class="information">
+						<div class="hardpoints"></div>
+                        <div class="armor">
+							Armor<br />
+                            <input id="rightLegFrontArmor" class="armorspinner front"/>
+                            <div class="maxarmor">Max: </div>
+                        </div>
+                    </div>
+					<div class="critWrap">
+					</div>					
+                </div>
+			</div>
+			<div id="mechContainer">
+				<div id="head" class="area">
+                    <div class="name">Head</div>
+					<div class="information">
+                        <div class="hardpoints"></div>
+                        <div class="armor">
+							Armor<br />
+                            <input id="headFrontArmor" class="armorspinner front"/>
+                            <div class="maxarmor">Max: </div>
+                        </div>
+                    </div>
+					<div class="critWrap">
+					</div>					
+                </div>
+                <div id="centerTorso" class="area">
+					<div class="name">Cent. Torso</div>
+                    <div class="information">
+                        <div class="hardpoints"></div>
+                        <div class="armor">
+							Armor<br />
+                            <input id="centerTorsoFrontArmor" class="armorspinner front"/>
+                            <input id="centerTorsoRearArmor" class="armorspinner rear"/>
+                            <div class="maxarmor">Max: </div>
+                        </div>
+                    </div>
+					<div class="critWrap">
+					</div>					
+                </div>
+			</div>
+			<div id="mechContainer">
+                <div id="leftTorso" class="area">
+					<div class="name">Left Torso</div>
+                    <div class="information">
+                        <div class="hardpoints"></div>
+                        <div class="armor">
+							Armor<br />
+                            <input id="leftTorsoFrontArmor" class="armorspinner front"/>
+                            <input id="leftTorsoRearArmor" class="armorspinner rear"/>
+                            <div class="maxarmor">Max: </div>
+                        </div>
+                    </div>
+					<div class="critWrap">
+					</div>				
+                </div>
+				<div id="leftLeg" class="area">
+                    <div class="name">Left Leg</div>
+					<div class="information">
+                        <div class="hardpoints"></div>
+                        <div class="armor">
+							Armor<br />
+                            <input id="leftLegFrontArmor" class="armorspinner front"/>
+                            <div class="maxarmor">Max: </div>
+                        </div>
+                    </div>
+					<div class="critWrap">
+					</div>
+                </div>
+			</div>
+			<div id="mechContainer">
+                <div id="leftArm" class="area">
+                    <div class="name">Left Arm</div>
+					<div class="information">
+                        <div class="hardpoints"></div>
+                        <div class="armor">
+							Armor<br />
+                            <input id="leftArmFrontArmor" class="armorspinner front"/>
+                            <div class="maxarmor">Max: </div>
+                        </div>
+                    </div>
+					<div class="critWrap">
+					</div>					
+                </div>
+                
+            </div>
+            <div class='clear'></div>
+        </div>
+        <div id="itemWrap">
+			<div id="detailContainerWrap">
+				<div id="detailContainer">
+					<div class="name">Components</div>
+					<div id="armament">
+						<div class="buttonWrapper">
+							<div id="ballisticButton" class="toggleButton activeButton">Ballistic</div>
+							<div id="energyButton" class="toggleButton">Energy</div>
+							<div id="missileButton" class="toggleButton">Missile</div>
+							<div class="clear"></div>
+						</div>
+						<div id="ballisticList">
+							<div class="buttonWrapper">
+								<div id="ballisticWButton" class="toggleButton activeButton">Weapons</div>
+								<div id="ballisticAButton" class="toggleButton">Ammo</div>
+								<div class="clear"></div>
+							</div>
+							<div id="ballisticWeapon"></div>
+							<div id="ballisticAmmo"></div>
+						</div>
+						<div id="energyList">
+							<div id="energyWeapon"></div>
+						</div>
+						<div id="missileList">
+							<div class="buttonWrapper">
+								<div id="missileWButton" class="toggleButton activeButton">Weapons</div>
+								<div id="missileAButton" class="toggleButton">Ammo</div>
+								<div class="clear"></div>
+							</div>
+							<div id="missileWeapon"></div>
+							<div id="missileAmmo"></div>					
+						</div>
+					</div>
+					<div id="utilities">
+						<div class="buttonWrapper">
+							<div id="internalsButton" class="toggleButton activeButton">Utility</div>
+							<div id="enginesButton" class="toggleButton">Engines</div>
+							<div id="upgradesButton" class="toggleButton">Upgrade</div>
+							<div class="clear"></div>
+						</div>
+						<div id="internals"></div>
+						<div id="engines">
+							<div class="buttonWrapper">
+								<div id="stdEngineButton" class="toggleButton activeButton">Standard</div>
+								<div id="xlEngineButton" class="toggleButton">eXtra Light</div>
+								<div class="clear"></div>
+							</div>
+							<div id="stdEngine"></div>
+							<div id="xlEngine"></div>
+						</div>
+						<div id="upgrades">
+							<ul style="color:white">
+								<li><input id="endoCheckbox" type="checkbox"/> Endo Steel </li>
+								<li><input id="ferroCheckbox" type="checkbox"/> Ferro Fibrous </li>
+								<li><input id="artemisCheckbox" type="checkbox"/> Artemis </li>
+								<li><input id="dhsCheckbox" type="checkbox"/> Dual Heat Sinks </li>
+							</ul>
+						</div>
+					</div>
+					<div id="piloting"></div>
+					<div id="statistics"></div>
+					<div id="comments"></div>				
+				</div>
+			</div>
+		</div>
+		<div id="tabWrap">
+			<div class="tabWrapper">
+				<div class="tab" id="armamentTab">Weapons</div>
+			</div>
+			<div class="tabWrapper">
+				<div class="tab" id="utilityTab">Utility</div>
+			</div>
+			<div class="tabWrapper">
+				<div class="tab" id="pilotingTab">Piloting</div>
+			</div>
+			<div class="tabWrapper">
+				<div class="tab" id="statisticsTab">Statistics</div>
+			</div>
+			<div class="tabWrapper">
+				<div class="tab" id="commentsTab">Comments</div>
+			</div>
+			<div class="clear"></div>
+		</div>
+		<div class="clear"></div>
+		<div id="tonnageWrap">
+            <div id="tonnage">
+                <div id="weightChart"></div>
+            </div>
+        </div>
+		<div id="heatWrap">
+            <div id="heat"></div>
+        </div>
+        <div id="speedWrap">
+            <div id="speed"></div>
+        </div>
+        <div class="clear"></div>
+	</div>
+    <footer>
+        
+    </footer>
+</div>
+<!-- <div id="roseChart" style="width:220px;height:220px"></div> -->
+
+</body>
+</html>

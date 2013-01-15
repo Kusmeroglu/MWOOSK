@@ -1,0 +1,53 @@
+<Loadout MechID="25" Public="1" Name="ATLAS AS7-K">
+	<Upgrades>
+		<Armor ItemID="2800"/>
+		<Structure ItemID="3100"/>
+		<HeatSinks Type="Single"/>
+		<Artemis Equipped="0"/>
+	</Upgrades>
+	<ComponentList>
+		<component Name="head" Armor="18"/>
+		<component Name="left_torso" Armor="64">
+			<Weapon HardpointID="21" ItemID="1002"/>
+			<Ammo ItemID="2001"/>
+			<Ammo ItemID="2027"/>
+			<Ammo ItemID="2027"/>
+			<Module ItemID="9003"/>
+		</component>
+		<component Name="centre_torso" Armor="94">
+			<Module ItemID="3358"/>
+			<Module ItemID="3000"/>
+			<Module ItemID="3000"/>
+			<Weapon HardpointID="20" ItemID="1011"/>
+			<Weapon HardpointID="20" ItemID="1011"/>
+		</component>
+		<component Name="right_torso" Armor="64">
+			<Weapon HardpointID="22" ItemID="1021"/>
+			<Module ItemID="9003"/>
+		</component>
+		<component Name="left_leg" Armor="82">
+			<Module ItemID="3000"/>
+			<Module ItemID="3000"/>
+		</component>
+		<component Name="right_leg" Armor="82">
+			<Module ItemID="3000"/>
+			<Module ItemID="3000"/>
+		</component>
+		<component Name="right_arm" Armor="68">
+			<Weapon HardpointID="23" ItemID="1005"/>
+			<Module ItemID="3000"/>
+			<Module ItemID="3000"/>
+			<Ammo ItemID="2008"/>
+			<Ammo ItemID="2008"/>
+		</component>
+		<component Name="left_arm" Armor="68">
+			<Weapon HardpointID="24" ItemID="1005"/>
+			<Weapon HardpointID="25" ItemID="1014"/>
+			<Module ItemID="3000"/>
+			<Module ItemID="3000"/>
+		</component>
+		<component Name="left_torso_rear" Armor="20"/>
+		<component Name="centre_torso_rear" Armor="28"/>
+		<component Name="right_torso_rear" Armor="20"/>
+	</ComponentList>
+</Loadout>
