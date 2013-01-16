@@ -3,17 +3,52 @@
  * &&
  * https://developer.mozilla.org/en-US/docs/DOM/Manipulating_the_browser_history
  */
+var urlHistoryStack = [getURLHash()];
+var urlHistorySteps = 0;
+var urlHistoryListener = function () {
+    window.location.reload();
+};
+
+// Check the visitor's URL every quarter second and check if they are moving 
+// forward in history, otherwise reload the page
+$(function () {
+    var historyCheck = function () {
+	var steps = urlHistoryStack.length;
+	if(urlHistoryStack[steps-1]!=getURLHash()[1]) {
+	    if(urlHistorySteps < steps) {
+		urlHistorySteps = steps;
+	    } else {
+		urlHistoryListener();
+	    }
+	}
+    };
+
+    setInterval(historyCheck, 500);
+});
+
+function getURLHash() {
+    return window.location.hash.match(/^#?([^#]+)$/);
+}
+
+function setURLHash(newHash) {
+    try {
+	window.location.assign('#' + newHash);
+	urlHistoryStack.push(newHash);
+    } catch (e) {
+	alert('Browser compatibility problem');
+    }
+}
+
 function setURLParameter(param, paramVal){
-    var newAdditionalURL = "";
-    var tempArray = window.location.href.split("?");
-    var baseURL = tempArray[0];
-    var additionalURL = tempArray[1];
-    var temp = "";
-    if (additionalURL) {
-        tempArray = additionalURL.split("&");
+    var tempArray = [];
+    var dataHash = getURLHash();
+    var newHash = '';
+    var temp = '';
+    if (dataHash != null) {
+        tempArray = dataHash[1].split("&");
         for (i=0; i<tempArray.length; i++){
             if(tempArray[i].split('=')[0] != param){
-                newAdditionalURL += temp + tempArray[i];
+                newHash += temp + tempArray[i];
                 temp = "&";
             }
         }
@@ -22,7 +57,8 @@ function setURLParameter(param, paramVal){
     var rows_txt = temp + "" + param + "=" + paramVal;
 //    console.log("Setting URL " + param + " = " + paramVal);
 //    console.log("URL: " + baseURL + "?" + newAdditionalURL + rows_txt);
-    window.history.replaceState({}, "Title doesn't do anything", baseURL + "?" + newAdditionalURL + rows_txt)
+    setURLHash(newHash + rows_txt);
+    //window.history.replaceState({}, "Title doesn't do anything", baseURL + "?" + newAdditionalURL + rows_txt)
     //return baseURL + "?" + newAdditionalURL + rows_txt;
 
     //reset the tiny rul thing
@@ -31,10 +67,9 @@ function setURLParameter(param, paramVal){
 }
 
 function getURLParameter(param){
-    var tempArray = window.location.href.split("?");
-    var additionalURL = tempArray[1];
-    if (additionalURL) {
-        tempArray = additionalURL.split("&");
+    var dataHash = getURLHash();
+    if (dataHash != null) {
+        tempArray = dataHash[1].split("&");
         for (i=0; i<tempArray.length; i++){
             if(tempArray[i].split('=')[0] == param){
                 return tempArray[i].split('=')[1];
@@ -46,10 +81,9 @@ function getURLParameter(param){
 
 function getURLParamObject(){
     var o = {};
-    var tempArray = window.location.href.split("?");
-    var additionalURL = tempArray[1];
-    if (additionalURL) {
-        tempArray = additionalURL.split("&");
+    var dataHash = getURLHash();
+    if (dataHash != null) {
+        tempArray = dataHash[1].split("&");
         for (i=0; i<tempArray.length; i++){
             o[tempArray[i].split('=')[0]] = tempArray[i].split('=')[1];
         }
