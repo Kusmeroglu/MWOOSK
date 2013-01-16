@@ -3,18 +3,18 @@
  * &&
  * https://developer.mozilla.org/en-US/docs/DOM/Manipulating_the_browser_history
  */
-var urlHistoryStack = [getURLHash()];
+var urlHistoryStack = [];
 var urlHistorySteps = 0;
 var urlHistoryListener = function () {
     window.location.reload();
 };
 
-// Check the visitor's URL every quarter second and check if they are moving 
+// Check the visitor's URL every half second and check if they are moving 
 // forward in history, otherwise reload the page
 $(function () {
     var historyCheck = function () {
 	var steps = urlHistoryStack.length;
-	if(urlHistoryStack[steps-1]!=getURLHash()[1]) {
+	if(urlHistoryStack.length>1 && urlHistoryStack[steps-1]!=getURLHash()[1]) {
 	    if(urlHistorySteps < steps) {
 		urlHistorySteps = steps;
 	    } else {
@@ -22,6 +22,9 @@ $(function () {
 	    }
 	}
     };
+
+    var tempHash = getURLHash();
+    urlHistoryStack.push(tempHash!=null?tempHash[1]:'');
 
     setInterval(historyCheck, 500);
 });
