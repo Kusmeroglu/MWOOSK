@@ -6,7 +6,8 @@
 var urlHistoryStack = [];
 var urlHistorySteps = 0;
 var urlHistoryListener = function () {
-    window.location.reload();
+    //window.location.reload();
+    console.log('A reload would have occurred, but I ran into a problem on line 108 of class.limb.js rebuilding the mech from the url');
 };
 
 // Check the visitor's URL every half second and check if they are moving 
@@ -85,10 +86,12 @@ function getURLParameter(param){
 function getURLParamObject(){
     var o = {};
     var dataHash = getURLHash();
+    var split = [];
     if (dataHash != null) {
         tempArray = dataHash[1].split("&");
         for (i=0; i<tempArray.length; i++){
-            o[tempArray[i].split('=')[0]] = tempArray[i].split('=')[1];
+	    split = tempArray[i].split('=');
+            o[split[0]] = split.length>1?split[1]:'';
         }
     }
     return o;
