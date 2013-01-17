@@ -230,10 +230,10 @@
 
         // hide the single heat sinks and show the double heat sinks in the item list.
         this.singleHeatSinkIDs.forEach(function (id) {
-            $("#itemList ." + id).hide();
+            $("#detailContainer ." + id).hide();
         });
         this.dualHeatSinkIDs.forEach(function (id) {
-            $("#itemList ." + id).show();
+            $("#detailContainer ." + id).show();
         });
 
         this.dhs = true;
@@ -247,10 +247,10 @@
 
         // hide the single heat sinks and show the double heat sinks.
         this.singleHeatSinkIDs.forEach(function(id){
-            $("#itemList ."+id).show();
+            $("#detailContainer ."+id).show();
         });
         this.dualHeatSinkIDs.forEach(function(id){
-            $("#itemList ."+id).hide();
+            $("#detailContainer ."+id).hide();
         });
 
         this.dhs = false;
@@ -266,10 +266,10 @@
 
         // hide the non-artemis missiles and show the artemis missiles in the item list.
         this.nonArtemisMissileIDs.forEach(function (id) {
-            $("#itemList ." + id).hide();
+            $("#detailContainer ." + id).hide();
         });
         this.artemisMissileIDs.forEach(function (id) {
-            $("#itemList ." + id).show();
+            $("#detailContainer ." + id).show();
         });
 
         this.artemis = false;
@@ -283,10 +283,10 @@
 
         // hide the non-artemis missiles and show the artemis missiles in the item list.
         this.nonArtemisMissileIDs.forEach(function (id) {
-            $("#itemList ." + id).show();
+            $("#detailContainer ." + id).show();
         });
         this.artemisMissileIDs.forEach(function (id) {
-            $("#itemList ." + id).hide();
+            $("#detailContainer ." + id).hide();
         });
 
         this.artemis = false;
