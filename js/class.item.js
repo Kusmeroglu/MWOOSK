@@ -6,6 +6,11 @@
     this.weight = weight;
     this.critSlots = parseInt(critSlots);
     this.heatsinkslots = 0; // how many heat sinks are included (for engines)
+    this.engineSize = 100; // for engines, the rating
+
+    this.mintonnage = 0; // just for jumpjets so far
+    this.maxtonnage = 100; // just for jumpjets so far
+
     this.damage = 0;
     this.heat = 0;
     this.cooldown = 0;

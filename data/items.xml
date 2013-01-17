@@ -58,11 +58,11 @@
     <item id="IBA" type="util" tons="1" slots="1">Beagle Active Probe</item>
     <item id="ICA" type ="util" tons=".5" slots="1" maxrange="0">C.A.S.E.</item>
     <item id="IGE" type ="util" tons="1.5" slots="2" maxrange="250" ammoper="0">Guardian ECM</item>
-    <item id="IJJ" type ="jumpjet" hardpoint="jumpjet" tons="2" slots="1" maxrange="0" ammoper="0" class="assault">Jump Jets - Class I</item>
-	<item id="IJK" type ="jumpjet" hardpoint="jumpjet" tons="1" slots="1" maxrange="0" ammoper="0" class="assault">Jump Jets - Class II</item>
-	<item id="IJL" type ="jumpjet" hardpoint="jumpjet" tons="1" slots="1" maxrange="0" ammoper="0" class="heavy">Jump Jets - Class III</item>
-	<item id="IJM" type ="jumpjet" hardpoint="jumpjet" tons=".5" slots="1" maxrange="0" ammoper="0" class="light">Jump Jets - Class IV</item>
-	<item id="IJN" type ="jumpjet" hardpoint="jumpjet" tons=".5" slots="1" maxrange="0" ammoper="0" class="light">Jump Jets - Class V</item>
+    <item id="IJJ" type ="jumpjet" hardpoint="jumpjet" tons="2" minTons="90" maxTons="200" slots="1" maxrange="0" ammoper="0" class="assault">Jump Jets - Class I</item>
+	<item id="IJK" type ="jumpjet" hardpoint="jumpjet" tons="1" minTons="80" maxTons="90" slots="1" maxrange="0" ammoper="0" class="assault">Jump Jets - Class II</item>
+	<item id="IJL" type ="jumpjet" hardpoint="jumpjet" tons="1" minTons="60" maxTons="80" slots="1" maxrange="0" ammoper="0" class="heavy">Jump Jets - Class III</item>
+	<item id="IJM" type ="jumpjet" hardpoint="jumpjet" tons=".5" minTons="40" maxTons="60" slots="1" maxrange="0" ammoper="0" class="light">Jump Jets - Class IV</item>
+	<item id="IJN" type ="jumpjet" hardpoint="jumpjet" tons=".5" minTons="20" maxTons="40" slots="1" maxrange="0" ammoper="0" class="light">Jump Jets - Class V</item>
   </internals>
   <engines>
     <plant id="PAA" slots="6" tons="1.5" type ="std" heatsinkslots="-6" size="100">Standard 100</plant>
@@ -70,122 +70,122 @@
     <plant id="PAC" slots="6" tons="1.5" type ="std" heatsinkslots="-6" size="110">Standard 110</plant>
     <plant id="PAD" slots="6" tons="2.5" type ="std" heatsinkslots="-6" size="115">Standard 115</plant>
     <plant id="PAE" slots="6" tons="2.5" type ="std" heatsinkslots="-6" size="120">Standard 120</plant>
-    <plant id="PAF" slots="6" tons="2.5" type ="std" heatsinkslots="-5">Standard 125</plant>
-    <plant id="PAG" slots="6" tons="2.5" type ="std" heatsinkslots="-5">Standard 130</plant>
-    <plant id="PAH" slots="6" tons="2.5" type ="std" heatsinkslots="-5">Standard 135</plant>
-    <plant id="PAI" slots="6" tons="2.5" type ="std" heatsinkslots="-5">Standard 140</plant>
-    <plant id="PAJ" slots="6" tons="2.5" type ="std" heatsinkslots="-5">Standard 145</plant>
-    <plant id="PAK" slots="6" tons="3.5" type ="std" heatsinkslots="-4">Standard 150</plant>
-    <plant id="PAL" slots="6" tons="3.5" type ="std" heatsinkslots="-4">Standard 155</plant>
-    <plant id="PAM" slots="6" tons="4" type ="std" heatsinkslots="-4">Standard 160</plant>
-    <plant id="PAN" slots="6" tons="4" type ="std" heatsinkslots="-4">Standard 165</plant>
-    <plant id="PAO" slots="6" tons="4" type ="std" heatsinkslots="-4">Standard 170</plant>
-    <plant id="PAP" slots="6" tons="6" type ="std" heatsinkslots="-3">Standard 175</plant>
-    <plant id="PAQ" slots="6" tons="6" type ="std" heatsinkslots="-3">Standard 180</plant>
-    <plant id="PAR" slots="6" tons="6.5" type ="std" heatsinkslots="-3">Standard 185</plant>
-    <plant id="PAS" slots="6" tons="6.5" type ="std" heatsinkslots="-3">Standard 190</plant>
-    <plant id="PAT" slots="6" tons="7" type ="std" heatsinkslots="-3">Standard 195</plant>
-    <plant id="PAU" slots="6" tons="8.5" type ="std" heatsinkslots="-2">Standard 200</plant>
-    <plant id="PAV" slots="6" tons="9.5" type ="std" heatsinkslots="-2">Standard 205</plant>
-    <plant id="PAW" slots="6" tons="10" type ="std" heatsinkslots="-2">Standard 210</plant>
-    <plant id="PAX" slots="6" tons="10.5" type ="std" heatsinkslots="-2">Standard 215</plant>
-    <plant id="PAY" slots="6" tons="11" type ="std" heatsinkslots="-2">Standard 220</plant>
-    <plant id="PAZ" slots="6" tons="12" type ="std" heatsinkslots="-1">Standard 225</plant>
-    <plant id="PBA" slots="6" tons="12.5" type ="std" heatsinkslots="-1">Standard 230</plant>
-    <plant id="PBB" slots="6" tons="13" type ="std" heatsinkslots="-1">Standard 235</plant>
-    <plant id="PBC" slots="6" tons="13.5" type ="std" heatsinkslots="-1">Standard 240</plant>
-    <plant id="PBD" slots="6" tons="14" type ="std" heatsinkslots="-1">Standard 245</plant>
-    <plant id="PBE" slots="6" tons="15.5" type ="std" heatsinkslots="0">Standard 250</plant>
-    <plant id="PBF" slots="6" tons="16" type ="std" heatsinkslots="0">Standard 255</plant>
-    <plant id="PBG" slots="6" tons="16.5" type ="std" heatsinkslots="0">Standard 260</plant>
-    <plant id="PBH" slots="6" tons="17" type ="std" heatsinkslots="0">Standard 265</plant>
-    <plant id="PBI" slots="6" tons="17.5" type ="std" heatsinkslots="0">Standard 270</plant>
-    <plant id="PBJ" slots="6" tons="18.5" type ="std" heatsinkslots="1">Standard 275</plant>
-    <plant id="PBK" slots="6" tons="19" type ="std" heatsinkslots="1">Standard 280</plant>
-    <plant id="PBL" slots="6" tons="19.5" type ="std" heatsinkslots="1">Standard 285</plant>
-    <plant id="PBM" slots="6" tons="20.5" type ="std" heatsinkslots="1">Standard 290</plant>
-    <plant id="PBN" slots="6" tons="21" type ="std" heatsinkslots="1">Standard 295</plant>
-    <plant id="PBO" slots="6" tons="22" type ="std" heatsinkslots="2">Standard 300</plant>
-    <plant id="PBP" slots="6" tons="23.5" type ="std" heatsinkslots="2">Standard 305</plant>
-    <plant id="PBQ" slots="6" tons="24.5" type ="std" heatsinkslots="2">Standard 310</plant>
-    <plant id="PBR" slots="6" tons="25.5" type ="std" heatsinkslots="2">Standard 315</plant>
-    <plant id="PBS" slots="6" tons="26.5" type ="std" heatsinkslots="2">Standard 320</plant>
-    <plant id="PBT" slots="6" tons="27.5" type ="std" heatsinkslots="3">Standard 325</plant>
-    <plant id="PBU" slots="6" tons="28.5" type ="std" heatsinkslots="3">Standard 330</plant>
-    <plant id="PBV" slots="6" tons="29.5" type ="std" heatsinkslots="3">Standard 335</plant>
-    <plant id="PBX" slots="6" tons="31" type ="std" heatsinkslots="3">Standard 340</plant>
-    <plant id="PBY" slots="6" tons="32.5" type ="std" heatsinkslots="3">Standard 345</plant>
-    <plant id="PBZ" slots="6" tons="33.5" type ="std" heatsinkslots="4">Standard 350</plant>
-    <plant id="PCA" slots="6" tons="35.5" type ="std" heatsinkslots="4">Standard 355</plant>
-    <plant id="PCB" slots="6" tons="37" type ="std" heatsinkslots="4">Standard 360</plant>
-    <plant id="PCC" slots="6" tons="38.5" type ="std" heatsinkslots="4">Standard 365</plant>
-    <plant id="PCD" slots="6" tons="40.5" type ="std" heatsinkslots="4">Standard 370</plant>
-    <plant id="PCE" slots="6" tons="42.5" type ="std" heatsinkslots="5">Standard 375</plant>
-    <plant id="PCF" slots="6" tons="45" type ="std" heatsinkslots="5">Standard 380</plant>
-    <plant id="PCG" slots="6" tons="47.5" type ="std" heatsinkslots="5">Standard 385</plant>
-    <plant id="PCH" slots="6" tons="50" type ="std" heatsinkslots="5">Standard 390</plant>
-    <plant id="PCI" slots="6" tons="53" type ="std" heatsinkslots="5">Standard 395</plant>
-    <plant id="PCJ" slots="6" tons="56.5" type ="std" heatsinkslots="5">Standard 400</plant>
-    <plant id="PCK" slots="6" tons="1.5" type ="xl" heatsinkslots="0">XL 100</plant>
-    <plant id="PCL" slots="6" tons="2.5" type ="xl" heatsinkslots="0">XL 105</plant>
-    <plant id="PCM" slots="6" tons="1.5" type ="xl" heatsinkslots="0">XL 110</plant>
-    <plant id="PCN" slots="6" tons="2.5" type ="xl" heatsinkslots="0">XL 115</plant>
-    <plant id="PCO" slots="6" tons="2.5" type ="xl" heatsinkslots="0">XL 120</plant>
-    <plant id="PCP" slots="6" tons="2.5" type ="xl" heatsinkslots="0">XL 125</plant>
-    <plant id="PCQ" slots="6" tons="2.5" type ="xl" heatsinkslots="0">XL 130</plant>
-    <plant id="PCR" slots="6" tons="2.5" type ="xl" heatsinkslots="0">XL 135</plant>
-    <plant id="PCS" slots="6" tons="2.5" type ="xl" heatsinkslots="0">XL 140</plant>
-    <plant id="PCT" slots="6" tons="2.5" type ="xl" heatsinkslots="0">XL 145</plant>
-    <plant id="PCU" slots="6" tons="2.5" type ="xl" heatsinkslots="0">XL 150</plant>
-    <plant id="PCV" slots="6" tons="2.5" type ="xl" heatsinkslots="0">XL 155</plant>
-    <plant id="PCX" slots="6" tons="2.5" type ="xl" heatsinkslots="0">XL 160</plant>
-    <plant id="PCY" slots="6" tons="2.5" type ="xl" heatsinkslots="0">XL 165</plant>
-    <plant id="PCZ" slots="6" tons="2.5" type ="xl" heatsinkslots="0">XL 170</plant>
-    <plant id="PDA" slots="6" tons="2.5" type ="xl" heatsinkslots="0">XL 175</plant>
-    <plant id="PDB" slots="6" tons="2.5" type ="xl" heatsinkslots="0">XL 180</plant> -->
-    <plant id="PZA" slots="6" tons="3" type ="xl" heatsinkslots="0">XL 185</plant>
-    <plant id="PZB" slots="6" tons="3" type ="xl" heatsinkslots="0">XL 190</plant>
-    <plant id="PZC" slots="6" tons="3" type ="xl" heatsinkslots="0">XL 195</plant>
-    <plant id="PZD" slots="6" tons="4.5" type ="xl" heatsinkslots="0">XL 200</plant>
-    <plant id="PZE" slots="6" tons="4.5" type ="xl" heatsinkslots="0">XL 205</plant>
-    <plant id="PZF" slots="6" tons="5.5" type ="xl" heatsinkslots="0">XL 210</plant>
-    <plant id="PZG" slots="6" tons="5.5" type ="xl" heatsinkslots="0">XL 215</plant>
-    <plant id="PZH" slots="6" tons="6" type ="xl" heatsinkslots="0">XL 220</plant>
-    <plant id="PZI" slots="6" tons="7" type ="xl" heatsinkslots="0">XL 225</plant>
-    <plant id="PZJ" slots="6" tons="7.5" type ="xl" heatsinkslots="0">XL 230</plant>
-    <plant id="PZK" slots="6" tons="7.5" type ="xl" heatsinkslots="0">XL 235</plant>
-    <plant id="PZL" slots="6" tons="8" type ="xl" heatsinkslots="0">XL 240</plant>
-    <plant id="PZM" slots="6" tons="8" type ="xl" heatsinkslots="0">XL 245</plant>
-    <plant id="PZN" slots="6" tons="9.5" type ="xl" heatsinkslots="0">XL 250</plant>
-    <plant id="PZO" slots="6" tons="9.5" type ="xl" heatsinkslots="0">XL 255</plant>
-    <plant id="PZP" slots="6" tons="10" type ="xl" heatsinkslots="0">XL 260</plant>
-    <plant id="PZQ" slots="6" tons="10" type ="xl" heatsinkslots="0">XL 265</plant>
-    <plant id="PZR" slots="6" tons="10.5" type ="xl" heatsinkslots="0">XL 270</plant>
-    <plant id="PZS" slots="6" tons="11" type ="xl" heatsinkslots="1">XL 275</plant>
-    <plant id="PZT" slots="6" tons="11" type ="xl" heatsinkslots="1">XL 280</plant>
-    <plant id="PZU" slots="6" tons="11.5" type ="xl" heatsinkslots="1">XL 285</plant>
-    <plant id="PZV" slots="6" tons="12" type ="xl" heatsinkslots="1">XL 290</plant>
-    <plant id="PZW" slots="6" tons="12" type ="xl" heatsinkslots="1">XL 295</plant>
-    <plant id="PZX" slots="6" tons="12.5" type ="xl" heatsinkslots="2">XL 300</plant>
-    <plant id="PZY" slots="6" tons="14" type ="xl" heatsinkslots="2">XL 305</plant>
-    <plant id="PZZ" slots="6" tons="14.5" type ="xl" heatsinkslots="2">XL 310</plant>
-    <plant id="PYA" slots="6" tons="15" type ="xl" heatsinkslots="2">XL 315</plant>
-    <plant id="PYB" slots="6" tons="15.5" type ="xl" heatsinkslots="2">XL 320</plant>
-    <plant id="PYC" slots="6" tons="16" type ="xl" heatsinkslots="3">XL 325</plant>
-    <plant id="PYD" slots="6" tons="16.5" type ="xl" heatsinkslots="3">XL 330</plant>
-    <plant id="PYE" slots="6" tons="17" type ="xl" heatsinkslots="3">XL 335</plant>
-    <plant id="PYF" slots="6" tons="17.5" type ="xl" heatsinkslots="3">XL 340</plant>
-    <plant id="PYG" slots="6" tons="18.5" type ="xl" heatsinkslots="3">XL 345</plant>
-    <plant id="PYH" slots="6" tons="19" type ="xl" heatsinkslots="4">XL 350</plant>
-    <plant id="PYI" slots="6" tons="20" type ="xl" heatsinkslots="4">XL 355</plant>
-    <plant id="PYJ" slots="6" tons="20.5" type ="xl" heatsinkslots="4">XL 360</plant>
-    <plant id="PYK" slots="6" tons="21.5" type ="xl" heatsinkslots="4">XL 365</plant>
-    <plant id="PYL" slots="6" tons="22.5" type ="xl" heatsinkslots="4">XL 370</plant>
-    <plant id="PYM" slots="6" tons="23.5" type ="xl" heatsinkslots="5">XL 375</plant>
-    <plant id="PYN" slots="6" tons="24.5" type ="xl" heatsinkslots="5">XL 380</plant>
-    <plant id="PYO" slots="6" tons="26" type ="xl" heatsinkslots="5">XL 385</plant>
-    <plant id="PYP" slots="6" tons="27" type ="xl" heatsinkslots="5">XL 390</plant>
-    <plant id="PYQ" slots="6" tons="28.5" type ="xl" heatsinkslots="5">XL 395</plant>
-    <plant id="PYR" slots="6" tons="30.5" type ="xl" heatsinkslots="5">XL 400</plant>
+    <plant id="PAF" slots="6" tons="2.5" type ="std" heatsinkslots="-5" size="125">Standard 125</plant>
+    <plant id="PAG" slots="6" tons="2.5" type ="std" heatsinkslots="-5" size="130">Standard 130</plant>
+    <plant id="PAH" slots="6" tons="2.5" type ="std" heatsinkslots="-5" size="135">Standard 135</plant>
+    <plant id="PAI" slots="6" tons="2.5" type ="std" heatsinkslots="-5" size="140">Standard 140</plant>
+    <plant id="PAJ" slots="6" tons="2.5" type ="std" heatsinkslots="-5" size="145">Standard 145</plant>
+    <plant id="PAK" slots="6" tons="3.5" type ="std" heatsinkslots="-4" size="150">Standard 150</plant>
+    <plant id="PAL" slots="6" tons="3.5" type ="std" heatsinkslots="-4" size="155">Standard 155</plant>
+    <plant id="PAM" slots="6" tons="4" type ="std" heatsinkslots="-4" size="160">Standard 160</plant>
+    <plant id="PAN" slots="6" tons="4" type ="std" heatsinkslots="-4" size="165">Standard 165</plant>
+    <plant id="PAO" slots="6" tons="4" type ="std" heatsinkslots="-4" size="170">Standard 170</plant>
+    <plant id="PAP" slots="6" tons="6" type ="std" heatsinkslots="-3" size="175">Standard 175</plant>
+    <plant id="PAQ" slots="6" tons="6" type ="std" heatsinkslots="-3" size="180">Standard 180</plant>
+    <plant id="PAR" slots="6" tons="6.5" type ="std" heatsinkslots="-3" size="185">Standard 185</plant>
+    <plant id="PAS" slots="6" tons="6.5" type ="std" heatsinkslots="-3" size="190">Standard 190</plant>
+    <plant id="PAT" slots="6" tons="7" type ="std" heatsinkslots="-3" size="195">Standard 195</plant>
+    <plant id="PAU" slots="6" tons="8.5" type ="std" heatsinkslots="-2" size="200">Standard 200</plant>
+    <plant id="PAV" slots="6" tons="9.5" type ="std" heatsinkslots="-2" size="205">Standard 205</plant>
+    <plant id="PAW" slots="6" tons="10" type ="std" heatsinkslots="-2" size="210">Standard 210</plant>
+    <plant id="PAX" slots="6" tons="10.5" type ="std" heatsinkslots="-2" size="215">Standard 215</plant>
+    <plant id="PAY" slots="6" tons="11" type ="std" heatsinkslots="-2" size="220">Standard 220</plant>
+    <plant id="PAZ" slots="6" tons="12" type ="std" heatsinkslots="-1" size="225">Standard 225</plant>
+    <plant id="PBA" slots="6" tons="12.5" type ="std" heatsinkslots="-1" size="230">Standard 230</plant>
+    <plant id="PBB" slots="6" tons="13" type ="std" heatsinkslots="-1" size="235">Standard 235</plant>
+    <plant id="PBC" slots="6" tons="13.5" type ="std" heatsinkslots="-1" size="240">Standard 240</plant>
+    <plant id="PBD" slots="6" tons="14" type ="std" heatsinkslots="-1" size="245">Standard 245</plant>
+    <plant id="PBE" slots="6" tons="15.5" type ="std" heatsinkslots="0" size="250">Standard 250</plant>
+    <plant id="PBF" slots="6" tons="16" type ="std" heatsinkslots="0" size="255">Standard 255</plant>
+    <plant id="PBG" slots="6" tons="16.5" type ="std" heatsinkslots="0" size="260">Standard 260</plant>
+    <plant id="PBH" slots="6" tons="17" type ="std" heatsinkslots="0" size="265">Standard 265</plant>
+    <plant id="PBI" slots="6" tons="17.5" type ="std" heatsinkslots="0" size="270">Standard 270</plant>
+    <plant id="PBJ" slots="6" tons="18.5" type ="std" heatsinkslots="1" size="275">Standard 275</plant>
+    <plant id="PBK" slots="6" tons="19" type ="std" heatsinkslots="1" size="280">Standard 280</plant>
+    <plant id="PBL" slots="6" tons="19.5" type ="std" heatsinkslots="1" size="285">Standard 285</plant>
+    <plant id="PBM" slots="6" tons="20.5" type ="std" heatsinkslots="1" size="290">Standard 290</plant>
+    <plant id="PBN" slots="6" tons="21" type ="std" heatsinkslots="1" size="295">Standard 295</plant>
+    <plant id="PBO" slots="6" tons="22" type ="std" heatsinkslots="2" size="300">Standard 300</plant>
+    <plant id="PBP" slots="6" tons="23.5" type ="std" heatsinkslots="2" size="305">Standard 305</plant>
+    <plant id="PBQ" slots="6" tons="24.5" type ="std" heatsinkslots="2" size="310">Standard 310</plant>
+    <plant id="PBR" slots="6" tons="25.5" type ="std" heatsinkslots="2" size="315">Standard 315</plant>
+    <plant id="PBS" slots="6" tons="26.5" type ="std" heatsinkslots="2" size="320">Standard 320</plant>
+    <plant id="PBT" slots="6" tons="27.5" type ="std" heatsinkslots="3" size="325">Standard 325</plant>
+    <plant id="PBU" slots="6" tons="28.5" type ="std" heatsinkslots="3" size="330">Standard 330</plant>
+    <plant id="PBV" slots="6" tons="29.5" type ="std" heatsinkslots="3" size="335">Standard 335</plant>
+    <plant id="PBX" slots="6" tons="31" type ="std" heatsinkslots="3" size="340">Standard 340</plant>
+    <plant id="PBY" slots="6" tons="32.5" type ="std" heatsinkslots="3" size="345">Standard 345</plant>
+    <plant id="PBZ" slots="6" tons="33.5" type ="std" heatsinkslots="4" size="350">Standard 350</plant>
+    <plant id="PCA" slots="6" tons="35.5" type ="std" heatsinkslots="4" size="355">Standard 355</plant>
+    <plant id="PCB" slots="6" tons="37" type ="std" heatsinkslots="4" size="360">Standard 360</plant>
+    <plant id="PCC" slots="6" tons="38.5" type ="std" heatsinkslots="4" size="365">Standard 365</plant>
+    <plant id="PCD" slots="6" tons="40.5" type ="std" heatsinkslots="4" size="370">Standard 370</plant>
+    <plant id="PCE" slots="6" tons="42.5" type ="std" heatsinkslots="5" size="375">Standard 375</plant>
+    <plant id="PCF" slots="6" tons="45" type ="std" heatsinkslots="5" size="380">Standard 380</plant>
+    <plant id="PCG" slots="6" tons="47.5" type ="std" heatsinkslots="5" size="385">Standard 385</plant>
+    <plant id="PCH" slots="6" tons="50" type ="std" heatsinkslots="5" size="390">Standard 390</plant>
+    <plant id="PCI" slots="6" tons="53" type ="std" heatsinkslots="5" size="395">Standard 395</plant>
+    <plant id="PCJ" slots="6" tons="56.5" type ="std" heatsinkslots="5" size="400">Standard 400</plant>
+    <plant id="PCK" slots="6" tons="1.5" type ="xl" heatsinkslots="0" size="100">XL 100</plant>
+    <plant id="PCL" slots="6" tons="2.5" type ="xl" heatsinkslots="0" size="105">XL 105</plant>
+    <plant id="PCM" slots="6" tons="1.5" type ="xl" heatsinkslots="0" size="110">XL 110</plant>
+    <plant id="PCN" slots="6" tons="2.5" type ="xl" heatsinkslots="0" size="115">XL 115</plant>
+    <plant id="PCO" slots="6" tons="2.5" type ="xl" heatsinkslots="0" size="120">XL 120</plant>
+    <plant id="PCP" slots="6" tons="2.5" type ="xl" heatsinkslots="0" size="125">XL 125</plant>
+    <plant id="PCQ" slots="6" tons="2.5" type ="xl" heatsinkslots="0" size="130">XL 130</plant>
+    <plant id="PCR" slots="6" tons="2.5" type ="xl" heatsinkslots="0" size="135">XL 135</plant>
+    <plant id="PCS" slots="6" tons="2.5" type ="xl" heatsinkslots="0" size="140">XL 140</plant>
+    <plant id="PCT" slots="6" tons="2.5" type ="xl" heatsinkslots="0" size="145">XL 145</plant>
+    <plant id="PCU" slots="6" tons="2.5" type ="xl" heatsinkslots="0" size="150">XL 150</plant>
+    <plant id="PCV" slots="6" tons="2.5" type ="xl" heatsinkslots="0" size="155">XL 155</plant>
+    <plant id="PCX" slots="6" tons="2.5" type ="xl" heatsinkslots="0" size="160">XL 160</plant>
+    <plant id="PCY" slots="6" tons="2.5" type ="xl" heatsinkslots="0" size="165">XL 165</plant>
+    <plant id="PCZ" slots="6" tons="2.5" type ="xl" heatsinkslots="0" size="170">XL 170</plant>
+    <plant id="PDA" slots="6" tons="2.5" type ="xl" heatsinkslots="0" size="175">XL 175</plant>
+    <plant id="PDB" slots="6" tons="2.5" type ="xl" heatsinkslots="0" size="180">XL 180</plant> -->
+    <plant id="PZA" slots="6" tons="3" type ="xl" heatsinkslots="0" size="185">XL 185</plant>
+    <plant id="PZB" slots="6" tons="3" type ="xl" heatsinkslots="0" size="190">XL 190</plant>
+    <plant id="PZC" slots="6" tons="3" type ="xl" heatsinkslots="0" size="195">XL 195</plant>
+    <plant id="PZD" slots="6" tons="4.5" type ="xl" heatsinkslots="0" size="200">XL 200</plant>
+    <plant id="PZE" slots="6" tons="4.5" type ="xl" heatsinkslots="0" size="205">XL 205</plant>
+    <plant id="PZF" slots="6" tons="5.5" type ="xl" heatsinkslots="0" size="210">XL 210</plant>
+    <plant id="PZG" slots="6" tons="5.5" type ="xl" heatsinkslots="0" size="215">XL 215</plant>
+    <plant id="PZH" slots="6" tons="6" type ="xl" heatsinkslots="0" size="220">XL 220</plant>
+    <plant id="PZI" slots="6" tons="7" type ="xl" heatsinkslots="0" size="225">XL 225</plant>
+    <plant id="PZJ" slots="6" tons="7.5" type ="xl" heatsinkslots="0" size="230">XL 230</plant>
+    <plant id="PZK" slots="6" tons="7.5" type ="xl" heatsinkslots="0" size="235">XL 235</plant>
+    <plant id="PZL" slots="6" tons="8" type ="xl" heatsinkslots="0" size="240">XL 240</plant>
+    <plant id="PZM" slots="6" tons="8" type ="xl" heatsinkslots="0" size="245">XL 245</plant>
+    <plant id="PZN" slots="6" tons="9.5" type ="xl" heatsinkslots="0" size="250">XL 250</plant>
+    <plant id="PZO" slots="6" tons="9.5" type ="xl" heatsinkslots="0" size="255">XL 255</plant>
+    <plant id="PZP" slots="6" tons="10" type ="xl" heatsinkslots="0" size="260">XL 260</plant>
+    <plant id="PZQ" slots="6" tons="10" type ="xl" heatsinkslots="0" size="265">XL 265</plant>
+    <plant id="PZR" slots="6" tons="10.5" type ="xl" heatsinkslots="0" size="270">XL 270</plant>
+    <plant id="PZS" slots="6" tons="11" type ="xl" heatsinkslots="1" size="275">XL 275</plant>
+    <plant id="PZT" slots="6" tons="11" type ="xl" heatsinkslots="1" size="280">XL 280</plant>
+    <plant id="PZU" slots="6" tons="11.5" type ="xl" heatsinkslots="1" size="285">XL 285</plant>
+    <plant id="PZV" slots="6" tons="12" type ="xl" heatsinkslots="1" size="290">XL 290</plant>
+    <plant id="PZW" slots="6" tons="12" type ="xl" heatsinkslots="1" size="295">XL 295</plant>
+    <plant id="PZX" slots="6" tons="12.5" type ="xl" heatsinkslots="2" size="300">XL 300</plant>
+    <plant id="PZY" slots="6" tons="14" type ="xl" heatsinkslots="2" size="305">XL 305</plant>
+    <plant id="PZZ" slots="6" tons="14.5" type ="xl" heatsinkslots="2" size="310">XL 310</plant>
+    <plant id="PYA" slots="6" tons="15" type ="xl" heatsinkslots="2" size="315">XL 315</plant>
+    <plant id="PYB" slots="6" tons="15.5" type ="xl" heatsinkslots="2" size="320">XL 320</plant>
+    <plant id="PYC" slots="6" tons="16" type ="xl" heatsinkslots="3" size="325">XL 325</plant>
+    <plant id="PYD" slots="6" tons="16.5" type ="xl" heatsinkslots="3" size="330">XL 330</plant>
+    <plant id="PYE" slots="6" tons="17" type ="xl" heatsinkslots="3" size="335">XL 335</plant>
+    <plant id="PYF" slots="6" tons="17.5" type ="xl" heatsinkslots="3" size="340">XL 340</plant>
+    <plant id="PYG" slots="6" tons="18.5" type ="xl" heatsinkslots="3" size="345">XL 345</plant>
+    <plant id="PYH" slots="6" tons="19" type ="xl" heatsinkslots="4" size="350">XL 350</plant>
+    <plant id="PYI" slots="6" tons="20" type ="xl" heatsinkslots="4" size="355">XL 355</plant>
+    <plant id="PYJ" slots="6" tons="20.5" type ="xl" heatsinkslots="4" size="360">XL 360</plant>
+    <plant id="PYK" slots="6" tons="21.5" type ="xl" heatsinkslots="4" size="365">XL 365</plant>
+    <plant id="PYL" slots="6" tons="22.5" type ="xl" heatsinkslots="4" size="370">XL 370</plant>
+    <plant id="PYM" slots="6" tons="23.5" type ="xl" heatsinkslots="5" size="375">XL 375</plant>
+    <plant id="PYN" slots="6" tons="24.5" type ="xl" heatsinkslots="5" size="380">XL 380</plant>
+    <plant id="PYO" slots="6" tons="26" type ="xl" heatsinkslots="5" size="385">XL 385</plant>
+    <plant id="PYP" slots="6" tons="27" type ="xl" heatsinkslots="5" size="390">XL 390</plant>
+    <plant id="PYQ" slots="6" tons="28.5" type ="xl" heatsinkslots="5" size="395">XL 395</plant>
+    <plant id="PYR" slots="6" tons="30.5" type ="xl" heatsinkslots="5" size="400">XL 400</plant>
   </engines>
 </items>

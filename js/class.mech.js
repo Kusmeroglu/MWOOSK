@@ -19,7 +19,8 @@
     this.jumpjetcount = 0;
     this.jumpjetmax = 5;
 
-    this.maxEngineSize = 0;
+    this.minEngineSize = 100;
+    this.maxEngineSize = 400;
 
     this.armorWeight = 1/32;
 
@@ -43,7 +44,7 @@
             this.currentFreeCritSlots += this.limbs[limbName].getFreeCritSlots();
         }
         return this.currentFreeCritSlots;
-    }
+    };
 
     this.addLimb = function addLimb(limbName, limbObj) {
         this.limbs[limbName] = limbObj;
@@ -107,7 +108,7 @@
         }
         this.showStructureSlots();
         return success;
-    }
+    };
 
     this.removeAllItemsByIDs = function removeAllItemsByIDs(itemIDList){
         limbList.forEach(function(limbName){
@@ -124,14 +125,14 @@
                 }
             }
         }, this);
-    }
+    };
 
     this.setArmorForLimb = function setArmorForLimb(limbName, frontArmor, rearArmor){
         // add (subtract) the difference to the current weight
         this.addWeight( (frontArmor + rearArmor - this.limbs[limbName].totalArmor) * (this.ferro ? this.ferroweight : this.armorWeight) );
         this.limbs[limbName].setArmor(frontArmor, rearArmor);
         this.resetArmorURLParam();
-    }
+    };
 
     this.resetArmorURLParam = function resetArmorURLParam(){
         var s = "";
@@ -143,16 +144,16 @@
             }
         }, this);
         setURLParameter("armor", s);
-    }
+    };
 
     this.resetLimbCritSlots = function resetLimbCritSlots(limbName){
         this.limbs[limbName].addEmptyCritSlots();
-    }
+    };
 
     this.addWeight = function addWeight(weight){
         this.currentTons += weight;
         updateChart(this.maxTons, (this.endo) ? this.endoweight : this.chassisTons, this.currentTons);
-    }
+    };
 
     this.addEndoSteel = function addEndoSteel(){
         if ( this.currentFreeCritSlots < 14 ){
@@ -164,7 +165,7 @@
         setURLParameter('endo', 'true');
         this.showStructureSlots();
         return true;
-    }
+    };
 
     this.removeEndoSteel = function removeEndoSteel(){
         if ( (this.maxTons - this.currentTons) < (this.chassisTons - this.endoweight) ){
@@ -176,7 +177,7 @@
         setURLParameter('endo', 'false');
         this.showStructureSlots();
         return true;
-    }
+    };
 
     this.addFerroFibrous = function addFerroFibrous(){
         if ( this.currentFreeCritSlots < 14 ){
@@ -194,7 +195,7 @@
         setURLParameter('ferro', 'true');
         this.showStructureSlots();
         return true;
-    }
+    };
 
     this.removeFerroFibrous = function removeFerroFibrous(){
         // calculate weight savings
@@ -308,7 +309,7 @@
             countLimbs++;
         }
         return countLimbs;
-    }
+    };
 
     this.init();
 }

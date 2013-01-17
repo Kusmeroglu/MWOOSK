@@ -16,6 +16,8 @@ var classLookup = {
     10:'critTen'
 };
 
+var ECMID = "IGE";
+
 $(function () {
 
 	$('#reset').click(function(){
@@ -75,6 +77,12 @@ $(function () {
         });
         $(xml).find("internals > item").each(function () {
             var itemObj = new item($(this).attr("id"), $(this).text(), $(this).attr("slots"), $(this).attr("tons"), $(this).attr("type"), $(this).attr("hardpoint"));
+            if ( $(this).attr("minTons") ){
+                itemObj.mintonnage = parseInt( $(this).attr("minTons") );
+            }
+            if ( $(this).attr("maxTons") ){
+                itemObj.maxtonnage = parseInt( $(this).attr("maxTons") );
+            }
             $("#internals").append(createItemDivFromData({itemObj: itemObj}));
         });
 
@@ -83,6 +91,7 @@ $(function () {
             itemObj.heatsinkslots = parseInt($(this).attr("heatsinkslots"));
             itemObj.rosechartdata = [];
 			itemObj.type = $(this).attr("type");
+            itemObj.engineSize = $(this).attr("size");
             $("#"+itemObj.type+"Engine").append(createItemDivFromData({itemObj: itemObj}));
         });
 
@@ -197,11 +206,13 @@ $(function () {
             mechXML.find('mech[type="' + mechObj.chassis + '"] variant[name="' + mechObj.variant + '"]').each(function () {
                 mechObj.ecm = Boolean($(this).attr("ecm") == "yes");
                 mechObj.jumpjets = Boolean($(this).attr("jets") == "yes");
+                mechObj.minEngineSize = parseInt($(this).attr("minengine"));
                 mechObj.maxEngineSize = parseInt($(this).attr("maxengine"));
             });
 
             // weights are added to chart when limbs created.
             createChart("#weightChart", mechObj.maxTons, mechObj.chassisTons, mechObj.currentTons);
+
             // add all the limbs.
             mechXML.find('mech[type="' + mechObj.chassis + '"] variant[name="' + mechObj.variant + '"] > limbs > limb').each(function () {
                 var limbObj = new limb($(this).attr("name"), $(this).attr("crits"), parseInt($(this).attr("maxArmor")));
@@ -221,34 +232,72 @@ $(function () {
                 limbObj.initVisuals();
             });
 
+            /*
+                 Filtering out all the items that don't belong on this mech (with no upgrades)
+             */
+            // default to single HS and non-artemis
+            mechObj.removeDualHeatSinks();
+            mechObj.removeArtemis();
+            // filter out jumpjets
+            if (mechObj.jumpjets){
+                $("#internals .jumpjet").filter(function(){
+                    var itemObj = $(this).data('itemObj');
+                    if ((mechObj.maxTons < itemObj.mintonnage) || (mechObj.maxTons > itemObj.maxtonnage)){
+                        return true; // hide this object
+                    } else {
+                        return false;
+                    }
+                }).remove();
+            } else {
+                $("#internals .jumpjet").remove();
+            }
+            // filter ecm
+            if (! mechObj.ecm){
+                $("#internals ."+ECMID).remove();
+            }
+            //filter engines
+            if (mechObj.minEngineSize && mechObj.maxEngineSize){
+                $("#engines .item").filter(function(){
+                    var itemObj = $(this).data('itemObj');
+                    if ((mechObj.minEngineSize > itemObj.engineSize) || (mechObj.maxEngineSize < itemObj.engineSize)){
+                        return true; // hide this object
+                    } else {
+                        return false;
+                    }
+                }).remove();
+            }
+
+            //check for info in URLs
+            if (urldata.hasOwnProperty('variant')){
+                // check for upgrades
+                if (urldata.hasOwnProperty('endo') && urldata['endo'] == "true"){
+                    if (mechObj.addEndoSteel() ){
+                        $("#endoCheckbox").prop("checked", true);
+                    }
+                }
+                if (urldata.hasOwnProperty('ferro') && urldata['ferro'] == "true"){
+                    if (mechObj.addFerroFibrous()){
+                        $("#ferroCheckbox").prop("checked", true);
+                    }
+                }
+                if (urldata.hasOwnProperty('dhs') && urldata['dhs'] == "true"){
+                    if (mechObj.addDualHeatSinks()){
+                        $("#dhsCheckbox").prop("checked", true);
+                    }
+                }
+                if (urldata.hasOwnProperty('artemis') && urldata['artemis'] == "true"){
+                    if (mechObj.addArtemis()){
+                        $("#artemisCheckbox").prop("checked", true);
+                    }
+                }
+            }
+
             $("#mechBay").fadeIn('fast', function() {
                 createRoseGraph("#roseChart", "-N/A-");
-                mechObj.removeDualHeatSinks();
-                mechObj.removeArtemis();
 
-                //check for info in URLs
                 // (have to wait until we have graphs and items created.)
                 if (urldata.hasOwnProperty('variant')){
-                    if (urldata.hasOwnProperty('endo') && urldata['endo'] == "true"){
-                        if (mechObj.addEndoSteel() ){
-                            $("#endoCheckbox").prop("checked", true);
-                        }
-                    }
-                    if (urldata.hasOwnProperty('ferro') && urldata['ferro'] == "true"){
-                        if (mechObj.addFerroFibrous()){
-                            $("#ferroCheckbox").prop("checked", true);
-                        }
-                    }
-                    if (urldata.hasOwnProperty('dhs') && urldata['dhs'] == "true"){
-                        if (mechObj.addDualHeatSinks()){
-                            $("#dhsCheckbox").prop("checked", true);
-                        }
-                    }
-                    if (urldata.hasOwnProperty('artemis') && urldata['artemis'] == "true"){
-                        if (mechObj.addArtemis()){
-                            $("#artemisCheckbox").prop("checked", true);
-                        }
-                    }
+                    // check for limbs data and load each, 3 letter code by 3 letter code.
                     limbList.forEach(function(limb){
                         if (urldata.hasOwnProperty(limb)){
                             var rawitems = urldata[limb];
@@ -257,14 +306,16 @@ $(function () {
                             while(i < rawitems.length)
                             {
                                 var thisitemid = rawitems.substr(i, 3);
-                                var thisitemelem = $('#detailContainer .'+thisitemid);
-                                var thisitemObj = jQuery.extend(true, {}, thisitemelem.data('itemObj'));// get copy of old data
-                                mechObj.addItemToLimb($(limbelem).attr('id'), thisitemObj);
-
+                                var thisitemelem = $('#detailContainer .'+thisitemid); // pull the data out of the dom element with the matching itemid (which is actually a class)
+                                if ( thisitemelem ){ // if we found it
+                                    var thisitemObj = jQuery.extend(true, {}, thisitemelem.data('itemObj'));// get copy of old data
+                                    mechObj.addItemToLimb($(limbelem).attr('id'), thisitemObj);
+                                }
                                 i += 3;
                             }
                         }
-                    })
+                    });
+                    // check for armor values in the url and load
                     if (urldata.hasOwnProperty('armor')){
                         var armorvalues = urldata['armor'];
                         armorvalues.split(',').forEach( function(bothvalues, i){
@@ -335,10 +386,10 @@ $(function () {
             mechObj.removeItemFromLimb($(ui.draggable).parents(".area").attr('id'), data['itemObj']);
             $(ui.draggable).remove(); // sometimes limb.removeItem doesn't appear to work..?
             // hack for the activeClass on the limbs not clearing itself in this case:
-            $('.valid').removeClass('valid');
+            $('.valid').removeClass('valid'); // todo: get to the bottom of this
         },
         accept: '.critItem'
-    })
+    });
 
     // set the limb areas to be droppables
     $(".area").droppable({
@@ -369,10 +420,14 @@ $(function () {
             }
             mechObj.addItemToLimb($(this).attr('id'), jQuery.extend(true, {}, data['itemObj']));
             // hack for the activeClass on the limbs not clearing itself in this case:
-            $('.valid').removeClass('valid');
+            $('.valid').removeClass('valid'); // todo: get to the bottom of this
             return false;
         }
     }).disableSelection();
+
+    /*
+       --- Upgrade Checkboxes -----
+     */
 
     $("#endoCheckbox").change( function(){
         if ($('#endoCheckbox').is(':checked') ){
