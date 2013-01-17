@@ -126,11 +126,14 @@
             return false;
         }
 
+        var visiblecritslots = itemObj.critSlots;
+        if ( this.engineHeatSinks > 0 ){
+            visiblecritslots -= this.engineHeatSinks;
+        }
         // clear out the critslots needed
-        var ehsflag = false; // track if a heatsink was put into an engine heat sink slot, so we can force dhs to be one slot
         if ( itemObj.type == "heatsink" && (this.engineHeatSinks - this.engineHeatSinksItems.length) > 0 ){
             this.engineHeatSinksItems.push($('#'+this.limbName).find('.critWrap .engineheatsink').slice(0, 1).detach());
-            ehsflag = true;
+            visiblecritslots = 1;
         } else if ( itemObj.type != "internal"){
             $('#'+this.limbName).find('.critWrap .empty').slice(0, itemObj.critSlots).remove();
         }
@@ -144,7 +147,7 @@
             .data({'itemObj':itemObj, rosechartdata:itemObj.rosechartdata})
             .disableSelection()
             .append($('<div/>')
-                .addClass(classLookup[ ehsflag ? 1 : itemObj.critSlots])
+                .addClass(visiblecritslots)
                 .append('<div class="critLabel">'+itemObj.itemName+'</div>')
                 )
 			.appendTo($('#'+this.limbName+' .critWrap'))
@@ -268,6 +271,14 @@
         if (itemObj.critSlots > this.getFreeCritSlots()) {
             return false;
         }
+        // hack for XL engines- check for crit slots in the other torsos
+        if ( this.limbName == "centerTorso" && itemObj.type == "xl"){
+            //yuck on reaching into the limb like this
+            if (mechObj.limbs['rightTorso'].getFreeCritSlots() < 3 || mechObj.limbs['leftTorso'].getFreeCritSlots() < 3){
+                return false;
+            }
+        }
+
         //Applicable free hard point?
         if (itemObj.hardpointType){
             var typePoints = 0;

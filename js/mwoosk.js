@@ -87,7 +87,7 @@ $(function () {
         });
 
         $(xml).find("engines > plant").each(function () {
-            var itemObj = new item($(this).attr("id"), $(this).text(), parseInt($(this).attr("slots")) - parseInt($(this).attr("heatsinkslots")), $(this).attr("tons"), $(this).attr("type"), "engine");
+            var itemObj = new item($(this).attr("id"), $(this).text(), parseInt($(this).attr("slots")), $(this).attr("tons"), $(this).attr("type"), "engine");
             itemObj.heatsinkslots = parseInt($(this).attr("heatsinkslots"));
             itemObj.rosechartdata = [];
 			itemObj.type = $(this).attr("type");
