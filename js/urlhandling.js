@@ -22,7 +22,11 @@ function setURLParameter(param, paramVal){
     var rows_txt = temp + "" + param + "=" + paramVal;
 //    console.log("Setting URL " + param + " = " + paramVal);
 //    console.log("URL: " + baseURL + "?" + newAdditionalURL + rows_txt);
-    History.replaceState({}, "Title doesn't do anything", baseURL + "?" + newAdditionalURL + rows_txt)
+    var title = "MWOOSK v.01a";
+    if ( mechObj && mechObj.variant){
+        title += ": " + mechObj.variant;
+    }
+    History.replaceState({}, title, baseURL + "?" + newAdditionalURL + rows_txt)
     //return baseURL + "?" + newAdditionalURL + rows_txt;
 
     //reset the tiny rul thing
