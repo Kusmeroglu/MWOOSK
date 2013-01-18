@@ -74,7 +74,7 @@
                 .addClass('empty')
                 .append($('<div/>')
                 .addClass(classLookup[1])
-                .append('<div class="critLabel">[empty]</div>'))
+                .append('<div class="critLabel">[ empty ]</div>'))
                 .appendTo($('#'+this.limbName+' .critWrap'))
         }
         this.sortItems();

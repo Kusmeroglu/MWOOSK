@@ -297,10 +297,13 @@
 
     this.showStructureSlots = function showStructureSlots(){
         //clear old shown slots
+        $("#mechContainer .structure .critLabel").text("[ empty ]");
         $("#mechContainer .structure").removeClass('structure');
 
         var structureSlots = (this.endo ? this.endoCritSlots : 0) + (this.ferro ? this.ferroCritSlots : 0);
         $("#mechContainer .empty").slice(0, structureSlots).addClass('structure');
+        $("#mechContainer .structure .critLabel").text("[ Dynamic Structure ]");
+
     };
 
     this.countLimbs = function countLimbs() {
