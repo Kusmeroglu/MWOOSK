@@ -1892,8 +1892,8 @@
                     </limb>
                     <limb name="centerTorso"  crits="8" armorFront="20" armorRear="10" maxArmor="44">
                         <internal slots="4">Gyro</internal>
-                        <hardpoint type="missile"></missile>
-                        <hardpoint type="missile"></missile>
+                        <hardpoint type="missile"></hardpoint>
+                        <hardpoint type="missile"></hardpoint>
                     </limb>
                     <limb name="rightTorso"  crits="12" armorFront="16" armorRear="8" maxArmor="32">
                     </limb>
@@ -1974,7 +1974,7 @@
                     </limb>
                     <limb name="centerTorso"  crits="8" armorFront="18" armorRear="4" maxArmor="44">
                         <internal slots="4">Gyro</internal>
-                        <hardpoint type="missile"></missile>
+                        <hardpoint type="missile"></hardpoint>
                     </limb>
                     <limb name="rightTorso"  crits="12" armorFront="16" armorRear="8" maxArmor="32">
                     </limb>
