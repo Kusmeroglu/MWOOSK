@@ -1878,7 +1878,7 @@
         </mech>           
 	</class>
 	<class type="Light">
-		<mech type="Jenner" tonnage="35" chassis="3">
+		<mech type="Jenner" tonnage="35" chassis="3.5">
 			<variant name="JR7-D" premium="no" founders="no" jets="yes" ecm="no" minengine="100" maxengine="300" modules="2">
 				<limbs>
 					<limb name="leftArm"  crits="12" armorFront="8" armorRear="" maxArmor="24">
