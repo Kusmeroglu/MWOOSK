@@ -127,7 +127,7 @@
         }
 
         var visiblecritslots = itemObj.critSlots;
-        if ( this.engineHeatSinks > 0 ){
+        if ( itemObj.hardpointType == "engine" && this.engineHeatSinks > 0 ){
             visiblecritslots -= this.engineHeatSinks;
         }
         // clear out the critslots needed
@@ -147,7 +147,7 @@
             .data({'itemObj':itemObj, rosechartdata:itemObj.rosechartdata})
             .disableSelection()
             .append($('<div/>')
-                .addClass(visiblecritslots)
+                .addClass(classLookup[ visiblecritslots ])
                 .append('<div class="critLabel">'+itemObj.itemName+'</div>')
                 )
 			.appendTo($('#'+this.limbName+' .critWrap'))

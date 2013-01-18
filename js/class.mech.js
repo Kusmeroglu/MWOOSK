@@ -57,8 +57,10 @@
             return false;
         }
         // are there crit slots (on the whole mech, endo and ferro, I'm looking at you)
+        // but first, if this is the center torso and this is a heatsink and there are extra heatsink slots, we bypass free slots
         var structureSlots = (this.endo ? this.endoCritSlots : 0) + (this.ferro ? this.ferroCritSlots : 0);
-        if ((this.currentFreeCritSlots - structureSlots) < itemObj.critSlots){
+        if ( ! (limbName == "centerTorso" && itemObj.type == "heatsink" && (this.limbs[limbName].engineHeatSinks - this.limbs[limbName].engineHeatSinksItems.length) > 0)
+            && (this.currentFreeCritSlots - structureSlots) < itemObj.critSlots){
             return false;
         }
         // ecm check
@@ -66,7 +68,8 @@
             return false;
         }
         // jumpjet check
-        if ( itemObj.id == "IJJ" && (this.jumpjets == false || this.jumpjetcount >= this.jumpjetmax) ){
+        var jumpjetitemids = ["IJJ", "IJK", "IJL", "IJM", "IJN"];
+        if (  $.inArray(itemObj.id, jumpjetitemids) > -1 && (this.jumpjets == false || this.jumpjetcount >= this.jumpjetmax) ){
             return false;
         }
 
