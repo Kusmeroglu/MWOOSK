@@ -1880,38 +1880,38 @@
 	<class type="Light">
 		<mech type="Jenner" tonnage="35" chassis="3.5">
 			<variant name="JR7-D" premium="no" founders="no" jets="yes" ecm="no" minengine="100" maxengine="300" modules="2">
-				<limbs>
-					<limb name="leftArm"  crits="12" armorFront="8" armorRear="" maxArmor="24">
+		    <limbs>
+		    <limb name="leftArm"  crits="12" armorFront="8" armorRear="0" maxArmor="24">
                         <internal slots="1">Shoulder</internal>
                         <internal slots="1">Upper Arm Actuator</internal>
                         <hardpoint type="energy"></hardpoint>
-						<hardpoint type="energy"></hardpoint>
-					</limb>
+			<hardpoint type="energy"></hardpoint>
+		    </limb>
                     <limb name="leftTorso"  crits="12" armorFront="16" armorRear="8" maxArmor="32">
                         <hardpoint type="ams"></hardpoint>
-					</limb>
-                    <limb name="centerTorso"  crits="20" armorFront="20" armorRear="6" maxArmor="44">
+		     </limb>
+                     <limb name="centerTorso"  crits="20" armorFront="20" armorRear="6" maxArmor="44">
                         <internal slots="4">Gyro</internal>
-						<hardpoint type="missile"></hardpoint>
+			<hardpoint type="missile"></hardpoint>
                     </limb>
                     <limb name="rightTorso"  crits="12" armorFront="16" armorRear="8" maxArmor="32">
                         <hardpoint type=""></hardpoint>
                     </limb>
-                    <limb name="rightArm"  crits="12" armorFront="8" armorRear="" maxArmor="24">
+                    <limb name="rightArm"  crits="12" armorFront="8" armorRear="0" maxArmor="24">
                         <internal slots="1">Shoulder</internal>
                         <internal slots="1">Upper Arm Actuator</internal>
                         <hardpoint type="energy"></hardpoint>
                         <hardpoint type="energy"></hardpoint>
-					</limb>
+		    </limb>
                     <limb name="leftLeg"  crits="6" armorFront="12" armorRear="0" maxArmor="32">
                         <internal slots="1">Hip</internal>
-						<internal slots="1">Upper Leg Actuator</internal>
+			<internal slots="1">Upper Leg Actuator</internal>
                         <internal slots="1">Lower Leg Actuator</internal>
                         <internal slots="1">Foot Actuator</internal>
                     </limb>
-                    <limb name="rightLeg"  crits="6" armorFront="12" armorRear="" maxArmor="32">
+                    <limb name="rightLeg"  crits="6" armorFront="12" armorRear="0" maxArmor="32">
                         <internal slots="1">Hip</internal>
-						<internal slots="1">Upper Leg Actuator</internal>
+		        <internal slots="1">Upper Leg Actuator</internal>
                         <internal slots="1">Lower Leg Actuator</internal>
                         <internal slots="1">Foot Actuator</internal>
                     </limb>
@@ -1919,24 +1919,24 @@
                         <internal slots="2">Life Support</internal>
                         <internal slots="2">Sensors</internal>
                         <internal slots="1">Cockpit</internal>
-					</limb>
-				</limbs>
+		    </limb>
+		    </limbs>
 			</variant>
 			<variant name="JR7-F" premium="no" founders="no" jets="yes" ecm="no" minengine="100" maxengine="300" modules="2">
-				<limbs>
-					<limb name="leftArm"  crits="12" armorFront="22" armorRear="" maxArmor="24">
+		    <limbs>
+		    <limb name="leftArm"  crits="12" armorFront="22" armorRear="0" maxArmor="24">
                         <internal slots="1">Shoulder</internal>
                         <internal slots="1">Upper Arm Actuator</internal>
                         <hardpoint type="energy"></hardpoint>
-						<hardpoint type="energy"></hardpoint>
-						<hardpoint type="energy"></hardpoint>
-					</limb>
+		        <hardpoint type="energy"></hardpoint>
+			<hardpoint type="energy"></hardpoint>
+		    </limb>
                     <limb name="leftTorso"  crits="12" armorFront="22" armorRear="10" maxArmor="32">
                         <hardpoint type="ams"></hardpoint>
-					</limb>
+	            </limb>
                     <limb name="centerTorso"  crits="20" armorFront="30" armorRear="12" maxArmor="44">
                         <internal slots="4">Gyro</internal>
-					</limb>
+		    </limb>
                     <limb name="rightTorso"  crits="12" armorFront="22" armorRear="10" maxArmor="32">
                         <hardpoint type="ams"></hardpoint>
                     </limb>
@@ -1945,17 +1945,17 @@
                         <internal slots="1">Upper Arm Actuator</internal>
                         <hardpoint type="energy"></hardpoint>
                         <hardpoint type="energy"></hardpoint>
-						<hardpoint type="energy"></hardpoint>
-					</limb>
+			<hardpoint type="energy"></hardpoint>
+		    </limb>
                     <limb name="leftLeg"  crits="6" armorFront="12" armorRear="0" maxArmor="32">
                         <internal slots="1">Hip</internal>
-						<internal slots="1">Upper Leg Actuator</internal>
+			<internal slots="1">Upper Leg Actuator</internal>
                         <internal slots="1">Lower Leg Actuator</internal>
                         <internal slots="1">Foot Actuator</internal>
                     </limb>
-                    <limb name="rightLeg"  crits="6" armorFront="12" armorRear="" maxArmor="32">
+                    <limb name="rightLeg"  crits="6" armorFront="12" armorRear="0" maxArmor="32">
                         <internal slots="1">Hip</internal>
-						<internal slots="1">Upper Leg Actuator</internal>
+			<internal slots="1">Upper Leg Actuator</internal>
                         <internal slots="1">Lower Leg Actuator</internal>
                         <internal slots="1">Foot Actuator</internal>
                     </limb>
@@ -1963,42 +1963,42 @@
                         <internal slots="2">Life Support</internal>
                         <internal slots="2">Sensors</internal>
                         <internal slots="1">Cockpit</internal>
-					</limb>
-				</limbs>
-			</variant>
+		    </limb>
+		    </limbs>
+	                </variant>
 			<variant name="JR7-K" premium="no" founders="no" jets="yes" ecm="no" minengine="100" maxengine="300" modules="2">
-				<limbs>
-					<limb name="leftArm"  crits="12" armorFront="8" armorRear="" maxArmor="24">
+	            <limbs>
+		    <limb name="leftArm"  crits="12" armorFront="8" armorRear="" maxArmor="24">
                         <internal slots="1">Shoulder</internal>
                         <internal slots="1">Upper Arm Actuator</internal>
                         <hardpoint type="energy"></hardpoint>
-						<hardpoint type="energy"></hardpoint>
-					</limb>
+			<hardpoint type="energy"></hardpoint>
+		    </limb>
                     <limb name="leftTorso"  crits="12" armorFront="16" armorRear="8" maxArmor="32">
                         <hardpoint type="ams"></hardpoint>
-					</limb>
-                    <limb name="centerTorso"  crits="12" armorFront=18" armorRear="8" maxArmor="44">
+		    </limb>
+                    <limb name="centerTorso"  crits="12" armorFront="18" armorRear="8" maxArmor="44">
                         <internal slots="4">Gyro</internal>
-						<hardpoint type="missile"></hardpoint>
+		    <hardpoint type="missile"></hardpoint>
                     </limb>
                     <limb name="rightTorso"  crits="12" armorFront="16" armorRear="8" maxArmor="32">
                         <hardpoint type=""></hardpoint>
                     </limb>
-                    <limb name="rightArm"  crits="12" armorFront="8" armorRear="" maxArmor="24">
+                    <limb name="rightArm"  crits="12" armorFront="8" armorRear="0" maxArmor="24">
                         <internal slots="1">Shoulder</internal>
                         <internal slots="1">Upper Arm Actuator</internal>
                         <hardpoint type="energy"></hardpoint>
                         <hardpoint type="energy"></hardpoint>
-					</limb>
+		    </limb>
                     <limb name="leftLeg"  crits="6" armorFront="12" armorRear="0" maxArmor="32">
                         <internal slots="1">Hip</internal>
-						<internal slots="1">Upper Leg Actuator</internal>
+			<internal slots="1">Upper Leg Actuator</internal>
                         <internal slots="1">Lower Leg Actuator</internal>
                         <internal slots="1">Foot Actuator</internal>
                     </limb>
-                    <limb name="rightLeg"  crits="6" armorFront="12" armorRear="" maxArmor="32">
+                    <limb name="rightLeg"  crits="6" armorFront="12" armorRear="0" maxArmor="32">
                         <internal slots="1">Hip</internal>
-						<internal slots="1">Upper Leg Actuator</internal>
+			<internal slots="1">Upper Leg Actuator</internal>
                         <internal slots="1">Lower Leg Actuator</internal>
                         <internal slots="1">Foot Actuator</internal>
                     </limb>
@@ -2006,8 +2006,8 @@
                         <internal slots="2">Life Support</internal>
                         <internal slots="2">Sensors</internal>
                         <internal slots="1">Cockpit</internal>
-					</limb>
-				</limbs>
-			</variant>
+		    </limb>
+		    </limbs>
+		        </variant>
 		</mech>
 </mechs>
