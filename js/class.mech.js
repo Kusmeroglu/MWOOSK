@@ -34,6 +34,8 @@
     this.ferroweight = this.armorWeight * .88;
     this.ferroCritSlots = 14;
 
+    this.jumpjetitemIDs = ["IJJ", "IJK", "IJL", "IJM", "IJN"];
+
     this.init = function init(){
 
     };
@@ -57,19 +59,19 @@
             return false;
         }
         // are there crit slots (on the whole mech, endo and ferro, I'm looking at you)
-        // but first, if this is the center torso and this is a heatsink and there are extra heatsink slots, we bypass free slots
         var structureSlots = (this.endo ? this.endoCritSlots : 0) + (this.ferro ? this.ferroCritSlots : 0);
-        if ( ! (limbName == "centerTorso" && itemObj.type == "heatsink" && (this.limbs[limbName].engineHeatSinks - this.limbs[limbName].engineHeatSinksItems.length) > 0)
-            && (this.currentFreeCritSlots - structureSlots) < itemObj.critSlots){
-            return false;
+        if ( (this.currentFreeCritSlots - structureSlots) < itemObj.critSlots){
+            // return false only if this is not the center torso and this is a heatsink and there are extra heatsink slots
+            if ( ! (limbName == "centerTorso" && itemObj.type == "heatsink" && (this.limbs[limbName].engineHeatSinks - this.limbs[limbName].engineHeatSinksItems.length) > 0)){
+                return false;
+            }
         }
         // ecm check
         if ( itemObj.id == "IGE" && (this.ecm == false || this.ecmcount >= this.ecmmax) ){
             return false;
         }
         // jumpjet check
-        var jumpjetitemids = ["IJJ", "IJK", "IJL", "IJM", "IJN"];
-        if (  $.inArray(itemObj.id, jumpjetitemids) > -1 && (this.jumpjets == false || this.jumpjetcount >= this.jumpjetmax) ){
+        if (  $.inArray(itemObj.id, this.jumpjetitemIDs) > -1 && (this.jumpjets == false || this.jumpjetcount >= this.jumpjetmax) ){
             return false;
         }
 
@@ -79,14 +81,14 @@
 
     this.addItemToLimb = function addItemToLimb(limbName, itemObj){
         this.addWeight(parseFloat(itemObj.weight));
-        this.countFreeCritSlots();
         var success = this.limbs[limbName].addItem(itemObj);
+        this.countFreeCritSlots();
         // ecm check
         if ( itemObj.id == "IGE" ){
             this.ecmcount += 1;
         }
         // jumpjet check
-        if ( itemObj.id == "IJJ" ){
+        if ( $.inArray(itemObj.id, this.jumpjetitemIDs) > -1 ){
             this.jumpjetcount += 1;
         }
         this.showStructureSlots();
@@ -106,7 +108,7 @@
             this.ecmcount -= 1;
         }
         // jumpjet check
-        if ( itemObj.id == "IJJ" ){
+        if ( $.inArray(itemObj.id, this.jumpjetitemIDs) > -1 ){
             this.jumpjetcount -= 1;
         }
         this.showStructureSlots();

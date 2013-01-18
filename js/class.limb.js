@@ -132,7 +132,9 @@
         }
         // clear out the critslots needed
         if ( itemObj.type == "heatsink" && (this.engineHeatSinks - this.engineHeatSinksItems.length) > 0 ){
-            this.engineHeatSinksItems.push($('#'+this.limbName).find('.critWrap .engineheatsink').slice(0, 1).detach());
+            var displacedheatsink = $('#'+this.limbName).find('.critWrap .engineheatsink').slice(0, 1).detach();
+            displacedheatsink.data("itemObj").critSlots = 1 - itemObj.critSlots; // set the ehs objects critslots to negative the heatsinks crits, so we can calculate which heatsinks are in the engine.
+            this.engineHeatSinksItems.push(displacedheatsink);
             visiblecritslots = 1;
         } else if ( itemObj.type != "internal"){
             $('#'+this.limbName).find('.critWrap .empty').slice(0, itemObj.critSlots).remove();
@@ -250,7 +252,9 @@
 
         // reinstate empty crit slots (or engine heat sinks slots..)
         if ( itemObj.type == "heatsink" && (this.engineHeatSinksItems.length) > 0 ){
-            $('#'+this.limbName+' .critWrap').append(this.engineHeatSinksItems.pop());
+            var replacedengineheatsink = this.engineHeatSinksItems.pop();
+            replacedengineheatsink.data("itemObj").critSlots = 1;
+            $('#'+this.limbName+' .critWrap').append(replacedengineheatsink);
             this.sortItems();
         } else {
             this.addEmptyCritSlots(itemObj.critSlots);
@@ -308,7 +312,7 @@
                 usedSlots = usedSlots + this.items[x].critSlots;
             }
         }
-        return this.critSlots - usedSlots + (this.engineHeatSinksItems.length);
+        return this.critSlots - usedSlots;
     };
 
     this.init();
