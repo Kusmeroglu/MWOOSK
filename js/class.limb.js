@@ -315,5 +315,23 @@
         return this.critSlots - usedSlots;
     };
 
+    this.getEquivalentHeatSinks = function getEquivalentHeatSinks(isDualHeatSink){
+        var heatsinks = 0;
+        for (var x = 0; x < this.items.length; x++) {
+            if (this.items[x].type == "heatsink"){
+                heatsinks += isDualHeatSink ? 1.4 : 1;
+            }
+            // add heatsinks from the engine
+            if (this.items[x].hardpointType == "engine"){
+                heatsinks += ( isDualHeatSink ? 2 : 1 ) * (  10 + ((this.items[x].heatsinkslots < 0) ? this.items[x].heatsinkslots : 0 ) );
+            }
+        }
+        // add some bits for dual heat sinks in the engine
+        if ( this.engineHeatSinksItems.length > 0 && isDualHeatSink ){
+            heatsinks += .6 * this.engineHeatSinksItems.length;
+        }
+        return heatsinks;
+    }
+
     this.init();
 }

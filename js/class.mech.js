@@ -11,6 +11,7 @@
     this.chassisTons = 0;
     this.currentTons = 0;
     this.currentFreeCritSlots = 0;
+    this.currentEquivalentHeatSinks = 0;
     this.limbs = {};
     this.ecm = false;
     this.ecmcount = 0;
@@ -41,10 +42,14 @@
     };
 
     this.countFreeCritSlots = function countFreeCritSlots(){
+        // also counting heatsinks
+        this.currentEquivalentHeatSinks = 0;
         this.currentFreeCritSlots = 0;
         for (var limbName in this.limbs) {
             this.currentFreeCritSlots += this.limbs[limbName].getFreeCritSlots();
+            this.currentEquivalentHeatSinks += this.limbs[limbName].getEquivalentHeatSinks(this.dhs);
         }
+        $("#heat").text("Equivalent Heat Sinks: " + this.currentEquivalentHeatSinks);
         return this.currentFreeCritSlots;
     };
 

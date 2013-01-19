@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8" ?>
 
 <mechs>
     <class type="Assault">
@@ -1574,6 +1574,7 @@
                     </limb>
                     <limb name="centerTorso"  crits="8" armorFront="22" armorRear="12" maxArmor="48">
                         <internal slots="4">Gyro</internal>
+                        <hardpoint type="engine"></hardpoint>
                     </limb>
                     <limb name="rightTorso"  crits="12" armorFront="12" armorRear="6" maxArmor="40">
                         <hardpoint type="ams"></hardpoint>
@@ -1613,6 +1614,7 @@
                     </limb>
                     <limb name="centerTorso"  crits="8" armorFront="22" armorRear="12" maxArmor="48">
                         <internal slots="4">Gyro</internal>
+                        <hardpoint type="engine"></hardpoint>
                         <hardpoint type="energy"></hardpoint>
                         <hardpoint type="energy"></hardpoint>
                     </limb>
@@ -1658,6 +1660,7 @@
                     </limb>
                     <limb name="centerTorso"  crits="8" armorFront="52" armorRear="10" maxArmor="64">
                         <internal slots="4">Gyro</internal>
+                        <hardpoint type="engine"></hardpoint>
                     </limb>
                     <limb name="rightTorso"  crits="12" armorFront="40" armorRear="8" maxArmor="48">
                         <hardpoint type="ballistic"></hardpoint>
@@ -1703,6 +1706,7 @@
                     </limb>
                     <limb name="centerTorso"  crits="8" armorFront="52" armorRear="10" maxArmor="64">
                         <internal slots="4">Gyro</internal>
+                        <hardpoint type="engine"></hardpoint>
                     </limb>
                     <limb name="rightTorso"  crits="12" armorFront="40" armorRear="8" maxArmor="48">
                         <hardpoint type="ballistic"></hardpoint>
@@ -1748,6 +1752,7 @@
                     </limb>
                     <limb name="centerTorso"  crits="8" armorFront="52" armorRear="10" maxArmor="64">
                         <internal slots="4">Gyro</internal>
+                        <hardpoint type="engine"></hardpoint>
                     </limb>
                     <limb name="rightTorso"  crits="12" armorFront="40" armorRear="8" maxArmor="48">
                         <hardpoint type="missile"></hardpoint>
@@ -1795,6 +1800,7 @@
                     </limb>
                     <limb name="centerTorso"  crits="8" armorFront="52" armorRear="10" maxArmor="64">
                         <internal slots="4">Gyro</internal>
+                        <hardpoint type="engine"></hardpoint>
                     </limb>
                     <limb name="rightTorso"  crits="12" armorFront="40" armorRear="8" maxArmor="48">
                         <hardpoint type="energy"></hardpoint>
@@ -1845,6 +1851,7 @@
                     </limb>
                     <limb name="centerTorso"  crits="8" armorFront="52" armorRear="10" maxArmor="64">
                         <internal slots="4">Gyro</internal>
+                        <hardpoint type="engine"></hardpoint>
                     </limb>
                     <limb name="rightTorso"  crits="12" armorFront="40" armorRear="8" maxArmor="48">
                         <hardpoint type="missile"></hardpoint>
@@ -1892,6 +1899,7 @@
                     </limb>
                     <limb name="centerTorso"  crits="8" armorFront="20" armorRear="10" maxArmor="44">
                         <internal slots="4">Gyro</internal>
+                        <hardpoint type="engine"></hardpoint>
                         <hardpoint type="missile"></hardpoint>
                         <hardpoint type="missile"></hardpoint>
                     </limb>
@@ -1934,6 +1942,7 @@
                     </limb>
                     <limb name="centerTorso"  crits="8" armorFront="30" armorRear="12" maxArmor="44">
                         <internal slots="4">Gyro</internal>
+                        <hardpoint type="engine"></hardpoint>
                     </limb>
                     <limb name="rightTorso"  crits="12" armorFront="22" armorRear="10" maxArmor="32">
                     </limb>
@@ -1975,6 +1984,7 @@
                     <limb name="centerTorso"  crits="8" armorFront="18" armorRear="4" maxArmor="44">
                         <internal slots="4">Gyro</internal>
                         <hardpoint type="missile"></hardpoint>
+                        <hardpoint type="engine"></hardpoint>
                     </limb>
                     <limb name="rightTorso"  crits="12" armorFront="16" armorRear="8" maxArmor="32">
                     </limb>
