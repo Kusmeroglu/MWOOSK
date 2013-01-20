@@ -767,6 +767,12 @@ width:315px;
 color: white;
 }
 
+#leftInfo{
+    color: white;
+    height:100px;
+    width:100px;
+}
+
 #commentsWrap{
 background:#718ba2;
 float:left;
