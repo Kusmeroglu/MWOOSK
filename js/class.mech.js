@@ -50,12 +50,17 @@
             this.currentEquivalentHeatSinks += this.limbs[limbName].getEquivalentHeatSinks(this.dhs);
         }
         $("#heat").text("Equivalent Heat Sinks: " + this.currentEquivalentHeatSinks);
+
         // update engine speed
         if ( $("#centerTorso .engine").length > 0 ){
             var enginedata = $("#centerTorso .engine").data("itemObj");
             var maxspeed = 16.2 * enginedata.engineSize/this.maxTons;
             var speedtweak = maxspeed * 1.1;
             $("#speed").text("Max Speed: " + Math.round(10*maxspeed)/10 + " kph (" + Math.round(10*speedtweak)/10 + ")");
+            // also check if having enough heatsinks
+            if ( enginedata.heatsinkslots < 0 && $("#mechContainerWrap .heatsink").length < -enginedata.heatsinkslots ){
+                $("#heat").text("Not enough heatsinks, " + (-enginedata.heatsinkslots - $("#mechContainerWrap .heatsink").length) + " more required.");
+            }
         } else {
             $("#speed").text("No engine selected.");
         }
