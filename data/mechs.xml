@@ -164,10 +164,6 @@
                         <hardpoint type="ams"></hardpoint>
                     </limb>
                     <limb name="leftTorso"  crits="12" armorFront="64" armorRear="20" maxArmor="84">
-                        <internal slots="1">Shoulder</internal>
-                        <internal slots="1">Upper Arm Actuator</internal>
-                        <internal slots="1">Lower Arm Actuator</internal>
-                        <internal slots="1">Hand Actuator</internal>
                         <hardpoint type="missile"></hardpoint>
                         <hardpoint type="missile"></hardpoint>
                     </limb>
@@ -179,6 +175,10 @@
                         <hardpoint type="ballistic"></hardpoint>
                     </limb>
                     <limb name="rightArm"  crits="8" armorFront="68" armorRear="0" maxArmor="68">
+                        <internal slots="1">Shoulder</internal>
+                        <internal slots="1">Upper Arm Actuator</internal>
+                        <internal slots="1">Lower Arm Actuator</internal>
+                        <internal slots="1">Hand Actuator</internal>
                         <hardpoint type="energy"></hardpoint>
                         <hardpoint type="energy"></hardpoint>
                     </limb>

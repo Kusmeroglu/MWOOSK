@@ -27,7 +27,7 @@
 
     // Endo Steel info
     this.endo = false;
-    this.endoweight = parseFloat(maxTons * .05);
+    this.endoweight = parseFloat(maxTons * .05); // rounded from .25 to .5?
     this.endoCritSlots = 14;
 
     // Ferro Fibrous info
@@ -41,7 +41,7 @@
 
     };
 
-    this.countFreeCritSlots = function countFreeCritSlots(){
+    this.updateMech = function updateMech(){
         // also counting heatsinks
         this.currentEquivalentHeatSinks = 0;
         this.currentFreeCritSlots = 0;
@@ -50,12 +50,21 @@
             this.currentEquivalentHeatSinks += this.limbs[limbName].getEquivalentHeatSinks(this.dhs);
         }
         $("#heat").text("Equivalent Heat Sinks: " + this.currentEquivalentHeatSinks);
+        // update engine speed
+        if ( $("#centerTorso .engine").length > 0 ){
+            var enginedata = $("#centerTorso .engine").data("itemObj");
+            var maxspeed = 16.2 * enginedata.engineSize/this.maxTons;
+            var speedtweak = maxspeed * 1.1;
+            $("#speed").text("Max Speed: " + Math.round(10*maxspeed)/10 + " kph (" + Math.round(10*speedtweak)/10 + ")");
+        } else {
+            $("#speed").text("No engine selected.");
+        }
         return this.currentFreeCritSlots;
     };
 
     this.addLimb = function addLimb(limbName, limbObj) {
         this.limbs[limbName] = limbObj;
-        this.countFreeCritSlots();
+        this.updateMech();
     };
 
     this.testIfValid = function testIfValid(limbName, itemObj){
@@ -79,7 +88,6 @@
         if (  $.inArray(itemObj.id, this.jumpjetitemIDs) > -1 && (this.jumpjets == false || this.jumpjetcount >= this.jumpjetmax) ){
             return false;
         }
-
         // is the item valid for this limb?
         return this.limbs[limbName].testIfValid(itemObj);
     };
@@ -87,7 +95,7 @@
     this.addItemToLimb = function addItemToLimb(limbName, itemObj){
         this.addWeight(parseFloat(itemObj.weight));
         var success = this.limbs[limbName].addItem(itemObj);
-        this.countFreeCritSlots();
+        this.updateMech();
         // ecm check
         if ( itemObj.id == "IGE" ){
             this.ecmcount += 1;
@@ -107,7 +115,7 @@
         }
         this.addWeight(0 - parseFloat(itemObj.weight));
         var success = this.limbs[limbName].removeItem(itemObj);
-        this.countFreeCritSlots();
+        this.updateMech();
         // ecm check
         if ( itemObj.id == "IGE" ){
             this.ecmcount -= 1;
@@ -171,7 +179,7 @@
         }
         this.endo = true;
         // remove the difference from the standard chassis weight
-        this.addWeight(this.endoweight - this.chassisTons);
+        this.addWeight(0 - this.endoweight);
         setURLParameter('endo', 'true');
         this.showStructureSlots();
         return true;
@@ -183,7 +191,7 @@
         }
         this.endo = false;
         // add the difference from the standard chassis weight
-        this.addWeight(this.chassisTons - this.endoweight);
+        this.addWeight(this.endoweight);
         setURLParameter('endo', 'false');
         this.showStructureSlots();
         return true;
