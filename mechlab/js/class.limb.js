@@ -104,9 +104,9 @@
 
     this.resetURLParam = function resetURLParam(){
         var s = "";
-        $.each(this.items, function(i, itemObj){
-            s += itemObj.id.toString();
-        });
+        for(i=0;i<this.items.length;i++)
+            s += this.items[i].id.toString();
+
         setURLParameter(this.limbName, s);
     };
 

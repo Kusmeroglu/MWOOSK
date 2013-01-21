@@ -1,7 +1,7 @@
 var mechObj;
 var mechXML;
 var itemXML;
-var urldata = getURLParamObject();
+var urldata = [];
 var limbList = ['leftArm', 'leftTorso','centerTorso','rightTorso','rightArm','leftLeg','rightLeg','head'];
 var classLookup = {
     1:'critOne',
@@ -17,6 +17,7 @@ var classLookup = {
 };
 
 $(function () {
+     urldata = getURLParamObject();
 
 	$('#reset').click(function(){
 		window.location.href = "index.html";
@@ -43,48 +44,67 @@ $(function () {
     }
 
     function parseItemXML(xml){
-        $(xml).find("weapons > item").each(function () {
-            var itemObj = new item($(this).attr("id"), $(this).text(), $(this).attr("slots"), $(this).attr("tons"), "weapon", $(this).attr("type"));
-            itemObj.damage = parseFloat($(this).attr("damage"));
-            itemObj.heat = parseFloat($(this).attr("heat"));
-            itemObj.cooldown = parseFloat($(this).attr("cooldown"));
-            itemObj.maxRange = parseFloat($(this).attr("maxrange"));
-            itemObj.dpsmax = parseFloat($(this).attr("dpsmax"));
-            itemObj.hps = parseFloat($(this).attr("hps"));
-            itemObj.ammoper = parseFloat($(this).attr("ammoper"));
-            itemObj.ehs = parseFloat($(this).attr("ehs"));
-            itemObj.rosechartdata = [
-                { name:"Damage",   value:$(this).attr("damage")},
-                { name:"Heat",     value:$(this).attr("heat")},
-                { name:"HPS",      value:(Number($(this).attr("heat")) == 0)?"0":(Number($(this).attr("damage"))/Number($(this).attr("heat"))).toFixed(2)},
-                { name:"Weight",   value:$(this).attr("tons")},
-                { name:"Slots",    value:$(this).attr("slots")},
-                { name:"Cooldown", value:$(this).attr("cooldown")},
-                { name:"DPS",      value:$(this).attr("dpsmax")},
-                //{ name:"Ammo/Ton", value:$(this).attr("ammoper")?$(this).attr("ammoper"):0},
-                { name:"Range",    value:$(this).attr("maxrange")}
-            ];
-			itemObj.type = $(this).attr("type");
-            $("#"+itemObj.type+"Weapon").append(createItemDivFromData({itemObj: itemObj}));
-        });
-        $(xml).find("ammos > item").each(function () {
-            var itemObj = new item($(this).attr("id"), $(this).text(), $(this).attr("slots"), $(this).attr("tons"), $(this).attr("type"));
-            //$("#ballisticAmmo").append(createItemDivFromData({itemObj: itemObj}));
-			itemObj.type = $(this).attr("type");
-            $("#"+itemObj.type+"Ammo").append(createItemDivFromData({itemObj: itemObj}));
-        });
-        $(xml).find("internals > item").each(function () {
-            var itemObj = new item($(this).attr("id"), $(this).text(), $(this).attr("slots"), $(this).attr("tons"), $(this).attr("type"), "");
-            $("#internals").append(createItemDivFromData({itemObj: itemObj}));
-        });
 
-        $(xml).find("engines > plant").each(function () {
-            var itemObj = new item($(this).attr("id"), $(this).text(), parseInt($(this).attr("slots")) - parseInt($(this).attr("heatsinkslots")), $(this).attr("tons"), $(this).attr("type"), "engine");
-            itemObj.heatsinkslots = parseInt($(this).attr("heatsinkslots"));
+	startBench('Weapons');
+        var weapons = $(xml).find("weapons > item").get();
+	for(i=0;i<weapons.length;i++) {
+	    var $weapon = $(weapons[i]);
+            var itemObj = new item($weapon.attr("id"), $weapon.text(), $weapon.attr("slots"), $weapon.attr("tons"), "weapon", $weapon.attr("type"));
+            itemObj.damage = parseFloat($weapon.attr("damage"));
+            itemObj.heat = parseFloat($weapon.attr("heat"));
+            itemObj.cooldown = parseFloat($weapon.attr("cooldown"));
+            itemObj.maxRange = parseFloat($weapon.attr("maxrange"));
+            itemObj.dpsmax = parseFloat($weapon.attr("dpsmax"));
+            itemObj.hps = parseFloat($weapon.attr("hps"));
+            itemObj.ammoper = parseFloat($weapon.attr("ammoper"));
+            itemObj.ehs = parseFloat($weapon.attr("ehs"));
+            itemObj.rosechartdata = [
+                { name:"Damage",   value:$weapon.attr("damage")},
+                { name:"Heat",     value:$weapon.attr("heat")},
+                { name:"HPS",      value:(Number($weapon.attr("heat")) == 0)?"0":(Number($weapon.attr("damage"))/Number($weapon.attr("heat"))).toFixed(2)},
+                { name:"Weight",   value:$weapon.attr("tons")},
+                { name:"Slots",    value:$weapon.attr("slots")},
+                { name:"Cooldown", value:$weapon.attr("cooldown")},
+                { name:"DPS",      value:$weapon.attr("dpsmax")},
+                //{ name:"Ammo/Ton", value:$weapon.attr("ammoper")?$weapon.attr("ammoper"):0},
+                { name:"Range",    value:$weapon.attr("maxrange")}
+            ];
+	    itemObj.type = $weapon.attr("type");
+            $("#"+itemObj.type+"Weapon").append(createItemDivFromData({itemObj: itemObj}));
+        }
+	stopBench('Weapons');
+
+	startBench('Ammo');
+	var items = $(xml).find("ammos > item").get();
+        for(i=0;i<items.length;i++) {
+	    var $ammo = $(items[i]);
+            var itemObj = new item($ammo.attr("id"), $ammo.text(), $ammo.attr("slots"), $ammo.attr("tons"), $ammo.attr("type"));
+            //$("#ballisticAmmo").append(createItemDivFromData({itemObj: itemObj}));
+	    itemObj.type = $ammo.attr("type");
+            $("#"+itemObj.type+"Ammo").append(createItemDivFromData({itemObj: itemObj}));
+        }
+	stopBench('Ammo');
+	
+	startBench('Internals');
+        var internals = $(xml).find("internals > item").get();
+	for(i=0;i<internals.length;i++) {
+	    var $internal = $(internals[i]);
+            var itemObj = new item($internal.attr("id"), $internal.text(), $internal.attr("slots"), $internal.attr("tons"), $internal.attr("type"), "");
+            $("#internals").append(createItemDivFromData({itemObj: itemObj}));
+        }
+	stopBench('Internals');
+
+	startBench('Engines');
+        var engines = $(xml).find("engines > plant").get();
+	for(i=0;i<engines.length;i++) {
+	    var $engine = $(engines[i]);
+            var itemObj = new item($engine.attr("id"), $engine.text(), parseInt($engine.attr("slots")) - parseInt($engine.attr("heatsinkslots")), $engine.attr("tons"), $engine.attr("type"), "engine");
+            itemObj.heatsinkslots = parseInt($engine.attr("heatsinkslots"));
             itemObj.rosechartdata = [];
-			itemObj.type = $(this).attr("type");
+			itemObj.type = $engine.attr("type");
             $("#"+itemObj.type+"Engine").append(createItemDivFromData({itemObj: itemObj}));
-        });
+        }
+	stopBench('Engines');
 
         $("#detailContainer div").find('.item').draggable({
             revert: "invalid",
@@ -96,10 +116,13 @@ $(function () {
     }
 
     function parseMechXML(xml){
-        mechXML.find("class").each(function () {
-            $("#mechClass").append($("<option></option>").attr("value",$(this).attr("type")).text($(this).attr("type")));
-            $("#mechClassDiv").append($("<div class='selectItem' id='"+$(this).attr("type")+"'>"+$(this).attr("type")+"</div>"));
-        });
+        var mechs = mechXML.find("class").get();
+	for(i=0;i<mechs.length;i++) {
+	    var $mech = $(mechs[i]);
+            $("#mechClass").append($("<option></option>").attr("value",$mech.attr("type")).text($mech.attr("type")));
+            $("#mechClassDiv").append($("<div class='selectItem' id='"+$mech.attr("type")+"'>"+$mech.attr("type")+"</div>"));
+	}
+
         $("#mechClassDiv").children(".selectItem").click(function(event) {
             if ($($(this).parent()).hasClass('active')){
                 event.stopPropagation();
@@ -187,6 +210,7 @@ $(function () {
         });
 
         $("#mechVariant").on("change", function (event) {
+	    printLog('Variant changed');
             if ($("#mechVariant").val() == "0"){
                 return;
             }
@@ -593,7 +617,7 @@ $(function () {
 		$('statistics').hide();
 		$('#comments').show();
 	});
-	});
+    });
 
 
     /*
@@ -603,7 +627,9 @@ $(function () {
     // load the item list
     $.get('data/items.xml', function (xml) {
         itemXML = xml;
+	startBench('Parsing XML');
         parseItemXML(xml);
+	stopBench('Parsing XML');
 
         // now load XML just the once.
         $.get('data/mechs.xml', function (xml){

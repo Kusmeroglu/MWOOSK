@@ -30,6 +30,33 @@ $(function () {
     setInterval(historyCheck, 500);
 });
 
+function printLog(message) {
+    try {
+	console.log(message);
+    } catch (e) { 
+    // No logging available 
+    }
+}
+
+var benchTimes = {};
+function startBench(type) {
+    if(typeof benchTimes[type] != 'undefined')
+	printLog('Benchmark '+type+' has already been started');
+    else
+	benchTimes[type] = new Date().getTime();
+}
+
+function stopBench(type) {
+    var elapsed = 0;
+    var now = new Date().getTime();
+    if(typeof benchTimes[type] != 'undefined') {
+	elapsed = now - benchTimes[type];
+	delete benchTimes[type];
+
+	printLog(type+' took '+(elapsed/1000)+' seconds');
+    }
+}
+
 function getURLHash() {
     return window.location.hash.match(/^#?([^#]+)$/);
 }
@@ -39,7 +66,7 @@ function setURLHash(newHash) {
 	window.location.assign('#' + newHash);
 	urlHistoryStack.push(newHash);
     } catch (e) {
-	alert('Browser compatibility problem');
+	printLog('Browser compatibility problem');
     }
 }
 
@@ -59,18 +86,14 @@ function setURLParameter(param, paramVal){
     }
 
     var rows_txt = temp + "" + param + "=" + paramVal;
-//    console.log("Setting URL " + param + " = " + paramVal);
-//    console.log("URL: " + baseURL + "?" + newAdditionalURL + rows_txt);
     setURLHash(newHash + rows_txt);
-    //window.history.replaceState({}, "Title doesn't do anything", baseURL + "?" + newAdditionalURL + rows_txt)
-    //return baseURL + "?" + newAdditionalURL + rows_txt;
 
-    //reset the tiny rul thing
+    //reset the tiny url thing
     $('#tinyurlresult').remove();
     $('#tinyurllink').show();
 }
 
-function getURLParameter(param){
+function getURLParameter(param) {
     var dataHash = getURLHash();
     if (dataHash != null) {
         tempArray = dataHash[1].split("&");
