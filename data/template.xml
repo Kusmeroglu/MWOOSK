@@ -15,6 +15,7 @@
 					</limb>
                     <limb name="centerTorso"  crits="12" armorFront="" armorRear="" maxArmor="">
                         <internal slots="4">Gyro</internal>
+                        <hardpoint type="engine"></hardpoint>
 						<hardpoint type=""></hardpoint>
                     </limb>
                     <limb name="rightTorso"  crits="8" armorFront="" armorRear="" maxArmor="">

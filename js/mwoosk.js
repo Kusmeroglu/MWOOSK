@@ -485,6 +485,43 @@ $(function () {
         }
     });
 
+    /*
+       --- Clear Armor/Items, Max Armor
+     */
+
+    $('#clearArmor').on('click', function(e){
+        limbList.forEach(function(limbName){
+            $('#'+limbName+' .armorspinner.front').attr('value', 0);
+            $('#'+limbName+' .armorspinner.rear').attr('value', 0);
+        });
+    });
+    $('#maxArmor').on('click', function(e){
+        limbList.forEach(function(limbName){
+            var maxarmor = mechObj.limbs[limbName].maxArmor;
+            if ( $('#'+limbName+' .armorspinner.rear').length ){
+                var armor = Math.round(maxarmor * .6);
+                $('#'+limbName+' .armorspinner.rear').attr('value', maxarmor - armor);
+            } else {
+                var armor = maxarmor;
+            }
+            $('#'+limbName+' .armorspinner.front').attr('value', armor);
+        });
+    });
+
+    $('#clearItems').on('click', function(e){
+        limbList.forEach(function(limbName){
+            var removelist = [];
+            for (var x = 0; x < mechObj.limbs[limbName].items.length; x++) {
+                if (mechObj.limbs[limbName].items[x].type != "internal"){
+                    removelist.push(mechObj.limbs[limbName].items[x]);
+                }
+            }
+            removelist.forEach(function(item){
+                mechObj.removeItemFromLimb(limbName, item);
+            });
+        });
+    });
+
 
     $('#tinyurlLink').on('click', function(e){
         e.preventDefault();

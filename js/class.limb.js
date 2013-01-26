@@ -127,17 +127,18 @@
         }
 
         var visiblecritslots = itemObj.critSlots;
-        if ( itemObj.hardpointType == "engine" && this.engineHeatSinks > 0 ){
-            visiblecritslots -= this.engineHeatSinks;
+        if ( itemObj.hardpointType == "engine" && itemObj.heatsinkslots > 0 ){
+            visiblecritslots -= itemObj.heatsinkslots;
         }
         // clear out the critslots needed
         if ( itemObj.type == "heatsink" && (this.engineHeatSinks - this.engineHeatSinksItems.length) > 0 ){
             var displacedheatsink = $('#'+this.limbName).find('.critWrap .engineheatsink').slice(0, 1).detach();
             displacedheatsink.data("itemObj").critSlots = 1 - itemObj.critSlots; // set the ehs objects critslots to negative the heatsinks crits, so we can calculate which heatsinks are in the engine.
+            this.items.splice(this.items.indexOf(displacedheatsink.data('itemObj')), 1);
             this.engineHeatSinksItems.push(displacedheatsink);
             visiblecritslots = 1;
         } else if ( itemObj.type != "internal"){
-            $('#'+this.limbName).find('.critWrap .empty').slice(0, itemObj.critSlots).remove();
+            $('#'+this.limbName).find('.critWrap .empty').slice(0, visiblecritslots).remove();
         }
 
         // add to the limb
@@ -154,7 +155,7 @@
                 )
 			.appendTo($('#'+this.limbName+' .critWrap'))
             .fadeIn();
-			for(var emptyCrit = 1; emptyCrit < itemObj.critSlots; emptyCrit++){
+			for(var emptyCrit = 1; emptyCrit < visiblecritslots; emptyCrit++){
 				div.children("div").append('<div class="emptyCrit">- - - - - - - - - - - - - - - -</div>')
 				}
         // if this is a top level item (with an id), make it draggable
@@ -212,6 +213,17 @@
             return false;
         }
 
+        if (this.engineHeatSinksItems.indexOf(itemObj) != -1){
+            // this item isn't currently in the thing
+            return true;
+        }
+
+        if (this.items.indexOf(itemObj) == -1){
+            // this item isn't currently in the thing
+            return true;
+        }
+
+
         this.items.splice(this.items.indexOf(itemObj), 1);
 
         //console.log('removing ' + itemObj.itemName + ' from ' + limbName);
@@ -255,7 +267,10 @@
             var replacedengineheatsink = this.engineHeatSinksItems.pop();
             replacedengineheatsink.data("itemObj").critSlots = 1;
             $('#'+this.limbName+' .critWrap').append(replacedengineheatsink);
+            this.items.push(replacedengineheatsink.data('itemObj'));
             this.sortItems();
+        } else if ( itemObj.hardpointType == "engine" && itemObj.heatsinkslots > 0 ){
+            this.addEmptyCritSlots(itemObj.critSlots - itemObj.heatsinkslots);
         } else {
             this.addEmptyCritSlots(itemObj.critSlots);
         }
@@ -308,12 +323,36 @@
     {
         var usedSlots = 0;
         for (var x = 0; x < this.items.length; x++) {
-            if (this.items[x].type != "internal"){
+            if ( this.items[x].hardpointType == "engine" && this.items[x].heatsinkslots > 0){
+                usedSlots = usedSlots + this.items[x].critSlots - this.items[x].heatsinkslots;
+            } else if (this.items[x].type != "internal"){
                 usedSlots = usedSlots + this.items[x].critSlots;
             }
         }
+        for (var x = 0; x < this.engineHeatSinksItems.length; x++) {
+            var itemObj = this.engineHeatSinksItems[x].data('itemObj');
+            usedSlots += itemObj.critSlots;
+        }
         return this.critSlots - usedSlots;
     };
+
+    this.getEquivalentHeatSinks = function getEquivalentHeatSinks(isDualHeatSink){
+        var heatsinks = 0;
+        for (var x = 0; x < this.items.length; x++) {
+            if (this.items[x].type == "heatsink"){
+                heatsinks += isDualHeatSink ? 1.4 : 1;
+            }
+            // add heatsinks from the engine
+            if (this.items[x].hardpointType == "engine"){
+                heatsinks += ( isDualHeatSink ? 2 : 1 ) * (  10 + ((this.items[x].heatsinkslots < 0) ? this.items[x].heatsinkslots : 0 ) );
+            }
+        }
+        // add some bits for dual heat sinks in the engine
+        if ( this.engineHeatSinksItems.length > 0 && isDualHeatSink ){
+            heatsinks += .6 * this.engineHeatSinksItems.length;
+        }
+        return heatsinks;
+    }
 
     this.init();
 }

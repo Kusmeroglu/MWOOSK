@@ -742,6 +742,7 @@ border-radius:2px;
 #heat {
 height:30px;
 width:320px;
+color: white;
 }
 
 #speedWrap{
@@ -763,6 +764,13 @@ border-radius:2px;
 #speed {
 height:30px;
 width:315px;
+color: white;
+}
+
+#leftInfo{
+    color: white;
+    height:100px;
+    width:100px;
 }
 
 #commentsWrap{
