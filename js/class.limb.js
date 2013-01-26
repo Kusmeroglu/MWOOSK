@@ -352,7 +352,7 @@
             heatsinks += .6 * this.engineHeatSinksItems.length;
         }
         return heatsinks;
-    }
+    };
 
     this.init();
 }

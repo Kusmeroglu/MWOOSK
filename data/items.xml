@@ -27,13 +27,6 @@
     <item id="WMF" type ="missile" damage="20" heat="4" cooldown="3.75" range="180" maxrange="1000" slots="2" tons="5" dpsmax="1.07" hps="1.07" ammoper ="180" ehs="8">LRM10</item>
     <item id="WMG" type ="missile" damage="30" heat="5" cooldown="4.25" range="180" maxrange="1000" slots="3" tons="7" dpsmax="1.18" hps="1.18" ammoper ="180" ehs="9">LRM15</item>
     <item id="WMH" type ="missile" damage="40" heat="6" cooldown="4.75" range="180" maxrange="1000" slots="5" tons="10" dpsmax="1.26" hps="1.26" ammoper ="180" ehs="10">LRM20</item>
-    <item id="WMI" type ="missile" damage="5" heat="2" cooldown="3.5" range="" maxrange="270" slots="2" tons="1" dpsmax="1.43" hps=".57" ammoper="100" ehs="4">SRM2 + Artemis</item>
-    <item id="WMJ" type ="missile" damage="10" heat="3" cooldown="3.75" range="" maxrange="270" slots="2" tons="2" dpsmax="2.67" hps=".8" ammoper="100" ehs="6">SRM4 + Artemis</item>
-    <item id="WMK" type ="missile" damage="15" heat="4" cooldown="4" range="" maxrange="270" slots="3" tons="3" dpsmax="3" hps="1" ammoper="100" ehs="8">SRM6 + Artemis</item>
-    <item id="WML" type ="missile" damage="10" heat="2" cooldown="3.25" range="180" maxrange="1000" slots="2" tons="2" dpsmax=".57" hps=".57" ammoper="180" ehs="5">LRM5 + Artemis</item>
-    <item id="WMM" type ="missile" damage="20" heat="4" cooldown="3.75" range="180" maxrange="1000" slots="3" tons="5" dpsmax="1.07" hps="1.07" ammoper ="180" ehs="8">LRM10 + Artemis</item>
-    <item id="WMN" type ="missile" damage="30" heat="5" cooldown="4.25" range="180" maxrange="1000" slots="4" tons="7" dpsmax="1.18" hps="1.18" ammoper ="180" ehs="9">LRM15 + Artemis</item>
-    <item id="WMO" type ="missile" damage="40" heat="6" cooldown="4.75" range="180" maxrange="1000" slots="6" tons="10" dpsmax="1.26" hps="1.26" ammoper ="180" ehs="10">LRM20 + Artemis</item>
     <item id="WUB" type ="missile" tons="3" slots="2" maxrange="270" ammoper="6">NARC</item>
     <item id="WUC" type ="energy" tons=".5" slots="1" maxrange="450">TAG</item>
   </weapons>

@@ -7,7 +7,7 @@
     this.dhs = false;
     this.ferro = false;
     this.dhs = false;
-    this.artemis = true;
+    this.artemis = false;
     this.chassisTons = 0;
     this.currentTons = 0;
     this.currentFreeCritSlots = 0;
@@ -49,7 +49,7 @@
             this.currentFreeCritSlots += this.limbs[limbName].getFreeCritSlots();
             this.currentEquivalentHeatSinks += this.limbs[limbName].getEquivalentHeatSinks(this.dhs);
         }
-        $("#heat").text("Equivalent Heat Sinks: " + this.currentEquivalentHeatSinks);
+        $("#heat").text("Equivalent Heat Sinks: " + (Math.round(10 * this.currentEquivalentHeatSinks) / 10));
 
         // update engine speed
         if ( $("#centerTorso .engine").length > 0 ){
@@ -281,35 +281,49 @@
         return true;
     };
 
-    this.artemisMissileIDs = ["WMI","WMJ","WMK","WML","WMM","WMN","WMO"];
-    this.nonArtemisMissileIDs = ["WMB","WMC","WMD","WME","WMF","WMG","WMH"];
+    this.artemisCapableMissileIDs = ["WMB","WMC","WMD","WME","WMF","WMG","WMH"];
     this.addArtemis = function addArtemis(){
+        if (this.artemis == true){
+            return;
+        }
         // remove all the current non artemis missiles
-        this.removeAllItemsByIDs(this.nonArtemisMissileIDs);
+        this.removeAllItemsByIDs(this.artemisCapableMissileIDs);
 
-        // hide the non-artemis missiles and show the artemis missiles in the item list.
-        this.nonArtemisMissileIDs.forEach(function (id) {
-            $("#detailContainer ." + id).hide();
-        });
-        this.artemisMissileIDs.forEach(function (id) {
-            $("#detailContainer ." + id).show();
+        // Add a ton and a crit slot to each
+        this.artemisCapableMissileIDs.forEach(function (id) {
+            var itemObj = $("#detailContainer ." + id).data('itemObj');
+            if (itemObj){
+                itemObj.trueName = itemObj.itemName;
+                itemObj.itemName = itemObj.itemName + " + Artemis";
+                $("#detailContainer ." + id).text(itemObj.itemName);
+                itemObj.trueWeight = itemObj.weight;
+                itemObj.weight = itemObj.trueWeight + 1;
+                itemObj.trueCrits = itemObj.critSlots;
+                itemObj.critSlots = itemObj.trueCrits + 1;
+            }
         });
 
-        this.artemis = false;
+        this.artemis = true;
         setURLParameter('artemis', 'true');
         return true;
     };
 
     this.removeArtemis = function removeArtemis(){
+        if (this.artemis == false){
+            return;
+        }
         // remove all the current non artemis missiles
-        this.removeAllItemsByIDs(this.artemisMissileIDs);
+        this.removeAllItemsByIDs(this.artemisCapableMissileIDs);
 
-        // hide the non-artemis missiles and show the artemis missiles in the item list.
-        this.nonArtemisMissileIDs.forEach(function (id) {
-            $("#detailContainer ." + id).show();
-        });
-        this.artemisMissileIDs.forEach(function (id) {
-            $("#detailContainer ." + id).hide();
+        // remove a ton and a crit slot to each
+        this.artemisCapableMissileIDs.forEach(function (id) {
+            var itemObj = $("#detailContainer ." + id).data('itemObj');
+            if (itemObj){
+                itemObj.itemName = itemObj.trueName;
+                $("#detailContainer ." + id).text(itemObj.trueName);
+                itemObj.weight = itemObj.trueWeight;
+                itemObj.critSlots = itemObj.trueCrits;
+            }
         });
 
         this.artemis = false;
