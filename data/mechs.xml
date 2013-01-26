@@ -691,10 +691,10 @@
     </class>
 	
     <class type="Heavy">
-        <mech type="Cataphract" tonnage="70" chassis="9">
+        <mech type="Cataphract" tonnage="70" chassis="7">
             <variant name="CTF-1X" premium="no" founders="no" ecm="no" jets="no" minengine="140" maxengine="340">
                 <limbs>
-                    <limb name="leftArm"  crits="9" armorFront="44" armorRear="0" maxArmor="44">
+                    <limb name="leftArm"  crits="8" armorFront="44" armorRear="0" maxArmor="44">
                         <internal slots="1">Shoulder</internal>
                         <internal slots="1">Upper Arm Actuator</internal>
                         <internal slots="1">Lower Arm Actuator</internal>
@@ -722,12 +722,14 @@
                         <hardpoint type="energy"></hardpoint>
                     </limb>
                     <limb name="leftLeg"  crits="2" armorFront="60" armorRear="0" maxArmor="60">
-                        <internal slots="1">Upper Leg Actuator</internal>
+                        <internal slots="1">Hip</internal>
+						<internal slots="1">Upper Leg Actuator</internal>
                         <internal slots="1">Lower Leg Actuator</internal>
                         <internal slots="1">Foot Actuator</internal>
                     </limb>
                     <limb name="rightLeg"  crits="2" armorFront="60" armorRear="0" maxArmor="60">
-                        <internal slots="1">Upper Leg Actuator</internal>
+                        <internal slots="1">Hip</internal>
+						<internal slots="1">Upper Leg Actuator</internal>
                         <internal slots="1">Lower Leg Actuator</internal>
                         <internal slots="1">Foot Actuator</internal>
                     </limb>
@@ -744,7 +746,7 @@
                         <internal slots="1">Shoulder</internal>
                         <internal slots="1">Upper Arm Actuator</internal>
                         <internal slots="1">Lower Arm Actuator</internal>
-                        <internal slots="1">Hand Actuator</internal>
+						<internal slots="1">Hand Actuator</internal>
                         <hardpoint type="missile"></hardpoint>
                         <hardpoint type="missile"></hardpoint>
                     </limb>
@@ -760,20 +762,21 @@
                         <hardpoint type="ballistic"></hardpoint>
                         <hardpoint type="energy"></hardpoint>
                     </limb>
-                    <limb name="rightArm"  crits="9" armorFront="44" armorRear="0" maxArmor="44">
+                    <limb name="rightArm"  crits="8" armorFront="44" armorRear="0" maxArmor="44">
                         <internal slots="1">Shoulder</internal>
                         <internal slots="1">Upper Arm Actuator</internal>
                         <internal slots="1">Lower Arm Actuator</internal>
-                        <internal slots="1">Hand Actuator</internal>
                         <hardpoint type="energy"></hardpoint>
                     </limb>
                     <limb name="leftLeg"  crits="2" armorFront="60" armorRear="0" maxArmor="60">
-                        <internal slots="1">Upper Leg Actuator</internal>
+                        <internal slots="1">Hip</internal>
+						<internal slots="1">Upper Leg Actuator</internal>
                         <internal slots="1">Lower Leg Actuator</internal>
                         <internal slots="1">Foot Actuator</internal>
                     </limb>
                     <limb name="rightLeg"  crits="2" armorFront="60" armorRear="0" maxArmor="60">
-                        <internal slots="1">Upper Leg Actuator</internal>
+                        <internal slots="1">Hip</internal>
+						<internal slots="1">Upper Leg Actuator</internal>
                         <internal slots="1">Lower Leg Actuator</internal>
                         <internal slots="1">Foot Actuator</internal>
                     </limb>
@@ -808,22 +811,23 @@
                         <hardpoint type="energy"></hardpoint>
                         <hardpoint type="jumpjet"></hardpoint>
                     </limb>
-                    <limb name="rightArm"  crits="9" armorFront="44" armorRear="0" maxArmor="44">
+                    <limb name="rightArm"  crits="8" armorFront="44" armorRear="0" maxArmor="44">
                         <internal slots="1">Shoulder</internal>
                         <internal slots="1">Upper Arm Actuator</internal>
                         <internal slots="1">Lower Arm Actuator</internal>
-                        <internal slots="1">Hand Actuator</internal>
                         <hardpoint type="ballistic"></hardpoint>
                         <hardpoint type="energy"></hardpoint>
                     </limb>
                     <limb name="leftLeg"  crits="2" armorFront="60" armorRear="0" maxArmor="60">
-                        <internal slots="1">Upper Leg Actuator</internal>
+                        <internal slots="1">Hip</internal>
+						<internal slots="1">Upper Leg Actuator</internal>
                         <internal slots="1">Lower Leg Actuator</internal>
                         <internal slots="1">Foot Actuator</internal>
                         <hardpoint type="jumpjet"></hardpoint>
                     </limb>
                     <limb name="rightLeg"  crits="2" armorFront="60" armorRear="0" maxArmor="60">
-                        <internal slots="1">Upper Leg Actuator</internal>
+                        <internal slots="1">Hip</internal>
+						<internal slots="1">Upper Leg Actuator</internal>
                         <internal slots="1">Lower Leg Actuator</internal>
                         <internal slots="1">Foot Actuator</internal>
                         <hardpoint type="jumpjet"></hardpoint>
@@ -841,7 +845,6 @@
                         <internal slots="1">Shoulder</internal>
                         <internal slots="1">Upper Arm Actuator</internal>
                         <internal slots="1">Lower Arm Actuator</internal>
-                        <internal slots="1">Hand Actuator</internal>
                         <hardpoint type="ballistic"></hardpoint>
                         <hardpoint type="ballistic"></hardpoint>
                     </limb>
@@ -859,17 +862,18 @@
                         <internal slots="1">Shoulder</internal>
                         <internal slots="1">Upper Arm Actuator</internal>
                         <internal slots="1">Lower Arm Actuator</internal>
-                        <internal slots="1">Hand Actuator</internal>
                         <hardpoint type="ballistic"></hardpoint>
                         <hardpoint type="ballistic"></hardpoint>
                     </limb>
                     <limb name="leftLeg"  crits="2" armorFront="60" armorRear="0" maxArmor="60">
-                        <internal slots="1">Upper Leg Actuator</internal>
+                        <internal slots="1">Hip</internal>
+						<internal slots="1">Upper Leg Actuator</internal>
                         <internal slots="1">Lower Leg Actuator</internal>
                         <internal slots="1">Foot Actuator</internal>
                     </limb>
                     <limb name="rightLeg"  crits="2" armorFront="60" armorRear="0" maxArmor="60">
-                        <internal slots="1">Upper Leg Actuator</internal>
+                        <internal slots="1">Hip</internal>
+						<internal slots="1">Upper Leg Actuator</internal>
                         <internal slots="1">Lower Leg Actuator</internal>
                         <internal slots="1">Foot Actuator</internal>
                     </limb>
@@ -906,7 +910,6 @@
                         <internal slots="1">Shoulder</internal>
                         <internal slots="1">Upper Arm Actuator</internal>
                         <internal slots="1">Lower Arm Actuator</internal>
-                        <internal slots="1">Hand Actuator</internal>
                         <hardpoint type="ballistic"></hardpoint>
                         <hardpoint type="energy"></hardpoint>
                     </limb>
