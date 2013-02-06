@@ -1475,7 +1475,7 @@ type
       <ArtemisStats lockTime="0.5" trackingStrength="1.5" missileSpread="0.8"/>
       <ModuleStats slots="1" tons="1.0" health="0"/>
     </Module>
-    <Module id="9002" name="BeagleProbe" CType="CDummyStats">
+    <Module id="90029002" name="BeagleProbe" CType="CDummyStats">
       <Loc nameTag="@BeagleProbe" descTag="@BeagleProbe_desc" iconTag="4"/>
       <ModuleStats slots="2" tons="1.5" health="0"/>
     </Module>

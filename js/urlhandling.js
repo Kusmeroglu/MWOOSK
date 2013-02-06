@@ -9,6 +9,7 @@ function setURLParameter(param, paramVal){
     var baseURL = tempArray[0];
     var additionalURL = tempArray[1];
     var temp = "";
+    paramVal = paramVal.replace(" ", "_");
     if (additionalURL) {
         tempArray = additionalURL.split("&");
         for (i=0; i<tempArray.length; i++){

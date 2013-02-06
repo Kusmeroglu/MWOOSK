@@ -164,8 +164,8 @@ $(function () {
             $("#mechVariantDiv .selectBlank, #mechVariantDiv .selectItem").remove();
             $("#mechVariantDiv").append($("<div class='selectBlank selected' id='variantBlank'>Select mech Variant...</div>"));
             mechXML.find('class > mech[type="' + selectedChassis + '"] > variant').each(function () {
-                $("#mechVariant").append($("<option></option>").attr("value", $(this).attr("name")).text($(this).attr("name")));
-                $("#mechVariantDiv").append($("<div class='selectItem' id='"+$(this).attr("name")+"'>"+$(this).attr("name")+"</div>"));
+                $("#mechVariant").append($("<option></option>").attr("value", $(this).attr("name").replace(" ","_")).text($(this).attr("name").replace(" ","_")));
+                $("#mechVariantDiv").append($("<div class='selectItem' id='"+$(this).attr("name").replace(" ","_")+"'>"+$(this).attr("name")+"</div>"));
             });
             $("#mechVariantDiv").children(".selectItem").click(function(event) {
                 if ($(this).parent().hasClass('active')){
@@ -200,10 +200,10 @@ $(function () {
                 return;
             }
             mechXML.find('mech[type="' + $("#mechChassis").val() + '"]').each(function () {
-                mechObj = new mech($("#mechChassis").val(), $("#mechVariant").val(), parseFloat($(this).attr("tonnage")));
+                mechObj = new mech($("#mechChassis").val(), $("#mechVariant").val().replace(" ", "_"), parseFloat($(this).attr("tonnage")));
                 mechObj.currentTons = mechObj.chassisTons = parseFloat($(this).attr("chassis"));
             });
-            mechXML.find('mech[type="' + mechObj.chassis + '"] variant[name="' + mechObj.variant + '"]').each(function () {
+            mechXML.find('mech[type="' + mechObj.chassis + '"] variant[name="' + mechObj.variant.replace("_"," ") + '"]').each(function () {
                 mechObj.ecm = Boolean($(this).attr("ecm") == "yes");
                 mechObj.jumpjets = Boolean($(this).attr("jets") == "yes");
                 mechObj.minEngineSize = parseInt($(this).attr("minengine"));
@@ -214,7 +214,7 @@ $(function () {
             createChart("#weightChart", mechObj.maxTons, mechObj.chassisTons, mechObj.currentTons);
 
             // add all the limbs.
-            mechXML.find('mech[type="' + mechObj.chassis + '"] variant[name="' + mechObj.variant + '"] > limbs > limb').each(function () {
+            mechXML.find('mech[type="' + mechObj.chassis + '"] variant[name="' + mechObj.variant.replace("_"," ") + '"] > limbs > limb').each(function () {
                 var limbObj = new limb($(this).attr("name"), $(this).attr("crits"), parseInt($(this).attr("maxArmor")));
                 mechObj.addLimb(limbObj.limbName, limbObj);
                 // set initial armor for mech
@@ -297,7 +297,7 @@ $(function () {
 
                 // (have to wait until we have graphs and items created.)
                 if (urldata.hasOwnProperty('variant')){
-                    // check for limbs data and load each, 3 letter code by 3 letter code.
+                    // check for limbs data and load each, 4 letter code by 4 letter code.
                     limbList.forEach(function(limb){
                         if (urldata.hasOwnProperty(limb)){
                             var rawitems = urldata[limb];
@@ -305,13 +305,13 @@ $(function () {
                             var i = 0;
                             while(i < rawitems.length)
                             {
-                                var thisitemid = rawitems.substr(i, 3);
+                                var thisitemid = rawitems.substr(i, 4);
                                 var thisitemelem = $('#detailContainer .'+thisitemid); // pull the data out of the dom element with the matching itemid (which is actually a class)
                                 if ( thisitemelem ){ // if we found it
                                     var thisitemObj = jQuery.extend(true, {}, thisitemelem.data('itemObj'));// get copy of old data
                                     mechObj.addItemToLimb($(limbelem).attr('id'), thisitemObj);
                                 }
-                                i += 3;
+                                i += 4;
                             }
                         }
                     });
@@ -332,7 +332,7 @@ $(function () {
         if (urldata.hasOwnProperty('variant')){
             var mechVariant = urldata['variant'];
             // we have data to load
-            mechXML.find('mech variant[name="' + mechVariant + '"]').each(function () {
+            mechXML.find('mech variant[name="' + mechVariant.replace("_"," ") + '"]').each(function () {
                 //select the fake selects to trigger real select and set the visuals up correctly
                 var mechClass = $(this).parents('class').attr('type').toString();
                 $("#mechClassDiv #"+mechClass).parent().addClass('active');
