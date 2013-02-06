@@ -44,21 +44,21 @@
         <item id="1504" type ="jumpjet" hardpoint="jumpjet" tons=".5" minTons="20" maxTons="40" slots="1" maxrange="0" ammoper="0" class="light">Jump Jets - Class V</item>
     </internals>
     <ammos>
-        <item id="2000" tons="1" slots="1">AC20Ammo</item>
-        <item id="2001" tons="1" slots="1">AMSAmmo</item>
-        <item id="2005" tons="1" slots="1">AC2Ammo</item>
-        <item id="2006" tons="1" slots="1">AC5Ammo</item>
-        <item id="2007" tons="1" slots="1">AC10Ammo</item>
-        <item id="2010" tons="1" slots="1">LB10-XACAmmo</item>
-        <item id="2011" tons="1" slots="1">MachineGunAmmo</item>
-        <item id="2008" tons="1" slots="1">GaussAmmo</item>
-        <item id="2012" tons="1" slots="1">UltraAC5Ammo</item>
-        <item id="2017" tons="1" slots="1">NARCAmmo</item>
-        <item id="2027" tons="1" slots="1">LRMAmmo</item>
-        <item id="2028" tons="1" slots="1">SRMAmmo</item>
-        <item id="2029" tons="1" slots="1">StreakSRMAmmo</item>
-        <item id="2030" tons="1" slots="1">LRMAmmoArtemis</item>
-        <item id="2031" tons="1" slots="1">SRMAmmoArtemis</item>
+        <item id="2000" type="ballistic" tons="1" slots="1">AC20Ammo</item>
+        <item id="2001" type="ballistic" tons="1" slots="1">AMSAmmo</item>
+        <item id="2005" type="ballistic" tons="1" slots="1">AC2Ammo</item>
+        <item id="2006" type="ballistic" tons="1" slots="1">AC5Ammo</item>
+        <item id="2007" type="ballistic" tons="1" slots="1">AC10Ammo</item>
+        <item id="2010" type="ballistic" tons="1" slots="1">LB10-XACAmmo</item>
+        <item id="2011" type="ballistic" tons="1" slots="1">MachineGunAmmo</item>
+        <item id="2008" type="ballistic" tons="1" slots="1">GaussAmmo</item>
+        <item id="2012" type="ballistic" tons="1" slots="1">UltraAC5Ammo</item>
+        <item id="2017" type="missile" tons="1" slots="1">NARCAmmo</item>
+        <item id="2027" type="missile" tons="1" slots="1">LRMAmmo</item>
+        <item id="2028" type="missile" tons="1" slots="1">SRMAmmo</item>
+        <item id="2029" type="missile" tons="1" slots="1">StreakSRMAmmo</item>
+        <item id="2030" type="missile" tons="1" slots="1">LRMAmmoArtemis</item>
+        <item id="2031" type="missile" tons="1" slots="1">SRMAmmoArtemis</item>
     </ammos>
     <engines>
         <plant id="3218" slots="6" tons="1.0" type="std" heatsinkslots="-6" size="100">Standard 100</plant>
