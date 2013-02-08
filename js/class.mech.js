@@ -280,6 +280,7 @@
 
         this.dhs = true;
         setURLParameter('dhs', 'true');
+        this.updateMech();
         return true;
     };
 
@@ -297,6 +298,7 @@
 
         this.dhs = false;
         setURLParameter('dhs', 'false');
+        this.updateMech();
         return true;
     };
 

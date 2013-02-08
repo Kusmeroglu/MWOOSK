@@ -20,7 +20,7 @@
     this.initVisuals = function initVisuals(){
         // display hardpoints (not engine)
         ['ballistic', 'energy', 'missile', 'ams'].forEach(function(hardpointtype){
-            var max = this.getTotalHardpointsForType(hardpointtype)
+            var max = this.getTotalHardpointsForType(hardpointtype);
             if ( max > 0 ){
                 $('#'+this.limbName+' .hardpoints').append($("<div></div>").addClass('hardpoint').addClass(''+hardpointtype).text(""+max));
             }
@@ -358,10 +358,6 @@
             if (this.items[x].hardpointType == "engine"){
                 heatsinks += ( isDualHeatSink ? 2 : 1 ) * (  10 + ((this.items[x].heatsinkslots < 0) ? this.items[x].heatsinkslots : 0 ) );
             }
-        }
-        // add some bits for dual heat sinks in the engine
-        if ( this.engineHeatSinksItems.length > 0 && isDualHeatSink ){
-            heatsinks += .6 * this.engineHeatSinksItems.length;
         }
         return heatsinks;
     };
