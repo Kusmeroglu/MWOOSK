@@ -15,7 +15,9 @@
     this.limbs = {};
     this.ecm = false;
     this.ecmcount = 0;
+	this.bapcount = 0;
     this.ecmmax = 1;
+	this.bapmax = 1;
     this.jumpjets = false;
     this.jumpjetcount = 0;
     this.jumpjetmax = 5;
@@ -89,6 +91,10 @@
         if ( itemObj.id == "9006" && (this.ecm == false || this.ecmcount >= this.ecmmax) ){
             return false;
         }
+		// bap check
+        if ( itemObj.id == "9002" && (this.bap == false || this.bapcount >= this.bapmax) ){
+            return false;
+        }
         // jumpjet check
         if (  $.inArray(itemObj.id, this.jumpjetitemIDs) > -1 && (this.jumpjets == false || this.jumpjetcount >= this.jumpjetmax) ){
             return false;
@@ -104,6 +110,10 @@
         // ecm check
         if ( itemObj.id == "9006" ){
             this.ecmcount += 1;
+        }
+		// bap check
+        if ( itemObj.id == "9002" ){
+            this.bapcount += 1;
         }
         // jumpjet check
         if ( $.inArray(itemObj.id, this.jumpjetitemIDs) > -1 ){
@@ -124,6 +134,10 @@
         // ecm check
         if ( itemObj.id == "9006" ){
             this.ecmcount -= 1;
+        }
+		// bap check
+        if ( itemObj.id == "9002" ){
+            this.bapcount -= 1;
         }
         // jumpjet check
         if ( $.inArray(itemObj.id, this.jumpjetitemIDs) > -1 ){

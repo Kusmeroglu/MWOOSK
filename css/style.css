@@ -250,7 +250,12 @@ padding:5px;
 }
 
 .hardpoint{
-text-transform: capitalize;
+ border-radius:2px;
+ -moz-border-radius:2px;
+ -webkit-border-radius:2px;
+ float:left;
+ margin:0px 5px;
+ padding:5px 5px 0px 5px;
 }
 
 .critslot {
@@ -275,6 +280,10 @@ border:1px solid #fff;
     color: white;
 	padding:-2px;
 }
+
+.armor {
+ clear:both;
+ }
 
 .critLabel{
 padding-left:5px;
@@ -702,6 +711,53 @@ margin-top:20px;
 	font-family: 'eurostileregular';
 }
 
+.energy {
+    /*background-image: url("../images/bgEnergy.png") !important;
+    background-repeat: no-repeat !important;*/
+    position: relative;
+	border-color:#00a2e8;
+	color:#fff;
+}
+.missile {
+    /*background-image: url("../images/bgMissile.png") !important;
+    background-repeat: no-repeat !important;*/
+    position: relative;
+	border-color:#22b14c;
+	color:#fff;
+}
+.hardpoint.ballistic {
+    position: relative;
+	background:#ffc90e;
+	color:#3d4337;
+	font-family: 'battletech_oldstyle';
+}
+
+.hardpoint.energy {
+    position: relative;
+	background:#00a2e8;
+	color:#fff;
+	font-family: 'battletech_oldstyle';
+}
+
+.hardpoint.missile {
+    position: relative;
+	background:#22b14c;
+	color:#fff;
+	font-family: 'battletech_oldstyle';
+}
+
+.hardpoint.ams {
+    position: relative;
+	background:#fff;
+	color:#3d4337;
+	font-family: 'battletech_oldstyle';
+	font-style:bold;
+}
+
+.hardpoints {
+	min-height:18px;
+}
+
 #tonnageWrap{
 background:#000;
 float:left;
@@ -771,6 +827,8 @@ color: white;
     color: white;
     height:100px;
     width:100px;
+	border-radius:2px;
+	background:#000;
 }
 
 #commentsWrap{
@@ -781,6 +839,22 @@ padding:3px 4px 4px 8px;
 }
 
 #comments{
+}
+
+#itemInfo{
+ height:145px;
+ margin:5px 5px 0px 5px;
+border-color:#AE9B4C;
+border-style:solid;
+border-left-width:2px;
+border-top-width:1px;
+border-bottom-width:1px;
+border-right-width:6px;
+padding:2px 5px 0px 5px;
+border-radius:2px;
+-moz-border-radius:2px;
+-webkit-border-radius:2px;
+color:#fff;
 }
 
 /* ----  All Component Button Stylings ---- */
@@ -800,8 +874,8 @@ padding:3px 4px 4px 8px;
  border-right-width:2px;
  display:inline-block;
  text-align:left;
- margin:0px 5px;
- min-width:75px;
+ margin:0px 3px;
+ min-width:85px;
  color:#fff;
  border-radius:2px;
  -webkit-border-radius:2px;
@@ -812,6 +886,10 @@ padding:3px 4px 4px 8px;
  background:#AE9B4C;
  border-color:#AE9B4C;
  cursor:pointer;
+}
+
+#leftInfo .toggleButton{
+  margin:5px 5px 0px 5px;
 }
 
 .activeButton {
@@ -831,12 +909,12 @@ display:block;
 
 #ballisticWeapon {
  display:block;
- height:675px;
+ height:520px;
 }
 
 #ballisticAmmo{
  display:none;
- height:675px;
+ height:520px;
  }
  
  #energyList{
@@ -845,7 +923,7 @@ display:none;
 
 #energyWeapon {
  display:block;
- height:705px;
+ height:556px;
 }
 
 #missileList{
@@ -854,12 +932,12 @@ display:none;
 
 #missileWeapon {
  display:block;
- height:675px;
+ height:520px;
 }
 
 #missileAmmo{
  display:none;
- height:675px;
+ height:520px;
  }
  
  #utilities{
@@ -897,8 +975,7 @@ Weight Chart CSS (SVG)
 
 .bullet {
     font: 10px 'Aldrich', sans-serif;
-    fill: #999999;
-    stroke: #999999;
+    fill: #fff;
 }
 .bullet .marker {
     stroke: #000000;
@@ -928,8 +1005,7 @@ Weight Chart CSS (SVG)
     fill: #ffffff;
 }
 .bullet .subtitle {
-    fill: #999999;
-    stroke: #999999;
+    fill: #fff;
 }
 
 /*
