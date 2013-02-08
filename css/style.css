@@ -254,8 +254,10 @@ padding:5px;
  -moz-border-radius:2px;
  -webkit-border-radius:2px;
  float:left;
- margin:0px 5px;
- padding:5px 5px 0px 5px;
+ margin:0px 3px;
+ padding:0px 2px 0px 2px;
+ text-transform:capitalize;
+ font-style:bold;
 }
 
 .critslot {
@@ -403,7 +405,7 @@ margin-top:00px;
 #rightArm{
 background:#000;
 position:relative;
-margin-top:170px;
+margin-top:40px;
 }
 
 #rightTorso{
@@ -427,7 +429,7 @@ margin-top:40px;
 #leftArm{
 background:#000;
 position:relative;
-margin-top:170px;
+margin-top:40px;
 }
 
 #rightLeg{
@@ -729,29 +731,24 @@ margin-top:20px;
     position: relative;
 	background:#ffc90e;
 	color:#3d4337;
-	font-family: 'battletech_oldstyle';
 }
 
 .hardpoint.energy {
     position: relative;
 	background:#00a2e8;
 	color:#fff;
-	font-family: 'battletech_oldstyle';
 }
 
 .hardpoint.missile {
     position: relative;
 	background:#22b14c;
 	color:#fff;
-	font-family: 'battletech_oldstyle';
 }
 
 .hardpoint.ams {
     position: relative;
 	background:#fff;
 	color:#3d4337;
-	font-family: 'battletech_oldstyle';
-	font-style:bold;
 }
 
 .hardpoints {
@@ -831,6 +828,14 @@ color: white;
 	background:#000;
 }
 
+#rightInfo{
+    color: white;
+    height:100px;
+    width:100px;
+	border-radius:2px;
+	background:#000;
+}
+
 #commentsWrap{
 background:#718ba2;
 float:left;
@@ -888,7 +893,7 @@ color:#fff;
  cursor:pointer;
 }
 
-#leftInfo .toggleButton{
+#rightInfo .toggleButton{
   margin:5px 5px 0px 5px;
 }
 

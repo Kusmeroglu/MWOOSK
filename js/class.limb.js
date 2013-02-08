@@ -22,7 +22,7 @@
         ['ballistic', 'energy', 'missile', 'ams'].forEach(function(hardpointtype){
             var max = this.getTotalHardpointsForType(hardpointtype);
             if ( max > 0 ){
-                $('#'+this.limbName+' .hardpoints').append($("<div></div>").addClass('hardpoint').addClass(''+hardpointtype).text(""+max));
+                $('#'+this.limbName+' .hardpoints').append($("<div></div>").addClass('hardpoint').addClass(''+hardpointtype).text(""+hardpointtype+": "+max));
             }
         }.bind(this));
         // mech xml specifies open crit slots
