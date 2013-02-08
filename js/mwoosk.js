@@ -18,6 +18,11 @@ var classLookup = {
 
 var ECMID = "IGE";
 
+var settings = {
+			showArrows: true,
+			autoReinitialise: true,
+			autoReinitializeDelay: 500}
+
 $(function () {
 
 	$('#reset').click(function(){
@@ -562,15 +567,13 @@ $(function () {
 	
 	// Initiallizing the Scroll Bars to show up dynamically
 	$(function(){
-		var settings = {
-			showArrows: true,
-			autoReinitialise: true,
-			autoReinitializeDelay: 500}
 	
 	// Generic button style toggling.  Purely Cosmetic.
 	$('.toggleButton').click(function(){
-		$(this).siblings('.toggleButton').removeClass('activeButton');
-		$(this).addClass('activeButton');
+		if ($(this).parent().hasClass('buttonWrapper')){
+			$(this).siblings('.toggleButton').removeClass('activeButton');
+			$(this).addClass('activeButton');
+			}
 	});
 	
 	// Show Ballistic List
