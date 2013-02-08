@@ -1887,8 +1887,243 @@
             </variant> 
         </mech>           
 	</class>
-<class type="Light">
-<mech type="Jenner" tonnage="35" chassis="4">
+	<class type="Light">
+		<mech type="Commando" tonnage="25" chassis="1.5">
+			<variant name="COM-1B" premium="no" founders="no" jets="no" ecm="no" minengine="100" maxengine="215" modules="2">
+				<limbs>
+					<limb name="leftArm"  crits="8" armorFront="12" armorRear="" maxArmor="16">
+                        <internal slots="1">Shoulder</internal>
+                        <internal slots="1">Upper Arm Actuator</internal>
+                        <internal slots="1">Lower Arm Actuator</internal>
+                        <internal slots="1">Hand Actuator</internal>
+                        <hardpoint type="energy"></hardpoint>
+					</limb>
+                    <limb name="leftTorso"  crits="12" armorFront="12" armorRear="6" maxArmor="24">
+                    </limb>
+                    <limb name="centerTorso"  crits="12" armorFront="16" armorRear="8" maxArmor="32">
+                        <internal slots="4">Gyro</internal>
+                        <hardpoint type="engine"></hardpoint>
+						<hardpoint type="missile"></hardpoint>
+                    </limb>
+                    <limb name="rightTorso"  crits="9" armorFront="12" armorRear="6" maxArmor="24">
+                        <hardpoint type="ams"></hardpoint>
+                    </limb>
+                    <limb name="rightArm"  crits="9" armorFront="12" armorRear="" maxArmor="16">
+                        <internal slots="1">Shoulder</internal>
+                        <internal slots="1">Upper Arm Actuator</internal>
+                        <internal slots="1">Lower Arm Actuator</internal>
+                        <internal slots="1">Hand Actuator</internal>
+                        <hardpoint type="energy"></hardpoint>
+						<hardpoint type="energy"></hardpoint>
+					</limb>
+                    <limb name="leftLeg"  crits="2" armorFront="16" armorRear="0" maxArmor="24">
+                        <internal slots="1">Hip</internal>
+						<internal slots="1">Upper Leg Actuator</internal>
+                        <internal slots="1">Lower Leg Actuator</internal>
+                        <internal slots="1">Foot Actuator</internal>
+                    </limb>
+                    <limb name="rightLeg"  crits="2" armorFront="16" armorRear="" maxArmor="24">
+                        <internal slots="1">Hip</internal>
+						<internal slots="1">Upper Leg Actuator</internal>
+                        <internal slots="1">Lower Leg Actuator</internal>
+                        <internal slots="1">Foot Actuator</internal>
+                    </limb>
+                    <limb name="head"  crits="1" armorFront="12" armorRear="0" maxArmor="18">
+                        <internal slots="2">Life Support</internal>
+                        <internal slots="2">Sensors</internal>
+                        <internal slots="1">Cockpit</internal>
+                        <hardpoint type=""></hardpoint>
+                    </limb>
+				</limbs>
+			</variant>
+			<variant name="COM-1D" premium="no" founders="no" jets="no" ecm="no" minengine="100" maxengine="210" modules="2">
+				<limbs>
+					<limb name="leftArm"  crits="8" armorFront="" armorRear="" maxArmor="">
+                        <internal slots="1">Shoulder</internal>
+                        <internal slots="1">Upper Arm Actuator</internal>
+                        <internal slots="1">Lower Arm Actuator</internal>
+                        <internal slots="1">Hand Actuator</internal>
+                    </limb>
+                    <limb name="leftTorso"  crits="12" armorFront="10" armorRear="4" maxArmor="">
+                    </limb>
+                    <limb name="centerTorso"  crits="12" armorFront="" armorRear="" maxArmor="">
+                        <internal slots="4">Gyro</internal>
+                        <hardpoint type="engine"></hardpoint>
+						<hardpoint type="missile"></hardpoint>
+						<hardpoint type="missile"></hardpoint>
+                    </limb>
+                    <limb name="rightTorso"  crits="12" armorFront="10" armorRear="4" maxArmor="">
+                        <hardpoint type="ams"></hardpoint>
+                    </limb>
+                    <limb name="rightArm"  crits="8" armorFront="" armorRear="" maxArmor="">
+                        <internal slots="1">Shoulder</internal>
+                        <internal slots="1">Upper Arm Actuator</internal>
+                        <internal slots="1">Lower Arm Actuator</internal>
+                        <internal slots="1">Hand Actuator</internal>
+                        <hardpoint type="energy"></hardpoint>
+						<hardpoint type="energy"></hardpoint>
+					</limb>
+                    <limb name="leftLeg"  crits="2" armorFront="" armorRear="0" maxArmor="">
+                        <internal slots="1">Hip</internal>
+						<internal slots="1">Upper Leg Actuator</internal>
+                        <internal slots="1">Lower Leg Actuator</internal>
+                        <internal slots="1">Foot Actuator</internal>
+                    </limb>
+                    <limb name="rightLeg"  crits="2" armorFront="" armorRear="" maxArmor="">
+                        <internal slots="1">Hip</internal>
+						<internal slots="1">Upper Leg Actuator</internal>
+                        <internal slots="1">Lower Leg Actuator</internal>
+                        <internal slots="1">Foot Actuator</internal>
+                    </limb>
+                    <limb name="head"  crits="1" armorFront="12" armorRear="0" maxArmor="18">
+                        <internal slots="2">Life Support</internal>
+                        <internal slots="2">Sensors</internal>
+                        <internal slots="1">Cockpit</internal>
+					</limb>
+				</limbs>
+			</variant>
+			<variant name="COM-2D" premium="no" founders="no" jets="no" ecm="yes" minengine="100" maxengine="210" modules="2">
+				<limbs>
+					<limb name="leftArm"  crits="8" armorFront="12" armorRear="" maxArmor="16">
+                        <internal slots="1">Shoulder</internal>
+                        <internal slots="1">Upper Arm Actuator</internal>
+                        <internal slots="1">Lower Arm Actuator</internal>
+                        <internal slots="1">Hand Actuator</internal>
+                        <hardpoint type="energy"></hardpoint>
+					</limb>
+                    <limb name="leftTorso"  crits="12" armorFront="12" armorRear="6" maxArmor="24">
+					</limb>
+                    <limb name="centerTorso"  crits="12" armorFront="16" armorRear="8" maxArmor="32">
+                        <internal slots="4">Gyro</internal>
+                        <hardpoint type="engine"></hardpoint>
+						<hardpoint type="missile"></hardpoint>
+                    </limb>
+                    <limb name="rightTorso"  crits="12" armorFront="12" armorRear="6" maxArmor="24">
+                        <hardpoint type="ams"></hardpoint>
+                    </limb>
+                    <limb name="rightArm"  crits="8" armorFront="12" armorRear="" maxArmor="16">
+                        <internal slots="1">Shoulder</internal>
+                        <internal slots="1">Upper Arm Actuator</internal>
+                        <internal slots="1">Lower Arm Actuator</internal>
+                        <internal slots="1">Hand Actuator</internal>
+                        <hardpoint type="missile"></hardpoint>
+						<hardpoint type="missile"></hardpoint>
+					</limb>
+                    <limb name="leftLeg"  crits="2" armorFront="16" armorRear="0" maxArmor="24">
+                        <internal slots="1">Hip</internal>
+						<internal slots="1">Upper Leg Actuator</internal>
+                        <internal slots="1">Lower Leg Actuator</internal>
+                        <internal slots="1">Foot Actuator</internal>
+                    </limb>
+                    <limb name="rightLeg"  crits="2" armorFront="16" armorRear="" maxArmor="24">
+                        <internal slots="1">Hip</internal>
+						<internal slots="1">Upper Leg Actuator</internal>
+                        <internal slots="1">Lower Leg Actuator</internal>
+                        <internal slots="1">Foot Actuator</internal>
+                    </limb>
+                    <limb name="head"  crits="1" armorFront="12" armorRear="0" maxArmor="18">
+                        <internal slots="2">Life Support</internal>
+                        <internal slots="2">Sensors</internal>
+                        <internal slots="1">Cockpit</internal>
+                    </limb>
+				</limbs>
+			</variant>
+			<variant name="COM-3A" premium="no" founders="no" jets="no" ecm="no" minengine="100" maxengine="210" modules="2">
+				<limbs>
+					<limb name="leftArm"  crits="8" armorFront="8" armorRear="" maxArmor="16">
+                        <internal slots="1">Shoulder</internal>
+                        <internal slots="1">Upper Arm Actuator</internal>
+                        <internal slots="1">Lower Arm Actuator</internal>
+                        <internal slots="1">Hand Actuator</internal>
+                        <hardpoint type="energy"></hardpoint>
+					</limb>
+                    <limb name="leftTorso"  crits="12" armorFront="8" armorRear="6" maxArmor="24">
+						<hardpoint type=""></hardpoint>
+					</limb>
+                    <limb name="centerTorso"  crits="12" armorFront="12" armorRear="8" maxArmor="32">
+                        <internal slots="4">Gyro</internal>
+                        <hardpoint type="engine"></hardpoint>
+						<hardpoint type="missile"></hardpoint>
+                    </limb>
+                    <limb name="rightTorso"  crits="12" armorFront="8" armorRear="6" maxArmor="24">
+                        <hardpoint type="ams"></hardpoint>
+                    </limb>
+                    <limb name="rightArm"  crits=89" armorFront="8" armorRear="" maxArmor="16">
+                        <internal slots="1">Shoulder</internal>
+                        <internal slots="1">Upper Arm Actuator</internal>
+                        <internal slots="1">Lower Arm Actuator</internal>
+                        <internal slots="1">Hand Actuator</internal>
+                        <hardpoint type="energy"></hardpoint>
+						<hardpoint type="missile"></hardpoint>
+					</limb>
+                    <limb name="leftLeg"  crits="2" armorFront="12" armorRear="0" maxArmor="24">
+                        <internal slots="1">Hip</internal>
+						<internal slots="1">Upper Leg Actuator</internal>
+                        <internal slots="1">Lower Leg Actuator</internal>
+                        <internal slots="1">Foot Actuator</internal>
+                    </limb>
+                    <limb name="rightLeg"  crits="2" armorFront="12" armorRear="" maxArmor="24">
+                        <internal slots="1">Hip</internal>
+						<internal slots="1">Upper Leg Actuator</internal>
+                        <internal slots="1">Lower Leg Actuator</internal>
+                        <internal slots="1">Foot Actuator</internal>
+                    </limb>
+                    <limb name="head"  crits="1" armorFront="12" armorRear="0" maxArmor="18">
+                        <internal slots="2">Life Support</internal>
+                        <internal slots="2">Sensors</internal>
+                        <internal slots="1">Cockpit</internal>
+                    </limb>
+				</limbs>
+			</variant>
+			<variant name="THE DEATHS KNELL" premium="yes" founders="no" jets="no" ecm="no" minengine="100" maxengine="210" modules="2">
+				<limbs>
+					<limb name="leftArm"  crits="8" armorFront="16" armorRear="" maxArmor="16">
+                        <internal slots="1">Shoulder</internal>
+                        <internal slots="1">Upper Arm Actuator</internal>
+                        <internal slots="1">Lower Arm Actuator</internal>
+                        <internal slots="1">Hand Actuator</internal>
+                        <hardpoint type="energy"></hardpoint>
+                        <hardpoint type="energy"></hardpoint>						
+					</limb>
+                    <limb name="leftTorso"  crits="12" armorFront="18" armorRear="6" maxArmor="24">
+					</limb>
+                    <limb name="centerTorso"  crits="12" armorFront="24" armorRear="8" maxArmor="32">
+                        <internal slots="4">Gyro</internal>
+                        <hardpoint type="engine"></hardpoint>
+                    </limb>
+                    <limb name="rightTorso"  crits="12" armorFront="18" armorRear="6" maxArmor="24">
+                        <hardpoint type="ams"></hardpoint>
+                    </limb>
+                    <limb name="rightArm"  crits="8" armorFront="16" armorRear="" maxArmor="16">
+                        <internal slots="1">Shoulder</internal>
+                        <internal slots="1">Upper Arm Actuator</internal>
+                        <internal slots="1">Lower Arm Actuator</internal>
+                        <internal slots="1">Hand Actuator</internal>
+                        <hardpoint type="energy"></hardpoint>
+                        <hardpoint type="energy"></hardpoint>
+					</limb>
+                    <limb name="leftLeg"  crits="2" armorFront="24" armorRear="0" maxArmor="24">
+                        <internal slots="1">Hip</internal>
+						<internal slots="1">Upper Leg Actuator</internal>
+                        <internal slots="1">Lower Leg Actuator</internal>
+                        <internal slots="1">Foot Actuator</internal>
+                    </limb>
+                    <limb name="rightLeg"  crits="2" armorFront="24" armorRear="" maxArmor="24">
+                        <internal slots="1">Hip</internal>
+						<internal slots="1">Upper Leg Actuator</internal>
+                        <internal slots="1">Lower Leg Actuator</internal>
+                        <internal slots="1">Foot Actuator</internal>
+                    </limb>
+                    <limb name="head"  crits="1" armorFront="16" armorRear="0" maxArmor="18">
+                        <internal slots="2">Life Support</internal>
+                        <internal slots="2">Sensors</internal>
+                        <internal slots="1">Cockpit</internal>
+                    </limb>
+				</limbs>
+			</variant>
+		</mech>
+	</class>
+		<mech type="Jenner" tonnage="35" chassis="4">
             <variant name="JR7-D" premium="no" founders="yes" jets="yes" ecm="no" minengine="100" maxengine="300" modules="2">
                 <limbs>
                     <limb name="leftArm"  crits="10" armorFront="8" armorRear="0" maxArmor="24">
@@ -2015,7 +2250,7 @@
                 </limbs>
             </variant> 
 </mech>
-<mech type="Spider" tonnage="35" chassis="4">
+		<mech type="Spider" tonnage="35" chassis="4">
             <variant name="SPD-5D" premium="no" founders="no" jets="yes" ecm="yes" minengine="100" maxengine="255" modules="2">
                 <limbs>
                     <limb name="leftArm"  crits="8" armorFront="10" armorRear="0" maxArmor="24">

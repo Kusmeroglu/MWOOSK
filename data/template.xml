@@ -18,7 +18,7 @@
                         <hardpoint type="engine"></hardpoint>
 						<hardpoint type=""></hardpoint>
                     </limb>
-                    <limb name="rightTorso"  crits="8" armorFront="" armorRear="" maxArmor="">
+                    <limb name="rightTorso"  crits="12" armorFront="" armorRear="" maxArmor="">
                         <hardpoint type=""></hardpoint>
                     </limb>
                     <limb name="rightArm"  crits="8" armorFront="" armorRear="" maxArmor="">
