@@ -2046,7 +2046,7 @@
                     <limb name="rightTorso"  crits="12" armorFront="8" armorRear="6" maxArmor="24">
                         <hardpoint type="ams"></hardpoint>
                     </limb>
-                    <limb name="rightArm"  crits=89" armorFront="8" armorRear="" maxArmor="16">
+                    <limb name="rightArm"  crits="8" armorFront="8" armorRear="" maxArmor="16">
                         <internal slots="1">Shoulder</internal>
                         <internal slots="1">Upper Arm Actuator</internal>
                         <internal slots="1">Lower Arm Actuator</internal>
