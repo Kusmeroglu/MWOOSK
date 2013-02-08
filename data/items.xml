@@ -31,7 +31,7 @@
         <item id="1032" type="missile" damage="5.00" numfiring="2" heat="2.00" cooldown="3.50" range="270" maxrange="270" slots="1" tons="1.50" dpsmax="1.43" ammoper="100" hps="0.57" ehs="6">Streak SRM 2</item>
     </weapons>
     <internals>
-        <item id="1014" type="utility" damage="2.00" numfiring="1" heat="0.00" cooldown="0.00" range="90" maxrange="200" slots="1" tons="0.50" ammoper="1000">AMS</item>
+        <item id="1014" type="utility" hardpoint="ams" damage="2.00" numfiring="1" heat="0.00" cooldown="0.00" range="90" maxrange="200" slots="1" tons="0.50" ammoper="1000">AMS</item>
         <item id="3000" type="heatsink" tons="1" slots="1">Single Heat Sink</item>
         <item id="3001" type="heatsink" tons="1" slots="3">Dual Heat Sink</item>
         <item id="9002" type="util" tons="1" slots="1">Beagle Active Probe</item>
