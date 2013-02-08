@@ -130,6 +130,9 @@
         if ( itemObj.hardpointType == "engine" && itemObj.heatsinkslots > 0 ){
             visiblecritslots -= itemObj.heatsinkslots;
         }
+        if ( this.limbName == "centerTorso" && itemObj.type == "xl"){
+            visiblecritslots -= 6;
+        }
         // clear out the critslots needed
         if ( itemObj.type == "heatsink" && (this.engineHeatSinks - this.engineHeatSinksItems.length) > 0 ){
             var displacedheatsink = $('#'+this.limbName).find('.critWrap .engineheatsink').slice(0, 1).detach();
@@ -269,6 +272,8 @@
             $('#'+this.limbName+' .critWrap').append(replacedengineheatsink);
             this.items.push(replacedengineheatsink.data('itemObj'));
             this.sortItems();
+        } else if ( itemObj.hardpointType == "engine" &&  itemObj.type == "xl" && itemObj.heatsinkslots > 0 ){
+            this.addEmptyCritSlots(itemObj.critSlots - 6 - itemObj.heatsinkslots);
         } else if ( itemObj.hardpointType == "engine" && itemObj.heatsinkslots > 0 ){
             this.addEmptyCritSlots(itemObj.critSlots - itemObj.heatsinkslots);
         } else {
@@ -287,13 +292,17 @@
         if ( itemObj.type == "heatsink" && (this.engineHeatSinks - this.engineHeatSinksItems.length) > 0 ){
             return true; // heatsinks don't have a hardpoint type
         }
-        if (itemObj.critSlots > this.getFreeCritSlots()) {
-            return false;
-        }
         // hack for XL engines- check for crit slots in the other torsos
         if ( this.limbName == "centerTorso" && itemObj.type == "xl"){
+            if (6 > this.getFreeCritSlots()) { // xl's only use 6 slots in the torso
+                return false;
+            }
             //yuck on reaching into the limb like this
             if (mechObj.limbs['rightTorso'].getFreeCritSlots() < 3 || mechObj.limbs['leftTorso'].getFreeCritSlots() < 3){
+                return false;
+            }
+        } else {
+            if (itemObj.critSlots > this.getFreeCritSlots()) {
                 return false;
             }
         }
@@ -323,8 +332,11 @@
     {
         var usedSlots = 0;
         for (var x = 0; x < this.items.length; x++) {
-            if ( this.items[x].hardpointType == "engine" && this.items[x].heatsinkslots > 0){
+            if (  this.limbName == "centerTorso" && this.items[x].hardpointType == "engine" && this.items[x].heatsinkslots > 0){
                 usedSlots = usedSlots + this.items[x].critSlots - this.items[x].heatsinkslots;
+                if ( this.items[x].type == "xl"){
+                    usedSlots -= 6;
+                }
             } else if (this.items[x].type != "internal"){
                 usedSlots = usedSlots + this.items[x].critSlots;
             }
