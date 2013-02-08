@@ -90,7 +90,8 @@ $(function () {
             }
             $("#internals").append(createItemDivFromData({itemObj: itemObj}));
         });
-
+		$('#ballisticWeapon').jScrollPane(settings);
+		$('#ballisticAmmo').jScrollPane(settings);
         $(xml).find("engines > plant").each(function () {
             var itemObj = new item($(this).attr("id"), $(this).text(), parseInt($(this).attr("slots")), $(this).attr("tons"), $(this).attr("type"), "engine");
             itemObj.heatsinkslots = parseInt($(this).attr("heatsinkslots"));
