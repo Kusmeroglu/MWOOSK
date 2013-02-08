@@ -90,6 +90,11 @@
             return false;
         }
         // jumpjet check
+        // can't add jumpjet to arms or head
+        if (  $.inArray(itemObj.id, this.jumpjetitemIDs) > -1 && ($.inArray(limbName, ['leftArm','rightArm','head']) > -1 ) ){
+            return false;
+        }
+        // see if we're over the max
         if (  $.inArray(itemObj.id, this.jumpjetitemIDs) > -1 && (this.jumpjets == false || this.jumpjetcount >= this.jumpjetmax) ){
             return false;
         }
