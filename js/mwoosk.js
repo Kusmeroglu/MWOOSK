@@ -170,8 +170,8 @@ $(function () {
             $("#mechVariantDiv .selectBlank, #mechVariantDiv .selectItem").remove();
             $("#mechVariantDiv").append($("<div class='selectBlank selected' id='variantBlank'>Select mech Variant...</div>"));
             mechXML.find('class > mech[type="' + selectedChassis + '"] > variant').each(function () {
-                $("#mechVariant").append($("<option></option>").attr("value", $(this).attr("name").replace(" ","_")).text($(this).attr("name").replace(" ","_")));
-                $("#mechVariantDiv").append($("<div class='selectItem' id='"+$(this).attr("name").replace(" ","_")+"'>"+$(this).attr("name")+"</div>"));
+                $("#mechVariant").append($("<option></option>").attr("value", $(this).attr("name").replace(new RegExp(" ", 'g'),"_")).text($(this).attr("name").replace(new RegExp(" ", 'g'),"_")));
+                $("#mechVariantDiv").append($("<div class='selectItem' id='"+$(this).attr("name").replace(new RegExp(" ", 'g'),"_")+"'>"+$(this).attr("name")+"</div>"));
             });
             $("#mechVariantDiv").children(".selectItem").click(function(event) {
                 if ($(this).parent().hasClass('active')){
@@ -206,10 +206,10 @@ $(function () {
                 return;
             }
             mechXML.find('mech[type="' + $("#mechChassis").val() + '"]').each(function () {
-                mechObj = new mech($("#mechChassis").val(), $("#mechVariant").val().replace(" ", "_"), parseFloat($(this).attr("tonnage")));
+                mechObj = new mech($("#mechChassis").val(), $("#mechVariant").val().replace(new RegExp(" ", 'g'), "_"), parseFloat($(this).attr("tonnage")));
                 mechObj.currentTons = mechObj.chassisTons = parseFloat($(this).attr("chassis"));
             });
-            mechXML.find('mech[type="' + mechObj.chassis + '"] variant[name="' + mechObj.variant.replace("_"," ") + '"]').each(function () {
+            mechXML.find('mech[type="' + mechObj.chassis + '"] variant[name="' + mechObj.variant.replace(new RegExp("_", 'g')," ") + '"]').each(function () {
                 mechObj.ecm = Boolean($(this).attr("ecm") == "yes");
                 mechObj.jumpjets = parseInt($(this).attr("jets")) > 0;
                 mechObj.jumpjetmax = parseInt($(this).attr("jets"));
@@ -221,7 +221,7 @@ $(function () {
             createChart("#weightChart", mechObj.maxTons, mechObj.chassisTons, mechObj.currentTons);
 
             // add all the limbs.
-            mechXML.find('mech[type="' + mechObj.chassis + '"] variant[name="' + mechObj.variant.replace("_"," ") + '"] > limbs > limb').each(function () {
+            mechXML.find('mech[type="' + mechObj.chassis + '"] variant[name="' + mechObj.variant.replace(new RegExp("_", 'g')," ") + '"] > limbs > limb').each(function () {
                 var limbObj = new limb($(this).attr("name"), $(this).attr("crits"), parseInt($(this).attr("maxArmor")));
                 mechObj.addLimb(limbObj.limbName, limbObj);
                 // set initial armor for mech
@@ -339,7 +339,7 @@ $(function () {
         if (urldata.hasOwnProperty('variant')){
             var mechVariant = urldata['variant'];
             // we have data to load
-            mechXML.find('mech variant[name="' + mechVariant.replace("_"," ") + '"]').each(function () {
+            mechXML.find('mech variant[name="' + mechVariant.replace(new RegExp("_", 'g')," ") + '"]').each(function () {
                 //select the fake selects to trigger real select and set the visuals up correctly
                 var mechClass = $(this).parents('class').attr('type').toString();
                 $("#mechClassDiv #"+mechClass).parent().addClass('active');
