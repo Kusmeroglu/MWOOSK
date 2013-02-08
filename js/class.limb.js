@@ -112,7 +112,7 @@
 
     this.sortItems = function sortItems(){
         var sorteditems = [];
-        var sortOrder = ['internal','engine','engineheatsink','ams','ecm','util','energy','ballistic','missile','heatsink','jumpjet','ammo','xl','dynamic','empty'];
+        var sortOrder = ['internal','engine','engineheatsink','ams','ecm','util','energy','ballistic','missile','heatsink','jumpjet','ammo','xlwing','dynamic','empty'];
         $.each(sortOrder, function(i, className){
             sorteditems = sorteditems.concat($('#'+this.limbName+' .critWrap').children('.'+className).get());
         }.bind(this));
@@ -185,8 +185,8 @@
         itemObj.elements = [div];
         // hack for XL engines
         if ( this.limbName == "centerTorso" && itemObj.type == "xl"){
-            var rightxlwing = new item("", itemObj.itemName, 3, 0, "xl", "");
-            var leftxlwing = new item("", itemObj.itemName, 3, 0, "xl", "");
+            var rightxlwing = new item("", itemObj.itemName, 3, 0, "xlwing", "");
+            var leftxlwing = new item("", itemObj.itemName, 3, 0, "xlwing", "");
             mechObj.addItemToLimb('rightTorso', rightxlwing);
             mechObj.addItemToLimb('leftTorso', leftxlwing);
             itemObj.relatedItems['rightTorso'] = [rightxlwing];

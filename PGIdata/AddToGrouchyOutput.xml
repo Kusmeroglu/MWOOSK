@@ -1,6 +1,7 @@
 <internals>
     <!-- Add type="ballistic" or type="missile" to the ammos -->
     <!-- Add hardpoint="ams" to the ams, move ams ammo to the internals section type="util"-->
+    <!-- Change BAP to 2 crit slots and 1.5 tons -->
     <!-- copy these under AMS in internals -->
     <item id="3000" type="heatsink" tons="1" slots="1">Single Heat Sink</item>
     <item id="3001" type="heatsink" tons="1" slots="3">Dual Heat Sink</item>

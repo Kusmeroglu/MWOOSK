@@ -34,7 +34,7 @@
         <item id="1014" type="utility" hardpoint="ams" damage="2.00" numfiring="1" heat="0.00" cooldown="0.00" range="90" maxrange="200" slots="1" tons="0.50" ammoper="1000">AMS</item>
         <item id="3000" type="heatsink" tons="1" slots="1">Single Heat Sink</item>
         <item id="3001" type="heatsink" tons="1" slots="3">Dual Heat Sink</item>
-        <item id="9002" type="util" tons="1" slots="1">Beagle Active Probe</item>
+        <item id="9002" type="util" tons="1.5" slots="2">Beagle Active Probe</item>
         <item id="9003" type ="util" tons=".5" slots="1" maxrange="0">C.A.S.E.</item>
         <item id="9006" type ="util" tons="1.5" slots="2" maxrange="250" ammoper="0">Guardian ECM</item>
         <item id="1500" type ="jumpjet" tons="2" minTons="90" maxTons="200" slots="1" maxrange="0" ammoper="0" class="assault">Jump Jets - Class I</item>
