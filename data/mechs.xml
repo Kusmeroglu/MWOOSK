@@ -2122,7 +2122,6 @@
 				</limbs>
 			</variant>
 		</mech>
-	</class>
 		<mech type="Jenner" tonnage="35" chassis="4">
             <variant name="JR7-D" premium="no" founders="yes" jets="yes" ecm="no" minengine="100" maxengine="300" modules="2">
                 <limbs>
@@ -2249,7 +2248,7 @@
                     </limb>
                 </limbs>
             </variant> 
-</mech>
+		</mech>
 		<mech type="Spider" tonnage="35" chassis="4">
             <variant name="SPD-5D" premium="no" founders="no" jets="yes" ecm="yes" minengine="100" maxengine="255" modules="2">
                 <limbs>
@@ -2378,6 +2377,6 @@
                     </limb>
                 </limbs>
             </variant> 
-</mech>
-</class>	
+		</mech>
+	</class>	
 </mechs>
