@@ -1983,24 +1983,24 @@
 				</variant>
 				<variant name="COM-1D" premium="no" founders="no" jets="0" ecm="no" minengine="100" maxengine="210" modules="2">
 					<limbs>
-						<limb name="leftArm"  crits="8" armorFront="" armorRear="0" maxArmor="">
+						<limb name="leftArm"  crits="8" armorFront="8" armorRear="0" maxArmor="16">
 							<internal slots="1">Shoulder</internal>
 							<internal slots="1">Upper Arm Actuator</internal>
 							<internal slots="1">Lower Arm Actuator</internal>
 							<internal slots="1">Hand Actuator</internal>
 						</limb>
-						<limb name="leftTorso"  crits="12" armorFront="10" armorRear="4" maxArmor="">
+						<limb name="leftTorso"  crits="12" armorFront="10" armorRear="4" maxArmor="24">
 						</limb>
-						<limb name="centerTorso"  crits="12" armorFront="" armorRear="0" maxArmor="">
+						<limb name="centerTorso"  crits="12" armorFront="12" armorRear="4" maxArmor="32">
 							<internal slots="4">Gyro</internal>
 							<hardpoint type="engine"></hardpoint>
 							<hardpoint type="missile"></hardpoint>
 							<hardpoint type="missile"></hardpoint>
 						</limb>
-						<limb name="rightTorso"  crits="12" armorFront="10" armorRear="4" maxArmor="">
+						<limb name="rightTorso"  crits="12" armorFront="10" armorRear="4" maxArmor="24">
 							<hardpoint type="ams"></hardpoint>
 						</limb>
-						<limb name="rightArm"  crits="8" armorFront="" armorRear="0" maxArmor="">
+						<limb name="rightArm"  crits="8" armorFront="8" armorRear="0" maxArmor="16">
 							<internal slots="1">Shoulder</internal>
 							<internal slots="1">Upper Arm Actuator</internal>
 							<internal slots="1">Lower Arm Actuator</internal>
@@ -2008,13 +2008,13 @@
 							<hardpoint type="energy"></hardpoint>
 							<hardpoint type="energy"></hardpoint>
 						</limb>
-						<limb name="leftLeg"  crits="2" armorFront="" armorRear="0" maxArmor="">
+						<limb name="leftLeg"  crits="2" armorFront="12" armorRear="0" maxArmor="24">
 						<internal slots="1">Hip</internal>
 							<internal slots="1">Upper Leg Actuator</internal>
 							<internal slots="1">Lower Leg Actuator</internal>
 							<internal slots="1">Foot Actuator</internal>
 						</limb>
-						<limb name="rightLeg"  crits="2" armorFront="" armorRear="0" maxArmor="">
+						<limb name="rightLeg"  crits="2" armorFront="12" armorRear="0" maxArmor="24">
 							<internal slots="1">Hip</internal>
 							<internal slots="1">Upper Leg Actuator</internal>
 							<internal slots="1">Lower Leg Actuator</internal>
