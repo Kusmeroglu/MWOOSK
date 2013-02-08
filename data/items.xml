@@ -42,10 +42,10 @@
         <item id="1502" type ="jumpjet" tons="1" minTons="60" maxTons="80" slots="1" maxrange="0" ammoper="0" class="heavy">Jump Jets - Class III</item>
         <item id="1503" type ="jumpjet" tons=".5" minTons="40" maxTons="60" slots="1" maxrange="0" ammoper="0" class="light">Jump Jets - Class IV</item>
         <item id="1504" type ="jumpjet" tons=".5" minTons="20" maxTons="40" slots="1" maxrange="0" ammoper="0" class="light">Jump Jets - Class V</item>
+        <item id="2001" type="util" tons="1" slots="1">AMS Ammo</item>
     </internals>
     <ammos>
         <item id="2000" type="ballistic" tons="1" slots="1">AC20 Ammo</item>
-        <item id="2001" type="ballistic" tons="1" slots="1">AMS Ammo</item>
         <item id="2005" type="ballistic" tons="1" slots="1">AC2 Ammo</item>
         <item id="2006" type="ballistic" tons="1" slots="1">AC5 Ammo</item>
         <item id="2007" type="ballistic" tons="1" slots="1">AC10 Ammo</item>
