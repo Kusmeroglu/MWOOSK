@@ -31,8 +31,8 @@ function setURLParameter(param, paramVal){
     //return baseURL + "?" + newAdditionalURL + rows_txt;
 
     //reset the tiny rul thing
-    $('#tinyurlresult').remove();
-    $('#tinyurllink').show();
+    $('#tinyurlResult').remove();
+    $('#tinyurlLink').show();
 }
 
 function getURLParameter(param){
