@@ -498,7 +498,7 @@ $(function () {
 
     $('#clearArmor').on('click', function(e){
         limbList.forEach(function(limbName){
-            $('#'+limbName+' .armorspinner.front').spinner("value", "0");
+            $('#'+limbName+' .armorspinner.front').attr("value", "0");
             $('#'+limbName+' .armorspinner.rear').spinner("value", "0");
         });
     });
@@ -507,7 +507,7 @@ $(function () {
             var maxarmor = mechObj.limbs[limbName].maxArmor;
             if ( $('#'+limbName+' .armorspinner.rear').length ){
                 var armor = Math.round(maxarmor * .6);
-                $('#'+limbName+' .armorspinner.rear').spinner('value', maxarmor - armor);
+                $('#'+limbName+' .armorspinner.rear').attr('value', maxarmor - armor);
             } else {
                 var armor = maxarmor;
             }
