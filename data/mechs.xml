@@ -1946,7 +1946,7 @@
 						</limb>
 						<limb name="leftTorso"  crits="12" armorFront="12" armorRear="6" maxArmor="24">
 						</limb>
-						<limb name="centerTorso"  crits="12" armorFront="16" armorRear="8" maxArmor="32">
+						<limb name="centerTorso"  crits="8" armorFront="16" armorRear="8" maxArmor="32">
 							<internal slots="4">Gyro</internal>
 							<hardpoint type="engine"></hardpoint>
 							<hardpoint type="missile"></hardpoint>
@@ -1991,7 +1991,7 @@
 						</limb>
 						<limb name="leftTorso"  crits="12" armorFront="10" armorRear="4" maxArmor="">
 						</limb>
-						<limb name="centerTorso"  crits="12" armorFront="" armorRear="0" maxArmor="">
+						<limb name="centerTorso"  crits="8" armorFront="12" armorRear="4" maxArmor="32">
 							<internal slots="4">Gyro</internal>
 							<hardpoint type="engine"></hardpoint>
 							<hardpoint type="missile"></hardpoint>
@@ -2038,7 +2038,7 @@
 						</limb>
 						<limb name="leftTorso"  crits="12" armorFront="12" armorRear="6" maxArmor="24">
 						</limb>
-						<limb name="centerTorso"  crits="12" armorFront="16" armorRear="8" maxArmor="32">
+						<limb name="centerTorso"  crits="8" armorFront="16" armorRear="8" maxArmor="32">
 							<internal slots="4">Gyro</internal>
 							<hardpoint type="engine"></hardpoint>
 							<hardpoint type="missile"></hardpoint>
@@ -2084,7 +2084,7 @@
 						</limb>
 						<limb name="leftTorso"  crits="12" armorFront="8" armorRear="6" maxArmor="24">
 						</limb>
-						<limb name="centerTorso"  crits="12" armorFront="12" armorRear="8" maxArmor="32">
+						<limb name="centerTorso"  crits="8" armorFront="12" armorRear="8" maxArmor="32">
 							<internal slots="4">Gyro</internal>
 							<hardpoint type="engine"></hardpoint>
 							<hardpoint type="missile"></hardpoint>
@@ -2131,7 +2131,7 @@
 						</limb>
 						<limb name="leftTorso"  crits="12" armorFront="18" armorRear="6" maxArmor="24">
 						</limb>
-						<limb name="centerTorso"  crits="12" armorFront="24" armorRear="8" maxArmor="32">
+						<limb name="centerTorso"  crits="8" armorFront="24" armorRear="8" maxArmor="32">
 							<internal slots="4">Gyro</internal>
 							<hardpoint type="engine"></hardpoint>
 						</limb>
@@ -2311,7 +2311,7 @@
 							<hardpoint type="energy"></hardpoint>
 							<hardpoint type="energy"></hardpoint>						
 						</limb>
-						<limb name="centerTorso"  crits="12" armorFront="28" armorRear="10" maxArmor="44">
+						<limb name="centerTorso"  crits="8" armorFront="28" armorRear="10" maxArmor="44">
 							<internal slots="4">Gyro</internal>
 							<hardpoint type="engine"></hardpoint>
 						</limb>
@@ -2352,7 +2352,7 @@
 						<limb name="leftTorso"  crits="12" armorFront="22" armorRear="6" maxArmor="32">
 							<hardpoint type="ams"></hardpoint>
 						</limb>
-						<limb name="centerTorso"  crits="12" armorFront="22" armorRear="6" maxArmor="44">
+						<limb name="centerTorso"  crits="8" armorFront="22" armorRear="6" maxArmor="44">
 							<internal slots="4">Gyro</internal>
 							<hardpoint type="engine"></hardpoint>
 						</limb>
@@ -2396,7 +2396,7 @@
 						<limb name="leftTorso"  crits="12" armorFront="22" armorRear="8" maxArmor="32">
 							<hardpoint type="ams"></hardpoint>
 						</limb>
-						<limb name="centerTorso"  crits="12" armorFront="32" armorRear="10" maxArmor="44">
+						<limb name="centerTorso"  crits="8" armorFront="32" armorRear="10" maxArmor="44">
 							<internal slots="4">Gyro</internal>
 							<hardpoint type="engine"></hardpoint>
 						</limb>
