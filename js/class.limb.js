@@ -127,6 +127,8 @@
         }
 
         var visiblecritslots = itemObj.critSlots;
+        var itemtypeclass = itemObj.type;
+        var itemname = itemObj.itemName;
         if ( itemObj.hardpointType == "engine" && itemObj.heatsinkslots > 0 ){
             visiblecritslots -= itemObj.heatsinkslots;
         }
@@ -140,6 +142,8 @@
             this.items.splice(this.items.indexOf(displacedheatsink.data('itemObj')), 1);
             this.engineHeatSinksItems.push(displacedheatsink);
             visiblecritslots = 1;
+            itemtypeclass = "engineheatsink"; // override the class.
+            itemname = itemname+"*"; // override the name.
         } else if ( itemObj.type != "internal"){
             $('#'+this.limbName).find('.critWrap .empty').slice(0, visiblecritslots).remove();
         }
@@ -148,13 +152,13 @@
         var div = $("<div></div>")
             .addClass('critItem')
             .addClass(itemObj.hardpointType)
-            .addClass(itemObj.type)
+            .addClass(itemtypeclass)
             // store all the weapon information in this div
             .data({'itemObj':itemObj, rosechartdata:itemObj.rosechartdata})
             .disableSelection()
             .append($('<div/>')
                 .addClass(classLookup[ visiblecritslots ])
-                .append('<div class="critLabel">'+itemObj.itemName+'</div>')
+                .append('<div class="critLabel">'+itemname+'</div>')
                 )
 			.appendTo($('#'+this.limbName+' .critWrap'))
             .fadeIn();
@@ -198,7 +202,7 @@
             this.engineHeatSinks = itemObj.heatsinkslots;
             this.engineHeatSinksItems = []
             for(var i = 0; i < itemObj.heatsinkslots; i++){
-                var heatsinkitem = new item("", "[Engine Heat Sink]", 1, 0, "engineheatsink", "");
+                var heatsinkitem = new item("", "[ Engine Heat Sink ]", 1, 0, "engineheatsink", "");
                 mechObj.addItemToLimb('centerTorso', heatsinkitem);
                 itemObj.relatedItems['centerTorso'].push( heatsinkitem );
             }
@@ -334,11 +338,11 @@
     {
         var usedSlots = 0;
         for (var x = 0; x < this.items.length; x++) {
+            if (this.limbName == "centerTorso" && this.items[x].type == "xl") {
+                usedSlots -= 6;
+            }
             if (  this.limbName == "centerTorso" && this.items[x].hardpointType == "engine" && this.items[x].heatsinkslots > 0){
                 usedSlots = usedSlots + this.items[x].critSlots - this.items[x].heatsinkslots;
-                if ( this.items[x].type == "xl"){
-                    usedSlots -= 6;
-                }
             } else if (this.items[x].type != "internal"){
                 usedSlots = usedSlots + this.items[x].critSlots;
             }
