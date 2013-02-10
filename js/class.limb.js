@@ -15,7 +15,7 @@
         setURLParameter(this.limbName, "");
         // empty out the crit slots, just in case
         $('#'+this.limbName+' .critWrap').empty();
-    }
+    };
 
     this.initVisuals = function initVisuals(){
         // display hardpoints (not engine)
@@ -40,6 +40,7 @@
                 frontspinner.spinner("option","max",this.maxArmor - rearvalue);
                 rearspinner.spinner("option", "max",this.maxArmor - frontvalue);
             }
+            console.log("Setting Armor: " + frontvalue + " - " + rearvalue);
             mechObj.setArmorForLimb(this.limbName, frontvalue, rearvalue);
         }.bind(this);
         // handles keeping user from going over the max armor or weight limit.
@@ -50,7 +51,14 @@
             if ( rearspinner.length ){ // logic for the shared armor pool
                 rearvalue = rearspinner.spinner("value");
             }
-            return (e.target.value > ui.value) || ((frontvalue + rearvalue) < this.maxArmor) && ((mechObj.currentTons + mechObj.armorWeight) < mechObj.maxTons);
+            var goingdown = parseInt(e.target.value) > ui.value; // reducing armor is always ok
+            var lessthanmaxarmor = (frontvalue + rearvalue) < this.maxArmor;
+            var newarmor = frontvalue + rearvalue + 1; // add one to the current ui values for this event.
+            // check max weight against the total trying to add - spinner causes values to jump up
+            var lessthanmaxweight =  (mechObj.currentTons + ((newarmor - this.frontArmor - this.rearArmor) * mechObj.armorWeight)) < mechObj.maxTons;
+            var validChange = goingdown || (lessthanmaxarmor && lessthanmaxweight);
+            //console.log("Checking armor: " + frontvalue + " - " + rearvalue + " (( " + validChange.toString() + ")) " + e.target.value + " " + ui.value + "   [down? "+ goingdown + "]" + "  [maxarmor? " + lessthanmaxarmor + "]  [maxweight? " + lessthanmaxweight + "]" );
+            return validChange;
         }.bind(this);
 
         $('#'+this.limbName+' .armorspinner.front').attr('value', this.frontArmor);
@@ -60,11 +68,12 @@
         var spinner = $('#'+this.limbName+' .armorspinner').spinner({
             min: 0,
             max: this.maxArmor,
+            step: 1,
             change: onSpinnerChange,
             stop: onSpinnerChange,
             spin: checkMaxArmor
         });
-    }
+    };
 
     this.addEmptyCritSlots = function addEmptyCritSlots(count){
         // mech xml specifies open crit slots
@@ -78,23 +87,23 @@
                 .appendTo($('#'+this.limbName+' .critWrap'))
         }
         this.sortItems();
-    }
+    };
 
     this.addHardPoint = function addHardPoint(hardPointObj)
     {
         this.hardPoints.push(hardPointObj);
-    }
+    };
 
     this.getHardPointType = function getHardPointType(indexNumber)
     {
         return this.hardPoints[indexNumber].pointType;
-    }
+    };
 
     this.setArmor = function setArmor(front, rear){
         this.frontArmor = front;
         this.rearArmor = rear;
         this.totalArmor = front + rear;
-    }
+    };
 
     this.getTotalHardpointsForType = function getTotalHardpointsForType(hardPointType){
         return this.hardPoints.filter(function(hardpoint){
