@@ -185,7 +185,7 @@
             });
         }
         // if this is a weapon
-        if( itemObj.type == "weapon" ){
+        if( itemObj.rosechartdata ){
             div.hover(
                 function(){
                     updateRoseChartData($(this).data("itemObj")["rosechartdata"], $(this).data("itemObj")['itemName']);

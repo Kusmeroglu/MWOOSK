@@ -201,6 +201,8 @@ color:#fff;
 
 #mechBay{
 display:none;
+    position: relative;
+
 }
 
 #mechContainerWrap{
@@ -1018,10 +1020,10 @@ Rose Chart CSS (SVG)
 */
 
 #roseChart {
+    bottom: 0;
     height: 220px;
-//    position: absolute;
-//    right: -110px;
- //   bottom: 5px;
+    left: -10px;
+    position: absolute;
     width: 220px;
 }
 
