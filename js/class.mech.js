@@ -54,8 +54,8 @@
             this.currentEquivalentHeatSinks += this.limbs[limbName].getEquivalentHeatSinks(this.dhs);
             this.currentActualHeatSinks += this.limbs[limbName].getActualHeatSinks();
         }
-        $("#heat").text("Heat Sinks: " + this.currentActualHeatSinks);
-        $("#effectiveheat").text("Equivalent Heat Sinks: " + (Math.round(10 * this.currentEquivalentHeatSinks) / 10));
+        $("#heat").text("Installed Heat Sinks: " + this.currentActualHeatSinks);
+        $("#effectiveheat").text("Effective Heat Sinks: " + (Math.round(10 * this.currentEquivalentHeatSinks) / 10));
 
         // update engine speed
         if ( $("#centerTorso .engine").length > 0 ){

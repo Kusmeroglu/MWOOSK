@@ -122,8 +122,8 @@ select {
 
 #pageWrap{
  width:1280px;
- margin:10px auto;
- padding:20px 20px;
+ margin:5px auto;
+ padding:5px 20px;
  background-image:url(../images/bg2.jpg);
  border-color:#3D4337;
  border-style:solid;
@@ -254,7 +254,7 @@ padding:5px;
  -moz-border-radius:2px;
  -webkit-border-radius:2px;
  float:left;
- margin:0px 3px;
+ margin:0px 3px 3px 3px;
  padding:0px 2px 0px 2px;
  text-transform:capitalize;
  font-style:bold;
@@ -713,6 +713,44 @@ margin-top:20px;
 	font-family: 'eurostileregular';
 }
 
+.util, .utility {
+    /*background-image: url("../images/bgBallistic.png") !important;
+    background-repeat: no-repeat !important;*/
+    position: relative;
+	border-color:#fff;
+	color:#fff;
+	font-family: 'eurostileregular';
+}
+
+.engine, .xlwing, .engineheatsink, .heatsink {
+    /*background-image: url("../images/bgBallistic.png") !important;
+    background-repeat: no-repeat !important;*/
+    position: relative;
+	border-color:#834e00;
+	color:#fff;
+	font-family: 'eurostileregular';
+}
+
+.heatsink {
+    /*background-image: url("../images/bgBallistic.png") !important;
+    background-repeat: no-repeat !important;*/
+    position: relative;
+	border-color:#68748a;
+	color:#fff;
+	font-family: 'eurostileregular';
+}
+
+
+
+.jspPane .heatsink {
+    /*background-image: url("../images/bgBallistic.png") !important;
+    background-repeat: no-repeat !important;*/
+    position: relative;
+	border-color:#fff;
+	color:#fff;
+	font-family: 'eurostileregular';
+}
+
 .energy {
     /*background-image: url("../images/bgEnergy.png") !important;
     background-repeat: no-repeat !important;*/
@@ -786,7 +824,7 @@ border-left-width:6px;
 border-top-width:1px;
 border-bottom-width:1px;
 border-right-width:2px;
-padding:5px;
+padding:5px 10px;
 border-radius:2px;
 -moz-border-radius:2px;
 -webkit-border-radius:2px;
@@ -794,7 +832,14 @@ border-radius:2px;
 
 #heat {
 height:30px;
-width:320px;
+float:left;
+color: white;
+margin-right:20px;
+}
+
+#effectiveheat {
+height:30px;
+float:left;
 color: white;
 }
 
@@ -808,7 +853,7 @@ border-left-width:2px;
 border-top-width:1px;
 border-bottom-width:1px;
 border-right-width:6px;
-padding:5px;
+padding:5px 10px;
 border-radius:2px;
 -moz-border-radius:2px;
 -webkit-border-radius:2px;
@@ -816,7 +861,6 @@ border-radius:2px;
 
 #speed {
 height:30px;
-width:315px;
 color: white;
 }
 
