@@ -363,6 +363,20 @@
         return this.critSlots - usedSlots;
     };
 
+    this.getActualHeatSinks = function getActualHeatSinks(){
+        var heatsinks = 0;
+        for (var x = 0; x < this.items.length; x++) {
+            if (this.items[x].type == "heatsink"){
+                heatsinks += 1;
+            }
+            // add heatsinks from the engine
+            if (this.items[x].hardpointType == "engine"){
+                heatsinks +=  10 + ((this.items[x].heatsinkslots < 0) ? this.items[x].heatsinkslots : 0 );
+            }
+        }
+        return heatsinks;
+    };
+
     this.getEquivalentHeatSinks = function getEquivalentHeatSinks(isDualHeatSink){
         var heatsinks = 0;
         for (var x = 0; x < this.items.length; x++) {
