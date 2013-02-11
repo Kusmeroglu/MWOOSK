@@ -16,7 +16,10 @@ var classLookup = {
     10:'critTen'
 };
 
-var ECMID = "IGE";
+var ECMID = "9006";
+
+var d = new Date();
+var hourstr = d.setMinutes(0,0,0).toString();
 
 var settings = {
 			showArrows: true,
@@ -698,12 +701,12 @@ $(function () {
      */
 
     // load the item list
-    $.get('data/items.xml', function (xml) {
+    $.get('data/items.xml?rand='+hourstr, function (xml) {
         itemXML = xml;
         parseItemXML(xml);
 
         // now load XML just the once.
-        $.get('data/mechs.xml', function (xml){
+        $.get('data/mechs.xml?rand='+hourstr, function (xml){
             mechXML = $(xml);
             parseMechXML(xml);
         });
