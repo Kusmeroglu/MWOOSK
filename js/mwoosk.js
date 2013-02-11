@@ -327,8 +327,8 @@ $(function () {
                         var armorvalues = urldata['armor'];
                         armorvalues.split(',').forEach( function(bothvalues, i){
                             var limbName = limbList[i];
-                            $('#'+limbName+' .armorspinner.front').attr('value', parseInt(bothvalues.split("-")[0]));
-                            $('#'+limbName+' .armorspinner.rear').spinner('value', parseInt(bothvalues.split("-")[1]));
+                            $('#'+limbName+' .armorspinner.rear').attr('value', parseInt(bothvalues.split("-")[1]));
+                            $('#'+limbName+' .armorspinner.front').spinner('value', parseInt(bothvalues.split("-")[0]));
                         }, this);
                     }
                 }
@@ -498,8 +498,8 @@ $(function () {
 
     $('#clearArmor').on('click', function(e){
         limbList.forEach(function(limbName){
-            $('#'+limbName+' .armorspinner.front').attr("value", "0");
-            $('#'+limbName+' .armorspinner.rear').spinner("value", "0");
+            $('#'+limbName+' .armorspinner.rear').attr("value", "0");
+            $('#'+limbName+' .armorspinner.front').spinner("value", "0");
         });
     });
     $('#maxArmor').on('click', function(e){

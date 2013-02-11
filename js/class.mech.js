@@ -26,6 +26,7 @@
     this.maxEngineSize = 400;
 
     this.armorWeight = 1/32;
+    this.totalArmor = 0;
 
     // Endo Steel info
     this.endo = false;
@@ -174,13 +175,16 @@
         this.addWeight( (frontArmor + rearArmor - this.limbs[limbName].totalArmor) * (this.ferro ? this.ferroweight : this.armorWeight) );
         this.limbs[limbName].setArmor(frontArmor, rearArmor);
         this.resetArmorURLParam();
+        console.log("Total Armor " + this.totalArmor);
     };
 
     this.resetArmorURLParam = function resetArmorURLParam(){
         var s = "";
+        this.totalArmor = 0;
         limbList.forEach(function(limbName){
             if ( this.limbs.hasOwnProperty(limbName)){ // not all the limbs have been loaded yet..
                 s += this.limbs[limbName].frontArmor.toString() + "-" + this.limbs[limbName].rearArmor.toString() + ",";
+                this.totalArmor += this.limbs[limbName].totalArmor;
             } else {
                 s +="0-0,";
             }
