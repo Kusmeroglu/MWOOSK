@@ -285,7 +285,7 @@
             $('#'+this.limbName+' .critWrap').append(replacedengineheatsink);
             this.items.push(replacedengineheatsink.data('itemObj'));
             this.sortItems();
-        } else if ( itemObj.hardpointType == "engine" &&  itemObj.type == "xl" && itemObj.heatsinkslots < 0 ){
+        } else if ( itemObj.hardpointType == "engine" &&  itemObj.type == "xl" && itemObj.heatsinkslots <= 0 ){
             this.addEmptyCritSlots(itemObj.critSlots - 6);
         } else if ( itemObj.hardpointType == "engine" &&  itemObj.type == "xl" && itemObj.heatsinkslots > 0 ){
             this.addEmptyCritSlots(itemObj.critSlots - 6 - itemObj.heatsinkslots);
