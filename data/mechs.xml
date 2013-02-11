@@ -202,43 +202,41 @@
 				</variant>
 			</mech>
 			<mech type="Awesome" tonnage="80" chassis="8">
-				<variant name="AWS-9M" founders="no" jets="0" ecm="no" minengine="160" maxengine="385">
+				<variant name="AWS-8Q" premium="no" founders="no" jets="0" ecm="no" minengine="160" maxengine="290">
 					<limbs>
-						<limb name="leftArm"  crits="8" armorFront="68" armorRear="0" maxArmor="68">
+						<limb name="leftArm"  crits="8" armorFront="48" armorRear="0" maxArmor="52">
 							<internal slots="1">Shoulder</internal>
 							<internal slots="1">Upper Arm Actuator</internal>
 							<internal slots="1">Lower Arm Actuator</internal>
 							<internal slots="1">Hand Actuator</internal>
-							<hardpoint type="missile"></hardpoint>
 						</limb>
-						<limb name="leftTorso"  crits="12" armorFront="64" armorRear="20" maxArmor="84">
+						<limb name="leftTorso"  crits="12" armorFront="48" armorRear="20" maxArmor="68">
+							<hardpoint type="energy"></hardpoint>
 							<hardpoint type="energy"></hardpoint>
 						</limb>
-						<limb name="centerTorso"  crits="8" armorFront="94" armorRear="28" maxArmor="124">
+						<limb name="centerTorso"  crits="8" armorFront="60" armorRear="38" maxArmor="100">
 							<internal slots="4">Gyro</internal>
 							<hardpoint type="engine"></hardpoint>
-							<hardpoint type="missile"></hardpoint>
-							<hardpoint type="missile"></hardpoint>
-							<hardpoint type="energy"></hardpoint>
-							<hardpoint type="energy"></hardpoint>
 						</limb>
-						<limb name="rightTorso"  crits="12" armorFront="64" armorRear="20" maxArmor="84">
+						<limb name="rightTorso"  crits="12" armorFront="48" armorRear="20" maxArmor="68">
 							<hardpoint type="energy"></hardpoint>
+							<hardpoint type="energy"></hardpoint>
+							<hardpoint type="ams"></hardpoint>
 						</limb>
-						<limb name="rightArm"  crits="8" armorFront="68" armorRear="0" maxArmor="68">
+						<limb name="rightArm"  crits="8" armorFront="48" armorRear="0" maxArmor="52">
 							<internal slots="1">Shoulder</internal>
 							<internal slots="1">Upper Arm Actuator</internal>
 							<internal slots="1">Lower Arm Actuator</internal>
-							<internal slots="1">Hand Actuator</internal>
+							<hardpoint type="energy"></hardpoint>
 							<hardpoint type="energy"></hardpoint>
 						</limb>
-						<limb name="leftLeg"  crits="2" armorFront="82" armorRear="0" maxArmor="84">
+						<limb name="leftLeg"  crits="2" armorFront="66" armorRear="0" maxArmor="68">
 							<internal slots="1">Hip</internal>
 							<internal slots="1">Upper Leg Actuator</internal>
 							<internal slots="1">Lower Leg Actuator</internal>
 							<internal slots="1">Foot Actuator</internal>
 						</limb>
-						<limb name="rightLeg"  crits="2" armorFront="82" armorRear="0" maxArmor="84">
+						<limb name="rightLeg"  crits="2" armorFront="66" armorRear="0" maxArmor="68">
 							<internal slots="1">Hip</internal>
 							<internal slots="1">Upper Leg Actuator</internal>
 							<internal slots="1">Lower Leg Actuator</internal>
@@ -252,90 +250,41 @@
 						</limb>
 					</limbs>
 				</variant>
-				<variant name="AWS-8Q" founders="no" jets="0" ecm="no" minengine="160" maxengine="290">
+				<variant name="AWS-8R" premium="no" founders="no" jets="0" ecm="no" minengine="160" maxengine="290">
 					<limbs>
-						<limb name="leftArm"  crits="8" armorFront="68" armorRear="0" maxArmor="68">
+						<limb name="leftArm"  crits="8" armorFront="48" armorRear="0" maxArmor="52">
 							<internal slots="1">Shoulder</internal>
 							<internal slots="1">Upper Arm Actuator</internal>
 							<internal slots="1">Lower Arm Actuator</internal>
 							<internal slots="1">Hand Actuator</internal>
 						</limb>
-						<limb name="leftTorso"  crits="12" armorFront="64" armorRear="20" maxArmor="84">
-							<hardpoint type="energy"></hardpoint>
-							<hardpoint type="energy"></hardpoint>
-						</limb>
-						<limb name="centerTorso"  crits="8" armorFront="94" armorRear="28" maxArmor="124">
-							<internal slots="4">Gyro</internal>
-							<hardpoint type="engine"></hardpoint>
-						</limb>
-						<limb name="rightTorso"  crits="12" armorFront="64" armorRear="20" maxArmor="84">
-							<hardpoint type="energy"></hardpoint>
-							<hardpoint type="energy"></hardpoint>
-						</limb>
-						<limb name="rightArm"  crits="8" armorFront="68" armorRear="0" maxArmor="68">
-							<internal slots="1">Shoulder</internal>
-							<internal slots="1">Upper Arm Actuator</internal>
-							<internal slots="1">Lower Arm Actuator</internal>
-							<internal slots="1">Hand Actuator</internal>
-							<hardpoint type="energy"></hardpoint>
-							<hardpoint type="energy"></hardpoint>
-						</limb>
-						<limb name="leftLeg"  crits="2" armorFront="82" armorRear="0" maxArmor="84">
-							<internal slots="1">Hip</internal>
-							<internal slots="1">Upper Leg Actuator</internal>
-							<internal slots="1">Lower Leg Actuator</internal>
-							<internal slots="1">Foot Actuator</internal>
-						</limb>
-						<limb name="rightLeg"  crits="2" armorFront="82" armorRear="0" maxArmor="84">
-							<internal slots="1">Hip</internal>
-							<internal slots="1">Upper Leg Actuator</internal>
-							<internal slots="1">Lower Leg Actuator</internal>
-							<internal slots="1">Foot Actuator</internal>
-						</limb>
-						<limb name="head"  crits="1" armorFront="18" armorRear="0" maxArmor="18">
-							<internal slots="2">Life Support</internal>
-							<internal slots="2">Sensors</internal>
-							<internal slots="1">Cockpit</internal>
-							<hardpoint type="energy"></hardpoint>
-						</limb>
-					</limbs>
-				</variant>
-				<variant name="AWS-8R" founders="no" jets="0" ecm="no" minengine="160" maxengine="290">
-					<limbs>
-						<limb name="leftArm"  crits="8" armorFront="68" armorRear="0" maxArmor="68">
-							<internal slots="1">Shoulder</internal>
-							<internal slots="1">Upper Arm Actuator</internal>
-							<internal slots="1">Lower Arm Actuator</internal>
-							<internal slots="1">Hand Actuator</internal>
-						</limb>
-						<limb name="leftTorso"  crits="12" armorFront="64" armorRear="20" maxArmor="84">
+						<limb name="leftTorso"  crits="12" armorFront="48" armorRear="20" maxArmor="68">
 							<hardpoint type="missile"></hardpoint>
 							<hardpoint type="missile"></hardpoint>
 						</limb>
-						<limb name="centerTorso"  crits="8" armorFront="94" armorRear="28" maxArmor="124">
+						<limb name="centerTorso"  crits="8" armorFront="60" armorRear="38" maxArmor="100">
 							<internal slots="4">Gyro</internal>
 							<hardpoint type="engine"></hardpoint>
 						</limb>
-						<limb name="rightTorso"  crits="12" armorFront="64" armorRear="20" maxArmor="84">
+						<limb name="rightTorso"  crits="12" armorFront="48" armorRear="20" maxArmor="68">
 							<hardpoint type="missile"></hardpoint>
 							<hardpoint type="missile"></hardpoint>
 							<hardpoint type="ams"></hardpoint>
 						</limb>
-						<limb name="rightArm"  crits="8" armorFront="68" armorRear="0" maxArmor="68">
+						<limb name="rightArm"  crits="8" armorFront="48" armorRear="0" maxArmor="52">
 							<internal slots="1">Shoulder</internal>
 							<internal slots="1">Upper Arm Actuator</internal>
 							<internal slots="1">Lower Arm Actuator</internal>
-							<internal slots="1">Hand Actuator</internal>
 							<hardpoint type="energy"></hardpoint>
 							<hardpoint type="energy"></hardpoint>
 						</limb>
-						<limb name="leftLeg"  crits="2" armorFront="82" armorRear="0" maxArmor="84">
+						<limb name="leftLeg"  crits="2" armorFront="66" armorRear="0" maxArmor="68">
 							<internal slots="1">Hip</internal>
 							<internal slots="1">Upper Leg Actuator</internal>
 							<internal slots="1">Lower Leg Actuator</internal>
 							<internal slots="1">Foot Actuator</internal>
 						</limb>
-						<limb name="rightLeg"  crits="2" armorFront="82" armorRear="0" maxArmor="84">
+						<limb name="rightLeg"  crits="2" armorFront="66" armorRear="0" maxArmor="68">
 							<internal slots="1">Hip</internal>
 							<internal slots="1">Upper Leg Actuator</internal>
 							<internal slots="1">Lower Leg Actuator</internal>
@@ -349,9 +298,9 @@
 						</limb>
 					</limbs>
 				</variant>
-				<variant name="AWS-8T" founders="no" jets="0" ecm="no" minengine="160" maxengine="290">
+				<variant name="AWS-8T" premium="no" founders="no" jets="0" ecm="no" minengine="160" maxengine="290">
 					<limbs>
-						<limb name="leftArm"  crits="8" armorFront="68" armorRear="0" maxArmor="68">
+						<limb name="leftArm"  crits="8" armorFront="48" armorRear="0" maxArmor="52">
 							<internal slots="1">Shoulder</internal>
 							<internal slots="1">Upper Arm Actuator</internal>
 							<internal slots="1">Lower Arm Actuator</internal>
@@ -359,32 +308,31 @@
 							<hardpoint type="energy"></hardpoint>
 							<hardpoint type="energy"></hardpoint>
 						</limb>
-						<limb name="leftTorso"  crits="12" armorFront="64" armorRear="20" maxArmor="84">
+						<limb name="leftTorso"  crits="12" armorFront="48" armorRear="20" maxArmor="68">
 							<hardpoint type="missile"></hardpoint>
 						</limb>
-						<limb name="centerTorso"  crits="8" armorFront="94" armorRear="28" maxArmor="124">
+						<limb name="centerTorso"  crits="8" armorFront="60" armorRear="38" maxArmor="100">
 							<internal slots="4">Gyro</internal>
 							<hardpoint type="engine"></hardpoint>
 						</limb>
-						<limb name="rightTorso"  crits="12" armorFront="64" armorRear="20" maxArmor="84">
+						<limb name="rightTorso"  crits="12" armorFront="48" armorRear="20" maxArmor="68">
 							<hardpoint type="missile"></hardpoint>
 							<hardpoint type="ams"></hardpoint>
 						</limb>
-						<limb name="rightArm"  crits="8" armorFront="68" armorRear="0" maxArmor="68">
+						<limb name="rightArm"  crits="8" armorFront="48" armorRear="0" maxArmor="52">
 							<internal slots="1">Shoulder</internal>
 							<internal slots="1">Upper Arm Actuator</internal>
 							<internal slots="1">Lower Arm Actuator</internal>
-							<internal slots="1">Hand Actuator</internal>
 							<hardpoint type="energy"></hardpoint>
 							<hardpoint type="energy"></hardpoint>
 						</limb>
-						<limb name="leftLeg"  crits="2" armorFront="82" armorRear="0" maxArmor="84">
+						<limb name="leftLeg"  crits="2" armorFront="66" armorRear="0" maxArmor="68">
 							<internal slots="1">Hip</internal>
 							<internal slots="1">Upper Leg Actuator</internal>
 							<internal slots="1">Lower Leg Actuator</internal>
 							<internal slots="1">Foot Actuator</internal>
 						</limb>
-						<limb name="rightLeg"  crits="2" armorFront="82" armorRear="0" maxArmor="84">
+						<limb name="rightLeg"  crits="2" armorFront="66" armorRear="0" maxArmor="68">
 							<internal slots="1">Hip</internal>
 							<internal slots="1">Upper Leg Actuator</internal>
 							<internal slots="1">Lower Leg Actuator</internal>
@@ -398,43 +346,138 @@
 						</limb>
 					</limbs>
 				</variant>
-				<variant name="AWS-8V" founders="no" jets="0" ecm="no" minengine="160" maxengine="290">
+				<variant name="AWS-8V" premium="no" founders="no" jets="0" ecm="no" minengine="160" maxengine="290">
 					<limbs>
-						<limb name="leftArm"  crits="8" armorFront="68" armorRear="0" maxArmor="68">
+						<limb name="leftArm"  crits="8" armorFront="48" armorRear="0" maxArmor="52">
 							<internal slots="1">Shoulder</internal>
 							<internal slots="1">Upper Arm Actuator</internal>
 							<internal slots="1">Lower Arm Actuator</internal>
 							<internal slots="1">Hand Actuator</internal>
 						</limb>
-						<limb name="leftTorso"  crits="12" armorFront="64" armorRear="20" maxArmor="84">
+						<limb name="leftTorso"  crits="12" armorFront="48" armorRear="20" maxArmor="68">
 							<hardpoint type="energy"></hardpoint>
 							<hardpoint type="energy"></hardpoint>
 						</limb>
-						<limb name="rightTorso"  crits="12" armorFront="32" armorRear="16" maxArmor="56">
+						<limb name="rightTorso"  crits="12" armorFront="48" armorRear="20" maxArmor="68">
 							<hardpoint type="missile"></hardpoint>
 							<hardpoint type="missile"></hardpoint>
 							<hardpoint type="missile"></hardpoint>
 							<hardpoint type="ams"></hardpoint>
 						</limb>
-						<limb name="centerTorso"  crits="8" armorFront="94" armorRear="28" maxArmor="124">
+						<limb name="centerTorso"  crits="8" armorFront="60" armorRear="38" maxArmor="100">
 							<internal slots="4">Gyro</internal>
 							<hardpoint type="engine"></hardpoint>
 						</limb>
-						<limb name="rightArm"  crits="9" armorFront="28" armorRear="0" maxArmor="40">
+						<limb name="rightArm"  crits="9" armorFront="48" armorRear="0" maxArmor="52">
 							<internal slots="1">Shoulder</internal>
 							<internal slots="1">Upper Arm Actuator</internal>
 							<internal slots="1">Lower Arm Actuator</internal>
-							<internal slots="1">Hand Actuator</internal>
-							<hardpoint type="energy"></hardpoint>
 							<hardpoint type="energy"></hardpoint>
 						</limb>
-						<limb name="leftLeg"  crits="2" armorFront="36" armorRear="0" maxArmor="56">
+						<limb name="leftLeg"  crits="2" armorFront="66" armorRear="0" maxArmor="68">
 							<internal slots="1">Hip</internal>
 							<internal slots="1">Upper Leg Actuator</internal>
 							<internal slots="1">Lower Leg Actuator</internal>
 							<internal slots="1">Foot Actuator</internal>
 						</limb>
-						<limb name="rightLeg"  crits="2" armorFront="36" armorRear="0" maxArmor="56">
+						<limb name="rightLeg"  crits="2" armorFront="66" armorRear="0" maxArmor="68">
+							<internal slots="1">Hip</internal>
+							<internal slots="1">Upper Leg Actuator</internal>
+							<internal slots="1">Lower Leg Actuator</internal>
+							<internal slots="1">Foot Actuator</internal>
+						</limb>
+						<limb name="head"  crits="1" armorFront="18" armorRear="0" maxArmor="18">
+							<internal slots="2">Life Support</internal>
+							<internal slots="2">Sensors</internal>
+							<internal slots="1">Cockpit</internal>
+							<hardpoint type="energy"></hardpoint>
+						</limb>
+					</limbs>
+				</variant>
+				<variant name="AWS-9M" premium="no" founders="no" jets="0" ecm="no" minengine="160" maxengine="385">
+					<limbs>
+						<limb name="leftArm"  crits="8" armorFront="52" armorRear="0" maxArmor="52">
+							<internal slots="1">Shoulder</internal>
+							<internal slots="1">Upper Arm Actuator</internal>
+							<internal slots="1">Lower Arm Actuator</internal>
+							<internal slots="1">Hand Actuator</internal>
+							<hardpoint type="missile"></hardpoint>
+						</limb>
+						<limb name="leftTorso"  crits="12" armorFront="48" armorRear="20" maxArmor="68">
+							<hardpoint type="energy"></hardpoint>
+						</limb>
+						<limb name="centerTorso"  crits="8" armorFront="60" armorRear="40" maxArmor="100">
+							<internal slots="4">Gyro</internal>
+							<hardpoint type="engine"></hardpoint>
+							<hardpoint type="missile"></hardpoint>
+							<hardpoint type="missile"></hardpoint>
+							<hardpoint type="energy"></hardpoint>
+							<hardpoint type="energy"></hardpoint>
+						</limb>
+						<limb name="rightTorso"  crits="12" armorFront="48" armorRear="20" maxArmor="68">
+							<hardpoint type="energy"></hardpoint>
+							<hardpoint type="ams"></hardpoint>
+						</limb>
+						<limb name="rightArm"  crits="8" armorFront="52" armorRear="0" maxArmor="52">
+							<internal slots="1">Shoulder</internal>
+							<internal slots="1">Upper Arm Actuator</internal>
+							<internal slots="1">Lower Arm Actuator</internal>
+							<hardpoint type="energy"></hardpoint>
+						</limb>
+						<limb name="leftLeg"  crits="2" armorFront="68" armorRear="0" maxArmor="68">
+							<internal slots="1">Hip</internal>
+							<internal slots="1">Upper Leg Actuator</internal>
+							<internal slots="1">Lower Leg Actuator</internal>
+							<internal slots="1">Foot Actuator</internal>
+						</limb>
+						<limb name="rightLeg"  crits="2" armorFront="68" armorRear="0" maxArmor="68">
+							<internal slots="1">Hip</internal>
+							<internal slots="1">Upper Leg Actuator</internal>
+							<internal slots="1">Lower Leg Actuator</internal>
+							<internal slots="1">Foot Actuator</internal>
+						</limb>
+						<limb name="head"  crits="1" armorFront="18" armorRear="0" maxArmor="18">
+							<internal slots="2">Life Support</internal>
+							<internal slots="2">Sensors</internal>
+							<internal slots="1">Cockpit</internal>
+							<hardpoint type="energy"></hardpoint>
+						</limb>
+					</limbs>
+				</variant>
+				<variant name="PRETTY BABY" premium="yes" founders="no" jets="0" ecm="no" minengine="160" maxengine="400">
+					<limbs>
+						<limb name="leftArm"  crits="8" armorFront="52" armorRear="0" maxArmor="52">
+							<internal slots="1">Shoulder</internal>
+							<internal slots="1">Upper Arm Actuator</internal>
+							<internal slots="1">Lower Arm Actuator</internal>
+							<internal slots="1">Hand Actuator</internal>
+							<hardpoint type="missile"></hardpoint>
+							<hardpoint type="missile"></hardpoint>
+						</limb>
+						<limb name="leftTorso"  crits="12" armorFront="48" armorRear="20" maxArmor="68">
+							<hardpoint type="energy"></hardpoint>
+						</limb>
+						<limb name="rightTorso"  crits="12" armorFront="38" armorRear="20" maxArmor="68">
+							<hardpoint type="missile"></hardpoint>
+							<hardpoint type="ams"></hardpoint>
+						</limb>
+						<limb name="centerTorso"  crits="8" armorFront="62" armorRear="38" maxArmor="100">
+							<internal slots="4">Gyro</internal>
+							<hardpoint type="engine"></hardpoint>
+						</limb>
+						<limb name="rightArm"  crits="9" armorFront="52" armorRear="0" maxArmor="52">
+							<internal slots="1">Shoulder</internal>
+							<internal slots="1">Upper Arm Actuator</internal>
+							<internal slots="1">Lower Arm Actuator</internal>
+							<hardpoint type="energy"></hardpoint>
+						</limb>
+						<limb name="leftLeg"  crits="2" armorFront="68" armorRear="0" maxArmor="68">
+							<internal slots="1">Hip</internal>
+							<internal slots="1">Upper Leg Actuator</internal>
+							<internal slots="1">Lower Leg Actuator</internal>
+							<internal slots="1">Foot Actuator</internal>
+						</limb>
+						<limb name="rightLeg"  crits="2" armorFront="68" armorRear="0" maxArmor="68">
 							<internal slots="1">Hip</internal>
 							<internal slots="1">Upper Leg Actuator</internal>
 							<internal slots="1">Lower Leg Actuator</internal>
