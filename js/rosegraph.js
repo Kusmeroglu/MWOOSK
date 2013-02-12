@@ -110,6 +110,7 @@ function createRoseGraph(container, captiontext) {
         // Draw the main wind rose arcs
         parent.append("svg:g")
             .attr("class", "arcs")
+            .attr("transform", "translate(15)")
             .selectAll("path")
             .data(plotData)
             .enter().append("svg:path")
@@ -161,7 +162,7 @@ function createRoseGraph(container, captiontext) {
     // The main SVG visualization element
     vis = d3.select(container)
         .append("svg:svg")
-        .attr("width", w + "px").attr("height", (h + 30) + "px");
+        .attr("width", (w+30) + "px").attr("height", h + "px");
 
     /*
      // Text representing chart tickmarks
@@ -179,6 +180,7 @@ function createRoseGraph(container, captiontext) {
     // Labels: values
     vis.append("svg:g")
         .attr("class", "values")
+        .attr("transform", "translate(15)")
         .selectAll("text")
         .data(weapons)
         .enter().append("svg:text")
@@ -198,6 +200,7 @@ function createRoseGraph(container, captiontext) {
     // Labels: labels
     vis.append("svg:g")
         .attr("class", "labels")
+        .attr("transform", "translate(15)")
         .selectAll("text")
         .data(weapons)
         .enter().append("svg:text")
@@ -221,7 +224,7 @@ function createRoseGraph(container, captiontext) {
         .text(captiontext)
         .attr("class", "caption")
         .attr("text-anchor","middle")
-        .attr("transform", "translate(" + w / 2 + "," + (h + 20) + ")");
+        .attr("transform", "translate(15, " + w / 2 + ") rotate(-90)");
 
 
     // ninja updateChart into global namespace
