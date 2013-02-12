@@ -205,7 +205,7 @@
     this.addWeight = function addWeight(weight){
         this.currentTons += weight;
         $("#tonnage").text("Weight: " + parseFloat(Math.round(100*this.currentTons)/100) + " / " + this.maxTons );
-        $("#freetonnage").text("(Free: "+ (this.maxTons - this.currentTons) +")");
+        $("#freetonnage").text("(Free: "+ parseFloat(Math.round(10000*(this.maxTons - this.currentTons))/10000) +")");
         //updateChart(this.maxTons, (this.endo) ? this.endoweight : this.chassisTons, this.currentTons);
     };
 
