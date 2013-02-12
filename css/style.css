@@ -55,7 +55,7 @@ clear:both;
 display:none;
 }
 
-#tonnage {
+#tonnage, #freetonnage {
   height:30px;
   float:left;
   color: white;
