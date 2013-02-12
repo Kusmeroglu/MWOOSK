@@ -123,7 +123,7 @@ select {
 #pageWrap{
  width:1280px;
  margin:5px auto;
- padding:5px 20px;
+ padding:5px 20px 5px 10px;
  background-image:url(../images/bg2.jpg);
  border-color:#3D4337;
  border-style:solid;
@@ -221,11 +221,11 @@ display:none;
 }
 
 #mechContainer:first-child{
-	margin-left:10px;
+	margin-left:0px;
 }
 
 #mechContainer:last-child{
-	margin-right:10px;
+	margin-right:20px;
 }
 
 #mechContainer > div {
@@ -407,7 +407,7 @@ margin-top:00px;
 #rightArm{
 background:#000;
 position:relative;
-margin-top:40px;
+margin-top:10px;
 }
 
 #rightTorso{
@@ -431,7 +431,7 @@ margin-top:40px;
 #leftArm{
 background:#000;
 position:relative;
-margin-top:40px;
+margin-top:10px;
 }
 
 #rightLeg{
@@ -520,7 +520,7 @@ background-position:-202px -995px;*/
 background-image:url(../images/sprite.png);
 background-position:-98px -1165px;*/
 position:relative;
-margin-top:40px;
+margin-top:18px;
 /* Safari */
 -webkit-transform: rotate(90deg);
 /* Firefox */
@@ -531,6 +531,7 @@ margin-top:40px;
 -o-transform: rotate(90deg);
 /* Internet Explorer */
 filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=4);
+font-size:.85em;
 }
 
 #utilityTab:hover{
@@ -1064,11 +1065,11 @@ Rose Chart CSS (SVG)
 */
 
 #roseChart {
-    bottom: 0;
+	margin-top:10px;
     height: 220px;
-    left: -10px;
-    position: absolute;
-    width: 220px;
+	border-radius:2px;
+	-webkit-border-radius:2px;
+	-moz-border-radius:2px;
 }
 
 .labels {

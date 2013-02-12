@@ -900,6 +900,7 @@
 							<internal slots="4">Gyro</internal>
 							<hardpoint type="engine"></hardpoint>
 							<hardpoint type="energy"></hardpoint>
+							<hardpoint type="energy"></hardpoint>
 						</limb>
 						<limb name="rightTorso"  crits="12" armorFront="40" armorRear="20" maxArmor="60">
 						</limb>
