@@ -71,8 +71,8 @@
         } else {
             $("#speed").text("No engine selected.");
         }
-
-        $("#freeCrits").text("Free Crits: " + this.currentFreeCritSlots);
+        var structureSlots = (this.endo ? this.endoCritSlots : 0) + (this.ferro ? this.ferroCritSlots : 0);
+        $("#freeCrits").text("Free Crits: " + (this.currentFreeCritSlots - structureSlots));
         return this.currentFreeCritSlots;
     };
 
@@ -395,7 +395,7 @@
         var structureSlots = (this.endo ? this.endoCritSlots : 0) + (this.ferro ? this.ferroCritSlots : 0);
         $("#mechContainer .empty").slice(0, structureSlots).addClass('structure');
         $("#mechContainer .structure .critLabel").text("[ Dynamic Structure ]");
-
+        this.updateMech();
     };
 
     this.countLimbs = function countLimbs() {
