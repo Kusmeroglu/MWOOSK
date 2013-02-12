@@ -508,6 +508,7 @@ $(function () {
     $('#maxArmor').on('click', function(e){
         limbList.forEach(function(limbName){
             var maxarmor = mechObj.limbs[limbName].maxArmor;
+            $('#'+limbName+' .armorspinner.front').spinner('value', 0);
             if ( $('#'+limbName+' .armorspinner.rear').length ){
                 var armor = Math.round(maxarmor * .6);
                 $('#'+limbName+' .armorspinner.rear').attr('value', maxarmor - armor);

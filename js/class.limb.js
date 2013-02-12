@@ -40,7 +40,7 @@
                 frontspinner.spinner("option","max",this.maxArmor - rearvalue);
                 rearspinner.spinner("option", "max",this.maxArmor - frontvalue);
             }
-            console.log("Setting Armor: " + frontvalue + " - " + rearvalue);
+            console.log("Setting Armor: " + frontvalue + " - " + rearvalue + " < " + this.limbName);
             mechObj.setArmorForLimb(this.limbName, frontvalue, rearvalue);
         }.bind(this);
         // handles keeping user from going over the max armor or weight limit.
