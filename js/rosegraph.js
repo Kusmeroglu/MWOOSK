@@ -2,7 +2,7 @@
 
 function createRoseGraph(container, captiontext) {
     // Width of the whole visualization; used for centering
-    var VISWIDTH = 100;
+    var VISWIDTH = 90;
     var PADDING = 35;
 
     console.log("creating rose chart");

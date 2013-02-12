@@ -1078,11 +1078,6 @@ Rose Chart CSS (SVG)
 */
 
 #roseChart {
-	margin-top:10px;
-    height: 220px;
-	border-radius:2px;
-	-webkit-border-radius:2px;
-	-moz-border-radius:2px;
 }
 
 .labels {
