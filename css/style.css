@@ -55,6 +55,19 @@ clear:both;
 display:none;
 }
 
+#tonnage {
+  height:30px;
+  float:left;
+  color: white;
+  margin-right:20px;
+}
+#totalArmor {
+  height:30px;
+  float:left;
+  color: white;
+  margin-right:20px;
+}
+
 .selectBox {
    width: 200px;
    background:#000;
@@ -839,20 +852,6 @@ float:left;
 color: white;
 margin-right:20px;
 }
-#tonnage {
-    height:30px;
-    float:left;
-    color: white;
-    margin-right:20px;
-}
-#totalArmor {
-    height:30px;
-    float:left;
-    color: white;
-    margin-right:20px;
-}
-
-
 
 #effectiveheat {
 height:30px;
@@ -908,7 +907,7 @@ padding:3px 4px 4px 8px;
 }
 
 #itemInfo{
- height:145px;
+ height:190px;
  margin:5px 5px 0px 5px;
 border-color:#AE9B4C;
 border-style:solid;
@@ -975,12 +974,12 @@ display:block;
 
 #ballisticWeapon {
  display:block;
- height:520px;
+ height:475px;
 }
 
 #ballisticAmmo{
  display:none;
- height:520px;
+ height:675px;
  }
  
  #energyList{
@@ -989,7 +988,7 @@ display:none;
 
 #energyWeapon {
  display:block;
- height:556px;
+ height:511px;
 }
 
 #missileList{
@@ -998,12 +997,12 @@ display:none;
 
 #missileWeapon {
  display:block;
- height:520px;
+ height:475px;
 }
 
 #missileAmmo{
  display:none;
- height:520px;
+ height:675px;
  }
  
  #utilities{

@@ -221,7 +221,7 @@ $(function () {
             });
 
             // weights are added to chart when limbs created.
-            //createChart("#weightChart", mechObj.maxTons, mechObj.chassisTons, mechObj.currentTons);
+            // createChart("#weightChart", mechObj.maxTons, mechObj.chassisTons, mechObj.currentTons);
 
             // add all the limbs.
             mechXML.find('mech[type="' + mechObj.chassis + '"] variant[name="' + mechObj.variant.replace(new RegExp("_", 'g')," ") + '"] > limbs > limb').each(function () {
@@ -570,8 +570,7 @@ $(function () {
 	*/
 	
 	// Initiallizing the Scroll Bars to show up dynamically
-	$(function(){
-	
+	$(function(){	
 	// Generic button style toggling.  Purely Cosmetic.
 	$('.toggleButton').click(function(){
 		if ($(this).parent().hasClass('buttonWrapper')){
@@ -585,6 +584,12 @@ $(function () {
 		$('#ballisticList').show();
 		$('#energyList').hide();
 		$('#missileList').hide();
+		if($('#ballisticAButton').hasClass('activeButton')){
+			$('#itemInfo').hide();
+		}
+		else{
+			$('#itemInfo').show();
+		}
 	});
 	
 	// Show Energy List
@@ -593,6 +598,7 @@ $(function () {
 		$('#energyList').show();
 		$('#missileList').hide();
 		$('#energyWeapon').jScrollPane(settings);
+		$('#itemInfo').show();
 	});
 	
 	// Show Missile List
@@ -602,26 +608,36 @@ $(function () {
 		$('#missileList').show();
 		$('#missileWeapon').jScrollPane(settings);
 		$('#missileAmmo').jScrollPane(settings);
+		if($('#missileAButton').hasClass('activeButton')){
+			$('#itemInfo').hide();
+		}
+		else{
+			$('#itemInfo').show();
+		}
 	});
 	
 	// Ballistic Sublist Toggles
 	$('#ballisticAButton').click(function(){
 		$('#ballisticWeapon').hide();
 		$('#ballisticAmmo').show().jScrollPane(settings);
+		$('#itemInfo').hide();
 	});
 	$('#ballisticWButton').click(function(){
 		$('#ballisticWeapon').show().jScrollPane(settings);
 		$('#ballisticAmmo').hide();
+		$('#itemInfo').show();
 	});
 	
 	// Missile Sublist Toggles
 	$('#missileAButton').click(function(){
 		$('#missileWeapon').hide();
 		$('#missileAmmo').show();
+		$('#itemInfo').hide();
 	});
 	$('#missileWButton').click(function(){
 		$('#missileWeapon').show();
 		$('#missileAmmo').hide();
+		$('#itemInfo').show();
 	});
 	
 	// Show Utility List
