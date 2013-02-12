@@ -66,7 +66,7 @@ $(function () {
             itemObj.rosechartdata = [
                 { name:"Damage",   value:$(this).attr("damage")},
                 { name:"Heat",     value:$(this).attr("heat")},
-                { name:"HPS",      value:(Number($(this).attr("heat")) == 0)?"0":(Number($(this).attr("damage"))/Number($(this).attr("heat"))).toFixed(2)},
+                { name:"HPS",      value:$(this).attr("hps")},
                 { name:"Weight",   value:$(this).attr("tons")},
                 { name:"Slots",    value:$(this).attr("slots")},
                 { name:"Cooldown", value:$(this).attr("cooldown")},

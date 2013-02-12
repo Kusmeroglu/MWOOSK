@@ -224,7 +224,7 @@ function createRoseGraph(container, captiontext) {
         .text(captiontext)
         .attr("class", "caption")
         .attr("text-anchor","middle")
-        .attr("transform", "translate(15, " + w / 2 + ") rotate(-90)");
+        .attr("transform", "translate(1, " + w / 2 + ") rotate(90)");
 
 
     // ninja updateChart into global namespace
