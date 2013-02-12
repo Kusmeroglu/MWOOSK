@@ -221,7 +221,7 @@ $(function () {
             });
 
             // weights are added to chart when limbs created.
-            createChart("#weightChart", mechObj.maxTons, mechObj.chassisTons, mechObj.currentTons);
+            //createChart("#weightChart", mechObj.maxTons, mechObj.chassisTons, mechObj.currentTons);
 
             // add all the limbs.
             mechXML.find('mech[type="' + mechObj.chassis + '"] variant[name="' + mechObj.variant.replace(new RegExp("_", 'g')," ") + '"] > limbs > limb').each(function () {

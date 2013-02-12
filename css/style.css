@@ -839,6 +839,20 @@ float:left;
 color: white;
 margin-right:20px;
 }
+#tonnage {
+    height:30px;
+    float:left;
+    color: white;
+    margin-right:20px;
+}
+#totalArmor {
+    height:30px;
+    float:left;
+    color: white;
+    margin-right:20px;
+}
+
+
 
 #effectiveheat {
 height:30px;

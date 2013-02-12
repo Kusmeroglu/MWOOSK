@@ -27,6 +27,7 @@
 
     this.armorWeight = 1/32;
     this.totalArmor = 0;
+    this.totalMaxArmor = 0;
 
     // Endo Steel info
     this.endo = false;
@@ -76,6 +77,7 @@
     this.addLimb = function addLimb(limbName, limbObj) {
         this.limbs[limbName] = limbObj;
         this.updateMech();
+        this.totalMaxArmor += limbObj.maxArmor;
     };
 
     this.testIfValid = function testIfValid(limbName, itemObj){
@@ -178,7 +180,7 @@
         this.addWeight( (frontArmor + rearArmor - this.limbs[limbName].totalArmor) * (this.ferro ? this.ferroweight : this.armorWeight) );
         this.limbs[limbName].setArmor(frontArmor, rearArmor);
         this.resetArmorURLParam();
-        console.log("Total Armor " + this.totalArmor);
+        console.log("Equipped Armor: " + this.totalArmor);
     };
 
     this.resetArmorURLParam = function resetArmorURLParam(){
@@ -193,6 +195,7 @@
             }
         }, this);
         setURLParameter("armor", s);
+        $("#totalArmor").text("Armor: " + this.totalArmor + " / " + this.totalMaxArmor);
     };
 
     this.resetLimbCritSlots = function resetLimbCritSlots(limbName){
@@ -201,7 +204,8 @@
 
     this.addWeight = function addWeight(weight){
         this.currentTons += weight;
-        updateChart(this.maxTons, (this.endo) ? this.endoweight : this.chassisTons, this.currentTons);
+        $("#tonnage").text("Weight: " + this.currentTons + " / " + this.maxTons);
+        //updateChart(this.maxTons, (this.endo) ? this.endoweight : this.chassisTons, this.currentTons);
     };
 
     this.addEndoSteel = function addEndoSteel(){

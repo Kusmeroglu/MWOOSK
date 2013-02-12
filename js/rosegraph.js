@@ -9,7 +9,7 @@ function createRoseGraph(container, captiontext) {
     var ANGLULARWIDTHOFSECTION = 360/8;
     var INNERRADIUS = 20;
     var MAXLOOKUP = {
-        "Damage":  40,
+        "Damage":  36,
         "Heat":    13,
         "HPS":     5,
         "Weight":  15,
@@ -17,7 +17,7 @@ function createRoseGraph(container, captiontext) {
         "Slots":   10,
         "DPS":     8.5,
 //        "Ammo/Ton":2000,
-        "Range": 2200
+        "Range": 2160
     };
     var COLORLOOKUP = {
         "Damage": "#aa0000",
