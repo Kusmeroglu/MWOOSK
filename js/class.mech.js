@@ -71,6 +71,8 @@
         } else {
             $("#speed").text("No engine selected.");
         }
+
+        $("#freeCrits").text("Free Crits: " + this.currentFreeCritSlots);
         return this.currentFreeCritSlots;
     };
 

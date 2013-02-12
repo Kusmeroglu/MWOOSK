@@ -838,6 +838,11 @@ border-radius:2px;
   color: white;
   margin-right:20px;
 }
+#freeCrits {
+    float:left;
+    color: white;
+    margin-right:20px;
+}
 
 #heatWrap{
 background:#000;
