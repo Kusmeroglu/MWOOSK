@@ -843,10 +843,26 @@ border-radius:2px;
   float:left;
   color: white;
 }
+
+#critWrap{
+background:#000;
+float:left;
+margin:5px 5px 0px 20px;
+border-color:#3D4337;
+border-style:solid;
+border-left-width:6px;
+border-top-width:1px;
+border-bottom-width:1px;
+border-right-width:2px;
+padding:5px 10px;
+border-radius:2px;
+-moz-border-radius:2px;
+-webkit-border-radius:2px;
+}
+
 #freeCrits {
     float:left;
     color: white;
-    margin-right:20px;
 }
 
 #heatWrap{
