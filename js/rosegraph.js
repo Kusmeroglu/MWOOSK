@@ -7,7 +7,7 @@ function createRoseGraph(container, captiontext) {
 
     console.log("creating rose chart");
     var ANGLULARWIDTHOFSECTION = 360/8;
-    var INNERRADIUS = 20;
+    var INNERRADIUS = 10;
     var MAXLOOKUP = {
         "Damage":  36,
         "Heat":    13,
