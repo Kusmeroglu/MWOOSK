@@ -1,11 +1,16 @@
 // MODIFIED FROM https://gist.github.com/3589712
 
 function createRoseGraph(container, captiontext) {
+    if ( $.browser.msie && $.browser.version < 9.0){
+        $('roseChart').text("Graph not supported in IE version " + $.browser.version);
+        return;
+    }
+
     // Width of the whole visualization; used for centering
     var VISWIDTH = 90;
     var PADDING = 35;
 
-    console.log("creating rose chart");
+    //console.log("creating rose chart");
     var ANGLULARWIDTHOFSECTION = 360/8;
     var INNERRADIUS = 10;
     var MAXLOOKUP = {
@@ -126,6 +131,10 @@ function createRoseGraph(container, captiontext) {
 
 
     function updateComplexArcs(parent, plotData, captiontext) {
+        if ( $.browser.msie && $.browser.version < 9.0){
+            return;
+        }
+
         if ( !plotData ){
             return;
         }
