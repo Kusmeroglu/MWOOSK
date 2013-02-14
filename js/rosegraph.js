@@ -7,8 +7,7 @@ function createRoseGraph(container, captiontext) {
 
     console.log("creating rose chart");
     var ANGLULARWIDTHOFSECTION = 360/8;
-    var ANGULARPADDING = 1;
-    var INNERRADIUS = 20;
+    var INNERRADIUS = 10;
     var MAXLOOKUP = {
         "Damage":  36,
         "Heat":    13,
@@ -79,11 +78,11 @@ function createRoseGraph(container, captiontext) {
     var arc = function (o) {
         return d3.svg.arc()
             .startAngle(function (d, i) {
-                var angle = (i*ANGLULARWIDTHOFSECTION - (o.width/2) + ANGULARPADDING) * Math.PI / 180;
+                var angle = (i*ANGLULARWIDTHOFSECTION - (o.width/2)) * Math.PI / 180;
                 return angle;
             })
             .endAngle(function (d, i) {
-                var angle = (i*ANGLULARWIDTHOFSECTION + (o.width/2) - ANGULARPADDING) * Math.PI / 180;
+                var angle = (i*ANGLULARWIDTHOFSECTION + (o.width/2)) * Math.PI / 180;
                 return angle;
             })
             .innerRadius(o.from)
