@@ -122,8 +122,8 @@ select {
 
 #pageWrap{
  width:1280px;
- margin:10px auto;
- padding:20px 20px;
+ margin:5px auto;
+ padding:5px 20px 5px 10px;
  background-image:url(../images/bg2.jpg);
  border-color:#3D4337;
  border-style:solid;
@@ -201,6 +201,8 @@ color:#fff;
 
 #mechBay{
 display:none;
+    position: relative;
+
 }
 
 #mechContainerWrap{
@@ -219,11 +221,11 @@ display:none;
 }
 
 #mechContainer:first-child{
-	margin-left:10px;
+	margin-left:0px;
 }
 
 #mechContainer:last-child{
-	margin-right:10px;
+	margin-right:20px;
 }
 
 #mechContainer > div {
@@ -250,7 +252,14 @@ padding:5px;
 }
 
 .hardpoint{
-text-transform: capitalize;
+ border-radius:2px;
+ -moz-border-radius:2px;
+ -webkit-border-radius:2px;
+ float:left;
+ margin:0px 3px 3px 3px;
+ padding:0px 2px 0px 2px;
+ text-transform:capitalize;
+ font-style:bold;
 }
 
 .critslot {
@@ -275,6 +284,10 @@ border:1px solid #fff;
     color: white;
 	padding:-2px;
 }
+
+.armor {
+ clear:both;
+ }
 
 .critLabel{
 padding-left:5px;
@@ -394,7 +407,7 @@ margin-top:00px;
 #rightArm{
 background:#000;
 position:relative;
-margin-top:170px;
+margin-top:10px;
 }
 
 #rightTorso{
@@ -418,7 +431,7 @@ margin-top:40px;
 #leftArm{
 background:#000;
 position:relative;
-margin-top:170px;
+margin-top:10px;
 }
 
 #rightLeg{
@@ -483,7 +496,8 @@ cursor:pointer;
 background-image:url(../images/sprite.png);
 background-position:-98px -995px;*/
 position:relative;
-margin-top:25px;
+margin-top:45px;
+text-align:center;
 /* Safari */
 -webkit-transform: rotate(90deg);
 /* Firefox */
@@ -507,7 +521,8 @@ background-position:-202px -995px;*/
 background-image:url(../images/sprite.png);
 background-position:-98px -1165px;*/
 position:relative;
-margin-top:40px;
+text-align:center;
+margin-top:25px;
 /* Safari */
 -webkit-transform: rotate(90deg);
 /* Firefox */
@@ -532,7 +547,7 @@ position:relative;
 background-image:url(../images/sprite.png);
 background-position:-98px -1325px;*/
 position:relative;
-margin-top:35px;
+margin-top:45px;
 /* Safari */
 -webkit-transform: rotate(90deg);
 /* Firefox */
@@ -556,7 +571,7 @@ background-position:-201px -1325px;*/
 background-image:url(../images/sprite.png);
 background-position:-98px -1485px;*/
 position:relative;
-margin-top:21px;
+margin-top:41px;
 /* Safari */
 -webkit-transform: rotate(90deg);
 /* Firefox */
@@ -580,7 +595,7 @@ background-position:-201px -1485px;*/
 background-image:url(../images/sprite.png);
 background-position:-98px -1645px;*/
 position:relative;
-margin-top:21px;
+margin-top:41px;
 /* Safari */
 -webkit-transform: rotate(90deg);
 /* Firefox */
@@ -702,6 +717,86 @@ margin-top:20px;
 	font-family: 'eurostileregular';
 }
 
+.util, .utility {
+    /*background-image: url("../images/bgBallistic.png") !important;
+    background-repeat: no-repeat !important;*/
+    position: relative;
+	border-color:#fff;
+	color:#fff;
+	font-family: 'eurostileregular';
+}
+
+.engine, .xlwing, .engineheatsink, .heatsink {
+    /*background-image: url("../images/bgBallistic.png") !important;
+    background-repeat: no-repeat !important;*/
+    position: relative;
+	border-color:#834e00;
+	color:#fff;
+	font-family: 'eurostileregular';
+}
+
+.heatsink {
+    /*background-image: url("../images/bgBallistic.png") !important;
+    background-repeat: no-repeat !important;*/
+    position: relative;
+	border-color:#68748a;
+	color:#fff;
+	font-family: 'eurostileregular';
+}
+
+
+
+.jspPane .heatsink {
+    /*background-image: url("../images/bgBallistic.png") !important;
+    background-repeat: no-repeat !important;*/
+    position: relative;
+	border-color:#fff;
+	color:#fff;
+	font-family: 'eurostileregular';
+}
+
+.energy {
+    /*background-image: url("../images/bgEnergy.png") !important;
+    background-repeat: no-repeat !important;*/
+    position: relative;
+	border-color:#00a2e8;
+	color:#fff;
+}
+.missile {
+    /*background-image: url("../images/bgMissile.png") !important;
+    background-repeat: no-repeat !important;*/
+    position: relative;
+	border-color:#22b14c;
+	color:#fff;
+}
+.hardpoint.ballistic {
+    position: relative;
+	background:#ffc90e;
+	color:#3d4337;
+}
+
+.hardpoint.energy {
+    position: relative;
+	background:#00a2e8;
+	color:#fff;
+}
+
+.hardpoint.missile {
+    position: relative;
+	background:#22b14c;
+	color:#fff;
+}
+
+.hardpoint.ams {
+    position: relative;
+	background:#fff;
+	color:#3d4337;
+}
+
+.hardpoints {
+	min-height:18px;
+}
+
 #tonnageWrap{
 background:#000;
 float:left;
@@ -718,9 +813,57 @@ border-radius:2px;
 -webkit-border-radius:2px;
 }
 
-#tonnage{
-height:30px;
-width:475px;
+#armorWrap{
+background:#000;
+float:left;
+margin:5px 5px 0px 20px;
+border-color:#3D4337;
+border-style:solid;
+border-left-width:6px;
+border-top-width:1px;
+border-bottom-width:1px;
+border-right-width:2px;
+padding:5px 10px;
+border-radius:2px;
+-moz-border-radius:2px;
+-webkit-border-radius:2px;
+}
+
+#tonnage {
+  float:left;
+  color: white;
+  margin-right:10px;
+}
+
+#freetonnage {
+  float:left;
+  color: white;
+}
+
+#totalArmor {
+  float:left;
+  color: white;
+}
+
+#critWrap{
+background:#000;
+float:left;
+margin:5px 5px 0px 20px;
+border-color:#3D4337;
+border-style:solid;
+border-left-width:6px;
+border-top-width:1px;
+border-bottom-width:1px;
+border-right-width:2px;
+padding:5px 10px;
+border-radius:2px;
+-moz-border-radius:2px;
+-webkit-border-radius:2px;
+}
+
+#freeCrits {
+    float:left;
+    color: white;
 }
 
 #heatWrap{
@@ -733,15 +876,20 @@ border-left-width:6px;
 border-top-width:1px;
 border-bottom-width:1px;
 border-right-width:2px;
-padding:5px;
+padding:5px 10px;
 border-radius:2px;
 -moz-border-radius:2px;
 -webkit-border-radius:2px;
 }
 
 #heat {
-height:30px;
-width:320px;
+float:left;
+color: white;
+margin-right:10px;
+}
+
+#effectiveheat {
+float:left;
 color: white;
 }
 
@@ -755,15 +903,13 @@ border-left-width:2px;
 border-top-width:1px;
 border-bottom-width:1px;
 border-right-width:6px;
-padding:5px;
+padding:5px 10px;
 border-radius:2px;
 -moz-border-radius:2px;
 -webkit-border-radius:2px;
 }
 
 #speed {
-height:30px;
-width:315px;
 color: white;
 }
 
@@ -771,6 +917,16 @@ color: white;
     color: white;
     height:100px;
     width:100px;
+	border-radius:2px;
+	background:#000;
+}
+
+#rightInfo{
+    color: white;
+    height:100px;
+    width:100px;
+	border-radius:2px;
+	background:#000;
 }
 
 #commentsWrap{
@@ -781,6 +937,22 @@ padding:3px 4px 4px 8px;
 }
 
 #comments{
+}
+
+#itemInfo{
+ height:190px;
+ margin:5px 5px 0px 5px;
+border-color:#AE9B4C;
+border-style:solid;
+border-left-width:2px;
+border-top-width:1px;
+border-bottom-width:1px;
+border-right-width:6px;
+padding:2px 5px 0px 5px;
+border-radius:2px;
+-moz-border-radius:2px;
+-webkit-border-radius:2px;
+color:#fff;
 }
 
 /* ----  All Component Button Stylings ---- */
@@ -800,8 +972,8 @@ padding:3px 4px 4px 8px;
  border-right-width:2px;
  display:inline-block;
  text-align:left;
- margin:0px 5px;
- min-width:75px;
+ margin:0px 3px;
+ min-width:85px;
  color:#fff;
  border-radius:2px;
  -webkit-border-radius:2px;
@@ -812,6 +984,10 @@ padding:3px 4px 4px 8px;
  background:#AE9B4C;
  border-color:#AE9B4C;
  cursor:pointer;
+}
+
+#rightInfo .toggleButton{
+  margin:5px 5px 0px 5px;
 }
 
 .activeButton {
@@ -831,7 +1007,7 @@ display:block;
 
 #ballisticWeapon {
  display:block;
- height:675px;
+ height:475px;
 }
 
 #ballisticAmmo{
@@ -845,7 +1021,7 @@ display:none;
 
 #energyWeapon {
  display:block;
- height:705px;
+ height:511px;
 }
 
 #missileList{
@@ -854,7 +1030,7 @@ display:none;
 
 #missileWeapon {
  display:block;
- height:675px;
+ height:475px;
 }
 
 #missileAmmo{
@@ -897,8 +1073,7 @@ Weight Chart CSS (SVG)
 
 .bullet {
     font: 10px 'Aldrich', sans-serif;
-    fill: #999999;
-    stroke: #999999;
+    fill: #fff;
 }
 .bullet .marker {
     stroke: #000000;
@@ -928,8 +1103,7 @@ Weight Chart CSS (SVG)
     fill: #ffffff;
 }
 .bullet .subtitle {
-    fill: #999999;
-    stroke: #999999;
+    fill: #fff;
 }
 
 /*
@@ -937,11 +1111,6 @@ Rose Chart CSS (SVG)
 */
 
 #roseChart {
-    height: 220px;
-//    position: absolute;
-//    right: -110px;
- //   bottom: 5px;
-    width: 220px;
 }
 
 .labels {

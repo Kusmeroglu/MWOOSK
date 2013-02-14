@@ -57,7 +57,7 @@ function createChart(id, max, chassis, current){
         .text(function(d) { return d.subtitle; });
 
     // ninja updateChart into global namespace
-    window.updateChart= function(max, chassis, current){
+    window.updateChart = function(max, chassis, current){
         function randomize(d) {
             d.ranges = [chassis, max] ;
             d.measures = [current];

@@ -16,7 +16,15 @@ var classLookup = {
     10:'critTen'
 };
 
-var ECMID = "IGE";
+var ECMID = "9006";
+
+var d = new Date();
+var hourstr = d.setMinutes(0,0,0).toString();
+
+var settings = {
+			showArrows: true,
+			autoReinitialise: true,
+			autoReinitializeDelay: 500}
 
 $(function () {
 
@@ -58,7 +66,7 @@ $(function () {
             itemObj.rosechartdata = [
                 { name:"Damage",   value:$(this).attr("damage")},
                 { name:"Heat",     value:$(this).attr("heat")},
-                { name:"HPS",      value:(Number($(this).attr("heat")) == 0)?"0":(Number($(this).attr("damage"))/Number($(this).attr("heat"))).toFixed(2)},
+                { name:"HPS",      value:$(this).attr("hps")},
                 { name:"Weight",   value:$(this).attr("tons")},
                 { name:"Slots",    value:$(this).attr("slots")},
                 { name:"Cooldown", value:$(this).attr("cooldown")},
@@ -85,7 +93,8 @@ $(function () {
             }
             $("#internals").append(createItemDivFromData({itemObj: itemObj}));
         });
-
+		$('#ballisticWeapon').jScrollPane(settings);
+		$('#ballisticAmmo').jScrollPane(settings);
         $(xml).find("engines > plant").each(function () {
             var itemObj = new item($(this).attr("id"), $(this).text(), parseInt($(this).attr("slots")), $(this).attr("tons"), $(this).attr("type"), "engine");
             itemObj.heatsinkslots = parseInt($(this).attr("heatsinkslots"));
@@ -164,8 +173,8 @@ $(function () {
             $("#mechVariantDiv .selectBlank, #mechVariantDiv .selectItem").remove();
             $("#mechVariantDiv").append($("<div class='selectBlank selected' id='variantBlank'>Select mech Variant...</div>"));
             mechXML.find('class > mech[type="' + selectedChassis + '"] > variant').each(function () {
-                $("#mechVariant").append($("<option></option>").attr("value", $(this).attr("name")).text($(this).attr("name")));
-                $("#mechVariantDiv").append($("<div class='selectItem' id='"+$(this).attr("name")+"'>"+$(this).attr("name")+"</div>"));
+                $("#mechVariant").append($("<option></option>").attr("value", $(this).attr("name").replace(new RegExp(" ", 'g'),"_")).text($(this).attr("name").replace(new RegExp(" ", 'g'),"_")));
+                $("#mechVariantDiv").append($("<div class='selectItem' id='"+$(this).attr("name").replace(new RegExp(" ", 'g'),"_")+"'>"+$(this).attr("name")+"</div>"));
             });
             $("#mechVariantDiv").children(".selectItem").click(function(event) {
                 if ($(this).parent().hasClass('active')){
@@ -200,21 +209,22 @@ $(function () {
                 return;
             }
             mechXML.find('mech[type="' + $("#mechChassis").val() + '"]').each(function () {
-                mechObj = new mech($("#mechChassis").val(), $("#mechVariant").val(), parseFloat($(this).attr("tonnage")));
+                mechObj = new mech($("#mechChassis").val(), $("#mechVariant").val().replace(new RegExp(" ", 'g'), "_"), parseFloat($(this).attr("tonnage")));
                 mechObj.currentTons = mechObj.chassisTons = parseFloat($(this).attr("chassis"));
             });
-            mechXML.find('mech[type="' + mechObj.chassis + '"] variant[name="' + mechObj.variant + '"]').each(function () {
+            mechXML.find('mech[type="' + mechObj.chassis + '"] variant[name="' + mechObj.variant.replace(new RegExp("_", 'g')," ") + '"]').each(function () {
                 mechObj.ecm = Boolean($(this).attr("ecm") == "yes");
-                mechObj.jumpjets = Boolean($(this).attr("jets") == "yes");
+                mechObj.jumpjets = parseInt($(this).attr("jets")) > 0;
+                mechObj.jumpjetmax = parseInt($(this).attr("jets"));
                 mechObj.minEngineSize = parseInt($(this).attr("minengine"));
                 mechObj.maxEngineSize = parseInt($(this).attr("maxengine"));
             });
 
             // weights are added to chart when limbs created.
-            createChart("#weightChart", mechObj.maxTons, mechObj.chassisTons, mechObj.currentTons);
+            // createChart("#weightChart", mechObj.maxTons, mechObj.chassisTons, mechObj.currentTons);
 
             // add all the limbs.
-            mechXML.find('mech[type="' + mechObj.chassis + '"] variant[name="' + mechObj.variant + '"] > limbs > limb').each(function () {
+            mechXML.find('mech[type="' + mechObj.chassis + '"] variant[name="' + mechObj.variant.replace(new RegExp("_", 'g')," ") + '"] > limbs > limb').each(function () {
                 var limbObj = new limb($(this).attr("name"), $(this).attr("crits"), parseInt($(this).attr("maxArmor")));
                 mechObj.addLimb(limbObj.limbName, limbObj);
                 // set initial armor for mech
@@ -297,7 +307,7 @@ $(function () {
 
                 // (have to wait until we have graphs and items created.)
                 if (urldata.hasOwnProperty('variant')){
-                    // check for limbs data and load each, 3 letter code by 3 letter code.
+                    // check for limbs data and load each, 4 letter code by 4 letter code.
                     limbList.forEach(function(limb){
                         if (urldata.hasOwnProperty(limb)){
                             var rawitems = urldata[limb];
@@ -305,13 +315,13 @@ $(function () {
                             var i = 0;
                             while(i < rawitems.length)
                             {
-                                var thisitemid = rawitems.substr(i, 3);
+                                var thisitemid = rawitems.substr(i, 4);
                                 var thisitemelem = $('#detailContainer .'+thisitemid); // pull the data out of the dom element with the matching itemid (which is actually a class)
                                 if ( thisitemelem ){ // if we found it
                                     var thisitemObj = jQuery.extend(true, {}, thisitemelem.data('itemObj'));// get copy of old data
                                     mechObj.addItemToLimb($(limbelem).attr('id'), thisitemObj);
                                 }
-                                i += 3;
+                                i += 4;
                             }
                         }
                     });
@@ -320,8 +330,8 @@ $(function () {
                         var armorvalues = urldata['armor'];
                         armorvalues.split(',').forEach( function(bothvalues, i){
                             var limbName = limbList[i];
-                            $('#'+limbName+' .armorspinner.front').attr('value', parseInt(bothvalues.split("-")[0]));
-                            $('#'+limbName+' .armorspinner.rear').spinner('value', parseInt(bothvalues.split("-")[1]));
+                            $('#'+limbName+' .armorspinner.rear').attr('value', parseInt(bothvalues.split("-")[1]));
+                            $('#'+limbName+' .armorspinner.front').spinner('value', parseInt(bothvalues.split("-")[0]));
                         }, this);
                     }
                 }
@@ -332,7 +342,7 @@ $(function () {
         if (urldata.hasOwnProperty('variant')){
             var mechVariant = urldata['variant'];
             // we have data to load
-            mechXML.find('mech variant[name="' + mechVariant + '"]').each(function () {
+            mechXML.find('mech variant[name="' + mechVariant.replace(new RegExp("_", 'g')," ") + '"]').each(function () {
                 //select the fake selects to trigger real select and set the visuals up correctly
                 var mechClass = $(this).parents('class').attr('type').toString();
                 $("#mechClassDiv #"+mechClass).parent().addClass('active');
@@ -491,20 +501,21 @@ $(function () {
 
     $('#clearArmor').on('click', function(e){
         limbList.forEach(function(limbName){
-            $('#'+limbName+' .armorspinner.front').attr('value', 0);
-            $('#'+limbName+' .armorspinner.rear').attr('value', 0);
+            $('#'+limbName+' .armorspinner.rear').attr("value", "0");
+            $('#'+limbName+' .armorspinner.front').spinner("value", "0");
         });
     });
     $('#maxArmor').on('click', function(e){
         limbList.forEach(function(limbName){
             var maxarmor = mechObj.limbs[limbName].maxArmor;
+            $('#'+limbName+' .armorspinner.front').spinner('value', 0);
             if ( $('#'+limbName+' .armorspinner.rear').length ){
                 var armor = Math.round(maxarmor * .6);
                 $('#'+limbName+' .armorspinner.rear').attr('value', maxarmor - armor);
             } else {
                 var armor = maxarmor;
             }
-            $('#'+limbName+' .armorspinner.front').attr('value', armor);
+            $('#'+limbName+' .armorspinner.front').spinner('value', armor);
         });
     });
 
@@ -560,16 +571,13 @@ $(function () {
 	*/
 	
 	// Initiallizing the Scroll Bars to show up dynamically
-	$(function(){
-		var settings = {
-			showArrows: true,
-			autoReinitialise: true,
-			autoReinitializeDelay: 500}
-	
+	$(function(){	
 	// Generic button style toggling.  Purely Cosmetic.
 	$('.toggleButton').click(function(){
-		$(this).siblings('.toggleButton').removeClass('activeButton');
-		$(this).addClass('activeButton');
+		if ($(this).parent().hasClass('buttonWrapper')){
+			$(this).siblings('.toggleButton').removeClass('activeButton');
+			$(this).addClass('activeButton');
+			}
 	});
 	
 	// Show Ballistic List
@@ -577,6 +585,12 @@ $(function () {
 		$('#ballisticList').show();
 		$('#energyList').hide();
 		$('#missileList').hide();
+		if($('#ballisticAButton').hasClass('activeButton')){
+			$('#itemInfo').hide();
+		}
+		else{
+			$('#itemInfo').show();
+		}
 	});
 	
 	// Show Energy List
@@ -585,6 +599,7 @@ $(function () {
 		$('#energyList').show();
 		$('#missileList').hide();
 		$('#energyWeapon').jScrollPane(settings);
+		$('#itemInfo').show();
 	});
 	
 	// Show Missile List
@@ -594,26 +609,36 @@ $(function () {
 		$('#missileList').show();
 		$('#missileWeapon').jScrollPane(settings);
 		$('#missileAmmo').jScrollPane(settings);
+		if($('#missileAButton').hasClass('activeButton')){
+			$('#itemInfo').hide();
+		}
+		else{
+			$('#itemInfo').show();
+		}
 	});
 	
 	// Ballistic Sublist Toggles
 	$('#ballisticAButton').click(function(){
 		$('#ballisticWeapon').hide();
 		$('#ballisticAmmo').show().jScrollPane(settings);
+		$('#itemInfo').hide();
 	});
 	$('#ballisticWButton').click(function(){
 		$('#ballisticWeapon').show().jScrollPane(settings);
 		$('#ballisticAmmo').hide();
+		$('#itemInfo').show();
 	});
 	
 	// Missile Sublist Toggles
 	$('#missileAButton').click(function(){
 		$('#missileWeapon').hide();
 		$('#missileAmmo').show();
+		$('#itemInfo').hide();
 	});
 	$('#missileWButton').click(function(){
 		$('#missileWeapon').show();
 		$('#missileAmmo').hide();
+		$('#itemInfo').show();
 	});
 	
 	// Show Utility List
@@ -693,12 +718,12 @@ $(function () {
      */
 
     // load the item list
-    $.get('data/items.xml', function (xml) {
+    $.get('data/items.xml?rand='+hourstr, function (xml) {
         itemXML = xml;
         parseItemXML(xml);
 
         // now load XML just the once.
-        $.get('data/mechs.xml', function (xml){
+        $.get('data/mechs.xml?rand='+hourstr, function (xml){
             mechXML = $(xml);
             parseMechXML(xml);
         });

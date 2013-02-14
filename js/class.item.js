@@ -3,7 +3,7 @@
     this.itemName = itemName; // human readable text
     this.type = type; // and extra modifier on hardpointType - ie std or xl, weapon, etc.
     this.hardpointType = hardpointtype; // this is added to the physical item as a class
-    this.weight = weight;
+    this.weight = parseFloat(weight);
     this.critSlots = parseInt(critSlots);
     this.heatsinkslots = 0; // how many heat sinks are included (for engines)
     this.engineSize = 100; // for engines, the rating

@@ -1,15 +1,20 @@
 // MODIFIED FROM https://gist.github.com/3589712
 
 function createRoseGraph(container, captiontext) {
+    if ( $.browser.msie && $.browser.version < 9.0){
+        $('roseChart').text("Graph not supported in IE version " + $.browser.version);
+        return;
+    }
+
     // Width of the whole visualization; used for centering
-    var VISWIDTH = 100;
+    var VISWIDTH = 90;
     var PADDING = 35;
 
-    console.log("creating rose chart");
+    //console.log("creating rose chart");
     var ANGLULARWIDTHOFSECTION = 360/8;
-    var INNERRADIUS = 20;
+    var INNERRADIUS = 10;
     var MAXLOOKUP = {
-        "Damage":  40,
+        "Damage":  36,
         "Heat":    13,
         "HPS":     5,
         "Weight":  15,
@@ -17,7 +22,7 @@ function createRoseGraph(container, captiontext) {
         "Slots":   10,
         "DPS":     8.5,
 //        "Ammo/Ton":2000,
-        "Range": 2200
+        "Range": 2160
     };
     var COLORLOOKUP = {
         "Damage": "#aa0000",
@@ -110,6 +115,7 @@ function createRoseGraph(container, captiontext) {
         // Draw the main wind rose arcs
         parent.append("svg:g")
             .attr("class", "arcs")
+            .attr("transform", "translate(15)")
             .selectAll("path")
             .data(plotData)
             .enter().append("svg:path")
@@ -125,6 +131,10 @@ function createRoseGraph(container, captiontext) {
 
 
     function updateComplexArcs(parent, plotData, captiontext) {
+        if ( $.browser.msie && $.browser.version < 9.0){
+            return;
+        }
+
         if ( !plotData ){
             return;
         }
@@ -161,7 +171,7 @@ function createRoseGraph(container, captiontext) {
     // The main SVG visualization element
     vis = d3.select(container)
         .append("svg:svg")
-        .attr("width", w + "px").attr("height", (h + 30) + "px");
+        .attr("width", (w+30) + "px").attr("height", h + "px");
 
     /*
      // Text representing chart tickmarks
@@ -179,6 +189,7 @@ function createRoseGraph(container, captiontext) {
     // Labels: values
     vis.append("svg:g")
         .attr("class", "values")
+        .attr("transform", "translate(15)")
         .selectAll("text")
         .data(weapons)
         .enter().append("svg:text")
@@ -198,6 +209,7 @@ function createRoseGraph(container, captiontext) {
     // Labels: labels
     vis.append("svg:g")
         .attr("class", "labels")
+        .attr("transform", "translate(15)")
         .selectAll("text")
         .data(weapons)
         .enter().append("svg:text")
@@ -221,7 +233,7 @@ function createRoseGraph(container, captiontext) {
         .text(captiontext)
         .attr("class", "caption")
         .attr("text-anchor","middle")
-        .attr("transform", "translate(" + w / 2 + "," + (h + 20) + ")");
+        .attr("transform", "translate(1, " + w / 2 + ") rotate(90)");
 
 
     // ninja updateChart into global namespace

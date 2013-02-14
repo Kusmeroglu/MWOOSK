@@ -76,6 +76,7 @@ function setURLParameter(param, paramVal){
     var newHash = '';
     var temp = '';
     if (dataHash != null) {
+        paramVal = paramVal.replace(new RegExp(" ", 'g'), "_");
         tempArray = dataHash[1].split("&");
         for (i=0; i<tempArray.length; i++){
             if(tempArray[i].split('=')[0] != param){

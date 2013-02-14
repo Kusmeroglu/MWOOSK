@@ -15,12 +15,12 @@
         setURLParameter(this.limbName, "");
         // empty out the crit slots, just in case
         $('#'+this.limbName+' .critWrap').empty();
-    }
+    };
 
     this.initVisuals = function initVisuals(){
         // display hardpoints (not engine)
         ['ballistic', 'energy', 'missile', 'ams'].forEach(function(hardpointtype){
-            var max = this.getTotalHardpointsForType(hardpointtype)
+            var max = this.getTotalHardpointsForType(hardpointtype);
             if ( max > 0 ){
                 $('#'+this.limbName+' .hardpoints').append($("<div></div>").addClass('hardpoint').addClass(''+hardpointtype).text(""+hardpointtype+": "+max));
             }
@@ -40,6 +40,7 @@
                 frontspinner.spinner("option","max",this.maxArmor - rearvalue);
                 rearspinner.spinner("option", "max",this.maxArmor - frontvalue);
             }
+            //console.log("Setting Armor: " + frontvalue + " - " + rearvalue + " < " + this.limbName);
             mechObj.setArmorForLimb(this.limbName, frontvalue, rearvalue);
         }.bind(this);
         // handles keeping user from going over the max armor or weight limit.
@@ -50,7 +51,14 @@
             if ( rearspinner.length ){ // logic for the shared armor pool
                 rearvalue = rearspinner.spinner("value");
             }
-            return (e.target.value > ui.value) || ((frontvalue + rearvalue) < this.maxArmor) && ((mechObj.currentTons + mechObj.armorWeight) < mechObj.maxTons);
+            var goingdown = parseInt(e.target.value) > ui.value; // reducing armor is always ok
+            var lessthanmaxarmor = (frontvalue + rearvalue) < this.maxArmor;
+            var newarmor = frontvalue + rearvalue + 1; // add one to the current ui values for this event.
+            // check max weight against the total trying to add - spinner causes values to jump up
+            var lessthanmaxweight =  (mechObj.currentTons + ((newarmor - this.frontArmor - this.rearArmor) * mechObj.armorWeight)) < mechObj.maxTons;
+            var validChange = goingdown || (lessthanmaxarmor && lessthanmaxweight);
+            //console.log("Checking armor: " + frontvalue + " - " + rearvalue + " (( " + validChange.toString() + ")) " + e.target.value + " " + ui.value + "   [down? "+ goingdown + "]" + "  [maxarmor? " + lessthanmaxarmor + "]  [maxweight? " + lessthanmaxweight + "]" );
+            return validChange;
         }.bind(this);
 
         $('#'+this.limbName+' .armorspinner.front').attr('value', this.frontArmor);
@@ -60,11 +68,12 @@
         var spinner = $('#'+this.limbName+' .armorspinner').spinner({
             min: 0,
             max: this.maxArmor,
+            step: 1,
             change: onSpinnerChange,
             stop: onSpinnerChange,
             spin: checkMaxArmor
         });
-    }
+    };
 
     this.addEmptyCritSlots = function addEmptyCritSlots(count){
         // mech xml specifies open crit slots
@@ -78,23 +87,23 @@
                 .appendTo($('#'+this.limbName+' .critWrap'))
         }
         this.sortItems();
-    }
+    };
 
     this.addHardPoint = function addHardPoint(hardPointObj)
     {
         this.hardPoints.push(hardPointObj);
-    }
+    };
 
     this.getHardPointType = function getHardPointType(indexNumber)
     {
         return this.hardPoints[indexNumber].pointType;
-    }
+    };
 
     this.setArmor = function setArmor(front, rear){
         this.frontArmor = front;
         this.rearArmor = rear;
         this.totalArmor = front + rear;
-    }
+    };
 
     this.getTotalHardpointsForType = function getTotalHardpointsForType(hardPointType){
         return this.hardPoints.filter(function(hardpoint){
@@ -112,7 +121,7 @@
 
     this.sortItems = function sortItems(){
         var sorteditems = [];
-        var sortOrder = ['internal','engine','engineheatsink','ams','ecm','util','energy','ballistic','missile','heatsink','jumpjet','ammo','xl','dynamic','empty'];
+        var sortOrder = ['internal','engine','engineheatsink','ams','ecm','util','energy','ballistic','missile','heatsink','jumpjet','ammo','xlwing','dynamic','empty'];
         $.each(sortOrder, function(i, className){
             sorteditems = sorteditems.concat($('#'+this.limbName+' .critWrap').children('.'+className).get());
         }.bind(this));
@@ -127,8 +136,13 @@
         }
 
         var visiblecritslots = itemObj.critSlots;
+        var itemtypeclass = itemObj.type;
+        var itemname = itemObj.itemName;
         if ( itemObj.hardpointType == "engine" && itemObj.heatsinkslots > 0 ){
             visiblecritslots -= itemObj.heatsinkslots;
+        }
+        if ( this.limbName == "centerTorso" && itemObj.type == "xl"){
+            visiblecritslots -= 6;
         }
         // clear out the critslots needed
         if ( itemObj.type == "heatsink" && (this.engineHeatSinks - this.engineHeatSinksItems.length) > 0 ){
@@ -137,6 +151,8 @@
             this.items.splice(this.items.indexOf(displacedheatsink.data('itemObj')), 1);
             this.engineHeatSinksItems.push(displacedheatsink);
             visiblecritslots = 1;
+            itemtypeclass = "engineheatsink"; // override the class.
+            itemname = itemname+"*"; // override the name.
         } else if ( itemObj.type != "internal"){
             $('#'+this.limbName).find('.critWrap .empty').slice(0, visiblecritslots).remove();
         }
@@ -145,13 +161,13 @@
         var div = $("<div></div>")
             .addClass('critItem')
             .addClass(itemObj.hardpointType)
-            .addClass(itemObj.type)
+            .addClass(itemtypeclass)
             // store all the weapon information in this div
             .data({'itemObj':itemObj, rosechartdata:itemObj.rosechartdata})
             .disableSelection()
             .append($('<div/>')
                 .addClass(classLookup[ visiblecritslots ])
-                .append('<div class="critLabel">'+itemObj.itemName+'</div>')
+                .append('<div class="critLabel">'+itemname+'</div>')
                 )
 			.appendTo($('#'+this.limbName+' .critWrap'))
             .fadeIn();
@@ -169,7 +185,7 @@
             });
         }
         // if this is a weapon
-        if( itemObj.type == "weapon" ){
+        if( itemObj.rosechartdata ){
             div.hover(
                 function(){
                     updateRoseChartData($(this).data("itemObj")["rosechartdata"], $(this).data("itemObj")['itemName']);
@@ -182,8 +198,8 @@
         itemObj.elements = [div];
         // hack for XL engines
         if ( this.limbName == "centerTorso" && itemObj.type == "xl"){
-            var rightxlwing = new item("", itemObj.itemName, 3, 0, "xl", "");
-            var leftxlwing = new item("", itemObj.itemName, 3, 0, "xl", "");
+            var rightxlwing = new item("", itemObj.itemName, 3, 0, "xlwing", "");
+            var leftxlwing = new item("", itemObj.itemName, 3, 0, "xlwing", "");
             mechObj.addItemToLimb('rightTorso', rightxlwing);
             mechObj.addItemToLimb('leftTorso', leftxlwing);
             itemObj.relatedItems['rightTorso'] = [rightxlwing];
@@ -195,7 +211,7 @@
             this.engineHeatSinks = itemObj.heatsinkslots;
             this.engineHeatSinksItems = []
             for(var i = 0; i < itemObj.heatsinkslots; i++){
-                var heatsinkitem = new item("", "[Engine Heat Sink]", 1, 0, "engineheatsink", "");
+                var heatsinkitem = new item("", "[ Engine Heat Sink ]", 1, 0, "engineheatsink", "");
                 mechObj.addItemToLimb('centerTorso', heatsinkitem);
                 itemObj.relatedItems['centerTorso'].push( heatsinkitem );
             }
@@ -269,6 +285,10 @@
             $('#'+this.limbName+' .critWrap').append(replacedengineheatsink);
             this.items.push(replacedengineheatsink.data('itemObj'));
             this.sortItems();
+        } else if ( itemObj.hardpointType == "engine" &&  itemObj.type == "xl" && itemObj.heatsinkslots <= 0 ){
+            this.addEmptyCritSlots(itemObj.critSlots - 6);
+        } else if ( itemObj.hardpointType == "engine" &&  itemObj.type == "xl" && itemObj.heatsinkslots > 0 ){
+            this.addEmptyCritSlots(itemObj.critSlots - 6 - itemObj.heatsinkslots);
         } else if ( itemObj.hardpointType == "engine" && itemObj.heatsinkslots > 0 ){
             this.addEmptyCritSlots(itemObj.critSlots - itemObj.heatsinkslots);
         } else {
@@ -287,13 +307,17 @@
         if ( itemObj.type == "heatsink" && (this.engineHeatSinks - this.engineHeatSinksItems.length) > 0 ){
             return true; // heatsinks don't have a hardpoint type
         }
-        if (itemObj.critSlots > this.getFreeCritSlots()) {
-            return false;
-        }
         // hack for XL engines- check for crit slots in the other torsos
         if ( this.limbName == "centerTorso" && itemObj.type == "xl"){
+            if (6 > this.getFreeCritSlots()) { // xl's only use 6 slots in the torso
+                return false;
+            }
             //yuck on reaching into the limb like this
             if (mechObj.limbs['rightTorso'].getFreeCritSlots() < 3 || mechObj.limbs['leftTorso'].getFreeCritSlots() < 3){
+                return false;
+            }
+        } else {
+            if (itemObj.critSlots > this.getFreeCritSlots()) {
                 return false;
             }
         }
@@ -323,7 +347,10 @@
     {
         var usedSlots = 0;
         for (var x = 0; x < this.items.length; x++) {
-            if ( this.items[x].hardpointType == "engine" && this.items[x].heatsinkslots > 0){
+            if (this.limbName == "centerTorso" && this.items[x].type == "xl") {
+                usedSlots -= 6;
+            }
+            if (  this.limbName == "centerTorso" && this.items[x].hardpointType == "engine" && this.items[x].heatsinkslots > 0){
                 usedSlots = usedSlots + this.items[x].critSlots - this.items[x].heatsinkslots;
             } else if (this.items[x].type != "internal"){
                 usedSlots = usedSlots + this.items[x].critSlots;
@@ -334,6 +361,20 @@
             usedSlots += itemObj.critSlots;
         }
         return this.critSlots - usedSlots;
+    };
+
+    this.getActualHeatSinks = function getActualHeatSinks(){
+        var heatsinks = 0;
+        for (var x = 0; x < this.items.length; x++) {
+            if (this.items[x].type == "heatsink"){
+                heatsinks += 1;
+            }
+            // add heatsinks from the engine
+            if (this.items[x].hardpointType == "engine"){
+                heatsinks +=  10 + ((this.items[x].heatsinkslots < 0) ? this.items[x].heatsinkslots : 0 );
+            }
+        }
+        return heatsinks;
     };
 
     this.getEquivalentHeatSinks = function getEquivalentHeatSinks(isDualHeatSink){
@@ -347,12 +388,8 @@
                 heatsinks += ( isDualHeatSink ? 2 : 1 ) * (  10 + ((this.items[x].heatsinkslots < 0) ? this.items[x].heatsinkslots : 0 ) );
             }
         }
-        // add some bits for dual heat sinks in the engine
-        if ( this.engineHeatSinksItems.length > 0 && isDualHeatSink ){
-            heatsinks += .6 * this.engineHeatSinksItems.length;
-        }
         return heatsinks;
-    }
+    };
 
     this.init();
 }
