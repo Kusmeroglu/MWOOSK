@@ -14,59 +14,70 @@ var urlHistoryListener = function () {
 // forward in history, otherwise reload the page
 $(function () {
     var historyCheck = function () {
-	var steps = urlHistoryStack.length;
-	if(urlHistoryStack.length>1 && urlHistoryStack[steps-1]!=getURLHash()[1]) {
-	    if(urlHistorySteps < steps) {
-		urlHistorySteps = steps;
-	    } else {
-		urlHistoryListener();
-	    }
-	}
+        var steps = urlHistoryStack.length;
+        if(urlHistoryStack.length>1 && window.location.hash.replace('#', '') != urlHistoryStack[steps-1]) {
+            if(urlHistorySteps < steps) {
+                urlHistorySteps = steps;
+                window.location.assign('#' + urlHistoryStack[steps-1]);
+            } else {
+                urlHistoryListener();
+            }
+        }
     };
-
+    
+    if(window.location.href.indexOf('?')!=-1) {
+        window.location.replace(window.location.href.replace('?','#'));
+        return;
+    }
+    
     var tempHash = getURLHash();
-    urlHistoryStack.push(tempHash!=null?tempHash[1]:'');
+    urlHistoryStack.push(tempHash!=null?tempHash:'');
 
     setInterval(historyCheck, 500);
 });
 
 function printLog(message) {
     try {
-	console.log(message);
+        console.log(message);
     } catch (e) { 
-    // No logging available 
+        // No logging available 
     }
 }
 
 var benchTimes = {};
 function startBench(type) {
     if(typeof benchTimes[type] != 'undefined')
-	printLog('Benchmark '+type+' has already been started');
+        printLog('Benchmark '+type+' has already been started');
     else
-	benchTimes[type] = new Date().getTime();
+        benchTimes[type] = new Date().getTime();
 }
 
 function stopBench(type) {
     var elapsed = 0;
     var now = new Date().getTime();
     if(typeof benchTimes[type] != 'undefined') {
-	elapsed = now - benchTimes[type];
-	delete benchTimes[type];
+        elapsed = now - benchTimes[type];
+        delete benchTimes[type];
 
-	printLog(type+' took '+(elapsed/1000)+' seconds');
+        printLog(type+' took '+(elapsed/1000)+' seconds');
     }
 }
 
 function getURLHash() {
-    return window.location.hash.match(/^#?([^#]+)$/);
+    if(urlHistoryStack.length>1) {
+        return urlHistoryStack[urlHistoryStack.length-1];
+    } else {
+        var hash = window.location.hash.match(/^#?([^#]+)$/);
+        return ( hash == null ) ? hash : hash[1];
+    }
 }
 
 function setURLHash(newHash) {
     try {
-	window.location.assign('#' + newHash);
-	urlHistoryStack.push(newHash);
+        window.location.assign('#' + newHash);
+        urlHistoryStack.push(newHash);
     } catch (e) {
-	printLog('Browser compatibility problem');
+        printLog('Browser compatibility problem');
     }
 }
 
@@ -77,7 +88,7 @@ function setURLParameter(param, paramVal){
     var temp = '';
     if (dataHash != null) {
         paramVal = paramVal.replace(new RegExp(" ", 'g'), "_");
-        tempArray = dataHash[1].split("&");
+        tempArray = dataHash.split("&");
         for (i=0; i<tempArray.length; i++){
             if(tempArray[i].split('=')[0] != param){
                 newHash += temp + tempArray[i];
@@ -97,7 +108,7 @@ function setURLParameter(param, paramVal){
 function getURLParameter(param) {
     var dataHash = getURLHash();
     if (dataHash != null) {
-        tempArray = dataHash[1].split("&");
+        tempArray = dataHash.split("&");
         for (i=0; i<tempArray.length; i++){
             if(tempArray[i].split('=')[0] == param){
                 return tempArray[i].split('=')[1];
@@ -112,7 +123,7 @@ function getURLParamObject(){
     var dataHash = getURLHash();
     var split = [];
     if (dataHash != null) {
-        tempArray = dataHash[1].split("&");
+        tempArray = dataHash.split("&");
         for (i=0; i<tempArray.length; i++){
 	    split = tempArray[i].split('=');
             o[split[0]] = split.length>1?split[1]:'';
