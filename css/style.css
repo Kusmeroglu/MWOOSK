@@ -496,7 +496,8 @@ cursor:pointer;
 background-image:url(../images/sprite.png);
 background-position:-98px -995px;*/
 position:relative;
-margin-top:25px;
+margin-top:45px;
+text-align:center;
 /* Safari */
 -webkit-transform: rotate(90deg);
 /* Firefox */
@@ -520,7 +521,8 @@ background-position:-202px -995px;*/
 background-image:url(../images/sprite.png);
 background-position:-98px -1165px;*/
 position:relative;
-margin-top:18px;
+text-align:center;
+margin-top:25px;
 /* Safari */
 -webkit-transform: rotate(90deg);
 /* Firefox */
@@ -531,7 +533,6 @@ margin-top:18px;
 -o-transform: rotate(90deg);
 /* Internet Explorer */
 filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=4);
-font-size:.85em;
 }
 
 #utilityTab:hover{
@@ -546,7 +547,7 @@ position:relative;
 background-image:url(../images/sprite.png);
 background-position:-98px -1325px;*/
 position:relative;
-margin-top:35px;
+margin-top:45px;
 /* Safari */
 -webkit-transform: rotate(90deg);
 /* Firefox */
@@ -570,7 +571,7 @@ background-position:-201px -1325px;*/
 background-image:url(../images/sprite.png);
 background-position:-98px -1485px;*/
 position:relative;
-margin-top:21px;
+margin-top:41px;
 /* Safari */
 -webkit-transform: rotate(90deg);
 /* Firefox */
@@ -594,7 +595,7 @@ background-position:-201px -1485px;*/
 background-image:url(../images/sprite.png);
 background-position:-98px -1645px;*/
 position:relative;
-margin-top:21px;
+margin-top:41px;
 /* Safari */
 -webkit-transform: rotate(90deg);
 /* Firefox */
