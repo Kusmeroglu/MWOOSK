@@ -725,8 +725,29 @@ $(function () {
         // now load XML just the once.
         $.get('data/mechs.xml?rand='+hourstr, function (xml){
             mechXML = $(xml);
-            parseMechXML(xml);
+            
+            // load unreleased mechs
+            $.ajax({
+                url: 'data/custom/extra_mechs.xml?rand='+hourstr,
+                success: function (xml) {
+                    extras = $(xml);
+                    
+                    var classes = extras.find('class').get();
+                    for(i in classes) {
+                        var $class = $(classes[i]);
+                        var type = $class.attr('type');
+                        
+                        $class.find('mech').appendTo($('class[type='+type+']', mechXML));
+                    }
+                    
+                    parseMechXML(mechXML);
+                },
+                error: function () {
+                    parseMechXML(mechXML);
+                }
+            });
         });
     });
 
 });
+
