@@ -64,15 +64,15 @@ $(function () {
             itemObj.ammoper = parseFloat($(this).attr("ammoper"));
             itemObj.ehs = parseFloat($(this).attr("ehs"));
             itemObj.rosechartdata = [
-                { name:"Damage",   value:$(this).attr("damage")},
-                { name:"Heat",     value:$(this).attr("heat")},
-                { name:"HPS",      value:$(this).attr("hps")},
-                { name:"Weight",   value:$(this).attr("tons")},
-                { name:"Slots",    value:$(this).attr("slots")},
-                { name:"Cooldown", value:$(this).attr("cooldown")},
-                { name:"DPS",      value:$(this).attr("dpsmax")},
-                //{ name:"Ammo/Ton", value:$(this).attr("ammoper")?$(this).attr("ammoper"):0},
-                { name:"Range",    value:$(this).attr("maxrange")}
+                { name:"Damage",   value:$(this).attr("damage"), minvalue:0},
+                { name:"Heat",     value:$(this).attr("heat"), minvalue:0},
+                { name:"HPS",      value:$(this).attr("hps"), minvalue:0},
+                { name:"Weight",   value:$(this).attr("tons"), minvalue:0},
+                { name:"Slots",    value:$(this).attr("slots"), minvalue:0},
+                { name:"Cooldown", value:$(this).attr("cooldown"), minvalue:0},
+                { name:"DPS",      value:$(this).attr("dpsmax"), minvalue:0},
+                { name:"Range",    value:$(this).attr("maxrange"), minvalue: ($(this).attr("minrange")?$(this).attr("minrange"):0)}
+        //{ name:"Ammo/Ton", value:$(this).attr("ammoper")?$(this).attr("ammoper"):0},
             ];
 			itemObj.type = $(this).attr("type");
             $("#"+itemObj.type+"Weapon").append(createItemDivFromData({itemObj: itemObj}));

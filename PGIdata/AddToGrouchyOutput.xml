@@ -1,16 +1,19 @@
 <internals>
     <!-- Add type="ballistic" or type="missile" to the ammos -->
     <!-- Add hardpoint="ams" to the ams, move ams ammo to the internals section type="util"-->
-    <!-- Change BAP to 2 crit slots and 1.5 tons -->
-    <!-- copy these under AMS in internals -->
-    <item id="3000" type="heatsink" tons="1" slots="1">Single Heat Sink</item>
-    <item id="3001" type="heatsink" tons="1" slots="3">Dual Heat Sink</item>
-    <item id="9002" type="util" tons="1" slots="1">Beagle Active Probe</item>
-    <item id="9003" type ="util" tons=".5" slots="1" maxrange="0">C.A.S.E.</item>
-    <item id="9006" type ="util" tons="1.5" slots="2" maxrange="250" ammoper="0">Guardian ECM</item>
-    <item id="1500" type ="jumpjet" tons="2" minTons="90" maxTons="200" slots="1" maxrange="0" ammoper="0" class="assault">Jump Jets - Class I</item>
-    <item id="1501" type ="jumpjet" tons="1" minTons="80" maxTons="90" slots="1" maxrange="0" ammoper="0" class="assault">Jump Jets - Class II</item>
-    <item id="1502" type ="jumpjet" tons="1" minTons="60" maxTons="80" slots="1" maxrange="0" ammoper="0" class="heavy">Jump Jets - Class III</item>
-    <item id="1503" type ="jumpjet" tons=".5" minTons="40" maxTons="60" slots="1" maxrange="0" ammoper="0" class="light">Jump Jets - Class IV</item>
-    <item id="1504" type ="jumpjet" tons=".5" minTons="20" maxTons="40" slots="1" maxrange="0" ammoper="0" class="light">Jump Jets - Class V</item>
+    <!-- copy these under <weapons> -->
+    <internals>
+        <item id="3000" type="heatsink" tons="1" slots="1">Single Heat Sink</item>
+        <item id="3001" type="heatsink" tons="1" slots="3">Dual Heat Sink</item>
+        <item id="1014" type="utility" hardpoint="ams" damage="2.00" numfiring="1" heat="0.00" cooldown="0.00" range="90" maxrange="200" slots="1" tons="0.50" ammoper="1000">AMS</item>
+        <item id="2001" type="util" tons="1" slots="1">AMS Ammo</item>
+        <item id="9003" type ="util" tons=".5" slots="1" maxrange="0">C.A.S.E.</item>
+        <item id="9002" type="util" tons="1.5" slots="2">Beagle Active Probe</item>
+        <item id="9006" type ="util" tons="1.5" slots="2" maxrange="250" ammoper="0">Guardian ECM</item>
+        <item id="1500" type ="jumpjet" tons="2" minTons="90" maxTons="200" slots="1" maxrange="0" ammoper="0" class="assault">Jump Jets - Class I</item>
+        <item id="1501" type ="jumpjet" tons="1" minTons="80" maxTons="90" slots="1" maxrange="0" ammoper="0" class="assault">Jump Jets - Class II</item>
+        <item id="1502" type ="jumpjet" tons="1" minTons="60" maxTons="80" slots="1" maxrange="0" ammoper="0" class="heavy">Jump Jets - Class III</item>
+        <item id="1503" type ="jumpjet" tons=".5" minTons="40" maxTons="60" slots="1" maxrange="0" ammoper="0" class="light">Jump Jets - Class IV</item>
+        <item id="1504" type ="jumpjet" tons=".5" minTons="20" maxTons="40" slots="1" maxrange="0" ammoper="0" class="light">Jump Jets - Class V</item>
+    </internals>
 </internals>

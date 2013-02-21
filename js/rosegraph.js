@@ -12,6 +12,7 @@ function createRoseGraph(container, captiontext) {
 
     //console.log("creating rose chart");
     var ANGLULARWIDTHOFSECTION = 360/8;
+    var ANGULARPADDING = 2;
     var INNERRADIUS = 10;
     var MAXLOOKUP = {
         "Damage":  36,
@@ -44,23 +45,23 @@ function createRoseGraph(container, captiontext) {
 
     weapons = [
         { name:"Damage",
-            value:0},
+            value:0, minvalue:0},
         { name:"Heat",
-            value:0},
+            value:0, minvalue:0},
         { name:"HPS",
-            value:0},
+            value:0, minvalue:0},
         { name:"Weight",
-            value:0},
+            value:0, minvalue:0},
         { name:"Slots",
-            value:0},
+            value:0, minvalue:0},
         { name:"Cooldown",
-            value:0},
+            value:0, minvalue:0},
         { name:"DPS",
-            value:0},
+            value:0, minvalue:0},
 //        { name:"Ammo/Ton",
 //            value:0},
         { name:"Range",
-            value:0}
+            value:0, minvalue:0}
     ];
 
     // Various visualization size parameters
@@ -83,11 +84,11 @@ function createRoseGraph(container, captiontext) {
     var arc = function (o) {
         return d3.svg.arc()
             .startAngle(function (d, i) {
-                var angle = (i*ANGLULARWIDTHOFSECTION - (o.width/2)) * Math.PI / 180;
+                var angle = (i*ANGLULARWIDTHOFSECTION - (o.width/2) + (ANGULARPADDING/2)) * Math.PI / 180;
                 return angle;
             })
             .endAngle(function (d, i) {
-                var angle = (i*ANGLULARWIDTHOFSECTION + (o.width/2)) * Math.PI / 180;
+                var angle = (i*ANGLULARWIDTHOFSECTION + (o.width/2) - (ANGULARPADDING/2)) * Math.PI / 180;
                 return angle;
             })
             .innerRadius(o.from)
@@ -98,8 +99,12 @@ function createRoseGraph(container, captiontext) {
     };
 
     // Map a weapon value amount to an outer radius for the chart
-    function dataToRadius(d) {
+    function dataToOuterRadius(d) {
         return SCALES[d['name']](d.value);
+    }
+    // Map a weapon value amount to an inner radius for the chart
+    function dataToInnerRadius(d) {
+        return SCALES[d['name']](d.minvalue);
     }
 
     // Draw a complete wind rose visualization, including axes and center text
@@ -108,8 +113,8 @@ function createRoseGraph(container, captiontext) {
     function drawComplexArcs(parent, plotData) {
         var complexArcOptions = {
             width:ANGLULARWIDTHOFSECTION,
-            from:INNERRADIUS,
-            to:dataToRadius // function to determine outer radius from data
+            from:dataToInnerRadius,
+            to:dataToOuterRadius // function to determine outer radius from data
         }
 
         // Draw the main wind rose arcs
@@ -140,8 +145,8 @@ function createRoseGraph(container, captiontext) {
         }
         var complexArcOptions = {
             width:ANGLULARWIDTHOFSECTION,
-            from:INNERRADIUS,
-            to:dataToRadius // function to determine outer radius from data
+            from:dataToInnerRadius,
+            to:dataToOuterRadius // function to determine outer radius from data
         }
 
         // Update the arcs' shape and color
