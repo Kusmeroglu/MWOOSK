@@ -1429,11 +1429,10 @@
                     <limb name="rightTorso"  crits="12" armorFront="26" armorRear="12" maxArmor="48">
                         <hardpoint type="ams"></hardpoint>
                     </limb>
-                    <limb name="rightArm"  crits="8" armorFront="32" armorRear="0" maxArmor="32">
+                    <limb name="rightArm"  crits="9" armorFront="32" armorRear="0" maxArmor="32">
                         <internal slots="1">Shoulder</internal>
                         <internal slots="1">Upper Arm Actuator</internal>
                         <internal slots="1">Lower Arm Actuator</internal>
-                        <internal slots="1">Hand Actuator</internal>
                         <hardpoint type="ballistic"></hardpoint>
                     </limb>
                     <limb name="leftLeg"  crits="2" armorFront="32" armorRear="0" maxArmor="48">
@@ -1476,11 +1475,10 @@
                     <limb name="rightTorso"  crits="12" armorFront="26" armorRear="12" maxArmor="48">
                         <hardpoint type="ams"></hardpoint>
                     </limb>
-                    <limb name="rightArm"  crits="8" armorFront="32" armorRear="0" maxArmor="32">
+                    <limb name="rightArm"  crits="9" armorFront="32" armorRear="0" maxArmor="32">
                         <internal slots="1">Shoulder</internal>
                         <internal slots="1">Upper Arm Actuator</internal>
                         <internal slots="1">Lower Arm Actuator</internal>
-                        <internal slots="1">Hand Actuator</internal>
                         <hardpoint type="energy"></hardpoint>
                         <hardpoint type="energy"></hardpoint>
                     </limb>
@@ -1524,11 +1522,10 @@
                     <limb name="rightTorso"  crits="12" armorFront="26" armorRear="12" maxArmor="48">
                         <hardpoint type="ams"></hardpoint>
                     </limb>
-                    <limb name="rightArm"  crits="8" armorFront="32" armorRear="0" maxArmor="32">
+                    <limb name="rightArm"  crits="9" armorFront="32" armorRear="0" maxArmor="32">
                         <internal slots="1">Shoulder</internal>
                         <internal slots="1">Upper Arm Actuator</internal>
                         <internal slots="1">Lower Arm Actuator</internal>
-                        <internal slots="1">Hand Actuator</internal>
                         <hardpoint type="ballistic"></hardpoint>
                         <hardpoint type="ballistic"></hardpoint>
                     </limb>
