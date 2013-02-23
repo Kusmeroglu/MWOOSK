@@ -72,7 +72,8 @@
             $("#speed").text("No engine selected.");
         }
         var structureSlots = (this.endo ? this.endoCritSlots : 0) + (this.ferro ? this.ferroCritSlots : 0);
-        $("#freeCrits").text("Free Crits: " + (this.currentFreeCritSlots - structureSlots));
+        this.currentFreeCritSlots -= structureSlots;
+        $("#freeCrits").text("Free Crits: " + (this.currentFreeCritSlots));
         return this.currentFreeCritSlots;
     };
 
@@ -88,8 +89,7 @@
             return false;
         }
         // are there crit slots (on the whole mech, endo and ferro, I'm looking at you)
-        var structureSlots = (this.endo ? this.endoCritSlots : 0) + (this.ferro ? this.ferroCritSlots : 0);
-        if ( (this.currentFreeCritSlots - structureSlots) < itemObj.critSlots){
+        if ( (this.currentFreeCritSlots) < itemObj.critSlots){
             // return false only if this is not the center torso and this is a heatsink and there are extra heatsink slots
             if ( ! (limbName == "centerTorso" && itemObj.type == "heatsink" && (this.limbs[limbName].engineHeatSinks - this.limbs[limbName].engineHeatSinksItems.length) > 0)){
                 return false;
@@ -182,7 +182,7 @@
         this.addWeight( (frontArmor + rearArmor - this.limbs[limbName].totalArmor) * (this.ferro ? this.ferroweight : this.armorWeight) );
         this.limbs[limbName].setArmor(frontArmor, rearArmor);
         this.resetArmorURLParam();
-        console.log("Equipped Armor: " + this.totalArmor);
+        //console.log("Equipped Armor: " + this.totalArmor);
     };
 
     this.resetArmorURLParam = function resetArmorURLParam(){
