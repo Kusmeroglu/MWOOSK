@@ -18,6 +18,7 @@
     this.maxRange = 0;
     this.dpsmax = 0; // maximum dps
     this.ammoper = 0; // ammo per ton
+    this.duration = 0; // lazerz yo
     this.hps = 0; // heat per second
     this.ehs = 0; // effective heatsinks
     this.rosechartdata = null; // object for chart secret information

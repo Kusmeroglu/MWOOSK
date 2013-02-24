@@ -65,8 +65,8 @@ function createRoseGraph(container, captiontext) {
     ];
 
     // Various visualization size parameters
-    var w = VISWIDTH*2,
-        h = VISWIDTH*2,
+    var w = 305,
+        h = 190,
         r = Math.min(w, h) / 2, // center; probably broken if not square
         p = PADDING, // padding on outside of major elements
         ip = INNERRADIUS; // padding on inner circle
@@ -176,7 +176,7 @@ function createRoseGraph(container, captiontext) {
     // The main SVG visualization element
     vis = d3.select(container)
         .append("svg:svg")
-        .attr("width", (w+30) + "px").attr("height", h + "px");
+        .attr("width", w + "px").attr("height", h + "px");
 
     /*
      // Text representing chart tickmarks
@@ -238,15 +238,46 @@ function createRoseGraph(container, captiontext) {
         .text(captiontext)
         .attr("class", "caption")
         .attr("text-anchor","middle")
-        .attr("transform", "translate(1, " + w / 2 + ") rotate(90)");
+        .attr("transform", "translate(1, " + (h / 2) + ") rotate(90)");
 
+    var extradata = vis.append("svg:g")
+        .attr("transform", "translate(200)");
 
     // ninja updateChart into global namespace
     window.updateRoseChartData = function(data, title){
-        updateComplexArcs(vis, data, title);
+        extradata.selectAll("text").remove();
+        updateComplexArcs(vis, data["rosechartdata"], title);
+        var offset = 20;
+        if ( data['ammoper'] ){
+            extradata.append("text")
+                .attr('class', 'labels')
+                .text('Ammo Per Ton:')
+                .attr("text-anchor","middle")
+                .attr('transform', "translate(50,"+offset+")");
+            extradata.append("text")
+                .text(data['ammoper'])
+                .attr('class', 'values')
+                .attr("text-anchor","middle")
+                .attr('transform', "translate(50,"+(offset+15)+")");
+            offset += 30;
+        }
+        if ( data['duration'] ){
+            extradata.append("text")
+                .attr('class', 'labels')
+                .text('Duration:')
+                .attr("text-anchor","middle")
+                .attr('transform', "translate(50,"+offset+")");
+            extradata.append("text")
+                .text(data['duration'])
+                .attr('class', 'values')
+                .attr("text-anchor","middle")
+                .attr('transform', "translate(50,"+(offset+15)+")");
+            offset += 30;
+        }
     }
     // ninja updateChart into global namespace
     window.resetRoseChartData = function(title){
+        extradata.selectAll("text").remove();
         updateComplexArcs(vis, weapons, title);
     }
 

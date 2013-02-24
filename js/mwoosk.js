@@ -43,7 +43,7 @@ $(function () {
         if( itemObj.rosechartdata && itemObj.rosechartdata.length ){
             div.hover(
                 function(){
-                    updateRoseChartData($(this).data("itemObj")["rosechartdata"], $(this).data("itemObj")['itemName']);
+                    updateRoseChartData($(this).data("itemObj"), $(this).data("itemObj")['itemName']);
                 },
                 function(){
                     resetRoseChartData("-N/A-");
@@ -62,6 +62,7 @@ $(function () {
             itemObj.dpsmax = parseFloat($(this).attr("dpsmax"));
             itemObj.hps = parseFloat($(this).attr("hps"));
             itemObj.ammoper = parseFloat($(this).attr("ammoper"));
+            itemObj.duration = parseFloat($(this).attr("duration")?$(this).attr("duration"):0);
             itemObj.ehs = parseFloat($(this).attr("ehs"));
             itemObj.rosechartdata = [
                 { name:"Damage",   value:$(this).attr("damage"), minvalue:0},

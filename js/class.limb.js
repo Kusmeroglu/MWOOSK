@@ -188,7 +188,7 @@
         if( itemObj.rosechartdata ){
             div.hover(
                 function(){
-                    updateRoseChartData($(this).data("itemObj")["rosechartdata"], $(this).data("itemObj")['itemName']);
+                    updateRoseChartData($(this).data("itemObj"), $(this).data("itemObj")['itemName']);
                 },
                 function(){
                     resetRoseChartData("-N/A-");
