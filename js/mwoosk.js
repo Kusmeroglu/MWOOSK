@@ -60,6 +60,8 @@ $(function () {
             itemObj.cooldown = parseFloat($(this).attr("cooldown"));
             itemObj.maxRange = parseFloat($(this).attr("maxrange"));
             itemObj.dpsmax = parseFloat($(this).attr("dpsmax"));
+            itemObj.dpsmaxperslot = (Math.round( 100 * (itemObj.dpsmax / itemObj.critSlots)) / 100);
+            itemObj.dpsmaxperton = (Math.round(100 * (itemObj.dpsmax / itemObj.weight)) / 100);
             itemObj.hps = parseFloat($(this).attr("hps"));
             itemObj.ammoper = parseFloat($(this).attr("ammoper"));
             itemObj.duration = parseFloat($(this).attr("duration")?$(this).attr("duration"):0);

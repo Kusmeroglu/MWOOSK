@@ -248,32 +248,25 @@ function createRoseGraph(container, captiontext) {
         extradata.selectAll("text").remove();
         updateComplexArcs(vis, data["rosechartdata"], title);
         var offset = 20;
-        if ( data['ammoper'] ){
-            extradata.append("text")
-                .attr('class', 'labels')
-                .text('Ammo Per Ton:')
-                .attr("text-anchor","middle")
-                .attr('transform', "translate(50,"+offset+")");
-            extradata.append("text")
-                .text(data['ammoper'])
-                .attr('class', 'values')
-                .attr("text-anchor","middle")
-                .attr('transform', "translate(50,"+(offset+15)+")");
-            offset += 30;
+        function addStatToInfoArea(attrname, label){
+            if ( data[attrname] ){
+                extradata.append("text")
+                    .attr('class', 'labels')
+                    .text(label)
+                    .attr("text-anchor","middle")
+                    .attr('transform', "translate(50,"+offset+")");
+                extradata.append("text")
+                    .text(data[attrname])
+                    .attr('class', 'values')
+                    .attr("text-anchor","middle")
+                    .attr('transform', "translate(50,"+(offset+15)+")");
+                offset += 40;
+            }
         }
-        if ( data['duration'] ){
-            extradata.append("text")
-                .attr('class', 'labels')
-                .text('Duration:')
-                .attr("text-anchor","middle")
-                .attr('transform', "translate(50,"+offset+")");
-            extradata.append("text")
-                .text(data['duration'])
-                .attr('class', 'values')
-                .attr("text-anchor","middle")
-                .attr('transform', "translate(50,"+(offset+15)+")");
-            offset += 30;
-        }
+        addStatToInfoArea('ammoper', 'Ammo Per Ton');
+        addStatToInfoArea('duration', 'Beam Duration');
+        addStatToInfoArea('dpsmaxperton', 'DPS / Ton');
+        addStatToInfoArea('dpsmaxperslot', 'DPS / Slot');
     }
     // ninja updateChart into global namespace
     window.resetRoseChartData = function(title){

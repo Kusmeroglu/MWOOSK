@@ -17,6 +17,8 @@
     this.range = 0;
     this.maxRange = 0;
     this.dpsmax = 0; // maximum dps
+    this.dpsmaxperslot = 0;
+    this.dpsmaxperton = 0;
     this.ammoper = 0; // ammo per ton
     this.duration = 0; // lazerz yo
     this.hps = 0; // heat per second
