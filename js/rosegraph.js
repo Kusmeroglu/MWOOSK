@@ -247,7 +247,7 @@ function createRoseGraph(container, captiontext) {
     window.updateRoseChartData = function(data, title){
         extradata.selectAll("text").remove();
         updateComplexArcs(vis, data["rosechartdata"], title);
-        var offset = 20;
+        var offset = 22;
         function addStatToInfoArea(attrname, label){
             if ( data[attrname] ){
                 extradata.append("text")
@@ -260,13 +260,14 @@ function createRoseGraph(container, captiontext) {
                     .attr('class', 'values')
                     .attr("text-anchor","middle")
                     .attr('transform', "translate(50,"+(offset+15)+")");
-                offset += 40;
+                offset += 45;
             }
         }
         addStatToInfoArea('ammoper', 'Ammo Per Ton');
         addStatToInfoArea('duration', 'Beam Duration');
         addStatToInfoArea('dpsmaxperton', 'DPS / Ton');
         addStatToInfoArea('dpsmaxperslot', 'DPS / Slot');
+        addStatToInfoArea('dpsmaxperheat', 'DPS / Heat');
     }
     // ninja updateChart into global namespace
     window.resetRoseChartData = function(title){
