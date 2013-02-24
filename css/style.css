@@ -1134,3 +1134,14 @@ Rose Chart CSS (SVG)
 .ui-draggable{
 min-width:151px;
 }
+
+
+/*
+------ Share popup form ----------
+*/
+
+label, input { display:block; }
+
+input.dialog { margin-bottom:12px; width:95%; padding: .4em; }
+
+fieldset { padding:0; border:0; margin-top:25px; }

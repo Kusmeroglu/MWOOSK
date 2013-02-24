@@ -17,6 +17,7 @@
     <script type="text/javascript" src="js/class.hardpoint.js"></script>
     <script type="text/javascript" src="js/class.item.js"></script>
     <script type="text/javascript" src="js/urlhandling.js"></script>
+    <script type="text/javascript" src="js/descriptionGenerator.js"></script>
 	<script src="js/history.js/scripts/bundled/html4+html5/jquery.history.js"></script>
 	<script type="text/javascript" src="js/jquery.mousewheel.js"></script>
 	<script type="text/javascript" src="js/mwheelIntent.js"></script>
@@ -68,7 +69,7 @@
         </div>
         <div id="userInfo">
             <div class="tinyurl">
-                <div id="tinyurlLink">Get Tiny URL</div>
+                <div id="tinyurlLink">Share</div>
             </div>
         </div>
         <div class="clear"></div>
@@ -316,6 +317,21 @@
     <footer>
         
     </footer>
+
+    <div id="dialog-form" title="Share Mech">
+        <form>
+            <fieldset>
+                <label for="shortURL">Short URL</label>
+                <input type="text" name="shortURL" id="shortURL" class="dialog" />
+                <label for="shortDesc">Short Description</label>
+                <input type="text" name="shortDesc" id="shortDesc" value="" class="dialog" />
+                <label for="shortDescForum">Short + URL (Forum)</label>
+                <input type="text" name="shortDescForum" id="shortDescForum" value="" class="dialog" />
+                <label for="shortDescHTML">Short + URL (HTML)</label>
+                <input type="text" name="shortDescHTML" id="shortDescHTML" value="" class="dialog" />
+            </fieldset>
+        </form>
+    </div>
 </div>
 
 </body>

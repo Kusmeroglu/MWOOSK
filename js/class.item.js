@@ -1,6 +1,7 @@
 ﻿function item(id, itemName, critSlots, weight, type, hardpointtype) {
     this.id = id; // little three letter ID
     this.itemName = itemName; // human readable text
+    this.shortName = itemName;
     this.type = type; // and extra modifier on hardpointType - ie std or xl, weapon, etc.
     this.hardpointType = hardpointtype; // this is added to the physical item as a class
     this.weight = parseFloat(weight);

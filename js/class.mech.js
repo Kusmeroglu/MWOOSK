@@ -5,8 +5,6 @@
     this.maxTons = maxTons;
 
     this.dhs = false;
-    this.ferro = false;
-    this.dhs = false;
     this.artemis = false;
     this.chassisTons = 0;
     this.currentTons = 0;

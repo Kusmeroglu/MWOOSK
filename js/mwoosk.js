@@ -1,6 +1,7 @@
 var mechObj;
 var mechXML;
 var itemXML;
+var itemXMLsupplemental;
 var urldata = getURLParamObject();
 var limbList = ['leftArm', 'leftTorso','centerTorso','rightTorso','rightArm','leftLeg','rightLeg','head'];
 var classLookup = {
@@ -54,8 +55,11 @@ $(function () {
 
     function parseItemXML(xml){
         $(xml).find("weapons > item").each(function () {
-            var itemObj = new item($(this).attr("id"), $(this).text(), $(this).attr("slots"), $(this).attr("tons"), "weapon", $(this).attr("type"));
+            // get the supplemental
+            var supplement = $(itemXMLsupplemental).find('weapons > item[id="' + $(this).attr("id") + '"]');
+            var itemObj = new item($(this).attr("id"), supplement.attr('longname') || $(this).text(), $(this).attr("slots"), $(this).attr("tons"), "weapon", $(this).attr("type"));
             itemObj.damage = parseFloat($(this).attr("damage"));
+            itemObj.shortName = supplement.attr('shortname');
             itemObj.heat = parseFloat($(this).attr("heat"));
             itemObj.cooldown = parseFloat($(this).attr("cooldown"));
             itemObj.maxRange = parseFloat($(this).attr("maxrange"));
@@ -100,7 +104,9 @@ $(function () {
 		$('#ballisticWeapon').jScrollPane(settings);
 		$('#ballisticAmmo').jScrollPane(settings);
         $(xml).find("engines > plant").each(function () {
-            var itemObj = new item($(this).attr("id"), $(this).text(), parseInt($(this).attr("slots")), $(this).attr("tons"), $(this).attr("type"), "engine");
+            var supplement = $(itemXMLsupplemental).find('engines > plant[id="' + $(this).attr("id") + '"]');
+            var itemObj = new item($(this).attr("id"), supplement.attr('longname') || $(this).text(), parseInt($(this).attr("slots")), $(this).attr("tons"), $(this).attr("type"), "engine");
+            itemObj.shortName = supplement.attr('shortname');
             itemObj.heatsinkslots = parseInt($(this).attr("heatsinkslots"));
             itemObj.rosechartdata = [];
 			itemObj.type = $(this).attr("type");
@@ -538,21 +544,33 @@ $(function () {
     });
 
 
-    $('#tinyurlLink').on('click', function(e){
-        e.preventDefault();
-        makeTinyUrl(window.location.href);
-        return false;
+    /*
+        ------ SHARING CODE -------
+     */
+
+    $( "#dialog-form" ).dialog({
+        autoOpen: false,
+        height: 500,
+        width: 700,
+        modal: true,
+        buttons: {
+            Close: function() {
+                $( this ).dialog( "close" );
+            }
+        },
+        close: function() {
+            $("#dialog-form input").val("");
+        }
     });
 
-    function makeTinyUrl(url)
-    {
+    $('#tinyurlLink').on('click', function(e){
+        e.preventDefault();
         //var apiKey = "AIzaSyBwChgwfU1FgX9dXWr7UJL7cpClk53T8mI";
         //gapi.client.setApiKey(apiKey);
-
         gapi.client.load('urlshortener', 'v1', function() {
             var request = gapi.client.urlshortener.url.insert({
                 'resource': {
-                    'longUrl': url
+                    'longUrl': window.location.href
                 }
             });
             var resp = request.execute(function(resp) {
@@ -563,13 +581,25 @@ $(function () {
                     $('#tinyurlLink').insertAfter($("<div id='tinyurlResult'>"+resp.error.message+"</div>"));
                 } else {
                     var tinyurl = resp.id;
-                    console.log("tiny: " + tinyurl);
-                    $('#tinyurlLink').hide();
-                    $('#tinyurlLink').after($("<div id='tinyurlResult'>"+tinyurl+"</a>"));
+                    var description = getMechShortDescription();
+
+//                    <input type="text" name="shortURL" id="shortURL" class="dialog" />
+                    $('#shortURL').val(tinyurl);
+//                        <input type="text" name="shortDesc" id="shortDesc" value="" class="dialog" />
+                    $('#shortDesc').val(description);
+//                        <input type="text" name="shortDescForum" id="shortDescForum" value="" class="dialog" />
+                    $('#shortDescForum').val(description + " [" + tinyurl + "]" );
+//                        <input type="text" name="shortDescHTML" id="shortDescHTML" value="" class="dialog" />
+                    $('#shortDescHTML').val("<a href='" + tinyurl + "'>" + description + "</a>" );
+                    $( "#dialog-form" ).dialog( "open" );
                 }
             });
         });
-    }
+        return false;
+    });
+
+
+
 	/*
 	----     All the Crazy Menu Visibility Toggling     ----
 	*/
@@ -720,38 +750,40 @@ $(function () {
     /*
      START UP - on initial loadup, get the xml, populate the screen
      */
+    $.get('data/itemsupplement.xml?rand='+hourstr, function(xml){
+        itemXMLsupplemental = xml;
+        // load the item list
+        $.get('data/items.xml?rand='+hourstr, function (xml) {
+            itemXML = xml;
+            parseItemXML(xml);
 
-    // load the item list
-    $.get('data/items.xml?rand='+hourstr, function (xml) {
-        itemXML = xml;
-        parseItemXML(xml);
+            // now load XML just the once.
+            $.get('data/mechs.xml?rand='+hourstr, function (xml){
+                mechXML = $(xml);
 
-        // now load XML just the once.
-        $.get('data/mechs.xml?rand='+hourstr, function (xml){
-            mechXML = $(xml);
-            
-            // load unreleased mechs
-            $.ajax({
-                url: 'data/custom/extra_mechs.xml?rand='+hourstr,
-                success: function (xml) {
-                    extras = $(xml);
-                    
-                    var classes = extras.find('class').get();
-                    for(i in classes) {
-                        var $class = $(classes[i]);
-                        var type = $class.attr('type');
-                        
-                        $class.find('mech').appendTo($('class[type='+type+']', mechXML));
+                // load unreleased mechs
+                $.ajax({
+                    url: 'data/custom/extra_mechs.xml?rand='+hourstr,
+                    success: function (xml) {
+                        extras = $(xml);
+
+                        var classes = extras.find('class').get();
+                        for(i in classes) {
+                            var $class = $(classes[i]);
+                            var type = $class.attr('type');
+
+                            $class.find('mech').appendTo($('class[type='+type+']', mechXML));
+                        }
+
+                        parseMechXML(mechXML);
+                    },
+                    error: function () {
+                        parseMechXML(mechXML);
                     }
-                    
-                    parseMechXML(mechXML);
-                },
-                error: function () {
-                    parseMechXML(mechXML);
-                }
+                });
             });
         });
-    });
+    })
 
 });
 
