@@ -588,7 +588,7 @@ $(function () {
 //                        <input type="text" name="shortDesc" id="shortDesc" value="" class="dialog" />
                     $('#shortDesc').val(description);
 //                        <input type="text" name="shortDescForum" id="shortDescForum" value="" class="dialog" />
-                    $('#shortDescForum').val(description + " [" + tinyurl + "]" );
+                    $('#shortDescForum').val('[url="' + tinyurl + '"]' + description + '[/url]' );
 //                        <input type="text" name="shortDescHTML" id="shortDescHTML" value="" class="dialog" />
                     $('#shortDescHTML').val("<a href='" + tinyurl + "'>" + description + "</a>" );
                     $( "#dialog-form" ).dialog( "open" );
