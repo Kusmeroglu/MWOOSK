@@ -1,6 +1,6 @@
 <itemssupplement>
     <weapons>
-        <item id="1003" shortname="SLAS" longname="Small Laserxx"></item>
+        <item id="1003" shortname="SLAS" longname="Small Laser"></item>
         <item id="1012" shortname="SPLS" longname="Small Pulse Laser"></item>
         <item id="1001" shortname="MLAS" longname="Medium Laser" ></item>
         <item id="1011" shortname="MPLS" longname="Medium Pulse Laser"></item>
