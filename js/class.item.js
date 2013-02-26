@@ -17,6 +17,7 @@
     this.cooldown = 0;
     this.range = 0;
     this.maxRange = 0;
+    this.optimalRange = 0;
     this.dpsmax = 0; // maximum dps
     this.dpsmaxperslot = 0;
     this.dpsmaxperton = 0;

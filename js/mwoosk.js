@@ -50,6 +50,14 @@ $(function () {
                     resetRoseChartData("-N/A-");
                 })
         }
+        //internal info
+        div.append($("<div class='iteminfo'><div class='infolabel'>Weight:</div>"+itemObj.weight+"</div>"));
+        div.append($("<div class='iteminfo'><div class='infolabel'>Cost:</div>Coming soon!</div>"));
+        div.append($("<div class='iteminfo'><div class='infolabel'>Crits:</div>"+itemObj.critSlots+"</div>"));
+        if (itemObj.type == "weapon"){
+            div.append($("<div class='iteminfo'><div class='infolabel'>Opt. Range:</div>"+itemObj.optimalRange+"</div>"));
+            div.append($("<div class='iteminfo'><div class='infolabel'>Heat:</div>"+itemObj.heat+"</div>"));
+        }
         return div;
     }
 
@@ -71,6 +79,15 @@ $(function () {
             itemObj.ammoper = parseFloat($(this).attr("ammoper"));
             itemObj.duration = parseFloat($(this).attr("duration")?$(this).attr("duration"):0);
             itemObj.ehs = parseFloat($(this).attr("ehs"));
+
+            if ( itemObj.hardpointType == "energy"){
+                itemObj.optimalRange = itemObj.maxRange / 2;
+            } else if ( itemObj.hardpointType == "ballistics" ){
+                itemObj.optimalRange = itemObj.maxRange / 3;
+            } else if ( itemObj.hardpointType == "missile"){
+                itemObj.optimalRange = itemObj.maxRange;
+            }
+
             itemObj.rosechartdata = [
                 { name:"Damage",   value:$(this).attr("damage"), minvalue:0},
                 { name:"Heat",     value:$(this).attr("heat"), minvalue:0},
