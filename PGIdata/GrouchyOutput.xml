@@ -2,18 +2,18 @@
 <items>
   <weapons>
    <item id="1000" type="ballistic" damage="20.00" numfiring="1" heat="6.00" cooldown="4.00" range="270" minrange="0" maxrange="810" slots="10" tons="14.00" dpsmax="5.00" ammoper="7" hps="1.50" ehs="15">AC/20</item>
-   <item id="1001" type="energy" damage="5.00" numfiring="1" heat="4.00" cooldown="3.00" duration="1.00" range="270" minrange="0" maxrange="540" slots="1" tons="1.00" dpsmax="1.67" ammoper="0" hps="1.33" ehs="13">MediumLaser</item>
+   <item id="1001" type="energy" damage="5.00" numfiring="1" heat="4.00" cooldown="3.00" duration="1.00" range="270" minrange="0" maxrange="540" slots="1" tons="1.00" dpsmax="1.25" ammoper="0" hps="1.33" ehs="13">MediumLaser</item>
    <item id="1002" type="missile" damage="36.00" numfiring="20" heat="6.00" cooldown="4.75" range="1000" minrange="180" maxrange="1000" slots="5" tons="10.00" dpsmax="7.58" ammoper="180" hps="1.26" ehs="13">LRM20</item>
-   <item id="1003" type="energy" damage="3.00" numfiring="1" heat="2.00" cooldown="2.25" duration="0.75" range="90" minrange="0" maxrange="180" slots="1" tons="0.50" dpsmax="1.33" ammoper="0" hps="0.89" ehs="9">SmallLaser</item>
+   <item id="1003" type="energy" damage="3.00" numfiring="1" heat="2.00" cooldown="2.25" duration="0.75" range="90" minrange="0" maxrange="180" slots="1" tons="0.50" dpsmax="1.00" ammoper="0" hps="0.89" ehs="9">SmallLaser</item>
    <item id="1004" type="missile" damage="10.00" numfiring="4" heat="3.00" cooldown="3.75" range="270" minrange="0" maxrange="270" slots="1" tons="2.00" dpsmax="2.67" ammoper="100" hps="0.80" ehs="8">SRM4</item>
-   <item id="1005" type="energy" damage="9.00" numfiring="1" heat="9.50" cooldown="3.25" duration="1.00" range="675" minrange="0" maxrange="1350" slots="2" tons="5.00" dpsmax="2.77" ammoper="0" hps="2.92" ehs="29">ERLargeLaser</item>
+   <item id="1005" type="energy" damage="9.00" numfiring="1" heat="9.50" cooldown="3.25" duration="1.00" range="675" minrange="0" maxrange="1350" slots="2" tons="5.00" dpsmax="2.12" ammoper="0" hps="2.92" ehs="29">ERLargeLaser</item>
    <item id="1006" type="energy" damage="10.00" numfiring="1" heat="11.00" cooldown="3.00" range="810" minrange="0" maxrange="1620" slots="3" tons="7.00" dpsmax="3.33" ammoper="0" hps="3.67" ehs="37">ERPPC</item>
    <item id="1007" type="energy" damage="0.40" numfiring="1" heat="0.60" cooldown="0.00" range="64" minrange="0" maxrange="64" slots="1" tons="1.00" ammoper="0">Flamer</item>
-   <item id="1008" type="energy" damage="9.00" numfiring="1" heat="7.00" cooldown="3.25" duration="1.00" range="450" minrange="0" maxrange="900" slots="2" tons="5.00" dpsmax="2.77" ammoper="0" hps="2.15" ehs="22">LargeLaser</item>
+   <item id="1008" type="energy" damage="9.00" numfiring="1" heat="7.00" cooldown="3.25" duration="1.00" range="450" minrange="0" maxrange="900" slots="2" tons="5.00" dpsmax="2.12" ammoper="0" hps="2.15" ehs="22">LargeLaser</item>
    <item id="1009" type="energy" damage="10.00" numfiring="1" heat="8.00" cooldown="3.00" range="540" minrange="90" maxrange="1080" slots="3" tons="7.00" dpsmax="3.33" ammoper="0" hps="2.67" ehs="27">PPC</item>
-   <item id="1010" type="energy" damage="10.00" numfiring="1" heat="7.30" cooldown="3.25" duration="0.75" range="300" minrange="0" maxrange="600" slots="2" tons="7.00" dpsmax="3.08" ammoper="0" hps="2.25" ehs="22">LargePulseLaser</item>
-   <item id="1011" type="energy" damage="6.00" numfiring="1" heat="5.00" cooldown="3.00" duration="0.75" range="180" minrange="0" maxrange="360" slots="1" tons="2.00" dpsmax="2.00" ammoper="0" hps="1.67" ehs="17">MediumPulseLaser</item>
-   <item id="1012" type="energy" damage="3.00" numfiring="1" heat="3.00" cooldown="2.25" duration="0.50" range="90" minrange="0" maxrange="180" slots="1" tons="1.00" dpsmax="1.33" ammoper="0" hps="1.33" ehs="13">SmallPulseLaser</item>
+   <item id="1010" type="energy" damage="10.00" numfiring="1" heat="7.30" cooldown="3.25" duration="0.75" range="300" minrange="0" maxrange="600" slots="2" tons="7.00" dpsmax="2.50" ammoper="0" hps="2.25" ehs="22">LargePulseLaser</item>
+   <item id="1011" type="energy" damage="6.00" numfiring="1" heat="5.00" cooldown="3.00" duration="0.75" range="180" minrange="0" maxrange="360" slots="1" tons="2.00" dpsmax="1.60" ammoper="0" hps="1.67" ehs="17">MediumPulseLaser</item>
+   <item id="1012" type="energy" damage="3.00" numfiring="1" heat="3.00" cooldown="2.25" duration="0.50" range="90" minrange="0" maxrange="180" slots="1" tons="1.00" dpsmax="1.09" ammoper="0" hps="1.33" ehs="13">SmallPulseLaser</item>
    <item id="1014" type="utility" damage="2.00" numfiring="1" heat="0.00" cooldown="0.00" range="90" minrange="0" maxrange="200" slots="1" tons="0.50" ammoper="1000">AMS</item>
    <item id="1018" type="ballistic" damage="2.00" numfiring="1" heat="1.00" cooldown="0.50" range="720" minrange="0" maxrange="2160" slots="1" tons="6.00" dpsmax="4.00" ammoper="75" hps="2.00" ehs="20">AC/2</item>
    <item id="1019" type="ballistic" damage="5.00" numfiring="1" heat="1.00" cooldown="1.70" range="540" minrange="0" maxrange="1620" slots="4" tons="8.00" dpsmax="2.94" ammoper="30" hps="0.59" ehs="6">AC/5</item>
@@ -32,21 +32,21 @@
    <item id="1037" type="energy" numfiring="1" heat="0.00" cooldown="0.00" range="750" minrange="0" maxrange="750" slots="1" tons="1.00" ammoper="0">TAG</item>
   </weapons>
   <ammos>
-   <item id="2000" type="ballistic" tons="1" slots="1">AC20Ammo</item>
-   <item id="2001" tons="1" slots="1">AMSAmmo</item>
-   <item id="2005" type="ballistic" tons="1" slots="1">AC2Ammo</item>
-   <item id="2006" type="ballistic" tons="1" slots="1">AC5Ammo</item>
-   <item id="2007" type="ballistic" tons="1" slots="1">AC10Ammo</item>
-   <item id="2010" type="ballistic" tons="1" slots="1">LB10-XACAmmo</item>
-   <item id="2011" tons="1" slots="1">MachineGunAmmo</item>
-   <item id="2008" type="ballistic" tons="1" slots="1">GaussAmmo</item>
-   <item id="2012" type="ballistic" tons="1" slots="1">UltraAC5Ammo</item>
-   <item id="2017" type="missile" tons="1" slots="1">NARCAmmo</item>
-   <item id="2027" type="missile" tons="1" slots="1">LRMAmmo</item>
-   <item id="2028" type="missile" tons="1" slots="1">SRMAmmo</item>
-   <item id="2029" type="missile" tons="1" slots="1">StreakSRMAmmo</item>
-   <item id="2030" type="missile" tons="1" slots="1">LRMAmmoArtemis</item>
-   <item id="2031" type="missile" tons="1" slots="1">SRMAmmoArtemis</item>
+   <item id="2000" type="ballistic" internaldamage="20.00" tons="1" slots="1">AC20Ammo</item>
+   <item id="2001" type="AMS" internaldamage="0.02" tons="1" slots="1">AMSAmmo</item>
+   <item id="2005" type="ballistic" internaldamage="2.00" tons="1" slots="1">AC2Ammo</item>
+   <item id="2006" type="ballistic" internaldamage="5.00" tons="1" slots="1">AC5Ammo</item>
+   <item id="2007" type="ballistic" internaldamage="10.00" tons="1" slots="1">AC10Ammo</item>
+   <item id="2010" type="ballistic" internaldamage="10.00" tons="1" slots="1">LB10-XACAmmo</item>
+   <item id="2011" type="MG" internaldamage="0.08" tons="1" slots="1">MachineGunAmmo</item>
+   <item id="2008" type="ballistic" internaldamage="0.00" tons="1" slots="1">GaussAmmo</item>
+   <item id="2012" type="ballistic" internaldamage="5.00" tons="1" slots="1">UltraAC5Ammo</item>
+   <item id="2017" type="missile" internaldamage="2.00" tons="1" slots="1">NARCAmmo</item>
+   <item id="2027" type="missile" internaldamage="1.60" tons="1" slots="1">LRMAmmo</item>
+   <item id="2028" type="missile" internaldamage="2.50" tons="1" slots="1">SRMAmmo</item>
+   <item id="2029" type="missile" internaldamage="2.50" tons="1" slots="1">StreakSRMAmmo</item>
+   <item id="2030" type="missile" internaldamage="1.60" tons="1" slots="1">LRMAmmoArtemis</item>
+   <item id="2031" type="missile" internaldamage="2.50" tons="1" slots="1">SRMAmmoArtemis</item>
   </ammos>
   <engines>
    <plant id="3218" slots="6" tons="1.0" type="std" heatsinkslots="-6" size="100">Standard 100</plant>
