@@ -1,11 +1,11 @@
-﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+﻿<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <title>MWOOSK v.01a</title>
-
+    <title>The Oosiks Mechlab</title>
+	<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+	<meta http-equiv="Pragma" content="no-cache" />
+	<meta http-equiv="Expires" content="0" />
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-
     <script src="http://code.jquery.com/jquery-1.8.2.js" type="text/javascript"></script>
     <script src="http://code.jquery.com/ui/1.9.0/jquery-ui.js" type="text/javascript"></script>
     <script src="http://d3js.org/d3.v2.js" type="text/javascript"></script>
@@ -27,14 +27,7 @@
     <link href="font/stylesheet.css" rel="stylesheet" media="screen"/>
     <link href='http://fonts.googleapis.com/css?family=Aldrich' rel='stylesheet' type='text/css'>
     <link href="css/style.css" rel="stylesheet" media="screen"/>
-
-    <script type="text/javascript" src="js/mwoosk.js"/>
-
-    <script type="text/javascript">
-
-    </script>
-
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <script type="text/javascript" src="js/mwoosk.js"></script>
 </head>
 <body>
 <div id="pageWrap">
@@ -69,7 +62,9 @@
         </div>
         <div id="userInfo">
             <div class="tinyurl">
-                <div id="tinyurlLink">Share</div>
+                <div id="nickNameWrap"><input type="text" name="mechNickName" id="mechNickName" placeholder="Name Your Mech"></div>
+				<div id="tinyurlLink" class="toggleButton">Share</div>
+				<div class="clear"></div>
             </div>
         </div>
         <div class="clear"></div>
@@ -100,12 +95,10 @@
         <div class="clear"></div>
         <div id="mechContainerWrap">
             <div id="mechContainer">
-				<div id="rightInfo">
-					<div id="clearItems" class="toggleButton">Clear Items</div>
-					<div id="clearArmor" class="toggleButton">Clear Armor</div>
-					<div id="maxArmor" class="toggleButton">Max Armor</div>
+				<div id="costInfo">
+					
 				</div>
-                <div id="rightArm" class="area">
+				<div id="rightArm" class="area">
                     <div class="name">Right Arm</div>
 					<div class="information">
                         <div class="hardpoints"></div>
@@ -120,6 +113,10 @@
                 </div>
 			</div>
 			<div id="mechContainer">
+				<div id="rightInfo">
+					<div class="infoTextWrap">Armor:</div><div id="maxArmor" class="toggleButton">Max</div><div id="clearArmor" class="toggleButton">Strip</div>
+					<div class="clear"></div>
+				</div>
                 <div id="rightTorso" class="area">
                     <div class="name">Right Torso</div>
 					<div class="information">
@@ -178,6 +175,9 @@
                 </div>
 			</div>
 			<div id="mechContainer">
+				<div id="leftInfo">
+					<div class="infoTextWrap">Items:</div><div id="clearItems" class="toggleButton">Remove All</div>
+				</div>
                 <div id="leftTorso" class="area">
 					<div class="name">Left Torso</div>
                     <div class="information">
@@ -207,9 +207,7 @@
                 </div>
 			</div>
 			<div id="mechContainer">
-				<div id="leftInfo">
-				</div>
-                <div id="leftArm" class="area">
+				<div id="leftArm" class="area">
                     <div class="name">Left Arm</div>
 					<div class="information">
                         <div class="hardpoints"></div>
@@ -286,6 +284,22 @@
 								<li><input id="artemisCheckbox" type="checkbox"/> Artemis </li>
 								<li><input id="dhsCheckbox" type="checkbox"/> Dual Heat Sinks </li>
 							</ul>
+							<div id="endoBox">
+								<div class="upgradeTitle">Endo Steel</div>
+								<div id="endoToggle" class="upgradeToggle uninstalled">Install</div>
+							</div>
+							<div id="ferroBox">	
+								<div class="upgradeTitle">Ferro Fiberous</div>
+								<div id="ferroToggle" class="upgradeToggle uninstalled">Install</div>
+							</div>
+							<div id="artemisBox">
+								<div class="upgradeTitle">Artemis IV Missile System</div>
+								<div id="artemisToggle" class="upgradeToggle uninstalled">Install</div>
+							</div>
+							<div id="dhsBox">
+								<div class="upgradeTitle">Double Heat Sinks</div>
+								<div id="dhsToggle" class="upgradeToggle uninstalled">Install</div>
+							</div>
 						</div>
 					</div>
 					<div id="piloting"></div>
@@ -318,7 +332,7 @@
         
     </footer>
 
-    <div id="dialog-form" title="Share Mech">
+    <div id="dialog-form" title="Share Your Mech">
         <form>
             <fieldset>
                 <label for="shortURL">Short URL</label>
@@ -333,6 +347,19 @@
         </form>
     </div>
 </div>
+<script type="text/javascript">
 
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-38930509-1']);
+  _gaq.push(['_setDomainName', 'theoosiks.com']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
 </body>
 </html>

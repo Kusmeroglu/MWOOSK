@@ -933,7 +933,7 @@
             </variant>
             <variant name="ILYA MUROMETS" premium="yes" founders="no" ecm="no" jets="0" minengine="140" maxengine="340">
                 <limbs>
-                    <limb name="leftArm"  crits="9" armorFront="44" armorRear="0" maxArmor="44">
+                    <limb name="leftArm"  crits="8" armorFront="44" armorRear="0" maxArmor="44">
                         <internal slots="1">Shoulder</internal>
                         <internal slots="1">Upper Arm Actuator</internal>
                         <internal slots="1">Lower Arm Actuator</internal>
@@ -2032,7 +2032,6 @@
                         <hardpoint type="energy"></hardpoint>
                     </limb>
                     <limb name="leftTorso"  crits="12" armorFront="26" armorRear="12" maxArmor="48">
-                        <hardpoint type="missile"></hardpoint>
                     </limb>
                     <limb name="centerTorso"  crits="8" armorFront="36" armorRear="14" maxArmor="64">
                         <internal slots="4">Gyro</internal>

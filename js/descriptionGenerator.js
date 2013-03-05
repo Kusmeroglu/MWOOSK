@@ -35,30 +35,30 @@ function getMechShortDescription(){
     });
 
     // turn it into a string
-    var description = mechObj.variant + ": ";
+    var description = "["+ mechObj.variant + "]: ";
 
     for ( var item in descriptionObj ){
         if ( descriptionObj[item] > 1){
-            description += descriptionObj[item] + " ";
+            description += descriptionObj[item] + "x";
         }
-        description += item + " ";
+        description += item + ", ";
     }
 
     // add the engine
-    description += engine + " ";
+    description += engine + "";
 
     // add notes for the upgrades
     if ( mechObj.dhs ){
-        description += "DHS ";
+        description += ", DHS";
     }
     if ( mechObj.artemis ){
-        description += "Artemis ";
+        description += ", Artemis";
     }
     if ( mechObj.endo ){
-        description += "Endo ";
+        description += ", Endo";
     }
     if ( mechObj.ferro){
-        description += "Ferro ";
+        description += ", Ferro";
     }
 
     console.log(description);

@@ -11,196 +11,217 @@ Box Background:  #000000 -- Black
     font-family: 'eurostileregular';
     src: url('../font/eurosti-webfont.eot');
     src: url('../font/eurosti-webfont.eot?#iefix') format('embedded-opentype'),
-         url('../font/eurosti-webfont.woff') format('woff'),
-         url('../font/eurosti-webfont.ttf') format('truetype'),
-         url('../font/eurosti-webfont.svg#eurostileregular') format('svg');
+    url('../font/eurosti-webfont.woff') format('woff'),
+    url('../font/eurosti-webfont.ttf') format('truetype'),
+    url('../font/eurosti-webfont.svg#eurostileregular') format('svg');
     font-weight: normal;
     font-style: normal;}
 
 @font-face {
-	font-family: 'battletech_oldstyle';
+    font-family: 'battletech_oldstyle';
     src: url('../font/btlogo_old-webfont.eot');
     src: url('../font/btlogo_old-webfont.eot?#iefix') format('embedded-opentype'),
-         url('../font/btlogo_old-webfont.woff') format('woff'),
-         url('../font/btlogo_old-webfont.ttf') format('truetype'),
-         url('../font/btlogo_old-webfont.svg#battletech_oldstyleoldstyle') format('svg');
+    url('../font/btlogo_old-webfont.woff') format('woff'),
+    url('../font/btlogo_old-webfont.ttf') format('truetype'),
+    url('../font/btlogo_old-webfont.svg#battletech_oldstyleoldstyle') format('svg');
     font-weight: normal;
     font-style: normal;}
 
 @font-face {
-	font-family: 'btlogo_old';
+    font-family: 'btlogo_old';
     src:  url('../font/btlogo_old.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
 
 body{
-background-color:#000;
-background-image:url(../images/background.png);
-font-family: 'eurostileregular';
+    background-color:#000;
+    background-image:url(../images/background.png);
+    font-family: 'eurostileregular';
 }
 
-.jquery-corner { 
-        -moz-user-select: none; 
-        -khtml-user-select: none; 
-        -webkit-user-select: none; 
-        -o-user-select: none; 
+.jquery-corner {
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -o-user-select: none;
 }
 
 .clear{
-clear:both;
+    clear:both;
 }
 
 .hide {
-display:none;
+    display:none;
 }
 
 .selectBox {
-   width: 200px;
-   background:#000;
-   color:#fff;
-   background-image: url(../images/arrow.png);
-   background-repeat:no-repeat;
-   background-position:170px -2px;
-   border-style:solid;
-   border-color:#AE9B4C;
-   border-top-width:1px;
-   border-left-width:4px;
-   border-right-width:2px;
-   border-bottom-width:1px;
-   float:left;
-   margin:5px 10px;
-   position:relative;
-   z-index:4;
-   border-radius:2px;
-   -moz-border-radius:2px;
-   -webkit-border-radius:2px;
+    width: 200px;
+    background:#000;
+    color:#fff;
+    background-image: url(../images/arrow.png);
+    background-repeat:no-repeat;
+    background-position:170px -2px;
+    border-style:solid;
+    border-color:#AE9B4C;
+    border-top-width:1px;
+    border-left-width:4px;
+    border-right-width:2px;
+    border-bottom-width:1px;
+    float:left;
+    margin:5px 10px;
+    position:relative;
+    z-index:4;
+    border-radius:2px;
+    -moz-border-radius:2px;
+    -webkit-border-radius:2px;
 }
 
 .area {
- border-radius:2px;
- -moz-border-radius:2px;
- -webkit-border-radius:2px;
- -webkit-box-shadow: 1px 1px 5px 0px rgba(0, 0, 0, .35);
- box-shadow: 1px 1px 5px 0px rgba(0, 0, 0, .35);
+    border-radius:2px;
+    -moz-border-radius:2px;
+    -webkit-border-radius:2px;
+    -webkit-box-shadow: 1px 1px 5px 0px rgba(0, 0, 0, .35);
+    box-shadow: 1px 1px 5px 0px rgba(0, 0, 0, .35);
 }
 
 .inactive {
-   background-image: none !important;
+    background-image: none !important;
 }
 
 .selectItem{
-display:none;
-padding:1px 0px 1px 5px;
-position:relative;
-z-index:5;
+    display:none;
+    padding:1px 0px 1px 5px;
+    position:relative;
+    z-index:5;
 }
 
 .selectBlank {
-cursor:pointer;
-padding:1px 0px 1px 5px;
+    cursor:pointer;
+    padding:1px 0px 1px 5px;
 }
 
 .selectItem:hover{
-cursor:pointer;
-background:#AE9B4C;
+    cursor:pointer;
+    background:#AE9B4C;
 }
 
 .active {
--webkit-box-shadow:  2px 2px 5px 0px #000;
-box-shadow:  2px 2px 5px 0px #000;
+    -webkit-box-shadow:  2px 2px 5px 0px #000;
+    box-shadow:  2px 2px 5px 0px #000;
 }
 
 select {
-	background:#000;
-   -webkit-appearence: none;
-   width: 200px;
-   font-size: 12px;
-   color:#fff;
-   border: 0px solid #718ba2;
+    background:#000;
+    -webkit-appearence: none;
+    width: 200px;
+    font-size: 12px;
+    color:#fff;
+    border: 0px solid #718ba2;
 }
 
 #pageWrap{
- width:1280px;
- margin:5px auto;
- padding:5px 20px 5px 10px;
- background-image:url(../images/bg2.jpg);
- border-color:#3D4337;
- border-style:solid;
- border-left-width:2px;
- border-top-width:8px;
- border-bottom-width:8px;
- border-right-width:2px;
- border-radius:2px;
- -moz-border-radius:4px;
- -webkit-border-radius:4px;
- min-height:790px;
- }
- 
- #reset{
-font-family: 'btlogo_old';
-text-decoration:none;
-background:#000;
-float:left;
-margin:5px 5px 0px 20px;
-border-color:#AE9B4C;
-border-style:solid;
-border-left-width:2px;
-border-top-width:1px;
-border-bottom-width:1px;
-border-right-width:6px;
-padding:2px 5px 0px 5px;
-border-radius:2px;
--moz-border-radius:2px;
--webkit-border-radius:2px;
-color:#fff;
-cursor:pointer;
+    width:1280px;
+    margin:5px auto;
+    padding:5px 20px 5px 10px;
+    background-image:url(../images/bg2.jpg);
+    border-color:#3D4337;
+    border-style:solid;
+    border-left-width:2px;
+    border-top-width:8px;
+    border-bottom-width:8px;
+    border-right-width:2px;
+    border-radius:2px;
+    -moz-border-radius:4px;
+    -webkit-border-radius:4px;
+    min-height:790px;
+}
+
+#reset{
+    font-family: 'btlogo_old';
+    text-decoration:none;
+    background:#000;
+    float:left;
+    margin:5px 5px 0px 20px;
+    border-color:#AE9B4C;
+    border-style:solid;
+    border-left-width:2px;
+    border-top-width:1px;
+    border-bottom-width:1px;
+    border-right-width:6px;
+    padding:2px 5px 0px 5px;
+    border-radius:2px;
+    -moz-border-radius:2px;
+    -webkit-border-radius:2px;
+    color:#fff;
+    cursor:pointer;
 }
 
 #reset:hover{
-background-color:#AE9B4C;
+    background-color:#AE9B4C;
 }
 
 #chassisBar{
-padding:5px 0px;
-width:810px;
-height:30px;
-margin:0px 5px 0px 20px;
-float:left;
+    padding:5px 0px;
+    width:810px;
+    height:30px;
+    margin:0px 5px 0px 20px;
+    float:left;
 }
 
 #userInfo{
-background:#000;
-float:left;
-margin:5px 5px 0px 62px;
-border-color:#3D4337;
-border-style:solid;
-border-left-width:2px;
-border-top-width:1px;
-border-bottom-width:1px;
-border-right-width:6px;
-padding:5px;
-border-radius:2px;
--moz-border-radius:2px;
--webkit-border-radius:2px;
-}
-
-#userInfo {
-height:20px;
-width:315px;
+    background:#000;
+    float:left;
+	width:315px;
+    margin:5px 5px 0px 62px;
+    border-color:#3D4337;
+    border-style:solid;
+    border-left-width:2px;
+    border-top-width:1px;
+    border-bottom-width:1px;
+    border-right-width:6px;
+    padding:5px;
+    border-radius:2px;
+    -moz-border-radius:2px;
+    -webkit-border-radius:2px;
 }
 
 #tinyurlLink{
+    color:#fff;
+    cursor:pointer;
+	float:left;
+	margin-left:10px;
+	padding-left:10px;
+	padding-right:10px;
+}
+
+#nickNameWrap{
+ float:left;
+}
+
+#mechNickName{
+ width:220px;
+ border-radius:2px;
+ border-color:#393E44;
+ border-style:solid;
+ border-left-width:2px;
+ border-top-width:1px;
+ border-bottom-width:1px;
+ border-right-width:6px;
+ background:#000;
  color:#fff;
- cursor:pointer;
+ font-size:.95em;
+ padding-left:5px;
+ height:22px;
+ font-family: 'battletech_oldstyle';
 }
 
 #tinyurlResult{
-color:#fff;
+    color:#fff;
 }
 
 #mechBay{
-display:none;
+    display:none;
     position: relative;
 
 }
@@ -211,60 +232,60 @@ display:none;
     background-repeat: no-repeat;
     background-position:-50px -50px;*/
     margin-top:10px;
-	float:left;
+    float:left;
 }
 
 
 #mechContainer{
     float:left;
-	margin:10px 5px;
+    margin:10px 5px;
 }
 
 #mechContainer:first-child{
-	margin-left:0px;
+    margin-left:0px;
 }
 
 #mechContainer:last-child{
-	margin-right:20px;
+    margin-right:20px;
 }
 
 #mechContainer > div {
     width:165px;
-	border-color:#3d4337;
-	border-bottom-width:4px;
-	border-left-width:1px;
-	border-right-width:1px;
-	border-style:solid;
-	color: white;
-	padding-bottom:2px;
+    border-color:#3d4337;
+    border-bottom-width:4px;
+    border-left-width:1px;
+    border-right-width:1px;
+    border-style:solid;
+    color: white;
+    padding-bottom:2px;
 }
 
 .name {
-font-family: 'btlogo_old';
-padding:5px;
-background:#3d4337;
-color:#fff;
-font-size:.95em;
+    font-family: 'btlogo_old';
+    padding:5px;
+    background:#3d4337;
+    color:#fff;
+    font-size:.95em;
 }
 
 .information{
-padding:5px;
+    padding:5px;
 }
 
 .hardpoint{
- border-radius:2px;
- -moz-border-radius:2px;
- -webkit-border-radius:2px;
- float:left;
- margin:0px 3px 3px 3px;
- padding:0px 2px 0px 2px;
- text-transform:capitalize;
- font-style:bold;
+    border-radius:2px;
+    -moz-border-radius:2px;
+    -webkit-border-radius:2px;
+    float:left;
+    margin:0px 3px 3px 3px;
+    padding:0px 2px 0px 2px;
+    text-transform:capitalize;
+    font-style:bold;
 }
 
 .critslot {
-height:20px;
-border:1px solid #fff;
+    height:20px;
+    border:1px solid #fff;
 }
 
 .structure {
@@ -282,168 +303,170 @@ border:1px solid #fff;
 .armorspinner {
     width: 35px;
     color: white;
-	padding:-2px;
+    padding:-2px;
 }
 
 .armor {
- clear:both;
- }
+    clear:both;
+}
 
 .critLabel{
-padding-left:5px;
-font-size:.9em;
-padding-top:3px;
-opacity:1 !important;
+    padding-left:5px;
+    font-size:.9em;
+    padding-top:3px;
+    opacity:1 !important;
 }
 
 .critItem{
-border-left-width:6px;
-border-right-width:2px;
-border-top-width:1px;
-border-bottom-width:1px;
-border-style:solid;
-margin-bottom:1px;
-border-color:#3d4337;
-background:#000;
+    border-left-width:6px;
+    border-right-width:2px;
+    border-top-width:1px;
+    border-bottom-width:1px;
+    border-style:solid;
+    margin-bottom:1px;
+    border-color:#3d4337;
+    background:#000;
+	position:relative;
+	z-index:1000;
 }
 
 .empty{
-background:none; /*!important;*/
+    background:none; /*!important;*/
 }
 
 .internal{
-border-color:#393e44;
-color:#393e44;
+    border-color:#393e44;
+    color:#393e44;
 }
 
 .critItem:hover{
-/*background-image:url(../images/sprite.png);
-background-position:-500px -1199px;*/
+    /*background-image:url(../images/sprite.png);
+    background-position:-500px -1199px;*/
 }
 
 .emptyCrit{
- height:25px;
- margin:0px 5px;
- text-align:center;
- color:#333;
+    height:25px;
+    margin:0px 5px;
+    text-align:center;
+    color:#333;
 }
 
 .critOne {
-/*background-image:url(../images/sprite.png);
-background-position:-690px -898px;*/
-height:22px;
-cursor:pointer;
-opacity:1;
+    /*background-image:url(../images/sprite.png);
+    background-position:-690px -898px;*/
+    height:22px;
+    cursor:pointer;
+    opacity:1;
 }
 
 .critTwo {
-/*background-image:url(../images/sprite.png);
-background-position:-690px -930px;*/
-height:47px;
-cursor:pointer;
+    /*background-image:url(../images/sprite.png);
+    background-position:-690px -930px;*/
+    height:47px;
+    cursor:pointer;
 }
 
 .critThree {
-/*background-image:url(../images/sprite.png);
-background-position:-690px -980px;*/
-height:72px;
-cursor:pointer;
+    /*background-image:url(../images/sprite.png);
+    background-position:-690px -980px;*/
+    height:72px;
+    cursor:pointer;
 }
 
 .critFour {
-/*background-image:url(../images/sprite.png);
-background-position:-690px -1050px;*/
-height:97px;
-cursor:pointer;
+    /*background-image:url(../images/sprite.png);
+    background-position:-690px -1050px;*/
+    height:97px;
+    cursor:pointer;
 }
 
 .critFive {
-/*background-image:url(../images/sprite.png);
-background-position:-850px -898px;*/
-height:122px;
-cursor:pointer;
+    /*background-image:url(../images/sprite.png);
+    background-position:-850px -898px;*/
+    height:122px;
+    cursor:pointer;
 }
 
 .critSix {
-/*background-image:url(../images/sprite.png);
-background-position:-850px -1020px;*/
-height:147px;
-cursor:pointer;
+    /*background-image:url(../images/sprite.png);
+    background-position:-850px -1020px;*/
+    height:147px;
+    cursor:pointer;
 }
 
 .critSeven {
-/*background-image:url(../images/sprite.png);
-background-position:-690px -1150px;*/
-height:172px;
-cursor:pointer;
+    /*background-image:url(../images/sprite.png);
+    background-position:-690px -1150px;*/
+    height:172px;
+    cursor:pointer;
 }
 
 .critTen {
-/*background-image:url(../images/sprite.png);
-background-position:-850px -1160px;*/
-height:247px;
-cursor:pointer;
+    /*background-image:url(../images/sprite.png);
+    background-position:-850px -1160px;*/
+    height:247px;
+    cursor:pointer;
 }
 
 
 .critWrap{
-margin:10px 3px 0px 3px;
-/*background-image:url(../images/sprite.png);
-background-position:-500px -898px;*/
+    margin:10px 3px 0px 3px;
+    /*background-image:url(../images/sprite.png);
+    background-position:-500px -898px;*/
 }
 
 .valid .critWrap{
- background: rgb(87, 185, 71); /* fallback */
- background: rgba(87, 185, 71, 0.15); /* 50% transparent */
+    background: rgb(87, 185, 71); /* fallback */
+    background: rgba(87, 185, 71, 0.15); /* 50% transparent */
 }
 
 
 #head{
-background:#000;
-position:relative;
-margin-top:00px;
+    background:#000;
+    position:relative;
+    margin-top:00px;
 }
 
 #rightArm{
-background:#000;
-position:relative;
-margin-top:10px;
+    background:#000;
+    position:relative;
+    margin-top:100px;
 }
 
 #rightTorso{
-background:#000;
-position:relative;
-margin-top:40px;
+    background:#000;
+    position:relative;
+    margin-top:10px;
 }
 
 #centerTorso{
-background:#000;
-position:relative;
-margin-top:20px;
+    background:#000;
+    position:relative;
+    margin-top:20px;
 }
 
 #leftTorso{
-background:#000;
-position:relative;
-margin-top:40px;
+    background:#000;
+    position:relative;
+    margin-top:10px;
 }
 
 #leftArm{
-background:#000;
-position:relative;
-margin-top:10px;
+    background:#000;
+    position:relative;
+    margin-top:130px;
 }
 
 #rightLeg{
-background:#000;
-position:relative;
-margin-top:20px;
+    background:#000;
+    position:relative;
+    margin-top:20px;
 }
 
 #leftLeg{
-background:#000;
-position:relative;
-margin-top:20px;
+    background:#000;
+    position:relative;
+    margin-top:20px;
 }
 
 #componentWrap{
@@ -453,166 +476,166 @@ margin-top:20px;
 }
 
 #componentDetail{
-background:#000;
+    background:#000;
 }
 
 #itemWrap{
-margin:10px 0px 10px 0px;
-float:left;
+    margin:10px 0px 10px 0px;
+    float:left;
 }
 
 #tabWrap{
-float:left;
-position:relative;
-margin-top:70px;
+    float:left;
+    position:relative;
+    margin-top:70px;
 }
 
 .tabWrapper{
-width:42px;
-height:130px;
-margin-bottom:10px;
-border-color:#3D4337;
-border-style:solid;
-border-top-width:3px;
-border-bottom-width:1px;
-border-right-width:6px;
-border-left-width:0px;
-border-radius:0px 2px 1px 0px;
--webkit-border-radius:0px 2px 1px 0px;
--moz-border-radius:0px 2px 1px 0px;
-background:#000;
-color:#fff;
-font-family: 'btlogo_old';
-font-size:.9em;
+    width:42px;
+    height:130px;
+    margin-bottom:10px;
+    border-color:#3D4337;
+    border-style:solid;
+    border-top-width:3px;
+    border-bottom-width:1px;
+    border-right-width:6px;
+    border-left-width:0px;
+    border-radius:0px 2px 1px 0px;
+    -webkit-border-radius:0px 2px 1px 0px;
+    -moz-border-radius:0px 2px 1px 0px;
+    background:#000;
+    color:#fff;
+    font-family: 'btlogo_old';
+    font-size:.9em;
 }
 
 .tabWrapper:hover{
-color:#AE9B4C;
-cursor:pointer;
+    color:#AE9B4C;
+    cursor:pointer;
 }
 
 #armamentTab{
-/*background:transparent;
-background-image:url(../images/sprite.png);
-background-position:-98px -995px;*/
-position:relative;
-margin-top:45px;
-text-align:center;
-/* Safari */
--webkit-transform: rotate(90deg);
-/* Firefox */
--moz-transform: rotate(90deg);
-/* IE */
--ms-transform: rotate(90deg);
-/* Opera */
--o-transform: rotate(90deg);
-/* Internet Explorer */
-filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=4);
+    /*background:transparent;
+    background-image:url(../images/sprite.png);
+    background-position:-98px -995px;*/
+    position:relative;
+    margin-top:45px;
+    text-align:center;
+    /* Safari */
+    -webkit-transform: rotate(90deg);
+    /* Firefox */
+    -moz-transform: rotate(90deg);
+    /* IE */
+    -ms-transform: rotate(90deg);
+    /* Opera */
+    -o-transform: rotate(90deg);
+    /* Internet Explorer */
+    filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=4);
 }
 
 #armamentTab:hover{
-/*background:transparent;
-background-image:url(../images/sprite.png);
-background-position:-202px -995px;*/
+    /*background:transparent;
+    background-image:url(../images/sprite.png);
+    background-position:-202px -995px;*/
 }
 
 #utilityTab{
-/*background:transparent;
-background-image:url(../images/sprite.png);
-background-position:-98px -1165px;*/
-position:relative;
-text-align:center;
-margin-top:25px;
-/* Safari */
--webkit-transform: rotate(90deg);
-/* Firefox */
--moz-transform: rotate(90deg);
-/* IE */
--ms-transform: rotate(90deg);
-/* Opera */
--o-transform: rotate(90deg);
-/* Internet Explorer */
-filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=4);
+    /*background:transparent;
+    background-image:url(../images/sprite.png);
+    background-position:-98px -1165px;*/
+    position:relative;
+    text-align:center;
+    margin-top:25px;
+    /* Safari */
+    -webkit-transform: rotate(90deg);
+    /* Firefox */
+    -moz-transform: rotate(90deg);
+    /* IE */
+    -ms-transform: rotate(90deg);
+    /* Opera */
+    -o-transform: rotate(90deg);
+    /* Internet Explorer */
+    filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=4);
 }
 
 #utilityTab:hover{
-/*background:transparent;
-background-image:url(../images/sprite.png);
-background-position:-98px -1165px;*/
-position:relative;
+    /*background:transparent;
+    background-image:url(../images/sprite.png);
+    background-position:-98px -1165px;*/
+    position:relative;
 }
 
 #pilotingTab{
-/*background:transparent;
-background-image:url(../images/sprite.png);
-background-position:-98px -1325px;*/
-position:relative;
-margin-top:45px;
-/* Safari */
--webkit-transform: rotate(90deg);
-/* Firefox */
--moz-transform: rotate(90deg);
-/* IE */
--ms-transform: rotate(90deg);
-/* Opera */
--o-transform: rotate(90deg);
-/* Internet Explorer */
-filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=4);
+    /*background:transparent;
+    background-image:url(../images/sprite.png);
+    background-position:-98px -1325px;*/
+    position:relative;
+    margin-top:45px;
+    /* Safari */
+    -webkit-transform: rotate(90deg);
+    /* Firefox */
+    -moz-transform: rotate(90deg);
+    /* IE */
+    -ms-transform: rotate(90deg);
+    /* Opera */
+    -o-transform: rotate(90deg);
+    /* Internet Explorer */
+    filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=4);
 }
 
 #pilotingTab:hover{
-/*background:transparent;
-background-image:url(../images/sprite.png);
-background-position:-201px -1325px;*/
+    /*background:transparent;
+    background-image:url(../images/sprite.png);
+    background-position:-201px -1325px;*/
 }
 
 #statisticsTab{
-/*background:transparent;
-background-image:url(../images/sprite.png);
-background-position:-98px -1485px;*/
-position:relative;
-margin-top:41px;
-/* Safari */
--webkit-transform: rotate(90deg);
-/* Firefox */
--moz-transform: rotate(90deg);
-/* IE */
--ms-transform: rotate(90deg);
-/* Opera */
--o-transform: rotate(90deg);
-/* Internet Explorer */
-filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=4);
+    /*background:transparent;
+    background-image:url(../images/sprite.png);
+    background-position:-98px -1485px;*/
+    position:relative;
+    margin-top:41px;
+    /* Safari */
+    -webkit-transform: rotate(90deg);
+    /* Firefox */
+    -moz-transform: rotate(90deg);
+    /* IE */
+    -ms-transform: rotate(90deg);
+    /* Opera */
+    -o-transform: rotate(90deg);
+    /* Internet Explorer */
+    filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=4);
 }
 
 #statisticsTab:hover{
-/*background:transparent;
-background-image:url(../images/sprite.png);
-background-position:-201px -1485px;*/
+    /*background:transparent;
+    background-image:url(../images/sprite.png);
+    background-position:-201px -1485px;*/
 }
 
 #commentsTab{
-/*background:transparent;
-background-image:url(../images/sprite.png);
-background-position:-98px -1645px;*/
-position:relative;
-margin-top:41px;
-/* Safari */
--webkit-transform: rotate(90deg);
-/* Firefox */
--moz-transform: rotate(90deg);
-/* IE */
--ms-transform: rotate(90deg);
-/* Opera */
--o-transform: rotate(90deg);
-/* Internet Explorer */
-filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=4);
+    /*background:transparent;
+    background-image:url(../images/sprite.png);
+    background-position:-98px -1645px;*/
+    position:relative;
+    margin-top:41px;
+    /* Safari */
+    -webkit-transform: rotate(90deg);
+    /* Firefox */
+    -moz-transform: rotate(90deg);
+    /* IE */
+    -ms-transform: rotate(90deg);
+    /* Opera */
+    -o-transform: rotate(90deg);
+    /* Internet Explorer */
+    filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=4);
 }
 
 #commentsTab:hover{
-/*background:transparent;
-background-image:url(../images/sprite.png);
-background-position:-98px -1645px;*/
-position:relative;
+    /*background:transparent;
+    background-image:url(../images/sprite.png);
+    background-position:-98px -1645px;*/
+    position:relative;
 }
 
 #ballisticsTab{
@@ -650,24 +673,24 @@ position:relative;
 }
 
 #detailContainerWrap{
-float:left;
+    float:left;
 }
 
 #detailContainer{
-background-color:#000;
-position:relative;
-border-color:#3D4337;
-border-style:solid;
-border-top-width:0px;
-border-left-width:1px;
-border-right-width:1px;
-border-bottom-width:6px;
-border-radius:2px;
--webkit-border-radius:2px;
--moz-border-radius:2px;
-height:790px;
-width:330px;
-margin-top:20px;
+    background-color:#000;
+    position:relative;
+    border-color:#3D4337;
+    border-style:solid;
+    border-top-width:0px;
+    border-left-width:1px;
+    border-right-width:1px;
+    border-bottom-width:6px;
+    border-radius:2px;
+    -webkit-border-radius:2px;
+    -moz-border-radius:2px;
+    height:790px;
+    width:330px;
+    margin-top:20px;
 }
 
 #itemList {
@@ -681,67 +704,112 @@ margin-top:20px;
     display:block;
     padding:2px 2px 0px 5px;
     z-index:99;
-	font-size:.85em;
+    font-size:.85em;
     position:relative;
     border-style:solid;
-	border-left-width:6px;
-	border-top-width:1px;
-	border-bottom-width:1px;
-	border-right-width:2px;
-	cursor:move;
-	margin:0px 5px 2px 5px;
-	color:#fff;
-	background:#000;
+    border-left-width:6px;
+    border-top-width:1px;
+    border-bottom-width:1px;
+    border-right-width:2px;
+    cursor:move;
+    margin:0px 5px 2px 5px;
+    color:#fff;
+    background:#000;
 }
+
+.itemName{
+ width:100%;
+ font-size:1.2em;
+ margin-bottom:2px;
+ padding-bottom:2px;
+ border-bottom:1px dashed #333;
+}
+
+.itemInfo{
+ float:left;
+ width:46%;
+ margin-right:1%;
+ padding-left:5px;
+ border-left:1px dashed #333;
+ border-top:1px dashed #333;
+}
+
+.destructionInfo{
+ width:98%;
+ margin-right:1%;
+ padding-left:5px;
+ border-left:1px dashed #333;
+ border-top:1px dashed #333;
+}
+
+.infoLabel{
+color:#888;
+}
+
+.itemLabel{
+ font-size:.65em;
+ 
+}
+
+.cbillCost {
+ float:left;
+ margin-right:20px;
+ color:#aaa;
+ }
+ 
+ .mcCost {
+ float:left;
+ color:#aaa;
+ }
 
 .energy {
     /*background-image: url("../images/bgEnergy.png") !important;
     background-repeat: no-repeat !important;*/
     position: relative;
-	border-color:#00a2e8;
-	color:#fff;
+    border-color:#00a2e8;
+    color:#fff;
 }
 .missile {
     /*background-image: url("../images/bgMissile.png") !important;
     background-repeat: no-repeat !important;*/
     position: relative;
-	border-color:#22b14c;
-	color:#fff;
+    border-color:#22b14c;
+    color:#fff;
 }
 .ballistic {
     /*background-image: url("../images/bgBallistic.png") !important;
     background-repeat: no-repeat !important;*/
     position: relative;
-	border-color:#ffc90e;
-	color:#fff;
-	font-family: 'eurostileregular';
+    border-color:#ffc90e;
+    color:#fff;
+    font-family: 'eurostileregular';
 }
 
 .util, .utility {
     /*background-image: url("../images/bgBallistic.png") !important;
     background-repeat: no-repeat !important;*/
     position: relative;
-	border-color:#fff;
-	color:#fff;
-	font-family: 'eurostileregular';
+    border-color:#fff;
+    color:#fff;
+    font-family: 'eurostileregular';
 }
 
 .engine, .xlwing, .engineheatsink, .heatsink {
     /*background-image: url("../images/bgBallistic.png") !important;
     background-repeat: no-repeat !important;*/
     position: relative;
-	border-color:#834e00;
-	color:#fff;
-	font-family: 'eurostileregular';
+    border-color:#834e00;
+    color:#fff;
+    font-family: 'eurostileregular';
 }
 
 .heatsink {
     /*background-image: url("../images/bgBallistic.png") !important;
     background-repeat: no-repeat !important;*/
     position: relative;
-	border-color:#68748a;
-	color:#fff;
-	font-family: 'eurostileregular';
+    border-color:#68748a;
+    color:#fff;
+    font-family: 'eurostileregular';
 }
 
 
@@ -750,115 +818,115 @@ margin-top:20px;
     /*background-image: url("../images/bgBallistic.png") !important;
     background-repeat: no-repeat !important;*/
     position: relative;
-	border-color:#fff;
-	color:#fff;
-	font-family: 'eurostileregular';
+    border-color:#fff;
+    color:#fff;
+    font-family: 'eurostileregular';
 }
 
 .energy {
     /*background-image: url("../images/bgEnergy.png") !important;
     background-repeat: no-repeat !important;*/
     position: relative;
-	border-color:#00a2e8;
-	color:#fff;
+    border-color:#00a2e8;
+    color:#fff;
 }
 .missile {
     /*background-image: url("../images/bgMissile.png") !important;
     background-repeat: no-repeat !important;*/
     position: relative;
-	border-color:#22b14c;
-	color:#fff;
+    border-color:#22b14c;
+    color:#fff;
 }
 .hardpoint.ballistic {
     position: relative;
-	background:#ffc90e;
-	color:#3d4337;
+    background:#ffc90e;
+    color:#3d4337;
 }
 
 .hardpoint.energy {
     position: relative;
-	background:#00a2e8;
-	color:#fff;
+    background:#00a2e8;
+    color:#fff;
 }
 
 .hardpoint.missile {
     position: relative;
-	background:#22b14c;
-	color:#fff;
+    background:#22b14c;
+    color:#fff;
 }
 
 .hardpoint.ams {
     position: relative;
-	background:#fff;
-	color:#3d4337;
+    background:#fff;
+    color:#3d4337;
 }
 
 .hardpoints {
-	min-height:18px;
+    min-height:18px;
 }
 
 #tonnageWrap{
-background:#000;
-float:left;
-margin:5px 5px 0px 20px;
-border-color:#3D4337;
-border-style:solid;
-border-left-width:6px;
-border-top-width:1px;
-border-bottom-width:1px;
-border-right-width:2px;
-padding:5px;
-border-radius:2px;
--moz-border-radius:2px;
--webkit-border-radius:2px;
+    background:#000;
+    float:left;
+    margin:5px 5px 0px 20px;
+    border-color:#3D4337;
+    border-style:solid;
+    border-left-width:6px;
+    border-top-width:1px;
+    border-bottom-width:1px;
+    border-right-width:2px;
+    padding:5px;
+    border-radius:2px;
+    -moz-border-radius:2px;
+    -webkit-border-radius:2px;
 }
 
 #armorWrap{
-background:#000;
-float:left;
-margin:5px 5px 0px 20px;
-border-color:#3D4337;
-border-style:solid;
-border-left-width:6px;
-border-top-width:1px;
-border-bottom-width:1px;
-border-right-width:2px;
-padding:5px 10px;
-border-radius:2px;
--moz-border-radius:2px;
--webkit-border-radius:2px;
+    background:#000;
+    float:left;
+    margin:5px 5px 0px 20px;
+    border-color:#3D4337;
+    border-style:solid;
+    border-left-width:6px;
+    border-top-width:1px;
+    border-bottom-width:1px;
+    border-right-width:2px;
+    padding:5px 10px;
+    border-radius:2px;
+    -moz-border-radius:2px;
+    -webkit-border-radius:2px;
 }
 
 #tonnage {
-  float:left;
-  color: white;
-  margin-right:10px;
+    float:left;
+    color: white;
+    margin-right:10px;
 }
 
 #freetonnage {
-  float:left;
-  color: white;
+    float:left;
+    color: white;
 }
 
 #totalArmor {
-  float:left;
-  color: white;
+    float:left;
+    color: white;
 }
 
 #critWrap{
-background:#000;
-float:left;
-margin:5px 5px 0px 20px;
-border-color:#3D4337;
-border-style:solid;
-border-left-width:6px;
-border-top-width:1px;
-border-bottom-width:1px;
-border-right-width:2px;
-padding:5px 10px;
-border-radius:2px;
--moz-border-radius:2px;
--webkit-border-radius:2px;
+    background:#000;
+    float:left;
+    margin:5px 5px 0px 20px;
+    border-color:#3D4337;
+    border-style:solid;
+    border-left-width:6px;
+    border-top-width:1px;
+    border-bottom-width:1px;
+    border-right-width:2px;
+    padding:5px 10px;
+    border-radius:2px;
+    -moz-border-radius:2px;
+    -webkit-border-radius:2px;
 }
 
 #freeCrits {
@@ -867,204 +935,228 @@ border-radius:2px;
 }
 
 #heatWrap{
-background:#000;
-float:left;
-margin:5px 5px 0px 20px;
-border-color:#3D4337;
-border-style:solid;
-border-left-width:6px;
-border-top-width:1px;
-border-bottom-width:1px;
-border-right-width:2px;
-padding:5px 10px;
-border-radius:2px;
--moz-border-radius:2px;
--webkit-border-radius:2px;
+    background:#000;
+    float:left;
+    margin:5px 5px 0px 20px;
+    border-color:#3D4337;
+    border-style:solid;
+    border-left-width:6px;
+    border-top-width:1px;
+    border-bottom-width:1px;
+    border-right-width:2px;
+    padding:5px 10px;
+    border-radius:2px;
+    -moz-border-radius:2px;
+    -webkit-border-radius:2px;
 }
 
 #heat {
-float:left;
-color: white;
-margin-right:10px;
+    float:left;
+    color: white;
+    margin-right:10px;
 }
 
 #effectiveheat {
-float:left;
-color: white;
+    float:left;
+    color: white;
 }
 
 #speedWrap{
-background:#000;
-float:left;
-margin:5px 5px 0px 18px;
-border-color:#3D4337;
-border-style:solid;
-border-left-width:2px;
-border-top-width:1px;
-border-bottom-width:1px;
-border-right-width:6px;
-padding:5px 10px;
-border-radius:2px;
--moz-border-radius:2px;
--webkit-border-radius:2px;
+    background:#000;
+    float:left;
+    margin:5px 5px 0px 18px;
+    border-color:#3D4337;
+    border-style:solid;
+    border-left-width:2px;
+    border-top-width:1px;
+    border-bottom-width:1px;
+    border-right-width:6px;
+    padding:5px 10px;
+    border-radius:2px;
+    -moz-border-radius:2px;
+    -webkit-border-radius:2px;
 }
 
 #speed {
-color: white;
+    color: white;
 }
 
 #leftInfo{
     color: white;
-    height:100px;
-    width:100px;
-	border-radius:2px;
-	background:#000;
+    border-radius:2px;
+    background:#000;
+	text-align:center;
 }
 
 #rightInfo{
     color: white;
-    height:100px;
-    width:100px;
-	border-radius:2px;
-	background:#000;
+    border-radius:2px;
+    background:#000;
+	text-align:center;
+}
+
+#costInfo{
+    color: white;
+    border-radius:2px;
+    background:#000;
+	text-align:center;
+}
+
+.infoTextWrap {
+ margin:9px 5px 3px 5px;
+ float:left;
+ display:inline-block;
 }
 
 #commentsWrap{
-background:#718ba2;
-float:left;
-margin:5px 5px 0px 6px;
-padding:3px 4px 4px 8px;
+    background:#718ba2;
+    float:left;
+    margin:5px 5px 0px 6px;
+    padding:3px 4px 4px 8px;
 }
 
 #comments{
 }
 
 #itemInfo{
- height:190px;
- margin:5px 5px 0px 5px;
-border-color:#AE9B4C;
-border-style:solid;
-border-left-width:2px;
-border-top-width:1px;
-border-bottom-width:1px;
-border-right-width:6px;
-padding:2px 5px 0px 5px;
-border-radius:2px;
--moz-border-radius:2px;
--webkit-border-radius:2px;
-color:#fff;
+    height:190px;
+    margin:5px 5px 0px 5px;
+    border-color:#AE9B4C;
+    border-style:solid;
+    border-left-width:2px;
+    border-top-width:1px;
+    border-bottom-width:1px;
+    border-right-width:6px;
+    padding:2px 5px 0px 5px;
+    border-radius:2px;
+    -moz-border-radius:2px;
+    -webkit-border-radius:2px;
+    color:#fff;
 }
 
 /* ----  All Component Button Stylings ---- */
 
 .buttonWrapper {
- text-align:center;
- margin:10px 0px;
+    text-align:center;
+    margin:10px 0px;
 }
 
 .toggleButton {
- padding:3px;
- border-color:#393E44;
- border-style:solid;
- border-top-width:1px;
- border-bottom-width:1px;
- border-left-width:4px;
- border-right-width:2px;
- display:inline-block;
- text-align:left;
- margin:0px 3px;
- min-width:85px;
- color:#fff;
- border-radius:2px;
- -webkit-border-radius:2px;
- -moz-border-radius:2px;
+    padding:3px;
+    border-color:#393E44;
+    border-style:solid;
+    border-top-width:1px;
+    border-bottom-width:1px;
+    border-left-width:4px;
+    border-right-width:2px;
+    display:inline-block;
+    text-align:left;
+    margin:0px 3px;
+    color:#fff;
+    border-radius:2px;
+    -webkit-border-radius:2px;
+    -moz-border-radius:2px;
 }
 
 .toggleButton:hover{
- background:#AE9B4C;
- border-color:#AE9B4C;
- cursor:pointer;
+    background:#AE9B4C;
+    border-color:#AE9B4C;
+    cursor:pointer;
 }
 
 #rightInfo .toggleButton{
-  margin:5px 5px 0px 5px;
+	margin:5px 5px 3px 5px;
+	padding:3px 2px;
+}
+
+#leftInfo .toggleButton{
+	margin:5px 5px 3px 5px;
+	padding:3px 10px;
+}
+
+.buttonWrapper .toggleButton {
+ min-width:85px;
+}
+
+.armorButton {
+ min-width:50px;
 }
 
 .activeButton {
-border-color:#AE9B4C;
+    border-color:#AE9B4C;
 }
 
 
 /* ---- Weapon Component Menu Stylings ----- */
 
 #armament {
-display:block;
+    display:block;
 }
 
 #ballisticList{
-display:block;
+    display:block;
 }
 
 #ballisticWeapon {
- display:block;
- height:475px;
+    display:block;
+    height:475px;
 }
 
 #ballisticAmmo{
- display:none;
- height:675px;
- }
- 
- #energyList{
-display:none;
+    display:none;
+    height:675px;
+}
+
+#energyList{
+    display:none;
 }
 
 #energyWeapon {
- display:block;
- height:511px;
+    display:block;
+    height:511px;
 }
 
 #missileList{
-display:none;
+    display:none;
 }
 
 #missileWeapon {
- display:block;
- height:475px;
+    display:block;
+    height:475px;
 }
 
 #missileAmmo{
- display:none;
- height:675px;
- }
- 
- #utilities{
- display:none;
- }
-
- #internals{
-height:705px;
-display:block;
+    display:none;
+    height:675px;
 }
 
- #engines{
-display:none;
+#utilities{
+    display:none;
 }
- 
+
+#internals{
+    height:705px;
+    display:block;
+}
+
+#engines{
+    display:none;
+}
+
 #xlEngine{
-height:675px;
-display:none;
+    height:675px;
+    display:none;
 }
 
 #stdEngine{
-height:675px;
-display:block;
+    height:675px;
+    display:block;
 }
 
 #upgrades{
- display:none;
- height:715px;
- }
+    display:none;
+    height:715px;
+}
 
 
 /*
@@ -1132,7 +1224,7 @@ Rose Chart CSS (SVG)
 */
 
 .ui-draggable{
-min-width:151px;
+    min-width:151px;
 }
 
 
@@ -1140,8 +1232,42 @@ min-width:151px;
 ------ Share popup form ----------
 */
 
-label, input { display:block; }
-
-input.dialog { margin-bottom:12px; width:95%; padding: .4em; }
+input.dialog { 
+ margin-bottom:12px; 
+ width:95%; 
+ padding: .4em; 
+ border-radius:2px;
+ border-color:#393E44;
+ border-style:solid;
+ border-left-width:2px;
+ border-top-width:1px;
+ border-bottom-width:1px;
+ border-right-width:6px;
+ background:#000;
+ color:#fff; }
 
 fieldset { padding:0; border:0; margin-top:25px; }
+
+fieldset label {
+ color:#fff;
+}
+
+.ui-widget-overlay{
+ background:#000;
+ opacity:.8;
+}
+
+.modalwindow{
+background:#000;
+color:#fff;
+border-radius:2px;
+ border-color:#3d4337;
+ border-style:solid;
+ border-left-width:10px;
+ border-top-width:2px;
+ border-bottom-width:2px;
+ border-right-width:4px;
+ -webkit-box-shadow:  3px 3px 10px 0px #000000;
+ box-shadow:  3px 3px 10px 0px #000000;
+ padding:10px;
+}

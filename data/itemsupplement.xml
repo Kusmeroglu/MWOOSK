@@ -1,157 +1,187 @@
 <itemssupplement>
     <weapons>
-        <item id="1003" shortname="SLAS" longname="Small Laser"></item>
-        <item id="1012" shortname="SPLS" longname="Small Pulse Laser"></item>
-        <item id="1001" shortname="MLAS" longname="Medium Laser" ></item>
-        <item id="1011" shortname="MPLS" longname="Medium Pulse Laser"></item>
-        <item id="1008" shortname="LLAS" longname="Large Laser"></item>
-        <item id="1010" shortname="LPLS" longname="Large Pulse Laser"></item>
-        <item id="1005" shortname="ERLL" longname="ER Large Laser"></item>
-        <item id="1009" shortname="PPC" longname="PPC"></item>
-        <item id="1006" shortname="ERPPC" longname="ER PPC"></item>
-        <item id="1037" shortname="TAG" longname="TAG"></item>
-        <item id="1007" shortname="LAME" longname="Flamer"></item>
-        <item id="1018" shortname="AC2" longname="AC/2"></item>
-        <item id="1019" shortname="AC5" longname="AC/5"></item>
-        <item id="1025" shortname="UAC5" longname="Ultra AC/5"></item>
-        <item id="1020" shortname="AC10" longname="AC/10"></item>
-        <item id="1000" shortname="AC20" longname="AC/20"></item>
-        <item id="1021" shortname="GUASS" longname="Gauss Rifle"></item>
-        <item id="1023" shortname="LBX" longname="LB 10-X AC"></item>
-        <item id="1024" shortname="MG" longname="Machine Gun"></item>
-        <item id="1032" shortname="SSRM" longname="Streak SRM 2"></item>
-        <item id="1030" shortname="SRM2" longname="SRM 2"></item>
-        <item id="1031" shortname="SRM6" longname="SRM 6"></item>
-        <item id="1004" shortname="SRM4" longname="SRM 4"></item>
-        <item id="1026" shortname="LRM5" longname="LRM 5"></item>
-        <item id="1027" shortname="LRM10" longname="LRM 10"></item>
-        <item id="1028" shortname="LRM15" longname="LRM 15"></item>
-        <item id="1002" shortname="LRM20" longname="LRM 20"></item>
-        <item id="1029" shortname="NARC" longname="NARC"></item>
+        <item id="1003" shortname="SLAS" longname="Small Laser" cbill="22,500" hp="10"></item>
+        <item id="1012" shortname="SPLS" longname="Small Pulse Laser" cbill="32,000" hp="10"></item>
+        <item id="1001" shortname="MLAS" longname="Medium Laser" cbill="80,000" hp="10"></item>
+        <item id="1011" shortname="MPLS" longname="Medium Pulse Laser" cbill="120,000" hp="10"></item>
+        <item id="1008" shortname="LLAS" longname="Large Laser" cbill="200,000" hp="10"></item>
+        <item id="1010" shortname="LPLS" longname="Large Pulse Laser" cbill="350,000" hp="10"></item>
+        <item id="1005" shortname="ERLL" longname="ER Large Laser" cbill="400,000" hp="10"></item>
+        <item id="1009" shortname="PPC" longname="PPC" cbill="400,000" hp="10"></item>
+        <item id="1006" shortname="ERPPC" longname="ER PPC" cbill="600,000" hp="10"></item>
+        <item id="1037" shortname="TAG" longname="TAG" cbill="100,000" hp="10" damage="0" duration="∞"></item>
+        <item id="1007" shortname="LAME" longname="Flamer" cbill="15,000" hp="10"></item>
+        <item id="1018" shortname="AC/2" longname="Autocannon/2" cbill="150,000" hp="10"></item>
+        <item id="1019" shortname="AC/5" longname="Autocannon/5" cbill="250,000" hp="10"></item>
+        <item id="1025" shortname="UAC/5" longname="Ultra Autocannon/5" cbill="400,000" hp="10"></item>
+        <item id="1020" shortname="AC/10" longname="Autocannon/10" cbill="400,000" hp="10"></item>
+        <item id="1000" shortname="AC/20" longname="Autocannon/20" cbill="600,000" hp="18"></item>
+        <item id="1021" shortname="Guass" longname="Gauss Rifle" cbill="600,000" hp="3"></item>
+        <item id="1023" shortname="LBX" longname="LB 10-X Autocannon" cbill="800,000" hp="10"></item>
+        <item id="1024" shortname="MG" longname="Machine Gun" cbill="10,000" hp="10"></item>
+        <item id="1032" shortname="SSRM" longname="Streak SRM 2" cbill="30,000" hp="10"></item>
+        <item id="1030" shortname="SRM2" longname="SRM 2" cbill="20,000" hp="10"></item>
+        <item id="1031" shortname="SRM6" longname="SRM 6" cbill="160,000" hp="10"></item>
+        <item id="1004" shortname="SRM4" longname="SRM 4" cbill="120,000" hp="10"></item>
+        <item id="1026" shortname="LRM5" longname="LRM 5" cbill="60,000" hp="10"></item>
+        <item id="1027" shortname="LRM10" longname="LRM 10" cbill="200,000" hp="10"></item>
+        <item id="1028" shortname="LRM15" longname="LRM 15" cbill="350,000" hp="10"></item>
+        <item id="1002" shortname="LRM20" longname="LRM 20" cbill="500,000" hp="10"></item>
+        <item id="1029" shortname="NARC" longname="NARC" cbill="200,000" hp="10" damage="0"></item>
     </weapons>
+    <internals>
+        <item id="3000" type="heatsink" tons="1" slots="1" shortname="HS" longname="Single Heat Sink" cbill="4,000" hp="10">Single Heat Sink</item>
+        <item id="3001" type="heatsink" tons="1" slots="3" shortname="DHS" longname="Double Heat Sink" cbill="12,000" hp="10">Double Heat Sink</item>
+        <item id="1014" type="utility" hardpoint="ams" damage="2.00" numfiring="1" heat="0.00" cooldown="0.00" range="90" maxrange="200" slots="1" tons="0.50" ammoper="1000" shortname="AMS" longname="Anti-Missile System" cbill="200,000" hp="10">Anti-Missile System</item>
+        <item id="2001" type="util" tons="1" slots="1" shortname="AMS Ammo" longname="Anti-Missile System Ammo" cbill="2,000" hp="10">AMS Ammo</item>
+        <item id="9003" type ="util" tons=".5" slots="1" maxrange="0" shortname="CASE" longname="C.A.S.E." cbill="100,000" hp="10">C.A.S.E.</item>
+        <item id="9002" type="util" tons="1.5" slots="2" shortname="BAP" longname="Beagle Active Probe" cbill="400,000" hp="10">Beagle Active Probe</item>
+        <item id="9006" type ="util" tons="1.5" slots="2" maxrange="250" ammoper="0" shortname="GECM" longname="Guardian ECM" cbill="400,000" hp="10">Guardian ECM</item>
+        <item id="1500" type ="jumpjet" tons="2" minTons="90" maxTons="200" slots="1" maxrange="0" ammoper="0" class="assault" shortname="JJI" longname="Jump Jets - Class I" cbill="0" hp="10">Jump Jets - Class I</item>
+        <item id="1501" type ="jumpjet" tons="1" minTons="80" maxTons="90" slots="1" maxrange="0" ammoper="0" class="assault" shortname="JJII" longname="Jump Jets - Class II" cbill="0" hp="10">Jump Jets - Class II</item>
+        <item id="1502" type ="jumpjet" tons="1" minTons="60" maxTons="80" slots="1" maxrange="0" ammoper="0" class="heavy" shortname="JJIII" longname="Jump Jets - Class III" cbill="108,000" hp="10">Jump Jets - Class III</item>
+        <item id="1503" type ="jumpjet" tons=".5" minTons="40" maxTons="60" slots="1" maxrange="0" ammoper="0" class="light" shortname="JJIV" longname="Jump Jets - Class IV" cbill="76,000" hp="10">Jump Jets - Class IV</item>
+        <item id="1504" type ="jumpjet" tons=".5" minTons="20" maxTons="40" slots="1" maxrange="0" ammoper="0" class="light" shortname="JJV" longname="Jump Jets - Class V" cbill="44,000" hp="10">Jump Jets - Class V</item>
+    </internals>
+    <ammos>
+        <item id="2005" shortname="AC/2 Ammo" longname="Autocannon/2 Ammo" cbill="975" hp="10" apt="75"></item>
+        <item id="2006" shortname="AC/5 Ammo" longname="Autocannon/5 Ammo" cbill="4,500" hp="10" apt="30"></item>
+        <item id="2012" shortname="UAC/5 Ammo" longname="Ultra Autocannon/5 Ammo" cbill="9,000" hp="10" apt="25"></item>
+        <item id="2007" shortname="AC/10 Ammo" longname="Autocannon/10 Ammo" cbill="6,000" hp="10" apt="15"></item>
+        <item id="2010" shortname="LBX Ammo" longname="LB 10-X Autocannon Ammo" cbill="19,995" hp="10" apt="15"></item>
+        <item id="2000" shortname="AC/20 Ammo" longname="Autocannon/20 Ammo" cbill="10,003" hp="10" apt="7">o</item>
+        <item id="2008" shortname="Gauss Ammo" longname="Gauss Rifle Ammo" cbill="20,000" hp="10" apt="10"></item>
+        <item id="2011" shortname="MG Ammo" longname="Machine Gun Ammo" cbill="2,000" hp="10" apt="2000"></item>
+        <item id="2028" shortname="SRM Ammo" longname="SRM Ammo" cbill="27,000" hp="10" apt="100"></item>
+        <item id="2031" shortname="SRM+ Ammo" longname="SRM Ammo + Artemis IV" cbill="54,000" hp="10" apt="100"></item>
+        <item id="2027" shortname="LRM Ammo" longname="LRM Ammo" cbill="30,060" hp="10" apt="180"></item>
+        <item id="2030" shortname="LRM+ Ammo" longname="LRM Ammo + Artemis IV" cbill="60,120" hp="10" apt="180"></item>
+        <item id="2029" shortname="SSRM Ammo" longname="Streak SRM Ammo" cbill="54,000" hp="10" apt="100"></item>
+        <item id="2017" shortname="NARC Ammo" longname="NARC Ammo" cbill="6,000" hp="10" apt="6"></item>
+    </ammos>
     <engines>
-        <plant id="3218" shortname="100 STD" longname="Standard 100"></plant>
-        <plant id="3219" shortname="105 STD" longname="Standard 105"></plant>
-        <plant id="3220" shortname="110 STD" longname="Standard 110"></plant>
-        <plant id="3221" shortname="115 STD" longname="Standard 115"></plant>
-        <plant id="3222" shortname="120 STD" longname="Standard 120"></plant>
-        <plant id="3223" shortname="125 STD" longname="Standard 125"></plant>
-        <plant id="3224" shortname="130 STD" longname="Standard 130"></plant>
-        <plant id="3225" shortname="135 STD" longname="Standard 135"></plant>
-        <plant id="3226" shortname="140 STD" longname="Standard 140"></plant>
-        <plant id="3227" shortname="145 STD" longname="Standard 145"></plant>
-        <plant id="3228" shortname="150 STD" longname="Standard 150"></plant>
-        <plant id="3229" shortname="155 STD" longname="Standard 155"></plant>
-        <plant id="3230" shortname="160 STD" longname="Standard 160"></plant>
-        <plant id="3231" shortname="165 STD" longname="Standard 165"></plant>
-        <plant id="3232" shortname="170 STD" longname="Standard 170"></plant>
-        <plant id="3233" shortname="175 STD" longname="Standard 175"></plant>
-        <plant id="3234" shortname="180 STD" longname="Standard 180"></plant>
-        <plant id="3235" shortname="185 STD" longname="Standard 185"></plant>
-        <plant id="3236" shortname="190 STD" longname="Standard 190"></plant>
-        <plant id="3237" shortname="195 STD" longname="Standard 195"></plant>
-        <plant id="3238" shortname="200 STD" longname="Standard 200"></plant>
-        <plant id="3239" shortname="205 STD" longname="Standard 205"></plant>
-        <plant id="3240" shortname="210 STD" longname="Standard 210"></plant>
-        <plant id="3241" shortname="215 STD" longname="Standard 215"></plant>
-        <plant id="3242" shortname="220 STD" longname="Standard 220"></plant>
-        <plant id="3243" shortname="225 STD" longname="Standard 225"></plant>
-        <plant id="3244" shortname="230 STD" longname="Standard 230"></plant>
-        <plant id="3245" shortname="235 STD" longname="Standard 235"></plant>
-        <plant id="3246" shortname="240 STD" longname="Standard 240"></plant>
-        <plant id="3247" shortname="245 STD" longname="Standard 245"></plant>
-        <plant id="3248" shortname="250 STD" longname="Standard 250"></plant>
-        <plant id="3249" shortname="255 STD" longname="Standard 255"></plant>
-        <plant id="3250" shortname="260 STD" longname="Standard 260"></plant>
-        <plant id="3251" shortname="265 STD" longname="Standard 265"></plant>
-        <plant id="3252" shortname="270 STD" longname="Standard 270"></plant>
-        <plant id="3253" shortname="275 STD" longname="Standard 275"></plant>
-        <plant id="3254" shortname="280 STD" longname="Standard 280"></plant>
-        <plant id="3255" shortname="285 STD" longname="Standard 285"></plant>
-        <plant id="3256" shortname="290 STD" longname="Standard 290"></plant>
-        <plant id="3257" shortname="295 STD" longname="Standard 295"></plant>
-        <plant id="3258" shortname="300 STD" longname="Standard 300"></plant>
-        <plant id="3259" shortname="305 STD" longname="Standard 305"></plant>
-        <plant id="3260" shortname="310 STD" longname="Standard 310"></plant>
-        <plant id="3261" shortname="315 STD" longname="Standard 315"></plant>
-        <plant id="3262" shortname="320 STD" longname="Standard 320"></plant>
-        <plant id="3263" shortname="325 STD" longname="Standard 325"></plant>
-        <plant id="3264" shortname="330 STD" longname="Standard 330"></plant>
-        <plant id="3265" shortname="335 STD" longname="Standard 335"></plant>
-        <plant id="3266" shortname="340 STD" longname="Standard 340"></plant>
-        <plant id="3267" shortname="345 STD" longname="Standard 345"></plant>
-        <plant id="3268" shortname="350 STD" longname="Standard 350"></plant>
-        <plant id="3269" shortname="355 STD" longname="Standard 355"></plant>
-        <plant id="3270" shortname="360 STD" longname="Standard 360"></plant>
-        <plant id="3271" shortname="365 STD" longname="Standard 365"></plant>
-        <plant id="3272" shortname="370 STD" longname="Standard 370"></plant>
-        <plant id="3273" shortname="375 STD" longname="Standard 375"></plant>
-        <plant id="3274" shortname="380 STD" longname="Standard 380"></plant>
-        <plant id="3275" shortname="385 STD" longname="Standard 385"></plant>
-        <plant id="3276" shortname="390 STD" longname="Standard 390"></plant>
-        <plant id="3277" shortname="395 STD" longname="Standard 395"></plant>
-        <plant id="3278" shortname="400 STD" longname="Standard 400"></plant>
-        <plant id="3318" shortname="100 XL" longname="XL 100"></plant>
-        <plant id="3319" shortname="105 XL" longname="XL 105"></plant>
-        <plant id="3320" shortname="110 XL" longname="XL 110"></plant>
-        <plant id="3321" shortname="115 XL" longname="XL 115"></plant>
-        <plant id="3322" shortname="120 XL" longname="XL 120"></plant>
-        <plant id="3323" shortname="125 XL" longname="XL 125"></plant>
-        <plant id="3324" shortname="130 XL" longname="XL 130"></plant>
-        <plant id="3325" shortname="135 XL" longname="XL 135"></plant>
-        <plant id="3326" shortname="140 XL" longname="XL 140"></plant>
-        <plant id="3327" shortname="145 XL" longname="XL 145"></plant>
-        <plant id="3328" shortname="150 XL" longname="XL 150"></plant>
-        <plant id="3329" shortname="155 XL" longname="XL 155"></plant>
-        <plant id="3330" shortname="160 XL" longname="XL 160"></plant>
-        <plant id="3331" shortname="165 XL" longname="XL 165"></plant>
-        <plant id="3332" shortname="170 XL" longname="XL 170"></plant>
-        <plant id="3333" shortname="175 XL" longname="XL 175"></plant>
-        <plant id="3334" shortname="180 XL" longname="XL 180"></plant>
-        <plant id="3335" shortname="185 XL" longname="XL 185"></plant>
-        <plant id="3336" shortname="190 XL" longname="XL 190"></plant>
-        <plant id="3337" shortname="195 XL" longname="XL 195"></plant>
-        <plant id="3338" shortname="200 XL" longname="XL 200"></plant>
-        <plant id="3339" shortname="205 XL" longname="XL 205"></plant>
-        <plant id="3340" shortname="210 XL" longname="XL 210"></plant>
-        <plant id="3341" shortname="215 XL" longname="XL 215"></plant>
-        <plant id="3342" shortname="220 XL" longname="XL 220"></plant>
-        <plant id="3343" shortname="225 XL" longname="XL 225"></plant>
-        <plant id="3344" shortname="230 XL" longname="XL 230"></plant>
-        <plant id="3345" shortname="235 XL" longname="XL 235"></plant>
-        <plant id="3346" shortname="240 XL" longname="XL 240"></plant>
-        <plant id="3347" shortname="245 XL" longname="XL 245"></plant>
-        <plant id="3348" shortname="250 XL" longname="XL 250"></plant>
-        <plant id="3349" shortname="255 XL" longname="XL 255"></plant>
-        <plant id="3350" shortname="260 XL" longname="XL 260"></plant>
-        <plant id="3351" shortname="265 XL" longname="XL 265"></plant>
-        <plant id="3352" shortname="270 XL" longname="XL 270"></plant>
-        <plant id="3353" shortname="275 XL" longname="XL 275"></plant>
-        <plant id="3354" shortname="280 XL" longname="XL 280"></plant>
-        <plant id="3355" shortname="285 XL" longname="XL 285"></plant>
-        <plant id="3356" shortname="290 XL" longname="XL 290"></plant>
-        <plant id="3357" shortname="295 XL" longname="XL 295"></plant>
-        <plant id="3358" shortname="300 XL" longname="XL 300"></plant>
-        <plant id="3359" shortname="305 XL" longname="XL 305"></plant>
-        <plant id="3360" shortname="310 XL" longname="XL 310"></plant>
-        <plant id="3361" shortname="315 XL" longname="XL 315"></plant>
-        <plant id="3362" shortname="320 XL" longname="XL 320"></plant>
-        <plant id="3363" shortname="325 XL" longname="XL 325"></plant>
-        <plant id="3364" shortname="330 XL" longname="XL 330"></plant>
-        <plant id="3365" shortname="335 XL" longname="XL 335"></plant>
-        <plant id="3366" shortname="340 XL" longname="XL 340"></plant>
-        <plant id="3367" shortname="345 XL" longname="XL 345"></plant>
-        <plant id="3368" shortname="350 XL" longname="XL 350"></plant>
-        <plant id="3369" shortname="355 XL" longname="XL 355"></plant>
-        <plant id="3370" shortname="360 XL" longname="XL 360"></plant>
-        <plant id="3371" shortname="365 XL" longname="XL 365"></plant>
-        <plant id="3372" shortname="370 XL" longname="XL 370"></plant>
-        <plant id="3373" shortname="375 XL" longname="XL 375"></plant>
-        <plant id="3374" shortname="380 XL" longname="XL 380"></plant>
-        <plant id="3375" shortname="385 XL" longname="XL 385"></plant>
-        <plant id="3376" shortname="390 XL" longname="XL 390"></plant>
-        <plant id="3377" shortname="395 XL" longname="XL 395"></plant>
-        <plant id="3378" shortname="400 XL" longname="XL 400"></plant>
+        <plant id="3218" shortname="100STD" longname="Standard 100" cbill="613,133" hp="10"></plant>
+        <plant id="3219" shortname="105STD" longname="Standard 105" cbill="643,800" hp="10"></plant>
+        <plant id="3220" shortname="110STD" longname="Standard 110" cbill="674,467" hp="10"></plant>
+        <plant id="3221" shortname="115STD" longname="Standard 115" cbill="705,133" hp="10"></plant>
+        <plant id="3222" shortname="120STD" longname="Standard 120" cbill="735,800" hp="10"></plant>
+        <plant id="3223" shortname="125STD" longname="Standard 125" cbill="766,500" hp="10"></plant>
+        <plant id="3224" shortname="130STD" longname="Standard 130" cbill="797,167" hp="10"></plant>
+        <plant id="3225" shortname="135STD" longname="Standard 135" cbill="827,833" hp="10"></plant>
+        <plant id="3226" shortname="140STD" longname="Standard 140" cbill="858,500" hp="10"></plant>
+        <plant id="3227" shortname="145STD" longname="Standard 145" cbill="889,167" hp="10"></plant>
+        <plant id="3228" shortname="150STD" longname="Standard 150" cbill="919,867" hp="10"></plant>
+        <plant id="3229" shortname="155STD" longname="Standard 155" cbill="950,533" hp="10"></plant>
+        <plant id="3230" shortname="160STD" longname="Standard 160" cbill="981,200" hp="10"></plant>
+        <plant id="3231" shortname="165STD" longname="Standard 165" cbill="1,011,867" hp="10"></plant>
+        <plant id="3232" shortname="170STD" longname="Standard 170" cbill="1,042,533" hp="10"></plant>
+        <plant id="3233" shortname="175STD" longname="Standard 175" cbill="1,073,233" hp="10"></plant>
+        <plant id="3234" shortname="180STD" longname="Standard 180" cbill="1,103,900" hp="10"></plant>
+        <plant id="3235" shortname="185STD" longname="Standard 185" cbill="1,134,567" hp="10"></plant>
+        <plant id="3236" shortname="190STD" longname="Standard 190" cbill="1,165,233" hp="10"></plant>
+        <plant id="3237" shortname="195STD" longname="Standard 195" cbill="1,195,900" hp="10"></plant>
+        <plant id="3238" shortname="200STD" longname="Standard 200" cbill="1,226,600" hp="10"></plant>
+        <plant id="3239" shortname="205STD" longname="Standard 205" cbill="1,257,267" hp="10"></plant>
+        <plant id="3240" shortname="210STD" longname="Standard 210" cbill="1,287,933" hp="10"></plant>
+        <plant id="3241" shortname="215STD" longname="Standard 215" cbill="1,318,600" hp="10"></plant>
+        <plant id="3242" shortname="220STD" longname="Standard 220" cbill="1,349,267" hp="10"></plant>
+        <plant id="3243" shortname="225STD" longname="Standard 225" cbill="1,379,967" hp="10"></plant>
+        <plant id="3244" shortname="230STD" longname="Standard 230" cbill="1,410,633" hp="10"></plant>
+        <plant id="3245" shortname="235STD" longname="Standard 235" cbill="1,441,300" hp="10"></plant>
+        <plant id="3246" shortname="240STD" longname="Standard 240" cbill="1,471,967" hp="10"></plant>
+        <plant id="3247" shortname="245STD" longname="Standard 245" cbill="1,502,633" hp="10"></plant>
+        <plant id="3248" shortname="250STD" longname="Standard 250" cbill="1,533,333" hp="10"></plant>
+        <plant id="3249" shortname="255STD" longname="Standard 255" cbill="1,564,000" hp="10"></plant>
+        <plant id="3250" shortname="260STD" longname="Standard 260" cbill="1,594,667" hp="10"></plant>
+        <plant id="3251" shortname="265STD" longname="Standard 265" cbill="1,625,333" hp="10"></plant>
+        <plant id="3252" shortname="270STD" longname="Standard 270" cbill="1,656,000" hp="10"></plant>
+        <plant id="3253" shortname="275STD" longname="Standard 275" cbill="1,686,667" hp="10"></plant>
+        <plant id="3254" shortname="280STD" longname="Standard 280" cbill="1,717,333" hp="10"></plant>
+        <plant id="3255" shortname="285STD" longname="Standard 285" cbill="1,748,000" hp="10"></plant>
+        <plant id="3256" shortname="290STD" longname="Standard 290" cbill="1,778,667" hp="10"></plant>
+        <plant id="3257" shortname="295STD" longname="Standard 295" cbill="1,809,333" hp="10"></plant>
+        <plant id="3258" shortname="300STD" longname="Standard 300" cbill="1,840,000" hp="10"></plant>
+        <plant id="3259" shortname="305STD" longname="Standard 305" cbill="1,870,667" hp="10"></plant>
+        <plant id="3260" shortname="310STD" longname="Standard 310" cbill="1,901,333" hp="10"></plant>
+        <plant id="3261" shortname="315STD" longname="Standard 315" cbill="1,932,000" hp="10"></plant>
+        <plant id="3262" shortname="320STD" longname="Standard 320" cbill="1,962,667" hp="10"></plant>
+        <plant id="3263" shortname="325STD" longname="Standard 325" cbill="1,993,333" hp="10"></plant>
+        <plant id="3264" shortname="330STD" longname="Standard 330" cbill="2,024,000" hp="10"></plant>
+        <plant id="3265" shortname="335STD" longname="Standard 335" cbill="2,054,667" hp="10"></plant>
+        <plant id="3266" shortname="340STD" longname="Standard 340" cbill="2,085,333" hp="10"></plant>
+        <plant id="3267" shortname="345STD" longname="Standard 345" cbill="2,116,000" hp="10"></plant>
+        <plant id="3268" shortname="350STD" longname="Standard 350" cbill="2,146,667" hp="10"></plant>
+        <plant id="3269" shortname="355STD" longname="Standard 355" cbill="2,177,333" hp="10"></plant>
+        <plant id="3270" shortname="360STD" longname="Standard 360" cbill="2,208,000" hp="10"></plant>
+        <plant id="3271" shortname="365STD" longname="Standard 365" cbill="2,238,667" hp="10"></plant>
+        <plant id="3272" shortname="370STD" longname="Standard 370" cbill="2,269,333" hp="10"></plant>
+        <plant id="3273" shortname="375STD" longname="Standard 375" cbill="2,300,000" hp="10"></plant>
+        <plant id="3274" shortname="380STD" longname="Standard 380" cbill="2,330,667" hp="10"></plant>
+        <plant id="3275" shortname="385STD" longname="Standard 385" cbill="2,361,333" hp="10"></plant>
+        <plant id="3276" shortname="390STD" longname="Standard 390" cbill="2,392,000" hp="10"></plant>
+        <plant id="3277" shortname="395STD" longname="Standard 395" cbill="2,422,666" hp="10"></plant>
+        <plant id="3278" shortname="400STD" longname="Standard 400" cbill="2,453,333" hp="10"></plant>
+        <plant id="3318" shortname="100XL" longname="XL 100" cbill="1,632,833" hp="10"></plant>
+        <plant id="3319" shortname="105XL" longname="XL 105" cbill="1,714,500" hp="10"></plant>
+        <plant id="3320" shortname="110XL" longname="XL 110" cbill="1,796,167" hp="10"></plant>
+        <plant id="3321" shortname="115XL" longname="XL 115" cbill="1,877,833" hp="10"></plant>
+        <plant id="3322" shortname="120XL" longname="XL 120" cbill="1,959,500" hp="10"></plant>
+        <plant id="3323" shortname="125XL" longname="XL 125" cbill="2,041,250" hp="10"></plant>
+        <plant id="3324" shortname="130XL" longname="XL 130" cbill="2,122,917" hp="10"></plant>
+        <plant id="3325" shortname="135XL" longname="XL 135" cbill="2,204,583" hp="10"></plant>
+        <plant id="3326" shortname="140XL" longname="XL 140" cbill="2,286,250" hp="10"></plant>
+        <plant id="3327" shortname="145XL" longname="XL 145" cbill="2,367,917" hp="10"></plant>
+        <plant id="3328" shortname="150XL" longname="XL 150" cbill="2,449,667" hp="10"></plant>
+        <plant id="3329" shortname="155XL" longname="XL 155" cbill="2,531,333" hp="10"></plant>
+        <plant id="3330" shortname="160XL" longname="XL 160" cbill="2,613,000" hp="10"></plant>
+        <plant id="3331" shortname="165XL" longname="XL 165" cbill="2,694,667" hp="10"></plant>
+        <plant id="3332" shortname="170XL" longname="XL 170" cbill="2,776,333" hp="10"></plant>
+        <plant id="3333" shortname="175XL" longname="XL 175" cbill="2,858,083" hp="10"></plant>
+        <plant id="3334" shortname="180XL" longname="XL 180" cbill="2,939,750" hp="10"></plant>
+        <plant id="3335" shortname="185XL" longname="XL 185" cbill="3,021,417" hp="10"></plant>
+        <plant id="3336" shortname="190XL" longname="XL 190" cbill="3,103,083" hp="10"></plant>
+        <plant id="3337" shortname="195XL" longname="XL 195" cbill="3,184,750" hp="10"></plant>
+        <plant id="3338" shortname="200XL" longname="XL 200" cbill="3,266,500" hp="10"></plant>
+        <plant id="3339" shortname="205XL" longname="XL 205" cbill="3,348,167" hp="10"></plant>
+        <plant id="3340" shortname="210XL" longname="XL 210" cbill="3,429,833" hp="10"></plant>
+        <plant id="3341" shortname="215XL" longname="XL 215" cbill="3,511,500" hp="10"></plant>
+        <plant id="3342" shortname="220XL" longname="XL 220" cbill="3,593,167" hp="10"></plant>
+        <plant id="3343" shortname="225XL" longname="XL 225" cbill="3,674,917" hp="10"></plant>
+        <plant id="3344" shortname="230XL" longname="XL 230" cbill="3,756,583" hp="10"></plant>
+        <plant id="3345" shortname="235XL" longname="XL 235" cbill="3,838,250" hp="10"></plant>
+        <plant id="3346" shortname="240XL" longname="XL 240" cbill="3,919,917" hp="10"></plant>
+        <plant id="3347" shortname="245XL" longname="XL 245" cbill="4,001,583" hp="10"></plant>
+        <plant id="3348" shortname="250XL" longname="XL 250" cbill="4,083,333" hp="10"></plant>
+        <plant id="3349" shortname="255XL" longname="XL 255" cbill="4,165,000" hp="10"></plant>
+        <plant id="3350" shortname="260XL" longname="XL 260" cbill="4,246,667" hp="10"></plant>
+        <plant id="3351" shortname="265XL" longname="XL 265" cbill="4,328,333" hp="10"></plant>
+        <plant id="3352" shortname="270XL" longname="XL 270" cbill="4,410,000" hp="10"></plant>
+        <plant id="3353" shortname="275XL" longname="XL 275" cbill="4,491,667" hp="10"></plant>
+        <plant id="3354" shortname="280XL" longname="XL 280" cbill="4,573,333" hp="10"></plant>
+        <plant id="3355" shortname="285XL" longname="XL 285" cbill="4,655,000" hp="10"></plant>
+        <plant id="3356" shortname="290XL" longname="XL 290" cbill="4,736,667" hp="10"></plant>
+        <plant id="3357" shortname="295XL" longname="XL 295" cbill="4,818,333" hp="10"></plant>
+        <plant id="3358" shortname="300XL" longname="XL 300" cbill="4,900,000" hp="10"></plant>
+        <plant id="3359" shortname="305XL" longname="XL 305" cbill="4,981,667" hp="10"></plant>
+        <plant id="3360" shortname="310XL" longname="XL 310" cbill="5,063,333" hp="10"></plant>
+        <plant id="3361" shortname="315XL" longname="XL 315" cbill="5,145,000" hp="10"></plant>
+        <plant id="3362" shortname="320XL" longname="XL 320" cbill="5,226,667" hp="10"></plant>
+        <plant id="3363" shortname="325XL" longname="XL 325" cbill="5,308,333" hp="10"></plant>
+        <plant id="3364" shortname="330XL" longname="XL 330" cbill="5,390,000" hp="10"></plant>
+        <plant id="3365" shortname="335XL" longname="XL 335" cbill="5,471,667" hp="10"></plant>
+        <plant id="3366" shortname="340XL" longname="XL 340" cbill="5,553,333" hp="10"></plant>
+        <plant id="3367" shortname="345XL" longname="XL 345" cbill="5,635,000" hp="10"></plant>
+        <plant id="3368" shortname="350XL" longname="XL 350" cbill="5,716,667" hp="10"></plant>
+        <plant id="3369" shortname="355XL" longname="XL 355" cbill="5,798,333" hp="10"></plant>
+        <plant id="3370" shortname="360XL" longname="XL 360" cbill="5,880,000" hp="10"></plant>
+        <plant id="3371" shortname="365XL" longname="XL 365" cbill="5,961,667" hp="10"></plant>
+        <plant id="3372" shortname="370XL" longname="XL 370" cbill="6,043,333" hp="10"></plant>
+        <plant id="3373" shortname="375XL" longname="XL 375" cbill="6,125,000" hp="10"></plant>
+        <plant id="3374" shortname="380XL" longname="XL 380" cbill="6,206,667" hp="10"></plant>
+        <plant id="3375" shortname="385XL" longname="XL 385" cbill="6,288,333" hp="10"></plant>
+        <plant id="3376" shortname="390XL" longname="XL 390" cbill="6,370,000" hp="10"></plant>
+        <plant id="3377" shortname="395XL" longname="XL 395" cbill="6,451,667" hp="10"></plant>
+        <plant id="3378" shortname="400XL" longname="XL 400" cbill="6,533,333" hp="10"></plant>
     </engines>
-    
+
 </itemssupplement>

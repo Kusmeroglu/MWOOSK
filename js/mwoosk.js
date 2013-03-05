@@ -36,11 +36,11 @@ $(function () {
     function createItemDivFromData(data){
         var itemObj = data["itemObj"];
         var div = $("<div></div>")
-            .attr("class", "item critThree " + itemObj.type + " " + itemObj.id)
+            .attr("class", "item " + itemObj.type + " " + itemObj.id)
             // store all the weapon information in this div
             .data({'itemObj':itemObj, rosechartdata:itemObj.rosechartdata})
             .disableSelection()
-            .text(itemObj.itemName);
+			div.append($("<div class='itemName'>"+itemObj.itemName+"</div><div class='itemPrice'><div class='cbillCost'>"+itemObj.cbill+" cbills</div><div class='mcCost'></div><div class='clear'></div>"));
         if( itemObj.rosechartdata && itemObj.rosechartdata.length ){
             div.hover(
                 function(){
@@ -51,89 +51,170 @@ $(function () {
                 })
         }
         //internal info
-        div.append($("<div class='iteminfo'><div class='infolabel'>Weight:</div>"+itemObj.weight+"</div>"));
-        div.append($("<div class='iteminfo'><div class='infolabel'>Cost:</div>Coming soon!</div>"));
-        div.append($("<div class='iteminfo'><div class='infolabel'>Crits:</div>"+itemObj.critSlots+"</div>"));
-        if (itemObj.type == "weapon"){
-            div.append($("<div class='iteminfo'><div class='infolabel'>Opt. Range:</div>"+itemObj.optimalRange+"</div>"));
-            div.append($("<div class='iteminfo'><div class='infolabel'>Heat:</div>"+itemObj.heat+"</div>"));
+        div.append($("<div class='itemInfo'><div class='infoLabel itemweight'>Weight: "+itemObj.weight+" Tons</div></div>"));
+        div.append($("<div class='itemInfo'><div class='infoLabel itemcrits'>Crit Slots: "+itemObj.critSlots+"</div></div>"));
+        if (itemObj.isWeapon){
+            div.append($("<div class='itemInfo'><div class='infoLabel'>Heat: " + itemObj.heat + "</div></div>"));
+            div.append($("<div class='itemInfo'><div class='infoLabel'>Damage: " + itemObj.damage + "</div></div>"));
+            div.append($("<div class='itemInfo'><div class='infoLabel'>Opt. Range: " + itemObj.optimalRange + "</div></div>"));
+            div.append($("<div class='itemInfo'><div class='infoLabel'>Cooldown: "+itemObj.cooldown+"</div></div>"));
+            div.append($("<div class='itemInfo'><div class='infoLabel'>Min. Range: "+itemObj.minRange+"</div></div>"));
+            if ( itemObj.type == "ballistic"){
+                div.append($("<div class='itemInfo'><div class='infoLabel'>Ammo/Ton: "+itemObj.ammoper+"</div></div>"));
+            }
+            if ( itemObj.type == "energy"){
+                div.append($("<div class='itemInfo'><div class='infoLabel'>Beam Duration: "+itemObj.duration+"</div></div>"));
+            }
+			if ( itemObj.type == "missile"){
+                div.append($("<div class='itemInfo'><div class='infoLabel'>Ammo/Ton: "+itemObj.ammoper+"</div></div>"));
+            }
+            div.append($("<div class='itemInfo'><div class='infoLabel'>Max. Range: "+itemObj.maxRange+"</div></div>"));
+            div.append($("<div class='itemInfo'><div class='infoLabel'>Health: " + itemObj.hp + "</div></div>"));
         }
+		if (itemObj.isEngine){
+            div.append($("<div class='itemInfo'><div class='infoLabel'>Base Heatsinks: "+(10 + ((itemObj.heatsinkslots < 0) ? itemObj.heatsinkslots : 0 ))+"</div></div>"));
+            div.append($("<div class='itemInfo'><div class='infoLabel'>Extra Heatsinks: "+((itemObj.heatsinkslots > 0) ? itemObj.heatsinkslots : 0 )+"</div></div>"));
+        }
+        if (itemObj.isAmmo){
+            div.append($("<div class='itemInfo'><div class='infoLabel'>Ammo/Ton: "+itemObj.ammoper+"</div></div>"));
+            div.append($("<div class='itemInfo'><div class='infoLabel'>Health: " + itemObj.hp + "</div></div>"));
+			div.append($("<div class='clear'></div>"));
+            div.append($("<div class='destructionInfo'><div class='infoLabel'>Destruction Dmg: "+itemObj.ammodamage+" per munition</div></div>"));
+        }
+		if (itemObj.explodeDamage){
+			div.append($("<div class='destructionInfo'><div class='infoLabel'>Destruction Dmg: "+itemObj.explodeDamage+" dmg</div></div>"));
+		}
+		div.append($("<div class='clear'></div>"));
         return div;
     }
 
     function parseItemXML(xml){
-        $(xml).find("weapons > item").each(function () {
+        $(itemXMLsupplemental).find("weapons > item").each(function () {
             // get the supplemental
-            var supplement = $(itemXMLsupplemental).find('weapons > item[id="' + $(this).attr("id") + '"]');
-            var itemObj = new item($(this).attr("id"), supplement.attr('longname') || $(this).text(), $(this).attr("slots"), $(this).attr("tons"), "weapon", $(this).attr("type"));
-            itemObj.damage = parseFloat($(this).attr("damage"));
+            var supplement = $(this);
+            var itemxml = $(xml).find('weapons > item[id="' + supplement.attr("id") + '"]');
+            var itemObj = new item(supplement.attr("id"), supplement.attr('longname') || itemxml.text(), itemxml.attr("slots"), itemxml.attr("tons"), itemxml.attr("type"), itemxml.attr("type"));
+            itemObj.isWeapon = true;
+            itemObj.damage = parseFloat(supplement.attr("damage") || itemxml.attr("damage"));
             itemObj.shortName = supplement.attr('shortname');
-            itemObj.heat = parseFloat($(this).attr("heat"));
-            itemObj.cooldown = parseFloat($(this).attr("cooldown"));
-            itemObj.maxRange = parseFloat($(this).attr("maxrange"));
-            itemObj.dpsmax = parseFloat($(this).attr("dpsmax"));
+			itemObj.cbill = supplement.attr('cbill');
+            itemObj.hp = supplement.attr('hp');
+            itemObj.heat = parseFloat(itemxml.attr("heat"));
+            itemObj.cooldown = parseFloat(itemxml.attr("cooldown"));
+            itemObj.minRange = parseFloat(itemxml.attr("minrange"));
+            itemObj.optimalRange = parseFloat(itemxml.attr("range"));
+            itemObj.maxRange = parseFloat(itemxml.attr("maxrange"));
+            itemObj.dpsmax = parseFloat(itemxml.attr("dpsmax"));
             itemObj.dpsmaxperslot = (Math.round( 100 * (itemObj.dpsmax / itemObj.critSlots)) / 100);
             itemObj.dpsmaxperton = (Math.round(100 * (itemObj.dpsmax / itemObj.weight)) / 100);
             itemObj.dpsmaxperheat = (Math.round(100 * (itemObj.dpsmax / itemObj.heat)) / 100);
-            itemObj.hps = parseFloat($(this).attr("hps"));
-            itemObj.ammoper = parseFloat($(this).attr("ammoper"));
-            itemObj.duration = parseFloat($(this).attr("duration")?$(this).attr("duration"):0);
-            itemObj.ehs = parseFloat($(this).attr("ehs"));
-
-            if ( itemObj.hardpointType == "energy"){
-                itemObj.optimalRange = itemObj.maxRange / 2;
-            } else if ( itemObj.hardpointType == "ballistics" ){
-                itemObj.optimalRange = itemObj.maxRange / 3;
-            } else if ( itemObj.hardpointType == "missile"){
-                itemObj.optimalRange = itemObj.maxRange;
+            itemObj.hps = parseFloat(itemxml.attr("hps"));
+            itemObj.ammoper = parseFloat(itemxml.attr("ammoper"));
+            if ( supplement.attr("internaldamage")){
+                itemObj.explodeDamage = supplement.attr("internaldamage");
             }
+			if (!itemxml.attr("duration")){
+			  itemObj.duration = supplement.attr('duration');
+			}
+			else {
+			  itemObj.duration = parseFloat(itemxml.attr("duration"));
+			}
+            itemObj.ehs = parseFloat(itemxml.attr("ehs"));
 
             itemObj.rosechartdata = [
-                { name:"Damage",   value:$(this).attr("damage"), minvalue:0},
-                { name:"Heat",     value:$(this).attr("heat"), minvalue:0},
-                { name:"HPS",      value:$(this).attr("hps"), minvalue:0},
-                { name:"Weight",   value:$(this).attr("tons"), minvalue:0},
-                { name:"Slots",    value:$(this).attr("slots"), minvalue:0},
-                { name:"Cooldown", value:$(this).attr("cooldown"), minvalue:0},
-                { name:"DPS",      value:$(this).attr("dpsmax"), minvalue:0},
-                { name:"Range",    value:$(this).attr("maxrange"), minvalue: ($(this).attr("minrange")?$(this).attr("minrange"):0)}
+                { name:"Damage",   value:itemxml.attr("damage"), minvalue:0},
+                { name:"Heat",     value:itemxml.attr("heat"), minvalue:0},
+                { name:"HPS",      value:itemxml.attr("hps"), minvalue:0},
+                { name:"Weight",   value:itemxml.attr("tons"), minvalue:0},
+                { name:"Slots",    value:itemxml.attr("slots"), minvalue:0},
+                { name:"Cooldown", value:itemxml.attr("cooldown"), minvalue:0},
+                { name:"DPS",      value:itemxml.attr("dpsmax"), minvalue:0},
+                { name:"Range",    value:itemxml.attr("maxrange"), minvalue: (itemxml.attr("minrange")?itemxml.attr("minrange"):0)}
         //{ name:"Ammo/Ton", value:$(this).attr("ammoper")?$(this).attr("ammoper"):0},
             ];
-			itemObj.type = $(this).attr("type");
             $("#"+itemObj.type+"Weapon").append(createItemDivFromData({itemObj: itemObj}));
         });
-        $(xml).find("ammos > item").each(function () {
-            var itemObj = new item($(this).attr("id"), $(this).text(), $(this).attr("slots"), $(this).attr("tons"), $(this).attr("type"));
+        $(itemXMLsupplemental).find("ammos > item").each(function () {
+            var supplement = $(this);
+            var itemxml = $(xml).find('ammos > item[id="' + supplement.attr("id") + '"]');
+            var itemObj = new item(supplement.attr("id"), itemxml.text(), itemxml.attr("slots"), itemxml.attr("tons"), itemxml.attr("type"));
+            itemObj.isAmmo = true;
+            itemObj.ammoper = supplement.attr('apt');
+            itemObj.hp = supplement.attr('hp');
+            itemObj.shortName = supplement.attr('shortname');
+            itemObj.cbill = supplement.attr('cbill');
+            itemObj.ammodamage = itemxml.attr('internaldamage');
             //$("#ballisticAmmo").append(createItemDivFromData({itemObj: itemObj}));
-			itemObj.type = $(this).attr("type");
             $("#"+itemObj.type+"Ammo").append(createItemDivFromData({itemObj: itemObj}));
         });
-        $(xml).find("internals > item").each(function () {
-            var itemObj = new item($(this).attr("id"), $(this).text(), $(this).attr("slots"), $(this).attr("tons"), $(this).attr("type"), $(this).attr("hardpoint"));
-            if ( $(this).attr("minTons") ){
-                itemObj.mintonnage = parseInt( $(this).attr("minTons") );
+        $(itemXMLsupplemental).find("internals > item").each(function () {
+            var supplement = $(this);
+            var itemObj = new item(supplement.attr("id"), supplement.text(), supplement.attr("slots"), supplement.attr("tons"), supplement.attr("type"), supplement.attr("hardpoint"));
+            itemObj.isInternal = true;
+            itemObj.shortName = supplement.attr('shortname');
+            itemObj.cbill = supplement.attr('cbill');
+            if ( supplement.attr("minTons") ){
+                itemObj.mintonnage = parseInt( supplement.attr("minTons") );
             }
-            if ( $(this).attr("maxTons") ){
-                itemObj.maxtonnage = parseInt( $(this).attr("maxTons") );
+            if ( supplement.attr("maxTons") ){
+                itemObj.maxtonnage = parseInt( supplement.attr("maxTons") );
             }
             $("#internals").append(createItemDivFromData({itemObj: itemObj}));
         });
 		$('#ballisticWeapon').jScrollPane(settings);
 		$('#ballisticAmmo').jScrollPane(settings);
-        $(xml).find("engines > plant").each(function () {
-            var supplement = $(itemXMLsupplemental).find('engines > plant[id="' + $(this).attr("id") + '"]');
-            var itemObj = new item($(this).attr("id"), supplement.attr('longname') || $(this).text(), parseInt($(this).attr("slots")), $(this).attr("tons"), $(this).attr("type"), "engine");
+        $(itemXMLsupplemental).find("engines > plant").each(function () {
+            var supplement = $(this);
+            var itemxml = $(xml).find('engines > plant[id="' + supplement.attr("id") + '"]');
+            var itemObj = new item(supplement.attr("id"), supplement.attr('longname') || itemxml.text(), parseInt(itemxml.attr("slots")), itemxml.attr("tons"), itemxml.attr("type"), "engine");
+            itemObj.isEngine = true;
             itemObj.shortName = supplement.attr('shortname');
-            itemObj.heatsinkslots = parseInt($(this).attr("heatsinkslots"));
+            itemObj.cbill = supplement.attr('cbill');
+            itemObj.heatsinkslots = parseInt(itemxml.attr("heatsinkslots"));
             itemObj.rosechartdata = [];
-			itemObj.type = $(this).attr("type");
-            itemObj.engineSize = $(this).attr("size");
+			itemObj.type = itemxml.attr("type");
+            itemObj.engineSize = itemxml.attr("size");
             $("#"+itemObj.type+"Engine").append(createItemDivFromData({itemObj: itemObj}));
         });
 
         $("#detailContainer div").find('.item').draggable({
             revert: "invalid",
-            helper: "clone",
+            // make a div used for dragging
+            helper: function( event ) {
+                var data = $(this).data();
+                if ( ! data['itemObj']){
+                    return false;
+                }
+                itemObj = data['itemObj'];
+                if (!itemObj) {
+                    console.log("Empty itemObj in add");
+                    return false;
+                }
+
+                var visiblecritslots = itemObj.critSlots;
+                var itemtypeclass = itemObj.type;
+                var itemname = itemObj.itemName;
+                // fix xl engines
+                if (itemObj.type == "xl") {
+                    visiblecritslots = 6;
+                }
+                // add to the limb
+                var div = $("<div style='width:159px'></div>")
+                    .addClass('critItem')
+                    .addClass(itemObj.hardpointType)
+                    .addClass(itemtypeclass)
+                    // store all the weapon information in this div
+                    .data({'itemObj':itemObj, rosechartdata:itemObj.rosechartdata})
+                    .disableSelection()
+                    .append($('<div/>')
+                        .addClass(classLookup[ visiblecritslots ])
+                        .append('<div class="critLabel">' + itemname + '</div>')
+                    );
+                for (var emptyCrit = 1; emptyCrit < visiblecritslots; emptyCrit++) {
+                    div.children("div").append('<div class="emptyCrit">- - - - - - - - - - - - - - - -</div>')
+                }
+                return div;
+            },
             appendTo: 'body',
             snap: ".area",
             snapMode: "inner"
@@ -368,6 +449,9 @@ $(function () {
         //check for info in URLs - simulate selecting the variant
         if (urldata.hasOwnProperty('variant')){
             var mechVariant = urldata['variant'];
+            if (urldata.hasOwnProperty('name')){
+                var mechname = $("#mechNickName").val(urldata['name']) ;
+            }
             // we have data to load
             mechXML.find('mech variant[name="' + mechVariant.replace(new RegExp("_", 'g')," ") + '"]').each(function () {
                 //select the fake selects to trigger real select and set the visuals up correctly
@@ -570,10 +654,8 @@ $(function () {
         height: 500,
         width: 700,
         modal: true,
+        dialogClass: "modalwindow",
         buttons: {
-            Close: function() {
-                $( this ).dialog( "close" );
-            }
         },
         close: function() {
             $("#dialog-form input").val("");
@@ -582,6 +664,8 @@ $(function () {
 
     $('#tinyurlLink').on('click', function(e){
         e.preventDefault();
+        var mechname = $("#mechNickName").val() || "";
+        setURLParameter("name", mechname);
         //var apiKey = "AIzaSyBwChgwfU1FgX9dXWr7UJL7cpClk53T8mI";
         //gapi.client.setApiKey(apiKey);
         gapi.client.load('urlshortener', 'v1', function() {
@@ -603,11 +687,11 @@ $(function () {
 //                    <input type="text" name="shortURL" id="shortURL" class="dialog" />
                     $('#shortURL').val(tinyurl);
 //                        <input type="text" name="shortDesc" id="shortDesc" value="" class="dialog" />
-                    $('#shortDesc').val(description);
+                    $('#shortDesc').val(mechname + " " + description);
 //                        <input type="text" name="shortDescForum" id="shortDescForum" value="" class="dialog" />
-                    $('#shortDescForum').val('[url="' + tinyurl + '"]' + description + '[/url]' );
+                    $('#shortDescForum').val('[url="' + tinyurl + '"]' + mechname + " " + description + '[/url]' );
 //                        <input type="text" name="shortDescHTML" id="shortDescHTML" value="" class="dialog" />
-                    $('#shortDescHTML').val("<a href='" + tinyurl + "'>" + description + "</a>" );
+                    $('#shortDescHTML').val("<a href='" + tinyurl + "'>" + mechname + " " + description + "</a>" );
                     $( "#dialog-form" ).dialog( "open" );
                 }
             });
@@ -800,7 +884,7 @@ $(function () {
                 });
             });
         });
-    })
+    });
 
 });
 

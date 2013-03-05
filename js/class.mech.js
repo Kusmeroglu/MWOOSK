@@ -10,6 +10,7 @@
     this.currentTons = 0;
     this.currentFreeCritSlots = 0;
     this.currentEquivalentHeatSinks = 0;
+    this.currentComponentCost = 0;
     this.limbs = {};
     this.ecm = false;
     this.ecmcount = 0;
@@ -48,12 +49,14 @@
         this.currentEquivalentHeatSinks = 0;
         this.currentActualHeatSinks = 0;
         this.currentFreeCritSlots = 0;
+        this.currentComponentCost = 0;
         for (var limbName in this.limbs) {
             this.currentFreeCritSlots += this.limbs[limbName].getFreeCritSlots();
             this.currentEquivalentHeatSinks += this.limbs[limbName].getEquivalentHeatSinks(this.dhs);
             this.currentActualHeatSinks += this.limbs[limbName].getActualHeatSinks();
+            this.currentComponentCost += this.limbs[limbName].getComponentCost();
         }
-        $("#heat").text("Installed Heat Sinks: " + this.currentActualHeatSinks);
+        $("#heat").text("Installed Heat Sinks: " + this.currentActualHeatSinks + " ");
         $("#effectiveheat").text("Effective Heat Sinks: " + (Math.round(10 * this.currentEquivalentHeatSinks) / 10));
 
         // update engine speed
@@ -64,7 +67,7 @@
             $("#speed").text("Max Speed: " + Math.round(10*maxspeed)/10 + " kph (" + Math.round(10*speedtweak)/10 + ")");
             // also check if having enough heatsinks
             if ( enginedata.heatsinkslots < 0 && $("#mechContainerWrap .heatsink").length < -enginedata.heatsinkslots ){
-                $("#heat").text("Not enough heatsinks, " + (-enginedata.heatsinkslots - $("#mechContainerWrap .heatsink").length) + " more required.");
+                $("#heat").append("<span class='hserror'>(10)</span>");
             }
         } else {
             $("#speed").text("No engine selected.");
@@ -72,6 +75,7 @@
         var structureSlots = (this.endo ? this.endoCritSlots : 0) + (this.ferro ? this.ferroCritSlots : 0);
         this.currentFreeCritSlots -= structureSlots;
         $("#freeCrits").text("Free Crits: " + (this.currentFreeCritSlots));
+        $("#costInfo").text("Components: " + this.currentComponentCost + " cbills");
         return this.currentFreeCritSlots;
     };
 
@@ -339,11 +343,13 @@
             if (itemObj){
                 itemObj.trueName = itemObj.itemName;
                 itemObj.itemName = itemObj.itemName + " + Artemis";
-                $("#detailContainer ." + id).text(itemObj.itemName);
+                $("#detailContainer ." + id + " .itemName").text(itemObj.itemName);
                 itemObj.trueWeight = itemObj.weight;
                 itemObj.weight = itemObj.trueWeight + 1;
                 itemObj.trueCrits = itemObj.critSlots;
                 itemObj.critSlots = itemObj.trueCrits + 1;
+                $("#detailContainer ." + id + " .itemweight").text("Weight: "+itemObj.weight+" Tons");
+                $("#detailContainer ." + id + " .itemcrits").text("Crit Slots: "+itemObj.critSlots);
             }
         });
 
@@ -373,9 +379,11 @@
             var itemObj = $("#detailContainer ." + id).data('itemObj');
             if (itemObj){
                 itemObj.itemName = itemObj.trueName;
-                $("#detailContainer ." + id).text(itemObj.trueName);
+                $("#detailContainer ." + id + " .itemName").text(itemObj.trueName);
                 itemObj.weight = itemObj.trueWeight;
                 itemObj.critSlots = itemObj.trueCrits;
+                $("#detailContainer ." + id + " .itemweight").text("Weight: "+itemObj.weight+" Tons");
+                $("#detailContainer ." + id + " .itemcrits").text("Crit Slots: "+itemObj.critSlots);
             }
         });
 

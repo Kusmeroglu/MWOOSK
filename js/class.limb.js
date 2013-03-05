@@ -138,6 +138,9 @@
         var visiblecritslots = itemObj.critSlots;
         var itemtypeclass = itemObj.type;
         var itemname = itemObj.itemName;
+        if ( itemObj.isAmmo){
+            itemname = itemObj.shortName;
+        }
         if ( itemObj.hardpointType == "engine" && itemObj.heatsinkslots > 0 ){
             visiblecritslots -= itemObj.heatsinkslots;
         }
@@ -390,6 +393,14 @@
         }
         return heatsinks;
     };
+
+    this.getComponentCost = function getComponentCost(){
+        var cost = 0;
+        for (var x = 0; x < this.items.length; x++) {
+            cost += parseInt(this.items[x].cbill.replace(/\,/g,''));
+        }
+        return cost;
+    }
 
     this.init();
 }
