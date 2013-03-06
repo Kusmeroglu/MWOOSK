@@ -50,35 +50,35 @@
   </ammos>
   <engines>
    <plant id="3218" slots="6" tons="1.0" type="std" heatsinkslots="-6" size="100">Standard 100</plant>
-   <plant id="3219" slots="6" tons="2.5" type="std" heatsinkslots="-5" size="105">Standard 105</plant>
-   <plant id="3220" slots="6" tons="2.5" type="std" heatsinkslots="-5" size="110">Standard 110</plant>
-   <plant id="3221" slots="6" tons="3.0" type="std" heatsinkslots="-5" size="115">Standard 115</plant>
-   <plant id="3222" slots="6" tons="3.0" type="std" heatsinkslots="-5" size="120">Standard 120</plant>
+   <plant id="3219" slots="6" tons="2.5" type="std" heatsinkslots="-6" size="105">Standard 105</plant>
+   <plant id="3220" slots="6" tons="2.5" type="std" heatsinkslots="-6" size="110">Standard 110</plant>
+   <plant id="3221" slots="6" tons="3.0" type="std" heatsinkslots="-6" size="115">Standard 115</plant>
+   <plant id="3222" slots="6" tons="3.0" type="std" heatsinkslots="-6" size="120">Standard 120</plant>
    <plant id="3223" slots="6" tons="4.0" type="std" heatsinkslots="-5" size="125">Standard 125</plant>
-   <plant id="3224" slots="6" tons="4.5" type="std" heatsinkslots="-4" size="130">Standard 130</plant>
-   <plant id="3225" slots="6" tons="4.5" type="std" heatsinkslots="-4" size="135">Standard 135</plant>
-   <plant id="3226" slots="6" tons="5.0" type="std" heatsinkslots="-4" size="140">Standard 140</plant>
-   <plant id="3227" slots="6" tons="5.0" type="std" heatsinkslots="-4" size="145">Standard 145</plant>
+   <plant id="3224" slots="6" tons="4.5" type="std" heatsinkslots="-5" size="130">Standard 130</plant>
+   <plant id="3225" slots="6" tons="4.5" type="std" heatsinkslots="-5" size="135">Standard 135</plant>
+   <plant id="3226" slots="6" tons="5.0" type="std" heatsinkslots="-5" size="140">Standard 140</plant>
+   <plant id="3227" slots="6" tons="5.0" type="std" heatsinkslots="-5" size="145">Standard 145</plant>
    <plant id="3228" slots="6" tons="6.5" type="std" heatsinkslots="-4" size="150">Standard 150</plant>
-   <plant id="3229" slots="6" tons="6.5" type="std" heatsinkslots="-3" size="155">Standard 155</plant>
-   <plant id="3230" slots="6" tons="7.0" type="std" heatsinkslots="-3" size="160">Standard 160</plant>
-   <plant id="3231" slots="6" tons="7.0" type="std" heatsinkslots="-3" size="165">Standard 165</plant>
-   <plant id="3232" slots="6" tons="7.0" type="std" heatsinkslots="-3" size="170">Standard 170</plant>
+   <plant id="3229" slots="6" tons="6.5" type="std" heatsinkslots="-4" size="155">Standard 155</plant>
+   <plant id="3230" slots="6" tons="7.0" type="std" heatsinkslots="-4" size="160">Standard 160</plant>
+   <plant id="3231" slots="6" tons="7.0" type="std" heatsinkslots="-4" size="165">Standard 165</plant>
+   <plant id="3232" slots="6" tons="7.0" type="std" heatsinkslots="-4" size="170">Standard 170</plant>
    <plant id="3233" slots="6" tons="9.0" type="std" heatsinkslots="-3" size="175">Standard 175</plant>
-   <plant id="3234" slots="6" tons="9.0" type="std" heatsinkslots="-2" size="180">Standard 180</plant>
-   <plant id="3235" slots="6" tons="9.5" type="std" heatsinkslots="-2" size="185">Standard 185</plant>
-   <plant id="3236" slots="6" tons="9.5" type="std" heatsinkslots="-2" size="190">Standard 190</plant>
-   <plant id="3237" slots="6" tons="10.0" type="std" heatsinkslots="-2" size="195">Standard 195</plant>
+   <plant id="3234" slots="6" tons="9.0" type="std" heatsinkslots="-3" size="180">Standard 180</plant>
+   <plant id="3235" slots="6" tons="9.5" type="std" heatsinkslots="-3" size="185">Standard 185</plant>
+   <plant id="3236" slots="6" tons="9.5" type="std" heatsinkslots="-3" size="190">Standard 190</plant>
+   <plant id="3237" slots="6" tons="10.0" type="std" heatsinkslots="-3" size="195">Standard 195</plant>
    <plant id="3238" slots="6" tons="11.5" type="std" heatsinkslots="-2" size="200">Standard 200</plant>
-   <plant id="3239" slots="6" tons="12.5" type="std" heatsinkslots="-1" size="205">Standard 205</plant>
-   <plant id="3240" slots="6" tons="13.0" type="std" heatsinkslots="-1" size="210">Standard 210</plant>
-   <plant id="3241" slots="6" tons="13.5" type="std" heatsinkslots="-1" size="215">Standard 215</plant>
-   <plant id="3242" slots="6" tons="14.0" type="std" heatsinkslots="-1" size="220">Standard 220</plant>
+   <plant id="3239" slots="6" tons="12.5" type="std" heatsinkslots="-2" size="205">Standard 205</plant>
+   <plant id="3240" slots="6" tons="13.0" type="std" heatsinkslots="-2" size="210">Standard 210</plant>
+   <plant id="3241" slots="6" tons="13.5" type="std" heatsinkslots="-2" size="215">Standard 215</plant>
+   <plant id="3242" slots="6" tons="14.0" type="std" heatsinkslots="-2" size="220">Standard 220</plant>
    <plant id="3243" slots="6" tons="15.0" type="std" heatsinkslots="-1" size="225">Standard 225</plant>
-   <plant id="3244" slots="6" tons="15.5" type="std" heatsinkslots="0" size="230">Standard 230</plant>
-   <plant id="3245" slots="6" tons="16.0" type="std" heatsinkslots="0" size="235">Standard 235</plant>
-   <plant id="3246" slots="6" tons="16.5" type="std" heatsinkslots="0" size="240">Standard 240</plant>
-   <plant id="3247" slots="6" tons="17.0" type="std" heatsinkslots="0" size="245">Standard 245</plant>
+   <plant id="3244" slots="6" tons="15.5" type="std" heatsinkslots="-1" size="230">Standard 230</plant>
+   <plant id="3245" slots="6" tons="16.0" type="std" heatsinkslots="-1" size="235">Standard 235</plant>
+   <plant id="3246" slots="6" tons="16.5" type="std" heatsinkslots="-1" size="240">Standard 240</plant>
+   <plant id="3247" slots="6" tons="17.0" type="std" heatsinkslots="-1" size="245">Standard 245</plant>
    <plant id="3248" slots="6" tons="18.5" type="std" heatsinkslots="0" size="250">Standard 250</plant>
    <plant id="3249" slots="6" tons="19.0" type="std" heatsinkslots="0" size="255">Standard 255</plant>
    <plant id="3250" slots="6" tons="19.5" type="std" heatsinkslots="0" size="260">Standard 260</plant>
@@ -111,35 +111,35 @@
    <plant id="3277" slots="6" tons="56.0" type="std" heatsinkslots="5" size="395">Standard 395</plant>
    <plant id="3278" slots="6" tons="59.5" type="std" heatsinkslots="6" size="400">Standard 400</plant>
    <plant id="3318" slots="12" tons="0.5" type="xl" heatsinkslots="-6" size="100">XL 100</plant>
-   <plant id="3319" slots="12" tons="1.0" type="xl" heatsinkslots="-5" size="105">XL 105</plant>
-   <plant id="3320" slots="12" tons="1.0" type="xl" heatsinkslots="-5" size="110">XL 110</plant>
-   <plant id="3321" slots="12" tons="1.0" type="xl" heatsinkslots="-5" size="115">XL 115</plant>
-   <plant id="3322" slots="12" tons="1.0" type="xl" heatsinkslots="-5" size="120">XL 120</plant>
+   <plant id="3319" slots="12" tons="1.0" type="xl" heatsinkslots="-6" size="105">XL 105</plant>
+   <plant id="3320" slots="12" tons="1.0" type="xl" heatsinkslots="-6" size="110">XL 110</plant>
+   <plant id="3321" slots="12" tons="1.0" type="xl" heatsinkslots="-6" size="115">XL 115</plant>
+   <plant id="3322" slots="12" tons="1.0" type="xl" heatsinkslots="-6" size="120">XL 120</plant>
    <plant id="3323" slots="12" tons="2.0" type="xl" heatsinkslots="-5" size="125">XL 125</plant>
-   <plant id="3324" slots="12" tons="2.5" type="xl" heatsinkslots="-4" size="130">XL 130</plant>
-   <plant id="3325" slots="12" tons="2.5" type="xl" heatsinkslots="-4" size="135">XL 135</plant>
-   <plant id="3326" slots="12" tons="2.5" type="xl" heatsinkslots="-4" size="140">XL 140</plant>
-   <plant id="3327" slots="12" tons="2.5" type="xl" heatsinkslots="-4" size="145">XL 145</plant>
+   <plant id="3324" slots="12" tons="2.5" type="xl" heatsinkslots="-5" size="130">XL 130</plant>
+   <plant id="3325" slots="12" tons="2.5" type="xl" heatsinkslots="-5" size="135">XL 135</plant>
+   <plant id="3326" slots="12" tons="2.5" type="xl" heatsinkslots="-5" size="140">XL 140</plant>
+   <plant id="3327" slots="12" tons="2.5" type="xl" heatsinkslots="-5" size="145">XL 145</plant>
    <plant id="3328" slots="12" tons="4.0" type="xl" heatsinkslots="-4" size="150">XL 150</plant>
-   <plant id="3329" slots="12" tons="4.0" type="xl" heatsinkslots="-3" size="155">XL 155</plant>
-   <plant id="3330" slots="12" tons="4.0" type="xl" heatsinkslots="-3" size="160">XL 160</plant>
-   <plant id="3331" slots="12" tons="4.0" type="xl" heatsinkslots="-3" size="165">XL 165</plant>
-   <plant id="3332" slots="12" tons="4.0" type="xl" heatsinkslots="-3" size="170">XL 170</plant>
+   <plant id="3329" slots="12" tons="4.0" type="xl" heatsinkslots="-4" size="155">XL 155</plant>
+   <plant id="3330" slots="12" tons="4.0" type="xl" heatsinkslots="-4" size="160">XL 160</plant>
+   <plant id="3331" slots="12" tons="4.0" type="xl" heatsinkslots="-4" size="165">XL 165</plant>
+   <plant id="3332" slots="12" tons="4.0" type="xl" heatsinkslots="-4" size="170">XL 170</plant>
    <plant id="3333" slots="12" tons="5.5" type="xl" heatsinkslots="-3" size="175">XL 175</plant>
-   <plant id="3334" slots="12" tons="5.5" type="xl" heatsinkslots="-2" size="180">XL 180</plant>
-   <plant id="3335" slots="12" tons="6.0" type="xl" heatsinkslots="-2" size="185">XL 185</plant>
-   <plant id="3336" slots="12" tons="6.0" type="xl" heatsinkslots="-2" size="190">XL 190</plant>
-   <plant id="3337" slots="12" tons="6.0" type="xl" heatsinkslots="-2" size="195">XL 195</plant>
+   <plant id="3334" slots="12" tons="5.5" type="xl" heatsinkslots="-3" size="180">XL 180</plant>
+   <plant id="3335" slots="12" tons="6.0" type="xl" heatsinkslots="-3" size="185">XL 185</plant>
+   <plant id="3336" slots="12" tons="6.0" type="xl" heatsinkslots="-3" size="190">XL 190</plant>
+   <plant id="3337" slots="12" tons="6.0" type="xl" heatsinkslots="-3" size="195">XL 195</plant>
    <plant id="3338" slots="12" tons="7.5" type="xl" heatsinkslots="-2" size="200">XL 200</plant>
-   <plant id="3339" slots="12" tons="8.5" type="xl" heatsinkslots="-1" size="205">XL 205</plant>
-   <plant id="3340" slots="12" tons="8.5" type="xl" heatsinkslots="-1" size="210">XL 210</plant>
-   <plant id="3341" slots="12" tons="9.0" type="xl" heatsinkslots="-1" size="215">XL 215</plant>
-   <plant id="3342" slots="12" tons="9.0" type="xl" heatsinkslots="-1" size="220">XL 220</plant>
+   <plant id="3339" slots="12" tons="8.5" type="xl" heatsinkslots="-2" size="205">XL 205</plant>
+   <plant id="3340" slots="12" tons="8.5" type="xl" heatsinkslots="-2" size="210">XL 210</plant>
+   <plant id="3341" slots="12" tons="9.0" type="xl" heatsinkslots="-2" size="215">XL 215</plant>
+   <plant id="3342" slots="12" tons="9.0" type="xl" heatsinkslots="-2" size="220">XL 220</plant>
    <plant id="3343" slots="12" tons="10.0" type="xl" heatsinkslots="-1" size="225">XL 225</plant>
-   <plant id="3344" slots="12" tons="10.5" type="xl" heatsinkslots="0" size="230">XL 230</plant>
-   <plant id="3345" slots="12" tons="10.5" type="xl" heatsinkslots="0" size="235">XL 235</plant>
-   <plant id="3346" slots="12" tons="11.0" type="xl" heatsinkslots="0" size="240">XL 240</plant>
-   <plant id="3347" slots="12" tons="11.0" type="xl" heatsinkslots="0" size="245">XL 245</plant>
+   <plant id="3344" slots="12" tons="10.5" type="xl" heatsinkslots="-1" size="230">XL 230</plant>
+   <plant id="3345" slots="12" tons="10.5" type="xl" heatsinkslots="-1" size="235">XL 235</plant>
+   <plant id="3346" slots="12" tons="11.0" type="xl" heatsinkslots="-1" size="240">XL 240</plant>
+   <plant id="3347" slots="12" tons="11.0" type="xl" heatsinkslots="-1" size="245">XL 245</plant>
    <plant id="3348" slots="12" tons="12.5" type="xl" heatsinkslots="0" size="250">XL 250</plant>
    <plant id="3349" slots="12" tons="12.5" type="xl" heatsinkslots="0" size="255">XL 255</plant>
    <plant id="3350" slots="12" tons="13.0" type="xl" heatsinkslots="0" size="260">XL 260</plant>
