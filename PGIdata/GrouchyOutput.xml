@@ -38,14 +38,14 @@
    <item id="2006" type="ballistic" internaldamage="5.00" tons="1" slots="1">AC5Ammo</item>
    <item id="2007" type="ballistic" internaldamage="10.00" tons="1" slots="1">AC10Ammo</item>
    <item id="2010" type="ballistic" internaldamage="10.00" tons="1" slots="1">LB10-XACAmmo</item>
-   <item id="2011" type="MG" internaldamage="0.08" tons="1" slots="1">MachineGunAmmo</item>
+   <item id="2011" type="MG" internaldamage="0.04" tons="1" slots="1">MachineGunAmmo</item>
    <item id="2008" type="ballistic" internaldamage="0.00" tons="1" slots="1">GaussAmmo</item>
    <item id="2012" type="ballistic" internaldamage="5.00" tons="1" slots="1">UltraAC5Ammo</item>
    <item id="2017" type="missile" internaldamage="2.00" tons="1" slots="1">NARCAmmo</item>
-   <item id="2027" type="missile" internaldamage="1.60" tons="1" slots="1">LRMAmmo</item>
+   <item id="2027" type="missile" internaldamage="1.80" tons="1" slots="1">LRMAmmo</item>
    <item id="2028" type="missile" internaldamage="2.50" tons="1" slots="1">SRMAmmo</item>
    <item id="2029" type="missile" internaldamage="2.50" tons="1" slots="1">StreakSRMAmmo</item>
-   <item id="2030" type="missile" internaldamage="1.60" tons="1" slots="1">LRMAmmoArtemis</item>
+   <item id="2030" type="missile" internaldamage="1.80" tons="1" slots="1">LRMAmmoArtemis</item>
    <item id="2031" type="missile" internaldamage="2.50" tons="1" slots="1">SRMAmmoArtemis</item>
   </ammos>
   <engines>
