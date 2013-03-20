@@ -8,7 +8,7 @@
    <item id="1004" type="missile" damage="10.00" numfiring="4" heat="3.00" cooldown="3.75" range="270" minrange="0" maxrange="270" slots="1" tons="2.00" dpsmax="2.67" ammoper="100" hps="0.80" ehs="8">SRM4</item>
    <item id="1005" type="energy" damage="9.00" numfiring="1" heat="9.50" cooldown="3.25" duration="1.00" range="675" minrange="0" maxrange="1350" slots="2" tons="5.00" dpsmax="2.12" ammoper="0" hps="2.92" ehs="29">ERLargeLaser</item>
    <item id="1006" type="energy" damage="10.00" numfiring="1" heat="11.00" cooldown="3.00" range="810" minrange="0" maxrange="1620" slots="3" tons="7.00" dpsmax="3.33" ammoper="0" hps="3.67" ehs="37">ERPPC</item>
-   <item id="1007" type="energy" damage="0.40" numfiring="1" heat="0.60" cooldown="0.00" range="64" minrange="0" maxrange="64" slots="1" tons="1.00" ammoper="0">Flamer</item>
+   <item id="1007" type="energy" damage="0.40" numfiring="1" heat="1.20" cooldown="0.00" range="64" minrange="0" maxrange="64" slots="1" tons="1.00" ammoper="0">Flamer</item>
    <item id="1008" type="energy" damage="9.00" numfiring="1" heat="7.00" cooldown="3.25" duration="1.00" range="450" minrange="0" maxrange="900" slots="2" tons="5.00" dpsmax="2.12" ammoper="0" hps="2.15" ehs="22">LargeLaser</item>
    <item id="1009" type="energy" damage="10.00" numfiring="1" heat="8.00" cooldown="3.00" range="540" minrange="90" maxrange="1080" slots="3" tons="7.00" dpsmax="3.33" ammoper="0" hps="2.67" ehs="27">PPC</item>
    <item id="1010" type="energy" damage="10.00" numfiring="1" heat="7.30" cooldown="3.25" duration="0.75" range="300" minrange="0" maxrange="600" slots="2" tons="7.00" dpsmax="2.50" ammoper="0" hps="2.25" ehs="22">LargePulseLaser</item>
