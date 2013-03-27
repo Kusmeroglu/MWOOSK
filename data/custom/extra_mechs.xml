@@ -96,96 +96,6 @@
 		</mech>
 	</class>
 	<class type="Heavy">
-		<mech type="Jagermech" tonnage="65" chassis="6.5">
-			<variant name="JM6-S" founders="no" jets="0" ecm="no" minengine="130" maxengine="325" modules="2">
-				<limbs>
-					<limb name="leftArm" crits="10" armorFront="40" armorRear="0" maxArmor="40">
-						<internal slots="1">Shoulder</internal>
-						<internal slots="1">Upper Arm Actuator</internal>
-						<hardpoint type="ballistic"/>
-						<hardpoint type="ballistic"/>
-					</limb>
-					<limb name="leftTorso" crits="12" armorFront="40" armorRear="16" maxArmor="58">
-						<hardpoint type="energy"/>
-					</limb>
-					<limb name="centerTorso" crits="8" armorFront="64" armorRear="20" maxArmor="84">
-						<internal slots="4">Gyro</internal>
-						<hardpoint type="engine"/>
-					</limb>
-					<limb name="rightTorso" crits="12" armorFront="40" armorRear="16" maxArmor="58">
-						<hardpoint type="ams"/>
-						<hardpoint type="energy"/>
-					</limb>
-					<limb name="rightArm" crits="10" armorFront="40" armorRear="0" maxArmor="58">
-						<internal slots="1">Shoulder</internal>
-						<internal slots="1">Upper Arm Actuator</internal>
-						<hardpoint type="ballistic"/>
-						<hardpoint type="ballistic"/>
-					</limb>
-					<limb name="leftLeg" crits="2" armorFront="60" armorRear="0" maxArmor="58">
-						<internal slots="1">Hip</internal>
-						<internal slots="1">Upper Leg Actuator</internal>
-						<internal slots="1">Lower Leg Actuator</internal>
-						<internal slots="1">Foot Actuator</internal>
-					</limb>
-					<limb name="rightLeg" crits="2" armorFront="60" armorRear="0" maxArmor="58">
-						<internal slots="1">Hip</internal>
-						<internal slots="1">Upper Leg Actuator</internal>
-						<internal slots="1">Lower Leg Actuator</internal>
-						<internal slots="1">Foot Actuator</internal>
-					</limb>
-					<limb name="head" crits="1" armorFront="18" armorRear="0" maxArmor="18">
-						<internal slots="2">Life Support</internal>
-						<internal slots="2">Sensors</internal>
-						<internal slots="1">Cockpit</internal>
-					</limb>
-				</limbs>
-			</variant>
-			<variant name="JM6-A" founders="no" jets="0" ecm="no" minengine="130" maxengine="325" modules="2">
-				<limbs>
-					<limb name="leftArm" crits="10" armorFront="40" armorRear="0" maxArmor="40">
-						<internal slots="1">Shoulder</internal>
-						<internal slots="1">Upper Arm Actuator</internal>
-						<hardpoint type="ballistic"/>
-						<hardpoint type="missile"/>
-					</limb>
-					<limb name="leftTorso" crits="12" armorFront="40" armorRear="16" maxArmor="58">
-						<hardpoint type="energy"/>
-					</limb>
-					<limb name="centerTorso" crits="8" armorFront="64" armorRear="20" maxArmor="84">
-						<internal slots="4">Gyro</internal>
-						<hardpoint type="engine"/>
-					</limb>
-					<limb name="rightTorso" crits="12" armorFront="40" armorRear="16" maxArmor="58">
-						<hardpoint type="ams"/>
-						<hardpoint type="energy"/>
-					</limb>
-					<limb name="rightArm" crits="10" armorFront="40" armorRear="0" maxArmor="40">
-						<internal slots="1">Shoulder</internal>
-						<internal slots="1">Upper Arm Actuator</internal>
-						<hardpoint type="ballistic"/>
-						<hardpoint type="missile"/>
-					</limb>
-					<limb name="leftLeg" crits="2" armorFront="60" armorRear="0" maxArmor="58">
-						<internal slots="1">Hip</internal>
-						<internal slots="1">Upper Leg Actuator</internal>
-						<internal slots="1">Lower Leg Actuator</internal>
-						<internal slots="1">Foot Actuator</internal>
-					</limb>
-					<limb name="rightLeg" crits="2" armorFront="60" armorRear="0" maxArmor="58">
-						<internal slots="1">Hip</internal>
-						<internal slots="1">Upper Leg Actuator</internal>
-						<internal slots="1">Lower Leg Actuator</internal>
-						<internal slots="1">Foot Actuator</internal>
-					</limb>
-					<limb name="head" crits="1" armorFront="18" armorRear="0" maxArmor="18">
-						<internal slots="2">Life Support</internal>
-						<internal slots="2">Sensors</internal>
-						<internal slots="1">Cockpit</internal>
-					</limb>
-				</limbs>
-			</variant>
-		</mech>
 		<mech type="Orion" tonnage="75" chassis="7.5">
 			<variant name="ON1-K" founders="no" jets="0" ecm="no" minengine="150" maxengine="375" modules="2">
 				<limbs>
@@ -254,7 +164,7 @@
 						<hardpoint type="ams"/>
 						<hardpoint type="ballistic"/>
 					</limb>
-					<limb name="rightArm" crits="9" armorFront="44" armorRear="0" maxArmor="44">
+					<limb name="rightArm" crits="9" armorFront="44" armorRear="0" maxArmor="48">
 						<internal slots="1">Shoulder</internal>
 						<internal slots="1">Upper Arm Actuator</internal>
 						<internal slots="1">Lower Arm Actuator</internal>
@@ -384,7 +294,7 @@
 						<internal slots="1">Hand Actuator</internal>
 						<hardpoint type="missile"/>
 					</limb>
-					<limb name="leftTorso" crits="12" armorFront="54" armorRear="20" maxArmor="78">
+					<limb name="leftTorso" crits="12" armorFront="54" armorRear="20" maxArmor="76">
 						<hardpoint type="missile"/>
 						<hardpoint type="missile"/>
 					</limb>
@@ -392,7 +302,7 @@
 						<internal slots="4">Gyro</internal>
 						<hardpoint type="engine"/>
 					</limb>
-					<limb name="rightTorso" crits="12" armorFront="54" armorRear="20" maxArmor="78">
+					<limb name="rightTorso" crits="12" armorFront="54" armorRear="20" maxArmor="76">
 						<hardpoint type="ams"/>
 						<hardpoint type="energy"/>
 						<hardpoint type="energy"/>
@@ -432,7 +342,7 @@
 						<internal slots="1">Hand Actuator</internal>
 						<hardpoint type="missile"/>
 					</limb>
-					<limb name="leftTorso" crits="12" armorFront="54" armorRear="20" maxArmor="78">
+					<limb name="leftTorso" crits="12" armorFront="54" armorRear="20" maxArmor="76">
 						<hardpoint type="missile"/>
 						<hardpoint type="missile"/>
 						<hardpoint type="missile"/>
@@ -441,7 +351,7 @@
 						<internal slots="4">Gyro</internal>
 						<hardpoint type="engine"/>
 					</limb>
-					<limb name="rightTorso" crits="12" armorFront="54" armorRear="20" maxArmor="78">
+					<limb name="rightTorso" crits="12" armorFront="54" armorRear="20" maxArmor="76">
 						<hardpoint type="ams"/>
 						<hardpoint type="energy"/>
 						<hardpoint type="energy"/>
@@ -452,13 +362,13 @@
 						<internal slots="1">Lower Arm Actuator</internal>
 						<hardpoint type="ballistic"/>
 					</limb>
-					<limb name="leftLeg" crits="2" armorFront="72" armorRear="0" maxArmor="78">
+					<limb name="leftLeg" crits="2" armorFront="72" armorRear="0" maxArmor="76">
 						<internal slots="1">Hip</internal>
 						<internal slots="1">Upper Leg Actuator</internal>
 						<internal slots="1">Lower Leg Actuator</internal>
 						<internal slots="1">Foot Actuator</internal>
 					</limb>
-					<limb name="rightLeg" crits="2" armorFront="72" armorRear="0" maxArmor="78">
+					<limb name="rightLeg" crits="2" armorFront="72" armorRear="0" maxArmor="76">
 						<internal slots="1">Hip</internal>
 						<internal slots="1">Upper Leg Actuator</internal>
 						<internal slots="1">Lower Leg Actuator</internal>

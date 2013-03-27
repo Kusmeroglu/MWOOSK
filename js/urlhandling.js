@@ -3,11 +3,12 @@
  * &&
  * https://developer.mozilla.org/en-US/docs/DOM/Manipulating_the_browser_history
  */
-var urlHistoryStack = [];
+var urlHistoryStack = [];   // Soft URL storage
+var urlHistoryChanges = []; // Hard URL updates go here
 var urlHistorySteps = 0;
 var urlHistoryListener = function () {
+    window.location.assign('#'+urlHistoryStack[urlHistorySteps-2]);
     window.location.reload();
-    //console.log('A reload would have occurred, but I ran into a problem on line 108 of class.limb.js rebuilding the mech from the url');
 };
 
 // Check the visitor's URL every half second and check if they are moving 
@@ -15,10 +16,14 @@ var urlHistoryListener = function () {
 $(function () {
     var historyCheck = function () {
         var steps = urlHistoryStack.length;
-        if(urlHistoryStack.length>1 && window.location.hash.replace('#', '') != urlHistoryStack[steps-1]) {
+        if(urlHistoryStack.length>1 && window.location.hash.replace('#', '') != urlHistoryChanges[urlHistoryChanges.length-1]) {
             if(urlHistorySteps < steps) {
                 urlHistorySteps = steps;
-                window.location.assign('#' + urlHistoryStack[steps-1]);
+
+		// Hard URL update time
+		var newurl = '#' + urlHistoryStack[steps-1];
+		urlHistoryChanges.push(newurl);
+                window.location.assign(newurl);
             } else {
                 urlHistoryListener();
             }
@@ -32,8 +37,9 @@ $(function () {
     
     var tempHash = getURLHash();
     urlHistoryStack.push(tempHash!=null?tempHash:'');
+    urlHistoryChanges.push(tempHash!=null?tempHash:'');
 
-    setInterval(historyCheck, 500);
+    setInterval(historyCheck, 200);
 });
 
 function printLog(message) {
@@ -74,7 +80,7 @@ function getURLHash() {
 
 function setURLHash(newHash) {
     try {
-        window.location.assign('#' + newHash);
+        //window.location.assign('#' + newHash);
         urlHistoryStack.push(newHash);
     } catch (e) {
         printLog('Browser compatibility problem');
