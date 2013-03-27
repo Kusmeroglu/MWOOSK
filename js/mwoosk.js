@@ -664,14 +664,14 @@ $(function () {
 
     $('#tinyurlLink').on('click', function(e){
         e.preventDefault();
-        var mechname = $("#mechNickName").val() || "";
+        var mechname = encodeURIComponent($("#mechNickName").val()) || "";
         setURLParameter("name", mechname);
         //var apiKey = "AIzaSyBwChgwfU1FgX9dXWr7UJL7cpClk53T8mI";
         //gapi.client.setApiKey(apiKey);
         gapi.client.load('urlshortener', 'v1', function() {
             var request = gapi.client.urlshortener.url.insert({
                 'resource': {
-                    'longUrl': window.location.href
+                    'longUrl': getFullURL()
                 }
             });
             var resp = request.execute(function(resp) {

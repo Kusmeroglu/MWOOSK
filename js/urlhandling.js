@@ -16,14 +16,16 @@ var urlHistoryListener = function () {
 $(function () {
     var historyCheck = function () {
         var steps = urlHistoryStack.length;
-        if(urlHistoryStack.length>1 && window.location.hash.replace('#', '') != urlHistoryChanges[urlHistoryChanges.length-1]) {
-            if(urlHistorySteps < steps) {
-                urlHistorySteps = steps;
+        if(urlHistoryStack.length>1 && window.location.hash.replace('#','') != urlHistoryStack[urlHistoryStack.length-1]) {
+	    urlHistorySteps = steps;
 
+	    console.log(urlHistoryStack[steps-1] != urlHistoryChanges[urlHistoryChanges.length-1])
+
+            if(urlHistoryStack[steps-1] != urlHistoryChanges[urlHistoryChanges.length-1]) {
 		// Hard URL update time
-		var newurl = '#' + urlHistoryStack[steps-1];
+		var newurl = urlHistoryStack[steps-1];
 		urlHistoryChanges.push(newurl);
-                window.location.assign(newurl);
+                window.location.assign('#' + newurl);
             } else {
                 urlHistoryListener();
             }
@@ -67,6 +69,10 @@ function stopBench(type) {
 
         printLog(type+' took '+(elapsed/1000)+' seconds');
     }
+}
+
+function getFullURL() {
+    return window.location.href().split('#')[0]+'#'+urlHistoryStack[urlHistorySteps-1]
 }
 
 function getURLHash() {
