@@ -19,8 +19,6 @@ $(function () {
         if(urlHistoryStack.length>1 && window.location.hash.replace('#','') != urlHistoryStack[urlHistoryStack.length-1]) {
 	    urlHistorySteps = steps;
 
-	    console.log(urlHistoryStack[steps-1] != urlHistoryChanges[urlHistoryChanges.length-1])
-
             if(urlHistoryStack[steps-1] != urlHistoryChanges[urlHistoryChanges.length-1]) {
 		// Hard URL update time
 		var newurl = urlHistoryStack[steps-1];
