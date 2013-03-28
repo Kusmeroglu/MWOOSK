@@ -2906,6 +2906,7 @@
                         <internal slots="1">Hand</internal>
                     </limb>
                     <limb name="leftTorso"  crits="12" armorFront="12" armorRear="4" maxArmor="32">
+                        <hardpoint type="ams"></hardpoint>
                     </limb>
                     <limb name="centerTorso"  crits="8" armorFront="16" armorRear="8" maxArmor="44">
                         <internal slots="4">Gyro</internal>
@@ -2913,7 +2914,6 @@
                         <hardpoint type="energy"></hardpoint>
                     </limb>
                     <limb name="rightTorso"  crits="12" armorFront="12" armorRear="4" maxArmor="32">
-                        <hardpoint type="ams"></hardpoint>
                     </limb>
                     <limb name="rightArm"  crits="8" armorFront="10" armorRear="0" maxArmor="24">
                         <internal slots="1">Shoulder</internal>
@@ -2953,6 +2953,7 @@
                         <hardpoint type="ballistic"></hardpoint>
                     </limb>
                     <limb name="leftTorso"  crits="12" armorFront="12" armorRear="4" maxArmor="32">
+                        <hardpoint type="ams"></hardpoint>
                     </limb>
                     <limb name="centerTorso"  crits="8" armorFront="16" armorRear="8" maxArmor="44">
                         <internal slots="4">Gyro</internal>
@@ -2960,7 +2961,6 @@
                         <hardpoint type="engine"></hardpoint>
                     </limb>
                     <limb name="rightTorso"  crits="12" armorFront="12" armorRear="4" maxArmor="32">
-                        <hardpoint type="ams"></hardpoint>
                     </limb>
                     <limb name="rightArm"  crits="8" armorFront="10" armorRear="0" maxArmor="24">
                         <internal slots="1">Shoulder</internal>
@@ -2998,6 +2998,7 @@
                         <internal slots="1">Hand</internal>
                     </limb>
                     <limb name="leftTorso"  crits="12" armorFront="12" armorRear="4" maxArmor="32">
+                        <hardpoint type="ams"></hardpoint>
                     </limb>
                     <limb name="centerTorso"  crits="8" armorFront="16" armorRear="8" maxArmor="44">
                         <internal slots="4">Gyro</internal>
@@ -3006,7 +3007,6 @@
                         <hardpoint type="engine"></hardpoint>
                     </limb>
                     <limb name="rightTorso"  crits="12" armorFront="12" armorRear="4" maxArmor="32">
-                        <hardpoint type="ams"></hardpoint>
                     </limb>
                     <limb name="rightArm"  crits="8" armorFront="10" armorRear="0" maxArmor="24">
                         <internal slots="1">Shoulder</internal>
