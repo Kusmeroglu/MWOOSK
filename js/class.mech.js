@@ -30,7 +30,7 @@
 
     // Endo Steel info
     this.endo = false;
-    this.endoweight = parseFloat(maxTons * .05); // rounded from .25 to .5?
+    this.endoweight = 0;
     this.endoCritSlots = 14;
 
     // Ferro Fibrous info
@@ -39,6 +39,10 @@
     this.ferroCritSlots = 14;
 
     this.jumpjetitemIDs = ["1500", "1501", "1502", "1503", "1504"];
+
+    this.heatBreakdown = {'engine':0,'chassis':0,'heatsinks':0,'ammo':0,'energy':0,'ballistic':0,'missile':0,'other':0};
+    this.weightBreakdown = {'engine':0,'chassis':0,'heatsinks':0,'ammo':0,'energy':0,'ballistic':0,'missile':0,'other':0};
+    this.critsBreakdown = {'engine':0,'chassis':0,'heatsinks':0,'ammo':0,'energy':0,'ballistic':0,'missile':0,'other':0};
 
     this.init = function init(){
 
@@ -52,9 +56,14 @@
         this.currentComponentCost = 0;
         for (var limbName in this.limbs) {
             this.currentFreeCritSlots += this.limbs[limbName].getFreeCritSlots();
-            this.currentEquivalentHeatSinks += this.limbs[limbName].getEquivalentHeatSinks(this.dhs);
-            this.currentActualHeatSinks += this.limbs[limbName].getActualHeatSinks();
-            this.currentComponentCost += this.limbs[limbName].getComponentCost();
+            for ( var item in this.limbs[limbName].items){
+                this.currentEquivalentHeatSinks += this.limbs[limbName].items[item].getEquivalentHeatSinks(this.dhs);
+                this.currentActualHeatSinks += this.limbs[limbName].items[item].getActualHeatSinks();
+                this.currentComponentCost += this.limbs[limbName].items[item].getComponentCost();
+            }
+            //this.currentEquivalentHeatSinks += this.limbs[limbName].getEquivalentHeatSinks(this.dhs);
+            //this.currentActualHeatSinks += this.limbs[limbName].getActualHeatSinks();
+            //this.currentComponentCost += this.limbs[limbName].getComponentCost();
         }
         $("#heat").text("Installed Heat Sinks: " + this.currentActualHeatSinks + " ");
         $("#effectiveheat").text("Effective Heat Sinks: " + (Math.round(10 * this.currentEquivalentHeatSinks) / 10));

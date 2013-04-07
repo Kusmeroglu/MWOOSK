@@ -319,6 +319,7 @@ $(function () {
             mechXML.find('mech[type="' + $("#mechChassis").val() + '"]').each(function () {
                 mechObj = new mech($("#mechChassis").val(), $("#mechVariant").val().replace(new RegExp(" ", 'g'), "_"), parseFloat($(this).attr("tonnage")));
                 mechObj.currentTons = mechObj.chassisTons = parseFloat($(this).attr("chassis"));
+                mechObj.endoweight = parseFloat($(this).attr("endoweight"));
             });
             mechXML.find('mech[type="' + mechObj.chassis + '"] variant[name="' + mechObj.variant.replace(new RegExp("_", 'g')," ") + '"]').each(function () {
                 mechObj.ecm = Boolean($(this).attr("ecm") == "yes");

@@ -39,4 +39,33 @@
     this.rosechartdata = null; // object for chart secret information
     this.elements = []; // track actual on screen elements associated with this item
     this.relatedItems = {}; //track related 'internal' style stuff related to item (xl engine wings)
+
+    //calculate various things about the item
+    this.getActualHeatSinks = function getActualHeatSinks(){
+        if (this.type == "heatsink"){
+            return 1;
+        }
+        // add heatsinks from the engine
+        if (this.hardpointType == "engine"){
+            return 10 + ((this.heatsinkslots < 0) ? this.heatsinkslots : 0 );
+        }
+        return 0;
+    };
+
+    this.getEquivalentHeatSinks = function getEquivalentHeatSinks(isDualHeatSink){
+            if (this.type == "heatsink"){
+                return isDualHeatSink ? 1.4 : 1;
+            }
+            // add heatsinks from the engine
+            if (this.hardpointType == "engine"){
+                return ( isDualHeatSink ? 2 : 1 ) * (  10 + ((this.heatsinkslots < 0) ? this.heatsinkslots : 0 ) );
+            }
+        return 0;
+    };
+
+    this.getComponentCost = function getComponentCost(){
+        return parseInt(this.cbill.replace(/\,/g,''));
+    }
+
+
 }
