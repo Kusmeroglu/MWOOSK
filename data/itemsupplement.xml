@@ -16,13 +16,13 @@
         <item id="1025" shortname="UAC/5" longname="Ultra Autocannon/5" cbill="400,000" hp="10"></item>
         <item id="1020" shortname="AC/10" longname="Autocannon/10" cbill="400,000" hp="10"></item>
         <item id="1000" shortname="AC/20" longname="Autocannon/20" cbill="600,000" hp="18"></item>
-        <item id="1021" shortname="Guass" longname="Gauss Rifle" cbill="600,000" hp="3"></item>
+        <item id="1021" shortname="Gauss" longname="Gauss Rifle" cbill="600,000" hp="3"></item>
         <item id="1023" shortname="LBX" longname="LB 10-X Autocannon" cbill="800,000" hp="10"></item>
         <item id="1024" shortname="MG" longname="Machine Gun" cbill="10,000" hp="10"></item>
         <item id="1032" shortname="SSRM" longname="Streak SRM 2" cbill="30,000" hp="10"></item>
         <item id="1030" shortname="SRM2" longname="SRM 2" cbill="20,000" hp="10"></item>
-        <item id="1031" shortname="SRM6" longname="SRM 6" cbill="160,000" hp="10"></item>
         <item id="1004" shortname="SRM4" longname="SRM 4" cbill="120,000" hp="10"></item>
+        <item id="1031" shortname="SRM6" longname="SRM 6" cbill="160,000" hp="10"></item>
         <item id="1026" shortname="LRM5" longname="LRM 5" cbill="60,000" hp="10"></item>
         <item id="1027" shortname="LRM10" longname="LRM 10" cbill="200,000" hp="10"></item>
         <item id="1028" shortname="LRM15" longname="LRM 15" cbill="350,000" hp="10"></item>
@@ -38,7 +38,7 @@
         <item id="9002" type="util" tons="1.5" slots="2" shortname="BAP" longname="Beagle Active Probe" cbill="400,000" hp="10">Beagle Active Probe</item>
         <item id="9006" type ="util" tons="1.5" slots="2" maxrange="250" ammoper="0" shortname="GECM" longname="Guardian ECM" cbill="400,000" hp="10">Guardian ECM</item>
         <item id="1500" type ="jumpjet" tons="2" minTons="90" maxTons="200" slots="1" maxrange="0" ammoper="0" class="assault" shortname="JJI" longname="Jump Jets - Class I" cbill="0" hp="10">Jump Jets - Class I</item>
-        <item id="1501" type ="jumpjet" tons="1" minTons="80" maxTons="90" slots="1" maxrange="0" ammoper="0" class="assault" shortname="JJII" longname="Jump Jets - Class II" cbill="0" hp="10">Jump Jets - Class II</item>
+        <item id="1501" type ="jumpjet" tons="1" minTons="80" maxTons="89" slots="1" maxrange="0" ammoper="0" class="assault" shortname="JJII" longname="Jump Jets - Class II" cbill="0" hp="10">Jump Jets - Class II</item>
         <item id="1502" type ="jumpjet" tons="1" minTons="60" maxTons="80" slots="1" maxrange="0" ammoper="0" class="heavy" shortname="JJIII" longname="Jump Jets - Class III" cbill="108,000" hp="10">Jump Jets - Class III</item>
         <item id="1503" type ="jumpjet" tons=".5" minTons="40" maxTons="60" slots="1" maxrange="0" ammoper="0" class="light" shortname="JJIV" longname="Jump Jets - Class IV" cbill="76,000" hp="10">Jump Jets - Class IV</item>
         <item id="1504" type ="jumpjet" tons=".5" minTons="20" maxTons="40" slots="1" maxrange="0" ammoper="0" class="light" shortname="JJV" longname="Jump Jets - Class V" cbill="44,000" hp="10">Jump Jets - Class V</item>

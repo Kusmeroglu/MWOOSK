@@ -3,9 +3,9 @@
     <weapons>
         <item id="1000" type="ballistic" damage="20.00" numfiring="1" heat="6.00" cooldown="4.00" range="270" minrange="0" maxrange="810" slots="10" tons="14.00" dpsmax="5.00" ammoper="7" hps="1.50" ehs="15">AC/20</item>
         <item id="1001" type="energy" damage="5.00" numfiring="1" heat="4.00" cooldown="3.00" duration="1.00" range="270" minrange="0" maxrange="540" slots="1" tons="1.00" dpsmax="1.25" ammoper="0" hps="1.33" ehs="13">MediumLaser</item>
-        <item id="1002" type="missile" damage="36.00" numfiring="20" heat="6.00" cooldown="4.75" range="1000" minrange="180" maxrange="1000" slots="5" tons="10.00" dpsmax="7.58" ammoper="180" hps="1.26" ehs="13">LRM20</item>
+        <item id="1002" type="missile" damage="14.00" numfiring="20" heat="6.00" cooldown="4.75" range="1000" minrange="180" maxrange="1000" slots="5" tons="10.00" dpsmax="2.95" ammoper="180" hps="1.26" ehs="13">LRM20</item>
         <item id="1003" type="energy" damage="3.00" numfiring="1" heat="2.00" cooldown="2.25" duration="0.75" range="90" minrange="0" maxrange="180" slots="1" tons="0.50" dpsmax="1.00" ammoper="0" hps="0.89" ehs="9">SmallLaser</item>
-        <item id="1004" type="missile" damage="10.00" numfiring="4" heat="3.00" cooldown="3.75" range="270" minrange="0" maxrange="270" slots="1" tons="2.00" dpsmax="2.67" ammoper="100" hps="0.80" ehs="8">SRM4</item>
+        <item id="1004" type="missile" damage="6.00" numfiring="4" heat="3.00" cooldown="3.75" range="270" minrange="0" maxrange="270" slots="1" tons="2.00" dpsmax="1.60" ammoper="100" hps="0.80" ehs="8">SRM4</item>
         <item id="1005" type="energy" damage="9.00" numfiring="1" heat="9.50" cooldown="3.25" duration="1.00" range="675" minrange="0" maxrange="1350" slots="2" tons="5.00" dpsmax="2.12" ammoper="0" hps="2.92" ehs="29">ERLargeLaser</item>
         <item id="1006" type="energy" damage="10.00" numfiring="1" heat="11.00" cooldown="3.00" range="810" minrange="0" maxrange="1620" slots="3" tons="7.00" dpsmax="3.33" ammoper="0" hps="3.67" ehs="37">ERPPC</item>
         <item id="1007" type="energy" damage="0.40" numfiring="1" heat="0.60" cooldown="0.00" range="64" minrange="0" maxrange="64" slots="1" tons="1.00" ammoper="0">Flamer</item>
@@ -22,13 +22,13 @@
         <item id="1023" type="ballistic" damage="10.00" numfiring="1" heat="2.00" cooldown="2.50" range="540" minrange="0" maxrange="1620" slots="6" tons="11.00" dpsmax="4.00" ammoper="15" hps="0.80" ehs="8">LB 10-X AC</item>
         <item id="1024" type="ballistic" damage="0.04" numfiring="1" heat="0.00" cooldown="0.00" range="90" minrange="0" maxrange="200" slots="1" tons="0.50" ammoper="2000">Machine Gun</item>
         <item id="1025" type="ballistic" damage="5.00" numfiring="1" heat="1.00" cooldown="1.10" range="600" minrange="0" maxrange="1800" slots="5" tons="9.00" dpsmax="4.55" ammoper="25" hps="0.91" ehs="9">Ultra AC/5</item>
-        <item id="1026" type="missile" damage="9.00" numfiring="5" heat="2.00" cooldown="3.25" range="1000" minrange="180" maxrange="1000" slots="1" tons="2.00" dpsmax="2.77" ammoper="180" hps="0.62" ehs="6">LRM5</item>
-        <item id="1027" type="missile" damage="18.00" numfiring="10" heat="4.00" cooldown="3.75" range="1000" minrange="180" maxrange="1000" slots="2" tons="5.00" dpsmax="4.80" ammoper="180" hps="1.07" ehs="11">LRM10</item>
-        <item id="1028" type="missile" damage="27.00" numfiring="15" heat="5.00" cooldown="4.25" range="1000" minrange="180" maxrange="1000" slots="3" tons="7.00" dpsmax="6.35" ammoper="180" hps="1.18" ehs="12">LRM15</item>
+        <item id="1026" type="missile" damage="3.50" numfiring="5" heat="2.00" cooldown="3.25" range="1000" minrange="180" maxrange="1000" slots="1" tons="2.00" dpsmax="1.08" ammoper="180" hps="0.62" ehs="6">LRM5</item>
+        <item id="1027" type="missile" damage="7.00" numfiring="10" heat="4.00" cooldown="3.75" range="1000" minrange="180" maxrange="1000" slots="2" tons="5.00" dpsmax="1.87" ammoper="180" hps="1.07" ehs="11">LRM10</item>
+        <item id="1028" type="missile" damage="10.50" numfiring="15" heat="5.00" cooldown="4.25" range="1000" minrange="180" maxrange="1000" slots="3" tons="7.00" dpsmax="2.47" ammoper="180" hps="1.18" ehs="12">LRM15</item>
         <item id="1029" type="missile" numfiring="1" heat="0.00" cooldown="3.50" range="270" minrange="0" maxrange="270" slots="2" tons="3.00" ammoper="6">NARC</item>
-        <item id="1030" type="missile" damage="5.00" numfiring="2" heat="2.00" cooldown="3.50" range="270" minrange="0" maxrange="270" slots="1" tons="1.00" dpsmax="1.43" ammoper="100" hps="0.57" ehs="6">SRM2</item>
-        <item id="1031" type="missile" damage="15.00" numfiring="6" heat="4.00" cooldown="4.00" range="270" minrange="0" maxrange="270" slots="2" tons="3.00" dpsmax="3.75" ammoper="100" hps="1.00" ehs="10">SRM6</item>
-        <item id="1032" type="missile" damage="5.00" numfiring="2" heat="2.00" cooldown="3.50" range="270" minrange="0" maxrange="270" slots="1" tons="1.50" dpsmax="1.43" ammoper="100" hps="0.57" ehs="6">StreakSRM2</item>
+        <item id="1030" type="missile" damage="3.00" numfiring="2" heat="2.00" cooldown="3.50" range="270" minrange="0" maxrange="270" slots="1" tons="1.00" dpsmax="0.86" ammoper="100" hps="0.57" ehs="6">SRM2</item>
+        <item id="1031" type="missile" damage="9.00" numfiring="6" heat="4.00" cooldown="4.00" range="270" minrange="0" maxrange="270" slots="2" tons="3.00" dpsmax="2.25" ammoper="100" hps="1.00" ehs="10">SRM6</item>
+        <item id="1032" type="missile" damage="3.00" numfiring="2" heat="2.00" cooldown="3.50" range="270" minrange="0" maxrange="270" slots="1" tons="1.50" dpsmax="0.86" ammoper="100" hps="0.57" ehs="6">StreakSRM2</item>
         <item id="1037" type="energy" numfiring="1" heat="0.00" cooldown="0.00" range="750" minrange="0" maxrange="750" slots="1" tons="1.00" ammoper="0">TAG</item>
     </weapons>
     <ammos>
@@ -38,7 +38,7 @@
         <item id="2006" type="ballistic" internaldamage="5.00" tons="1" slots="1">AC5Ammo</item>
         <item id="2007" type="ballistic" internaldamage="10.00" tons="1" slots="1">AC10Ammo</item>
         <item id="2010" type="ballistic" internaldamage="10.00" tons="1" slots="1">LB10-XACAmmo</item>
-        <item id="2011" type="MG" internaldamage="0.04" tons="1" slots="1">MachineGunAmmo</item>
+        <item id="2011" type="ballistic" internaldamage="0.04" tons="1" slots="1">MachineGunAmmo</item>
         <item id="2008" type="ballistic" internaldamage="0.00" tons="1" slots="1">GaussAmmo</item>
         <item id="2012" type="ballistic" internaldamage="5.00" tons="1" slots="1">UltraAC5Ammo</item>
         <item id="2017" type="missile" internaldamage="2.00" tons="1" slots="1">NARCAmmo</item>

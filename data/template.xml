@@ -1,52 +1,52 @@
-	<class type="Template">
-		<mech type="" tonnage="" chassis="">
-			<variant name="" premium="" founders="" jets="" ecm="" minengine="100" maxengine="" modules="">
-				<limbs>
-					<limb name="leftArm"  crits="8" armorFront="" armorRear="" maxArmor="">
-                        <internal slots="1">Shoulder</internal>
-                        <internal slots="1">Upper Arm Actuator</internal>
-                        <internal slots="1">Lower Arm Actuator</internal>
-                        <internal slots="1">Hand Actuator</internal>
-                        <hardpoint type=""></hardpoint>
-					</limb>
-                    <limb name="leftTorso"  crits="12" armorFront="" armorRear="" maxArmor="">
-                        <hardpoint type="ams"></hardpoint>
-						<hardpoint type=""></hardpoint>
-					</limb>
-                    <limb name="centerTorso"  crits="12" armorFront="" armorRear="" maxArmor="">
-                        <internal slots="4">Gyro</internal>
-                        <hardpoint type="engine"></hardpoint>
-						<hardpoint type=""></hardpoint>
-                    </limb>
-                    <limb name="rightTorso"  crits="12" armorFront="" armorRear="" maxArmor="">
-                        <hardpoint type=""></hardpoint>
-                    </limb>
-                    <limb name="rightArm"  crits="8" armorFront="" armorRear="" maxArmor="">
-                        <internal slots="1">Shoulder</internal>
-                        <internal slots="1">Upper Arm Actuator</internal>
-                        <internal slots="1">Lower Arm Actuator</internal>
-                        <internal slots="1">Hand Actuator</internal>
-                        <hardpoint type=""></hardpoint>
-					</limb>
-                    <limb name="leftLeg"  crits="2" armorFront="" armorRear="0" maxArmor="">
-                        <internal slots="1">Hip</internal>
-						<internal slots="1">Upper Leg Actuator</internal>
-                        <internal slots="1">Lower Leg Actuator</internal>
-                        <internal slots="1">Foot Actuator</internal>
-                    </limb>
-                    <limb name="rightLeg"  crits="2" armorFront="" armorRear="" maxArmor="">
-                        <internal slots="1">Hip</internal>
-						<internal slots="1">Upper Leg Actuator</internal>
-                        <internal slots="1">Lower Leg Actuator</internal>
-                        <internal slots="1">Foot Actuator</internal>
-                    </limb>
-                    <limb name="head"  crits="1" armorFront="18" armorRear="0" maxArmor="18">
-                        <internal slots="2">Life Support</internal>
-                        <internal slots="2">Sensors</internal>
-                        <internal slots="1">Cockpit</internal>
-                        <hardpoint type=""></hardpoint>
-                    </limb>
-				</limbs>
-			</variant>
-		</mech>
-	</class>
+<class type="Template">
+    <mech type="" tonnage="" chassis="">
+        <variant name="" premium="" founders="" jets="" ecm="" minengine="100" maxengine="" modules="">
+            <limbs>
+                <limb name="leftArm"  crits="8" armorFront="" armorRear="" maxArmor="">
+                    <internal slots="1">Shoulder</internal>
+                    <internal slots="1">Upper Arm Actuator</internal>
+                    <internal slots="1">Lower Arm Actuator</internal>
+                    <internal slots="1">Hand Actuator</internal>
+                    <hardpoint type=""></hardpoint>
+                </limb>
+                <limb name="leftTorso"  crits="12" armorFront="" armorRear="" maxArmor="">
+                    <hardpoint type="ams"></hardpoint>
+                    <hardpoint type=""></hardpoint>
+                </limb>
+                <limb name="centerTorso"  crits="12" armorFront="" armorRear="" maxArmor="">
+                    <internal slots="4">Gyro</internal>
+                    <hardpoint type="engine"></hardpoint>
+                    <hardpoint type=""></hardpoint>
+                </limb>
+                <limb name="rightTorso"  crits="12" armorFront="" armorRear="" maxArmor="">
+                    <hardpoint type=""></hardpoint>
+                </limb>
+                <limb name="rightArm"  crits="8" armorFront="" armorRear="" maxArmor="">
+                    <internal slots="1">Shoulder</internal>
+                    <internal slots="1">Upper Arm Actuator</internal>
+                    <internal slots="1">Lower Arm Actuator</internal>
+                    <internal slots="1">Hand Actuator</internal>
+                    <hardpoint type=""></hardpoint>
+                </limb>
+                <limb name="leftLeg"  crits="2" armorFront="" armorRear="0" maxArmor="">
+                    <internal slots="1">Hip</internal>
+                    <internal slots="1">Upper Leg Actuator</internal>
+                    <internal slots="1">Lower Leg Actuator</internal>
+                    <internal slots="1">Foot Actuator</internal>
+                </limb>
+                <limb name="rightLeg"  crits="2" armorFront="" armorRear="" maxArmor="">
+                    <internal slots="1">Hip</internal>
+                    <internal slots="1">Upper Leg Actuator</internal>
+                    <internal slots="1">Lower Leg Actuator</internal>
+                    <internal slots="1">Foot Actuator</internal>
+                </limb>
+                <limb name="head"  crits="1" armorFront="18" armorRear="0" maxArmor="18">
+                    <internal slots="2">Life Support</internal>
+                    <internal slots="2">Sensors</internal>
+                    <internal slots="1">Cockpit</internal>
+                    <hardpoint type=""></hardpoint>
+                </limb>
+            </limbs>
+        </variant>
+    </mech>
+</class>
