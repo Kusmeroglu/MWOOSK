@@ -3,6 +3,7 @@ var mechXML;
 var itemXML;
 var itemXMLsupplemental;
 var urldata = getURLParamObject();
+window.location.assign('#');
 var limbList = ['leftArm', 'leftTorso','centerTorso','rightTorso','rightArm','leftLeg','rightLeg','head'];
 var classLookup = {
     1:'critOne',
@@ -93,7 +94,7 @@ $(function () {
             // get the supplemental
             var supplement = $(this);
             var itemxml = $(xml).find('weapons > item[id="' + supplement.attr("id") + '"]');
-            var itemObj = new item(supplement.attr("id"), supplement.attr('longname') || itemxml.text(), itemxml.attr("slots"), itemxml.attr("tons"), itemxml.attr("type"), itemxml.attr("type"));
+            var itemObj = new item(supplement.attr("id"), supplement.attr('longname'), itemxml.attr("slots"), itemxml.attr("tons"), itemxml.attr("type"), itemxml.attr("type"));
             itemObj.isWeapon = true;
             itemObj.damage = parseFloat(supplement.attr("damage") || itemxml.attr("damage"));
             itemObj.shortName = supplement.attr('shortname');
@@ -137,7 +138,7 @@ $(function () {
         $(itemXMLsupplemental).find("ammos > item").each(function () {
             var supplement = $(this);
             var itemxml = $(xml).find('ammos > item[id="' + supplement.attr("id") + '"]');
-            var itemObj = new item(supplement.attr("id"), itemxml.text(), itemxml.attr("slots"), itemxml.attr("tons"), itemxml.attr("type"));
+            var itemObj = new item(supplement.attr("id"), supplement.attr('longname'), itemxml.attr("slots"), itemxml.attr("tons"), itemxml.attr("type"));
             itemObj.isAmmo = true;
             itemObj.ammoper = supplement.attr('apt');
             itemObj.hp = supplement.attr('hp');
@@ -149,7 +150,7 @@ $(function () {
         });
         $(itemXMLsupplemental).find("internals > item").each(function () {
             var supplement = $(this);
-            var itemObj = new item(supplement.attr("id"), supplement.text(), supplement.attr("slots"), supplement.attr("tons"), supplement.attr("type"), supplement.attr("hardpoint"));
+            var itemObj = new item(supplement.attr("id"), supplement.attr('longname'), supplement.attr("slots"), supplement.attr("tons"), supplement.attr("type"), supplement.attr("hardpoint"));
             itemObj.isInternal = true;
             itemObj.shortName = supplement.attr('shortname');
             itemObj.cbill = supplement.attr('cbill');
@@ -166,7 +167,7 @@ $(function () {
         $(itemXMLsupplemental).find("engines > plant").each(function () {
             var supplement = $(this);
             var itemxml = $(xml).find('engines > plant[id="' + supplement.attr("id") + '"]');
-            var itemObj = new item(supplement.attr("id"), supplement.attr('longname') || itemxml.text(), parseInt(itemxml.attr("slots")), itemxml.attr("tons"), itemxml.attr("type"), "engine");
+            var itemObj = new item(supplement.attr("id"), supplement.attr('longname'), parseInt(itemxml.attr("slots")), itemxml.attr("tons"), itemxml.attr("type"), "engine");
             itemObj.isEngine = true;
             itemObj.shortName = supplement.attr('shortname');
             itemObj.cbill = supplement.attr('cbill');

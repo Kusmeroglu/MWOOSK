@@ -5,10 +5,9 @@
  */
 var urlHistoryStack = [];   // Soft URL storage
 var urlHistoryChanges = []; // Hard URL updates go here
-var urlHistorySteps = 0;
 var urlHistoryListener = function () {
-    window.location.assign('#'+urlHistoryStack[urlHistorySteps-2]);
-    window.location.reload();
+    //window.location.assign('#'+urlHistoryStack[urlHistoryStack.length-2]);
+    //window.location.reload();
 };
 
 // Check the visitor's URL every half second and check if they are moving 
@@ -17,13 +16,12 @@ $(function () {
     var historyCheck = function () {
         var steps = urlHistoryStack.length;
         if(urlHistoryStack.length>1 && window.location.hash.replace('#','') != urlHistoryStack[urlHistoryStack.length-1]) {
-	    urlHistorySteps = steps;
 
             if(urlHistoryStack[steps-1] != urlHistoryChanges[urlHistoryChanges.length-1]) {
 		// Hard URL update time
 		var newurl = urlHistoryStack[steps-1];
 		urlHistoryChanges.push(newurl);
-                window.location.assign('#' + newurl);
+                //window.location.assign('#' + newurl);
             } else {
                 urlHistoryListener();
             }
@@ -70,7 +68,7 @@ function stopBench(type) {
 }
 
 function getFullURL() {
-    return window.location.href().split('#')[0]+'#'+urlHistoryStack[urlHistorySteps-1]
+    return window.location.href.substr(0, window.location.href.lastIndexOf('/')+1)+'#'+urlHistoryStack[ urlHistoryStack.length - 1 ];
 }
 
 function getURLHash() {

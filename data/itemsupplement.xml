@@ -22,7 +22,7 @@
         <item id="1032" shortname="SSRM" longname="Streak SRM 2" cbill="30,000" hp="10"></item>
         <item id="1030" shortname="SRM2" longname="SRM 2" cbill="20,000" hp="10"></item>
         <item id="1004" shortname="SRM4" longname="SRM 4" cbill="120,000" hp="10"></item>
-        <item id="1031" shortname="SRM6" longname="SRM 6" cbill="160,000" hp="10"></item>
+		<item id="1031" shortname="SRM6" longname="SRM 6" cbill="160,000" hp="10"></item>
         <item id="1026" shortname="LRM5" longname="LRM 5" cbill="60,000" hp="10"></item>
         <item id="1027" shortname="LRM10" longname="LRM 10" cbill="200,000" hp="10"></item>
         <item id="1028" shortname="LRM15" longname="LRM 15" cbill="350,000" hp="10"></item>

@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <items>
     <weapons>
         <item id="1000" type="ballistic" damage="20.00" numfiring="1" heat="6.00" cooldown="4.00" range="270" minrange="0" maxrange="810" slots="10" tons="14.00" dpsmax="5.00" ammoper="7" hps="1.50" ehs="15">AC/20</item>

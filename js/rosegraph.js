@@ -243,7 +243,7 @@ function createRoseGraph(container, captiontext) {
     var extradata = vis.append("svg:g")
         .attr("transform", "translate(200)");
 
-    // ninja updateChart into global namespace
+    // ninja updateRoseChartData into global namespace
     window.updateRoseChartData = function(data, title){
         extradata.selectAll("text").remove();
         updateComplexArcs(vis, data["rosechartdata"], title);
@@ -269,7 +269,7 @@ function createRoseGraph(container, captiontext) {
         addStatToInfoArea('dpsmaxperslot', 'DPS / Slot');
         addStatToInfoArea('dpsmaxperheat', 'DPS / Heat');
     }
-    // ninja updateChart into global namespace
+    // ninja resetRoseChartData into global namespace
     window.resetRoseChartData = function(title){
         extradata.selectAll("text").remove();
         updateComplexArcs(vis, weapons, title);

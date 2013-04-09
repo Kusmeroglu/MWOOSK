@@ -44,31 +44,63 @@
     this.weightBreakdown = {'engine':0,'chassis':0,'heatsinks':0,'ammo':0,'energy':0,'ballistic':0,'missile':0,'other':0};
     this.critsBreakdown = {'engine':0,'chassis':0,'heatsinks':0,'ammo':0,'energy':0,'ballistic':0,'missile':0,'other':0};
 
-    this.init = function init(){
-
-    };
-
     this.updateMech = function updateMech(){
+        //reset the breakdowns
+        this.heatBreakdown = {'engine':0,'chassis':0,'heatsinks':0,'ammo':0,'energy':0,'ballistic':0,'missile':0,'other':0};
+        this.weightBreakdown = {'engine':0,'chassis':0,'heatsinks':0,'ammo':0,'energy':0,'ballistic':0,'missile':0,'other':0};
+        this.critsBreakdown = {'engine':0,'chassis':0,'heatsinks':0,'ammo':0,'energy':0,'ballistic':0,'missile':0,'other':0};
+
         // also counting heatsinks
         this.currentEquivalentHeatSinks = 0;
         this.currentActualHeatSinks = 0;
         this.currentFreeCritSlots = 0;
         this.currentComponentCost = 0;
+        this.currentTons = this.chassisTons - (this.endo ? this.endoweight : 0); // chassis weight
+        this.currentTons += this.totalArmor * (this.ferro ? this.ferroweight : this.armorWeight); //armor
+        this.weightBreakdown['chassis'] = this.currentTons;
+
         for (var limbName in this.limbs) {
             this.currentFreeCritSlots += this.limbs[limbName].getFreeCritSlots();
             for ( var item in this.limbs[limbName].items){
-                this.currentEquivalentHeatSinks += this.limbs[limbName].items[item].getEquivalentHeatSinks(this.dhs);
-                this.currentActualHeatSinks += this.limbs[limbName].items[item].getActualHeatSinks();
-                this.currentComponentCost += this.limbs[limbName].items[item].getComponentCost();
+                var itemData = this.limbs[limbName].items[item]
+                this.currentTons += itemData.weight;
+                this.currentEquivalentHeatSinks += itemData.getEquivalentHeatSinks(this.dhs);
+                this.currentActualHeatSinks += itemData.getActualHeatSinks();
+                this.currentComponentCost += itemData.getComponentCost();
+
+                if ( itemData.isAmmo ){
+                    this.weightBreakdown.ammo += itemData.weight;
+                    this.critsBreakdown.ammo += itemData.critSlots;
+                }
+                else if ( itemData.type == "heatsink" ){
+                    this.weightBreakdown.heatsinks += itemData.weight;
+                    this.critsBreakdown.heatsinks += itemData.critSlots;
+                }
+                else if ( itemData.type == "util" ){
+                    this.weightBreakdown.other += itemData.weight;
+                    this.critsBreakdown.other += itemData.critSlots;
+                }
+                else if ( itemData.hardpointType ) {
+                    this.weightBreakdown[itemData.hardpointType] += itemData.weight;
+                    this.critsBreakdown[itemData.hardpointType] += itemData.critSlots;
+                    this.heatBreakdown[itemData.hardpointType] += itemData.heat;
+                }
+                else {
+                    // Internals, which we're not counting now.
+                    //console.log(itemData.name);
+                }
             }
-            //this.currentEquivalentHeatSinks += this.limbs[limbName].getEquivalentHeatSinks(this.dhs);
-            //this.currentActualHeatSinks += this.limbs[limbName].getActualHeatSinks();
-            //this.currentComponentCost += this.limbs[limbName].getComponentCost();
         }
+
+        // update heatsink information
         $("#heat").text("Installed Heat Sinks: " + this.currentActualHeatSinks + " ");
         $("#effectiveheat").text("Effective Heat Sinks: " + (Math.round(10 * this.currentEquivalentHeatSinks) / 10));
 
-        // update engine speed
+        // update weight data
+        $("#tonnage").text("Weight: " + parseFloat(Math.round(100*this.currentTons)/100) + " / " + this.maxTons );
+        $("#freetonnage").text("(Free: "+ parseFloat(Math.round(10000*(this.maxTons - this.currentTons))/10000) +")");
+
+        // update engine speed data
         if ( $("#centerTorso .engine").length > 0 ){
             var enginedata = $("#centerTorso .engine").data("itemObj");
             var maxspeed = 16.2 * enginedata.engineSize/this.maxTons;
@@ -81,10 +113,14 @@
         } else {
             $("#speed").text("No engine selected.");
         }
+
+        // update crit and cost information.
         var structureSlots = (this.endo ? this.endoCritSlots : 0) + (this.ferro ? this.ferroCritSlots : 0);
+        this.critsBreakdown['chassis'] = structureSlots;
         this.currentFreeCritSlots -= structureSlots;
         $("#freeCrits").text("Free Crits: " + (this.currentFreeCritSlots));
         $("#costInfo").text("Components: " + this.currentComponentCost + " cbills");
+
         return this.currentFreeCritSlots;
     };
 
@@ -128,9 +164,7 @@
     };
 
     this.addItemToLimb = function addItemToLimb(limbName, itemObj){
-        this.addWeight(parseFloat(itemObj.weight));
         var success = this.limbs[limbName].addItem(itemObj);
-        this.updateMech();
         // ecm check
         if ( itemObj.id == "9006" ){
             this.ecmcount += 1;
@@ -144,6 +178,7 @@
             this.jumpjetcount += 1;
         }
         this.showStructureSlots();
+        this.updateMech();
         return success;
     };
 
@@ -152,9 +187,7 @@
             console.log('Removing null item!');
             return;
         }
-        this.addWeight(0 - parseFloat(itemObj.weight));
         var success = this.limbs[limbName].removeItem(itemObj);
-        this.updateMech();
         // ecm check
         if ( itemObj.id == "9006" ){
             this.ecmcount -= 1;
@@ -168,6 +201,7 @@
             this.jumpjetcount -= 1;
         }
         this.showStructureSlots();
+        this.updateMech();
         return success;
     };
 
@@ -190,7 +224,6 @@
 
     this.setArmorForLimb = function setArmorForLimb(limbName, frontArmor, rearArmor){
         // add (subtract) the difference to the current weight
-        this.addWeight( (frontArmor + rearArmor - this.limbs[limbName].totalArmor) * (this.ferro ? this.ferroweight : this.armorWeight) );
         this.limbs[limbName].setArmor(frontArmor, rearArmor);
         this.resetArmorURLParam();
         //console.log("Equipped Armor: " + this.totalArmor);
@@ -209,17 +242,11 @@
         }, this);
         setURLParameter("armor", s);
         $("#totalArmor").text("Armor: " + this.totalArmor + " / " + this.totalMaxArmor);
+        this.updateMech();
     };
 
     this.resetLimbCritSlots = function resetLimbCritSlots(limbName){
         this.limbs[limbName].addEmptyCritSlots();
-    };
-
-    this.addWeight = function addWeight(weight){
-        this.currentTons += weight;
-        $("#tonnage").text("Weight: " + parseFloat(Math.round(100*this.currentTons)/100) + " / " + this.maxTons );
-        $("#freetonnage").text("(Free: "+ parseFloat(Math.round(10000*(this.maxTons - this.currentTons))/10000) +")");
-        //updateChart(this.maxTons, (this.endo) ? this.endoweight : this.chassisTons, this.currentTons);
     };
 
     this.addEndoSteel = function addEndoSteel(){
@@ -227,10 +254,9 @@
             return false;
         }
         this.endo = true;
-        // remove the difference from the standard chassis weight
-        this.addWeight(0 - this.endoweight);
         setURLParameter('endo', 'true');
         this.showStructureSlots();
+        this.updateMech();
         return true;
     };
 
@@ -239,10 +265,9 @@
             return false;
         }
         this.endo = false;
-        // add the difference from the standard chassis weight
-        this.addWeight(this.endoweight);
         setURLParameter('endo', 'false');
         this.showStructureSlots();
+        this.updateMech();
         return true;
     };
 
@@ -251,16 +276,10 @@
             return false;
         }
         this.ferro = true;
-        // calculate weight savings
-        var totalarmor = 0;
-        for (var limbName in this.limbs) {
-            totalarmor += this.limbs[limbName].totalArmor;
-        }
-        var difference = (totalarmor * this.armorWeight) - (totalarmor * this.ferroweight);
-        this.addWeight(-difference);
 
         setURLParameter('ferro', 'true');
         this.showStructureSlots();
+        this.updateMech();
         return true;
     };
 
@@ -276,16 +295,9 @@
             return false;
         }
         this.ferro = false;
-        // calculate weight savings
-        var totalarmor = 0;
-        for (var limbName in this.limbs) {
-            totalarmor += this.limbs[limbName].totalArmor;
-        }
-        var difference = (totalarmor * this.armorWeight) - (totalarmor * this.ferroweight);
-        this.addWeight(difference);
-
         setURLParameter('ferro', 'false');
         this.showStructureSlots();
+        this.updateMech();
         return true;
     };
 
@@ -410,7 +422,6 @@
         var structureSlots = (this.endo ? this.endoCritSlots : 0) + (this.ferro ? this.ferroCritSlots : 0);
         $("#mechContainer .empty").slice(0, structureSlots).addClass('structure');
         $("#mechContainer .structure .critLabel").text("[ Dynamic Structure ]");
-        this.updateMech();
     };
 
     this.countLimbs = function countLimbs() {
@@ -420,6 +431,4 @@
         }
         return countLimbs;
     };
-
-    this.init();
 }
