@@ -4,46 +4,11 @@
  * https://developer.mozilla.org/en-US/docs/DOM/Manipulating_the_browser_history
  */
 var urlHistoryStack = [];   // Soft URL storage
-var urlHistoryChanges = []; // Hard URL updates go here
-var urlHistoryListener = function () {
-    //window.location.assign('#'+urlHistoryStack[urlHistoryStack.length-2]);
-    //window.location.reload();
-};
-
-// Check the visitor's URL every half second and check if they are moving 
-// forward in history, otherwise reload the page
-$(function () {
-    var historyCheck = function () {
-        var steps = urlHistoryStack.length;
-        if(urlHistoryStack.length>1 && window.location.hash.replace('#','') != urlHistoryStack[urlHistoryStack.length-1]) {
-
-            if(urlHistoryStack[steps-1] != urlHistoryChanges[urlHistoryChanges.length-1]) {
-		// Hard URL update time
-		var newurl = urlHistoryStack[steps-1];
-		urlHistoryChanges.push(newurl);
-                //window.location.assign('#' + newurl);
-            } else {
-                urlHistoryListener();
-            }
-        }
-    };
-    
-    if(window.location.href.indexOf('?')!=-1) {
-        window.location.replace(window.location.href.replace('?','#'));
-        return;
-    }
-    
-    var tempHash = getURLHash();
-    urlHistoryStack.push(tempHash!=null?tempHash:'');
-    urlHistoryChanges.push(tempHash!=null?tempHash:'');
-
-    setInterval(historyCheck, 200);
-});
 
 function printLog(message) {
     try {
         console.log(message);
-    } catch (e) { 
+    } catch (e) {
         // No logging available 
     }
 }
@@ -68,15 +33,23 @@ function stopBench(type) {
 }
 
 function getFullURL() {
-    return window.location.href.substr(0, window.location.href.lastIndexOf('/')+1)+'#'+urlHistoryStack[ urlHistoryStack.length - 1 ];
+    var href = window.location.href;
+    if ( window.location.href.indexOf('#') > 0 ){
+        return window.location.href.substr(0, window.location.href.indexOf('#')+1)+urlHistoryStack[ urlHistoryStack.length - 1 ];
+    } else if (urlHistoryStack.length > 0) {
+        return href + "#" + urlHistoryStack[ urlHistoryStack.length - 1 ];
+    }
+    return href;
 }
 
 function getURLHash() {
-    if(urlHistoryStack.length>1) {
+    if(urlHistoryStack.length>0) {
         return urlHistoryStack[urlHistoryStack.length-1];
     } else {
-        var hash = window.location.hash.match(/^#?([^#]+)$/);
+        var hash = window.location.toString().match(/[\?#]([^\?#]*)$/);
         return ( hash == null ) ? hash : hash[1];
+        //var hash = window.location.hash.match(/^#?([^#]+)$/);
+        //return ( hash == null ) ? hash : hash[1];
     }
 }
 
@@ -109,8 +82,8 @@ function setURLParameter(param, paramVal){
     setURLHash(newHash + rows_txt);
 
     //reset the tiny url thing
-    $('#tinyurlresult').remove();
-    $('#tinyurllink').show();
+    jQuery('#tinyurlresult').remove();
+    jQuery('#tinyurllink').show();
 }
 
 function getURLParameter(param) {
@@ -133,7 +106,7 @@ function getURLParamObject(){
     if (dataHash != null) {
         tempArray = dataHash.split("&");
         for (i=0; i<tempArray.length; i++){
-	    split = tempArray[i].split('=');
+            split = tempArray[i].split('=');
             o[split[0]] = split.length>1?split[1]:'';
         }
     }

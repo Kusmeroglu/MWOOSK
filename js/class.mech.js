@@ -1,4 +1,5 @@
-﻿function mech(chassisName, chassisVariant, maxTons) {
+﻿﻿function mech(chassisName, chassisVariant, maxTons) {
+
     this.chassis = chassisName;
     this.variant = chassisVariant;
     setURLParameter("variant", chassisVariant);
@@ -14,9 +15,9 @@
     this.limbs = {};
     this.ecm = false;
     this.ecmcount = 0;
-	this.bapcount = 0;
+    this.bapcount = 0;
     this.ecmmax = 1;
-	this.bapmax = 1;
+    this.bapmax = 1;
     this.jumpjets = false;
     this.jumpjetcount = 0;
     this.jumpjetmax = 5;
@@ -93,33 +94,57 @@
         }
 
         // update heatsink information
-        $("#heat").text("Installed Heat Sinks: " + this.currentActualHeatSinks + " ");
-        $("#effectiveheat").text("Effective Heat Sinks: " + (Math.round(10 * this.currentEquivalentHeatSinks) / 10));
+        // update heatsink information
+        jQuery("#heatsinkcount").text(this.currentActualHeatSinks);
+        jQuery("#effectiveheat").text("Effective Heat Sinks: " + (Math.round(10 * this.currentEquivalentHeatSinks) / 10));
+        if ( this.currentActualHeatSinks < 10 ){
+            jQuery("#heatsinkcount").addClass('err');
+        } else {
+            jQuery("#heatsinkcount").removeClass('err');
+        }
 
         // update weight data
-        $("#tonnage").text("Weight: " + parseFloat(Math.round(100*this.currentTons)/100) + " / " + this.maxTons );
-        $("#freetonnage").text("(Free: "+ parseFloat(Math.round(10000*(this.maxTons - this.currentTons))/10000) +")");
+        jQuery("#tonnage").text("Weight: " + parseFloat(Math.round(100*this.currentTons)/100) + " / " + this.maxTons );
+        jQuery("#freetonnage").text("(Free: "+ parseFloat(Math.round(10000*(this.maxTons - this.currentTons))/10000) +")");
 
         // update engine speed data
-        if ( $("#centerTorso .engine").length > 0 ){
-            var enginedata = $("#centerTorso .engine").data("itemObj");
+        if ( jQuery("#centerTorso .engine").length > 0 ){
+            var enginedata = jQuery("#centerTorso .engine").data("itemObj");
             var maxspeed = 16.2 * enginedata.engineSize/this.maxTons;
             var speedtweak = maxspeed * 1.1;
-            $("#speed").text("Max Speed: " + Math.round(10*maxspeed)/10 + " kph (" + Math.round(10*speedtweak)/10 + ")");
+            jQuery("#speed").text("Max Speed: " + Math.round(10*maxspeed)/10 + " kph (" + Math.round(10*speedtweak)/10 + ")");
             // also check if having enough heatsinks
-            if ( enginedata.heatsinkslots < 0 && $("#mechContainerWrap .heatsink").length < -enginedata.heatsinkslots ){
-                $("#heat").append("<span class='hserror'>(10)</span>");
+            if ( enginedata.heatsinkslots < 0 && jQuery("#mechContainerWrap .heatsink").length < -enginedata.heatsinkslots ){
+                jQuery("#heat").append("<span class='hserror'>(10)</span>");
             }
         } else {
-            $("#speed").text("No engine selected.");
+            jQuery("#speed").text("No engine selected.");
         }
 
         // update crit and cost information.
         var structureSlots = (this.endo ? this.endoCritSlots : 0) + (this.ferro ? this.ferroCritSlots : 0);
         this.critsBreakdown['chassis'] = structureSlots;
         this.currentFreeCritSlots -= structureSlots;
-        $("#freeCrits").text("Free Crits: " + (this.currentFreeCritSlots));
-        $("#costInfo").text("Components: " + this.currentComponentCost + " cbills");
+        jQuery("#freeCrits").text("Free Crits: " + (this.currentFreeCritSlots));
+        jQuery("#costInfo").text("Components: " + this.currentComponentCost + " cbills");
+
+        // Update error highlights on weight and crits
+        jQuery(".itemInfo .itemweight").each(function(){
+            var item = jQuery(this);
+            if ( parseFloat(item.attr('title')) > (mechObj.maxTons - mechObj.currentTons) ){
+                item.addClass('err');
+            } else {
+                item.removeClass('err');
+            }
+        });
+        jQuery(".itemInfo .itemcrits").each(function(){
+            var item = jQuery(this);
+            if ( parseFloat(item.attr('title')) > mechObj.currentFreeCritSlots ){
+                item.addClass('err');
+            } else {
+                item.removeClass('err');
+            }
+        });
 
         return this.currentFreeCritSlots;
     };
@@ -146,17 +171,17 @@
         if ( itemObj.id == "9006" && (this.ecm == false || this.ecmcount >= this.ecmmax) ){
             return false;
         }
-		// bap check
+        // bap check
         if ( itemObj.id == "9002" && (this.bap == false || this.bapcount >= this.bapmax) ){
             return false;
         }
         // jumpjet check
         // can't add jumpjet to arms or head
-        if (  $.inArray(itemObj.id, this.jumpjetitemIDs) > -1 && ($.inArray(limbName, ['leftArm','rightArm','head']) > -1 ) ){
+        if (  jQuery.inArray(itemObj.id, this.jumpjetitemIDs) > -1 && (jQuery.inArray(limbName, ['leftArm','rightArm','head']) > -1 ) ){
             return false;
         }
         // see if we're over the max
-        if (  $.inArray(itemObj.id, this.jumpjetitemIDs) > -1 && (this.jumpjets == false || this.jumpjetcount >= this.jumpjetmax) ){
+        if (  jQuery.inArray(itemObj.id, this.jumpjetitemIDs) > -1 && (this.jumpjets == false || this.jumpjetcount >= this.jumpjetmax) ){
             return false;
         }
         // is the item valid for this limb?
@@ -169,12 +194,12 @@
         if ( itemObj.id == "9006" ){
             this.ecmcount += 1;
         }
-		// bap check
+        // bap check
         if ( itemObj.id == "9002" ){
             this.bapcount += 1;
         }
         // jumpjet check
-        if ( $.inArray(itemObj.id, this.jumpjetitemIDs) > -1 ){
+        if ( jQuery.inArray(itemObj.id, this.jumpjetitemIDs) > -1 ){
             this.jumpjetcount += 1;
         }
         this.showStructureSlots();
@@ -192,12 +217,12 @@
         if ( itemObj.id == "9006" ){
             this.ecmcount -= 1;
         }
-		// bap check
+        // bap check
         if ( itemObj.id == "9002" ){
             this.bapcount -= 1;
         }
         // jumpjet check
-        if ( $.inArray(itemObj.id, this.jumpjetitemIDs) > -1 ){
+        if ( jQuery.inArray(itemObj.id, this.jumpjetitemIDs) > -1 ){
             this.jumpjetcount -= 1;
         }
         this.showStructureSlots();
@@ -241,7 +266,7 @@
             }
         }, this);
         setURLParameter("armor", s);
-        $("#totalArmor").text("Armor: " + this.totalArmor + " / " + this.totalMaxArmor);
+        jQuery("#totalArmor").text("Armor: " + this.totalArmor + " / " + this.totalMaxArmor);
         this.updateMech();
     };
 
@@ -309,10 +334,10 @@
 
         // hide the single heat sinks and show the double heat sinks in the item list.
         this.singleHeatSinkIDs.forEach(function (id) {
-            $("#detailContainer ." + id).hide();
+            jQuery("#detailContainer ." + id).hide();
         });
         this.dualHeatSinkIDs.forEach(function (id) {
-            $("#detailContainer ." + id).show();
+            jQuery("#detailContainer ." + id).show();
         });
 
         this.dhs = true;
@@ -327,10 +352,10 @@
 
         // hide the single heat sinks and show the double heat sinks.
         this.singleHeatSinkIDs.forEach(function(id){
-            $("#detailContainer ."+id).show();
+            jQuery("#detailContainer ."+id).show();
         });
         this.dualHeatSinkIDs.forEach(function(id){
-            $("#detailContainer ."+id).hide();
+            jQuery("#detailContainer ."+id).hide();
         });
 
         this.dhs = false;
@@ -348,10 +373,10 @@
 
         // hide the non-artemis missile ammo and show the artemis missile ammo in the item list.
         this.nonArtemisAmmoIDs.forEach(function (id) {
-            $("#detailContainer ." + id).hide();
+            jQuery("#detailContainer ." + id).hide();
         });
         this.artemisAmmoIDs.forEach(function (id) {
-            $("#detailContainer ." + id).show();
+            jQuery("#detailContainer ." + id).show();
         });
 
         if (this.artemis == true){
@@ -360,17 +385,17 @@
 
         // Add a ton and a crit slot to each
         this.artemisCapableMissileIDs.forEach(function (id) {
-            var itemObj = $("#detailContainer ." + id).data('itemObj');
+            var itemObj = jQuery("#detailContainer ." + id).data('itemObj');
             if (itemObj){
                 itemObj.trueName = itemObj.itemName;
                 itemObj.itemName = itemObj.itemName + " + Artemis";
-                $("#detailContainer ." + id + " .itemName").text(itemObj.itemName);
+                jQuery("#detailContainer ." + id + " .itemName").text(itemObj.itemName);
                 itemObj.trueWeight = itemObj.weight;
                 itemObj.weight = itemObj.trueWeight + 1;
                 itemObj.trueCrits = itemObj.critSlots;
                 itemObj.critSlots = itemObj.trueCrits + 1;
-                $("#detailContainer ." + id + " .itemweight").text("Weight: "+itemObj.weight+" Tons");
-                $("#detailContainer ." + id + " .itemcrits").text("Crit Slots: "+itemObj.critSlots);
+                jQuery("#detailContainer ." + id + " .itemweight").text("Weight: "+itemObj.weight+" Tons");
+                jQuery("#detailContainer ." + id + " .itemcrits").text("Crit Slots: "+itemObj.critSlots);
             }
         });
 
@@ -385,10 +410,10 @@
 
         // hide the non-artemis missiles and show the artemis missiles in the item list.
         this.nonArtemisAmmoIDs.forEach(function (id) {
-            $("#detailContainer ." + id).show();
+            jQuery("#detailContainer ." + id).show();
         });
         this.artemisAmmoIDs.forEach(function (id) {
-            $("#detailContainer ." + id).hide();
+            jQuery("#detailContainer ." + id).hide();
         });
 
         if (this.artemis == false){
@@ -397,14 +422,14 @@
 
         // remove a ton and a crit slot to each
         this.artemisCapableMissileIDs.forEach(function (id) {
-            var itemObj = $("#detailContainer ." + id).data('itemObj');
+            var itemObj = jQuery("#detailContainer ." + id).data('itemObj');
             if (itemObj){
                 itemObj.itemName = itemObj.trueName;
-                $("#detailContainer ." + id + " .itemName").text(itemObj.trueName);
+                jQuery("#detailContainer ." + id + " .itemName").text(itemObj.trueName);
                 itemObj.weight = itemObj.trueWeight;
                 itemObj.critSlots = itemObj.trueCrits;
-                $("#detailContainer ." + id + " .itemweight").text("Weight: "+itemObj.weight+" Tons");
-                $("#detailContainer ." + id + " .itemcrits").text("Crit Slots: "+itemObj.critSlots);
+                jQuery("#detailContainer ." + id + " .itemweight").text("Weight: "+itemObj.weight+" Tons");
+                jQuery("#detailContainer ." + id + " .itemcrits").text("Crit Slots: "+itemObj.critSlots);
             }
         });
 
@@ -416,12 +441,12 @@
 
     this.showStructureSlots = function showStructureSlots(){
         //clear old shown slots
-        $("#mechContainer .structure .critLabel").text("[ empty ]");
-        $("#mechContainer .structure").removeClass('structure');
+        jQuery("#mechContainer .structure .critLabel").text("[ empty ]");
+        jQuery("#mechContainer .structure").removeClass('structure');
 
         var structureSlots = (this.endo ? this.endoCritSlots : 0) + (this.ferro ? this.ferroCritSlots : 0);
-        $("#mechContainer .empty").slice(0, structureSlots).addClass('structure');
-        $("#mechContainer .structure .critLabel").text("[ Dynamic Structure ]");
+        jQuery("#mechContainer .empty").slice(0, structureSlots).addClass('structure');
+        jQuery("#mechContainer .structure .critLabel").text("[ Dynamic Structure ]");
     };
 
     this.countLimbs = function countLimbs() {

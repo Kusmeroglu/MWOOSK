@@ -55,6 +55,7 @@ body{
     display:none;
 }
 
+
 .selectBox {
     width: 200px;
     background:#000;
@@ -1270,4 +1271,8 @@ border-radius:2px;
  -webkit-box-shadow:  3px 3px 10px 0px #000000;
  box-shadow:  3px 3px 10px 0px #000000;
  padding:10px;
+}
+
+.err {
+    color: red !important;
 }
