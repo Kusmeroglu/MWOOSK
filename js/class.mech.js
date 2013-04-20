@@ -1,4 +1,4 @@
-﻿﻿function mech(chassisName, chassisVariant, maxTons) {
+﻿function mech(chassisName, chassisVariant, maxTons) {
 
     this.chassis = chassisName;
     this.variant = chassisVariant;
@@ -56,7 +56,7 @@
         this.currentActualHeatSinks = 0;
         this.currentFreeCritSlots = 0;
         this.currentComponentCost = 0;
-        this.currentTons = this.chassisTons - (this.endo ? this.endoweight : 0); // chassis weight
+        this.currentTons = (this.endo ? this.endoweight : this.chassisTons); // chassis weight
         this.currentTons += this.totalArmor * (this.ferro ? this.ferroweight : this.armorWeight); //armor
         this.weightBreakdown['chassis'] = this.currentTons;
 
@@ -93,7 +93,6 @@
             }
         }
 
-        // update heatsink information
         // update heatsink information
         jQuery("#heatsinkcount").text(this.currentActualHeatSinks);
         jQuery("#effectiveheat").text("Effective Heat Sinks: " + (Math.round(10 * this.currentEquivalentHeatSinks) / 10));
